@@ -1,0 +1,258 @@
+\begin{thebibliography}{10}
+
+\bibitem{url}
+Donald Arseneau.
+\newblock {\em The \textsf{url} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=url}.
+
+\bibitem{beebebib}
+Nelson H.~F. Beebe.
+\newblock Nelson {H}. {F}. beebe's bibliographies page.
+\newblock Available at:
+  \url{http://www.math.utah.edu/~beebe/bibliographies.html}.
+
+\bibitem{color}
+David Carlisle.
+\newblock {\em The \textsf{color} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=color}.
+
+\bibitem{graphicx}
+David Carlisle.
+\newblock {\em The \textsf{graphicx} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=graphicx}.
+
+\bibitem{keyval}
+David Carlisle.
+\newblock {\em The \textsf{keyval} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=keyval}.
+
+\bibitem{showkeys}
+David Carlisle.
+\newblock {\em The \textsf{showkeys} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=showkeys}.
+
+\bibitem{ifthen}
+David Carlisle and Leslie Lamport.
+\newblock {\em The \textsf{ifthen} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=ifthen}.
+
+\bibitem{uiucthesis}
+Peter Czoschke.
+\newblock {\em The \textsf{uiucthesis} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=uiucthesis}.
+
+\bibitem{booktabs}
+Danie Els.
+\newblock {\em The \textsf{booktabs} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=booktabs}.
+
+\bibitem{ucthesis}
+Daniel Gildea.
+\newblock {\em The \textsf{ucthesis} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=ucthesis}.
+
+\bibitem{fancyvrb}
+Denis Girou, Sebastian Rahtz, and Timothy~Van Zandt.
+\newblock {\em The \textsf{fancyvrb} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=fancyvrb}.
+
+\bibitem{unhappy}
+Enrico Gregorio.
+\newblock Horrors in {\LaTeX}: How to misuse {\LaTeX} and make a \emph{copy
+  editor} unhappy.
+\newblock {\em TUGBoat}, 26(3):273--279, 2005.
+\newblock Available at:
+  \url{http://www.tug.org/TUGboat/Contents/contents26-3.html}.
+
+\bibitem{ukfaq}
+{UK} {\TeX}~User Group.
+\newblock {\TeX} {F}requently {A}sked {Q}uestions.
+\newblock Available at: \url{http://www.tex.ac.uk/cgi-bin/texfaq2html}.
+
+\bibitem{freemathfonts}
+Stephen~G. Hartke.
+\newblock A survey of free math fonts for {\TeX} and {\LaTeX}.
+\newblock {\em The Prac\TeX{} Journal}, 1, 2006.
+\newblock Available at: \url{http://www.tug.org/pracjourn/2006-1/hartke/}.
+
+\bibitem{scrtime}
+Markus Kohm.
+\newblock {\em \textsf{scrtime} part of the \textsf{KOMA-Script} bundle}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=koma-script}.
+
+\bibitem{doc}
+Frank Mittelbach.
+\newblock {\em The \textsf{doc} and \textsf{shortvrb} packages}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=doc}.
+
+\bibitem{docstrip}
+Frank Mittelbach.
+\newblock {\em The \textsf{DocScrip} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=docstrip}.
+
+\bibitem{varioref}
+Frank Mittelbach.
+\newblock {\em The \textsf{varioref} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=varioref}.
+
+\bibitem{Mittelbach:2004:LC}
+Frank Mittelbach, Michel Goossens, Johannes Braams, David Carlisle, Chris
+  Rowley, Christine Detig, and Joachim Schrod.
+\newblock {\em The {\LaTeX} Companion}.
+\newblock Tools and Techniques for Computer Typesetting.
+  Ad{\-d}i{\-s}on-Wes{\-l}ey, Reading, MA, USA, second edition, 2004.
+
+\bibitem{listings}
+Brooks Moses.
+\newblock {\em The \textsf{listings} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=listings}.
+
+\bibitem{nomencl}
+Lee Netherton and C.~V. Radhakrishnan.
+\newblock {\em The \textsf{nomencl} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=nomencl}.
+
+\bibitem{shortintro}
+Tobias Oetiker.
+\newblock {\em A (Not So) Short Introduction to {\LaTeXe}.}
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=lshort-english}.
+
+\bibitem{unl-thesis-electronic}
+Office of~Graduate Studies University~of Nebraska-Lincoln.
+\newblock {\em Electronic Dissertations}.
+\newblock Available at:
+  \url{http://www.unl.edu/gradstudies/current/etd-intro.shtml}.
+
+\bibitem{unl-thesis-guidebook}
+Office of~Graduate Studies University~of Nebraska-Lincoln.
+\newblock {\em Guidebook For Preparing a Thesis or Dissertation}.
+\newblock Available at:
+  \url{http://www.unl.edu/gradstudies/current/downloads/Guidebook.pdf}.
+
+\bibitem{comprehensive}
+Scott Pakin.
+\newblock {\em The \textsf{comprehensive} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=comprehensive}.
+
+\bibitem{packagetutorial}
+Scott Pakin.
+\newblock {\em How to package your {\LaTeX} Package}, 2004.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=dtxtut}.
+
+\bibitem{packagewriters}
+The~{\LaTeX}3 Project.
+\newblock {\em {\LaTeXe} for class and package writers}, 2006.
+\newblock Available at:
+  \url{http://www.ctan.org/tex-archive/macros/latex/doc/}.
+
+\bibitem{mathpazo}
+Diego Puga.
+\newblock {\em The \textsf{mathpazo} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=mathpazo}.
+
+\bibitem{hyperref}
+Sebastian Rahtz and Heiko Oberdiek.
+\newblock {\em The \textsf{hyperref} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=hyperref}.
+
+\bibitem{epslatex}
+Keith Reckdahl.
+\newblock {\em The \textsf{epslatex} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=epslatex}.
+
+\bibitem{productivity}
+Will Robertson.
+\newblock Productivity with macros and packages.
+\newblock {\em The Prac\TeX{} Journal}, 3, 2006.
+\newblock Available at: \url{http://www.tug.org/pracjourn/2006-3/robertson/}.
+
+\bibitem{pxfonts}
+Young Ryu.
+\newblock {\em The \textsf{pxfonts} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=pxfonts}.
+
+\bibitem{paralist}
+Bernd Schandl.
+\newblock {\em The \textsf{paralist} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=paralist}.
+
+\bibitem{microtype}
+Robert Schlicht.
+\newblock {\em The \textsf{microtype} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=microtype}.
+
+\bibitem{amsfonts}
+The American~Mathematical Society.
+\newblock {\em The \textsf{amsfonts} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=amsfonts}.
+
+\bibitem{amsmath}
+The American~Mathematical Society.
+\newblock {\em The \textsf{amsmath} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=amsmath}.
+
+\bibitem{setspace}
+Geoffrey Tobin.
+\newblock {\em The \textsf{setspace} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=setspace}.
+
+\bibitem{geometry}
+Hideo Umeki.
+\newblock {\em The \textsf{geometry} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=geometry}.
+
+\bibitem{virgil}
+Virgil.
+\newblock {\em The Aenid}.
+\newblock Project Gutenberg, 1995.
+\newblock From Project Gutenberg at \url{http://www.gutenberg.org/etext/227}.
+
+\bibitem{voss-mathmode}
+Herbert Vo{\ss}.
+\newblock {\em The \textsf{voss-mathmode} package}.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=voss-mathmode}.
+
+\bibitem{memoir}
+Peter Wilson.
+\newblock {\em The Memoir Class for Configurable Typesetting User Guide}.
+\newblock The Herries Press, sixth edition, January 2004.
+\newblock Available at:
+  \url{http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=memoir}.
+
+\bibitem{memoirArticle}
+Peter Wilson.
+\newblock The \textsf{memoir} class.
+\newblock {\em The Prac\TeX{} Journal}, 3, 2006.
+\newblock Available at: \url{http://www.tug.org/pracjourn/2006-3/wilson/}.
+
+\end{thebibliography}

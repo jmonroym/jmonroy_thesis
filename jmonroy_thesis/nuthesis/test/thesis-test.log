@@ -1,0 +1,4590 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.7.27)  19 SEP 2017 14:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**thesis-test.tex
+(./thesis-test.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+
+! LaTeX Error: File `nuthesis.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/03 v2.15a AMS math features
+\@mathmargin=\skip41
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen102
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen103
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count79
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count80
+\leftroot@=\count81
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count82
+\DOTSCASE@=\count83
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen104
+LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+\macc@depth=\count84
+\c@MaxMatrixCols=\count85
+\dotsspace@=\muskip10
+\c@parentequation=\count86
+\dspbrk@lvl=\count87
+\tag@help=\toks15
+\row@=\count88
+\column@=\count89
+\maxfields@=\count90
+\andhelp@=\toks16
+\eqnshift@=\dimen105
+\alignsep@=\dimen106
+\tagshift@=\dimen107
+\tagwidth@=\dimen108
+\totwidth@=\dimen109
+\lineht@=\dimen110
+\@envbody=\toks17
+\multlinegap=\skip42
+\multlinetaggap=\skip43
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2735.
+LaTeX Info: Redefining \] on input line 2736.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+\MT@toks=\toks20
+\MT@count=\count91
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 521
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplj.fd
+File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
+)
+LaTeX Info: Redefining \textls on input line 766.
+\MT@outer@kern=\dimen111
+LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
+\MT@listname@count=\count92
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 915.
+LaTeX Info: Redefining \lslig on input line 915.
+\MT@outer@space=\skip44
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64    }
+         
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.64    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `normalsize'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+Package microtype Warning: Could not parse font size `large'
+(microtype)                in font set `basicmath' on input line 64.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...,footnotesize,small,large}}}
+                                                  
+l.64    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `ex'
+(microtype)                in font set `basicmath' on input line 64.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64    }
+         
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64    }
+         
+? 
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 64.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.64    }
+         
+? 
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.64    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `sp'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+Package microtype Warning: Could not parse font size `kn'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+Package microtype Warning: Could not parse font size `tr'
+(microtype)                in font set `basicmath' on input line 64.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71    }
+         
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.71    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `normalsize'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `large'
+(microtype)                in font set `basictext' on input line 71.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...,footnotesize,small,large}}}
+                                                  
+l.71    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `ex'
+(microtype)                in font set `basictext' on input line 71.
+
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.71    }
+         
+? 
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.71    }
+         
+? 
+
+Package microtype Warning: Could not parse font size `sp'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `kn'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `tr'
+(microtype)                in font set `basictext' on input line 71.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `small'
+(microtype)                in font set `footnotesize' on input line 81.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 86.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 86.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 86.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 86.
+
+
+Package microtype Warning: Could not parse font size `footnotesize'
+(microtype)                in font set `scriptsize' on input line 86.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 89.
+
+! Extra }, or forgotten \endgroup.
+\MT@clist@function ...normalfont}{font=*/*/*/*/*}}
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `ex////'. Using `pplj' instead on input line 89.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `ex////'. Using `m' instead on input line 89.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `ex////'. Using `n' instead on input line 89.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `ex////'. Using `\normalsize' instead on input line 
+89.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 89.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `sp////'. Using `pplj' instead on input line 89.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `sp////'. Using `m' instead on input line 89.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `sp////'. Using `n' instead on input line 89.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `sp////'. Using `\normalsize' instead on input line 
+89.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 89.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `kn////'. Using `pplj' instead on input line 89.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `kn////'. Using `m' instead on input line 89.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `kn////'. Using `n' instead on input line 89.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `kn////'. Using `\normalsize' instead on input line 
+89.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 89.
+
+
+Package microtype Warning: family axis is empty in font specification
+(microtype)                `tr////'. Using `pplj' instead on input line 89.
+
+
+Package microtype Warning: series axis is empty in font specification
+(microtype)                `tr////'. Using `m' instead on input line 89.
+
+
+Package microtype Warning: shape axis is empty in font specification
+(microtype)                `tr////'. Using `n' instead on input line 89.
+
+
+Package microtype Warning: size axis is empty in font specification
+(microtype)                `tr////'. Using `\normalsize' instead on input line 
+89.
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89    { font = */*/*/*/* }
+                            
+? 
+! Undefined control sequence.
+\MT@get@size ... \def \MT@val {##2}}\@tempa \@nil 
+                                                  \fi \MT@ifdimen \MT@val {\...
+l.89    { font = */*/*/*/* }
+                            
+? 
+
+Package microtype Warning: Could not parse font size `*'
+(microtype)                in font set `normalfont' on input line 89.
+
+
+! Package microtype Error: The expansion set `basictext' is not declared.
+(microtype)                Cannot make it the default set. Using set
+(microtype)                `all' instead.
+
+See the microtype package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...MicrotypeSetDefault[expansion] {basictext}
+                                                  
+? 
+
+! Package microtype Error: The spacing set `basictext' is not declared.
+(microtype)                Cannot make it the default set. Using set
+(microtype)                `all' instead.
+
+See the microtype package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 ...MicrotypeSetDefault[spacing]   {basictext}
+                                                  
+? 
+))
+! Missing $ inserted.
+<inserted text> 
+                $
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.19 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.19 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.19 
+     
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.19 
+     
+? 
+
+Overfull \hbox (21.0pt too wide) in paragraph at lines 64--19
+[]$[]$ 
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14v1.61803publicationqualitytables
+\heavyrulewidth=\dimen112
+\lightrulewidth=\dimen113
+\cmidrulewidth=\dimen114
+\belowrulesep=\dimen115
+\belowbottomsep=\dimen116
+\aboverulesep=\dimen117
+\abovetopsep=\dimen118
+\cmidrulesep=\dimen119
+\cmidrulekern=\dimen120
+\defaultaddspace=\dimen121
+\@cmidla=\count93
+\@cmidlb=\count94
+\@aboverulesep=\dimen122
+\@belowrulesep=\dimen123
+\@thisruleclass=\count95
+\@lastruleclass=\count96
+\@thisrulewidth=\dimen124
+)
+(/usr/share/texlive/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2015/12/30v2.5Extendedlistenvironments
+\pltopsep=\skip45
+\plpartopsep=\skip46
+\plitemsep=\skip47
+\plparsep=\skip48
+\pl@lab=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28v1.0gEnhancedLaTeXGraphics(DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03v1.0qStandardLaTeXGraphics(DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03v1.10sincostan(DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driverfile:pdftex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.270 \catcode
+              64 11 % @
+? 
+! Bad character code (6411).
+<to be read again> 
+                   \def 
+l.271 \def
+          \GPT@catcodes#1{%
+? 
+! Bad character code (910).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (3210).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (3312).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (3412).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (363).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (3714).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (384).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (3912).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4012).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4112).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4212).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4312).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4412).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4512).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4612).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (4712).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (5812).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (5912).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6012).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6212).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6312).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (9112).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (920).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (9312).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (947).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (958).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (9612).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (1231).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (12412).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (1252).
+<to be read again> 
+                   \catcode 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Bad character code (12613).
+<to be read again> 
+                   \let 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.355 \GPT@catcodes{}
+                     
+? 
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   6
+l.369       \ifnum\expandafter`\pdftexrevision
+                                              <`n %
+? 
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count97
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1783 ...@ifpackageloaded{trig}{\GPT@PatchTrig}{}
+                                                  
+? 
+! Bad character code (329).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3312).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3412).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (356).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3612).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3714).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3812).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (3912).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4012).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4112).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4211).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4312).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4412).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4512).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4612).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (4712).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (5812).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (5912).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6012).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6112).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6212).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6312).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6411).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (9112).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (920).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (9312).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (947).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (9512).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (9612).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (1231).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (12412).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (1252).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (12612).
+<to be read again> 
+                   \catcode 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (356).
+<to be read again> 
+                   \relax 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Bad character code (6411).
+<to be read again> 
+                   \relax 
+l.1897 \GPT@AtEnd
+                 
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.1897 \GPT@AtEnd
+                 
+? 
+)
+! Undefined control sequence.
+l.105 \new
+          command\DeclareGraphicsExtensions[1]{%
+? 
+! Undefined control sequence.
+l.105 \newcommand\De
+                    clareGraphicsExtensions[1]{%
+? 
+! Undefined control sequence.
+l.106   \edef\Gin@extensions{\zap@spa
+                                     ce#1 \@empty}}
+? 
+! Illegal parameter number in definition of \Gin@extensions.
+<to be read again> 
+                   1
+l.106   \edef\Gin@extensions{\zap@space#1
+                                          \@empty}}
+? 
+! Undefined control sequence.
+l.107 \provide
+              command\Gin@extensions{}
+? 
+! Undefined control sequence.
+l.483 \Gin@
+           codes
+? 
+)
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+! Undefined control sequence.
+l.25 \ProvidesPa
+                ckage{color}
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.28  \ca
+         tcode`\noexpand\^^A\the\catcode`\^^A\relax
+? 
+! You can't use `\unhbox' after \the.
+\leavevmode ->\unhbox 
+                      \voidb@x 
+l.28  \catcode`\noexpand\^^A\the\ca
+                                   tcode`\^^A\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.28  \catcode`\noexpand\^^A\the\ca
+                                   tcode`\^^A\relax
+? 
+! Undefined control sequence.
+l.28  \catcode`\noexpand\^^A\the\catcode`\^^A
+                                             \relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.29  \ca
+         tcode`\noexpand\"\the\catcode`\"\relax
+? 
+! You can't use `\unhbox' after \the.
+\leavevmode ->\unhbox 
+                      \voidb@x 
+l.29  \catcode`\noexpand\"\the\ca
+                                 tcode`\"\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.29  \catcode`\noexpand\"\the\ca
+                                 tcode`\"\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.30  \ca
+         tcode`\noexpand\*\the\catcode`\*\relax
+? 
+! You can't use `\unhbox' after \the.
+\leavevmode ->\unhbox 
+                      \voidb@x 
+l.30  \catcode`\noexpand\*\the\ca
+                                 tcode`\*\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.30  \catcode`\noexpand\*\the\ca
+                                 tcode`\*\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.31  \ca
+         tcode`\noexpand\!\the\catcode`\!\relax
+? 
+! You can't use `\unhbox' after \the.
+\leavevmode ->\unhbox 
+                      \voidb@x 
+l.31  \catcode`\noexpand\!\the\ca
+                                 tcode`\!\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.31  \catcode`\noexpand\!\the\ca
+                                 tcode`\!\relax
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.32  \ca
+         tcode`\noexpand\:\the\catcode`\:\relax}
+? 
+! You can't use `\unhbox' after \the.
+\leavevmode ->\unhbox 
+                      \voidb@x 
+l.32  \catcode`\noexpand\:\the\ca
+                                 tcode`\:\relax}
+? 
+! Illegal parameter number in definition of \Gin@.
+<to be read again> 
+                   \crcr 
+l.32  \catcode`\noexpand\:\the\ca
+                                 tcode`\:\relax}
+? 
+! Undefined control sequence.
+l.33 \catcode`\^^A
+                  =\catcode`\%
+? 
+! Undefined control sequence.
+l.38 \provide
+             command\Gin@driver{}
+? 
+! Use of \De doesn't match its definition.
+l.41 \DeclareO
+              ption{monochrome}{%
+? 
+! Undefined control sequence.
+l.43   \AtEndOfPa
+                 ckage{%
+? 
+! Use of \c doesn't match its definition.
+l.44     \co
+            lors@false
+? 
+! Use of \De doesn't match its definition.
+l.53 \DeclareO
+              ption{debugshow}{\catcode`\^^A=9 \let\GDebug\typeout}
+? 
+! Use of \c doesn't match its definition.
+l.53 \DeclareOption{debugshow}{\ca
+                                  tcode`\^^A=9 \let\GDebug\typeout}
+? 
+! Undefined control sequence.
+l.53 \DeclareOption{debugshow}{\catcode`\^^A
+                                            =9 \let\GDebug\typeout}
+? 
+! Use of \De doesn't match its definition.
+l.54 \DeclareO
+              ption{dvips}{\def\Gin@driver{dvips.def}%
+? 
+! Use of \De doesn't match its definition.
+l.56 \DeclareO
+              ption{xdvi}{\ExecuteOptions{dvips,monochrome}}
+? 
+! Undefined control sequence.
+l.56 \DeclareOption{xdvi}{\Exe
+                              cuteOptions{dvips,monochrome}}
+? 
+! Use of \De doesn't match its definition.
+l.57 \DeclareO
+              ption{dvipdf}{\def\Gin@driver{dvipdf.def}}
+? 
+! Use of \De doesn't match its definition.
+l.58 \DeclareO
+              ption{dvipdfm}{\def\Gin@driver{dvipdfm.def}}
+? 
+! Use of \De doesn't match its definition.
+l.59 \DeclareO
+              ption{dvipdfmx}{\def\Gin@driver{dvipdfmx.def}}
+? 
+! Use of \De doesn't match its definition.
+l.60 \DeclareO
+              ption{pdftex}{\def\Gin@driver{pdftex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.61 \DeclareO
+              ption{luatex}{\def\Gin@driver{luatex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.62 \DeclareO
+              ption{xetex}{\def\Gin@driver{xetex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.63 \DeclareO
+              ption{dvipsone}{\def\Gin@driver{dvipsone.def}}
+? 
+! Use of \De doesn't match its definition.
+l.64 \DeclareO
+              ption{dviwindo}{\ExecuteOptions{dvipsone}}
+? 
+! Undefined control sequence.
+l.64 \DeclareOption{dviwindo}{\Exe
+                                  cuteOptions{dvipsone}}
+? 
+! Use of \De doesn't match its definition.
+l.65 \DeclareO
+              ption{emtex}{\def\Gin@driver{emtex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.66 \DeclareO
+              ption{dviwin}{\def\Gin@driver{dviwin.def}}
+? 
+! Use of \De doesn't match its definition.
+l.67 \DeclareO
+              ption{oztex}{\ExecuteOptions{dvips}}
+? 
+! Undefined control sequence.
+l.67 \DeclareOption{oztex}{\Exe
+                               cuteOptions{dvips}}
+? 
+! Use of \De doesn't match its definition.
+l.68 \DeclareO
+              ption{textures}{\def\Gin@driver{textures.def}}
+? 
+! Use of \De doesn't match its definition.
+l.69 \DeclareO
+              ption{pctexps}{\def\Gin@driver{pctexps.def}}
+? 
+! Use of \De doesn't match its definition.
+l.70 \DeclareO
+              ption{pctexwin}{\def\Gin@driver{pctexwin.def}}
+? 
+! Use of \De doesn't match its definition.
+l.71 \DeclareO
+              ption{pctexhp}{\def\Gin@driver{pctexhp.def}}
+? 
+! Use of \De doesn't match its definition.
+l.72 \DeclareO
+              ption{pctex32}{\def\Gin@driver{pctex32.def}}
+? 
+! Use of \De doesn't match its definition.
+l.73 \DeclareO
+              ption{truetex}{\def\Gin@driver{truetex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.74 \DeclareO
+              ption{tcidvi}{\def\Gin@driver{tcidvi.def}}
+? 
+! Use of \De doesn't match its definition.
+l.75 \DeclareO
+              ption{vtex}{\def\Gin@driver{vtex.def}}
+? 
+! Use of \De doesn't match its definition.
+l.76 \DeclareO
+              ption{dvipsnames}{\def\c@lor@namefile{dvipsnam.def}}
+? 
+! Use of \De doesn't match its definition.
+l.77 \DeclareO
+              ption{nodvipsnames}{\let\c@lor@namefile\relax}
+? 
+! Use of \De doesn't match its definition.
+l.82 \DeclareR
+              obustCommand\color{%
+? 
+! Undefined control sequence.
+l.83   \@ifnext
+               char[\@undeclaredcolor\@declaredcolor}
+? 
+! Undefined control sequence.
+l.83   \@ifnextchar[\@unde
+                          claredcolor\@declaredcolor}
+? 
+! Undefined control sequence.
+l.83   \@ifnextchar[\@undeclaredcolor\@de
+                                         claredcolor}
+? 
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+
+! Use of \c doesn't match its definition.
+l.6   \ch
+         ardef\x=0\relax
+? 
+! Undefined control sequence.
+l.6   \chardef\x
+                =0\relax
+? 
+! Use of \c doesn't match its definition.
+<argument> \ifnum \pdfoutput <1\else \ch
+                                        ardef\x =1\relax \fi 
+l.13   }
+        %
+? 
+! Undefined control sequence.
+<argument> \ifnum \pdfoutput <1\else \chardef\x 
+                                                =1\relax \fi 
+l.13   }
+        %
+? 
+! Extra \or.
+l.27 \or
+        
+? 
+! Extra \or.
+l.31 \or
+        
+? 
+! Undefined control sequence.
+l.38   \Exe
+           cuteOptions{xetex}%
+? 
+)
+! Undefined control sequence.
+l.134 \Pro
+          cessOptions
+? 
+! Undefined control sequence.
+l.143   \Pa
+           ckageInfo{color}{Driver file: \Gin@driver}
+? 
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2015/09/11 v4.06 LaTeX color/graphics driver for XeTeX (TeX Liv
+e/RRM/JK)
+
+! Use of \c doesn't match its definition.
+l.107 {\ca
+          tcode`\"=12
+? 
+! Undefined control sequence.
+l.271 \AtBeginDo
+                cument{\check@for@XeTeX@colorstack}
+? 
+! Use of \c doesn't match its definition.
+\check@for@XeTeX@colorstack->\expandafter \ifx \cs
+                                                  nameuse@XeTeX@colorstack\e...
+l.271 \AtBeginDocument{\check@for@XeTeX@colorstack
+                                                  }
+? 
+! Use of \c doesn't match its definition.
+l.283 \expandafter\ifx\cs
+                         name RequirePackage\endcsname\relax
+? 
+! Undefined control sequence.
+l.287   \RequirePa
+                  ckage{infwarerr}[2007/09/09]%
+? 
+! Undefined control sequence.
+l.288   \RequirePa
+                  ckage{ltxcmds}[2010/12/07]%
+? 
+! Use of \c doesn't match its definition.
+l.332 \expandafter\ifx\cs
+                         name XeTeXpicfile\endcsname\relax
+? 
+! Undefined control sequence.
+l.336  \let\picfile@cmd\XeTeXpi
+                               cfile
+? 
+! Undefined control sequence.
+l.337  \let\pdffile@cmd\XeTeXpdffile
+                                    
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   c
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   c
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! A <box> was supposed to be here.
+<to be read again> 
+                   c
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Undefined control sequence.
+<argument> \spa 
+                
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Undefined control sequence.
+<argument> \spa 
+                
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Use of \pi doesn't match its definition.
+\XeTeX@in ...eTeXquote #1\XeTeXquote \spa ce\pi cp
+                                                  age\pi cpagebox}\Gin@log {...
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Use of \pi doesn't match its definition.
+\XeTeX@in ... #1\XeTeXquote \spa ce\pi cpage\pi cp
+                                                  agebox}\Gin@log {<use\pi c...
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+
+<use"\def \unhbox \voidb@x \bgroup \let \unhbox \voidb@x \setbox \@tempboxa \hb
+ox {\global \mathchardef \accent@spacefactor \spacefactor }\accent 127 \egroup 
+\spacefactor \accent@spacefactor ceageagebox>
+! Use of \Gs doesn't match its definition.
+\XeTeX@s ...x\Gin@s caley\fi \fi \hbox {\Gs cale@b
+                                                  ox{\Gin@s calex}[\Gin@s ca...
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Use of \pi doesn't match its definition.
+\XeTeX@s ...\relax \fi \fi \expandafter \pi cfilec
+                                                  ommand\pi cfileargs\ifGXT@...
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Use of \GXT@ doesn't match its definition.
+\XeTeX@s ...\p@ =\z@ \else \egroup \fi \GXT@ clipe
+                                                  nd\fi }}
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? 
+! Extra }, or forgotten \endgroup.
+\XeTeX@s ... \else \egroup \fi \GXT@ clipend\fi }}
+                                                  
+l.516 \@namedef
+               {Gin@rule@.pdf}#1{{QTm}{QTm}{#1}}
+? q
+OK, entering \batchmode...
+! You can't use `macro parameter character #' in horizontal mode.
+l.516 \@namedef{Gin@rule@.pdf}#
+                               1{{QTm}{QTm}{#1}}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.516 \@namedef{Gin@rule@.pdf}#1{{QTm}{QTm}{#
+                                             1}}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+\Grot@end ->\spe 
+                 cial{x:grestore}
+l.627 \let\Gscale@end\Grot@end
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+! Undefined control sequence.
+l.148 \AtBeginDo
+                cument{\let\default@color\current@color}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Use of \c doesn't match its definition.
+l.148 \AtBeginDocument{\let\default@color\cu
+                                            rrent@color}
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+! Use of \c doesn't match its definition.
+<argument> ...nfo{color}{Redefiningcolorblack}}\cs
+                                                  namecolor@gray\expandafter...
+l.177   \definecolor{black}{gray}{0}
+                                    
+If you say, e.g., `\def\a1{...}', then you must always
+put `1' after `\a', since control sequence names are
+made up of letters only. The macro here has not been
+followed by the required stuff, so I'm ignoring it.
+
+
+! LaTeX Error: \begin{document} ended by \end{c}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177   \definecolor{black}{gray}{0}
+                                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{c}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.177   \definecolor{black}{gray}{0}
+                                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.178   \definecolor
+                    {white}{gray}{1}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.190 \Gin@codes
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+! Undefined control sequence.
+<recently read> \define 
+                        
+l.31 \define
+            color{dark-red}{rgb}{0.6,0,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.32 \definecolor
+                 {dark-green}{rgb}{0,0.6,0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 \definecolor
+                 {dark-blue}{rgb}{0,0,0.6}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06v6.83mHypertextlinksforLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+! Undefined control sequence.
+l.3868 \@PackageInfoNoLine
+                          {etexcmds}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+! Undefined control sequence.
+l.4543 \ltx@IfUndefined
+                       {protected}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.4544 \ltx@IfUndefined
+                       {DeclareRobustCommand}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing { inserted.
+l.4546 }
+        {%
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+LaTeX Info: Redefining \kv@define@key on input line 4547.
+! Argument of \@argdef has an extra }.
+<inserted text> 
+                \par 
+l.4548 }
+        %
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \@argdef was complete.
+<to be read again> 
+                   \par 
+l.4548 }
+        %
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (650.27965pt too wide) in paragraph at lines 1783--4548
+[]\OT1/pplj/m/n/10 1111clipcommandclareGraphicsExtensions[1]command.png,.pdf,.j
+pg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2aley!odecodesodes
+ []
+
+
+Overfull \hbox (22.62pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 oma-
+ []
+
+
+Overfull \hbox (21.18999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 lexa-
+ []
+
+
+Overfull \hbox (6.24pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 l-
+ []
+
+
+Overfull \hbox (13.52998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ey-
+ []
+
+
+Overfull \hbox (15.68001pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 cla-
+ []
+
+
+Overfull \hbox (17.16pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ma-
+ []
+
+
+Overfull \hbox (25.77998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 tiona-
+ []
+
+
+Overfull \hbox (15.88998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ley!
+ []
+
+
+Overfull \hbox (417.86668pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ckagecolor[2016/01/03v1.1bStandardLaTeXColor(DPC)][]tcode`=[]t
+code`%[]tcode`[]=12[]tcode`\OMS/zplm/m/n/10 ^^B
+ []
+
+
+Overfull \hbox (4553.00127pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 =11[]tcode`=12[]tcode`=12commandpdftex.defptionmonochromeckage
+lors@falseptiondebugshowtcode`=9ptiondvipsptionxdvicuteOptionsdvips,monochromep
+tiondvipdfptiondvipdfmptiondvipdfmxptionpdftexptionluatexptionxetexptiondvipson
+eptiondviwindocuteOptionsdvipsoneptionemtexptiondviwinptionoztexcuteOptionsdvip
+sptiontexturesptionpctexpsptionpctexwinptionpctexhpptionpctex32ptiontruetexptio
+ntcidviptionvtexptiondvipsnamesptionnodvipsnameslor@namefilelor@usenameclareOpt
+ionusenamesobustCommand@olorchar[claredcolorclaredcolorcolors@@olors@trueardef=
+0ardef=1cuteOptionsxetexcessOptionsckageInfocolorDriverfile:xetex.deftcode`[]=1
+2cumentolorccolor@nostackolorccolor@nostackckageinfwarerr[2007/09/09]ckageltxcm
+ds[2010/12/07]file@cmdcfilemdlipendlude@QTmcasealey!aleyccalex[]Gin@rule@.pdf1Q
+TmQTm1ale@endcialx:grestorecumentolorrrent@colorlor@begingroupnamecolor@graysna
+meosname\color@blacksname0whitegray1
+ []
+
+
+Overfull \hbox (46.16998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 colordark-
+ []
+
+
+Overfull \hbox (81.16997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 redrgb0.6,0,0dark-
+ []
+
+
+Overfull \hbox (91.22995pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 greenrgb0,0.6,0dark-
+ []
+
+
+Overfull \hbox (61.67996pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 bluergb0,0,0.6
+ []
+
+
+Overfull \hbox (21.32997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 etex-
+ []
+
+
+Overfull \hbox (22.71pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 cmd-
+ []
+
+
+Overfull \hbox (31.83997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 sCould
+ []
+
+
+Overfull \hbox (14.53998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 not
+ []
+
+
+Overfull \hbox (17.97998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 find
+ []
+
+
+Overfull \hbox (18.27998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 \ex-
+ []
+
+
+Overfull \hbox (56.54996pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 panded.That
+ []
+
+
+Overfull \hbox (15.26pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 can
+ []
+
+
+Overfull \hbox (24.43999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 mean
+ []
+
+
+Overfull \hbox (17.33998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 that
+ []
+
+
+Overfull \hbox (16.71997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 you
+ []
+
+
+Overfull \hbox (13.68999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 are
+ []
+
+
+Overfull \hbox (14.53998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 not
+ []
+
+
+Overfull \hbox (13.59998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 us-
+ []
+
+
+Overfull \hbox (14.29pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ing
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (16.66997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 TeX
+ []
+
+
+Overfull \hbox (17.5pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 1.50
+ []
+
+
+Overfull \hbox (12.55998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 or-
+ []
+
+
+Overfull \hbox (17.33998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 that
+ []
+
+
+Overfull \hbox (23.31998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 some
+ []
+
+
+Overfull \hbox (24.34pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 pack-
+ []
+
+
+Overfull \hbox (15.34999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 age
+ []
+
+
+Overfull \hbox (15.05998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 has
+ []
+
+
+Overfull \hbox (12.01999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 re-
+ []
+
+
+Overfull \hbox (14.23pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 de-
+ []
+
+
+Overfull \hbox (22.76997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 fined
+ []
+
+
+Overfull \hbox (18.27998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 \ex-
+ []
+
+
+Overfull \hbox (45.52997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 panded.In
+ []
+
+
+Overfull \hbox (13.86998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 the
+ []
+
+
+Overfull \hbox (14.5pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 lat-
+ []
+
+
+Overfull \hbox (11.99998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ter
+ []
+
+
+Overfull \hbox (20.96999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 case,
+ []
+
+
+Overfull \hbox (19.48pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 load
+ []
+
+
+Overfull \hbox (16.22998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 this
+ []
+
+
+Overfull \hbox (24.34pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 pack-
+ []
+
+
+Overfull \hbox (15.34999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 age
+ []
+
+
+Overfull \hbox (16.88998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 ear-
+ []
+
+
+Overfull \hbox (14.56pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 lier
+ []
+
+
+Overfull \hbox (18.65997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 pro-
+ []
+
+
+Overfull \hbox (29.97998pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 tected-
+ []
+
+
+Overfull \hbox (15.85999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 De-
+ []
+
+
+Overfull \hbox (31.04999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 clareR-
+ []
+
+
+Overfull \hbox (8.79pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 o-
+ []
+
+
+Overfull \hbox (22.38997pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 bust-
+ []
+
+
+Overfull \hbox (24.70999pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 Com-
+ []
+
+
+Overfull \hbox (25.76pt too wide) in paragraph at lines 1783--4548
+\OT1/pplj/m/n/10 mand 
+ []
+
+! Missing { inserted.
+l.4551 }
+        %
+Where was the left brace? You said something like `\def\a}',
+which I'm going to interpret as `\def\a{}'.
+
+! Illegal parameter number in definition of \KVD@temp.
+<to be read again> 
+                   1
+l.4557 \noexpand\KVD@DefineKey{#1
+                                 }{#2}%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \KVD@temp.
+<to be read again> 
+                   2
+l.4557 \noexpand\KVD@DefineKey{#1}{#2
+                                     }%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Undefined control sequence.
+\KVD@temp ->\endgroup \KVD@DefineKey 
+                                     {##1}{##2}
+l.4559 \KVD@temp
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in vertical mode.
+\KVD@temp ->\endgroup \KVD@DefineKey {##
+                                        1}{##2}
+l.4559 \KVD@temp
+                
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4559 \KVD@temp
+                
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! You can't use `macro parameter character #' in horizontal mode.
+\KVD@temp ->\endgroup \KVD@DefineKey {##1}{##
+                                             2}
+l.4559 \KVD@temp
+                
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+! Undefined control sequence.
+l.4839 \@PackageInfoNoLine
+                          {pdftexcmds}{LuaTeX not detected}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.4981 \@PackageInfoNoLine
+                          {pdftexcmds}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.4986 \@PackageInfoNoLine
+                          {pdftexcmds}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5065 \ltx@IfUndefined
+                       {pdfdraftmode}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5066 \@PackageInfoNoLine
+                          {pdftexcmds}{\ltx@backslashchar pdfdraftmode not f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5066 ...nfoNoLine{pdftexcmds}{\ltx@backslashchar
+                                                   pdfdraftmode not found}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5070 \@PackageInfoNoLine
+                          {pdftexcmds}{\ltx@backslashchar pdfdraftmode found}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5070 ...nfoNoLine{pdftexcmds}{\ltx@backslashchar
+                                                   pdfdraftmode found}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5077 \ifcase\pdftexcmds@temp
+                              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \let 
+l.5078 \let
+           \pdf@draftmode\ltx@zero
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+! Undefined control sequence.
+l.5803 \ltx@IfUndefined
+                       {numexpr}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+! Undefined control sequence.
+l.488 \ltx@ifundefined
+                      {numexpr}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.546 \ltx@ifundefined
+                      {AtEndPreamble}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.547 \ltx@ifundefined
+                      {@endpreamblehook}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.548 \AtEndPreamble
+                    {\HOpatch@list}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.551 \ltx@ifundefined
+                      {AfterEndPreamble}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.552 \ltx@ifundefined
+                      {@afterendpreamblehook}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.553 \AfterEndPreamble
+                       {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package: xcolor-patch 2011/01/30 xcolor patch
+! Undefined control sequence.
+\hopatch@AfterPackage #1->\ltx@ifpackageloaded 
+                                               {#1}{\ltx@firstofone }{\HOpat...
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\hopatch@AfterPackage ...ded {#1}{\ltx@firstofone 
+                                                  }{\HOpatch@AfterPackage {#1}}
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\HOpatch@AfterPackage ...{#1}\HOpatch@StepCounter 
+                                                  \expandafter \HOpatch@@Aft...
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \HOpatch@@AfterPackage has an extra }.
+<inserted text> 
+                \par 
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \HOpatch@@AfterPackage was complete.
+<to be read again> 
+                   \par 
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 4559--578
+[]\OT1/pplj/m/n/10 12
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (16.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tex-
+ []
+
+
+Overfull \hbox (22.71pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 cmd-
+ []
+
+
+Overfull \hbox (19.70998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 sLu-
+ []
+
+
+Overfull \hbox (8.33pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 a-
+ []
+
+
+Overfull \hbox (16.66997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 TeX
+ []
+
+
+Overfull \hbox (14.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 not
+ []
+
+
+Overfull \hbox (14.23pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 de-
+ []
+
+
+Overfull \hbox (26.64998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tected
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (16.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tex-
+ []
+
+
+Overfull \hbox (92.33997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 cmds\pdf@primitive
+ []
+
+
+Overfull \hbox (7.15pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 is
+ []
+
+
+Overfull \hbox (24.11998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 avail-
+ []
+
+
+Overfull \hbox (37.01pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 ablepdf-
+ []
+
+
+Overfull \hbox (16.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tex-
+ []
+
+
+Overfull \hbox (98.57997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 cmds\pdf@ifprimitive
+ []
+
+
+Overfull \hbox (7.15pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 is
+ []
+
+
+Overfull \hbox (24.11998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 avail-
+ []
+
+
+Overfull \hbox (18.23pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 able
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (24.98pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 draft-
+ []
+
+
+Overfull \hbox (23.73pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 mod-
+ []
+
+
+Overfull \hbox (8.12pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 e-
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (16.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tex-
+ []
+
+
+Overfull \hbox (22.71pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 cmd-
+ []
+
+
+Overfull \hbox (23.01999pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 spdf-
+ []
+
+
+Overfull \hbox (24.98pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 draft-
+ []
+
+
+Overfull \hbox (25.18999pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 mode
+ []
+
+
+Overfull \hbox (14.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 not
+ []
+
+
+Overfull \hbox (30.07997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 found-
+ []
+
+
+Overfull \hbox (18.78pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 pdf-
+ []
+
+
+Overfull \hbox (16.53998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 tex-
+ []
+
+
+Overfull \hbox (22.71pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 cmd-
+ []
+
+
+Overfull \hbox (23.01999pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 spdf-
+ []
+
+
+Overfull \hbox (24.98pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 draft-
+ []
+
+
+Overfull \hbox (25.18999pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 mode
+ []
+
+
+Overfull \hbox (26.74997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 found
+ []
+
+
+Overfull \hbox (15.17998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 nu-
+ []
+
+
+Overfull \hbox (12.16pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 m-
+ []
+
+
+Overfull \hbox (19.90997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 expr
+ []
+
+
+Overfull \hbox (15.17998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 nu-
+ []
+
+
+Overfull \hbox (12.16pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 m-
+ []
+
+
+Overfull \hbox (19.90997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 expr
+ []
+
+
+Overfull \hbox (32.40999pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 AtEnd-
+ []
+
+
+Overfull \hbox (31.88998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 Pream-
+ []
+
+
+Overfull \hbox (101.47992pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 ble@endpreamblehook
+ []
+
+
+Overfull \hbox (14.44pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 Af-
+ []
+
+
+Overfull \hbox (33.36998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 terEnd-
+ []
+
+
+Overfull \hbox (31.88998pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 Pream-
+ []
+
+
+Overfull \hbox (121.7599pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 ble@afterendpreamblehook
+ []
+
+
+Overfull \hbox (27.37997pt too wide) in paragraph at lines 4559--578
+\OT1/pplj/m/n/10 xcolor 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+! LaTeX Error: The font size command \normalsize is not defined:
+               there is probably something wrong with the class file.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.578 \hopatch@AfterPackage{xcolor}
+                                   {%
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+! Undefined control sequence.
+l.1554 \ltx@newif
+                 \ifAtBegShi@Discarded
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1554 \ltx@newif\ifAtBegShi@Discarded
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+! Undefined control sequence.
+l.2347 \ltx@IfUndefined
+                       {@ifdefinable}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2347 \ltx@IfUndefined{@
+                         ifdefinable}{%
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.2366 \ltx@IfUndefined
+                       {protected}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2367 \ltx@IfUndefined
+                       {DeclareRobustCommand}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2402 \ltx@IfUndefined
+                       {newcommand}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2419 \rc@RobustDefOne
+                       \long{}\setrefcountdefault{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use a prefix with `begin-group character {'.
+<to be read again> 
+                   {
+l.2419 \rc@RobustDefOne\long{
+                             }\setrefcountdefault{%
+I'll pretend you didn't say \long or \outer or \global or \protected.
+
+! Undefined control sequence.
+l.2419 \rc@RobustDefOne\long{}\setrefcountdefault
+                                                 {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Illegal parameter number in definition of \rc@default.
+<to be read again> 
+                   1
+l.2420 \def\rc@default{#1
+                         }%
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Undefined control sequence.
+l.2422 \setrefcountdefault
+                          {0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2423 \ltx@IfUndefined
+                       {G@refundefinedtrue}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2424 \rc@RobustDefOne
+                       {}{*}\refused{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2424 \rc@RobustDefOne{}{*}\refused
+                                    {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2427 \ltx@IfUndefined
+                       {r@#1}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2427 \ltx@IfUndefined{r@#
+                           1}{%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2429 \rc@WarningUndefined
+                           {#1}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2429 \rc@WarningUndefined{#
+                             1}%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2434 \rc@RobustDefOne
+                       {}{*}\refused{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2434 \rc@RobustDefOne{}{*}\refused
+                                    {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2437 \ltx@IfUndefined
+                       {r@#1}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2437 \ltx@IfUndefined{r@#
+                           1}{%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2440 \rc@WarningUndefined
+                           {#1}%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2440 \rc@WarningUndefined{#
+                             1}%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2445 \ltx@IfUndefined
+                       {@latex@warning}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2477 \rc@RobustDefZero
+                        \setcounterref{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2477 \rc@RobustDefZero\setcounterref
+                                      {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \rc@set has an extra }.
+<inserted text> 
+                \par 
+l.2479 }
+        
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \rc@set was complete.
+<to be read again> 
+                   \par 
+l.2479 }
+        
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+
+Overfull \hbox (74.70996pt too wide) in paragraph at lines 2347--2479
+[]\OT1/pplj/m/n/10 @ifdefinable
+ []
+
+
+Overfull \hbox (18.65997pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 pro-
+ []
+
+
+Overfull \hbox (29.97998pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 tected-
+ []
+
+
+Overfull \hbox (15.85999pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 De-
+ []
+
+
+Overfull \hbox (31.04999pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 clareR-
+ []
+
+
+Overfull \hbox (8.79pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 o-
+ []
+
+
+Overfull \hbox (22.38997pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 bust-
+ []
+
+
+Overfull \hbox (24.70999pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 Com-
+ []
+
+
+Overfull \hbox (25.76pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 mand
+ []
+
+
+Overfull \hbox (22.15997pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 new-
+ []
+
+
+Overfull \hbox (22.06pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 com-
+ []
+
+
+Overfull \hbox (25.76pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 mand
+ []
+
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 0
+ []
+
+
+Overfull \hbox (141.28984pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 G@refundefinedtrue*r@11*r@11
+ []
+
+
+Overfull \hbox (18.70999pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 @la-
+ []
+
+
+Overfull \hbox (57.92993pt too wide) in paragraph at lines 2347--2479
+\OT1/pplj/m/n/10 tex@warning
+ []
+
+! Undefined control sequence.
+l.2480 \rc@RobustDefZero
+                        \addtocounterref{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2480 \rc@RobustDefZero\addtocounterref
+                                        {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \rc@set has an extra }.
+<inserted text> 
+                \par 
+l.2482 }
+        
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \rc@set was complete.
+<to be read again> 
+                   \par 
+l.2482 }
+        
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Undefined control sequence.
+l.2483 \rc@RobustDefZero
+                        \setcounterpageref{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2483 \rc@RobustDefZero\setcounterpageref
+                                          {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \rc@set has an extra }.
+<inserted text> 
+                \par 
+l.2485 }
+        
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \rc@set was complete.
+<to be read again> 
+                   \par 
+l.2485 }
+        
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Undefined control sequence.
+l.2486 \rc@RobustDefZero
+                        \addtocounterpageref{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2486 \rc@RobustDefZero\addtocounterpageref
+                                            {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Argument of \rc@set has an extra }.
+<inserted text> 
+                \par 
+l.2488 }
+        
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \rc@set was complete.
+<to be read again> 
+                   \par 
+l.2488 }
+        
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Undefined control sequence.
+l.2489 \rc@newcommand
+                     *{\getrefnumber}[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2489 \rc@newcommand*
+                      {\getrefnumber}[1]{%
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.2489 \rc@newcommand*{\getrefnumber
+                                    }[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2491 \ltx@ifundefined
+                       {r@#1}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   {
+l.2491 \ltx@ifundefined{
+                        r@#1}{%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2491 \ltx@ifundefined{r@#
+                           1}{%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2493 \rc@default
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \ltx@zero 
+                          
+l.2493 \rc@default
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2498 \expandafter{\rc@default
+                               }\@nil
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \rc@extract@ 
+                             
+l.2498 \expandafter{\rc@default
+                               }\@nil
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2498 \expandafter{\rc@default}\@nil
+                                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2501 \rc@newcommand
+                     *{\getpagerefnumber}[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2501 \rc@newcommand*{\getpagerefnumber
+                                        }[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2503 \ltx@ifundefined
+                       {r@#1}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   {
+l.2503 \ltx@ifundefined{
+                        r@#1}{%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2503 \ltx@ifundefined{r@#
+                           1}{%
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2505 \rc@default
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \ltx@zero 
+                          
+l.2505 \rc@default
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2512 \expandafter}\expandafter{\rc@default
+                                            }\@nil
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \rc@default 
+                            
+l.2512 \expandafter}\expandafter{\rc@default
+                                            }\@nil
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \rc@extract@page 
+                                 
+l.2512 \expandafter}\expandafter{\rc@default
+                                            }\@nil
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2512 \expandafter}\expandafter{\rc@default}\@nil
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2515 \rc@newcommand
+                     *{\getrefbykeydefault}[2]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2515 \rc@newcommand*{\getrefbykeydefault
+                                          }[2]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \rc@getrefbykeydefault 
+                                       
+l.2519 \csname rc@extract@#2\endcsname
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \r@#1 
+l.2519 \csname rc@extract@#2\endcsname
+                                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+l.2575 \rc@newcommand
+                     *{\IfRefUndefinedExpandable}[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2575 \rc@newcommand*{\IfRefUndefinedExpandable
+                                                }[1]{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2576 \ltx@ifundefined
+                       {r@#1}\ltx@firstoftwo\ltx@secondoftwo
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! You can't use `macro parameter character #' in horizontal mode.
+l.2576 \ltx@ifundefined{r@#
+                           1}\ltx@firstoftwo\ltx@secondoftwo
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Undefined control sequence.
+l.2576 \ltx@ifundefined{r@#1}\ltx@firstoftwo
+                                            \ltx@secondoftwo
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2576 ...ned{r@#1}\ltx@firstoftwo\ltx@secondoftwo
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2578 \rc@RobustDefOne
+                       {}*\IfRefUndefinedBabel{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2578 \rc@RobustDefOne{}*\IfRefUndefinedBabel
+                                              {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \ltx@firstoftwo 
+                                
+l.2586 \fi
+          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Overfull \hbox (54.74998pt too wide) in paragraph at lines 2489--10
+[]\OT1/pplj/m/n/10 *[1]r@1!
+ []
+
+
+Overfull \hbox (34.74998pt too wide) in paragraph at lines 2489--10
+\OT1/pplj/m/n/10 *[1]r@1!
+ []
+
+
+Overfull \hbox (15.55pt too wide) in paragraph at lines 2489--10
+\OT1/pplj/m/n/10 *[2]
+ []
+
+
+Overfull \hbox (31.96999pt too wide) in paragraph at lines 2489--10
+\OT1/pplj/m/n/10 *[1]r@1
+ []
+
+
+Overfull \hbox (3.89pt too wide) in paragraph at lines 2489--10
+\OT1/pplj/m/n/10 *
+ []
+
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+! Undefined control sequence.
+l.195 \ltx@IfUndefined
+                      {pdfmatch}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.195 \ltx@IfUndefined{p
+                        dfmatch}{%
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.230   \ltx@ifpackagelater
+                           {ltxcmds}{2010/09/11}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+! Undefined control sequence.
+l.327 \ltx@onelevel@sanitize
+                            \KVO@true
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.328 \ltx@onelevel@sanitize
+                            \KVO@false
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.434 \DeclareBoolOption[true]{global}
+                                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.435 \DeclareComplementaryOption{local}{global}
+                                                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.437 \let
+          \KVOdyn@name\relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.437 \let
+          \KVOdyn@name\relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.437 \let
+          \KVOdyn@name\relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+\@linkdim=\dimen127
+\Hy@linkcounter=\count98
+\Hy@pagecounter=\count99
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+! Undefined control sequence.
+\Hy@AtBeginDocument ->\ltx@LocalAppendToMacro 
+                                              \Hy@AtBeginDocumentHook 
+l.956 ...r\Hy@AtBeginDocument\expandafter{\Hy@temp
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Hy@AtBeginDocument ...ro \Hy@AtBeginDocumentHook 
+                                                  
+l.956 ...r\Hy@AtBeginDocument\expandafter{\Hy@temp
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.958 \ltx@IfUndefined
+                      {danish@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.964 \ltx@IfUndefined
+                      {dutch@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.970 \ltx@IfUndefined
+                      {finnish@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.975 \ltx@IfUndefined
+                      {french@sh@:@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.980 \ltx@IfUndefined
+                      {german@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.987 \ltx@IfUndefined
+                      {macedonian@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.993 \ltx@IfUndefined
+                      {ngerman@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.999 \ltx@IfUndefined
+                      {portuges@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1004 \ltx@IfUndefined
+                       {russian@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1010 \ltx@IfUndefined
+                       {slovene@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1015 \ltx@IfUndefined
+                       {spanish@sh@>@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1025 \ltx@IfUndefined
+                       {swedish@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1031 \ltx@IfUndefined
+                       {ukrainian@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1037 \ltx@IfUndefined
+                       {usorbian@sh@"@sel}{}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1043 \ltx@IfUndefined
+                       {greek@sh@\string~@sel}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1565 \ltx@IfUndefined
+                       {tocsection}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.1813 \ltx@IfUndefined
+                       {directlua}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2043   \lccode`0=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2044   \lccode`1=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2045   \lccode`3=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2046   \lccode`4=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2047   \lccode`5=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2048   \lccode`7=\ltx@zero
+                            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.2482 \ltx@IfUndefined
+                       {XR@addURL}{%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\Hy@SavedSpaceFactor=\count100
+! Undefined control sequence.
+\Hy@AtBeginDocument ->\ltx@LocalAppendToMacro 
+                                              \Hy@AtBeginDocumentHook 
+l.2812 \Hy@AtBeginDocument
+                          {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Hy@AtBeginDocument ...ro \Hy@AtBeginDocumentHook 
+                                                  
+l.2812 \Hy@AtBeginDocument
+                          {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Hy@AtBeginDocument ->\ltx@LocalAppendToMacro 
+                                              \Hy@AtBeginDocumentHook 
+l.2872 \Hy@AtBeginDocument
+                          {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\Hy@AtBeginDocument ...ro \Hy@AtBeginDocumentHook 
+                                                  
+l.2872 \Hy@AtBeginDocument
+                          {%
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2953 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2953 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2953 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2963 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2963 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2963 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2968 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2968 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2968 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2973 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2973 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2973 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2978 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2978 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2978 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2996 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2996 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.2996 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3001 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3001 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3001 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3006 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3006 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3006 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3011 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3011 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3011 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3041 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3041 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3041 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3058 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3058 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3058 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3065 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3065 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3065 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3070 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3070 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3070 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3075 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3075 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3075 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3080 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3080 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3080 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3085 }
+        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\KVO@prefix ->\ltx@ifundefined 
+                               {KVO@prefix@\@currname .\@currext }{\@currnam...
+l.3085 }
+        
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 5096 strings out of 493029
+ 75637 string characters out of 6136234
+ 172191 words of memory out of 5000000
+ 8589 multiletter control sequences out of 15000+600000
+ 13494 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 34i,6n,35p,241b,2061s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

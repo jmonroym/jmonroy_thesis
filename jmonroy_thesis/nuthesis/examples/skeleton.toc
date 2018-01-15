@@ -1,0 +1,44 @@
+\select@language {english}
+\contentsline {chapter}{Table of Contents}{iv}{section*.1}
+\contentsline {chapter}{List of Figures}{vii}{section*.2}
+\contentsline {chapter}{List of Tables}{x}{section*.3}
+\contentsline {chapter}{\chapternumberline {1}INTRODUCTION}{1}{chapter.1}
+\contentsline {chapter}{References}{4}{section*.6}
+\contentsline {chapter}{\chapternumberline {2}EXPERIMENTAL TECHNIQUES}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}Fabrication Techniques}{9}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Electron Beam Induced Cross-linking (EBIC)[1-3,5,6]}{9}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Plasma-Enhanced Chemical Vapor Deposition (PECVD) [3,7-9]}{12}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3} X-ray Photoelectron Spectroscopy (XPS)}{13}{section.2.3}
+\contentsline {section}{\numberline {2.4}Variable angle spectroscopic ellipsometry (VASE)}{17}{section.2.4}
+\contentsline {subsubsection}{\numberline {2.4.0.1}Band Gap Determination}{20}{subsubsection.2.4.0.1}
+\contentsline {section}{\numberline {2.5}Electrical and Transport Measurements}{21}{section.2.5}
+\contentsline {chapter}{References}{23}{section*.17}
+\contentsline {chapter}{\chapternumberline {3}GOLD (Au) CONTACTS}{26}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{26}{section.3.1}
+\contentsline {section}{\numberline {3.2}Metal-Semiconductor Contacts: Theory}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Schottky Barrier Diodes}{29}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Ohmic Contacts}{31}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Au/Boron Carbide Based Semiconductors}{32}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}\textit {ortho}-carborane based Samples}{34}{subsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.1.1}Before Au Deposition}{34}{subsubsection.3.3.1.1}
+\contentsline {subsubsection}{\numberline {3.3.1.2}After Au Deposition}{39}{subsubsection.3.3.1.2}
+\contentsline {subsubsection}{\numberline {3.3.1.3}After Ar$^+$ Sputtering}{46}{subsubsection.3.3.1.3}
+\contentsline {subsection}{\numberline {3.3.2}\textit {meta}-carborane based Samples}{47}{subsection.3.3.2}
+\contentsline {chapter}{References}{53}{section*.41}
+\contentsline {chapter}{\chapternumberline {4}PYRIDINE}{57}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{57}{section.4.1}
+\contentsline {section}{\numberline {4.2}Samples Composition}{57}{section.4.2}
+\contentsline {section}{\numberline {4.3}Spectroscopic ellipsometry}{59}{section.4.3}
+\contentsline {section}{\numberline {4.4}Device Heterostructures}{62}{section.4.4}
+\contentsline {section}{\numberline {4.5}Neutron Capture}{66}{section.4.5}
+\contentsline {chapter}{References}{70}{section*.54}
+\contentsline {chapter}{\chapternumberline {5}MAGNETO-RESISTANCE}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Photoemission Spectroscopy}{76}{section.5.2}
+\contentsline {section}{\numberline {5.3}Magnetoresistance Measurements}{78}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Basic Principles}{78}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Negative Magnetoresistance}{79}{subsection.5.3.2}
+\contentsline {chapter}{References}{84}{section*.61}
+\contentsline {chapter}{\chapternumberline {6}CONCLUSIONS}{87}{chapter.6}
+\contentsline {chapter}{\chapternumberline {7}FUTURE DIRECTIONS}{89}{chapter.7}

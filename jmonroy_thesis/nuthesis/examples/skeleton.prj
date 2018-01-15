@@ -1,0 +1,50 @@
+307 Patch Control
+
+1
+1
+1
+skeleton.tex
+8
+8
+5
+
+
+
+
+
+
+skeleton.tex
+TeX:UNIX
+135376891 0 -1 2120 -1 2344 0 0 1564 732 0 25 357 -1 -1 0 0 31 -1 -1 31 1 0 2344 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\RelatedWork.tex
+TeX:UNIX
+1159163 0 -1 8293 -1 8549 0 0 1564 732 0 1185 680 -1 -1 0 0 -1 -1 -1 -1 1 0 8549 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\3Dreconstruction.tex
+TeX:UNIX
+1159163 0 -1 11499 -1 11574 0 0 1564 732 0 1321 374 -1 -1 0 0 -1 -1 -1 -1 1 0 11574 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\Hyperspectra.tex
+TeX:UNIX
+1159163 0 -1 250 -1 53 0 0 1564 732 0 449 -8702 -1 -1 0 0 -1 -1 -1 -1 1 0 53 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\tf.bib
+BibTeX:UNIX
+1147890 5 150 124 150 125 0 0 1564 732 0 1017 357 -1 -1 0 0 -1 -1 -1 -1 1 0 125 150   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\ConclusionFutureWork.tex
+TeX:UNIX
+269594619 0 -1 2925 -1 2649 0 0 1564 732 0 977 306 -1 -1 0 0 -1 -1 -1 -1 1 0 2649 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\Abstract.tex
+TeX
+1060859 0 -1 1228 -1 1360 0 0 1564 732 0 713 119 -1 -1 0 0 180 -1 -1 180 1 0 1360 -1   0
+:\Users\hfyu\Dropbox\work_dropbox\project\prj_feiyu_plant_phenotyping\doc\paper\nuthesis\sections\Intro.tex
+TeX:UNIX
+1159163 0 -1 5993 -1 5995 0 0 1564 732 0 537 595 -1 -1 0 0 22 -1 -1 22 1 0 5995 -1   0
+
+*skeleton.tex
+>
+*../sections/Abstract.tex
+*../sections/Intro.tex
+*../sections/RelatedWork.tex
+*../sections/3Dreconstruction.tex
+*../sections/Hyperspectra.tex
+*../sections/ConclusionFutureWork.tex
+*../sections/tf.bib
+<

@@ -1,0 +1,199 @@
+%% This is file `skeleton.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% nuthesis.dtx  (with options: `skeleton')
+%% For common degrees, you can use the class options:
+%% phd, edd, ms, ma
+%% phd is the default
+
+
+\documentclass[print]{nuthesis}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\graphicspath{ {../images/} }
+\usepackage{times}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+%\usepackage{program}
+%\usepackage{amssymb}
+%\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+%% Start formatting the first few special pages
+%% frontmatter is needed to set the page numbering correctly
+\frontmatter
+
+\title{Plant Image Processing: 3D Volume Reconstruction, Hyperspectral Information Mining and Visualization}
+\author{Shi Cao}
+\adviser{Hongfeng Yu}
+\adviserAbstract{Hongfeng Yu}
+\major{Computer Science}
+\degreemonth{May}
+\degreeyear{2017}
+
+%% For most people the following can be changed with a class
+%% option. To manually set these, just uncomment the following and
+%% make the needed changes.
+\doctype{Thesis}
+\degree{Master of Science}
+\degreeabbreviation{M.S.}
+%%
+%% Now that we know everything we need, we can generate the title page
+%% itself.
+%%
+\maketitle
+%%
+%% You have a maximum of 350 words for your abstract, which includes
+%% your title, name, etc.
+%%
+%% Required
+
+
+
+
+\begin{abstract}
+ \input{../sections/Abstract.tex}
+\end{abstract}
+
+%% Optional
+%% \begin{copyrightpage}
+%% \end{copyrightpage}
+
+%% Optional
+%% \begin{dedication}
+%% \end{dedication}
+
+%% Optional
+\begin{acknowledgments}
+I am very grateful to my advisor Prof. Hongfeng Yu for providing me the great opportunity to be a research assistant in computer science department. What make the work in this thesis possible are Prof. Yu's supervision and guidance. His criticisms and suggestions keep me working towards to the right direction.  
+\vspace{10pt}
+
+Thank to the kind and selfless help from our group members Feiyu Zhu, Lina Yu, Jianping Zeng as well as helpful discussions with Jieting Wu and Babak Jafarisamani, I can participate to different projects gaining the experiences of image processing and visualization techniques in approximately eight months in Prof. Yu's group. I am impressed and inspired by their expertise, diligence and tireless effort. 
+\vspace{10pt}
+
+I would like to thank Prof. Sheng Wei and Prof. Lisong Xu for being my committee members as well as their suggestions and advice to this work.
+\vspace{10pt}
+
+I would also like to thank Prof. Peter Dowben who is my PhD advisor in Physics Department and offers me tremendous support for pursuing this degree. In this work, a physics data set (LuFeO$_3$ PEEM images) has been studied. I would like to give acknowledgement to Prof. Xiaoshan Xu for the LuFeO$_3$ sample growth and give acknowledgement to Canadian Light Source as well as Dr. Jian Wang there for the help of taking data. The experiment on physics data was also supported by the National Science Foundation through NSF-ECCS–1508541 and the Nebraska Polarization and Spin Phenomena in Nanoferroic Structures (P-SPINS) MRSEC NSF DMR-1420645. 
+\vspace{10pt}
+
+I wish to acknowledge our collaborators Prof. Harkamal Walia and his group members as well as plant phenotyping facilities manage Dr. Vincent Stoerger for providing the plant image data and other helps.
+\vspace{10pt}
+
+I would like to thank graduate school's policy of University of Nebraska-Lincoln which allows students to participate into two graduate programs at the same time and eventually makes this thesis possible from the beginning.
+\vspace{10pt}
+
+Last but not least, I am grateful that I received unconditional support from my family during these years. The love from family keeps me alive and going forward.
+
+%colleauges: Jianping Zeng, Lina Yu, Shruti Daggumati, Yanfu Zhou. In addition, I
+%would also thank Professors Gordon Scholz and Rodrigo Cantarero to encourage me
+%finishing this project.
+
+%\vspace{20pt}
+%I would also like to thank Professor Yunwoo Nam and Professor Hongfeng Yu for
+%their time, guidance, patience and insights on both my professional and personal
+%development.
+
+%\vspace{20pt}
+%At the last, I would also like to thank all my friends and my family for their
+%encouragement and support whenever I faced challenges.
+
+\vspace{12pt}
+%This thesis was supported by United States Environmental Protection Agency’s
+%Urban Water Grant (UW-97735101). This project has been funded wholly or
+%partially by the United States Environmental Protection Agency under an
+%assistance agreement. The contents do not necessarily reflect the views and
+%policies of the Environmental Protection Agency, no does mention of trade names
+%or commercial products constitute endorsement or recommendation for use.
+
+\end{acknowledgments}
+
+%% Optional
+%% \begin{grantinfo}
+%% \end{grantinfo}
+%% The ToC is required
+%% Uncomment these if need be
+
+%% The ToC is required
+\tableofcontents
+
+%% Uncomment these if need be
+\listoffigures
+%%\listoftables
+%%
+%% ``Real'' beginning of the document.
+%% mainmatter is needed to set the page numbering correctly
+%%   mainmatter is needed after the ToC, (LoF, and LoT) to set the
+%%   page numbering correctly for the main body
+\mainmatter
+%% Thesis goes here
+%%\chapter{My Thesis}
+%%\1. Introduction
+%%\2. Related Work
+%%\3. 3D reconstruction
+%%\4. Hyperspectra data cube mining
+
+% \input{../sections/Intro.tex}
+% %--------------------------------------------------------------------
+% \input{../sections/RelatedWork.tex}
+% %--------------------------------------------------------------------
+% \input{../sections/3Dreconstruction.tex}
+% %--------------------------------------------------------------------
+% \input{../sections/Hyperspectra.tex}
+% %--------------------------------------------------------------------
+% \input{../sections/ConclusionFutureWork.tex}
+% %%
+
+\input{../sections/Intro.tex}
+%\chapter{Introduction}
+%\section{Plant phenotyping}
+%\section{The challenges}
+%\section{Our approach}
+
+\input{../sections/RelatedWork.tex}
+%\chapter{Related Work}
+%\section{3D reconstruction}
+%\section{Hyperspectra data analysis}
+
+\input{../sections/3Dreconstruction.tex}
+%\chapter{3D reconstruction}
+%\section{Binarization and 2D skeleton}
+%\subsection{Binarization}
+%\subsection{2D skeleton}
+%\section{3D volume reconstruction and skeleton subtraction}
+\input{../sections/Hyperspectra.tex}
+%\chapter{Hyperspectra}
+%\section{Hyperspectra data cube representation}
+%\section{information mining in HIS data cube}
+%\section{extend to other domain}
+%\subsection{Physics}
+\input{../sections/ConclusionFutureWork.tex}
+%\chapter{Conclusion and future work}
+
+
+%% backmatter is needed at the end of the main body of your thesis to
+%% set up page numbering correctly for the remainder of the thesis
+\backmatter
+
+%% Start the correct formatting for the appendices
+\appendix
+
+%% Appendices go here (if you have them)
+
+%% Bibliography goes here (You better have one)
+%% BibTeX is your friend
+\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+\bibliography{../sections/tf}
+%% Index go here (if you have one)
+\end{document}
+
+\endinput
+%%
+%% End of file `skeleton.tex'.

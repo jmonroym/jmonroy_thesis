@@ -1,0 +1,178 @@
+Table~\ref{tab:uncertainties} shows all sources of systematic uncertainty currently considered in the analysis.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lll}\hline
+Source                          & Channel     & Size \\\hline
+\multicolumn{3}{l}{\bf Experimental uncertainties} \\
+Luminosity                      & all         & 1.026 \\
+Loose lepton efficiency         &             & 1.02 per lepton  \\
+Tight lepton efficiency         &             & 1.03 per lepton  \\
+Trigger efficiency              & \mumu\      & 1.01 \\
+                                & \emu\       & 1.01 \\
+                                & \ee\        & 1.02 \\
+                                & \threel\    & 1.03 \\
+Jet energy scale                & all         & templates \\
+Forward jet modeling            & all         & templates \\
+\cPqb\ tagging efficiency       & all         & templates \\ \hline
+
+\multicolumn{3}{l}{\bf Theory uncertainties} \\
+$Q^2$ scale (\tHq)              & all         & 0.961/1.027 \textcolor{red}{($\Ct=-1$ point)}\\
+$Q^2$ scale (\tHW)              & all         & 0.982/1.020 \textcolor{red}{($\Ct=-1$ point)}\\
+$Q^2$ scale (\ttH)              & all         & 0.915/1.058\\
+$Q^2$ scale (\ttW)              & all         & 1.12\\
+$Q^2$ scale (\ttZ)              & all         & 1.11\\
+pdf (\ttH)                      & all         & 1.036\\
+pdf $\Pg\Pg$ (\ttZ)             & all         & 0.966\\
+pdf $\Pq\Paq$ (\ttW)            & all         & 1.04\\
+pdf $\Pq\Pg$ (\tHq)             & all         & 1.037\\
+pdf $\Pq\Pg$ (\tHW)             & all         & 1.040\\ \hline
+\multicolumn{3}{l}{\bf Higgs branching fractions} \\
+\verb|param_alphaS|             & all         & 1.012\\
+\verb|param_mB|                 & all         & 0.981\\
+\verb|HiggsDecayWidthTHU_hqq|   & all         & 0.988\\
+\verb|HiggsDecayWidthTHU_hvv|   & all         & 1.004\\
+\verb|HiggsDecayWidthTHU_hll|   & all         & 1.019\\\hline
+
+\multicolumn{3}{l}{\bf Backgrounds}         \\
+\WZ\ control region statistics  & \threel\    & 1.10 \\
+\WZ\ control region backgrounds & \threel\    & 1.20 \\
+\WZ\ modeling                   & \threel\    & 1.07  \\
+$\WZ+2\text{jet}$ background    & \mumu,\emu\ & 1.50 \\
+Rare SM processes               & all         & 1.50 \\
+Charge flips                    & \emu\       & 1.30 \\\hline
+\multicolumn{3}{l}{\bf Fake rate estimate}     \\
+Electron FR measurement         &             & templates \\
+Muon FR measurement             &             & templates \\
+Electron closure                & \ee\        & 1.05 norm., (0.95 (\ttbar)/1.10 (\ttV)) shape var. \\
+                                & \emu\       & 1.10 norm., (0.95 (\ttbar)/1.05 (\ttV)) shape var. \\
+                                & \threel\    & 1.50 norm., (1.35 (\ttbar)/1.20 (\ttV)) shape var. \\
+Muon closure                    & \mumu\      & 1.20 norm., (1.30 (\ttbar)/0.85 (\ttV)) shape var. \\
+                                & \emu\       & 1.15 norm., (1.30 (\ttbar)/0.90 (\ttV)) shape var. \\
+                                & \threel\    & 1.50 norm., (0.95 (\ttbar)/0.65 (\ttV)) shape var. \\\hline
+
+   \end{tabular} 
+   \caption{Pre-fit size of systematic uncertainties.}\label{tab:uncertainties}
+ \end{table}
+
+\textbf{Experimental uncertainties}
+A normalization uncertainty is derived from the measurement of data/MC scale factors for lepton and trigger efficiencies.
+Jet energy scale uncertainties and \cPqb\ tagging efficiency are evaluated using dedicated shape templates derived from a variation of the jet energy scale within its uncertainty and from varying the \cPqb\ tagging data/MC scale factors within their uncertainty.
+
+The forward jet $\eta$ distribution is poorly modeled in simulation, see Appendix~\ref{app:fwdcontrol}.
+To estimate the effect of a mismodeled forward jet distribution, we reweight the events in simulation (\ie\ for signal and the irreducible backgrounds) based on the normalized data/MC ratio in the control region and thereby derive an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement.
+
+\textbf{Theory uncertainties}
+$Q^2$ scale and parton distribution function (pdf) uncertainties are applied as an overall normalization uncertainty using numbers from the NLO theory calculation.
+
+\textbf{Backgrounds}
+In addition to the theory uncertainties on the main irreducible backgrounds of \ttW, \ttZ, and \ttH, the smaller irreducible backgrounds and the charge mis-identification estimate are covered with flat normalization uncertainties.
+The \WZ\ contribution is normalized in a data control region and an uncertainty on the scale factor is derived in the process.
+Finally, the dominant uncertainty relates to the estimate of the reducible non-prompt lepton contribution using a fake rate method.
+The main normalization uncertainty on the used fake rates derives from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution, see Ref.~\cite{CMS_AN_2017-029}.
+Furthermore, shape variations resembling data/MC differences and deviations in closure test are evaluated as shape uncertainties.
+
+\textbf{Fake rate closure uncertainties}
+The BDT output shapes are compared between a pure MC estimation of fake leptons (in \ttbar), and an application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events.
+The difference in the resulting normalization and output shapes, both the training vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations.
+See Figs~\ref{fig:frclosure_2lss_ee} to~\ref{fig:frclosure_3l_mufake} for the results of these closure tests and Tab.~\ref{tab:uncertainties} for the resulting pre-fit uncertainties.
+
+<<<<<<< .mine
+Fake rate shape uncertainties need to be evaluated specifically for tHq. To do so, we plot the discriminator output using fake leptons samples (QCD, TT, TT\_fakes) (see figures ~\ref{fig:frclosure2lss} and  ~\ref{fig:frclosure3l} ) in order to find how much the normalization is wrong between FR(QCD) and TT\_fakes. After normalizing all to the same integral, the ratio is fitted to a first degree polinomial where the slope corresponds to the fake rate shape uncertainty. In the 2D plane of classifiers output, the slopes tells how the axis (tt and ttV) have to be deformed. We have different uncertainties depending on which is the fake, electron or muon.  
+
+\begin{figure} [!h]
+=======
+\begin{figure}[htb]
+>>>>>>> .r390627
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_ee_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_ee_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_ee_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_ee_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \ee\ selection.} 
+\label{fig:frclosure_2lss_ee}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_elfake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_elfake_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \emu\ selection with electron fakes.} 
+\label{fig:frclosure_2lss_em_elfake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_mufake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_mufake_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \emu\ selection with muon fakes.} 
+\label{fig:frclosure_2lss_em_mufake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_mm_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_mm_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_mm_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_mm_shape.pdf} \\
+<<<<<<< .mine
+\caption{Discriminator output using fake leptons samples (QCD, TT, TT\_fakes) for 2lss channel. Since the uncertainties depend on which is the fake, electron or muon, we need to evaluate all the cases. From top to botton 2lss\_ee, 2lss\_em (electron fake),2lss\_em (muon fake), 2lss\_mm. The 2 left columns correspont to the normalized plots while the two right colums correspond to the shape plots.} 
+\label{fig:frclosure2lss}
+\end{figure} 
+
+\begin{figure} [!h]
+ \centering
+=======
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \mumu\ selection.} 
+\label{fig:frclosure_2lss_mm}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+>>>>>>> .r390627
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_elfake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_elfake_shape.pdf} \\
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Three lepton selection with electron fakes.} 
+\label{fig:frclosure_3l_elfake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_mufake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_mufake_shape.pdf} 
+<<<<<<< .mine
+\caption{Discriminator output using fake leptons samples (QCD, TT, TT\_fakes) for 3l channel. Since the uncertainties depend on which is the fake, electron or muon, we need to evaluate all the cases. From top to botton 3l(electron fake), 3l(muon fake). The 2 left columns correspont to the normalized plots whil3 the two right colums correspond to the shape plots.} 
+\label{fig:frclosure3l}
+\end{figure} 
+
+The uncertainties from the fits are presented in the table ~\ref{tab:fr_corr}.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lllll}\hline
+               &          & Normalization & Shape                 & Shape\\
+electron fake  & channel  & uncertainty   & uncertainty $tt$      & uncertainty $ttV$\\\hline
+               & 2lss\_ee & 1.05          & 0.95                  & 1.10             \\
+               & 2lss\_em & 1.1           & 0.95                  & 1.05\\
+               & 3l       & 1.5           & 1.35                  & 1.20\\\hline
+muon fake      & 2lss\_mm & 1.2           & 1.30                  & 0.85\\
+               & 2lss\_em & 1.15          & 1.30                  & 0.90\\
+               & 3l       & 1.5           & 0.95                  & 0.65\\\hline
+  \end{tabular}
+   \caption{Fake rate uncertainties }\label{tab:fr_corr}
+ \end{table}
+
+
+After including these correction the 2lss\_mm limit is virtually unchanged while 3l limit deteriorates from 1.51 to 1.57.
+=======
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Three lepton selection with muon fakes.} 
+\label{fig:frclosure_3l_mufake}
+\end{figure}
+>>>>>>> .r390627

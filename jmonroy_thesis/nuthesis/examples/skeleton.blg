@@ -1,0 +1,10 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: skeleton.aux
+The style file: abbrv.bst
+I found no \citation commands---while reading file skeleton.aux
+Database file #1: ../sections/tf.bib
+I was expecting a `,' or a `}'---line 143 of file ../sections/tf.bib
+ : 
+ : @book{grahn2007techniques,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+(There were 2 error messages)

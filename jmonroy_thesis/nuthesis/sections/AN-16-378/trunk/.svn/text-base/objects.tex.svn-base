@@ -1,0 +1,98 @@
+\subsection{Jets and \cPqb\ tagging}
+The analysis uses anti-\kt\ (0.4) particle-flow (PF) jets, corrected for charged hadrons not coming from the primary vertex (charged hadron subtraction), and having jet energy corrections (\verb|Summer16_23Sep2016V3|) applied as a function of the jet $E_T$ and $\eta$.
+Jets are only considered if they have a transverse energy above $25\GeV$.
+% FIXME Something about forward jets?
+
+In addition, they are required to be separated from any lepton candidates passing the fakeable object selections (see Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) by $\Delta\mathrm{R}>0.4$.
+
+The loose and medium working points of the CSV \cPqb-tagging algorithm are used to identify \cPqb\ jets.
+Data/simulation differences in the \cPqb\ tagging performance are corrected by applying per-jet weights to the simulation, dependent on the jet \pt, eta, \cPqb\ tagging discriminator, and flavor (from simulation truth)~\cite{btagRecommTWiki}.
+The per-event weight is taken as the product of the per-jet weights, including those of the jets associated to the leptons.
+
+More details can be found in the corresponding \ttH\ documentation~\cite{CMS_AN_2016-211,CMS_AN_2017-029}.
+
+\subsection{Lepton selection}
+The lepton reconstruction and selection is identical to that used in the \ttH\ multilepton analysis, as documented in Refs.~\cite{CMS_AN_2016-211,CMS_AN_2017-029}.
+For details on the reconstruction algorithms, isolation, pileup mitigation, and a description of the lepton MVA discriminator and validation plots thereof, we refer to that document.
+
+Three different selections are defined both for the electron and muon
+object identification: the \emph{Loose}, \emph{Fakeable Object},
+and \emph{Tight} selection.
+As described in more detail later, these are used for event level vetoes, the fake rate estimation application region, and the final signal selection, respectively.
+The \pt\ of fakeable objects is defined as $0.85\times\pt(\mathrm{jet})$, where the jet is the one associated to the lepton object.
+This mitigates the dependence of the fake rate on the momentum of the fakeable object and thereby improves the precision of the method.
+
+Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs} list the full criteria for the different selections of muons and electrons.
+
+\begin{table}[h!]
+\centering
+\small
+\topcaption{
+\label{tab:muonIDs}
+Requirements on each of the three muon selections. In the cases where
+the cut values change between the selections, those values are listed in the table.
+Otherwise, whether the cut is applied is indicated.
+For the two \ptRatio\ and CSV rows, the cuts marked with a $\dagger$ are applied to leptons that fail the lepton MVA cut, while the loose cut value is applied to those that pass the lepton MVA cut.}
+\begin{tabular}{cccc}
+Cut & Loose & Fakeable object & Tight \\
+\hline
+$|\eta| < 2.4$         & \checkmark & \checkmark         & \checkmark \\
+$\pt$                  & $>5\GeV$   & $>15\GeV$          & $>15\GeV$\\
+$|d_{xy}| < 0.05$ (cm) & \checkmark & \checkmark         & \checkmark \\
+$|d_z| < 0.1$ (cm)     & \checkmark & \checkmark         & \checkmark \\
+$\text{SIP}_{3D} < 8$  & \checkmark & \checkmark         & \checkmark \\
+\miniIso $< 0.4$       & \checkmark & \checkmark         & \checkmark \\
+is Loose Muon          & \checkmark & \checkmark         & \checkmark \\
+%\ptRatio              & --         & $>0.3\dagger$ / -- & -- \\
+jet CSV                & --         & $< 0.8484$         & $ < 0.8484$ \\
+%mva electron ID       & --         & $\ddagger$         & -- \\
+is Medium Muon         & --         & --                 & \checkmark \\
+tight-charge           & --         & --                 & \checkmark \\
+lepMVA $> 0.90$        & --         & --                 & \checkmark \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}
+\centering
+\small
+\topcaption{
+\label{tab:eleIDs}
+Criteria for each of the three electron selections. In cases where the cut values change between selections, those values are listed in the table. Otherwise, whether the cut is applied is indicated. In some cases, the cut values change for different $\eta$ ranges. These ranges are $0 < |\eta| < 0.8$, $0.8 < |\eta| < 1.479$, and $1.479 < |\eta| < 2.5$ and the respective cut values are given in the form (value$_1$, value$_2$, value$_3$).
+}
+\resizebox{1.0\linewidth}{!}{
+\begin{tabular}{cccc}
+Cut & Loose & Fakeable Object & Tight \\
+\hline
+$|\eta| < 2.5$                                  & \checkmark & \checkmark                   & \checkmark \\
+$\pt$                                           & $>7\GeV$   & $>15\GeV$                    & $>15\GeV$      \\
+$|d_{xy}| < 0.05$ (cm)                          & \checkmark & \checkmark                   & \checkmark \\
+$|d_z| < 0.1$ (cm)                              & \checkmark & \checkmark                   & \checkmark \\
+$\text{SIP}_{3D} < 8$                           & \checkmark & \checkmark                   & \checkmark \\
+\miniIso $< 0.4$                                & \checkmark & \checkmark                   & \checkmark \\
+MVA ID $> (0.0, 0.0, 0.7)$                      & \checkmark & \checkmark                   & \checkmark \\
+$\sigma_{i\eta i\eta} <(0.011,0.011,0.030)$     & --         & \checkmark                   & \checkmark \\ %   & for corr. $\pt>30$ & for corr. $\pt>30$ \\
+H/E $< (0.10,0.10,0.07)$                        & --         & \checkmark                   & \checkmark \\ %   & for corr. $\pt>30$ & for corr. $\pt>30$ \\
+$\Delta\eta_{\textrm in} < (0.01, 0.01, 0.008)$ & --         & \checkmark                   & \checkmark \\ %   & for corr. $\pt>30$ & for corr. $\pt>30$ \\
+$\Delta\phi_{\textrm in} < (0.04, 0.04, 0.07)$  & --         & \checkmark                   & \checkmark \\ %   & for corr. $\pt>30$ & for corr. $\pt>30$ \\
+$-0.05 < 1/E-1/p < (0.010,0.010,0.005)$         & --         & \checkmark                   & \checkmark \\ %   & for corr. $\pt>30$ & for corr. $\pt>30$ \\
+\ptRatio                                        & --         & $>0.5\dagger$ / --           & -- \\
+jet CSV                                         & --         & $< 0.3 \dagger$ / $< 0.8484$ & $ < 0.8484$ \\
+tight-charge                                    & --         & --                           & \checkmark \\
+conversion rejection                            & --         & --                           & \checkmark \\
+Number of missing hits                          & $<2$       & $== 0$                       & $== 0$ \\
+lepMVA $> 0.90$                                 & --         & --                           & \checkmark \\
+\hline
+\end{tabular}}
+\end{table}
+
+
+\subsection{Lepton selection efficiency}
+Efficiencies of reconstruction and selecting loose leptons are measured both for muons and electrons using a tag and probe method on both data and MC, using $Z\rightarrow\ell^{+}\ell^{-}$.
+Corresponding scale factors are derived from the ratio of efficiencies and applied to the selected events.
+These are produced for the leptonic SUSY analyses using equivalent lepton selections and recycled for the \ttH\ analysis as well as for this analysis.
+
+The efficiencies of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons are determined again by using a tag and probe method on a sample of DY-enriched events.
+They are documented for the \ttH\ analysis in Ref.~\cite{CMS_AN_2017-029} and are exactly equivalent for this analysis.
+
