@@ -1,0 +1,303 @@
+%% This is file `skeleton.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% nuthesis.dtx  (with options: `skeleton')
+%% For common degrees, you can use the class options:
+%% phd, edd, ms, ma
+%% phd is the default
+
+
+\documentclass[print]{nuthesis}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\graphicspath{ {nuthesis/images/} }
+\usepackage{times}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+%\usepackage{program}
+%\usepackage{amssymb}
+%\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+%%% My packages
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+%\usepackage{subfigure} % subfiguras
+\usepackage{hyperref}
+\usepackage{amssymb}
+%\usepackage[pdftex]{color,graphicx}
+%\usepackage{epstopdf}
+\usepackage{color} %Paquete para escribir letras en color
+%\usepackage[pdftex]{hyperref}
+%\usepackage[dvips]{graphicx}
+%\usepackage{setspace} 
+%\usepackage{fancyhdr}
+\usepackage[hang]{footmisc}
+\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage{biblatex}
+%\usepackage{cite}
+%\usepackage[noadjust]{cite}
+\usepackage{pifont}
+%\usepackage{amssymb}
+\usepackage{multirow}
+
+%\usepackage{titlesec}
+\usepackage{xspace}
+
+\usepackage{lmodern}
+\usepackage{cite}
+\usepackage{lineno}
+
+
+
+\newcommand{\tHq}{\ensuremath{tHq}\xspace}
+\newcommand{\tHW}{\ensuremath{tHW}}
+\newcommand{\tH}{\ensuremath{\cPqt\PH}}
+\newcommand{\ttH}{\ensuremath{t\bar{t}H}\xspace}
+\newcommand{\ttZ}{\ensuremath{t\bar{t}Z}}
+\newcommand{\ttW}{\ensuremath{t\bar{t}W}}
+\newcommand{\ttV}{\ensuremath{t\bar{t}\mathrm{V}}}
+\newcommand{\WW}{\ensuremath{WW}\xspace}
+\newcommand{\WZ}{\ensuremath{WZ}\xspace}
+\newcommand{\ZZ}{\ensuremath{ZZ}\xspace}
+\newcommand{\tautau}{\ensuremath{\tau\tau}\xspace}
+\newcommand{\Zll}{\ensuremath{\mathrm{Z}\to\ell^+\ell^-}\xspace}
+\newcommand{\Ztt}{\ensuremath{\mathrm{Z}\to\tau^+\tau^-}\xspace}
+\newcommand{\reliso}{\ensuremath{I_\mathrm{rel}}\xspace}
+\newcommand{\sip}{\ensuremath{S_\mathrm{IP3D}}\xspace}
+\newcommand{\Pgth}{\ensuremath{\Pgt_{\rm h}}\xspace}
+\newcommand{\ptRatio}{\ensuremath{\pt^\text{ratio}}\xspace}
+\newcommand{\ptRel}{\ensuremath{\pt^\text{rel}}\xspace}
+\newcommand{\relIso}{\ensuremath{I_\text{rel}}\xspace}
+\newcommand{\miniIso}{\ensuremath{I_\text{mini}}\xspace}
+\newcommand{\CV}{\ensuremath{\kappa_\text{V}}\xspace}
+\newcommand{\Ct}{\ensuremath{\kappa_t}\xspace}
+\newcommand{\ft}{\ensuremath{f_t}\xspace}
+\newcommand{\mumu}{\ensuremath{\Pgm^\pm\Pgm^\pm}\xspace}
+\newcommand{\emu}{\ensuremath{\Pe^\pm\Pgm^\pm}\xspace}
+\newcommand{\ee}{\ensuremath{\Pe^\pm\Pe^\pm}\xspace}
+\newcommand{\threel}{\ensuremath{\ell\ell\ell}\xspace}
+\newcommand{\fbinv}{\ensuremath{fb^{-1}}\xspace}
+\newcommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+\newcommand{\pt}{\ensuremath{p_T}\xspace}
+\newcommand{\bjet}{\ensuremath{b}\xspace}
+\newcommand{\ie}{i.e.\xspace}
+\newcommand{\wpm}{\ensuremath{W^\pm}\xspace}
+%\newcommand{\z0}{\ensuremath{z^0}\xspace}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\beqn}{\begin{equation}}
+\newcommand{\eeqn}{\end{equation}}
+\setlength\arrayrulewidth{1.5pt}
+
+\setcounter{secnumdepth}{4}
+%% \titleformat{\chapter}[display]
+%%             {\normalfont%
+%%               \LARGE % %change this size to your needs for the first line
+%%               \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+%%               \LARGE %change this size to your needs for the second line
+%%             }
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+\begin{document}
+
+\linenumbers
+
+\renewcommand\bibname{References}
+%% Start formatting the first few special pages
+%% frontmatter is needed to set the page numbering correctly
+\frontmatter
+
+\title{Search for production of a Higgs boson and a single top quark in multilepton final states in \MakeLowercase{pp} collisions at $\sqrt{\MakeLowercase{s}}=13$ T\MakeLowercase{e}V.}
+\author{Jose Andres Monroy Monta{\~n}ez}
+\adviser{Kenneth Bloom and Aaron Dominguez}
+\adviserAbstract{Kenneth Bloom and Aaron Dominguez}
+\major{Physics and Astronomy}
+\degreemonth{July}
+\degreeyear{2018}
+
+%% For most people the following can be changed with a class
+%% option. To manually set these, just uncomment the following and
+%% make the needed changes.
+\doctype{Dissertation}
+\degree{Doctor of Philosophy}
+\degreeabbreviation{Ph.D.}
+%%
+%% Now that we know everything we need, we can generate the title page
+%% itself.
+%%
+\maketitle
+%%
+%% You have a maximum of 350 words for your abstract, which includes
+%% your title, name, etc.
+%%
+%% Required
+
+
+
+
+\begin{abstract}
+ \input{nuthesis/sections/Abstract.tex}
+\end{abstract}
+
+%% Optional
+%% \begin{copyrightpage}
+%% \end{copyrightpage}
+
+%% Optional
+%% \begin{dedication}
+%% \end{dedication}
+
+%% Optional
+%\begin{acknowledgments}
+%colleauges: Jianping Zeng, Lina Yu, Shruti Daggumati, Yanfu Zhou. In addition, I
+%would also thank Professors Gordon Scholz and Rodrigo Cantarero to encourage me
+%finishing this project.
+
+%\vspace{20pt}
+%I would also like to thank Professor Yunwoo Nam and Professor Hongfeng Yu for
+%their time, guidance, patience and insights on both my professional and personal
+%development.
+
+%\vspace{20pt}
+%At the last, I would also like to thank all my friends and my family for their
+%encouragement and support whenever I faced challenges.
+
+%This thesis was supported by United States Environmental Protection Agency’s
+%Urban Water Grant (UW-97735101). This project has been funded wholly or
+%partially by the United States Environmental Protection Agency under an
+%assistance agreement. The contents do not necessarily reflect the views and
+%policies of the Environmental Protection Agency, no does mention of trade names
+%or commercial products constitute endorsement or recommendation for use.
+
+%\end{acknowledgments}
+
+%% Optional
+%% \begin{grantinfo}
+%% \end{grantinfo}
+%% The ToC is required
+%% Uncomment these if need be
+
+%% The ToC is required
+\tableofcontents
+
+%% Uncomment these if need be
+\listoffigures
+\listoftables
+%%
+%% ``Real'' beginning of the document.
+%% mainmatter is needed to set the page numbering correctly
+%%   mainmatter is needed after the ToC, (LoF, and LoT) to set the
+%%   page numbering correctly for the main body
+\mainmatter
+%% Thesis goes here
+%%\chapter{My Thesis}
+%%\1. Introduction
+%%\2. Related Work
+%%\3. 3D reconstruction
+%%\4. Hyperspectra data cube mining
+
+\input{nuthesis/sections/Intro.tex}
+\input{nuthesis/sections/Theory.tex}
+\input{nuthesis/sections/CMS.tex}
+\input{nuthesis/sections/Analysis.tex}
+%%\input{nuthesis/sections/Conclusions.tex}
+\input{nuthesis/sections/FPix.tex}
+%%\input{nuthesis/sections/Conclusions.tex}
+%%\input{nuthesis/sections/Future.tex}
+%% \input{nuthesis/sections/controlregions.tex}
+%% \input{nuthesis/sections/bdtcvct.tex}
+%% \input{nuthesis/sections/further_categorization.tex}
+%% \input{nuthesis/sections/xsbrscalings.tex}
+%% \input{nuthesis/sections/overlap.tex}
+\backmatter
+
+%% Start the correct formatting for the appendices
+\appendix
+
+%% Appendices go here (if you have them)
+
+%% Bibliography goes here (You better have one)
+%% BibTeX is your friend
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{abbrv}
+%use following if all content of bibtex file should be shown
+\nocite{*}
+\begin{thebibliography}{100}
+\bibitem{griffiths} D.J. Griffiths, ``Introduction to electrodynamics''. 4th ed. Pearson, (2013).
+\bibitem{mandl} F. Mandl, G. Shaw. ``Quantum field theory.'' Chichester: Wiley (2009).
+\bibitem{halzen} F. Halzen, and A.D. Martin, ``Quarks and leptons: An introductory course in modern particle physics''. New York: Wiley, (1984) .
+\bibitem{maxwell} J.C. Maxwell. ``A dynamical theory of the electromagnetic field''. Philosophical Transactions of the Royal Society of London. 155: 459–512.(1865) doi:10.1098/rstl.1865.0008
+\bibitem{planck} M. Planck. ``Über das Gesetz der Energieverteilung im Normalspektrum''. Annalen der Physik. 4 (3): 553.(1901).
+\bibitem{photoeffect} A. Einstein ``Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt''. Annalen der Physik. 17 (6): 132–148, (1905).
+\bibitem{brownian} A. Einstein. ``Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen''. Annalen der Physik. 17 (8): 549–560, (1905).
+\bibitem{relativity} A. Einstein. ``Zur Elektrodynamik bewegter Körper''. Annalen der Physik. 17 (10): 891–921, (1905).
+\bibitem{energy} A. Einstein, ``Ist die Trägheit eines Körpers von seinem Energieinhalt abhängig?''. Annalen der Physik. 18 (13): 639–641, (1905).   
+\bibitem{ligo} B. P. Abbott et al. ``Observation of Gravitational Waves from a Binary Black Hole Merger''. PRL 116, 061102 (2016).
+\bibitem{schwinger}J. Schwinger. ``Quantum Electrodynamics. I. A Covariant Formulation''. Physical Review. 74 (10): 1439–61, (1948). 
+\bibitem{feynman}R. P. Feynman. ``Space–Time Approach to Quantum Electrodynamics''. Physical Review. 76 (6): 769–89, (1949).
+\bibitem{tomonaga} S. Tomonaga. ``On a Relativistically Invariant Formulation of the Quantum Theory of Wave Fields''. Progress of Theoretical Physics. 1 (2): 27–42, (1946).
+\bibitem{glashow} S.L. Glashow. ``Partial symmetries of weak interactions'', Nucl. Phys. 22 579-588, (1961).
+\bibitem{salam} A. Salam, J.C. Ward. ``Electromagnetic and weak interactions'', Physics Letters 13 168-171, (1964).
+\bibitem{weinberg} S. Weinberg, ``A model of leptons'', Physical Review Letters, vol. 19, no. 21, p. 1264, (1967).
+\bibitem{noether}  E. Noether, ``Invariante Variationsprobleme'', Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, mathematisch-physikalische Klasse, vol. 1918, pp. 235–257, (1918).
+\bibitem{smpicture} File:Standard\_Model\_of\_Elementary\_Particle\_dark.svg. (2017, June 12) Wikimedia Commons, the free media repository. Retrieved November 27, 2017 from $https://www.collegiate-advanced-electricity.com/single-post/2017/04/10/The-Standard-Model-of-Particle-Physics.$
+\bibitem{goldhaber} M. Goldhaber, L. Grodzins, A.W. Sunyar ``Helicity of Neutrinos'', Phys. Rev. 109, 1015 (1958).
+\bibitem{nu_mass} Palanque-Delabrouille N et al. ``Neutrino masses and cosmology with Lyman-alpha forest power spectrum'',JCAP 11 011 (2015).
+\bibitem{pdg}C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) and 2017 update.
+\bibitem{gellman} M. Gell-Mann. ``A Schematic Model of Baryons and Mesons''. Physics Letters. 8 (3): 214–215 (1964).
+\bibitem{zweig} G. Zweig. ``An SU(3) Model for Strong Interaction Symmetry and its Breaking'' (PDF). CERN Report No.8182/TH.401 (1964).
+\bibitem{zweig2} G. Zweig. ``An SU(3) Model for Strong Interaction Symmetry and its Breaking: II'' (PDF). CERN Report No.8419/TH.412(1964).
+\bibitem{gell_ni} M. Gell-Mann. ``The Interpretation of the New Particles as Displaced Charged Multiplets''. Il Nuovo Cimento 4: 848. (1956).
+\bibitem{gell_ni2} T. Nakano, K, Nishijima. ``Charge Independence for V-particles''. Progress of Theoretical Physics 10 (5): 581-582. (1953).  
+\bibitem{C} N. Cabibbo, ``Unitary symmetry and leptonic decays'' Physical Review Letters, vol. 10, no. 12, p. 531, (1963).
+\bibitem{KM} M.Kobayashi, T.Maskawa, ``CP-violation in the renormalizable theory of weak interaction,'' Progress of Theoretical Physics, vol. 49, no. 2, pp. 652-657, (1973).
+\bibitem{ckm} File:Weak Decay (flipped).svg. (2017, June 12). Wikimedia Commons, the free media repository. Retrieved November 27, 2017 from $https://commons.wikimedia.org/w/index.php?title=File:Weak\_Decay\_(flipped).svg\&oldid=247498592.$
+\bibitem{hyperphys}Georgia Tech University. Coupling Constants for the Fundamental Forces(2005). Retrieved January 10, 2018, from $http://hyperphysics.phy-astr.gsu.edu/hbase/Forces/couple.html\#c2$
+\bibitem{matt} M. Strassler. (May 31, 2013).The Strengths of the Known Forces. Retrieved January 10, 2018, from $https://profmattstrassler.com/articles-and-posts/particle-physics-basics/the-known-forces-of-nature/the-strength-of-the-known-forces/$
+\bibitem{peskin} M. Peskin, D. Schroeder, ``An introduction to quantum field theory''. Perseus Books Publishing L.L.C., (1995).
+\bibitem{pich} A. Pich. ``The Standard Model of Electroweak Interactions'' https://arxiv.org/abs/1201.0537
+\bibitem{broken_symmetry} F.Bellaiche. (2012, 2 September). ``What's this Higgs boson anyway?''. Retrieved from: https://www.quantum-bits.org/?p=233 
+\bibitem{endres} M. Endres et al. Nature 487, 454-458 (2012) doi:10.1038/nature11255
+\bibitem{englert} F. Englert, R. Brout. ``Broken Symmetry and the Mass of Gauge Vector Mesons''. Physical Review Letters. 13 (9): 321–23.(1964) Bibcode:1964PhRvL..13..321E. doi:10.1103/PhysRevLett.13.321
+\bibitem{higgs} P.Higgs. ``Broken Symmetries and the Masses of Gauge Bosons''. Physical Review Letters. 13 (16): 508–509,(1964). Bibcode:1964PhRvL..13..508H. doi:10.1103/PhysRevLett.13.508.
+\bibitem{ghk} G.Guralnik, C.R. Hagen  and T.W.B. Kibble. ``Global Conservation Laws and Massless Particles''. Physical Review Letters. 13 (20): 585–587, (1964). Bibcode:1964PhRvL..13..585G. doi:10.1103/PhysRevLett.13.585.
+\bibitem{hcms}CMS collaboration. ``Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC''. Physics Letters B. 716 (1): 30–61 (2012). arXiv:1207.7235. Bibcode:2012PhLB..716...30C. doi:10.1016/j.physletb.2012.08.021
+\bibitem{hatlas}  ATLAS collaboration. ``Observation of a New Particle in the Search for the Standard Model Higgs Boson with the ATLAS Detector at the LHC''. Physics Letters B. 716 (1): 1–29(2012). arXiv:1207.7214 ￼. Bibcode:2012PhLB..716....1A. doi:10.1016/j.physletb.2012.08.020.
+\bibitem{hmass} ATLAS collaboration; CMS collaboration (26 March 2015). ``Combined Measurement of the Higgs Boson Mass in pp Collisions at √s=7 and 8 TeV with the ATLAS and CMS Experiments''. Physical Review Letters. 114 (19): 191803. arXiv:1503.07589. Bibcode:2015PhRvL.114s1803A. doi:10.1103/PhysRevLett.114.191803.
+\bibitem{hcswg} CMS Collaboration, ``SM Higgs Branching Ratios and Total Decay Widths (up-date in CERN Report4 2016)''. https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR , last accessed on 17.12.2017.
+\bibitem{riley} R.Grant V. ``Determination of Higgs branching ratios in $H\to W^+W^−\to lνjj$ and $H\to ZZ \to l^+l^-jj$ channels''. Physics Department, University of Tennessee (Dated: October 31, 2012). Retrieved from http://aesop.phys.utk.edu/ph611/2012/projects/Riley.pdf
+\bibitem{denner}LHC Higgs Cross Section Working Group, Denner, A., Heinemeyer, S. et al. ``Standard model Higgs-boson branching ratios with uncertainties''. Eur. Phys. J. C (2011) 71: 1753. https://doi.org/10.1140/epjc/s10052-011-1753-8
+\bibitem{Khachatryan_2015}CMS Collaboration, ``Search for the associated production of a Higgs boson with a single top quark in proton-proton collisions at  $\sqrt{s}=8 $ TeV'', JHEP 06 (2016) 177,doi:10.1007/JHEP06(2016)177, arXiv:1509.08159.
+\bibitem{CMS_AN_2014-140}B. Stieger, C. Jorda Lope et al., ``Search for Associated Production of a Single Top Quark and a Higgs Boson in Leptonic Channels'', CMS Analysis Note CMS AN-14-140, 2014.
+\bibitem{CMS_AN_2016-211}M. Peruzzi, C. Mueller, B. Stieger et al., ``Search for ttH in multilepton final states at $\sqrt{s}=13$ TeV'', CMS Analysis Note CMS AN-16-211, 2016.
+\bibitem{CMS_PAS_HIG_16-019}CMS Collaboration, ``Search for H to bbar in association with a single top quark as a test of Higgs boson couplings at $\sqrt{s}=13$ TeV'', CMS Physics Analysis Summary CMS-PAS-HIG-16-019, 2016.
+\bibitem{THQProdTwiki}B. Maier, ``SingleTopHiggProduction13TeV'', February, 2016. https://twiki.cern.ch/twiki/bin/viewauth/CMS/SingleTopHiggsGeneration13TeV.
+\bibitem{CMS_AN_2017-029}M. Peruzzi, F. Romeo, B. Stieger et al., ``Search for ttH in multilepton final1 states at $\sqrt{s}=13$ TeV'', CMS Analysis Note CMS AN-17-029, 2017.
+\bibitem{btagRecommTWiki}B. WG, ``BtagRecommendation80XReReco'', February, 2017. https://twiki.cern.ch/twiki/bin/view/CMS/BtagRecommendation80XReReco.
+  
+\end{thebibliography}
+  
+%\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+%\bibliography{../sections/tf}
+%% Index go here (if you have one)
+\end{document}
+
+\endinput
+%%
+%% End of file `skeleton.tex'.
