@@ -804,7 +804,7 @@ s-channel$(pp \to tHb)$     & $ 2.87^{+0.09}_{-0.08}$ \\\hline
 \mathcal{A}= \frac{g}{\sqrt{2}}\left[(C_{t}-C_{V})\frac{m_{t}\sqrt{s}}{m_{W}v}\,A\left(\frac{t}{s},\varphi; \xi_{t},\xi_{b}\right)+\left(C_{V}\,\frac{2m_{W}}{v}\frac{s}{t}+(2C_{t}-C_{V})\,\frac{m_{t}^{2}}{m_{W}v}\right)\,B\left(\frac{t}{s},\varphi; \xi_{t},\xi_{b}\right)\right]\,,
 \end{equation}
 
-\noindent where $C_{V}\equiv g_{HVV}/g_{HVV}^{SM}$ and $C_{t}\equiv g_{Ht}/g_{Ht}^{SM}$ are scaling factors that quantify possible deviations of the couplings, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; $s=(p_{W}+p_{b})^{2}$, $t=(p_{W}-p_{H})^{2}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are funtions describing the weak interaction in terms of the chiral states of the quarks b and t. Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be fount in reference \cite{farina}}.        
+\noindent where $C_{V}\equiv g_{HVV}/g_{HVV}^{SM}$ and $C_{t}\equiv g_{Ht}/g_{Ht}^{SM}=y_t/y_t^{SM}$ are scaling factors that quantify possible deviations of the couplings, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; $s=(p_{W}+p_{b})^{2}$, $t=(p_{W}-p_{H})^{2}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are funtions describing the weak interaction in terms of the chiral states of the quarks b and t. Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be fount in reference \cite{farina}}.        
 
 \noindent The scattering amplitude grows with energy like $\sqrt{s}$ for $C_V \neq C_t$ , in contract to the SM ($C_t=C_V=1$) where the first term in \ref{s_amp} cancels out and the amplitude is constant for large s; therefore, a deviation from the SM predictions represent an enhancement in the \tHq cross section. In particular, for a SM H-W coupling and a H-t coupling of inverted sigh with respect to the SM ($C_V =-C_t=1$) the \tHq cross section is enhanced by a factor greater 10 as seen in the figure \ref{thq_en} taken from reference \cite{farina}; reference \cite{biswas2} have reported similar enhancement results.
 
@@ -873,5 +873,64 @@ $\sigma^{NLO} DR2$(\tHW)(fb)\cite{demartin}                 & 13               &
 %______________________ cp phase ______________________
 \section{The CP-mixing in tH processes}\label{sec:cp}
 
-\noindent In addition to the sensitivity to sign of the H-t coupling, \tHq and \tHW processes have been proposed as a tool to investigate the possibility of a H-t coupling that does not conserve CP\cite{maltoni2,demartin,ellis}. Current experimental results are consistent with SM H-V and H-t couplings; however, negative H-t coupling is not excluded completely \cite{comb_ht_couplings}. Description given here is based in references \cite{maltoni2,demartin}, where a generic particle of spin-0 and general CP violating interaction with the top quark, can couples to scalar and pseudoscalar fermionic densities. The H-W interaction is assumed to be SM-like. In the effective field theory framework, the propossed Lagrangian modeling the H-t onteraction is given by       
+\noindent In addition to the sensitivity to sign of the H-t coupling, \tHq and \tHW processes have been proposed as a tool to investigate the possibility of a H-t coupling that does not conserve CP\cite{maltoni2,demartin,ellis}. Current experimental results are consistent with SM H-V and H-t couplings; however, negative H-t coupling is not excluded completely \cite{comb_ht_couplings}.\\
+
+\noindent In this thesis, the sensitivity of $th$ processes to CP-mixing is also studied in the effective field theory framework and based in references \cite{maltoni2,demartin}; a generic particle ($X_0$) of spin-0 and a general CP violating interaction with the top quark, can couples to scalar and pseudoscalar fermionic densities. The H-W interaction is assumed to be SM-like. The Lagrangian modeling the H-t interaction is given by
+
+\beqn
+\Lagr_0^t = -\bar\psi_t\left(c_{\alpha}\kappa_{Htt}g_{Htt}+i s_{\alpha}\kappa_{Att}g_{Att}\gamma_5 \right)\psi_t X_0,
+\label{eq:l_cp}
+\eeqn
+
+\noindent where $\alpha$ is the CP-mixing phase, $c_\alpha\equiv\cos\alpha$ and $s_\alpha\equiv\sin\alpha$, $\kappa_{Htt}$ and $\kappa_{Att}$ are real dimensionless rescaling parameters\footnote{analog to $C_t$ and $C_V$}, $g_{Htt}=g_{Att}=m_t/v=y_t/\sqrt{2}$ and $v\sim 246$ GeV is the Higgs vacuum expectation value. In this parametrization, it is easy to recover three special cases
+
+\begin{itemize}
+\item CP-even coupling $\to \alpha=0^o$  
+\item CP-odd coupling $\to \alpha=90^o$
+\item SM coupling $\to \alpha=0^o$ and $\kappa_{Htt}=1$  
+\end{itemize}
+
+\noindent The loop induced $X_0$ coupling to gluons can also be described in terms of the parametrization above, according to
+
+\beqn
+\Lagr_0^{g} = -\frac{1}{4}\left(c_{\alpha}\kappa_{Hgg}g_{Hgg}G_{\mu\nu}^aG^{a,\mu\nu}+s_{\alpha}\kappa_{Agg}g_{Agg}G_{\mu\nu}^a\widetilde G^{a,\mu\nu} \right)X_0.
+\label{eq:l_Hglu}
+\eeqn
+
+\noindent where $g_{Hgg}=-\alpha_s/3\pi v$ and $g_{Agg}= \alpha_s/2\pi v$.  Under the assumption that the top quark dominates the gluon-fusion process at LHC energies, $\kappa_{Hgg} \to \kappa_{Htt}$ and  $\kappa_{Agg} \to \kappa_{Att}$, so that the ratio between the gloun-gluon fusion cross section for $X_0$ and for the SM Higgs prediction can be written as     
+
+\beqn
+\frac{\sigma_{NLO}^{gg \to X_0} }{\sigma_{NLO,SM}^{gg \to H}}=  c^2_\alpha\kappa^2_{Htt}+s^2_\alpha \left( \kappa_{Att}\frac{g_{ Agg}}{g_{Hgg}} \right)^2.
+\label{eq:GFrate}
+\eeqn
+
+\noindent If the rescaling parameters are set to
+
+\beqn
+\kappa_{Htt}=1, \qquad \kappa_{Att}= \left|\frac{g_{Hgg}}{g_{Agg}}\right|=\frac{2}{3}.
+\label{eq:GFrate}
+\eeqn
+
+\noindent the gluon-fusion SM cross section is reproduced for every value of the CP-mixing angle $\alpha$; therefore, by imposing that condition to the Lagrangian density \ref{eq:l_cp}, the CP-mixing angle is not constrained by current data. Figure \ref{xsec_alpha_thq} shows the NLO cross sections for t-channel $tX_0$(blue) and $t\bar{t}X_0$ (red) associated production processses as a function of the CP-mixing angle $\alpha$. $X_0$ is a generic spin-0 particle with top quark CP-violating coupling. Rescaling factors $\kappa_{Htt}$ and  $\kappa_{Att}$ have been set to reproduce the SM gluon-fusion cross sections.   
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.2]{xsec_alpha_thq}
+\caption[NLO cross section for $tX_0$ and $t\bar{t}X_0$.]{NLO cross sections for t-channel $tX_0$(blue) and $t\bar{t}X_0$ (red) associated production processses as a function of the CP-mixing angle $\alpha$. $X_0$ is a generic spin-0 particle with top quark CP-violating coupling \cite{maltoni2}.} 
+\label{xsec_alpha_thq}
+\end{figure}
+
+\noindent It is interesting to notice that the $tX_0$ croos section is enhanced, by a factor of about 10, when a continuous rotation in the scalar-pseudoscalar plane is applied; this enhancement is similar to the enhancement produced when the H-t coupling is flipped in sign with respect to the SM ($y_t=-y_{t,SM}$ in the plot), as showed in section \ref{sec:thq}. In contrast, the degeneracy in the $t\bar{t}X_0$ cross section is still present given that it depends quadratically on the H-t coupling, but more instersting is to notice that $t\bar{t}X_0$ cross section is exceeded by $tX_0$ cross section after $\alpha\sim 60^o$.
+
+\noindent A similar parametrization can be used to investigate the \tHW process sensitivity to CP-violating H-t coupling. As said in \ref{sec:thq}, the interference in the W-associated channel is more complicated because there are more than two contributions and also there is interference with the \ttH production process.
+
+\noindent Figure \ref{xsec_alpha_thw} shows the NLO cross sections for t-channel $tX_0$(blue), $t\bar{t}X_0$ (red) associated production and for the combined  $tWX_0 + t\bar{t}X_0 +$ interference (orange) as a function of the CP-mixing angle. It is clear that the effect of the interference in the combined case is the lifting of the degeneracy present in the $t\bar{t}X_0$ production. The constructive interference enhance the cross section from about 500 fb at SM ($\alpha=0$) to about 600 fb ($\alpha=180^o \to y_t=-y_{t,SM}$).  
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.2]{xsec_alpha_thw}
+\caption[NLO cross section for $tWX_0$, $t\bar{t}X_0$ and $tWX_0 + t\bar{t}X_0 + interference$.]{NLO cross sections for t-channel $tX_0$(blue), $t\bar{t}X_0$ (red) associated production processses and combined $tWX_0 + t\bar{t}X_0$ (including interference) production as a function of the CP-mixing angle $\alpha$\cite{maltoni2}.} 
+\label{xsec_alpha_thw}
+\end{figure}
+
+\noindent An analysis combining \tHq and \tHW proceses will be made in this thesis taking advantage of the sensitivity improvement.
 
