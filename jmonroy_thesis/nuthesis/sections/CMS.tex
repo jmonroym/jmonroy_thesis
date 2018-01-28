@@ -78,7 +78,7 @@ F_m=\frac{mv^2}{r}=qBv \quad \to B=8.33 T
 
 \noindent In addition to bending the beam trajectory, the beam has to be focused so it stays in side the beam pipe. The focusing is performed by quadrupole magnets installed in another straight section; in total 858 quadrupole magnets are installed along the LHC ring. Other effects like electromagnetic interaction among bunches, interaction with electron clouds from the beam pipe, gravitational force on the protons, differences in energy among protons in the same bunch, among others, are corrected using sextupole and other magnetic multipoles.     
 
-\noindent The two proton beams inside the LHC ring are made of bunches with a cylindrical shape of about 7.5 cm long and about 1 mm in diameter; when bunches are close to the collision point (IP), the beam is focused up to a diameter of about 16 $\mu$m in order to maximize the luminosity (L) defined as the number of collisions per unit area and per second. Luminosity can be calculated using
+\noindent The two proton beams inside the LHC ring are made of bunches with a cylindrical shape of about 7.5 cm long and about 1 mm in diameter; when bunches are close to the collision point (CP), the beam is focused up to a diameter of about 16 $\mu$m in order to maximize the luminosity (L) defined as the number of collisions per unit area and per second. Luminosity can be calculated using
 
 \beqn
 L=fn\frac{N_1 N_2}{4\pi \sigma_x\sigma_y}
@@ -117,17 +117,17 @@ L= 1.28\times 10^{34} cm^{-2}s^{-1}
 \caption [LHC interaction points]{Left: LHC interaction points. Bunch crossing occurs where the LHC experiments are located \cite{lhc_layout}. Sections indicated as cleaning are dedicated to collimate the beam in order to protect the LHC ring from collisions with protons in very spreaded bunches. Right: bunch crossing scheme. Since the bunch crossing is not perfectly head-on, the luminosity is reduced in a factor of 17\%.}\label{fig:lhc_layout}
 \end{figure}
 
-\noindent At the IP there are two interesting details that need to be addressed. The first one is that the bunch crossing does not occur head-on but at a small crossing angle (280 $\mu$rad in CMS and ATLAS) as shown in the right side of figure \ref{fig:lhc_layout}, affecting the overlapping between bunches; the consecuence is a reduction of about 17\% in the luminosity. The second one is occurence of multiple pp collisions in the same bunch crossing; this effect is called pile-up (PU). A fairly simple estimation of the PU follows from estimating the probability of collision between two protons, one from each of the bunches in course of collision; it depends roughly on the ratio of proton size and the cross section of the bunch in the interaction point, \ie,
+\noindent At the CP there are two interesting details that need to be addressed. The first one is that the bunch crossing does not occur head-on but at a small crossing angle (280 $\mu$rad in CMS and ATLAS) as shown in the right side of figure \ref{fig:lhc_layout}, affecting the overlapping between bunches; the consecuence is a reduction of about 17\% in the luminosity. The second one is occurence of multiple pp collisions in the same bunch crossing; this effect is called pile-up (PU). A fairly simple estimation of the PU follows from estimating the probability of collision between two protons, one from each of the bunches in course of collision; it depends roughly on the ratio of proton size and the cross section of the bunch in the interaction point, \ie,
 \beqn
 P(pp-collision) \sim \frac{d_{proton}^2}{\sigma_x\sigma_y}=\frac{(1 fm)^2}{(16\mu m)^2} \sim 4\times10^{-21}
 \eeqn
 \noindent however, there are $N=1.15\times 10^{11}$ protons in a bunch, thus the estimated number of collisions in a bunch crossing is
 
 \beqn
-PU= N^2*P(pp-collision)\sim 50  \textrm{  pp-collision per bunch crossing}.
+PU= N^2*P(pp-collision)\sim 50  \textrm{  pp-collision per bunch crossing},
 \eeqn
 
-\noindent Each collision geenerates a vertex, but only the most energetic is considered as a primary vertex and the rest are considered as PU vertices. A simulation of a multiple pp collision event in a bunch crossing at CMS is showed in figure\ref{fig:pu}. Unstable particles outgoing from the primary vertex will eventually decay; this decay vertex is knon as a secondary vertex.      
+\noindent about 20 of those pp collisions are inelastic. Each collision generates a vertex, but only the most energetic is considered as a primary vertex; the rest are considered as PU vertices. A simulation of a multiple pp collision event in a bunch crossing at CMS is showed in figure\ref{fig:pu}. Unstable particles outgoing from the primary vertex will eventually decay; this decay vertex is knon as a secondary vertex.      
 
 \begin{figure}[!h]
 \centering
@@ -142,14 +142,14 @@ PU= N^2*P(pp-collision)\sim 50  \textrm{  pp-collision per bunch crossing}.
 
 \section{The CMS experiment}
 
-\noindent CMS is a general purpose detector designed to conduct research in a wide range of physics from standard model to new physics like extra dimensions and dark matter. Located at the point 5 in the LHC layout as shown in figure \ref{fig:lep_rfc}, CMS is composed of several detection systems distributed in a cylindrical structure,. In total, CMS weight about 12500 tons in a very compact 21.6 m long and 14.6 m diameter cylinder. It was built in 15 separated sections at the ground level and lowered to the cavern individually to be assembled. A complete and detailed description of the CMS detector and its components is given in reference \cite{cms} on which this section is based in.\\
+\noindent CMS is a general purpose detector designed to conduct research in a wide range of physics from standard model to new physics like extra dimensions and dark matter. Located at the point 5 in the LHC layout as shown in figure \ref{fig:lep_rfc}, CMS is composed of several detection systems distributed in a cylindrical structure,. In total, CMS weights about 12500 tons in a very compact 21.6 m long and 14.6 m diameter cylinder. It was built in 15 separate sections at the ground level and lowered to the cavern individually to be assembled. A complete and detailed description of the CMS detector and its components is given in reference \cite{cms} on which this section is based in.\\
 
-\noindent Figure \ref{fig:cms} shows the layout of the CMS detector. The design is driven by the requirements on the identification, momentum resolution and unambiguous charge determination of the muons; therefore, a large bending power is provided by the solenoid magnet made of superconducting cable capable to generate a 3.8 T magnetic field. The detection system is compposed of (from the innermost to the outermost)
+\noindent Figure \ref{fig:cms} shows the layout of the CMS detector. The design is driven by the requirements on the identification, momentum resolution and unambiguous charge determination of the muons; therefore, a large bending power is provided by the solenoid magnet made of superconducting cable capable to generate a 3.8 T magnetic field. The detection system is composed of (from the innermost to the outermost)
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{cms}
-  \caption[CMS detector drawing]{CMS detector drawing\cite{cms_drawing}.}
+  \caption[CMS detector drawing]{CMS detector drawing. The several subdetectors are indicated. The central region of the detector is refferred as the Barrel section while the endcaps are referred as the forward sections. \cite{cms_drawing}.}
   \label{fig:cms}
 \end{figure}
 
@@ -164,8 +164,11 @@ PU= N^2*P(pp-collision)\sim 50  \textrm{  pp-collision per bunch crossing}.
 \item Muon chambers (Barrel and endcap)
 \eit
 
+\noindent The central region of the detector is commonly referred as the barrel section while the endcaps are referred as the forward sections of the detector; thus, each subdetector is composed of a barrel section and a forward section. 
+
+
 \subsection{Coordinate system}
-\noindent The coordinate system used by CMS is centerd in the geometrical center of the detector which is the same as the IP as shown in figure\ref{fig:coord}. The $z$-axis is parallel to the beam direction, while the $Y$-axis pointing vertically upward, and the $X$-axis pointing radially inward toward the center of the LHC.
+\noindent The coordinate system used by CMS is centerd in the geometrical center of the detector which is the same as the CP as shown in figure\ref{fig:coord}. The $z$-axis is parallel to the beam direction, while the $Y$-axis pointing vertically upward, and the $X$-axis pointing radially inward toward the center of the LHC.
 
 \begin{figure}[h!]
   \centering
@@ -188,16 +191,62 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
 
 \subsection{Pixels detector}
 
-\noindent  The CMS tracking system is designed to provide a precise measurement of the trajectory followed by the charged particles created after the pp collisions as; also, the the precise reconstruction of the primary and secondary vertices is expected. In a bunch crossing, it is expected that about 50 there will be about 1000 p
+\noindent  The CMS tracking system is designed to provide a precise measurement of the trajectory followed by the charged particles created after the pp collisions as; also, the precise reconstruction of the primary and secondary vertices is expected in an environment where, each 25 ns, the bunch crossing produce about 20 inelastic collisions and about 1000 particles. An increment in the luminosity is ongoing which implies that the PU will increase accordingly. \\
 
+\noindent The pixel detector was replaced during the 2016-2017 year end shut down, due to the increasingly challenging operation conditions like the higher particle flow and more radiation harsh environment among others. The new one is responding as expected, reinforcing its crucial role in the successful way to fullfil the new LHC physics objetives after the discovery of the Higgs boson. The last chapter of this thesis is dedicated to describe my contribution to the `` Forward Pixel Phase 1 upgrade''.\\
 
+\noindent  The current pixel detector is composed of 1856 silicon pixel detector modules organized in four barrel layers in the central region and three disks in the forward region; it is designed to record efficiently and with high precision, up to 10$\mu$m in the $XY$-plane and 20$\mu$m in the $z$-direction, the first four space-points near to the CP region (see figure \ref{fig:pixel_tracker} left side) in the range $|\eta|\leq 2.5$. The first barrel layer is located at a radius of 30 mm from the beamline, while the fourth layer is located at a radius of 160 mm closer to the strip tracker innner barrel layer (see section \ref{sst}) in order to reduce the rate of fake tracks. The high granularity of the detector is represented in its about 123 Mpixels, each of size $100\times150\mu$m$^2$, which is almost twice the channels of the old detector. The transverse momentum resolution of tracks can be measured with a resolution of 1-2\% for muons of $p_T=100$ GeV. \\
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=9.5cm]{fpix1}
+  \includegraphics[width=5.5cm]{bpix1}
+  \caption[CMS pixel detector schematic view.]{CMS pixel detector schematic view. Left: layout comparing the layers and disks in the old and current pixel detectors. Right: Transverse-oblique view comparing the pixel barrel layers in the two \cite{pix_tdr}.}
+  \label{fig:pixel_tracker}
+\end{figure}
 
-\subsection{Silicon strip tracker}
-\subsection{calorimeters}
+\noindent Some of the improvements with respect to the previous pixel detector include a higher average tracking efficiency and lower average fake rate as well as higher track impact parameter resolution which is fundamental in order to increase the efficiency in the identification of jets originating from b quarks (b-tagging). A significant source of improvement comes from the overall reduction in the material budget of the detector which results in less photon conversions and less multiple scattering from charged particles.    
+
+\subsection{Silicon strip tracker}\label{sst}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=12cm]{sst1}
+  \includegraphics[width=6cm,height=4cm]{tib}
+  \includegraphics[width=6cm,height=4cm]{tec}
+  %\includegraphics[width=6cm]{tec2}
+  \caption[SST Schematic view.]{Top: CMS Siicon Strip Tracker (SST) schematic view. The SST is composed of the tracker inner barrel (TIB), the tracker inner disks (TID), the tracker outer barrel (TOB) and the tracker endcaps (TEC). Each part is made of silicon strip modules; the modules in blue represent two modules mounted back-to-back and rotated in the plane of the module by a stereo angle of 120 mrad in order to provide a 3-D reconstruction of the hit positions. Bottom: pictures of the TIB (left) and TEC (right) modules \cite{sst,tib,tec}.}
+  \label{fig:sst}
+\end{figure}
+
+\noindent The silicon strip tracker (SST) is the second stage in the CMS tracking system . The top side of figure \ref{fig:sst} shows a schematic of the SST. The inner tracker region is composed of the tracker inner barrel (TIB) and the tracker inner disks (TID) covering the region $r<55$ cm and $|z|<118$ cm. The TIB is composed of 4 layers while the TID is composed of 3 disks at each end. The silicon sensors in the inner tracker are 320 $\mu$m thick, providing a resolution of about 13-38 $\mu$m in the $r\phi$ position measurement. \\
+
+\noindent The modules indicated in blue in the schematic view of figure \ref{fig:sst} are two modules mounted back-to-back and rotated in the plane of the module by a ``stereo'' angle of 100 mrad; the hits from these two modules, known as ``stereo hits'', are combined to provide a measurement of the second coordinate (z in the barrel and r on the disks) allowing the reconstruction of hit positions in 3-D.\\ 
+
+\noindent The outer tracker region is composed of the tracker outer barrel (TOB) and the tracker endcaps (TEC). The 6 layers of the TOB offers coverage in the region $r>55$ cm and $|z|<118$ cm, while the 9 disks of the TEC cover the region $124<|z|<282$ cm. The resolution offered by the outer tracker is about 13-38 $\mu$m in the $r\phi$ position measurement. The inner four TEC disks use silicon sensors 320 $\mu$m thick; those in the TOB and the outer three TEC disks use silicon sensors of 500 $\mu$m thickness. The silicon strips run parallel to the $z$-axis and the distance between strips varies from 80 $\mu$m in the inner TIB layers to 183 $\mu$m in the inner TOB layers; in the endcaps the wedge-shaped sensors with radial strips, whose pitch range between 81 $\mu$m at small radii and 205 $\mu$m at large radii.\\ 
+
+\noindent The whole SST has 15148 silicon modules, 9.3 million silicon strips and cover a total active area of about 198 m$^2$ 
+
+\subsection{Electromagnetic calorimeter}
+
+\noindent The CMS electromagnetic calorimeter (ECAL) is designed to measure the energy of electrons and photons. It is composed of 75848 lead tungstate crystals which has a short radiation length (0.89 cm) and fast response given that 80\% of the light is emmited within 25 ns; however, they are combined with Avalanche photodiodes (APDs) as photodetectors given that crytals itself has a low light yield (30$\gamma$/MeV). An schematic view of the ECAL is shown in figure \ref{fig:ecal}. The ECAL barrel (EB) cover the region $|\eta|$ < 1.479, using crystals of depth of 23 cm and  $2.2\times 2.2$ cm$^2$ transverse section. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.2]{ecal}
+  \includegraphics[width=6cm,height=4cm]{ecal_module}
+  \includegraphics[width=6cm,height=4cm]{ecal_crystal} 
+  \caption[CMS ECAL schematic view]{Top: CMS ECAL schematic view. Bottom: Module equipped with the crystals (left); ECAL crytal(right).}
+  \label{fig:ecal}
+\end{figure}
+
+\noindent The ECAL endcap (EE) cover the region 1.479 < $|\eta|$ < 3.0 using crystals of depth 22 cm and transverse section of $2.86\times2.86$ cm$^2$; the photodetectors used are vacuum phototriodes (VPTs). Each EE is divided in two structures called ``Dees''.\\
+
+\noindent In front of the EE, it is installed the preshower detector (ES) which covers the region $1.653 < |\eta| < 2.6$. The ES provides a precise measurement of the position of electromagnetic showers, which allows to distinguish electrons and photons signals from $\pi^0$ decay signals. The ES is composed of a layer of lead absorber followed by a layer of plastic scintillators
+
+\subsection{Hadronic calorimeter}
+
 \subsection{Superconducting solenoid magnet}
 
-\noindent The superconducting magnet installed is the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact the tracking system take advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it. The magnet has a diameter of 6.3 m, a lenght of 12.5 m in a cold mass of 220 t; the generated a magnetic fiels reach a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a heluim cryogenic system; the current circulating in the cables reach 18800 A under normal running conditions. The left side of figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible. \\
+\noindent The superconducting magnet installed is the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact, the tracking system take advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it; the unanbiguous determination of the sign for high momentum muons was a driven principle  during the desing of the magnet. The magnet has a diameter of 6.3 m, a lenght of 12.5 m in a cold mass of 220 t; the generated a magnetic fiels reach a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a heluim cryogenic system; the current circulating in the cables reach 18800 A under normal running conditions. The left side of figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible. \\
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.38]{magnet}
@@ -213,10 +262,17 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
 \subsection{trigger system - HLT- L1 }
 
 
-. The
+The
 online event selection process (trigger) must reduce the huge rate to about 100 events/s for storage
 and subsequent analysis. The short time between bunch crossings, 25 ns, has major implications
 for the design of the read-out and trigger systems.
+
+
+Due to its high segmentation, the pixel detector not only forms high quality seeds for
+the track reconstruction algorithm offline, but is also used to do fast tracking online in the high
+level trigger (HLT) for primary vertex reconstruction, electron/photon identification, muon
+reconstruction, tau identification and b-tagging.
+
 
 
 \subsection{ computing model}
