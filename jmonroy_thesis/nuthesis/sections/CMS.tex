@@ -227,8 +227,6 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
 \noindent The whole SST has 15148 silicon modules, 9.3 million silicon strips and cover a total active area of about 198 m$^2$ 
 
 \subsection{Electromagnetic calorimeter}
-
-\noindent The CMS electromagnetic calorimeter (ECAL) is designed to measure the energy of electrons and photons. It is composed of 75848 lead tungstate crystals which has a short radiation length (0.89 cm) and fast response given that 80\% of the light is emmited within 25 ns; however, they are combined with Avalanche photodiodes (APDs) as photodetectors given that crytals itself has a low light yield (30$\gamma$/MeV). An schematic view of the ECAL is shown in figure \ref{fig:ecal}. The ECAL barrel (EB) cover the region $|\eta|$ < 1.479, using crystals of depth of 23 cm and  $2.2\times 2.2$ cm$^2$ transverse section. 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.2]{ecal}
@@ -238,15 +236,32 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
   \label{fig:ecal}
 \end{figure}
 
+\noindent The CMS electromagnetic calorimeter (ECAL) is designed to measure the energy of electrons and photons. It is composed of 75848 lead tungstate crystals which has a short radiation length (0.89 cm) and fast response given that 80\% of the light is emmited within 25 ns; however, they are combined with Avalanche photodiodes (APDs) as photodetectors given that crytals themself have a low light yield (30$\gamma$/MeV). An schematic view of the ECAL is shown in figure \ref{fig:ecal}.\\
+
+\noindent Energy is measured by absorbing electrons and photons which generates an electromagnetic ``shower'', as seen in bottom right picture of the figure\ref{fig:ecal}. The ECAL barrel (EB) cover the region $|\eta|$ < 1.479, using crystals of depth of 23 cm and  $2.2\times 2.2$ cm$^2$ transverse section. 
+
 \noindent The ECAL endcap (EE) cover the region 1.479 < $|\eta|$ < 3.0 using crystals of depth 22 cm and transverse section of $2.86\times2.86$ cm$^2$; the photodetectors used are vacuum phototriodes (VPTs). Each EE is divided in two structures called ``Dees''.\\
 
 \noindent In front of the EE, it is installed the preshower detector (ES) which covers the region $1.653 < |\eta| < 2.6$. The ES provides a precise measurement of the position of electromagnetic showers, which allows to distinguish electrons and photons signals from $\pi^0$ decay signals. The ES is composed of a layer of lead absorber followed by a layer of plastic scintillators
 
 \subsection{Hadronic calorimeter}
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.3]{hcal}\\
+  \includegraphics[width=3.5cm,height=4.5cm]{hb}
+  \includegraphics[width=4.5cm,height=4.5cm]{hb2}
+  \includegraphics[width=4.5cm,height=4.5cm]{ho1} 
+  \caption[CMS HCAL schematic view]{Top: CMS HCAL schematic view, the colors indicate the layers that are grouped into the same readout channels. Bottom: picture of a section of the HB; the absorber material is the golden region and scintillators are placed in between the absorber material (left and center). Schematic view of the HO (right).\cite{hcal,hb} }
+  \label{fig:hcal}
+\end{figure}
+
+\noindent Hadrons are not absorbed by the ECAL but by the hadron calorimeter (HCAL), which is made of a combination of alternating brass absorber and silicon photomultiplier(SiPM) layers; therefore, particles passing through the scintillator material produce showers, as in the ECAL, as a result of the inelastic scattering of the hadrons with the detector material. Since the particles are not absorbed in the scintillator, their energy is sampled; therefore the total energy is not measured but stimated, which reduce the resolution of the detector. Brass was choosen as the absorber material due to its short interaction lenght ($\lambda_I=16.42$cm) and its non-magnetivity. Figure \ref{fig:hcal} shows an schematic view of the CMS HCAL.\\
+
+\noindent The HCAL is divided in four sections; the Hadron Barrel (HB), the Hadron Outer (HO), the Hadron Endcap (HE) and the Hadron Forward (HF) sections. The HB cover the region $0<|\eta|<1.4$, while the HE covers the region $1.3<|\eta|<3.0$. The HF, made of quartz fiber scintillator and steel as absorption material, covers the forward region $3.0<|\eta|<5.2$. Both the HB and HF are located inside the solenoid. The HO is placed outside the magnet as an additional layer of scintillators with the purpose of measure the energy tails of particles passing through the HB and the magnet (see figure \ref{fig:hcal} top and bottom right) . The upgrades made to the HCAL during the technical stop 2016-2017 consisted in the replacement of the phototransducers, improving the efficiency.
+
 \subsection{Superconducting solenoid magnet}
 
-\noindent The superconducting magnet installed is the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact, the tracking system take advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it; the unanbiguous determination of the sign for high momentum muons was a driven principle  during the desing of the magnet. The magnet has a diameter of 6.3 m, a lenght of 12.5 m in a cold mass of 220 t; the generated a magnetic fiels reach a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a heluim cryogenic system; the current circulating in the cables reach 18800 A under normal running conditions. The left side of figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible. \\
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.38]{magnet}
@@ -256,9 +271,27 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
   \label{fig:yoke}
 \end{figure}
 
+\noindent The superconducting magnet installed is the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact, the tracking system takes advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it; the unambiguous determination of the sign for high momentum muons was a driven principle  during the design of the magnet. The magnet has a diameter of 6.3 m, a length of 12.5 m in a cold mass of 220 t; the generated magnetic field reach a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a helium cryogenic system; the current circulating in the cables reach 18800 A under normal running conditions. The left side of figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible. \\
+
 \noindent The yoke (see figure \ref{fig:yoke}), composed of 5 barrel wheels and 6 endcap disks made of iron, serves not only as the media for magnetic flux return, but also provides the house for the muon detector sytem and structural stability to the full detector.     
 
-\subsection{muon system }
+\subsection{Muon system }
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=10cm,height=6cm]{muon}
+  \includegraphics[width=5cm,height=4.55cm]{muon2}
+  \caption[CMS Muon system schematic view]{Left: CMS muon system schematic view; Right: one of the yoke rings with the muon DTs and RPCs installed; in the back it is posible to see the muon endcap\cite{muon}. }
+  \label{fig:muon_chambers}
+\end{figure}
+
+\noindent Muons are the only charged particles able pass through all the CMS detector due to their low ionization energy loss; thus, muons can be separated easily from the high amount of particles produced in a pp collision. Also, muons are expected to be produced in the decay of several new particles; therefore, a good detection of muons was on the leading principles when designing the CMS detector.\\
+
+\noindent The CMS muon detection system is embedded in the return yoke as seen in figure \ref{fig:muon_chambers}. It is composed of three different detector types; the drift tube chambers (DT) are located in the central region $\eta< 1.2$ arranged in four layers of drift chambers filled with an Ar/CO$_2$ gas mixture.\\
+
+\noindent The muon endcaps are made of Cathode strip chambers (CSC) covering the region $\eta< 2.4$ and filled with a mixture of Ar/CO$_2$/CF$_4$. The reason behind using a different detector type lies on the different conditions in the forward region like the high muon rate and high residual magnetic field.\\
+
+\noindent The third type of detector used in the muon system is a set four disks of resistive plate chambers (RPC) working in avalanche mode. The RPCs provide good spatial and time resolutions. The track of $high-p_T$ muon candidate is build combining information from the tracking system and the signal from up to 6 RPCs and 4 DT chambers.
 \subsection{trigger system - HLT- L1 }
 
 
