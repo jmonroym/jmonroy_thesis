@@ -292,23 +292,74 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
 \noindent The muon endcaps are made of Cathode strip chambers (CSC) covering the region $\eta< 2.4$ and filled with a mixture of Ar/CO$_2$/CF$_4$. The reason behind using a different detector type lies on the different conditions in the forward region like the high muon rate and high residual magnetic field.\\
 
 \noindent The third type of detector used in the muon system is a set four disks of resistive plate chambers (RPC) working in avalanche mode. The RPCs provide good spatial and time resolutions. The track of $high-p_T$ muon candidate is build combining information from the tracking system and the signal from up to 6 RPCs and 4 DT chambers.
-\subsection{trigger system - HLT- L1 }
 
 
-The
-online event selection process (trigger) must reduce the huge rate to about 100 events/s for storage
-and subsequent analysis. The short time between bunch crossings, 25 ns, has major implications
-for the design of the read-out and trigger systems.
+\subsection{CMS trigger system}
+
+\noindent Under normal conditions, CMS expect pp collisions every 25 ns \ie an interaction rate of 40 MHz for which it is not possible to store the recorded data in full. In order to handle this high event rate data, an online event selection, known as triggering, is performed; triggering reduce the event rate to 100 Hz for storage and further offline analysis.\\        
+
+\noindent The trigger system starts with a reduction of the event rate to 100 kHz in the so-called ``level 1 trigger (L1)''. L1 is based on dedicated programmable hardware like Field Programmable Gate Arrays (FPGAs) and Application Specific Integrated Circuits (ASICs), partly located in the detector itself; other portion it located in the CMS under-ground cavern. Hit patterns information from the muon chambers and the energy deposits in the calorimeter are used to decide if an event is accepted or rejected, according to selection requirements previously defined which reflect the interesting physics processes. Figure \ref{fig:l1} shows the L1 trigger architecture
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=10cm,height=6cm]{l1}
+  \caption[CMS Level-1 trigger architecture]{CMS Level-1 trigger architecture\cite{l1}. }
+  \label{fig:l1}
+\end{figure}
+
+\noindent The second stage in the trigger system is called ``high level trigger (HLT)''; events accepted by L1 are passed to HLT in order to make an initial reconstruction ot them. HLT is software based and runs on a dedicated server farm, using selection algorithms and high level object definitions; the event rate at HLT is reduced to 100 Hz. The first HLT stage takes information from the muon detectors and the calorimeters to make the initial object reconstruction; in the next HLT stage, information from the pixel and strip detectors is used to do first fast tracking and then full tracking online. This initial object reconstruction is used in further steps of the trigger system. \\
+
+\noindent Events and preliminar reconstructed physics objects from HLT are sent to be fully reconstructed at the CERN computing center. Again, the pixel detector information provides high quality seeds for the track reconstruction algorithm offline, primary vertex reconstruction, electron and photon identification, muon reconstruction, $\tau$ identification and b-tagging. After full reconstruction, data sets are made available for offline analyses.\\ 
+
+\noindent During the 2016-2017 technical stop, the L1 system was updated in order to improve the physics object identification by improving the algorithms and accounting for the increasing pile-up escenario.  
+
+\subsection{CMS computing}
+
+\noindent After the data, coming from the experiment, are processed at several levels, they have to be stored and made availiable for further analysis; in order to cope all the tasks implied in the offline data processing, like transfer, simulation, reconstruction and reprocessing, among others, a big computing power is required. The CMS computing system is based in the distributed architecture concept, where users of the system and physical computer centers are distributed worldwide and interconnected by high-speed networks.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{WLCG}
+  \caption[WLCG structure]{WLCG structure. The primary computer centers (Tier-0) are located at CERN (data center) and at the Wigner datacenter in Budapest. Tier-1 is composed of 13 centers and Tier-2 is composed of about 160 centers.\cite{wlcg}. }
+  \label{fig:wlcg}
+\end{figure}
+
+\noindent The worldwide LHC computing grid (WLCG) is the mechanism used to provide that distributed environment. WLCG is a tiered structure connecting computing centers around the world, which provide the necessary storage and computing facilities. The primary computing centers of the WLCG are located at the CERN and the Wigner datacenter in Budapest and are known as Tier-0 as shown in figure \ref{fig:wlcg}. The main resposibilities for each tier level are\cite{wlcg}
+
+\begin{itemize}
+\item \textbf{Tier-0}: initial reconstruction of recorded events and storage of the resulting datasets, the distribution of raw data to the Tier-1 centers.
+\item \textbf{Tier-1}: provide storage capacity, support for the Grid, safe-keeping of a proportional share of raw and reconstructed data, large-scale reprocessing and safe-keeping of corresponding output, generation of simulated events, distribution of data to Tier 2s, safe-keeping of a share of simulated data produced at these Tier 2s.
+\item \textbf{Tier-2}: store sufficient data and provide adequate computing power for specific analysis tasks, provide analysis requirements and proportional share of simulated event production and reconstruction.
+\end{itemize}
+
+\noindent Aside of the general computing strategy to manage the huge amount of data produced by experiments, CMS uses a framework to perform a varety of processing, selection and analysis tasks. The central concept of the CMS data model is the ``Event''; therefore, an event is the unit that contains the information from a single bunch crossing as well as any data derived from that information like the reconstructed objects, the details under which additional data are derived.\\
+
+\noindent Events are passed as the input to the ``physics modules'' that obtain information from them and create new one; for instance, ``event data producers'' add new data into the events, ``analizers'' produce a information summary from an event set, ``filters'' perform selection and triggering.\\
+
+\noindent CMS uses several event formats with different levels of detail and precision
+
+\begin{itemize}
+\item \textbf{Raw format}: events in this format contain the full recorded information from the detector as well as trigger decision and other metadata. An extended version of raw data is used to store information from the CMS Monte Carlo simulation tools. Raw data are stored permanently, occupying about 2MB/event   
+\item \textbf{RECO format}: events in this format correspond to raw data that have been submitted to reconstruction algorithms like primary and secondary vertex reconstruction, particle ID, track-finding. RECO events contain physical objects and all the information used to reconstruct them; average size is about 0.5 MB/event.     
+\item \textbf{AOD format}: Analysis Object Data (AOD) is the data format used in the physics analyses given that it contains the parameters describing the high-level physics objects in addition to enought information to allow a kinematic refitting if needed. AOD events are filtered versions of the RECO events to which skimming or other kind processes have been applied. Requires about 100 kB/event.
+\item \textbf{Non-event data} are data needed to interpret and reconstruct events. Some of the non-event data used by CMS contains information about the detector contraction and condition data like calibrations, alignment and detector status.  
+\end{itemize}
+
+\noindent Figure \ref{fig:dataflow} shows the dataflow scheme between CMS detector and hardware tiers.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{dataflow}
+  %\includegraphics[scale=0.15]{dataflow2}
+  \caption[Detector data flow through hardware Tiers]{Detector data flow through hardware Tiers. }
+  \label{fig:dataflow}
+\end{figure}
 
 
-Due to its high segmentation, the pixel detector not only forms high quality seeds for
-the track reconstruction algorithm offline, but is also used to do fast tracking online in the high
-level trigger (HLT) for primary vertex reconstruction, electron/photon identification, muon
-reconstruction, tau identification and b-tagging.
 
 
 
-\subsection{ computing model}
+
 \section{Event generation  simulation and reconstruction}
 \subsection{ event generation}
 \subsection{Hard scattering  }
