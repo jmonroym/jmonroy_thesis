@@ -1,0 +1,171 @@
+\chapter{Event generation, simulation and reconstruction}\label{ch:gensimreco}
+
+\noindent The process of analizing the data recorded by the CMS experiment involves several stages where the data are processed in order to interpret the information provided by all the detection systems; in those stages the particles produced after the pp collision are identified by reconstructing their trajectories and measuring their features. In addition, the SM provides a set of predictions that have to be compared with the experimental results; however, in most of the cases, theoretical predictions are not directly comparable to experimentral results due to the diverse source of uncertainties introduced by the experimental setup and theoretical approximations among others.\\
+
+\noindent The strategy to face these conditions consist in using statistical methods implemented in computational algorithms to produce numerical results that can be contrasted with the experimental results. These computational algorithms are commonly known as Monte Carlo methods and, in the case of particle physics, they are designed to apply the SM rules and produce predictions about the physical observables measured in the experiments. Since particle physics is governed by quamtum mechanics principles, predictions are not allowed for single events; therefore, a high number of events are ``generated'' and predictions are produced in the form of statistical distributions for the observables. Effects of the detector presence are included in the predictions by introducing simulations of the detector itself.\\     
+
+\noindent This chapter presents a description of the event generation strategy and the tools used to perform the detector simulation and physics objects reconstruction. A comprehensive review on event generator for LHC physics can be found in reference \cite{gen}.  
+
+\section{Event generation}
+
+\noindent The event generation is intended to create events that mimic the behavior of actual events produced in the collisions; the obvey a secuence of steps from the particles collision hard process to the decay process into the final state particles. Figure \ref{fig:gen} shows an schematic view of the event generation process.; the fact that the full process can be treated as several independent steps is based on the QCD factorization theorem.\\     
+
+\noindent Generation starts by taking into account the PDFs of the incoming particles. Event generators offer the option to chose from several PDF sets depending on the particular process under simulation\footnote{Reference \cite{pdfplot} allows to plot different PDF sets under customizable conditions.}. The \textit{hard subprocess} describes the actual interaction between partons from the incoming particles; it is represented by the matrix element connecting the initial and final states of the interaction. Normally, the matrx element can be written as a sum over Feynman diagrams and consider interferences between terms in the summation. During the generation of the hard subprocess, the production cross section is calculated. 
+
+\noindent The order to which the cross section is calculated depends on the order of the Feynman diagrams involved in the calculation; therefore, radiative corrections are included by considering a higher order Feynman diagrams where QCD radiation dominates. Currently, cross sections calculated to LO do not offer a satisfactory description of the processes, \ie, the results are only reliable for the shape of distributions; therefore, NLO calculations have to be performed with the implication that the computing time needed is highly increased.\\       
+
+\noindent The final parton content of the hard subprocess is subjected to the \textit{parton shower} which generates the gluon radiation. Parton shower evolves the partons; \ie, glouns split into quark-antiquark pairs and quarks of enough energy radiates gluons giving rise to further parton multiplication, following the DGLAP (Dokshitzer-Gribov-Lipatov-Altarelli-Parisi) equations. Showering continues until the energy scale is low enought to reach the non-perturbative limit.   
+
+\noindent In the simulation LHC processes that involve $b$ quarks, like the single top quark or higgs associated production, it is needed to consider that the $b$ quark is heavier that the proton; in this sense, the QCD interaction description is made in two different schemes \cite{schemes}
+
+\begin{itemize}
+
+\item four-flavor (4F) scheme. $b$ quarks appears only in the final state because they are heavier than the proton and therefore they can be produced only from the splitting of a gluon into pairs or singly in association with a $t$ quark in high energy-scale interactions. During the simulation, the $b$-PDFs are set to zero because it cannot be part of the proton. Calculation in this scheme are more complicated due to the presence of the second $b$ quark but the full kinematics is considered already at LO and therefore the accuracy of the description is better.   
+
+\item five-flavor (5F) scheme. $b$ quarks are considered massless, therefore they can appear in both initial and final states since it can now be part of the proton; thus, during the simulation $b$-PDFs are not set to zero. In this scheme, calculations are simpler that in the 4F scheme and possible logaritmic divergences are absorbed by the PDFs through the DGLAP evolution.   
+\end{itemize}
+
+
+\noindent The next step in the generation process is called ``hadronization''. Since particles with a net color charge are not allowed to exits isolated, they have recombine to form bound states. This is precisely the process by which the partons resulting from the parton shower arrange themselves as color singlet to form hadrons. At this step, the energy-scale is too low, the strong coupling constant is large, therefore hadronization process is non-perturbative. Most of the baryons and mesons produced in the hadronization are unstable and hence they will decay in the detector. The decay of those unstable particles is also simulated in the hadronization step, based on the known branching ratios.
+
+
+
+
+
+
+
+
+
+
+
+
+In the general context of QCD studies, the term “hadronization” has been
+used with somewhat different meanings. In the present context it refers to the
+specific model used in an event generator for the transition from the partonic
+“final” state to a complete representation of the actual hadronic final state.
+We should emphasize that this is a transition for which we still have only
+models, albeit inspired by QCD, because the only available rigorous approach
+to non-perturbative hadronic phenomena, lattice QCD, is formulated in Euclidean
+space-time and therefore cannot deal with inherently Minkowskian
+processes like the time-evolution of partons into hadrons.
+Other “hadronization” meanings exist. When quantities that are calculable
+within perturbative QCD, for example hadronic event shapes in e
++e
+−
+annihilation, are compared with experimental data, there are discrepancies
+that are commonly ascribed to “hadronization corrections”. They are often
+estimated and corrected for by comparing the hadron-level prediction of an
+event generator with a parton-level result computed at the end of parton
+showering.13 However, such a parton-level quantity is not really comparable
+to the result of a perturbative calculation, certainly not at fixed order,
+nor even when resummed to all orders, as the shower result depends on the
+scale and details of the cutoff that terminates it. The origin of the discrepancies
+is instead generic non-perturbative contributions that do not depend
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Finally,
+the underlying structure of the event is generated: beam remnants, interactions from other partons in the
+hadrons, and collisions between other hadrons in the colliding beams (called pile-up).
+
+
+
+
+
+\section{underlying events and pileup }
+\section{ MC - MadEvent, MadGraph and madgraph\@NLO, powheg, pythia, tauola}
+\section{ detector simulation}
+
+Monte Carlo Event samples will be generated to simulate the underlying physics collision.
+
+The resulting particles will be tracked through the CMS detector and the electronics and trigger
+responses will be simulated.
+
+Both full and parametrized (fast) simulations will be required.
+
+We anticipate using the full simulation package, OSCAR [4, 5], for most of these events.
+
+Fully
+simulated refers to detailed detector simulation based on GEANT4 [6], as opposed to faster
+parametrized simulations. CMS has developed a fast simulation package, FAMOS [7], that may
+be used where much larger statistics are required.
+
+Fully simulated Monte Carlo samples of approximately the same total size as the raw data sample (1.5×109 events per year) must be generated, fully simulated, reconstructed and passed through HLT selection code. The simulated pp event size is approximately 2 MByte/event.
+
+
+We currently estimate that we will require the same order of magnitude of simulated events as actual data. If the Monte Carlo requirements greatly exceed this rough real data-sample equality, then more recourse to FAMOS will be necessary. Clearly there are very large uncertainties on the total amount of full and fast Monte Carlo which is required, so ultimately the reality of available resources will constrain the upper limit.
+
+
+
+
+\section{event reconstruction- particle flow algorithm, vertexing , muon reco, electron reco, photon and hadron reco, jets reco, anti-kt algoritm, jet energy corrections, btagging, MET  }
+
+
+CMS requires an offline first-pass full reconstruction of express line and all
+online streams in quasi-realtime, which produces new reconstructed objects
+called RECO data.
+
+
+The Tier-0 offline reconstruction step processes all RAW events from the online system following
+an adjustable set of priorities (the express-line, by definition has very high priority). This step
+creates new higher-level physics objects such as tracks, vertices, and jets. These may improve or
+extend the set produced in the HLT processing step. It must run with minimal delay compared
+to the online in order to provide rapid feedback to the online operations, for example, identifying
+detector or trigger problems which can then be rectified dynamically during the same LHC fill.
+The offline reconstruction will normally perform the same reconstruction steps for each stream,
+with the possible exception of specialised calibration streams. In this way we ensure that they
+are all useful in principle for all analysis groups. We apply this same rule to later re-processings
+of the data, 2-3 times per year we expect to bring all datasets into consistent status as to applied
+calibrations and algorithms, as described below.
+
+
+
+
+
+\section{ MVA methods, NN, BDT, boosting, overtraining, variable ranking  }
+\section{statistical inference, likelihood parametrization}
+\section{ nuisance paraeters}
+\section{exclusion limits }
+\section{asymptotic limits }
+
+
+
+
+
+
+
+
+
+
+
+
