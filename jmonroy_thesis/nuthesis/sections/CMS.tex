@@ -328,7 +328,7 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
 \item \textbf{Tier-2}: store sufficient data and provide adequate computing power for specific analysis tasks, provide analysis requirements and proportional share of simulated event production and reconstruction.
 \end{itemize}
 
-\noindent Aside from the general computing strategy to manage the huge amount of data produced by experiments, CMS uses a framework to perform a variety of processing, selection and analysis tasks. The central concept of the CMS data model is the ``Event''; therefore, an event is the unit that contains the information from a single bunch crossing as well as any data derived from that information like the reconstructed objects, the details under which additional data are derived.\\
+\noindent Aside from the general computing strategy to manage the huge amount of data produced by experiments, CMS uses a framework to perform a variety of processing, selection and analysis tasks. The central concept of the CMS data model referred to as ``event data model'' (EDM) is the ``Event''; therefore, an event is the unit that contains the information from a single bunch crossing as well as any data derived from that information like the reconstructed objects, the details under which additional data are derived.\\
 
 \noindent Events are passed as the input to the ``physics modules'' that obtain information from them and create new one; for instance, ``event data producers'' add new data into the events, ``analyzers'' produce an information summary from an event set, ``filters'' perform selection and triggering.\\
 
@@ -351,3 +351,5 @@ y=\frac{1}{2}ln\frac{E+p_z}{E-p_z} \qquad \eta=-ln \left(tan\frac{\theta}{2}\rig
   \label{fig:dataflow}
 \end{figure}
 
+
+\noindent  The whole collection of software built as a framework is referred to as ``CMSSW''. This framework provides the services needed by the simulation, calibration and alignment, and reconstruction modules that process event data, so that physicists can perform analysis. The CMSSW event processing model is composed of one executable, called cmsRun, and several plug-in modules which contains all the tools  (calibration, reconstruction algorithms) needed to process an event. The same executable is used for both detector and Monte Carlo data\cite{cmssw}.

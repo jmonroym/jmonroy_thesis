@@ -11,16 +11,16 @@
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.6,angle=-90]{gen}
-  \caption[Event generation process.]{Event generation process. In the first step, the PDF of the colliding particles is considered so the specific interaction is described. The actual interaction is generated in the hard subprocess; the cross section of the process is calculated from the matrix element connecting the initial and final states. The parton shower describes the evolution of the partons from the hard subprocess according to the DGLAP equations. At this step the underlying event and PU efects are included in the generation. The resulting partons from the parton shower are recombined to form hadrons in the hadronization step; most of them are unstable, therefore, their decays are also generated in agreement to the known branching ratios. Modified from reference\cite{gen_scheme}.}\label{fig:gen}
+  \caption[Event generation process.]{Event generation process. In the first step, the PDF of the colliding particles is considered so the specific interaction is described. The actual interaction is generated in the hard subprocess; the cross section of the process is calculated from the matrix element connecting the initial and final states. The parton shower describes the evolution of the partons from the hard subprocess according to the DGLAP equations. At this step the underlying event and PU effects are included in the generation. The resulting partons from the parton shower are recombined to form hadrons in the hadronization step; most of them are unstable, therefore, their decays are also generated in agreement to the known branching ratios. Modified from reference\cite{gen_scheme}.}\label{fig:gen}
 \end{figure}
 
 \noindent The event generation is intended to create events that mimic the behavior of actual events produced in the collisions; the obey a sequence of steps from the particles collision hard process to the decay process into the final state particles. Figure \ref{fig:gen} shows an schematic view of the event generation process; the fact that the full process can be treated as several independent steps is based on the QCD factorization theorem.\\     
 
-\noindent Generation starts by taking into account the PDFs of the incoming particles. Event generators offer the option to chose from several PDF sets depending on the particular process under simulation\footnote{Tool in Reference \cite{pdfplot} allows to plot different PDF sets under customizable conditions.}; in the following \pp collisions will be considered. The \textit{hard subprocess} describes the actual interaction between partons from the incoming protons; it is represented by the matrix element connecting the initial and final states of the interaction. Normally, the matrix element can be written as a sum over Feynman diagrams and consider interferences between terms in the summation. During the generation of the hard subprocess, the production cross section is calculated. 
+\noindent Generation starts by taking into account the PDFs of the incoming particles. Event generators offer the option to chose from several PDF sets depending on the particular process under simulation\footnote{Tool in Reference \cite{pdfplot} allows to plot different PDF sets under customizable conditions.}; in the following \pp collisions will be considered. The \textit{hard subprocess} describes the actual interaction between partons from the incoming protons; it is represented by the matrix element connecting the initial and final states of the interaction. Normally, the matrix element can be written as a sum over Feynman diagrams and consider interferences between terms in the summation. During the generation of the hard subprocess, the production cross section is calculated.\\ 
 
 \noindent The order to which the cross section is calculated depends on the order of the Feynman diagrams involved in the calculation; therefore, radiative corrections are included by considering a higher order Feynman diagrams where QCD radiation dominates. Currently, cross sections calculated to LO do not offer a satisfactory description of the processes, \ie, the results are only reliable for the shape of distributions; therefore, NLO calculations have to be performed with the implication that the computing time needed is highly increased.\\       
 
-\noindent The final parton content of the hard subprocess is subjected to the \textit{parton shower} which generates the gluon radiation. Parton shower evolves the partons; \ie, glouns split into quark-antiquark pairs and quarks of enough energy radiate gluons giving rise to further parton multiplication, following the DGLAP (Dokshitzer-Gribov-Lipatov-Altarelli-Parisi) equations. Showering continues until the energy scale is low enough to reach the non-perturbative limit.   
+\noindent The final parton content of the hard subprocess is subjected to the \textit{parton shower} which generates the gluon radiation. Parton shower evolves the partons; \ie, glouns split into quark-antiquark pairs and quarks of enough energy radiate gluons giving rise to further parton multiplication, following the DGLAP (Dokshitzer-Gribov-Lipatov-Altarelli-Parisi) equations. Showering continues until the energy scale is low enough to reach the non-perturbative limit.\\   
 
 \noindent In the simulation of LHC processes that involve $b$ quarks like the single top quark or Higgs associated production, it is needed to consider that the $b$ quark is heavier that the proton; in this sense, the QCD interaction description is made in two different schemes \cite{schemes}
 
@@ -40,135 +40,60 @@
 \item \textit{Out-of-time PU} which refers to overlapping \pp collisions from consecutive bunch crossings; this can occurs due to the time-delays in the detection systems where information from one bunch crossing is assigned to the next or previous one. 
 \end{itemize}
 
-\noindent While the underlying event effects are included in generation using generator-specific tools, PU effects are added to the generation by overlying Minimum-bias (MB) and Zero-bias (ZB) events to the generated events. MB events are inelastic events selected by using a loose (minimum bias) trigger with as little bias as possible, therefore accepting a large fraction of the overall inelastic event; ZB events correspond to random events recorded by the detector when collisions are likely. MB model in-time PU and ZB model out-of-time PU. 
+\noindent While the underlying event effects are included in generation using generator-specific tools, PU effects are added to the generation by overlying Minimum-bias (MB) and Zero-bias (ZB) events to the generated events. MB events are inelastic events selected by using a loose (minimum bias) trigger with as little bias as possible, therefore accepting a large fraction of the overall inelastic event; ZB events correspond to random events recorded by the detector when collisions are likely. MB model in-time PU and ZB model out-of-time PU.\\ 
 
 \noindent The next step in the generation process is called ``hadronization''. Since particles with a net color charge are not allowed to exits isolated, they have recombine to form bound states. This is precisely the process by which the partons resulting from the parton shower arrange themselves as color singlets to form hadrons. At this step, the energy-scale is low and the strong coupling constant is large, therefore hadronization process is non-perturbative and phenomenological model are used to describe the parton's evolution. Most of the baryons and mesons produced in the hadronization are unstable and hence they will decay in the detector.\\
 
 \noindent The last step in the generation process corresponds to the decay of the unstable particles generated during hadronization; it is also simulated in the hadronization step, based on the known branching ratios. 
 
-
 \section{Monte Carlo Event Generators.}
-
 
 \noindent The event generation described in the previous section has been implemented in several software packages for which a brief description is given.     
 
 \begin{itemize}
 
-
-\item rephare
-
-
-
-  
-\item MadGraph5\_aMC@NLO[83] is an next-to-leading order event generator including an optional parton shower step. It can calculate cross sections with full QCD corrections for a user given process, generate the hard process and is able to consistently match processes with radiations at tree-level with possible radiations of the parton shower. MadGraph5\_aMC@NLO was a merger of the two event generators MadGraph5 and aMC@NLO superseding both packages and is currently one of the most frequently used matrix element generators.
-  
-  A unique feature of MadGraph5\_aMC@NLO is the presence of negative event weights arising from the usage of counterterms that are needed to smoothen the phase space transitions between matrix element and parton shower dominated parts. Negative weights reduce the effective number of events that are used to reproduce object property shapes by filling histograms, which could lead to discontinuous shapes in exotic phase spaces with a low number of events.
-
-Powheg Powheg[84–86], short for Positive Weight Hard Emission Generator, is an NLO matrixelement generator. Powheg models the hardest emission of color charged particles in an NLO process, making it necessary to interface it with a pT-ordered parton shower or a parton showerable to veto this highest emission, as else double counting of this highest-energetic emission would occur. This feature makes Pythia a natural match for the Powheg event generator.
-
+\item \textbf{PYTHIA 8}. It is a program designed to perform the generation of high energy physics events which describe the collisions between particles such as electrons, protons. Several theories and models are implemented in it, in order to describe physical aspects like hard and soft interaction, parton distributions, initial and final-state parton showers, multiple parton interactions, beam remnants, hadronization\footnote{based in the Lund string model\cite{lund}} and particle decay. Thanks to extensive testing, several optimized parametrizations known as ``tunnings'' have been defined in order to improve the description of actual collisions to a high degree of precision; for analysis at $\sqrt{s}=13$ TeV, the underline event CUETP8M1 tune is employed \cite{tune}.  The calculation of the matrix element is performed at LO which is not enough for the current required level of precision; therefore, pythia is often used for parton shower, hadronization, decays, while other event generators are used to generate the matrix element at NLO.
+\item \textbf{MadGraph5\_aMC@NLO}. MadGraph is a matrix element generator which calculates the amplitudes for all contributing Feynman diagrams of a given process but does not provide a parton shower while MC@NLO incorporate NLO QCD matrix elements consistently into a parton shower framework; thus, MadGraph5\_aMC@NLO, as a merger of the two event generators MadGraph5 and aMC@NLO, is an event generator capable to calculate tree-level and NLO cross sections and perform the matching of those with the parton shower. It is one of the most frequently used matrix element generators; however, it has as particular feature the presence of negative event weights which reduce the number of events used to reproduce the the properties of the objects generated\cite{madgraph}.\\
+\item \textbf{POWHEG}. It is an NLO matrix element generator where the hardest emission of color charged particles is generated in such a way that the negative event weights issue of MadGraph5\_aMC@NLO is overcome; however, the method requires an interface with  $p_T$-ordered parton shower or a parton shower generator where this highest emission can be vetoed in order to avoid double counting of this highest-energetic emission. PYTHIA is a commonly matched to POWHEG event generator\cite{powheg}.
 \end{itemize}
 
+\noindent Events resulting from the whole generation process are known as MC events. 
 
-MG5\_aMC@NLO (version 5.222)
+\section{CMS detector simulation.}
 
-pythia 8
+\noindent After generation, MC events contain the physics of the collisions but they are not ready to be compared to the events recorded by the experiment since these recorded events correspond to the response of the detection systems to the interaction with the particles traversing them. The simulation of the CMS detector have to be applied on top of the event generation; it is simulated with Geant4, a MC toolkit for the simulation of particles passing though matter which is also able to simulates the electronic signals that would be measured by all detectors inside CMS.\\   
 
-madgraph
+\noindent The simulation takes the generated particles contained in the MC events as input, makes them to pass through the simulated geometry, and models physics processes that particles experience during their passage through matter. The full set of results from particle-matter interactions correspond to the simulated hit which contains information about the energy loss, momentum, position. Particles of the input event are called ``primary'', while the particles originating from GEANT4-modeled interactions of a primary particle with matter are called a ``secondary''.  Simulated hits are the input of subsequent modules that emulate the response of the detector readout system and triggers. The output from the emulated detection systems and triggers is known as digitization \cite{geant,geant2}.\\
 
-aC@NLO
+\noindent The modeling of the CMS detector corresponds to the accurate modeling of the interaction among particles, the detector material and the magnetic field. This simulation procedure includes the following standard steps
+\begin{itemize}
+\item Modeling of the Interaction Region.
+\item Modeling of the particle passage through the hierarchy of volumes that compose CMS detector and of the accompanying physics processes.
+\item Modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay ( Pile-Up simulation).
+\item Modeling of the detector's electronics response, signal shape, noise, calibration constants (digitization). 
+\end{itemize}
 
-powheg
+\noindent In addition to the full simulation which implies a detailed detector simulation, a faster simulations (FastSim) have been developed, that may be used where much larger statistics are required. In FastSim, detector material effects are parametrized and included in the hits; those hits are used as input of the same higher-level algorithms\footnote{track fitting, calorimeter clustering, b tagging, electron identification, jet reconstruction and calibration, trigger algorithms which will be considered in the next sections} used to analyze the recorded events. In this way, comparisons between fast and full simulations can be performed\cite{fastsim}.\\
 
-MLM
+\noindent After the full detector simulation, the output events can be directly compared  with events actually recorded in the CMS detector. The collection of MC events that reproduce the expected physics for a given process are known as MC samples.\\   
 
-CSV
-
-
-
-%% MadEvent and M a d G ra p h
-%% M a d E v e n t is a tree-level event generating software based on the matrix element generator
-%% MadGraph, commonly only referred to as MadGraph [80, 81]. For a given process Mad -
-%% Graph calculates the amplitudes for all contributing Feynman diagrams. This information can
-
-%% then be evaluated by M a d E v e n t, which allows the user to calculate cross sections or decay
-%% widths and produce unweighted events. MadGraph does not provide a parton shower and is
-%% therefore often interfaced with P y t h i a.
-%% Implemented in the MadGraph framework is the MadSpin [82] tool, which is used for the
-%% decay of particles carrying non-zero spin.
-%% Mad G ra p h 5 _ a M C @ N LO
+\section{Event reconstruction.}
 
 
 
-%% Pyth i a
-%% P y t h i a is a parton shower based multipurpose event generator. The calculation of the hard
-%% matrix element is performed at leading order. The parton shower uses a p T -ordered emission
-%% algorithm [87] and the Lund model for the hadronization.
-%% Highly optimized parameter sets, known as tunes, are necessary to reproduce actual collisions
-%% to a high degree of precision. The underlying event tune used in all samples for the analysis
-%% √
-%% √
-%% at s = 8 TeV is the Tune Z2* [88], whereas in the analysis at s = 13 TeV the CUETP8M1
-%% Tune [89] is employed in all samples.
-%% In the Run I analysis of this thesis Pythia 6.4 [90] was used. During the first Long Shutdown
-%% the new version P y t h i a 8 . 2 [91] was released and became the new standard in CMS for
-%% parton showers.
-%% As LO matrix-element generation is often not sufficient anymore, Pythia is often solely used
-%% for the parton shower and is interfaced with other generators which take care of the matrix-
-%% element generation.
-
-
-%% Tauola
-%% Due to the narrow width of the τ lepton its decay can be treated separately from its production.
-%% In the Run I analysis the Tau o l a package [92] is applied, which only simulates the decay of
-%% the τ lepton and has hence to be interfaced with other event generators. Spin effects as well as
-%% electroweak corrections are taken into account by Tau o l a.
-
-
-
-
-
-
-
-
-
-\noindent MC - MadEvent, MadGraph and madgraph\@NLO, powheg, pythia, tauola
-
-
-
-
-
-
-
-\section{ detector simulation}
-
-Monte Carlo Event samples will be generated to simulate the underlying physics collision.
-
-The resulting particles will be tracked through the CMS detector and the electronics and trigger
-responses will be simulated.
-
-Both full and parametrized (fast) simulations will be required.
-
-We anticipate using the full simulation package, OSCAR [4, 5], for most of these events.
-
-Fully
-simulated refers to detailed detector simulation based on GEANT4 [6], as opposed to faster
-parametrized simulations. CMS has developed a fast simulation package, FAMOS [7], that may
-be used where much larger statistics are required.
-
-Fully simulated Monte Carlo samples of approximately the same total size as the raw data sample (1.5×109 events per year) must be generated, fully simulated, reconstructed and passed through HLT selection code. The simulated \pp event size is approximately 2 MByte/event.
-
-
-We currently estimate that we will require the same order of magnitude of simulated events as actual data. If the Monte Carlo requirements greatly exceed this rough real data-sample equality, then more recourse to FAMOS will be necessary. Clearly there are very large uncertainties on the total amount of full and fast Monte Carlo which is required, so ultimately the reality of available resources will constrain the upper limit.
-
-
-
-
-\section{event reconstruction- particle flow algorithm, vertexing , muon reco, electron reco, photon and hadron reco, jets reco, anti-kt algoritm, jet energy corrections, btagging, MET  }
 
 
 CMS requires an offline first-pass full reconstruction of express line and all
 online streams in quasi-realtime, which produces new reconstructed objects
 called RECO data.
+
+
+
+
+particle flow algorithm, vertexing , muon reco, electron reco, photon and hadron reco, jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
+
+
+
 
 
 The Tier-0 offline reconstruction step processes all RAW events from the online system following
