@@ -73,12 +73,103 @@
 \item Modeling of the detector's electronics response, signal shape, noise, calibration constants (digitization). 
 \end{itemize}
 
-\noindent In addition to the full simulation which implies a detailed detector simulation, a faster simulations (FastSim) have been developed, that may be used where much larger statistics are required. In FastSim, detector material effects are parametrized and included in the hits; those hits are used as input of the same higher-level algorithms\footnote{track fitting, calorimeter clustering, b tagging, electron identification, jet reconstruction and calibration, trigger algorithms which will be considered in the next sections} used to analyze the recorded events. In this way, comparisons between fast and full simulations can be performed\cite{fastsim}.\\
+\noindent In addition to the full simulation, \ie a detailed detector simulation, a faster simulations (FastSim) have been developed, that may be used where much larger statistics are required. In FastSim, detector material effects are parametrized and included in the hits; those hits are used as input of the same higher-level algorithms\footnote{track fitting, calorimeter clustering, b tagging, electron identification, jet reconstruction and calibration, trigger algorithms which will be considered in the next sections} used to analyze the recorded events. In this way, comparisons between fast and full simulations can be performed\cite{fastsim}.\\
 
-\noindent After the full detector simulation, the output events can be directly compared  with events actually recorded in the CMS detector. The collection of MC events that reproduce the expected physics for a given process are known as MC samples.\\   
+\noindent After the full detector simulation, the output events can be directly compared with events actually recorded in the CMS detector. The collection of MC events that reproduce the expected physics for a given process are known as MC samples.
 
 \section{Event reconstruction.}
 
+\noindent In contrast to MC samples for which all the particles' information is available from it's identity to it's mass and energy, recorded events contain the electronic signals, provided by the CMS detection systems, encoding the interaction of physical particles with the detector matter; these electronic signals have to be combined in order to identify these particle and measure its features \ie, particles have to be ``reconstructed'' using the signals provided by the detection systems. The CMS experiment use the ``particle-flow event reconstruction algorithm (PF)'' to do reconstruction of particles produced in \pp collisions. Next sections will present a basic description of the \textit{Elements} used by PF: tracker tracks, energy clusters and muon tracks.   
+
+\subsection{Particle-Flow Algorithm.}
+
+\noindent Each of the several subdetection systems of the CMS detector is dedicated to identify specific type of particles, \ie, photons and electrons are absorbed by the ECAL and their reconstruction is based on ECAL information; hadrons are reconstructed from clusters in the HCAL while muons are reconstructed from hits in the muon chambers. PF is designed to correlate signals from all the detector layers (tracks and energy clusters) in order to reconstruct and identify each final state particle and its properties. For instance, a charged hadron is identified by a geometrical connection, know as \textit{link} between one or more calorimeter clusters and a track in the tracker provided there are no hits in the muon system; combining several measurements allows a better determination of the energy and charge sign of the charged hadron.   
+
+\subsubsection*{Charged-particle track reconstruction.}
+
+\noindent The strategy used by PF in order to reconstruct tracks is called ``Iterative Tracking'' which occurs in four steps
+
+\begin{itemize}
+\item Seed generation where initial track candidates are found by looking for combination of hits in the pixel detector, strip tracker and muon chambers. In total ten iterations are performed, each one with a different seeding requirement. Seeds are used to estimate the trajectory parameters and uncertainties at the time of the full track reconstruction. Seeds are also considered track candidates.    
+\item Track finding using a tracking software known as Combinatorial Track Finder (CTF)\cite{ctf}. The seed trajectories are extrapolated along the expected flight path of a charged particle, in agreement to the the trajectory parameters obtained in the first step, in an attempt to find additional hits that can be assigned to the track candidates. 
+\item Track-fitting where the found tracks are passed as input to a module which provides the best estimate of the parameters of each trajectory.
+\item Track selection where track candidates are submitted to a selection which discards those that fail a set of defined quality criteria.
+\end{itemize}
+
+\noindent Iterations differ in the seeding configuration and the final track selection as elaborated in references \cite{particle_flow, particle_flow2}. In the first iteration, high \pt tracks and tracks produced near to the interaction region are identified and those hits are masked thereby reducing the combinatorial complexity. Next iterations search for more complicated tracks, like low \pt tracks and tracks from b hadron decays, which tend to be displaced from the interaction region.
+
+\subsubsection*{Calorimeter clustering.}
+
+\noindent After traversing the CMS tracker system, electrons, photons and hadrons deposit their energy in the ECAL and HCAL cells. The PF clustering algorithm aims to provide a high detection efficiency even for low-energy particles and an efficient distinction between close energy deposits. The clustering runs independently in the ECAL barrel and endcaps, HCAL barrel and endcaps, and the two preshower layers, following two steps
+\begin{itemize}
+\item cells with an energy larger than a given seed threshold and larger than the energy of the neighboring cells are identified as cluster seeds. The neighbor cells are those that either share a side with the cluster seed candidate, or the eight closest cells including cells that only share a corner with the seed candidate.
+\item cells with at least a corner in common with a cell already in the cluster seed and with an energy above a cell threshold are grouped into topological clusters.
+\end{itemize}
+
+\noindent Clusters formed in this way are known as \textit{particle-flow clusters}. With this clustering strategy it is possible detect and measure the energy and direction of photons and neutral hadrons as well as differentiate these neutral particles from the charged hadron energy deposits. In cases involving charged hadrons for which the track parameters are not determined accurately, for instance low-quality and high-pT tracks, clustering helps in the energy measurements. 
+
+\subsubsection*{Electron track reconstruction.}
+
+\noindent Although the charged-particle track reconstruction described above works for electrons, they lose a significant fraction of their energy via bremsstrahlung photon radiation before reaching the ECAL; thus, the reconstruction performance depends on the ability to measure also the radiated energy. The reconstruction strategy in this case requires information from the tracking system and from the ECAL. Bremsstrahlung photons are emmited at similar \etac values to that of the electron but at different values of \phic; therefore, the radiated energy can be recovered by grouping ECAL clusters in a \etac window over a range of \phic around the electron direction. The group is called ECAL supercluster.\\
+
+\noindent Electron candidates from the the track-seeding and  ECAL superclustering are merged into a single collection which is submitted to a full electron tracking fit with a Gaussian-sum filter (GSF)\cite{gsf}. The electron track and its associated ECAL supercluster form a \textit{particle-flow electron}.
+
+\subsubsection*{Muon track reconstruction.}
+
+\noindent Given that the CMS detector is equipped with a muon detection system capable to identify and measure the momentum of the muons traversing it, the muon reconstruction is not specific to PF; therefore, three different muon types are defined
+
+
+
+
+
+• standalone muon. Hits within each DT or CSC detector are clustered to form track segments,
+used as seeds for the pattern recognition in the muon spectrometer, to gather all DT, CSC, and
+RPC hits along the muon trajectory. The result of the final fitting is called a standalone-muon
+track.
+• global muon. Each standalone-muon track is matched to a track in the inner tracker (hereafter
+referred to as an inner track) if the parameters of the two tracks propagated onto a common
+surface are compatible. The hits from the inner track and from the standalone-muon track are
+combined and fit to form a global-muon track. At large transverse momenta, pT \& 200 GeV,
+the global-muon fit improves the momentum resolution with respect to the tracker-only fit.
+• tracker muon. Each inner track with pT larger than 0.5 GeV and a total momentum p in excess
+of 2.5 GeV is extrapolated to the muon system. If at least one muon segment matches the
+extrapolated track, the inner track qualifies as a tracker muon track. The track-to-segment
+matching is performed in a local (x, y) coordinate system defined in a plane transverse to
+
+the beam axis, where x is the better measured coordinate. The extrapolated track and the
+segment are matched either if the absolute value of the difference between their positions in
+the x coordinate is smaller than 3 cm, or if the ratio of this distance to its uncertainty (pull)
+is smaller than 4.
+Global-muon reconstruction is designed to have high efficiency for muons penetrating through
+more than one muon detector plane. It typically requires segments to be associated in at least two
+muon detector planes. For momenta below about 10 GeV, this requirement fails more often because
+of the larger multiple scattering in the steel of the return yoke. For these muons, the tracker muon
+reconstruction is therefore more efficient, as it requires only one segment in the muon system [35].
+Owing to the high efficiency of the inner track and muon segment reconstruction, about 99%
+of the muons produced within the geometrical acceptance of the muon system are reconstructed
+either as a global muon or a tracker muon and very often as both. Global muons and tracker muons
+that share the same inner track are merged into a single candidate. Muons reconstructed only as
+standalone-muon tracks have worse momentum resolution and a higher admixture of cosmic muons
+than global and tracker muons.
+Charged hadrons may be misreconstructed as muons e.g. if some of the hadron shower remnants
+reach the muon system (punch-through). Different identification criteria can be applied to the muon
+tracks in order to obtain the desired balance between identification efficiency and purity. In the
+PF muon identification algorithm (section 4.2), muon energy deposits in ECAL, HCAL, and HO
+are associated with the muon track and this information is used to improve the muon identification
+performance.
+
+
+
+
+
+
+
+
+\noindent Once individual particles are identified and reconstructed, they can be grouped into larger objects to form jets. The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy.
+
+
+
+Single particles give rise to different elements in the detector, thus a linking of these elements is required in order to reconstruct a particle correctly. The linker algorithm links two elements together on a trial basis and only keeps elements linked, if their quality surpasses a certain threshold. The linker tries to extrapolate tracks starting from the outermost hit in the silicon detector to either, the first two PS layers, the ECAL in depth of a typical maximum of an electromagnetic shower or the HCAL at a depth of a typical hadron shower length. If the extrapolated track is in correspondence up to a certain link distance with a calorimeter cluster the two elements are linked together. When linking tracks to ECAL clusters the trajectory of the track is extrapolated along its tangent, looking for energy deposits by bremsstrahlung. Elements directly or indirectly linked with each other are known as blocks. The high granularity of the CMS detector causes most blocks to only contain one to three elements and therefore the object reconstruction is simplified. The linking algorithm, as well as the whole particle flow algorithm, was intensively validated and commissioned [96] as e. g. a broken link could lead to a reconstruction of a ghost particle and thus to an overestimation of the total energy of the collision. In the last reconstruction step, the found blocks in the detector are interpreted as candidates, as they are reconstructed as actual physical objects.
 
 
 
@@ -90,7 +181,7 @@ called RECO data.
 
 
 
-particle flow algorithm, vertexing , muon reco, electron reco, photon and hadron reco, jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
+ vertexing , jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
 
 
 
@@ -114,7 +205,7 @@ calibrations and algorithms, as described below.
 
 \section{ MVA methods, NN, BDT, boosting, overtraining, variable ranking  }
 \section{statistical inference, likelihood parametrization}
-\section{ nuisance paraeters}
+\section{ nuisance parameters}
 \section{exclusion limits }
 \section{asymptotic limits }
 
