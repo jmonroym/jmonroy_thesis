@@ -79,7 +79,7 @@
 
 \section{Event reconstruction.}
 
-\noindent In contrast to MC samples for which all the particles' information is available from it's identity to it's mass and energy, recorded events contain the electronic signals, provided by the CMS detection systems, encoding the interaction of physical particles with the detector matter; these electronic signals have to be combined in order to identify these particle and measure its features \ie, particles have to be ``reconstructed'' using the signals provided by the detection systems. The CMS experiment use the ``particle-flow event reconstruction algorithm (PF)'' to do reconstruction of particles produced in \pp collisions. Next sections will present a basic description of the \textit{Elements} used by PF: tracker tracks, energy clusters and muon tracks.   
+\noindent In contrast to MC samples for which all the particles' information is available from it's identity to it's mass and energy, recorded events contain the electronic signals, provided by the CMS detection systems, encoding the interaction of physical particles with the detector matter; these electronic signals have to be combined in order to identify these particles and measure their features \ie, particles have to be ``reconstructed'' using the signals provided by the detection systems. The CMS experiment use the ``particle-flow event reconstruction algorithm (PF)'' to do reconstruction of particles produced in \pp collisions. Next sections will present a basic description of the \textit{Elements} used by PF (tracker tracks, energy clusters and muon tracks), based in the references \cite{particle_flow, particle_flow2} where more detailed descriptions can be found.  
 
 \subsection{Particle-Flow Algorithm.}
 
@@ -97,6 +97,14 @@
 \end{itemize}
 
 \noindent Iterations differ in the seeding configuration and the final track selection as elaborated in references \cite{particle_flow, particle_flow2}. In the first iteration, high \pt tracks and tracks produced near to the interaction region are identified and those hits are masked thereby reducing the combinatorial complexity. Next iterations search for more complicated tracks, like low \pt tracks and tracks from b hadron decays, which tend to be displaced from the interaction region.
+
+\subsubsection*{Vertex reconstruction.}
+
+\noindent During the track reconstruction, an extrapolation toward to the calorimeters is performed in order to match energy deposits; that extrapolation is performed also toward the beam line in order to find the origin of the track known as \textit{vertex}. The vertex reconstruction is performed by selecting from the available reconstructed tracks, those that are consistent with being originated in the interaction region where \pp collisions are produced. The selection involves a requirement on the number of tracker (pixel and strip) hits and the goodness of the track fit.\\
+
+\noindent Selected tracks are clustered using a ``deterministic annealing algorithm (DA)''\footnote{DA algorithm and AVF are described in detail in references \cite{da, avf}}. A set of candidate vertices and their associated tracks, resulting from the DA, are then fitted with an ``adaptive vertex fitter (AVF)'' to produce the best estimate of the vertices locations.\\
+
+\noindent The \pt of the several tracks associated to a reconstructed vertex is added, squared and used to organize the vertices; the vertex with the highest squared sum is designated as the \textit{primary vertex (PV)} while the rest are designated as PU vertices. 
 
 \subsubsection*{Calorimeter clustering.}
 
@@ -116,88 +124,49 @@
 
 \subsubsection*{Muon track reconstruction.}
 
-\noindent Given that the CMS detector is equipped with a muon detection system capable to identify and measure the momentum of the muons traversing it, the muon reconstruction is not specific to PF; therefore, three different muon types are defined
+\noindent Given that the CMS detector is equipped with a muon spectrometer capable to identify and measure the momentum of the muons traversing it, the muon reconstruction is not specific to PF; therefore, three different muon types are defined
+
+\begin{itemize}
+\item \textit{Standalone muon}. A clustering on the DTs or CSCs hits is performed to form track segments; those segments are used as seeds for the reconstruction in the muon spectrometer. All DTs, CSCs, and RPCs hits along the muon trajectory are combined and fitted to form the full track. The fitting output is called a \textit{standalone-muon track}.
+\item \textit{tracker muon}. Each track in the inner tracker with \pt larger than 0.5 GeV and a total momentum $p$ larger than 2.5 GeV is extrapolated to the muon system. A \textit{tracker muon track} corresponds to the extrapolated tracks that match at least one muon segment.
+\item \textit{Global muon}. When tracks in the inner tracker (inner tracks) and standalone-muon tracks are matched and turns out being compatibles, their hits are combined and fitted to form a \textit{global-muon track}. 
+\end{itemize}
+
+\noindent Global muons sharing the same inner track with tracker muons are merged into a single candidate. PF muon identification uses the muon energy deposits in ECAL, HCAL, and HO associated with the muon track to improve the muon identification.
+
+\subsubsection{Particle identification and reconstruction.}
+
+\noindent PF elements are connected by a linker algorithm that test the connection between any pair of elements, if they are found to be linked a geometrical distance that quantify the quality of the link is assigned; two elements may be linked indirectly through common elements. Linked elements form \textit{PF blocks} and a PF block may contain elements originating in one or more particles. Links can be established between tracks, between calorimeter clusters, and between tracks and calorimeter clusters. The identification and reconstruction start with a PF block and proceeds as follows     
+
+\begin{itemize}
+
+\item Muons. An ``isolated global muon'' is identified by evaluating the presence of inner track and energy deposits close to the global muon track in the (\etac,\phic) plane, \ie, in a particular point of the global muon track, inner tracks and energy deposits are sought within a radius of $\Delta R=0.3$ (see eqn. \ref{delta_r}) from the muon track; if they exits and the \pt of the found track added to the \Et of the found energy deposit do not exceed 10\% of the muon \pt then the global muon is an isolated global muon. This isolation condition is stringent enough to reject hadrons misidentified as muon.
+
+  ``Non-isolated global muons'' are identified using additional selection requirements on the number of track segments in the muon system and energy deposits along the muon track. Muons inside jets are identified with more stringent criteria in isolation and momentum as described in reference \cite{muon_req}. The PF elements associated to an identified muon are masked from the PF block.  
+
+
+\item Electrons are identified and reconstructed as described above plus some additional requirements on fourteen variables like the amount of energy radiated, the distance between the extrapolated track position at the ECAL and the position of the associated ECAL supercluster among others, which are combined in a specialized multivariate analysis strategy that improves the electron identification. Tracks and clusters used to identify and reconstruct electrons are masked in the PF block.  
+  
+\item Isolated photons are identified from ECAL superclusters with \Et larger than 10 GeV, for which the energy deposited at a distance of 0.15, from the supercluster position on the (\etac,\phic) plane, does not exceed 10\% of the supercluster energy; note that this is an isolation requirement. In addition, there must not be links to tracks. Clusters involved in the identification and reconstruction are masked in the PF block.
+
+\item Bremsstrahlung photons and prompt photons tend to convert to electron-positron pairs inside the tracker, therefore, a dedicated finder algorithm is used to link tracks that seem to originate from a photon conversion; in case those two tracks are compatible with direction of a bremsstrahlung photon, they are also linked to the original electron track. Photon conversion tracks are also masked in the PF block.
+
+\item The remaining elements in the PF block are used to identify hadrons. In the region $|\eta| \leq 2.5$, neutral hadrons are identified with HCAL clusters not linked to any track while photons from neutral pion decays are identified with ECAL clusters without links to tracks. In the region $|\eta| >2.5$ ECAL clusters linked to HCAL clusters are identified with a charged or neutral hadron shower; ECAL clusters with no links are identified with photons.
+  HCAL clusters not used yet, are linked to one or more unlinked tracks and to an unlinked ECAL in order to reconstruct charged-hadrons or a combination of photons and neutral hadrons according to certain conditions on the calibrated calorimetric energy.         
+
+\item Charged-particle tracks may be liked together when they converge to a ``secondary vertex (SV) '' displaced from the interaction point where the PV and PU vertices are reconstructed; at least three tracks are needed in that case, of which at most one has to be an incoming track with hits in tracker region between a PV and the SV.\\
+\end{itemize}
+
+\noindent Once individual particles are identified and reconstructed, they can be grouped into larger objects to form jets. The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy. 
+
+\noindent The linker algorithm, and the whole PF algorithm, has been validated and commissioned; results from that validation are presented in the references \cite{particle_flow}.
 
 
 
 
-
-• standalone muon. Hits within each DT or CSC detector are clustered to form track segments,
-used as seeds for the pattern recognition in the muon spectrometer, to gather all DT, CSC, and
-RPC hits along the muon trajectory. The result of the final fitting is called a standalone-muon
-track.
-• global muon. Each standalone-muon track is matched to a track in the inner tracker (hereafter
-referred to as an inner track) if the parameters of the two tracks propagated onto a common
-surface are compatible. The hits from the inner track and from the standalone-muon track are
-combined and fit to form a global-muon track. At large transverse momenta, pT \& 200 GeV,
-the global-muon fit improves the momentum resolution with respect to the tracker-only fit.
-• tracker muon. Each inner track with pT larger than 0.5 GeV and a total momentum p in excess
-of 2.5 GeV is extrapolated to the muon system. If at least one muon segment matches the
-extrapolated track, the inner track qualifies as a tracker muon track. The track-to-segment
-matching is performed in a local (x, y) coordinate system defined in a plane transverse to
-
-the beam axis, where x is the better measured coordinate. The extrapolated track and the
-segment are matched either if the absolute value of the difference between their positions in
-the x coordinate is smaller than 3 cm, or if the ratio of this distance to its uncertainty (pull)
-is smaller than 4.
-Global-muon reconstruction is designed to have high efficiency for muons penetrating through
-more than one muon detector plane. It typically requires segments to be associated in at least two
-muon detector planes. For momenta below about 10 GeV, this requirement fails more often because
-of the larger multiple scattering in the steel of the return yoke. For these muons, the tracker muon
-reconstruction is therefore more efficient, as it requires only one segment in the muon system [35].
-Owing to the high efficiency of the inner track and muon segment reconstruction, about 99%
-of the muons produced within the geometrical acceptance of the muon system are reconstructed
-either as a global muon or a tracker muon and very often as both. Global muons and tracker muons
-that share the same inner track are merged into a single candidate. Muons reconstructed only as
-standalone-muon tracks have worse momentum resolution and a higher admixture of cosmic muons
-than global and tracker muons.
-Charged hadrons may be misreconstructed as muons e.g. if some of the hadron shower remnants
-reach the muon system (punch-through). Different identification criteria can be applied to the muon
-tracks in order to obtain the desired balance between identification efficiency and purity. In the
-PF muon identification algorithm (section 4.2), muon energy deposits in ECAL, HCAL, and HO
-are associated with the muon track and this information is used to improve the muon identification
-performance.
+, jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
 
 
-
-
-
-
-
-
-\noindent Once individual particles are identified and reconstructed, they can be grouped into larger objects to form jets. The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy.
-
-
-
-Single particles give rise to different elements in the detector, thus a linking of these elements is required in order to reconstruct a particle correctly. The linker algorithm links two elements together on a trial basis and only keeps elements linked, if their quality surpasses a certain threshold. The linker tries to extrapolate tracks starting from the outermost hit in the silicon detector to either, the first two PS layers, the ECAL in depth of a typical maximum of an electromagnetic shower or the HCAL at a depth of a typical hadron shower length. If the extrapolated track is in correspondence up to a certain link distance with a calorimeter cluster the two elements are linked together. When linking tracks to ECAL clusters the trajectory of the track is extrapolated along its tangent, looking for energy deposits by bremsstrahlung. Elements directly or indirectly linked with each other are known as blocks. The high granularity of the CMS detector causes most blocks to only contain one to three elements and therefore the object reconstruction is simplified. The linking algorithm, as well as the whole particle flow algorithm, was intensively validated and commissioned [96] as e. g. a broken link could lead to a reconstruction of a ghost particle and thus to an overestimation of the total energy of the collision. In the last reconstruction step, the found blocks in the detector are interpreted as candidates, as they are reconstructed as actual physical objects.
-
-
-
-
-CMS requires an offline first-pass full reconstruction of express line and all
-online streams in quasi-realtime, which produces new reconstructed objects
-called RECO data.
-
-
-
-
- vertexing , jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
-
-
-
-
-
-The Tier-0 offline reconstruction step processes all RAW events from the online system following
-an adjustable set of priorities (the express-line, by definition has very high priority). This step
-creates new higher-level physics objects such as tracks, vertices, and jets. These may improve or
-extend the set produced in the HLT processing step. It must run with minimal delay compared
-to the online in order to provide rapid feedback to the online operations, for example, identifying
-detector or trigger problems which can then be rectified dynamically during the same LHC fill.
-The offline reconstruction will normally perform the same reconstruction steps for each stream,
-with the possible exception of specialised calibration streams. In this way we ensure that they
-are all useful in principle for all analysis groups. We apply this same rule to later re-processings
-of the data, 2-3 times per year we expect to bring all datasets into consistent status as to applied
-calibrations and algorithms, as described below.
 
 
 
