@@ -144,7 +144,6 @@
 
   ``Non-isolated global muons'' are identified using additional selection requirements on the number of track segments in the muon system and energy deposits along the muon track. Muons inside jets are identified with more stringent criteria in isolation and momentum as described in reference \cite{muon_req}. The PF elements associated to an identified muon are masked from the PF block.  
 
-
 \item Electrons are identified and reconstructed as described above plus some additional requirements on fourteen variables like the amount of energy radiated, the distance between the extrapolated track position at the ECAL and the position of the associated ECAL supercluster among others, which are combined in a specialized multivariate analysis strategy that improves the electron identification. Tracks and clusters used to identify and reconstruct electrons are masked in the PF block.  
   
 \item Isolated photons are identified from ECAL superclusters with \Et larger than 10 GeV, for which the energy deposited at a distance of 0.15, from the supercluster position on the (\etac,\phic) plane, does not exceed 10\% of the supercluster energy; note that this is an isolation requirement. In addition, there must not be links to tracks. Clusters involved in the identification and reconstruction are masked in the PF block.
@@ -157,14 +156,102 @@
 \item Charged-particle tracks may be liked together when they converge to a ``secondary vertex (SV) '' displaced from the interaction point where the PV and PU vertices are reconstructed; at least three tracks are needed in that case, of which at most one has to be an incoming track with hits in tracker region between a PV and the SV.\\
 \end{itemize}
 
-\noindent Once individual particles are identified and reconstructed, they can be grouped into larger objects to form jets. The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy. 
-
 \noindent The linker algorithm, and the whole PF algorithm, has been validated and commissioned; results from that validation are presented in the references \cite{particle_flow}.
 
+\subsubsection{Jet reconstruction.}
+
+\noindent Quarks and gluons may be produced in the \pp collisions, therefore, their hadronization will be seen in the detector as a shower of hadrons and their decay products in the form of a ``jet''. Once individual PF particles are identified and reconstructed, the anti-$k_t$ algorithm \cite{antikt} is used to perform the jet reconstruction by clustering those PF particles withing a cone (see figure \ref{fig:jetcone}); previously, isolated electrons, isolated muons, and charged particles associated with other interaction vertices are excluded from the clustering.  
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=7.5cm, height=5cm]{JetConeAll}
+  \includegraphics[width=7.5cm, height=5cm]{JetConeAll2}
+  \caption[Jet reconstruction.]{Jet reconstruction performed by the anti-$k_t$ algorithm. Two different views of a CMS recorded event are presented. Continuous lines correspond to the tracks left by charged particles in the tracker while dotted lines are the imaginary paths followed by neutral particles. The green cubes represent the ECAL cells while the blue ones represent the HCAL cells; in both cases the height of the cube represent the amount of energy deposited in the cells\cite{jetconeview}.}\label{fig:jetcone}
+\end{figure}
+
+\noindent The anti-$k_t$ algorithm proceeds in a sequential recombination of PF particles; the distance between particles $i$ and $j$ ($d_{ij}$)  and the distance between particles and the beam are defined as
+
+\begin{align}\label{cov_der}
+  d_{ij} = & \textrm{min}\left(\frac{1}{k_{ti}^2},\frac{1}{k_{tj}^2}\right)\frac{\Delta_{ij}^2}{R^2} \nonumber\\
+  d_{iB} = & \frac{1}{k_{ti}^2}
+\end{align}
+
+\noindent where $\Delta_{ij}^2=(y_i-y_j)^2 + (\phi_i-\phi_j)^2$, $k_{ti}, y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuth of particle $i$ respectively and R is the called jet radius. For all the remaining PF particles $d_{ij}$ and $d_{iB}$ are calculated and the smallest is identified; if it is a $d_{ij}$, particles $i$ and $j$ are replaced with a new object whose momentum in the vectorial sum of the combined particles. If the smallest distance is a $d_{iB}$ the clustering process ends, the object $i$ (which at this stage should be a combination of several PF particles) is declared as a \textit{Particle-flow-jet} (PF jet) and all the associated PF particles are removed from the detector. The clustering process is repeated until no PF particles remain.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{jec}
+  \caption[Jet energy corrections.]{Jet energy correction diagram. Correction levels are applied sequentially in the indicated fixed order\cite{jec2}.}\label{fig:jec}
+\end{figure}
+
+\noindent Even though jets can be reconstructed efficiently, there are some effects that are not included in the reconstruction and that lead to discrepancies between the reconstructed results and the predicted results; in order to overcome these discrepancies, a factorized model have been designed in the form of jet energy corrections (JEC) \cite{jec,jec2} applied  sequentially as shown in the diagram of figure\ref{fig:jec}.
+
+\noindent At each levels the jet four momentum is multiplied by a scaling factor based on jet properties, \ie, \etac, flavor, etc.
+
+\begin{itemize}
+\item Level 1 correction removes the energy coming from pile-up. The scale factor is determined using a MC sample of QCD dijet events with and without pileup overlay; it is parameterized in terms of the offset energy density $\rho$, jet area A, jet \etac and jet \pt. Different corrections are applied for data and MC due to the detector simulation.
+\item MC-truth correction accounts for differences between the reconstructed jet energy and the MC particle-level energy. The correction is determined on a QCD dijet MC sample, and is parametrized in terms of the jet \pt and \etac.
+\item Residuals correct remaining small differences within jet response in data and MC. The Residuals \etac-dependent correction compares jets of similar \pt in the barrel reference region. The Residuals \pt-dependent correct the jet absolute scale (JES vs \pt).
+\item Jet-flavor corrections are derived in the same way as MC-truth corrections but using QCD pure flavor samples. 
+\end{itemize}  
 
 
 
-, jets reco, anti-kt algorithm, jet energy corrections, btagging, MET 
+
+
+
+
+The CSVv2 algorithm is based on the CSV algorithm described in Ref. [24] and combines the
+information of displaced tracks with the information of secondary vertices associated to the
+jet using a multivariate technique. The considered tracks are required to fulfill the selection
+requirements described in Section 3.1 and should have an angular distance with respect to the
+jet axis, ∆R smaller than 0.3. At least 2 such tracks per jet are requested. On top of these requirements,
+a number of additional criteria are applied, which have not changed with respect
+to the CSV algorithm used during Run 1. Any combination of two tracks compatible with the
+mass of the K0
+S meson in a window of 30 MeV are rejected.
+. At that stage, if there are no tracks
+associated to the jet, a negative value is assigned to the algorithm output to signify that there
+is no information for b jet identification. The training of the algorithm is performed in three
+independent vertex categories. The first vertex category contains jets with at least one associated
+reconstructed secondary vertex.
+
+When more than one reconstructed secondary vertex is
+associated to the jet, the vertices are sorted according to increasing uncertainty on the flight distance.
+Most of the discriminating variables relying on the presence of a secondary vertex (like
+the vertex mass and flight distance significance) are based on the first secondary vertex, hence
+the one with the smallest uncertainty on its flight distance.
+
+
+
+Identification of b jets in boosted topologies
+“Boosted b tagging” aims to identify b quarks arising from boosted particles, such as the decay
+of highly Lorentz-boosted top quarks via t→Wb, with the W boson decaying hadronically to
+qq, or for instance boosted Higgs or Z bosons to a b quark pair. As a result of the boost of
+the parent particle the decay products are collimated and subsequently merged into a single jet
+after hadronization. These jets are typically reconstructed with a wider distance parameter R =
+0.8 than “standard” jets. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy. 
+
+
+
+
+ jet energy corrections, btagging, MET 
 
 
 
