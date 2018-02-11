@@ -160,13 +160,14 @@
 
 \subsubsection{Jet reconstruction.}
 
-\noindent Quarks and gluons may be produced in the \pp collisions, therefore, their hadronization will be seen in the detector as a shower of hadrons and their decay products in the form of a ``jet''. Once individual PF particles are identified and reconstructed, the anti-$k_t$ algorithm \cite{antikt} is used to perform the jet reconstruction by clustering those PF particles withing a cone (see figure \ref{fig:jetcone}); previously, isolated electrons, isolated muons, and charged particles associated with other interaction vertices are excluded from the clustering.  
+\noindent Quarks and gluons may be produced in the \pp collisions, therefore, their hadronization will be seen in the detector as a shower of hadrons and their decay products in the form of a ``jet''. The anti-$k_t$ algorithm \cite{antikt} is used to perform the jet reconstruction by clustering those PF particles withing a cone (see figure \ref{fig:jetcone}); previously, isolated electrons, isolated muons, and charged particles associated with other interaction vertices are excluded from the clustering.  
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=7.5cm, height=5cm]{JetConeAll}
   \includegraphics[width=7.5cm, height=5cm]{JetConeAll2}
-  \caption[Jet reconstruction.]{Jet reconstruction performed by the anti-$k_t$ algorithm. Two different views of a CMS recorded event are presented. Continuous lines correspond to the tracks left by charged particles in the tracker while dotted lines are the imaginary paths followed by neutral particles. The green cubes represent the ECAL cells while the blue ones represent the HCAL cells; in both cases the height of the cube represent the amount of energy deposited in the cells\cite{jetconeview}.}\label{fig:jetcone}
+    \includegraphics[width=7.5cm, height=5cm]{jetreco}
+  \caption[Jet reconstruction.]{Jet reconstruction performed by the anti-$k_t$ algorithm. Top: Two different views of a CMS recorded event are presented. Continuous lines correspond to the tracks left by charged particles in the tracker while dotted lines are the imaginary paths followed by neutral particles. The green cubes represent the ECAL cells while the blue ones represent the HCAL cells; in both cases the height of the cube represent the amount of energy deposited in the cells\cite{jetconeview}. Bottom: Reconstruction of a recorded event with two jets\cite{jetreco}.}\label{fig:jetcone}
 \end{figure}
 
 \noindent The anti-$k_t$ algorithm proceeds in a sequential recombination of PF particles; the distance between particles $i$ and $j$ ($d_{ij}$)  and the distance between particles and the beam are defined as
@@ -176,7 +177,7 @@
   d_{iB} = & \frac{1}{k_{ti}^2}
 \end{align}
 
-\noindent where $\Delta_{ij}^2=(y_i-y_j)^2 + (\phi_i-\phi_j)^2$, $k_{ti}, y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuth of particle $i$ respectively and R is the called jet radius. For all the remaining PF particles $d_{ij}$ and $d_{iB}$ are calculated and the smallest is identified; if it is a $d_{ij}$, particles $i$ and $j$ are replaced with a new object whose momentum in the vectorial sum of the combined particles. If the smallest distance is a $d_{iB}$ the clustering process ends, the object $i$ (which at this stage should be a combination of several PF particles) is declared as a \textit{Particle-flow-jet} (PF jet) and all the associated PF particles are removed from the detector. The clustering process is repeated until no PF particles remain.
+\noindent where $\Delta_{ij}^2=(y_i-y_j)^2 + (\phi_i-\phi_j)^2$, $k_{ti}, y_i$ and $\phi_i$ are the transverse momentum, rapidity and azimuth of particle $i$ respectively and R is the called jet radius. For all the remaining PF particles, after removing the isolated ones, $d_{ij}$ and $d_{iB}$ are calculated\footnote{Notice that this is a combinatorial calculation.} and the smallest is identified; if it is a $d_{ij}$, particles $i$ and $j$ are replaced with a new object whose momentum in the vectorial sum of the combined particles. If the smallest distance is a $d_{iB}$ the clustering process ends, the object $i$ (which at this stage should be a combination of several PF particles) is declared as a \textit{Particle-flow-jet} (PF jet) and all the associated PF particles are removed from the detector. The clustering process is repeated until no PF particles remain.
 
 \begin{figure}[!h]
   \centering
@@ -189,84 +190,53 @@
 \noindent At each levels the jet four momentum is multiplied by a scaling factor based on jet properties, \ie, \etac, flavor, etc.
 
 \begin{itemize}
-\item Level 1 correction removes the energy coming from pile-up. The scale factor is determined using a MC sample of QCD dijet events with and without pileup overlay; it is parameterized in terms of the offset energy density $\rho$, jet area A, jet \etac and jet \pt. Different corrections are applied for data and MC due to the detector simulation.
+\item Level 1 correction removes the energy coming from pile-up. The scale factor is determined using a MC sample of QCD dijet events with and without pileup overlay; it is parametrized in terms of the offset energy density $\rho$, jet area A, jet \etac and jet \pt. Different corrections are applied for data and MC due to the detector simulation.
 \item MC-truth correction accounts for differences between the reconstructed jet energy and the MC particle-level energy. The correction is determined on a QCD dijet MC sample, and is parametrized in terms of the jet \pt and \etac.
 \item Residuals correct remaining small differences within jet response in data and MC. The Residuals \etac-dependent correction compares jets of similar \pt in the barrel reference region. The Residuals \pt-dependent correct the jet absolute scale (JES vs \pt).
 \item Jet-flavor corrections are derived in the same way as MC-truth corrections but using QCD pure flavor samples. 
 \end{itemize}  
 
+\subsubsection{$b$-tagging of jets.}
 
+\noindent A particular feature of the hadrons containing bottom quarks (b-hadrons) is that they have a lifetime long enough to travel some distance before decaying, but it is not as long as those of light quark hadrons; therefore, when looking at the hadrons produced in \pp collisions, b-hadrons decay typically inside the tracker rather than reach the calorimeters as some light-hadrons do. As a result, a b-hadron decay give raise to a displaced vertex (secondary vertex) with respect to the primary vertex as shown in figure \ref{fig:sv}; the SV displacement is in the order of a few millimeters. A jet resulting from the decay of a b-hadron is called $b$ jet; other jets are called light jets.\\ 
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale = 0.5]{sv}
+  \caption[Secondary vertex in a b-hadron decay.]{Secondary vertex in a b-hadron decay.}\label{fig:sv}
+\end{figure}
 
+\noindent Several methods to identify $b$-jets ($b$-tagging) have been developed; the method used in this thesis is known as ``Combined Secondary Vertex'' algorithm in its second version (CSVv2) \cite{btag}. By using information of the impact parameter, the reconstructed secondary vertices and the jet kinematics in a multivariate analysis that combines the discrimination power of each variable in one global discriminator variable, three working points (references): loose, medium and tight, are defined which quantify the probabilities of mistag jets from light quarks as jets from $b$ quarks; 10, 1 and 0.1 \% respectively. Although the mistagging probability decrease with the working point strength, the efficiency to correctly tag $b$-jets also decrease as 83, 69 and 49 \% for the respective working point; therefore, a balance needs to be achieved according to the specific requirements of the analysis.
 
+\subsubsection{Missing transverse energy.}
 
+\noindent The fact that proton bunches carry momentum along the $z$axis implies that for each event, momentum balance in the transverse plane is expected. Imbalances are quantified by the missing transverse energy (MET) and are attributed to several sources including particles escaping undetected through the beam pipe, neutrinos produced in weak interactions processes which does not interact with the detector and thus escaping without leaving a sign, or even undiscovered particles predicted by models beyond the SM.\\
 
-The CSVv2 algorithm is based on the CSV algorithm described in Ref. [24] and combines the
-information of displaced tracks with the information of secondary vertices associated to the
-jet using a multivariate technique. The considered tracks are required to fulfill the selection
-requirements described in Section 3.1 and should have an angular distance with respect to the
-jet axis, ∆R smaller than 0.3. At least 2 such tracks per jet are requested. On top of these requirements,
-a number of additional criteria are applied, which have not changed with respect
-to the CSV algorithm used during Run 1. Any combination of two tracks compatible with the
-mass of the K0
-S meson in a window of 30 MeV are rejected.
-. At that stage, if there are no tracks
-associated to the jet, a negative value is assigned to the algorithm output to signify that there
-is no information for b jet identification. The training of the algorithm is performed in three
-independent vertex categories. The first vertex category contains jets with at least one associated
-reconstructed secondary vertex.
+\noindent The PF algorithm assign the negative sum of the momenta of all reconstructed PF particles to the \textit{particle-flow MET} according to
+\beqn
+\vec{\slashed{E}_T}=-\sum_{i}\vec{p_{T,i}}
+\eeqn
+\noindent JEC are propagated to the calculation of the $\vec{\slashed{E}_T}$ as described in the reference \cite{metcorr}.\\
 
-When more than one reconstructed secondary vertex is
-associated to the jet, the vertices are sorted according to increasing uncertainty on the flight distance.
-Most of the discriminating variables relying on the presence of a secondary vertex (like
-the vertex mass and flight distance significance) are based on the first secondary vertex, hence
-the one with the smallest uncertainty on its flight distance.
+\subsection{Event reconstruction examples}
 
+\noindent Figure \ref{fig:reco} shows the results of the reconstruction performed on 3 recorded events. Descriptions taken directly from the source.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8.5cm,height=6cm]{HIG13004_Event01_0}
+  \includegraphics[width=12.5cm,height=8cm]{TOP12035_Event01}
+  \includegraphics[width=12.5cm,height=8cm]{reco2}
+  \caption[Recorded events reconstruction.]{Recorded events reconstruction results; detailed description in text.}\label{fig:reco}
+\end{figure}
 
-Identification of b jets in boosted topologies
-“Boosted b tagging” aims to identify b quarks arising from boosted particles, such as the decay
-of highly Lorentz-boosted top quarks via t→Wb, with the W boson decaying hadronically to
-qq, or for instance boosted Higgs or Z bosons to a b quark pair. As a result of the boost of
-the parent particle the decay products are collimated and subsequently merged into a single jet
-after hadronization. These jets are typically reconstructed with a wider distance parameter R =
-0.8 than “standard” jets. 
+\begin{itemize}
+\item Top: ``HIG-13-004 Event 1: Event recorded with the CMS detector in 2012 at a proton-proton center-of-mass energy of 8 TeV. The event shows characteristics expected from the decay of the SM Higgs boson to a pair of $\tau$ leptons. Such an event is characterized by the production of two forward-going jets, seen here in opposite endcaps. One of the $\tau$ decays to a muon (red lines on the right) and neutrinos, while the other $\tau$ decays into a charged hadron and a neutrino.''\cite{hig13}.
+\item Center: ``An $e\mu$ event candidate selected in 8 TeV data, as seen from the direction of the proton beams. The kinematics of the main objects used in the event selection are highlighted: two isolated leptons and two particle-flow jets. The reconstructed missing transverse energy is also displayed for reference''\cite{top12035}.
+\item Bottom: ``Recorded event ($\rho$-z projection) with three jets with \pt > 30 GeV with one displaced muon track in 2016 data collected at 13 TeV. Each of the three jets has a displaced reconstructed vertex. The jet with \pt(j) = 43.8 GeV, \etac(j) = -1.34, \phic(j) = -0.79 contains muon with \pt($\mu$) = 5.5 GeV, \etac($\mu$) = -1.25, \phic($\mu$) = -0.84. Event contains reconstructed isolated muon with \pt($\mu$) = 41.2 GeV, \etac($\mu$) = 0.34, \phic($\mu$) = 2.05 and MET with \pt = 72.5 GeV, \phic = -0.32. Jet candidates for a $b$-jet from top quark leptonic and hadronic decays are tagged by CSVv2T algorithm. One of the other two jets is tagged by CharmT algorithm. Tracks with \pt > 0.5 GeV are shown. The number of reconstructed primary vertices is 18. Reconstructed $m_T$(W) is 101.8 GeV. Beam spot position correction is applied. Reconstructed primary vertices are shown in yellow colour, while reconstructed displaced vertices and associated tracks are presented in black color. Dimensions are given in cm''\cite{reco1}.
+\end{itemize}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The reconstruction of all the particles in an event is used to determine the presence of neutrinos represented by an imbalance in the transverse energy. 
-
-
-
-
- jet energy corrections, btagging, MET 
-
-
-
-
-
-
-
-\section{ MVA methods, NN, BDT, boosting, overtraining, variable ranking  }
-\section{statistical inference, likelihood parametrization}
-\section{ nuisance parameters}
-\section{exclusion limits }
-\section{asymptotic limits }
-
-
-
+ 
 
 
 
