@@ -34,125 +34,82 @@ The boundary can be parametrized in terms of the input variables such that the c
 Figure \ref{fig:scalar_test} illustrates what would be the probability distribution functions under the signal and background hypotheses for a scalar test statistic with a cut on $y$.
 
 
-\subsection{Boosted decision trees (BDT) }
+\subsection{Decision trees }
 
-For this thesis, the implementation of the MVA strategy, described above, is performed through boosted decision trees (BDT). In a simple picture, a decision tree (\dt) classifies events according to their input variables values by setting a cut on each input variable and checking which events are on which side of the cut, just as proposed in the MVA strategy, but in addition, as a machine learning algorithm, \dt s offer the possibility to be trained and then perform the classification efficiently.   
+For this thesis, the implementation of the MVA strategy, described above, is performed through decision trees. In a simple picture, a decision tree classifies events according to their input variables values by setting a cut on each input variable and checking which events are on which side of the cut, just as proposed in the MVA strategy, but in addition, as a machine learning algorithm, decision trees offer the possibility to be trained and then perform the classification efficiently.    
 
-The training process consists in taking MC samples of signal and background events and split them in two parts each; first parts form the training sample which will be used in the \dt training while the second parts form the test sample which will be used for testing the final classifier obtained from the training. Each event has associated a set of input variables $\textbf{x}=(x_1,.....,x_n)$ which serve to distinguish between signal and background events. Pick one variable, say $x_1$, and for each event value of $x_1$ split the training sample into two sets, then, find the splitting value that provides the best classification, \ie, one set mostly made signal events while the other set is mostly made of background events.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{decision_tree}
+  \caption[Decision tree.]{Example of a decision tree. Each node is fed with a MC sample mixing signal and background events (left-right numbers); nodes colors represent the relative amount of signal/background events \cite{luca}.}\label{fig:dt}
+\end{figure}
+
+The training or growing of a decision tree is the process that defines the rules for classifying events; this process is represented in figure\ref{fig:dt} and consist of several steps
+
+\begin{itemize}
+\item take MC samples of signal and background events and split them into two parts each; first parts form the training sample which will be used in the decision tree training, while the second parts form the test sample which will be used for testing the final classifier obtained from the training. Each event has associated a set of input variables $\textbf{x}=(x_1,.....,x_n)$ which serve to distinguish between signal and background events. The training sample is taken in at the root ``node''. 
+\item pick one variable, say $x_i$
+\item pick one value of $x_i$, each event has its own value of $x_i$, and split the training sample into two subsamples $B_1$ and $B_2$; $B_1$ contains events for which $x_i< c_1$ while $B_2$ contains the rest of the training events;
+\item scan all possible values of $x_i$ and find the splitting value that provides the ``best'' classification\footnote{ Quality of the classification will be treated in the next paragraph.}, \ie, $B_1$ is mostly made of signal events while $B_2$ is mostly made of background events.
+\item It is possible that variables other than the picked one produce a better classification, hence, all the variables have to be evaluated. Pick the next variable, say $x_j$, and repeat the scan over its possible values.
+\item At the end, all the variables and their values will have been scanned, the ``best'' variable and splitting value will have been identified, say $x_1, c_1$, and there will be two nodes fed with the subsamples $B_1$ and $B_2$. 
+\end{itemize}
+
+Nodes are further split by repeating the decision process until: a given number of final nodes is obtained, nodes are largely dominated by either signal or background events, or nodes has too few events to continue. Final nodes are called ``leaves'' and they are classified as signal or background leaves according to the class of the majority of events in them. Each ``branch'' in the tree corresponds to a sequence of cuts. 
+
+The quality of the classification at each node is evaluated through a separation criteria; there are several of them but the ``Gini Index (G)'' is the one used in the decision trees trained for the analysis in this thesis. G is written in terms of the purity (P), \ie the fraction of signal events, of the samples after the separation is made; it is given by
+\beqn
+G=P(1-P)
+\eeqn
+\noindent notice that P=0.5 at the root node while G=0 for pure leaves. For a node $A$ split into two nodes $B_1$ and $B_2$ the G gain is
+\beqn
+\Delta G = G(A)- G(B_1)-G(B_2)
+\eeqn
+
+the `` best'' classification corresponds to that for which the gain of G is maximized; hence, the scanning over all event's variables and their values is of capital importance.
+
+The output of a decision tree is called ``classifier''. Figure \ref{fig:dtr}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.4]{dt1}
+  \includegraphics[scale=0.4]{dt2}
+  \caption[Decision tree output example.]{Example of a decision tree output. Each leaf, blue for signal events and red for background events, represent a region in the variables phase space \cite{coadou}.}\label{fig:dtr}
+\end{figure}
+
+\subsection{Boosted decision trees (BDT)}
+
+Event misclassification occurs when a training event end up in the wrong leaf, \ie, a signal event end up in a background leaf or a background event end up in a signal leaf; a way to correct it is to assign a weight to the misclassified events such that when used in the training of a new decision tree they get correctly classified. In the first decision tree all the weights are set to the unity, hence, an event with increased weight is a ``boosted'' event. The event reweighting if performed by a boosting algorithm which also creates a set of trees,  and hence a set of classifiers, which are combined to create a new classifier; this new classifier offers more stability and has a smaller misclassification rate than any individual ones.
 
 
-Then repeat this
-for each variable in turn. Select the variable and splitting
-value which gives the best separation. Initially there
-was a sample of events at a “node”. Now there are two
-samples called “branches”. For each branch, repeat the
-process, i.e., again try each value of each variable for the
-events within that branch to find the best variable and
-splitting point for that branch. One keeps splitting un-til a given number of final branches, called leaves, are
-obtained, or until each leaf is pure signal or pure background,
-or has too few events to continue. This description
-is a little oversimplified. In fact at each stage one
-picks as the next branch to split, the branch which will
-give the best increase in the quality of the separation. A
-schematic of a decision tree is shown in Fig.1, in which
-3 variables are used for signal/background separation:
-event hit multiplicity, energy, and reconstructed radial
-position.
-What criterion is used to define the quality of separation
-between signal and background in the split? Imagine
-the events are weighted with each event having weight
-Wi
-. Define the purity of the sample in a branch by
+It is often applied to decision trees, precisely because they suffer from sensitivity to statistical fluctuations in the training sample, but the technique can be applied to any classifier.
 
-where P
-s
-is the sum over signal events and P
-b
-is the
-sum over background events. Note that P(1 − P) is 0
-if the sample is pure signal or pure background. For a
-given branch let
+
+
+ 
 
 
 
 
 
 
-A decision trees (DT) is a consist of consecutive binary questions based on a set of input
-variables. Depending on the previous answer a different decision has to be taken on the next
+\beqn
+P=\frac{\sum_s w_s}{\sum_s w_s + \sum_b w_b}
+\eeqn
 
-node. After a maximal number of nodes, a final verdict is reached depending on the majority of
-event class in the occupied endpoint, the leaf.
-In the training of Decision Trees the best possible selection criterion for a node is defined by
-maximizing the separation gain S between two consecutive nodes. In order to determine the
-separation gain, the purity of each leaf has to be determined as
+\noindent where $w_s$ and $w_b$ are the weights of the events in a weighted sample;  
 
-P
-s w s
-P = P
-,
-P
-s w s + b w b
-P
-where s,b w s,b are the summed weights of the signal and background events, respectively 1 .
-The purity allows for the determination of the Gini index G, a measure of statistical dispersion,
-as
-n
-X
-G = * w i + · P · (1 − P ),
-, i=1 -
-where w i are the normalized weights for each event. The best possible question for the node
-can then be determined by maximizing S, given by
-S = G father node − G child I − G child II .
-As the Gini index has a maximum at P = 0.5 of G = 0.25 (for unweighted events) the maximal
-separation gain would also be S = 0.25 for a maximally disperse starting ensemble (G father =
-0.25) and two perfectly separated child nodes (G child = 0). Based on the purity after the training,
-leafs are either labeled as signal or background leaves.
+
+
+
+
+%% where w i are the normalized weights for each event. The best possible question for the node
+%% can then be determined by maximizing S,
+
 By using a multitude of slightly altered decision trees and averaging over the predicted outcome
-the robustness of the procedure can be ensured, as a badly trained tree due to aberrations does
-not have enough power to sway the decision into the wrong direction. The average of all
-classifier outputs is later used as a final discrimination variable, labeled as ”BDT output”.
-
-
-By using the boosting method the full potential of decision trees can be exploited. By sub-
-sequently training a multitude of trees, where in each iteration falsely categorized events get
-assigned a higher weight, the focus of the training is shifted to classify these previously misiden-
-tified events correctly.
-In this thesis the AdaBoost [124] algorithm is utilized. Misclassified events are assigned a boost
-weight α i for each tree i which is dependent on the misclassification rate Γ i of tree i in the
-previous training iteration:
-1 − Γ i
-α i =
-.
-Γ i
-Correctly classified events get reweighted such that the sum of weights remains constant. The
-BDT output of a boosted ensemble of N decision trees is determined as
-y Boost (x) =
-N
-1 X
-·
-ln α i · h i (x),
-
-
-
-where h(x) is the binary outcome of tree i, mathematically realized as h(x) = 1 for events
-ending on a signal leaf and h(x) = −1 for events ending on a background leaf.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{} 
+%% the robustness of the procedure can be ensured, as a badly trained tree due to aberrations does
+%% not have enough power to sway the decision into the wrong direction. The average of all
+%% classifier outputs is later used as a final discrimination variable, labeled as ”BDT output”.
 
 
 
