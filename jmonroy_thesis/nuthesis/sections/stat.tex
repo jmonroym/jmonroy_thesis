@@ -1,19 +1,19 @@
 \chapter{Statistical methods}\label{ch:stat}
 
-In the course of analyzing the data sets provided by the CMS experiment and used in this thesis, several statistical tools have been employed; in this chapter, a description of these tools will be presented, starting with the general statement of the multivariate analysis method, followed by the particularities of the Boosted Decision Trees (BDT) method and its application to the classification problem. Statistical inference methods used will also be presented. This chapter is based mainly on the reference \cite{mva}.      
+In the course of analyzing the data sets provided by the CMS experiment and used in this thesis, several statistical tools have been employed; in this chapter, a description of these tools will be presented, starting with the general statement of the multivariate analysis method, followed by the particularities of the Boosted Decision Trees (BDT) method and its application to the classification problem. Statistical inference methods used will also be presented. This chapter is based mainly on the references \cite{mva, tmva}.      
 
 \section{Multivariate analysis}
 
 Multivariate data analysis (MVA) makes reference to statistical techniques that analyze data containing information of more than one variable, commonly taking into account the effects of all variables on the response of the particular variable under investigation, \ie, considering all the correlations between variables. MVA is employed in a variety of fields like consumer and market research, quality control and process optimization. From a MVA it is possible to identify the dominant patterns in the data, like groups, outliers and trends, and determine to which group a set of values belong; in the particle physics context, MVA methods are used to perform the selection of certain type of events, from a large data set, using a potentially large number of measurable properties for each event.
 
-Processes with small cross section, as the \tHq process, normally are hidden behind more common processes; therefore, the data set results in a subset of events with characteristic features of interest (signal) mixed in randomly with a much larger number of SM events that can mimic these features of interest (background) which implies that it is not possible to say with certainty that a given event is signal or background. In that sense, the problem can be formulated as one where a set of events have to be classified according to some features; these features correspond to the measurements of several parameters like energy, momentum organized in a set of ``input variables''. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
+Processes with small cross section, as the \tHq process, normally are hidden behind more common processes; therefore, the data set results in a subset of events with characteristic features of interest (signal) mixed in randomly with a much larger number of SM events that can mimic these features of interest (background) which implies that it is not possible to say with certainty that a given event is signal or background. In that sense, the problem can be formulated as one where a set of events have to be classified according to some features; these features correspond to the measurements of several parameters like energy, momentum organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
 
 \begin{itemize}
-\item Signal hypotheses $\to f(\textbf{x}|s)$ is the probability density (``likelihood'') for $\textbf{x}$ given it is a signal event 
-\item Background hypotheses $ \to f(\textbf{x}|b)$ is the probability density (``likelihood'') of $\textbf{x}$ given it is a background event
+\item Signal hypotheses $\to f(\textbf{x}|s)$ is the probability density (\textit{likelihood}) for $\textbf{x}$ given it is a signal event 
+\item Background hypotheses $ \to f(\textbf{x}|b)$ is the probability density (\textit{likelihood}) of $\textbf{x}$ given it is a background event
 \end{itemize}
 
-Figure \ref{fig:scatter_plot} shows three ways to perform a classification of events for which measurements of two properties, two input variables, have been performed; blue circles represent signal events while red triangles represent background events. The classification on (a) is ``cut-based'' requiring $x_1<c_1$ and $x_2<c_2$; usually the cut values are chosen according to some knowledge about the event process. In (b), the classification is performed by stating a cut involving a linear function of the input variables and so the boundary, while in (c) the the relationship between the input variables is not linear thus the boundary is not linear either.          
+Figure \ref{fig:scatter_plot} shows three ways to perform a classification of events for which measurements of two properties, two input variables, have been performed; blue circles represent signal events while red triangles represent background events. The classification on (a) is \textit{cut-based} requiring $x_1<c_1$ and $x_2<c_2$; usually the cut values are chosen according to some knowledge about the event process. In (b), the classification is performed by stating a cut involving a linear function of the input variables and so the boundary, while in (c) the the relationship between the input variables is not linear thus the boundary is not linear either.          
 
 \begin{figure}[!h]
   \centering
@@ -33,10 +33,9 @@ The boundary can be parametrized in terms of the input variables such that the c
 
 Figure \ref{fig:scalar_test} illustrates what would be the probability distribution functions under the signal and background hypotheses for a scalar test statistic with a cut on $y$.
 
-
 \subsection{Decision trees }
 
-For this thesis, the implementation of the MVA strategy, described above, is performed through decision trees. In a simple picture, a decision tree classifies events according to their input variables values by setting a cut on each input variable and checking which events are on which side of the cut, just as proposed in the MVA strategy, but in addition, as a machine learning algorithm, decision trees offer the possibility to be trained and then perform the classification efficiently.    
+For this thesis, the implementation of the MVA strategy, described above, is performed through decision trees by using the TMVA software package \cite{tmva} included in the the ROOT analysis framework\cite{root}. In a simple picture, a decision tree classifies events according to their input variables values by setting a cut on each input variable and checking which events are on which side of the cut, just as proposed in the MVA strategy, but in addition, as a machine learning algorithm, decision trees offer the possibility to be trained and then perform the classification efficiently.    
 
 \begin{figure}[!h]
   \centering
@@ -47,17 +46,17 @@ For this thesis, the implementation of the MVA strategy, described above, is per
 The training or growing of a decision tree is the process that defines the rules for classifying events; this process is represented in figure\ref{fig:dt} and consist of several steps
 
 \begin{itemize}
-\item take MC samples of signal and background events and split them into two parts each; first parts form the training sample which will be used in the decision tree training, while the second parts form the test sample which will be used for testing the final classifier obtained from the training. Each event has associated a set of input variables $\textbf{x}=(x_1,.....,x_n)$ which serve to distinguish between signal and background events. The training sample is taken in at the root ``node''. 
+\item take MC samples of signal and background events and split them into two parts each; first parts form the training sample which will be used in the decision tree training, while the second parts form the test sample which will be used for testing the final classifier obtained from the training. Each event has associated a set of input variables $\textbf{x}=(x_1,.....,x_n)$ which serve to distinguish between signal and background events. The training sample is taken in at the root \textit{node}. 
 \item pick one variable, say $x_i$
 \item pick one value of $x_i$, each event has its own value of $x_i$, and split the training sample into two subsamples $B_1$ and $B_2$; $B_1$ contains events for which $x_i< c_1$ while $B_2$ contains the rest of the training events;
-\item scan all possible values of $x_i$ and find the splitting value that provides the ``best'' classification\footnote{ Quality of the classification will be treated in the next paragraph.}, \ie, $B_1$ is mostly made of signal events while $B_2$ is mostly made of background events.
+\item scan all possible values of $x_i$ and find the splitting value that provides the \textit{best} classification\footnote{ Quality of the classification will be treated in the next paragraph.}, \ie, $B_1$ is mostly made of signal events while $B_2$ is mostly made of background events.
 \item It is possible that variables other than the picked one produce a better classification, hence, all the variables have to be evaluated. Pick the next variable, say $x_j$, and repeat the scan over its possible values.
-\item At the end, all the variables and their values will have been scanned, the ``best'' variable and splitting value will have been identified, say $x_1, c_1$, and there will be two nodes fed with the subsamples $B_1$ and $B_2$. 
+\item At the end, all the variables and their values will have been scanned, the \textit{best} variable and splitting value will have been identified, say $x_1, c_1$, and there will be two nodes fed with the subsamples $B_1$ and $B_2$. 
 \end{itemize}
 
-Nodes are further split by repeating the decision process until: a given number of final nodes is obtained, nodes are largely dominated by either signal or background events, or nodes has too few events to continue. Final nodes are called ``leaves'' and they are classified as signal or background leaves according to the class of the majority of events in them. Each ``branch'' in the tree corresponds to a sequence of cuts. 
+Nodes are further split by repeating the decision process until: a given number of final nodes is obtained, nodes are largely dominated by either signal or background events, or nodes has too few events to continue. Final nodes are called \textit{leaves} and they are classified as signal or background leaves according to the class of the majority of events in them. Each \textit{branch} in the tree corresponds to a sequence of cuts. 
 
-The quality of the classification at each node is evaluated through a separation criteria; there are several of them but the ``Gini Index (G)'' is the one used in the decision trees trained for the analysis in this thesis. G is written in terms of the purity (P), \ie the fraction of signal events, of the samples after the separation is made; it is given by
+The quality of the classification at each node is evaluated through a separation criteria; there are several of them but the \textit{Gini Index (G)} is the one used in the decision trees trained for the analysis in this thesis. G is written in terms of the purity (P), \ie the fraction of signal events, of the samples after the separation is made; it is given by
 \beqn
 G=P(1-P)
 \eeqn
@@ -66,55 +65,111 @@ G=P(1-P)
 \Delta G = G(A)- G(B_1)-G(B_2)
 \eeqn
 
-the `` best'' classification corresponds to that for which the gain of G is maximized; hence, the scanning over all event's variables and their values is of capital importance.
+\noindent the \textit{ best} classification corresponds to that for which the gain of G is maximized; hence, the scanning over all event's variables and their values is of capital importance.
 
-The output of a decision tree is called ``classifier''. Figure \ref{fig:dtr}
+In order to provide a numerical output for the classification, events in a signal(background) leaf are assigned an score of 1(-1) each, defining in this way the decision tree \textit{classifier or weak learner} as
+
+\[
+f(\textbf{x}) = \left\{
+\begin{array}{ll}
+  1  &  \textbf{x} \quad \textrm{in signal region,}\\
+  -1 &  \textbf{x} \quad \textrm{in background region.}
+\end{array}
+\right.
+\]
+
+Figure \ref{fig:dtr}shows an example of the classification of a sample of events, containing two variables, performed by a decision tree.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.4]{dt1}
-  \includegraphics[scale=0.4]{dt2}
+  \includegraphics[scale=0.38]{dt1}
+  \includegraphics[scale=0.38]{dt2}
   \caption[Decision tree output example.]{Example of a decision tree output. Each leaf, blue for signal events and red for background events, represent a region in the variables phase space \cite{coadou}.}\label{fig:dtr}
 \end{figure}
 
-\subsection{Boosted decision trees (BDT)}
+\subsection{Boosted decision trees (BDT).}
 
-Event misclassification occurs when a training event end up in the wrong leaf, \ie, a signal event end up in a background leaf or a background event end up in a signal leaf; a way to correct it is to assign a weight to the misclassified events such that when used in the training of a new decision tree they get correctly classified. In the first decision tree all the weights are set to the unity, hence, an event with increased weight is a ``boosted'' event. The event reweighting if performed by a boosting algorithm which also creates a set of trees,  and hence a set of classifiers, which are combined to create a new classifier; this new classifier offers more stability and has a smaller misclassification rate than any individual ones.
+Event misclassification occurs when a training event ends up in the wrong leaf, \ie, a signal event ends up in a background leaf or a background event ends up in a signal leaf. A way to correct it is to assign a weight to the misclassified events and train a second tree using the reweighted events; the event reweighting is performed by a boosting algorithm, events with increased weight are known as \textit{boosted} events, in such a way that when used in the training of a new decision tree they get correctly classified. The process is repeated iteratively adding a new tree to a forest and creating a set of classifiers which are combined to create the next classifier; the final classifier offers more stability\footnote{Decision trees suffer from sensitivity to statistical fluctuations in the training sample which may leads to very different results with an small change in the training samples.} and has a smaller misclassification rate than any individual ones. The resulting tree collection is known as a \textit{boosted decision tree (BDT)}.
 
-
-It is often applied to decision trees, precisely because they suffer from sensitivity to statistical fluctuations in the training sample, but the technique can be applied to any classifier.
-
-
-
- 
-
-
-
-
-
+Thus, purity of the sample is generalized to 
 
 \beqn
 P=\frac{\sum_s w_s}{\sum_s w_s + \sum_b w_b}
 \eeqn
 
-\noindent where $w_s$ and $w_b$ are the weights of the events in a weighted sample;  
+\noindent where $w_s$ and $w_b$ are the weights of the events; the Gini index is also generalized
+
+\beqn
+G=\left(\sum_i^n w_i\right) P(1-P)
+\eeqn
+
+\noindent with n the number of events in the node. The final score of an event, after passing through the forest, is calculated as the renormalized sum of all the individual (possibly weighted) scores; thus, high(low) score implies that the event is most likely signal(background).   
+
+The boosting procedure, implemented in the  \textit{Gradient boosting} algorithm used in this thesis, produce a classifier $F(\textbf{x})$ which is the weighted sum of the individual classifiers obtained after each iteration,\ie,   
+
+\beqn
+F(\textbf{x})=\sum_{m=1}^M \beta_m f(\textbf{x};a_m)
+\eeqn
+
+\noindent where M is the number of trees in the forest. The \textit{loss function $L(F,y)$} represent the deviation between the classifier $F(\textbf{x})$ response and the true value $y$ obtained from the training sample (1 for signal events and -1 for background event), according to 
+
+\beqn
+L(F,y)= \textrm{ln}(1+ e^{-2F(\textbf{x})y})
+\eeqn
+
+\noindent thus, the reweighting is employed to ensure the minimization of the loss function; a more detailed description of the minimization procedure can be found in reference \cite{friedman}. The final classifier output is later used as a final discrimination variable, labeled as \ti{BDT output/response}.
+
+\subsection{Overtraining.}
+
+Decision trees offer the possibility to have as many nodes as wished in order to reduce the misclassification to zero (in theory); however, when a classifier is too much adjusted to a particular training sample, the classifier response to a slightly different sample may leads to a completely different classification results; this effect is know as \ti{overtraining}.
+
+An alternative to reduce the overtraining in BDTs consist in prunning the tree by removing statistically insignificant nodes after the tree growing is completed but this option is not available for BDTs with gradient boosting in the TMVA-toolkit, therefore, the overtraining has to be reduced by tuning the algorithm, number of nodes, minimum number of events in the leaves, etc. The overtraining can be evaluated by comparing the responses of the classifier when running over the training and test samples.   
+
+\subsection{Variable ranking.}
+
+BDTs have the couple of particular advantages related to the input variables; on one side, they are relatively insensitive to the number of input variables used in the vector \textbf{x}. The ranking of the BDT input variables is determined by counting the number of times a variable is used to split decision tree nodes; in addition, the separation gain-squared achieved in the splitting and the number of events in the node are accounted by applying a weighting to that number. Thus, those variables with small or no power to separate signal and background events are rarely chosen to split the nodes,\ie, are effectively ignored.
+
+On the other side, variables correlations play an important role for some MVA methods like the Fisher discriminant algorithm in which the first step consist of performing a linear transformation to a phase space where the correlations between variables are removed; in case of BDT algorithm, correlations do not affect the performance.
+
+\subsection{BDT output example.}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.5]{bdt_output}
+  \includegraphics[scale=0.5]{roc_multimva}
+  \caption[BDT output example.]{Left: Output distributions for the gradient boosted decision tree (BDTG) classifier using a sample of signal(\pp $to$ \tHq ) and background(\pp $\to$ \ttbar) events. Right: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers running over the same sample used to produce the plot on the left.}\label{fig:bdt_output}
+\end{figure}
+
+
+Left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal(\pp $to$ \tHq ) and background(\pp $\to$ \ttbar) events; a forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. This plot is the equivalent to the one showed in figure \ref{fig:scalar_test}.
+
+Several observations can be made; the BDTG classifier offers a good separation power; while there is a small overtraining in the signal distribution, the background distribution seems to be well predicted which might indicate that the sample is composed of more background than signal events.
+
+Right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms; these curves are known as ROC curves and give an indication of the performance of the classifier. The best performance is achieved with the BDTG classifier (BDTA\_GRAD).   
 
 
 
 
 
-%% where w i are the normalized weights for each event. The best possible question for the node
-%% can then be determined by maximizing S,
-
-By using a multitude of slightly altered decision trees and averaging over the predicted outcome
-%% the robustness of the procedure can be ensured, as a badly trained tree due to aberrations does
-%% not have enough power to sway the decision into the wrong direction. The average of all
-%% classifier outputs is later used as a final discrimination variable, labeled as ”BDT output”.
 
 
 
 
- Notice that the tails of the distributions indicate that some signal events fall on the rejection region and some background events fall on the acceptance region; therefore, it is convenient to define the ``efficiency'' with which events of a given type are accepted, thus, the signal and background efficiencies are given by 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Notice that the tails of the distributions indicate that some signal events fall on the rejection region and some background events fall on the acceptance region; therefore, it is convenient to define the \textit{efficiency} with which events of a given type are accepted, thus, the signal and background efficiencies are given by 
 
 \begin{eqnarray}
 \label{eq:sigeff}
@@ -122,7 +177,7 @@ By using a multitude of slightly altered decision trees and averaging over the p
 \varepsilon_{\textrm{b}} & = & P( \mbox{accept event} | \mbox{b} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{b} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{b}) \, dy \;,
 \end{eqnarray}
 
-where A is the acceptance region. Under these conditions, the background hypothesis corresponds to the ``null hypothesis ($H_0$)'', the signal hypothesis corresponds to the ``alternative hypothesis ($H_1$)'', the background efficiency is the significance level of the test, and signal efficiency is the power of the test; what is sought in an analysis is to maximize the power of the test relative to the significance level.
+where A is the acceptance region. Under these conditions, the background hypothesis corresponds to the \textit{null hypothesis ($H_0$)}, the signal hypothesis corresponds to the \textit{alternative hypothesis ($H_1$)}, the background efficiency is the significance level of the test, and signal efficiency is the power of the test; what is sought in an analysis is to maximize the power of the test relative to the significance level.
 
 
 
