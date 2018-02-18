@@ -2,15 +2,15 @@
 
 In the course of analyzing the data sets provided by the CMS experiment and used in this thesis, several statistical tools have been employed; in this chapter, a description of these tools will be presented, starting with the general statement of the multivariate analysis method, followed by the particularities of the Boosted Decision Trees (BDT) method and its application to the classification problem. Statistical inference methods used will also be presented. This chapter is based mainly on the references \cite{mva, tmva}.      
 
-\section{Multivariate analysis}
+\section{Multivariate analysis}\label{sec:mva}
 
 Multivariate data analysis (MVA) makes reference to statistical techniques that analyze data containing information of more than one variable, commonly taking into account the effects of all variables on the response of the particular variable under investigation, \ie, considering all the correlations between variables. MVA is employed in a variety of fields like consumer and market research, quality control and process optimization. From a MVA it is possible to identify the dominant patterns in the data, like groups, outliers and trends, and determine to which group a set of values belong; in the particle physics context, MVA methods are used to perform the selection of certain type of events, from a large data set, using a potentially large number of measurable properties for each event.
 
-Processes with small cross section, as the \tHq process, normally are hidden behind more common processes; therefore, the data set results in a subset of events with characteristic features of interest (signal) mixed in randomly with a much larger number of SM events that can mimic these features of interest (background) which implies that it is not possible to say with certainty that a given event is signal or background. In that sense, the problem can be formulated as one where a set of events have to be classified according to some features; these features correspond to the measurements of several parameters like energy, momentum organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
+Processes with small cross section, as the \tHq process, normally are hidden behind more common processes; therefore, the data set results in a subset of events with characteristic features of interest (signal) mixed in randomly with a much larger number of SM events that can mimic these features of interest (background) which implies that it is not possible to say with certainty that a given event is signal or background. In that sense, the problem can be formulated as one where a set of events have to be classified according to some features; these features correspond to the measurements of several parameters like energy or momentum, organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
 
 \begin{itemize}
-\item Signal hypotheses $\to f(\textbf{x}|s)$ is the probability density (\textit{likelihood}) for $\textbf{x}$ given it is a signal event 
-\item Background hypotheses $ \to f(\textbf{x}|b)$ is the probability density (\textit{likelihood}) of $\textbf{x}$ given it is a background event
+\item Signal hypotheses $\to f(\textbf{x}|s)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the events is a signal event. 
+\item Background hypotheses $ \to f(\textbf{x}|b)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the event is a background event.
 \end{itemize}
 
 Figure \ref{fig:scatter_plot} shows three ways to perform a classification of events for which measurements of two properties, two input variables, have been performed; blue circles represent signal events while red triangles represent background events. The classification on (a) is \textit{cut-based} requiring $x_1<c_1$ and $x_2<c_2$; usually the cut values are chosen according to some knowledge about the event process. In (b), the classification is performed by stating a cut involving a linear function of the input variables and so the boundary, while in (c) the the relationship between the input variables is not linear thus the boundary is not linear either.          
@@ -31,7 +31,15 @@ The boundary can be parametrized in terms of the input variables such that the c
   \caption[Scalar test statistical.]{Distributions of the scalar test statistic $y(\textbf{x})$ under the signal and background hypotheses.\cite{mva}}\label{fig:scalar_test}
 \end{figure}
 
-Figure \ref{fig:scalar_test} illustrates what would be the probability distribution functions under the signal and background hypotheses for a scalar test statistic with a cut on $y$.
+Figure \ref{fig:scalar_test} illustrates what would be the probability distribution functions under the signal and background hypotheses for a scalar test statistic with a cut on the classifier $y$. Notice that the tails of the distributions indicate that some signal events fall on the rejection region and some background events fall on the acceptance region; therefore, it is convenient to define the \textit{efficiency} with which events of a given type are accepted, thus, the signal and background efficiencies are given by 
+
+\begin{eqnarray}
+\label{eq:sigeff}
+\varepsilon_{\textrm{s}} & = & P( \mbox{accept event} | \mbox{s} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{s} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{s}) \, dy\;, \\*[0.3 cm]
+\varepsilon_{\textrm{b}} & = & P( \mbox{accept event} | \mbox{b} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{b} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{b}) \, dy \;,
+\end{eqnarray}
+
+\noindent where A is the acceptance region. Under these conditions, the background hypothesis corresponds to the \textit{null hypothesis ($H_0$)}, the signal hypothesis corresponds to the \textit{alternative hypothesis ($H_1$)}, the background efficiency is the significance level of the test, and signal efficiency is the power of the test; what is sought in an analysis is to maximize the power of the test relative to the significance level.
 
 \subsection{Decision trees }
 
@@ -65,7 +73,7 @@ G=P(1-P)
 \Delta G = G(A)- G(B_1)-G(B_2)
 \eeqn
 
-\noindent the \textit{ best} classification corresponds to that for which the gain of G is maximized; hence, the scanning over all event's variables and their values is of capital importance.
+\noindent the \textit{best} classification corresponds to that for which the gain of G is maximized; hence, the scanning over all event's variables and their values is of capital importance.
 
 In order to provide a numerical output for the classification, events in a signal(background) leaf are assigned an score of 1(-1) each, defining in this way the decision tree \textit{classifier or weak learner} as
 
@@ -141,48 +149,23 @@ On the other side, variables correlations play an important role for some MVA me
 \end{figure}
 
 
-Left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal(\pp $to$ \tHq ) and background(\pp $\to$ \ttbar) events; a forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. This plot is the equivalent to the one showed in figure \ref{fig:scalar_test}.
-
-Several observations can be made; the BDTG classifier offers a good separation power; while there is a small overtraining in the signal distribution, the background distribution seems to be well predicted which might indicate that the sample is composed of more background than signal events.
+Left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal(\pp $\to$ \tHq ) and background(\pp $\to$ \ttbar) events; this plot is the equivalent to the one showed in figure \ref{fig:scalar_test}. A forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. The BDTG classifier offers a good separation power; while there is a small overtraining in the signal distribution, the background distribution seems to be well predicted which might indicate that the sample is composed of more background than signal events.
 
 Right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms; these curves are known as ROC curves and give an indication of the performance of the classifier. The best performance is achieved with the BDTG classifier (BDTA\_GRAD).   
 
 
+\section{Statistical inference}
+
+Once events are classified, the next step consists in finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these parameters and their uncertainties from the experimental data is called \ti{inference}. The likelihood function for N the events the in a sample is the combination of all the likelihoods functions
+
+\beqn
+L(\bm{\theta})=\prod_{i=1}^N f(\textbf{x}^i|\bm{\theta})=\prod_{i=1}^N f(x^i_1,...,x_n^i;\theta_1,...,\theta_m)
+\eeqn
 
 
+\subsection{Nuisance parameters}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- Notice that the tails of the distributions indicate that some signal events fall on the rejection region and some background events fall on the acceptance region; therefore, it is convenient to define the \textit{efficiency} with which events of a given type are accepted, thus, the signal and background efficiencies are given by 
-
-\begin{eqnarray}
-\label{eq:sigeff}
-\varepsilon_{\textrm{s}} & = & P( \mbox{accept event} | \mbox{s} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{s} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{s}) \, dy\;, \\*[0.3 cm]
-\varepsilon_{\textrm{b}} & = & P( \mbox{accept event} | \mbox{b} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{b} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{b}) \, dy \;,
-\end{eqnarray}
-
-where A is the acceptance region. Under these conditions, the background hypothesis corresponds to the \textit{null hypothesis ($H_0$)}, the signal hypothesis corresponds to the \textit{alternative hypothesis ($H_1$)}, the background efficiency is the significance level of the test, and signal efficiency is the power of the test; what is sought in an analysis is to maximize the power of the test relative to the significance level.
-
-
-
-
-
+The parameter vector \textbf{$\theta$} is made of two types of parameters: on one side, those parameters that provide information about the physical observables of interest for the experiment (\ti{parameters of interest}), and on the other side, the \ti{nuisance parameters} that are not of direct interest for the experiment but that represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis. 
 
 
 
@@ -197,11 +180,6 @@ by defining the acceptance region such that, for $\textbf{x}$ inside the region,
 
 
 
-
-
-
-
-\section{ MVA methods, NN, BDT, boosting, overtraining, variable ranking  }
 \section{statistical inference, likelihood parametrization}
 \section{ nuisance parameters}
 \section{exclusion limits }
