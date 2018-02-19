@@ -1,6 +1,6 @@
 \chapter{Statistical methods}\label{ch:stat}
 
-In the course of analyzing the data sets provided by the CMS experiment and used in this thesis, several statistical tools have been employed; in this chapter, a description of these tools will be presented, starting with the general statement of the multivariate analysis method, followed by the particularities of the Boosted Decision Trees (BDT) method and its application to the classification problem. Statistical inference methods used will also be presented. This chapter is based mainly on the references \cite{mva, tmva}.      
+In the course of analyzing the data sets provided by the CMS experiment and used in this thesis, several statistical tools have been employed; in this chapter, a description of these tools will be presented, starting with the general statement of the multivariate analysis method, followed by the particularities of the Boosted Decision Trees (BDT) method and its application to the classification problem. Statistical inference methods used will also be presented. This chapter is based mainly on the references \cite{mva, tmva, luca}.      
 
 \section{Multivariate analysis}\label{sec:mva}
 
@@ -154,18 +154,50 @@ Left side of figure \ref{fig:bdt_output} shows the BDT output distributions for 
 Right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms; these curves are known as ROC curves and give an indication of the performance of the classifier. The best performance is achieved with the BDTG classifier (BDTA\_GRAD).   
 
 
-\section{Statistical inference}
+\section{Statistical inference.}
 
-Once events are classified, the next step consists in finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these parameters and their uncertainties from the experimental data is called \ti{inference}. The likelihood function for N the events the in a sample is the combination of all the likelihoods functions
+Once events are classified, the next step consists in finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these \ti{unknown parameters} and their uncertainties from the experimental data is called \ti{inference}. The likelihood function for N the events the in a sample is the combination of all the likelihoods functions
 
 \beqn
-L(\bm{\theta})=\prod_{i=1}^N f(\textbf{x}^i|\bm{\theta})=\prod_{i=1}^N f(x^i_1,...,x_n^i;\theta_1,...,\theta_m)
+L(\bm{\theta})=\prod_{i=1}^N f(\textbf{x}^i|\bm{\theta})=\prod_{i=1}^N f(x^i_1,...,x_n^i;\theta_1,...,\theta_m)\label{eqn:ml}
 \eeqn
 
+Thus, the estimation of the unknown parameters from experimental data samples is written in terms of a central value using the notation
 
-\subsection{Nuisance parameters}
+\beqn
+\theta=\hat{\theta}\pm\delta \theta  
+\eeqn
 
-The parameter vector \textbf{$\theta$} is made of two types of parameters: on one side, those parameters that provide information about the physical observables of interest for the experiment (\ti{parameters of interest}), and on the other side, the \ti{nuisance parameters} that are not of direct interest for the experiment but that represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis. 
+where the interval $[\hat{\theta}+\delta \theta, \hat{\theta}-\delta \theta]$ is called \ti{confidence interval}; it is usually interpreted, in the limit of infinite number of experiments, as the interval where the true value of the unknown parameter $\theta$ is contained with a probability of 0.6827 (if no other convention is stated).  
+
+\subsection{Nuisance parameters.}
+
+The unknown parameter vector $\bm{\theta}$ is made of two types of parameters: on one side, those parameters that provide information about the physical observables of interest for the experiment (\ti{parameters of interest}); on the other side, the \ti{nuisance parameters} that are not of direct interest for the experiment but that needs to be included in the analysis in order to achieve a satisfactory description of the data. They represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis.
+
+In some cases the nuisance parameters are estimated using dedicated data samples, for instance data from test beams for calibration purposes, when MC samples are not suitable. The nuisance parameter uncertainties produce \ti{systematic uncertainties} while the uncertainties associated to fluctuations in data and related to the estimation of the parameters of interest produce \ti{statistical uncertainties}.
+
+\subsection{Maximum likelihood estimation method}
+
+The function that produce the estimate of a parameter is called \ti{estimator}, therefore, estimators are usually constructed using mathematical procedures encoded in algorithms. The estimation method used in this thesis is the \ti{Maximum Likelihood Estimation} method (MLE); it is based on the combined likelihood function defined by eqn. \ref{eqn:ml} and the procedure seeks for the parameter set that corresponds to the maximum value of the combined likelihood function, \ie, the \ti{maximum likelihood estimator} of the unknown parameter vector $\bm{\theta}$ is the function that produce the vector $\bm{\hat \theta}$ for which the likelihood function $L(\bm{\theta})$ evaluated at the measured sample $\textbf{x}$ is maximum.  
+
+Usually, the logarithm of the likelihood function is used in the numerical algorithms implementations in order to avoid underflow the numerical precision of the computers due to the product of low likelihoods. In addition, it is usual minimize the negative logarithm of the likelihood function instead of maximizing the logarithm of it because in this way the procedure consist of differentiate a sum of therms and set the sum to zero; therefore
+
+\beqn
+F(\bm{\theta}) = -\textrm{ln}L(\bm{\theta})=-\sum_{i=1}^N f(\textbf{x}^i|\bm{\theta}).
+\eeqn
+
+The minimization process is performed by the software MINUIT \cite{minuit} implemented in the ROOT analysis framework. In case of large data samples the computational resources needed to calculate the likelihood function are too big; therefore, the parameter estimation is performed using binned distributions of the variables of interest for which the \ti{binned likelihood function} is given by
+\beqn
+L(data|\mu,\theta)=\prod_{i=1} \frac{(\mu s_i(\theta)+ b_i(\theta))^{n_i}}{n_i!} e^{-\mu s_i(\theta)-b_i(\theta)},\label{eqn:bml}
+\eeqn
+
+\noindent with $s_i$ and $b_i$ the expected number of signal and background yields for bin $i$ respectively, $n_i$ is the observed number of events in the bin $i$ and $\mu = \sigma/\sigma_{SM}$ is the signal strength. Notice that the number of entries per bin follows a Poisson distribution. The analysis presented in this thesis is based on the binned distribution of the ratio signal/background obtained from the BDT outputs.   
+
+
+\subsection{Hypothesis test}
+
+
+
 
 
 
@@ -180,8 +212,6 @@ by defining the acceptance region such that, for $\textbf{x}$ inside the region,
 
 
 
-\section{statistical inference, likelihood parametrization}
-\section{ nuisance parameters}
 \section{exclusion limits }
 \section{asymptotic limits }
 
