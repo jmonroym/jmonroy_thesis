@@ -14,6 +14,13 @@ As shown in section \ref{sec:thq}, the SM cross section of the associated produc
 
 The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then defined. Following, the background predictions, the signal extraction, and the statistical treatment of the selected events as well as the systematic uncertainties are described. The final section present the results for the exclusion limits as a function of the ratio of $\kappa_t$  and the dimensionless modifier of the Higgs-vector boson $\kappa_V$.  
 
+
+
+%% dont forget to describe explicitely the analysis strategy here or later but do it
+
+
+
+
 \section{\tHq signature}\label{sec:thw_sign}
 
 \begin{figure}[!htb]
@@ -28,7 +35,8 @@ In order to select events of \tHq process, its features are translated into a se
 
 The top quark and Higgs boson decay after their production in the detector due to their high masses/low lifetimes. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay leptonically while $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
 
-In summary, the signal process is characterized by a the final state with one light-flavored forward jet, one central b-jet, three leptons (muons, electrons or a combination of them), three neutrinos and no central light-flavored jets. The presence of neutrinos is inferred from the presence of MET.
+In summary, the signal process is characterized by a the final state with one light-flavored forward jet, one central b-jet, three leptons (muons, electrons or a combination of them), three neutrinos and no central light-flavored jets. The presence of neutrinos is inferred from the presence of MET. The analysis has been made public by CMS as a Physics Analysis Summary\cite{CMS_PAS_HIG_17-005} combining the result for the three lepton and two lepton same-sign channels. Currently, an effort to turn the analysis into a paper is ongoing.
+
 
 \section{Background processes}\label{sec:bg}
 
@@ -59,86 +67,91 @@ On the side of the reducible backgrounds, the largest contribution comes from th
 \section{Object Identification and event selection}\label{sec:ob_id}
 
 
-In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details complement the descriptions presented in previous chapter. 
+In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. 
 
-\subsection{Jets and \bjet tagging}
+\subsection{Jets and \bjet tagging.}
 
 In this analysis, jets are reconstructed by clustering PF candidates using the anti-$k_t$ algorithm with parameter distance $\Delta R=0.4$; those charged hadrons that are not consistent with the selected primary vertex are discarded from the clustering. The jet energy is then corrected for the varying response of the detector as a function of transverse momentum \pt and pseudorapidity \etac. Jets are selected for use in the analysis only if they have $\pt > 25$ GeV and are separated from any selected leptons by $\Delta R > 0.4$.
 
-Jets that are likely to have originated from the hadronization of a b quark, are selected through a multivariate likelihood discriminant that uses track-based lifetime information and reconstructed secondary vertices (CSV algorithm). Only jets within the CMS tracker acceptance ($\eta < 2.4$) are identified with this technique. The efficiency to correctly tag $b-$jets and the probability to misidentify jets from light quarks or gluons are measured in data as a function of the jet \pt and \etac, and are used to correct for differences in the performance of the algorithm in simulated events. Two working points based on the algorithm output are used: \ti{loose'}, with a $b$ signal tagging efficiency of about 83\% and a mistagging rate of about 8\%; and \ti{medium}, with $b$ efficiency of about 69\% and mistagging rate of order 1\%\ cite{}. Tagging efficiencies for jets from charm quarks are about 40% (18%) for
+Jets coming from the primary vertex and jets coming from pile-up vertices are distinguished using a MVA discriminator based on the differences in the jet shapes, in the relative multiplicity of charged and neutral components, and in the different fraction of transverse momentum which is carried by the hardest components. Jet tracks are also required to be compatible with the primary
+vertex.
 
-the loose (medium) working point. Separate scale factors are applied to jets originating from
+Jets originated from the hadronization of a $b$ quark are selected using a MVA likelihood discriminant which uses track-based lifetime information and reconstructed secondary vertices (CSV algorithm). Only jets within the CMS tracker acceptance ($\eta < 2.4$) are identified with this tool. Data samples are used to measure the efficiency of the \bjet tagging and the probability to misidentify jets from light quarks or gluons; in both cases the measurements are parametrized as a function of the jet \pt and \etac and later used to correct differences between the data and MC simulation in the $b$ tagging performance, by applying per-jet weights to the simulation, dependent on the jet \pt, \etac, $b$ tagging discriminator, and flavor (from simulation truth)\cite{btag_corr}. The per-event weight is taken as the product of the per-jet weights, including those of the jets associated to the leptons. The weights are derived on \ttbar and Z+jets events.
 
-bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
+Two working points are defined, based on the CSV algorithm output: \ti{loose'} working point (CSV>0.46) with a $b$ signal tagging efficiency of about 83\% and a mistagging rate of about 8\%; and \ti{medium} working point (CSV>0.80) with $b-$tagging efficiency of about 69\% and mistagging rate of order 1\% \cite{btag_points}. Tagging of jets from charm quarks have efficiencies of about 40\%  and 18\% for loose and medium working points respectively. Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
 
-
-
-
-
-
-
-
-
-The primary vertex is chosen as the vertex with the highest sum of \pt
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-181 of its constituent
-182 tracks. The prescribed jet energy corrections are applied as a function of the jet ET and η [17]. In
-183 addition, a multivariate discriminator is applied to distinguish between jets coming from the
-184 primary vertex and jets coming from pile-up vertices. The discrimination is based on the dif185
-ferences in the jet shapes, in the relative multiplicity of charged and neutral components, and
-186 in the different fraction of transverse momentum which is carried by the hardest components.
-187 Within the tracker acceptance the jet tracks are also required to be compatible with the primary
-188 vertex. Jets are only considered if they have a transverse energy above 25 GeV and |η| <2.4.
-189 In addition, they have to be separated from any lepton candidates passing the Fakeable Object
-selection, described below, by requiring ∆R =
-
-The primary vertex is chosen as the vertex with the highest sum of p
-2
-T
-181 of its constituent
-182 tracks. The prescribed jet energy corrections are applied as a function of the jet ET and η [17]. In
-183 addition, a multivariate discriminator is applied to distinguish between jets coming from the
-184 primary vertex and jets coming from pile-up vertices. The discrimination is based on the dif185
-ferences in the jet shapes, in the relative multiplicity of charged and neutral components, and
-186 in the different fraction of transverse momentum which is carried by the hardest components.
-187 Within the tracker acceptance the jet tracks are also required to be compatible with the primary
-188 vertex. Jets are only considered if they have a transverse energy above 25 GeV and |η| <2.4.
-189 In addition, they have to be separated from any lepton candidates passing the Fakeable Object
-selection, described below, by requiring ∆R =
-p
-(η
-` − η
-jet)
-2 + (φ` − φ
-jet) 190 2 > 0.4.
-
-
-
-
-corrected for charged hadrons not coming from the primary vertex (charged hadron subtraction), and having jet energy corrections (\verb|Summer16_23Sep2016V3|) applied as a function of the jet $E_T$ and $\eta$. Jets are only considered if they have a transverse energy above $25$GeV.
 
 % FIXME Something about forward jets?
 
-In addition, they are required to be separated from any lepton candidates passing the fakeable object selections (see Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) by $\Delta\mathrm{R}>0.4$.
+\subsection{Missing Energy MET.}
 
-The loose and medium working points of the CSV b-tagging algorithm are used to identify \bjet jets. Data/simulation differences in the \bjet tagging performance are corrected by applying per-jet weights to the simulation, dependent on the jet \pt, eta, \bjet tagging discriminator, and flavor (from simulation truth)~\cite{btagRecommTWiki}. The per-event weight is taken as the product of the per-jet weights, including those of the jets associated to the leptons. More details can be found in the corresponding \ttH documentation~\cite{CMS_AN_2016-211,CMS_AN_2017-029}.
+As stated in section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by \cite{CMS_AN_2017-029} 
 
-\subsection{Lepton selection}
+\beqn
+E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
+\eeqn
+
+\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
+
+\subsection{Lepton identification}
+
+Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particle; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. The reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, therefore, the advanced identification criteria used in order to retain the highest possible efficiency for signal leptons while rejecting background leptons will be described in this section.
+
+
+
+
+
+Muon candidates are reconstructed by combining information from the silicon tracker and the
+outer muon spectrometer of CMS in a global fit [25]. The quality of the spatial matching be-
+tween the individual measurements in the tracker and the muon system is used to discriminate
+genuine prompt muons from hadrons punching through the calorimeters and from muons pro-
+duced by in-flight decays of kaons and pions. In the analysis, muon candidates are considered
+if they have p T > 5 GeV and | η | < 2.4. In the same-sign dilepton event categories, the relative
+uncertainty in the muon p T from the fit is required to be better than 20% to ensure a high-quality
+charge measurement.
+Electrons are reconstructed using information from the tracker and from the electromagnetic
+calorimeter [26]. Genuine electrons are identified by a multivariate algorithm using the shape
+
+of the calorimetric shower and the quality of the reconstructed track. Furthermore, to reject
+electrons produced in photon conversions, candidates with missing hits in the innermost track-
+ing layers or matched to a conversion secondary vertex are discarded. Electrons are selected
+for the analysis if they have p T > 7 GeV and | η | < 2.5. To suppress electrons with a mis-
+assigned electric charge in the same-sign dilepton categories, candidates are required to have
+consistent charge measurements from three independent observables based on the calorimeter
+energy deposits and the track curvature.
+
+Electrons and muons passing the criteria described above are referred to as “loose leptons” in
+the following. A further discrimination between prompt signal leptons (i.e. from W and Z bo-
+son decays and from leptonic τ decays) and non-prompt and spurious leptons from b hadron
+decays, decays-in-flight, and photon conversions is crucial in light of the overwhelming back-
+ground from tt production. The small probabilities of having the second type of leptons results
+in a sizable number of background events since the rate of tt production is much larger than the
+signal. To maximally exploit the available information in each event to that end, a multivariate
+discriminator based on a boosted decision tree (BDT) algorithm is built, taking as input not just
+observables related directly to the reconstructed leptons themselves, but also to the clustered
+energy deposits and charged particles in a cone around the lepton direction. The jet reconstruc-
+tion and b-tagging algorithms are run on these, and their output is used to train the algorithm.
+In particular, the ratio between the lepton p T and the reconstructed jet p T , and the transverse
+momentum of the lepton with respect to the jet axis provide good separation power in addition
+to more traditional observables like the relative isolation of the lepton (calculated in a variable
+cone size depending on the lepton p T [27, 28]), and the impact parameters of the lepton trajec-
+tory. The BDT algorithm is trained on prompt leptons in simulated ttH signal and non-prompt
+leptons in tt background events and validated using data in various control regions. Leptons
+are then selected for the final analysis if they pass a given threshold of the BDT output, and are
+referred to as “tight leptons” in the following.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{table}[!htbp]
 \centering
@@ -203,6 +216,10 @@ Criteria for each of the three electron selections. In cases where the cut value
 }
 \label{tab:eleIDs}
 \end{table}
+
+
+In addition, jets are required to be separated from any lepton candidates passing the fakeable object selections (see Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) by $\Delta\mathrm{R}>0.4$.
+
 
 
 \subsection{Lepton selection efficiency}
