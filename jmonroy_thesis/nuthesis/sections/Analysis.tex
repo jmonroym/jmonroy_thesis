@@ -67,7 +67,7 @@ On the side of the reducible backgrounds, the largest contribution comes from th
 \section{Object Identification and event selection}\label{sec:ob_id}
 
 
-In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. 
+In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. The object reconstruction and selection strategy used in this thesis is identical to the one described in references \cite{CMS_AN_2016-211,CMS_AN_2017-029}, thus, the information provided in this section is based in those documents unless other references are stated.
 
 \subsection{Jets and \bjet tagging.}
 
@@ -85,7 +85,7 @@ Two working points are defined, based on the CSV algorithm output: \ti{loose'} w
 
 \subsection{Missing Energy MET.}
 
-As stated in section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by \cite{CMS_AN_2017-029} 
+As stated in section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by 
 
 \beqn
 E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
@@ -93,52 +93,36 @@ E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
 
 \noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
 
-\subsection{Lepton identification}
+\subsection{Lepton reconstruction and identification}
 
-Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particle; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. The reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, therefore, the advanced identification criteria used in order to retain the highest possible efficiency for signal leptons while rejecting background leptons will be described in this section.
-
-
+Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particle; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. The reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, therefore, the advanced identification criteria used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed in this section \footnote{the studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}. The Physics Objects Groups (POG) at CMS, are in charge of studying and defining the set of selection criteria applied on the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the strength of the requirements.
 
 
+\subsubsection{Muons.}
 
-Muon candidates are reconstructed by combining information from the silicon tracker and the
-outer muon spectrometer of CMS in a global fit [25]. The quality of the spatial matching be-
-tween the individual measurements in the tracker and the muon system is used to discriminate
-genuine prompt muons from hadrons punching through the calorimeters and from muons pro-
-duced by in-flight decays of kaons and pions. In the analysis, muon candidates are considered
-if they have p T > 5 GeV and | η | < 2.4. In the same-sign dilepton event categories, the relative
-uncertainty in the muon p T from the fit is required to be better than 20% to ensure a high-quality
-charge measurement.
-Electrons are reconstructed using information from the tracker and from the electromagnetic
-calorimeter [26]. Genuine electrons are identified by a multivariate algorithm using the shape
+Muon candidates are reconstructed by combining information from the tracker system and the muon detection system of CMS detector. The POG defined three working points for muon identification \ti{MuonID}\cite{muid};
 
-of the calorimetric shower and the quality of the reconstructed track. Furthermore, to reject
-electrons produced in photon conversions, candidates with missing hits in the innermost track-
-ing layers or matched to a conversion secondary vertex are discarded. Electrons are selected
-for the analysis if they have p T > 7 GeV and | η | < 2.5. To suppress electrons with a mis-
-assigned electric charge in the same-sign dilepton categories, candidates are required to have
-consistent charge measurements from three independent observables based on the calorimeter
-energy deposits and the track curvature.
+\begin{itemize}
+\item \ti{POG Loose Muon ID} is a particle identified as a muon by the PF event reconstruction and also reconstructed either as a global-muon or as an arbitrated tracker-muon. This identification criteria is designed to be highly efficient for prompt muons and for muons from heavy and light quark decays; it can be complemented by applying impact parameter cuts in analyses with prompt muon signals.
+\item \ti{POG Medium Muon ID} is a Loose muon with additional track-quality and muon-quality (spatial matching between the individual measurements in the tracker and the muon system) requirements. This identification criteria is designed to be highly efficient in the separation of the muons coming from decay in flight of heavy quarks and muons coming from B meson decays as well as prompt muons. An additional category \ti{MVA Prompt ID} is defined in this identification criteria directed to discriminated muons from B mesons and prompt muons (from W,Z and $\tau$ decays). The Medium ID provides the same fake rate as the Tight Muon ID but a higher efficiency on prompt and B-decays muons.\cite{medium_muon}
+\item \ti{POG Tight Muon ID} is a global muon with additional muon-quality requirements Tight Muon ID selects a subset of the PF muons.  
+\end{itemize}
 
-Electrons and muons passing the criteria described above are referred to as “loose leptons” in
-the following. A further discrimination between prompt signal leptons (i.e. from W and Z bo-
-son decays and from leptonic τ decays) and non-prompt and spurious leptons from b hadron
-decays, decays-in-flight, and photon conversions is crucial in light of the overwhelming back-
-ground from tt production. The small probabilities of having the second type of leptons results
-in a sizable number of background events since the rate of tt production is much larger than the
-signal. To maximally exploit the available information in each event to that end, a multivariate
-discriminator based on a boosted decision tree (BDT) algorithm is built, taking as input not just
-observables related directly to the reconstructed leptons themselves, but also to the clustered
-energy deposits and charged particles in a cone around the lepton direction. The jet reconstruc-
-tion and b-tagging algorithms are run on these, and their output is used to train the algorithm.
-In particular, the ratio between the lepton p T and the reconstructed jet p T , and the transverse
-momentum of the lepton with respect to the jet axis provide good separation power in addition
-to more traditional observables like the relative isolation of the lepton (calculated in a variable
-cone size depending on the lepton p T [27, 28]), and the impact parameters of the lepton trajec-
-tory. The BDT algorithm is trained on prompt leptons in simulated ttH signal and non-prompt
-leptons in tt background events and validated using data in various control regions. Leptons
-are then selected for the final analysis if they pass a given threshold of the BDT output, and are
-referred to as “tight leptons” in the following.
+Only muons within the muon system acceptance $|\eta| < 2.4$ and minimum \pt  of 5 GeV are considered. %The requirements for each working point are listed in table \ref{tab:muonid}. 
+
+\subsubsection{Electrons.}
+
+Electrons are reconstructed using information from the tracker and from the electromagnetic calorimeter and identified by an MVA algorithm (MVA eID discriminant) using the shape of the calorimetric shower variables like the shape in \etac and \phic, the cluster circularity, widths along \etac and \phic; track-cluster matching variables like $E_{tot}/p_{in}$, $E_{Ele}/p_{out}$, $\Delta \eta_{in}$,  $\Delta \eta_{out}$,  $\Delta \phi_{in}$, $1/E - 1/p$; and track quality variables like $\xi^2$ of the GSF tracks, the number of hits used by the GSF filter\cite{mva_eid}.
+
+A loose selection based on \etac-dependent cuts on this discriminant is used to preselect electron candidates, the full shape of the discriminant is used in the lepton multivariate selection to separate signal leptons from background leptons (described in section \ref{sssec:leptonmva}).
+
+In order to reject electrons from photon conversions, electron candidates with missing hits in the pixel tracker layers or matched to a conversion secondary vertex are discarded. Electrons are selected for the analysis if they have \pt > 7 GeV and are located within the tracker system acceptance region ($|\eta|$ < 2.5). %All the electron selection criteria are listed in table\ref{tab:eleid}.
+ 
+\subsubsection{Lepton vertexing and pile-up rejection.}
+
+With the goal of rejecting pile-up or mis-reconstructed tracks, and more importantly to reject background leptons from b-hadron decays, the following impact parameter variables are also considered: impact parameter in the transverse plane $d_0$ , impact parameter along the z axis $d_z$ , and the impact parameter significance in the detector space $SIP_{3D}$.
+
+Loose cuts are applied on this variables to achieve the first goal, while the full shape of the same variables is used in a multivariate approach to reach the best separation between the signal and the background leptons.
 
 
 
@@ -151,6 +135,11 @@ referred to as “tight leptons” in the following.
 
 
 
+
+
+Three different selections are defined both for the electron and muon object identification: the \emph{Loose}, \emph{Fakeable Object}, and \emph{Tight} selection. As described in more detail later, these are used for event level vetoes, the fake rate estimation application region, and the final signal selection, respectively. The \pt\ of fakeable objects is defined as $0.85\times\pt(\mathrm{jet})$, where the jet is the one associated to the lepton object. This mitigates the dependence of the fake rate on the momentum of the fakeable object and thereby improves the precision of the method.
+
+Tables~\ref{tab:muonid} and~\ref{tab:eleid} list the full criteria for the different selections of muons and electrons.
 
 
 \begin{table}[!htbp]
@@ -177,12 +166,10 @@ lepMVA $> 0.90$        & --         & --                 & \checkmark \\
 \caption[Requirements on each of the three muon selections.]{
 Requirements on each of the three muon selections. In the cases where the cut values change between the selections, those values are listed in the table. Otherwise, whether the cut is applied is indicated. For the two \ptRatio\ and CSV rows, the cuts marked with a $\dagger$ are applied to leptons that fail the lepton MVA cut, while the loose cut value is applied to those that pass the lepton MVA cut.
 }
-\label{tab:muonIDs}
+\label{tab:muonid}
 \end{table}
 
-The lepton reconstruction and selection is identical to that used in the \ttH multilepton analysis, as documented in Refs.~\cite{CMS_AN_2016-211,CMS_AN_2017-029}. For details on the reconstruction algorithms, isolation, pileup mitigation, and a description of the lepton MVA discriminator and validation plots thereof, we refer to that document since they are out of the scope of this thesis. Three different selections are defined both for the electron and muon object identification: the \emph{Loose}, \emph{Fakeable Object}, and \emph{Tight} selection. As described in more detail later, these are used for event level vetoes, the fake rate estimation application region, and the final signal selection, respectively. The \pt\ of fakeable objects is defined as $0.85\times\pt(\mathrm{jet})$, where the jet is the one associated to the lepton object. This mitigates the dependence of the fake rate on the momentum of the fakeable object and thereby improves the precision of the method.
 
-Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs} list the full criteria for the different selections of muons and electrons.
 
 \begin{table}
 \centering
@@ -214,11 +201,17 @@ lepMVA $> 0.90$                                 & --         & --               
 \caption[Criteria for each of the three electron selections.]{
 Criteria for each of the three electron selections. In cases where the cut values change between selections, those values are listed in the table. Otherwise, whether the cut is applied is indicated. In some cases, the cut values change for different $\eta$ ranges. These ranges are $0 < |\eta| < 0.8$, $0.8 < |\eta| < 1.479$, and $1.479 < |\eta| < 2.5$ and the respective cut values are given in the form (value$_1$, value$_2$, value$_3$).
 }
-\label{tab:eleIDs}
+\label{tab:eleid}
 \end{table}
 
 
 In addition, jets are required to be separated from any lepton candidates passing the fakeable object selections (see Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) by $\Delta\mathrm{R}>0.4$.
+
+\subsubsection{Lepton MVA discriminator.}\label{sssec:leptonmva}
+
+ A further discrimination between prompt signal leptons (i.e. from W and Z bo- son decays and from leptonic $\tau$ decays) and non-prompt and spurious leptons from b hadron decays, decays-in-flight, and photon conversions is crucial in light of the overwhelming background from \ttbar production. The small probabilities of having the second type of leptons results in a sizable number of background events since the rate of \ttbar production is much larger than the signal. To maximally exploit the available information in each event to that end, a multivariate discriminator based on a boosted decision tree (BDT) algorithm is built, taking as input not just observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction.
+
+The jet reconstruction and b-tagging algorithms are run on these, and their output is used to train the algorithm. In particular, the ratio between the lepton p T and the reconstructed jet p T , and the transverse momentum of the lepton with respect to the jet axis provide good separation power in addition to more traditional observables like the relative isolation of the lepton (calculated in a variable cone size depending on the lepton p T [27, 28]), and the impact parameters of the lepton trajec- tory. The BDT algorithm is trained on prompt leptons in simulated ttH signal and non-prompt leptons in tt background events and validated using data in various control regions. Leptons are then selected for the final analysis if they pass a given threshold of the BDT output, and are referred to as “tight leptons” in the following.          
 
 
 
@@ -523,7 +516,24 @@ The backgrounds in three-lepton final states can be split in two broad categorie
 
 Irreducible backgrounds can be reliantly estimated directly from Monte-Carlo simulated events, using higher-order cross sections or data control regions for the overall normalization. This is done in this analysis for all backgrounds involving prompt leptons: \ttW, \ttZ, \ttH, \WZ, $ZZ$, $W^\pm W^\pm qq$, $\ttbar\ttbar$, $tZq$, $tZW$, $WWW$, $WWZ$, $WZZ$, $ZZZ$.
 
-Reducible backgrounds, on the other hand, are not well predicted by simulation, and are estimated using data-driven methods. In the case of non-prompt leptons, a fake rate method is used, where the contribution to the final selection is estimated by extrapolating from a sideband (or ``application region'') with a looser lepton definition (the fakeable object definitions in Tabs.~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) to the signal selection. The tight-to-loose ratios (or ``fake rates'') are measured in several background dominated data events with dedicated triggers, subtracting the residual prompt lepton contribution using MC. Non-prompt leptons in our signal regions are predominantly produced in \ttbar events, with a much smaller contribution, from Drell--Yan production. The systematic uncertainty on the normalization of the non-prompt background estimation is on the order of 50\%, and thereby one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular. It consists of several individual sources, such as the result of closure tests of the method using simulated events, limited statistics in the data control regions due to necessary prescaling of lepton triggers, and the uncertainty in the subtraction of residual prompt leptons from the control region.
+Reducible backgrounds, on the other hand, are not well predicted by simulation, and are estimated using data-driven methods. In the case of non-prompt leptons, a fake rate method is used,
+
+
+
+
+
+
+ Additional identification criteria are applied for electrons with \pt greater than 30 GeV to mimic the identification applied at trigger level in order to ensure consistency between the measurement region and application region of the fake-rate.
+
+
+
+
+
+
+
+
+
+where the contribution to the final selection is estimated by extrapolating from a sideband (or ``application region'') with a looser lepton definition (the fakeable object definitions in Tabs.~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) to the signal selection. The tight-to-loose ratios (or ``fake rates'') are measured in several background dominated data events with dedicated triggers, subtracting the residual prompt lepton contribution using MC. Non-prompt leptons in our signal regions are predominantly produced in \ttbar events, with a much smaller contribution, from Drell--Yan production. The systematic uncertainty on the normalization of the non-prompt background estimation is on the order of 50\%, and thereby one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular. It consists of several individual sources, such as the result of closure tests of the method using simulated events, limited statistics in the data control regions due to necessary prescaling of lepton triggers, and the uncertainty in the subtraction of residual prompt leptons from the control region.
 
 The fake background where the leptons pass the looser selection are weighted according to how many of them fail the tight criteria. Events with a single failing lepton are weighted with the factor $f/(1-f)$ for the estimate to the tight selection region, where $f$ is the fake rate. Events with two failing leptons are given the negative weight $-f_{i}f_{j}/(1-f_{i})(1-f_{j})$, and for three leptons the weight is positive and equal to the product of $f/(1-f)$ factor evaluated for each failing lepton.
 
