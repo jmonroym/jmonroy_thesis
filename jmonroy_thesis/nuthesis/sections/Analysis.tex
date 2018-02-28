@@ -95,8 +95,30 @@ E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
 
 \subsection{Lepton reconstruction and identification}
 
-Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particle; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. The reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, therefore, the advanced identification criteria used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed in this section \footnote{the studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}. The Physics Objects Groups (POG) at CMS, are in charge of studying and defining the set of selection criteria applied on the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the strength of the requirements.
+Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particles; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. The process of reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, hence, the identification variables used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed in this section \footnote{the studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}.
 
+A dedicated BDT discriminator, referred to as \ti{lepton MVA discriminator}, has been built in order to profit from all the identification variables together taking as input not just observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction.
+
+
+
+we first preselect our leptons candidates with the Loose selection that will be described in the following, and we then use a multivariate dis-
+criminator based on boosted decision tree (BDT) techniques to distinguish signal leptons (from
+W, Z, or τ decays) from background leptons (mostly from b-hadron decays).
+
+
+ The multivariate discriminator is trained using simulated signal Loose leptons from the tt̄H MC sample and fake leptons from
+the tt̄+jets MC sample, separately for muons and electrons. The training used in this analysis
+is unchanged with respect to the 2015 analysis, detailed in [23]. It uses as input variables the
+vertexing, isolation and jet-related variables described so far, the p T and η of the lepton and two
+additional variables that contribute to make it robust also in the rejection of leptons from light
+jets mis-identification: the electron MVA ID discriminator and the muon segment-compatibility
+variables.
+
+
+
+
+
+The Physics Objects Groups (POG) at CMS, are in charge of studying and defining the set of selection criteria applied on the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the strength of the requirements.
 
 \subsubsection*{Muons.}
 
@@ -122,54 +144,63 @@ In order to reject electrons from photon conversions, electron candidates with m
 
 The impact parameter in the transverse plane $d_0$ , impact parameter along the z axis $d_z$ , and the impact parameter significance in the detector space $SIP_{3D}$, are considered to perform the identification and rejection of pile-up, misreconstructed tracks, and background leptons from b-hadron decays; pile-up and misreconstructed track mitigation is achieved by imposing loose cuts on the impact parameter variables. The full shape of the those variables is used in a MVA classifier to achieve the best separation between the signal and the background leptons.
 
-
 \subsubsection*{Lepton isolation.}
 
-Lepton isolation defines the The charged leptons produced in decays of heavy particles, such as W and Z bosons, are typically spatially isolated from the hadronic activity in the event, while the leptons produced in the decays of hadrons or misidentified leptons are usually embedded in jets. This distinction becomes less evident moving to highly boosted systems where decay products tend to overlap. Therefore, given the higher collision energy, instead of using the standard PF Isolation where all the neutral, charged hadrons and photons are considered in a cone of $\Delta R =\sqrt{( \eta^l - \eta^i)^2 + (\phi^l - \phi^i)^2} < 0.3$ around the leptons, a new isolation variable is constructed: the mini isolation $I_{mini}$ .
+PF is able to recognize leptons from two different sources: on one side, leptons from the decays of heavy particles, such as W and Z bosons, which are normally isolated in space from the hadronic activity in the event; on the other side, leptons from the decays of hadrons and jets misidentified as leptons, which are not isolated as the former. For highly boosted systems, like the lepton and the $b$-jet generated in the semileptonic decay of a boosted top, the decay products tend to be more closer and sometimes they even overlap; thus, the PF standard definition of isolation in terms of the separation between the lepton candidates and other PF objects in the \etac-\phic plane,
 
-Requiring I mini below a given threshold ensures that the lepton is locally isolated, even in boosted topologies. The impact of pileup is mitigated using the so-called effective area cor-
-rection:
+\beqn
+\Delta R =\sqrt{( \eta^l - \eta^i)^2 + (\phi^l - \phi^i)^2} < 0.3
+\eeqn
+
+\noindent which considers all the neutral, charged hadrons and photons in a cone around the leptons, is refocused to the local isolation of the leptons through the mini-isolation $I_{mini}$ \cite{i_mini} defined as the sum of particle flow candidates \pt within a cone around the lepton, corrected for the effects of pileup and divided by the lepton \pt
+\beqn
+I_{mini} =\frac{\displaystyle\sum_{R} p_T(h^\pm) - \textrm{max}\left(0,\displaystyle\sum_R p_T(h^0) + p_T(\gamma)-\rho \mathcal{A}\left(\frac{R}{0.3}\right)^2\right)}{p_T(l)}
+\eeqn
+
+\noindent where $\rho$ is the pileup energy density, $h^\pm, h^0, \gamma, l,$ represent the charged hadron, neutral hadrons, photons, and the lepton, respectively. The radius R of the cone depends on the \pt of the lepton according to 
+\beqn
+R = \frac{10 \textrm{GeV}}{\textrm{min}(\textrm{max}(p_T(l), 50 \textrm{GeV}), 200 \textrm{GeV})},
+\eeqn
+
+The \pt dependence of the cone size allows for greater signal efficiency. Setting a cut on $I_{mini}$ below a given threshold ensures that the lepton is locally isolated, even in boosted systems. The effect of pileup is mitigated using the so-called effective area correction $\mathcal{A}$ listed in Table\ref{tab:pileup_area}. 
+
+\begin{table}[!htbp]
+\centering
+\small
+\begin{tabular}{ccc}\hline
+$|\eta|$ range & $\mathcal{A}$(e) neutral/charged & A ($\mu$) neutral/charged \\\hline
+0.0 - 0.8      & 0.1607 / 0.0188                  & 0.1322 / 0.0191 \\
+0.8 - 1.3      & 0.1579 / 0.0188                  & 0.1137 / 0.0170 \\
+1.3 - 2.0      & 0.1120 / 0.0135                  & 0.0883 / 0.0146 \\
+2.0 - 2.2      & 0.1228 / 0.0135                  & 0.0865 / 0.0111 \\
+2.2 - 2.5      & 0.2156 / 0.0105                  & 0.1214 / 0.0091 \\ \hline
+\end{tabular}
+\caption[Effective areas, for electrons and muons.]{ Effective areas, for electrons and muons used to mitigate the effect of pileup by using the so-called effective area correction.}
+\label{tab:pileup_area}
+\end{table}
+
+A loose cut on $I_{mini}$ is applied to pre-select the muon and electron candidates; however, the full shape is used in the MVA discriminator when performing the signal lepton selection.
+
+\subsubsection*{Jet variables.}
+
+In order to reject mis-identified leptons from $b-$jets, mostly coming from tt+jets, Drell-Yan+jets, and W+jets events, the vertexing and isolation variables described above are complemented with two additional variables related to the closest reconstructed jet to the lepton. The PF jets reconstructed around the leptons with ∆R=( η ` − η jet ) 2 + ( φ ` − φ jet ) 2 < 0.5; charged
+hadrons from pile-up primary vertices are not removed prior to the jet clustering. The fourconsidered variables are the ratio between the p T of the lepton and the p T of the jet, the CSV
+b-tagging discriminator value of the jet, the number of charged tracks of the jet, and the p rel
+T
+variable:
 
 
-R 2
-∑ R p T ( h ± ) − max ( 0, ∑ R p T ( h 0 ) + p T ( γ ) − ρ A 0.3
-I mini =
-.
-(2)
-p T (`)
-where ρ is the pileup energy density, while ∑ R p T ( h ± ) , ∑ R p T ( h 0 ) and ∑ R p T ( γ ) refers to the
-sum of the transverse momentum of the charged hadrons, neutral hadrons and photons, re-
-spectively, within a cone R, dependent of the lepton p T :
-R =
-10
-min ( max ( p T (`) , 50 ) , 200 )
-(3)
-The effective areas A used are listed in Table 5. A very loose cut on this variable is applied to
-| η | range
-0.0 − 0.8
-0.8 − 1.3
-1.3 − 2.0
-2.0 − 2.2
-2.2 − 2.5
-A (e) neutral/charged
-0.1607 / 0.0188
-0.1579 / 0.0188
-0.1120 / 0.0135
-0.1228 / 0.0135
-0.2156 / 0.0105
-A (μ) neutral/charged
-0.1322 / 0.0191
-0.1137 / 0.0170
-0.0883 / 0.0146
-0.0865 / 0.0111
-0.1214 / 0.0091
-Table 5: Effective areas, for muons and electrons
-252
-255 pre-select the muon and electron candidates, while the full shape is used in the multivariate
-discriminator for the signal lepton selection.
 
 
 
+
+
+
+
+In order to avoid an over-correction on prompt leptons, the application of the jet energy cor-
+rection is only applied on the hadronic part of the jet, using the following formula jet =
+` + ( jet-PU- `) ∗ JEC − PU, where ` is the lepton, PU the pileup energy clustered into the jet,
+and JEC the jet energy scale correction to be applied to any jet.
 
 
 
