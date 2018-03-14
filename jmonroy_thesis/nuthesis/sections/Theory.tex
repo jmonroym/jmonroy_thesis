@@ -399,9 +399,9 @@ Mass terms are included directly in the QED free Lagrangians since they preserve
 \beqn 
 m_W^2W_\mu^\dagger(x)W^\mu(x) + \frac{1}{2}m_Z^2Z_\mu(x)Z^\mu(x) -m_e\bar{\psi_e}(x)\psi_e(x)
 \eeqn
-\noindent which represent the mass of \wpm, Z and electrons, are not invariant under G transformations, therefore the gauge fields described by the EWI are in principle massless.\\
+\noindent which represent the mass of \wpm, Z and electrons, are not invariant under G transformations, therefore the gauge fields described by the EWI are in principle massless.
 
-Experiments have shown that the gauge fields are not massless; however, they have to acquire mass through a mechanism compatible with the gauge invariance; that mechanism is known as the \ti{Higgs mechanism} and will be considered later in this Section. The global transformations in the combined symmetry group G can be written as
+Experiments have shown that the EWI gauge fields are not massless\cite{wmass1,wmass2,zmass1,zmass2}; however, they have to acquire mass through a mechanism compatible with the gauge invariance; that mechanism is known as the \ti{Higgs mechanism} and will be considered later in this Section. The global transformations in the combined symmetry group G can be written as
 
 \begin{align}\label{G_transf}
 \psi_1(x) \xrightarrow[]{G}\psi'_1(x)\equiv &U_YU_L\psi_1(x),\nonumber\\ 
@@ -447,7 +447,7 @@ W^i_{\mu\nu}(x) \equiv & \partial_\mu W^i_\nu(x) - \partial_\nu W^i_\mu(x) - g\v
 \Lagr_G = -\frac{1}{4}B_{\mu\nu}(x)B^{\mu\nu}(x)-\frac{1}{4}W^i_{\mu\nu}(x)W_i^{\mu\nu}(x)
 \eeqn
 
-\noindent which contains not only the free gauge fields contributions, but also the gauge fields self-interactions and interactions among them.\\  
+\noindent which contains not only the free gauge fields contributions, but also the gauge fields self-interactions and interactions among them.
 
 The three weak isospin conserved currents resulting from the $SU(2)_L$ symmetry are given by
 
@@ -461,7 +461,7 @@ J_\mu^i(x)=\frac{1}{2}\bar{\psi_1}(x)\gamma_\mu \sigma^i \psi_1(x)
 J_\mu^Y = \sum_{j=1}^3 \overline{\psi}_j(x)\gamma_\mu y_j\psi_j(x)
 \eeqn
 
-In order to evaluate the electroweak interactions modeled by an isotriplet field $W^i_\mu$ which couples to isospin currents $J^i_\mu$ with strength $g$ and additionally the singlet field $B_\mu$ which couples to the weak hypercharge current $J_\mu^Y$ with strength $g'/2$. The interaction Lagrangian density to be considered is
+In order to evaluate the electroweak interactions modeled by an isotriplet field $W^i_\mu$ that couples to isospin currents $J^i_\mu$ with strength $g$ and additionally the singlet field $B_\mu$ which couples to the weak hypercharge current $J_\mu^Y$ with strength $g'/2$. The interaction Lagrangian density to be considered is
 
 \beqn
 \Lagr_I = -gJ^{i\mu}(x)W_\mu^i(x)- \frac{g'}{2}J^{Y\mu}(x)B_\mu(x)
@@ -501,23 +501,23 @@ Z_\mu = & -B_\mu \sin\theta_W + W^3_\mu \cos\theta_W \nonumber
 \end{align}
 
 \noindent where $\theta_W$ is known as the \ti{Weinberg angle.} The interaction Lagrangian is now given by
-\beqn
-\footnotesize
-\Lagr_I =-\frac{g}{\sqrt{2}}(J^\mu W_\mu^+ + J^{\mu\dagger}W_\mu^-) -\left(g\sin\theta_W J_\mu^3 + g'\cos\theta_W \frac{J_\mu^Y}{2} \right)A^\mu - \left(g\cos\theta_W J_\mu^3 - g'\sin\theta_W \frac{J_\mu^Y}{2} \right)Z^\mu 
-\eeqn
+\begin{align}
+\Lagr_I =-\frac{g}{\sqrt{2}}(J^\mu W_\mu^+ + J^{\mu\dagger}W_\mu^-) -\left(g\sin\theta_W J_\mu^3 + g'\cos\theta_W \frac{J_\mu^Y}{2} \right)A^\mu \\ \nonumber
+- \left(g\cos\theta_W J_\mu^3 - g'\sin\theta_W \frac{J_\mu^Y}{2} \right)Z^\mu 
+\end{align}
 
 \noindent the first term is the weak charged current interaction, while the second term is the electromagnetic interaction under the condition
 \beqn
-g\sin\theta_W = g'\cos\theta_W = e, \quad \frac{g'}{g}= tan\theta_W  
+g\sin\theta_W = g'\cos\theta_W = e, \quad \frac{g'}{g}= \tan\theta_W  
 \eeqn
 \noindent contained in the Eqn.\ref{neutral_currents}; the third term is the neutral weak current.\\
 
 Note that the neutral fields transformation given by the Eqn. \ref{neutral_fields} can be written in terms of the coupling constants $g$ and $g'$ as:
 \beqn\label{neutral_bosons}
-A_\mu= \frac{g'W_\mu^3 + gB_\mu}{\sqrt{g^2+g'^2}}, \qquad  Z_\mu= \frac{gW_\mu^3 - g'B_\mu}{\sqrt{g^2+g'^2}}
+A_\mu= \frac{g'W_\mu^3 + gB_\mu}{\sqrt{g^2+g'^2}}, \qquad  Z_\mu= \frac{gW_\mu^3 - g'B_\mu}{\sqrt{g^2+g'^2}}.
 \eeqn
 
- So far, the Lagrangian density describing the non-massive EWI is:
+So far, the Lagrangian density describing the non-massive EWI is:
 \beqn\label{nmewi_lagr}
 \Lagr_{nmEWI}=\Lagr_0 +\Lagr_G
 \eeqn
@@ -525,7 +525,8 @@ A_\mu= \frac{g'W_\mu^3 + gB_\mu}{\sqrt{g^2+g'^2}}, \qquad  Z_\mu= \frac{gW_\mu^3
 
 \subsection{Spontaneous symmetry breaking (SSB)}
 
-Figure \ref{ssb} left shows a steel nail (top) which is subject to an external force; the form of the potential energy is also shown (bottom).\\ 
+Figure \ref{ssb} left shows a steel nail (top) which is subject to an external force; the form of the potential energy is also shown (bottom).
+
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{broken_symmetry}
@@ -533,9 +534,9 @@ Figure \ref{ssb} left shows a steel nail (top) which is subject to an external f
 \label{ssb}
 \end{figure}
 
-Before reaching the critical force value, the system has rotational symmetry with respect to the nail axis; however, after the critical force value is reached the nail buckles (top right). The form of the potential energy (bottom right) changes, preserving its rotational symmetry although its minima does not exhibit that rotational symmetry any longer. Right before the nail buckles there is no indication of the direction the nail will bend because any of the directions are equivalent, but once the nail bends, choosing a direction, an arbitrary minimal energy state (ground state) is selected and it does not share the system's rotational symmetry. This mechanism for reaching an asymmetric ground state is known as \textit{spontaneous symmetry breaking}.       
+Before reaching the critical force value, the system has rotational symmetry with respect to the nail axis; however, after the critical force value is reached the nail buckles (top right). The form of the potential energy (bottom right) changes appearing a set of infinity minima  but preserving its rotational symmetry. Right before the nail buckles there is no indication of the direction the nail will bend because any of the directions are equivalent, but once the nail bends, choosing a direction, an arbitrary minimal energy state (ground state) is selected and it does not share the system's rotational symmetry. This mechanism for reaching an asymmetric ground state is known as \textit{spontaneous symmetry breaking}.       
 
-The lesson from this analysis is that the way to introduce the SSB mechanism into a system is by adding the appropriate potential to it.\\ 
+The lesson from this analysis is that the way to introduce the SSB mechanism into a system is by adding the appropriate potential to it.
 
 Figure \ref{hp2d} shows a plot of the potential $V(\phi)$ in the case of a scalar field $\phi$
 
@@ -543,7 +544,7 @@ Figure \ref{hp2d} shows a plot of the potential $V(\phi)$ in the case of a scala
 V(\phi)=\mu^2\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2
 \eeqn
 
-If $\mu^2>0$ the potential has only one minimum at $\phi=0$ and describes a scalar field with mass $\mu$. If $\mu^2<0$ the potential has a local maximum at $\phi=0$ and two minima at $\phi=\pm \sqrt{-\mu^2/\lambda}$ which enables the SSB mechanism to work.\\ 
+If $\mu^2>0$ the potential has only one minimum at $\phi=0$ and describes a scalar field with mass $\mu$. If $\mu^2<0$ the potential has a local maximum at $\phi=0$ and two minima at $\phi=\pm \sqrt{-\mu^2/\lambda}$ which enables the SSB mechanism to work.
 
 \begin{figure}[!h]
 \centering
@@ -562,7 +563,7 @@ In the case of a complex scalar field $\phi(x)$
 \Lagr=(\partial_\mu\phi)^\dagger(\partial^\mu\phi) - V(\phi) , \qquad V(\phi)=\mu^2\phi^\dagger\phi + \lambda(\phi^\dagger\phi)^2
 \eeqn
 
-\noindent where an appropriate potential has been added in order to introduce the SSB.\\
+\noindent where an appropriate potential has been added in order to introduce the SSB.
 
 As seen in Figure \ref{higgs_potential_plot}, the potential has now an infinite number of minima circularly distributed along the $\xi$-direction which makes possible the occurrence of the SSB by choosing an arbitrary ground state; for instance, $\xi=0$, \ie $\phi_1=v, \phi_2=0$
 
@@ -577,7 +578,7 @@ As seen in Figure \ref{higgs_potential_plot}, the potential has now an infinite 
 \phi_0=\frac{v}{\sqrt{2}}\exp(i\xi) \quad \xrightarrow[]{SSB} \quad \phi_0=\frac{v}{\sqrt{2}}
 \eeqn
 
-As usual, excitations over the ground state are studied by making an expansion about it; thus, the excitation can be parametrized as:
+As usual, excitations over the ground state are studied by making an expansion about it; thus, the excitations can be parametrized as:
 \beqn
 \phi(x)=\frac{1}{\sqrt{2}}(v + \eta(x) + i\xi(x))
 \eeqn
@@ -588,7 +589,7 @@ As usual, excitations over the ground state are studied by making an expansion a
 \Lagr'=\frac{1}{2}(\partial_\mu\xi)^2 + \frac{1}{2}(\partial_\mu\eta)^2 + \mu^2\eta^2 - V(\phi_0) - \lambda v \eta(\eta^2+\xi^2) -  \frac{\lambda}{4}(\eta^2+\xi^2)^2
 \eeqn
 
-\noindent where the last two terms represent the interactions and self-interaction between the two fields $\eta$ and $\xi$. The particular feature of the SSB mechanism is revealed when looking to the first three  terms of $\Lagr'$. Before the SSB, only the massless $\phi$ field is present in the system; after the SSB there are two fields of which the $\eta$-field has acquired mass $m_\eta=\sqrt{-2\mu^2}$ while the $\xi-field$ is still massless (see Figure \ref{higgs_hat}).\\  
+\noindent where the last two terms represent the interactions and self-interaction between the two fields $\eta$ and $\xi$. The particular feature of the SSB mechanism is revealed when looking to the first three  terms of $\Lagr'$. Before the SSB, only the massless $\phi$ field is present in the system; after the SSB there are two fields of which the $\eta$-field has acquired mass $m_\eta=\sqrt{-2\mu^2}$ while the $\xi$-field is still massless (see Figure \ref{higgs_hat}).\\  
 
 \begin{figure}[!h]
 \centering
@@ -628,7 +629,7 @@ The choice of the ground state is critical. By choosing a ground state, invarian
 \phi_0\equiv\frac{1}{\sqrt{2}}\binom{0}{v}, \qquad v^2\equiv-\frac{\mu^2}{\lambda}.
 \eeqn
 
-\noindent where the vacuum expectation value $v$ is fixed by the Fermi coupling $G_F$ according to $v=(\sqrt{2}G_F)^{1/2}\approx 246$ GeV.\\
+\noindent where the vacuum expectation value $v$ is fixed by the Fermi coupling $G_F$ according to $v=(\sqrt{2}G_F)^{1/2}\approx 246$ GeV.
 
 The G symmetry has been broken and three Nambu-Goldstone bosons will appear. The next step is to expand $\phi$ about the chosen ground state as:
 \beqn
@@ -640,13 +641,13 @@ The G symmetry has been broken and three Nambu-Goldstone bosons will appear. The
 \phi(x)\frac{1}{\sqrt{2}}\binom{0}{v+H(x)}
 \eeqn
 
-\noindent which when substituted into $\Lagr_S$ (Eqn. \ref{ls}) results in a Lagrangian containing the now massive three gauge bosons $\wpm, Z$, one massless gauge boson (photon) and the new Higgs field (H). The three degrees of freedom corresponding to the Nambu-Goldstone bosons are now integrated into the massive gauge bosons as their longitudinal polarizations which were not available when they were massless particles. The effect by which vector boson fields acquire mass after an spontaneous symmetry breaking, but without an explicit gauge invariance breaking is known as the \textit{Higgs mechanism}.\\
+\noindent which when substituted into $\Lagr_S$ (Eqn. \ref{ls}) results in a Lagrangian containing the now massive three gauge bosons $\wpm, Z$, one massless gauge boson (photon) and the new Higgs field (H). The three degrees of freedom corresponding to the Nambu-Goldstone bosons are now integrated into the massive gauge bosons as their longitudinal polarizations which were not available when they were massless particles. The effect by which vector boson fields acquire mass after an spontaneous symmetry breaking, but without an explicit gauge invariance breaking is known as the \textit{Higgs mechanism}.
 
 The mechanism was proposed by three independent groups: F.Englert and R.Brout in August 1964 \cite{englert}, P.Higgs in October 1964 \cite{higgs} and G.Guralnik, C.Hagen and T.Kibble in November 1964\cite{ghk}; however, its importance was not realized until S.Glashow\cite{glashow}, A.Salam\cite{salam} and S.Weinberg \cite{weinberg}, independently, proposed that electromagnetic and weak interactions are two manifestations of a more general interaction called \ti{electroweak interaction} in 1967.
 
 \subsection{Masses of the gauge bosons}
 
-The mass of the gauge bosons is extracted by evaluating the kinetic part of Lagrangian $\Lagr_S$ in the ground state (known also as the vacuum expectation value), \ie,
+The masses of the gauge bosons are extracted by evaluating the kinetic part of Lagrangian $\Lagr_S$ in the ground state (known also as the vacuum expectation value), \ie,
 
 \beqn\label{gauge_masses}
 \small
@@ -686,6 +687,7 @@ m_l=\frac{G_l}{\sqrt{2}}v
 \beqn
 \phi_c=-i\sigma_2\phi* = \binom{-\bar{\phi}^0}{\phi^-}.
 \eeqn
+
 Additionally, given that the quark isospin doublets are not constructed in terms of the mass eigenstates but in terms of the flavor eigenstates, as shown in Table\ref{T3Y}, the coupling parameters will be related to the CKM matrix elements; thus the quark Lagrangian is given by:   
 
 \beqn\label{lyq}
@@ -736,7 +738,7 @@ Mass (GeV/c$^2$) & 125.09$\pm$0.21 (stat.)$\pm$0.11 (syst.)\\\hline
 
 \subsection{Production of Higgs bosons at LHC}
 
-At LHC, Higgs boson is produced as a result of the collision of two counter-rotating protons beams. A detailed description of the LHC machine will be presented in chapter \ref{ch:cms}. \ti{The total cross section} is a parameter that quantifies the number of pp collisions that happen when a number of protons are fired at each other. Different results can be obtained after a pp collision and for each one the \ti{cross section} is defined as the number of pp collisions that conclude in that particular result with respect to the number of protons fired at each other.
+At the LHC, Higgs bosons are produced as a result of the collision of two counter-rotating protons beams. A detailed description of the LHC machine will be presented in chapter \ref{ch:cms}. \ti{The total cross section} is a parameter that quantifies the number of pp collisions that happen when a number of protons are fired at each other. Different results can be obtained after a pp collision and for each one the \ti{cross section} is defined as the number of pp collisions that conclude in that particular result with respect to the number of protons fired at each other.
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.55]{proton_proton}
