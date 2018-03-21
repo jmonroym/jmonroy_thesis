@@ -799,15 +799,7 @@ The associated production with a top or bottom quark pair and the associated pro
 
 \subsection{Higgs boson decay channels}\label{sec:decays}
 
-When a particle can decay through several modes, also known as channels, the probability of decaying through a given channel is quantified by the \ti{branching ratio (BR)} of the decay channel; thus, the BR is defined as the ratio of number of decays going through that given channel to the total number of decays. In regard to the Higgs boson decay, the BR can be predicted with accuracy once the Higgs mass is known \cite{riley, denner}. In Figure \ref{hcs_br} right, a plot of the BR as a function of the Higgs mass is presented; the largest predicted BR corresponds to the $\bbbar$ pair decay channel (see Table \ref{hdbr}) given that it is the heaviest particle pair whose on-shell production is kinematically allowed in the decay. The reason
-
-
-
-
-
-
-
-decays through direct interaction to particle/antiparticle pairs ($\bbbar, \tau^+\tau^-, c\bar{c}, \mu^+\mu^-$).
+When a particle can decay through several modes, also known as channels, the probability of decaying through a given channel is quantified by the \ti{branching ratio (BR)} of the decay channel; thus, the BR is defined as the ratio of number of decays going through that given channel to the total number of decays. In regard to the Higgs boson decay, the BR can be predicted with accuracy once the Higgs mass is known \cite{riley, denner}. In Figure \ref{hcs_br} right, a plot of the BR as a function of the Higgs mass is presented; the largest predicted BR corresponds to the $\bbbar$ pair decay channel (see Table \ref{hdbr}) given that it is the heaviest particle pair whose on-shell \footnote{In general, on-shell or real particles are those which satisfy the energy-momentum relation ($E^2-|\vec{p}|^2c^2= m^2c^4$); off-shell or virtual particles does not satisfy it which is possible under the uncertainty principle of quantum mechanics. Usually, virtual particles correspond to internal propagators in Feynman diagrams.} production is kinematically allowed in the decay.
 
 \begin{center}
 \begin{table}[h]
@@ -822,26 +814,62 @@ $H\to \gamma\gamma$ & $2.27\times10^{-3}$ & $+5.0\%-4.9\%$\\
 $H\to Z\gamma$      & $1.53\times10^{-3}$ & $+9.0\%-8.9\%$\\
 $H\to\mu^+\mu^-$    & $2.18\times10^{-4}$ & $+6.0\%-5.9\%$\\\hline
 \end{tabular}
-\caption[Predicted branching ratios for a SM Higgs boson with $m_H = 125$ GeV/c$^2$.]{Predicted branching ratios and the relative uncertainty for a SM Higgs boson with $m_H = 125$GeV/c$^2$ \cite{pdg}; the uncertainties are driven by theoretical uncertainties for the different Higgs boson partial widths and by parametric uncertainties associated to the strong coupling and the masses of the quarks which are the input parameters. Further details on these calculations can be found in References \cite{florian}}\label{hdbr}
+\caption[Predicted branching ratios for a SM Higgs boson with $m_H = 125$ GeV/c$^2$.]{Predicted branching ratios and the relative uncertainty for some decay channels of a SM Higgs boson with $m_H = 125$GeV/c$^2$ \cite{pdg}; the uncertainties are driven by theoretical uncertainties for the different Higgs boson partial widths and by parametric uncertainties associated to the strong coupling and the masses of the quarks which are the input parameters. Further details on these calculations can be found in Reference \cite{florian}}\label{hdbr}
 \end{table}
 \end{center}
+
+Decays to other lepton and quark pairs, like electron, strange, up, and down quark pairs not listed in the table, are also possible but their likelihood is too small to measure since they are very lightweight, hence, their interaction with the Higgs boson is very weak. On other hand, the decay to top quark pairs is heavily suppressed due to the top quark mass ($\approx 173$ GeV/c$^2$).
+
+Decays to gluons proceed indirectly through a virtual top quark loop while the decays to photons proceed through a virtual W boson loop, therefore, their branching ratio is smaller compared to direct interaction decays. Same is true for the decay to a photon and a Z boson.
+
+In the case of decays to pairs of W and Z bosons, the decay proceed with one of the bosons being on-shell and the other being off-shell. The likelihood of the process diminish depending on how far off-shell are the virtual particles involved, hence, the branching ratio for W boson pairs is bigger that for Z boson pairs since Z boson mass is bigger that W boson mass.
+
+Note that the decay to a pair of virtual top quarks is possible, but the probability is way too small. 
+
+\section{Experimental status of the anomalous Higgs-fermion coupling}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{kt_kv}
+\caption[Two dimensional $\kappa_t$-$\kappa_V$ plot of the coupling modifiers. ATLAS and CMS combination.]{Combination of the  ATLAS and CMS fits for coupling modifiers $\kappa_t$-$\kappa_V$; also shown the individual decay channels combination and their global combination. No assumptions have been made on the sign of the coupling modifiers\cite{comb_ht_couplings}.} 
+\label{fig:kt_kv}
+\end{figure}
+ 
+ATLAS and CMS have performed analyses of the anomalous H-f coupling by making likelihood scans for the two coupling modifiers, $\kappa_t$ and $\kappa_V$, under the assumption that $\kappa_Z=\kappa_W \equiv \kappa_V$ and $\kappa_t=\kappa_\tau=\kappa_b \equiv\kappa_f$. Figure \ref{fig:kt_kv} shows the result of the combination of ATLAS and CMS fits; also the individual decay channels combination and the global combination results are shown.
+
+Note that from this plot there is limited information on the sign of the coupling  since most of the regions are sign-symmetric in $\kappa_F$; also, the only information available about the sign of the coupling comes from decays rather than production. 
+
+While all the channels are compatible for positive values of the modifiers, for negative values of $\kappa_t$ there is no compatibility. The best fit for individual channels is compatible with negative values of $\kappa_t$ except for the $H\to bb$ channel which is expected to be the most sensitive channel; therefore, the best fit for the global fit yields $\kappa_t\geq0$. Thus, the anomalous H-t coupling cannot be excluded completely. That is what motivates to look at tHq, which can help with both of those.
+
+
+
+
 %______________________ tHq ______________________
-\section{Associated production of a Higgs boson and a single Top quark.}\label{sec:thq}
+\section{Associated production of a Higgs boson and a single top quark}\label{sec:thq}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{thq_prod}\\
 \includegraphics[scale=0.4]{thb_prod}\\
 \includegraphics[scale=0.4]{thW_prod}\\
-\caption[Associated Higgs boson production mechanism Feynman diagrams]{Associated Higgs boson production mechanism Feynman diagrams. a.,b. t-channel (\tHq), c.,d. s-channel ($tHb$), e-i. W-associated.}
+\caption[Higgs boson production in association with a top quark mechanism Feynman diagrams]{Associated Higgs boson production with a top quark mechanism Feynman diagrams. a.,b. t-channel (\tHq), c.,d. s-channel ($tHb$), e-i. W-associated.}
 \label{fig:th_prod}
 \end{figure}
 
-Associated production of Higgs boson has been extensively studied \cite{maltoni1, biswas, farina,tait, maltoni2}. While measurements of the main Higgs production mechanisms rates are sensitive to the strength of the Higgs coupling to W boson or top quark, they are not sensitive to the relative sign between the two couplings. In this thesis, the Higgs boson production mechanism explored is the associated production with a single top quark (\tH) which offers sensitiveness to the relative sign of the Higgs couplings to W boson and to top quark. The description given here is based on the Reference \cite{farina}\\
+The production of Higgs boson in association with a top quark has been extensively studied \cite{maltoni1, biswas, farina,tait, maltoni2}. While measurements of the main Higgs production mechanisms rates are sensitive to the strength of the Higgs coupling to W boson or top quark, they are not sensitive to the relative sign between the two couplings. In this thesis, the Higgs boson production mechanism explored is the associated production with a single top quark (\tH) which offers sensitivity to the relative sign of the Higgs couplings to W boson and to top quark. The description given here is based on Reference \cite{farina}
 
-A process where two incoming particles interact and produce a final state with two particles can proceed in three ways also called channels (see, for instance, Figure \ref{fig:th_prod} omitting the red line). The t-channel represents processes where an intermediate particle is emitted by one of the incoming particles and absorbed by the other. The s-channel represents processes where the two incoming particles merge into an intermediate particle which eventually will split into the particles in the final state. The third channel, u-channel, is similar to the t-channel but the two outgoing particles interchange their roles.\\
+A process where two incoming particles interact and produce a final state with two particles can proceed in three called channels (see, for instance, Figure \ref{fig:th_prod} omitting the red line). The t-channel represents processes where an intermediate particle is emitted by one of the incoming particles and absorbed by the other. The s-channel represents processes where the two incoming particles merge into an intermediate particle which eventually will split into the particles in the final state. The third channel, u-channel, is similar to the t-channel but the two outgoing particles interchange their roles. These three channels are connected to the so-called Mandelstam variables 
+%{\setlength{\mathindent}{0cm}
+\begin{align}
+&s =(p_1 +p_2)^2 =(p_1' + p_2')^2 \to{\small \textrm{ square of the center mass-energy}}.\\
+&t =(p_1 -p_1')^2 =(p_2' -p_2)^2 \to{\small \textrm{ square of the four-momentum transfer}}.\\
+&u =(p_1 -p_2')^2 =(p_1' - p_2)^2 \to{\small \textrm{ square of the crossed four-momentum transfer}}.\\
+&s+t+u = m_1^2 + m_2^2 + m_1^{'2} +  m_2^{'2}
+\end{align}
+%}
+\noindent which relate the momentum, energy and the angles of the incoming and outgoing particles in an scattering process of two particles to two particles. The importance of the Mandelstam variables reside in that they form a minimum set of variables needed to describe the kinematics of this scattering process; they are Lorentz invariant which makes them very useful when doing calculations.      
 
-The \tH production, where Higgs boson can be radiated either from the top quark or from the W boson, is represented by the leading order Feynman diagrams in Figure \ref{fig;th_prod}. The cross section for the \tH process is calculated, as usual, summing over the contributions from the different Feynman diagrams; therefore it depends on the interference between the contributions. In the SM, the interference for t-channel (\tHq process)  and W-associated (\tHW process) production is destructive \cite{maltoni1} resulting in the small cross sections presented in Table \ref{tab:th_xsec}. 
+The \tH production, where Higgs boson can be radiated either from the top quark or from the W boson, is represented by the leading order Feynman diagrams in Figure \ref{fig:th_prod}. The cross section for the \tH process is calculated, as usual, summing over the contributions from the different Feynman diagrams; therefore it depends on the interference between the contributions. In the SM, the interference for t-channel (\tHq process)  and W-associated (\tHW process) production is destructive \cite{maltoni1} resulting in the small cross sections presented in Table \ref{tab:th_xsec}. 
 
 \begin{center}
 \begin{table}[h]
@@ -856,15 +884,15 @@ s-channel$(pp \to tHb)$     & $ 2.87^{+0.09}_{-0.08}$ \\\hline
 \end{table}
 \end{center}
 
-While the s-channel contribution can be neglected, it will be shown that a deviation from the SM destructive interference would result in an enhancement of the \tH cross section compared to that in SM, which could be used to get information about the sign of the Higgs-top coupling \cite{farina,tait}. In order to describe \tH production processes, Feynman diagram \ref{fig:th_prod}b will be considered; there, the W boson is radiated by a quark in the proton and eventually it will interact with the b quark. In the high energy regime, the effective W approximation \cite{dawson} allows to describe the process as the emission of an approximately on-shell W and its hard scattering with the b quark; \ie $Wb \to th$. The scattering amplitude for the process is given by
+The s-channel contribution can be neglected. It will be shown that a deviation from the SM destructive interference would result in an enhancement of the \tH cross section compared to that in SM, which could be used to get information about the sign of the Higgs-top coupling \cite{farina,tait}. In order to describe \tH production processes, Feynman diagram \ref{fig:th_prod}b will be considered; there, the W boson is radiated by a quark in the proton and eventually it will interact with the b quark. In the high energy regime, the effective W approximation \cite{dawson} is used to describe the process as the emission of an approximately on-shell W and its hard scattering with the b quark; \ie $Wb \to th$. The scattering amplitude for the process is given by
 
 \begin{equation} \label{s_amp}
 \mathcal{A}= \frac{g}{\sqrt{2}}\left[(\kappa_t-\kappa_V)\frac{m_t\sqrt{s}}{m_Wv}\,A\left(\frac{t}{s},\varphi; \xi_{t},\xi_{b}\right)+\left(\kappa_V\,\frac{2m_W}{v}\frac{s}{t}+(2\kappa_t-\kappa_V)\,\frac{m_t^{2}}{m_Wv}\right)\,B\left(\frac{t}{s},\varphi; \xi_{t},\xi_{b}\right)\right]\,,
 \end{equation}
 
-\noindent where $\kappa_V\equiv g_{HVV}/g_{HVV}^{SM}$ and $\kappa_t\equiv g_{Ht}/g_{Ht}^{SM}=y_t/y_t^{SM}$ are scaling factors that quantify possible deviations of the couplings, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; $s=(p_{W}+p_{b})^{2}$, $t=(p_{W}-p_{H})^{2}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are functions describing the weak interaction in terms of the chiral states of the quarks $b$ and $t$. Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be found in Reference \cite{farina}}.\\        
+\noindent where $\kappa_V\equiv g_{HVV}/g_{HVV}^{SM}$ and $\kappa_t\equiv g_{Ht}/g_{Ht}^{SM}=y_t/y_t^{SM}$ are scaling factors that quantify possible deviations of the couplings from the SM values, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; $s=(p_{W}+p_{b})^{2}$, $t=(p_{W}-p_{H})^{2}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are functions describing the weak interaction in terms of the chiral states ($\xi_{t},\xi_{b}$) of the quarks $b$ and $t$. Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be found in Reference \cite{farina}}.\\        
 
-The scattering amplitude grows with energy like $\sqrt{s}$ for $\kappa_V \neq \kappa_t$ , in contrast to the SM ($\kappa_t=\kappa_V=1$), where the first term in \ref{s_amp} cancels out and the amplitude is constant for large s; therefore, a deviation from the SM predictions represents an enhancement in the \tHq cross section. In particular, for a SM H-W coupling and a H-t coupling of inverted sigh with respect to the SM ($\kappa_V =-\kappa_t=1$) the \tHq cross section is enhanced by a factor greater 10 as seen in the Figure \ref{thq_en} taken from Reference \cite{farina}; Reference \cite{biswas2} has reported similar enhancement results.
+The scattering amplitude grows with energy like $\sqrt{s}$ for $\kappa_V \neq \kappa_t$ , in contrast to the SM ($\kappa_t=\kappa_V=1$), where the first term in \ref{s_amp} cancels out and the amplitude is constant for large s; therefore, a deviation from the SM predictions represents an enhancement in the \tHq cross section. In particular, for a SM H-W coupling and a H-t coupling of inverted sign with respect to the SM ($\kappa_V =-\kappa_t=1$) the \tHq cross section is enhanced by a factor greater 10 as seen in the Figure \ref{thq_en} taken from Reference \cite{farina}; Reference \cite{biswas2} has reported similar enhancement results.
 
 \begin{figure}[h!]
 \centering
@@ -929,18 +957,18 @@ $\sigma^{NLO} DR2$(\tHW)(fb)\cite{demartin}                 & 13               &
 %% \end{center}
 
 %______________________ cp phase ______________________
-\section{The CP-mixing in \tH processes}\label{sec:cp}
+\section{CP-mixing in \tH processes}\label{sec:cp}
 
-In addition to the sensitivity to sign of the H-t coupling, \tHq and \tHW processes have been proposed as a tool to investigate the possibility of a H-t coupling that does not conserve CP\cite{maltoni2,demartin,ellis}. Current experimental results are consistent with SM H-V and H-t couplings; however, negative H-t coupling is not excluded completely \cite{comb_ht_couplings}.\\
+In addition to the sensitivity to sign of the H-t coupling, the \tHq and \tHW processes have been proposed as a tool to investigate the possibility of a H-t coupling that does not conserve CP\cite{maltoni2,demartin,ellis}. %Current experimental results are consistent with SM H-V and H-t couplings; however, negative H-t coupling is not excluded completely \cite{comb_ht_couplings}.\\
 
-In this thesis, the sensitivity of \tH processes to CP-mixing is also studied in the effective field theory framework and based in References \cite{maltoni2,demartin}; a generic particle ($X_0$) of spin-0 and a general CP violating interaction with the top quark, can couple to scalar and pseudo-scalar fermionic densities. The H-W interaction is assumed to be SM-like. The Lagrangian modeling the H-t interaction is given by
+In this thesis, the sensitivity of \tH processes to CP-mixing is also studied on the basis of References \cite{maltoni2,demartin} using the effective field theory framework where a generic particle ($X_0$) of spin-0 and a general CP violating interaction with the top quark (Htt coupling), can couple to scalar and pseudo-scalar fermionic densities. The H-W interaction is assumed to be SM-like. The Lagrangian modeling the H-t interaction is given by
 
 \beqn
 \Lagr_0^t = -\bar\psi_t\left(c_{\alpha}\kappa_{Htt}g_{Htt}+i s_{\alpha}\kappa_{Att}g_{Att}\gamma_5 \right)\psi_t X_0,
 \label{eq:l_cp}
 \eeqn
 
-\noindent where $\alpha$ is the CP-mixing phase, $c_\alpha\equiv\cos\alpha$ and $s_\alpha\equiv\sin\alpha$, $\kappa_{Htt}$ and $\kappa_{Att}$ are real dimensionless re-scaling parameters\footnote{analog to $\kappa_t$ and $\kappa_V$}, $g_{Htt}=g_{Att}=m_t/v=y_t/\sqrt{2}$ and $v\sim 246$ GeV is the Higgs vacuum expectation value. In this parametrization, it is easy to recover three special cases
+\noindent where $\alpha$ is the CP-mixing phase, $c_\alpha\equiv\cos\alpha$ and $s_\alpha\equiv\sin\alpha$, $\kappa_{Htt}$ and $\kappa_{Att}$ are real dimensionless re-scaling parameters\footnote{analog to $\kappa_t$ and $\kappa_V$} used to parametrize the magnitude of the CP-violating and CP-conserving parts of the amplitude. The model defines $g_{Htt}=g_{Att}=m_t/v=y_t/\sqrt{2}$ with $v\sim 246$ GeV the Higgs vacuum expectation value. In this parametrization, three special cases can be recovered
 
 \begin{itemize}
 \item CP-even coupling $\to \alpha=0^o$  
@@ -955,7 +983,7 @@ The loop induced $X_0$ coupling to gluons can also be described in terms of the 
 \label{eq:l_Hglu}
 \eeqn
 
-\noindent where $g_{Hgg}=-\alpha_s/3\pi v$ and $g_{Agg}= \alpha_s/2\pi v$.  Under the assumption that the top quark dominates the gluon-fusion process at LHC energies, $\kappa_{Hgg} \to \kappa_{Htt}$ and  $\kappa_{Agg} \to \kappa_{Att}$, so that the ratio between the gluon-gluon fusion cross section for $X_0$ and for the SM Higgs prediction can be written as     
+\noindent where $g_{Hgg}=-\alpha_s/3\pi v$ and $g_{Agg}= \alpha_s/2\pi v$ and $G_{\mu\nu}$ is the gluon field strength tensors. Under the assumption that the top quark dominates the gluon-fusion process at LHC energies, $\kappa_{Hgg} \to \kappa_{Htt}$ and  $\kappa_{Agg} \to \kappa_{Att}$, so that the ratio between the gluon-gluon fusion cross section for $X_0$ and for the SM Higgs prediction can be written as     
 
 \beqn
 \frac{\sigma_{NLO}^{gg \to X_0} }{\sigma_{NLO,SM}^{gg \to H}}=  c^2_\alpha\kappa^2_{Htt}+s^2_\alpha \left( \kappa_{Att}\frac{g_{ Agg}}{g_{Hgg}} \right)^2.
@@ -987,19 +1015,7 @@ It is interesting to notice that the $tX_0$ cross section is enhanced, by a fact
 
 A similar parametrization can be used to investigate the \tHW process sensitivity to CP-violating H-t coupling. As said in \ref{sec:thq}, the interference in the W-associated channel is more complicated because there are more than two contributions and also there is interference with the \ttH production process.\\
 
-Figure \ref{xsec_alpha_thw} shows the NLO cross sections for t-channel $tX_0$(blue), $t\bar{t}X_0$ (red) associated production and for the combined  $tWX_0 + t\bar{t}X_0 +$ interference (orange) as a function of the CP-mixing angle. It is clear that the effect of the interference in the combined case is the lifting of the degeneracy present in the $t\bar{t}X_0$ production. The constructive interference enhances the cross section from about 500 fb at SM ($\alpha=0$) to about 600 fb ($\alpha=180^o \to y_t=-y_{t,SM}$).  
+Figure \ref{xsec_alpha_thw} shows the NLO cross sections for t-channel $tX_0$(blue), $t\bar{t}X_0$ (red) associated production and for the combined  $tWX_0 + t\bar{t}X_0 + interference$ (orange) as a function of the CP-mixing angle. It is clear that the effect of the interference in the combined case is the lifting of the degeneracy present in the $t\bar{t}X_0$ production. The constructive interference enhances the cross section from about 500 fb at SM ($\alpha=0$) to about 600 fb ($\alpha=180^o \to y_t=-y_{t,SM}$).  
 
 An analysis combining \tHq and \tHW processes will be made in this thesis taking advantage of the sensitivity improvement.
 
-\section{Experimental status of the anomalous Higgs-fermion coupling.}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.5]{kt_kv}
-\caption[Two dimensional $\kappa_t$-$\kappa_V$ plot of the coupling modifiers. ATLAS and CMS combination.]{Combination of the  ATLAS and CMS fits for coupling modifiers $\kappa_t$-$\kappa_V$; also shown the individual decay channels combination and their global combination. No assumptions have been made on the sign of the coupling modifiers\cite{comb_ht_couplings}.} 
-\label{fig:kt_kv}
-\end{figure}
- 
-ATLAS and CMS have performed analysis of the anomalous H-f coupling by making likelihood scans for the two coupling modifiers, $\kappa_t$ and $\kappa_V$, under the assumption that $\kappa_Z=\kappa_W=\kappa_V$ and $\kappa_t=\kappa_\tau=\kappa_b=\kappa_f$. Figure \ref{fig:kt_kv} shows the result of the combination of ATLAS and CMS fits; also the individual decay channels combination and the global combination results are shown.
-
-\noindent While all the channels are compatible for positive values of the modifiers, for negative values of $\kappa_t$ there is no compatibility. The best fit for individual channels is compatible with negative values of $\kappa_t$ except for the $H\to bb$ channel which is expected to be the most sensitive channel; therefore, the best fit for the global fit yields $\kappa_t\geq0$. Thus, the anomalous H-t coupling cannot be excluded completely. 
