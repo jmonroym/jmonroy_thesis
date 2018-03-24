@@ -163,15 +163,14 @@ CMS is a general-purpose detector designed to conduct research in a wide range o
 
 The central region of the detector is commonly referred as the barrel section while the endcaps are referred as the forward sections of the detector; thus, each subdetector is composed of a barrel section and a forward section. 
 
-When a \pp collision happens inside the CMS detector, many different particles are produced, but only some of them live long enough to be detected; they are electrons, photons, pions, kaons, protons, neutrons and mouns. Thus, the CMS detector was designed to detect those particles and measure their properties. Figure \ref{fig:cms_slice} shows a transverse slice of the CMS detector. The silicon tracker (pixel detector + strip tracker) is capable to register the track of the charged particles traversing it, while calorimeters (electromagnetic and hadronic) measure the energy of the particles that are absorbed by their materials. Considering the detectable particles, mentioned above, emerging from the IP, a basic description of the detection process is as follows. 
+When a \pp collision happens inside the CMS detector, many different particles are produced, but only some of them live long enough to be detected; they are electrons, photons, pions, kaons, protons, neutrons and muons; neutrinos are not detected by the CMS detector. Thus, the CMS detector was designed to detect those particles and measure their properties. Figure \ref{fig:cms_slice} shows a transverse slice of the CMS detector. The silicon tracker (pixel detector + strip tracker) is capable to register the track of the charged particles traversing it, while calorimeters (electromagnetic and hadronic) measure the energy of the particles that are absorbed by their materials. Considering the detectable particles, mentioned above, emerging from the IP, a basic description of the detection process is as follows. 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{cms_slice}
-  \caption[CMS detector transverse slice]{CMS detector transverse slice.}
+  \caption[CMS detector transverse slice]{CMS detector transverse slice \cite{cms_slice}.}
   \label{fig:cms_slice}
 \end{figure}
-
 
 A muon emerging from the IP, will create a track on the silicon tracker and on the muon chambers. The design of the CMS detector is driven by the requirements on the identification, momentum resolution and unambiguous charge determination of the muons; therefore, a large bending power is provided by the solenoid magnet made of superconducting cable capable of generating a 3.8 T magnetic field. The muon track is bent twice since the magnetic field inside the solenoid is directed along the $z$-direction but outside its direction is reversed. Muons interact very weakly with the calorimeters, therefore, it is not absorbed but escape away from the detector.  
 
@@ -185,7 +184,7 @@ A charged hadron, like the proton or $\pi^\pm$, will leave a curved track on the
 
 A more detailed description of each detection system will be presented in the following sections. 
 
-\subsection{Coordinate system}
+\subsection{CMS coordinate system}
 
 The coordinate system used by CMS is centered on the geometrical center of the detector which is the nominal IP as shown in Figure \ref{fig:coord}\footnote{Not all the \pp interaction occur at the nominal IP because of the bunch lenght, therefore, each \pp collision has it own IP location}. The $z$-axis is parallel to the beam direction, while the $Y$-axis pointing vertically upward, and the $X$-axis pointing radially inward toward the center of the LHC.
 
@@ -211,28 +210,73 @@ The angular distance between two objects in the detector ($\Delta R$) is commonl
 \label{delta_r}
 \eeqn
 
-\subsection{Pixels detector}
+\subsection{Tracking system}
 
-\noindent  The CMS tracking system is designed to provide a precise measurement of the trajectory (\textit{track}) followed by the charged particles created after the \pp collisions; also, the precise reconstruction of the primary and secondary origins (\textit{vertices}) is expected in an environment where, each 25 ns, the bunch crossing produce about 20 inelastic collisions and about 1000 particles. An increment in the luminosity is ongoing which implies that the PU will increase accordingly. \\
+The CMS tracking system is designed to provide a precise measurement of the trajectories (\textit{track}) followed by the charged particles created after the \pp collisions; also, the precise reconstruction of the primary and secondary origins of the tracks (\textit{vertices}) is expected in an environment where, each 25 ns, the bunch crossing produces about 20 inelastic collisions and about 1000 particles.% An increment in the luminosity is ongoing which implies that the PU will increase accordingly.
 
-\noindent The pixel detector was replaced during the 2016-2017 extended year-end technical stop, due to the increasingly challenging operating conditions like the higher particle flow and more radiation harsh environment, among others. The new one is responding as expected, reinforcing its crucial role in the successful way to fulfill the new LHC physics objectives after the discovery of the Higgs boson. The last chapter of this thesis is dedicated to describe my contribution to the \ti{ Forward Pixel Phase 1 upgrade}.\\
+Physics requirements guiding the tracking system performance include the precise characterization of events involving gauge bosons, W and Z, and their leptonic decays for which an efficient isolated lepton and photon reconstruction is of capital importance, given that isolation is required to suppress background events to a level that allows observations of interesting processes like Higgs boson decays or beyond SM events.
 
-\noindent  The current pixel detector is composed of 1856 silicon pixel detector modules organized in four-barrel layers in the central region and three disks in the forward region; it is designed to record efficiently and with high precision, up to 10$\mu$m in the $XY$-plane and 20$\mu$m in the $z$-direction, the first four space-points (\textit{hits}) near to the IP region (see Figure \ref{fig:pixel_tracker} left side) in the range $|\eta|\leq 2.5$. The first barrel layer is located at a radius of 30 mm from the beamline, while the fourth layer is located at a radius of 160 mm closer to the strip tracker inner barrel layer (see Section \ref{sst}) in order to reduce the rate of fake tracks. The high granularity of the detector is represented in its about 123 Mpixels, each of size $100\times150\mu$m$^2$, which is almost twice the channels of the old detector. The transverse momentum resolution of tracks can be measured with a resolution of 1-2\% for muons of $p_T=100$ GeV. \\
+The ability to identify and reconstruct $b$-jets and B-hadrons within these jets is also a requirement, since $b$-jets in particular are part of the signature of top quark physics; therefore, the ability to reconstruct accurately displaced vertices is fundamental.
+
+An schematic view of the CMS tracking system is shown in Figure \ref{fig:tracker} 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=9.5cm]{fpix1}
-  \includegraphics[width=5.5cm]{bpix1}
-  \caption[CMS pixel detector schematic view.]{CMS pixel detector schematic view. Left: layout comparing the layers and disks in the old and current pixel detectors. Right: Transverse-oblique view comparing the pixel barrel layers in the two \cite{pix_tdr}.}
-  \label{fig:pixel_tracker}
+  \includegraphics[width=12cm]{tracker}
+  \caption[CMS tracking system schematic view.]{CMS tracking system schematic view \cite{tracker}.}
+  \label{fig:tracker}
 \end{figure}
 
-\noindent Some of the improvements with respect to the previous pixel detector include a higher average tracking efficiency and lower average fake rate as well as higher track impact parameter resolution which is fundamental in order to increase the efficiency in the identification of jets originating from b quarks (b-tagging). A significant source of improvement comes from the overall reduction in the material budget of the detector which results in fewer photon conversions and less multiple scattering from charged particles.    
+In order to satisfy these performance requirements, the tracking system uses two different detector subsystems arranged in concentric cylindrical volumes, the pixel detector and the silicon strip tracker; the pixel detector is located in the high particle density region (r<20cm) while the silicon strip tracker is located in the medium and lower particle density regions 20cm<r<116cm.        
+
+\subsubsection*{Pixel detector}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=14cm]{pixel}
+  %\includegraphics[width=6cm]{}
+  \includegraphics[width=6cm,angle=90]{bpix2}
+  \includegraphics[width=8cm,height=6cm]{fpix2}
+  \caption[CMS pixel detector]{CMS pixel detector. Top: schematic view; Bottom: pictures of the barrel(BPIX) modules(left) and forward modules(right) \cite{cms}.}
+  \label{fig:pixel_det}
+\end{figure}
+
+The pixel detector was replaced during the 2016-2017 extended year-end technical stop, due to the increasingly challenging operating conditions like the higher particle flux and more radiation harsh environment, among others. The new one is responding as expected, reinforcing its crucial role in the successful way to fulfill the new LHC physics objectives after the discovery of the Higgs boson. Since the data sets used in this thesis were produced using the previous version of the pixel detector, it will be the subject of the description in this section. The last chapter of this thesis is dedicated to describe my contribution to the \ti{ Forward Pixel Phase 1 upgrade}.
+
+. The pixel detector is the closest detection system to the IP, covering the region $|\eta|<2.5$.
+
+The pixel detector is composed of 1440 silicon pixel detector modules organized in three-barrel layers in the central region (BPix) and two disks in the forward region (FPix) as shown in the top side of Figure \ref{fig:pixel_det}; it was designed to record efficiently and with high precision, up to 20$\mu$m in the $XY$-plane and 20$\mu$m in the $z$-direction, the first three space-points (\textit{hits}) nearest to the IP region (see top side of Figure \ref{fig:pixel_det}) in the range $|\eta|\leq 2.5$. The first barrel layer was located at a radius of 44 mm from the beamline, while the third layer was located at a radius of 12 mm closer to the strip tracker inner barrel layer (see Section \ref{sst}) in order to reduce the rate of fake tracks. The high granularity of the detector is represented in its about 66 Mpixels, each of size $100\times150\mu$m$^2$. The transverse momentum resolution of tracks can be measured with a resolution of 1-2\% for muons of $p_T=100$ GeV. 
+
+A charged particle passing through the pixel sensors produce ionization in them, giving energy for electrons to be removed from the silicon atoms, hence, creating electron-hole pairs. The collection of charges in the pixels generates an electrical signal that is read out by an electronic readout chip (ROC); each pixel has its own electronics which amplifies the signal. Combining the signal from the pixels activated by a traversing particle in the several layers of the detector allows one to reconstruct the particle's trajectory in 3D.
+
+
+
+
+
+
+
+
+
+Commonly the charge produced in the ionization is collected in sev often
+shared among several pixels, an analog charge readout is implemented. Charge sharing enables
+interpolation between pixels, which improves the spatial resolution. In the barrel section the
+charge sharing in the rφ-direction is largely due to the Lorentz effect. In the endcap pixels
+the sharing is enhanced by arranging the blades in the turbine-like layout.
+%% \begin{figure}[h!]
+%%   \centering
+%%   \includegraphics[width=9.5cm]{fpix1}
+%%   \includegraphics[width=5.5cm]{bpix1}
+%%   \caption[CMS pixel detector schematic view.]{CMS pixel detector schematic view. Left: layout comparing the layers and disks in the old and current pixel detectors. Right: Transverse-oblique view comparing the pixel barrel layers in the two \cite{pix_tdr}.}
+%%   \label{fig:pixel_tracker}
+%% \end{figure}
+
+%% \noindent Some of the improvements with respect to the previous pixel detector include a higher average tracking efficiency and lower average fake rate as well as higher track impact parameter resolution which is fundamental in order to increase the efficiency in the identification of jets originating from b quarks (b-tagging). A significant source of improvement comes from the overall reduction in the material budget of the detector which results in fewer photon conversions and less multiple scattering from charged particles.    
 
 \subsection{Silicon strip tracker}\label{sst}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=12cm]{sst1}
+  \includegraphics[width=12cm]{sst2}
   \includegraphics[width=6cm,height=4cm]{tib}
   \includegraphics[width=6cm,height=4cm]{tec}
   %\includegraphics[width=6cm]{tec2}
