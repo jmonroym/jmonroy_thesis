@@ -216,7 +216,7 @@ The CMS tracking system is designed to provide a precise measurement of the traj
 
 Physics requirements guiding the tracking system performance include the precise characterization of events involving gauge bosons, W and Z, and their leptonic decays for which an efficient isolated lepton and photon reconstruction is of capital importance, given that isolation is required to suppress background events to a level that allows observations of interesting processes like Higgs boson decays or beyond SM events.
 
-The ability to identify and reconstruct $b$-jets and B-hadrons within these jets is also a requirement, since $b$-jets in particular are part of the signature of top quark physics; therefore, the ability to reconstruct accurately displaced vertices is fundamental.
+The ability to identify and reconstruct $b$-jets and B-hadrons within these jets is also a fundamental requirement, achieved through the ability to reconstruct accurately displaced vertices, given that $b$-jets are part of the signature of top quark physics, like the one treated in this thesis.
 
 An schematic view of the CMS tracking system is shown in Figure \ref{fig:tracker} 
 
@@ -238,31 +238,17 @@ In order to satisfy these performance requirements, the tracking system uses two
   %\includegraphics[width=6cm]{}
   \includegraphics[width=6cm,angle=90]{bpix2}
   \includegraphics[width=8cm,height=6cm]{fpix2}
-  \caption[CMS pixel detector]{CMS pixel detector. Top: schematic view; Bottom: pictures of the barrel(BPIX) modules(left) and forward modules(right) \cite{cms}.}
+  \caption[CMS pixel detector]{CMS pixel detector. Top: schematic view; Bottom: pictures of a barrel(BPIX) module(left) and forward modules(right) \cite{cms}.}
   \label{fig:pixel_det}
 \end{figure}
 
 The pixel detector was replaced during the 2016-2017 extended year-end technical stop, due to the increasingly challenging operating conditions like the higher particle flux and more radiation harsh environment, among others. The new one is responding as expected, reinforcing its crucial role in the successful way to fulfill the new LHC physics objectives after the discovery of the Higgs boson. Since the data sets used in this thesis were produced using the previous version of the pixel detector, it will be the subject of the description in this section. The last chapter of this thesis is dedicated to describe my contribution to the \ti{ Forward Pixel Phase 1 upgrade}.
 
-. The pixel detector is the closest detection system to the IP, covering the region $|\eta|<2.5$.
-
-The pixel detector is composed of 1440 silicon pixel detector modules organized in three-barrel layers in the central region (BPix) and two disks in the forward region (FPix) as shown in the top side of Figure \ref{fig:pixel_det}; it was designed to record efficiently and with high precision, up to 20$\mu$m in the $XY$-plane and 20$\mu$m in the $z$-direction, the first three space-points (\textit{hits}) nearest to the IP region (see top side of Figure \ref{fig:pixel_det}) in the range $|\eta|\leq 2.5$. The first barrel layer was located at a radius of 44 mm from the beamline, while the third layer was located at a radius of 12 mm closer to the strip tracker inner barrel layer (see Section \ref{sst}) in order to reduce the rate of fake tracks. The high granularity of the detector is represented in its about 66 Mpixels, each of size $100\times150\mu$m$^2$. The transverse momentum resolution of tracks can be measured with a resolution of 1-2\% for muons of $p_T=100$ GeV. 
+The pixel detector was composed of 1440 silicon pixel detector modules organized in three-barrel layers in the central region (BPix) and two disks in the forward region (FPix) as shown in the top side of Figure \ref{fig:pixel_det}; it was designed to record efficiently and with high precision, up to 20$\mu$m in the $XY$-plane and 20$\mu$m in the $z$-direction, the first three space-points (\textit{hits}) nearest to the IP region in the range $|\eta|\leq 2.5$. The first barrel layer was located at a radius of 44 mm from the beamline, while the third layer was located at a radius of 102 mm, closer to the strip tracker inner barrel layer (see Section \ref{sst}) in order to reduce the rate of fake tracks. The high granularity of the detector is represented in its about 66 Mpixels, each of size $100\times150\mu$m$^2$. The transverse momentum resolution of tracks can be measured with a resolution of 1-2\% for muons of $p_T=100$ GeV. 
 
 A charged particle passing through the pixel sensors produce ionization in them, giving energy for electrons to be removed from the silicon atoms, hence, creating electron-hole pairs. The collection of charges in the pixels generates an electrical signal that is read out by an electronic readout chip (ROC); each pixel has its own electronics which amplifies the signal. Combining the signal from the pixels activated by a traversing particle in the several layers of the detector allows one to reconstruct the particle's trajectory in 3D.
 
-
-
-
-
-
-
-
-
-Commonly the charge produced in the ionization is collected in sev often
-shared among several pixels, an analog charge readout is implemented. Charge sharing enables
-interpolation between pixels, which improves the spatial resolution. In the barrel section the
-charge sharing in the rφ-direction is largely due to the Lorentz effect. In the endcap pixels
-the sharing is enhanced by arranging the blades in the turbine-like layout.
+Commonly, the charge produced by traversing of a particle is collected by and shared among several pixels; by interpolating between pixels, the spatial resolution is improved. In the barrel section the charge sharing in the r$\phi$-plane is due to the Lorentz effect. In the forward pixels the charge sharing is enhanced by arranging the blades in the turbine-like layout as shown in Figure \ref{fig:pixel_det} bottom left.
 %% \begin{figure}[h!]
 %%   \centering
 %%   \includegraphics[width=9.5cm]{fpix1}
@@ -284,13 +270,13 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:sst}
 \end{figure}
 
-\noindent The silicon strip tracker (SST) is the second stage in the CMS tracking system. The top side of Figure \ref{fig:sst} shows a schematic of the SST. The inner tracker region is composed of the tracker inner barrel (TIB) and the tracker inner disks (TID) covering the region $r<55$ cm and $|z|<118$ cm. The TIB is composed of 4 layers while the TID is composed of 3 disks at each end. The silicon sensors in the inner tracker are 320 $\mu$m thick, providing a resolution of about 13-38 $\mu$m in the $r\phi$ position measurement. \\
+The silicon strip tracker (SST) is the second stage in the CMS tracking system. The top side of Figure \ref{fig:sst} shows a schematic of the SST. The inner tracker region is composed of the tracker inner barrel (TIB) and the tracker inner disks (TID) covering the region $r<55$ cm and $|z|<118$ cm. The TIB is composed of 4 layers while the TID is composed of 3 disks at each end. The silicon sensors in the inner tracker are 320 $\mu$m thick, providing a resolution of about 13-38 $\mu$m in the $r\phi$ position measurement.
 
-\noindent The modules indicated in blue in the schematic view of Figure \ref{fig:sst} are two modules mounted back-to-back and rotated in the plane of the module by a \ti{stereo} angle of 100 mrad; the hits from these two modules, known as \ti{stereo hits}, are combined to provide a measurement of the second coordinate (z in the barrel and r on the disks) allowing the reconstruction of hit positions in 3-D.\\ 
+The modules indicated in blue in the schematic view of Figure \ref{fig:sst} are two modules mounted back-to-back and rotated in the plane of the module by a \ti{stereo} angle of 100 mrad; the hits from these two modules, known as \ti{stereo hits}, are combined to provide a measurement of the second coordinate (z in the barrel and r on the disks) allowing the reconstruction of hit positions in 3-D.
 
-\noindent The outer tracker region is composed of the tracker outer barrel (TOB) and the tracker endcaps (TEC). The six layers of the TOB offer coverage in the region $r>55$ cm and $|z|<118$ cm, while the 9 disks of the TEC cover the region $124<|z|<282$ cm. The resolution offered by the outer tracker is about 13-38 $\mu$m in the $r\phi$ position measurement. The inner four TEC disks use silicon sensors 320 $\mu$m thick; those in the TOB and the outer three TEC disks use silicon sensors of 500 $\mu$m thickness. The silicon strips run parallel to the $z$-axis and the distance between strips varies from 80 $\mu$m in the inner TIB layers to 183 $\mu$m in the inner TOB layers; in the endcaps the wedge-shaped sensors with radial strips, whose pitch range between 81 $\mu$m at small radii and 205 $\mu$m at large radii.\\ 
+The outer tracker region is composed of the tracker outer barrel (TOB) and the tracker endcaps (TEC). The six layers of the TOB offer coverage in the region $r>55$ cm and $|z|<118$ cm, while the 9 disks of the TEC cover the region $124<|z|<282$ cm. The resolution offered by the outer tracker is about 13-38 $\mu$m in the $r\phi$ position measurement. The inner four TEC disks use silicon sensors 320 $\mu$m thick; those in the TOB and the outer three TEC disks use silicon sensors of 500 $\mu$m thickness. The silicon strips run parallel to the $z$-axis and the distance between strips varies from 80 $\mu$m in the inner TIB layers to 183 $\mu$m in the inner TOB layers; in the endcaps the wedge-shaped sensors with radial strips, whose pitch range between 81 $\mu$m at small radii and 205 $\mu$m at large radii.
 
-\noindent The whole SST has 15148 silicon modules, 9.3 million silicon strips and cover a total active area of about 198 m$^2$. 
+The whole SST has 15148 silicon modules, 9.3 million silicon strips and cover a total active area of about 198 m$^2$. 
 
 \subsection{Electromagnetic calorimeter}
 \begin{figure}[h!]
@@ -298,15 +284,15 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \includegraphics[scale=0.2]{ecal}
   \includegraphics[width=6cm,height=4cm]{ecal_module}
   \includegraphics[width=6cm,height=4cm]{ecal_crystal} 
-  \caption[CMS ECAL schematic view]{Top: CMS ECAL schematic view. Bottom: Module equipped with the crystals (left); ECAL crystal(right).}
+  \caption[CMS ECAL schematic view]{Top: CMS ECAL schematic view. Bottom: Module equipped with the crystals (left); ECAL crystal(right) with an artistic representation of an electromagnetic shower\cite{cms}.}
   \label{fig:ecal}
 \end{figure}
 
-\noindent The CMS electromagnetic calorimeter (ECAL) is designed to measure the energy of electrons and photons. It is composed of 75848 lead tungstate crystals which have a short radiation length (0.89 cm) and fast response, since 80\% of the light is emitted within 25 ns; however, they are combined with Avalanche photodiodes (APDs) as photodetectors given that crystals themselves have a low light yield (30$\gamma$/MeV). A schematic view of the ECAL is shown in Figure \ref{fig:ecal}.\\
+The CMS electromagnetic calorimeter (ECAL) is designed to measure the energy of electrons and photons. It is composed of 75848 lead tungstate crystals which have a short radiation length (0.89 cm) and fast response, since 80\% of the light is emitted within 25 ns; however, they are combined with Avalanche photodiodes (APDs) as photodetectors given that crystals themselves have a low light yield (30$\gamma$/MeV). A schematic view of the ECAL is shown in Figure \ref{fig:ecal}.
 
-\noindent Energy is measured when electrons and photons are absorbed by the crystals which generates an electromagnetic \ti{shower}, as seen in bottom right picture of the Figure \ref{fig:ecal}; the shower is seen as a \textit{cluster} of energy which depending on the amount of energy deposited can involve several crystals. The ECAL barrel (EB) covers the region $|\eta|$ < 1.479, using crystals of depth of 23 cm and  $2.2\times 2.2$ cm$^2$ transverse section; the ECAL endcap (EE) covers the region 1.479 < $|\eta|$ < 3.0 using crystals of depth 22 cm and transverse section of $2.86\times2.86$ cm$^2$; the photodetectors used are vacuum phototriodes (VPTs). Each EE is divided in two structures called \ti{Dees}.\\
+Energy is measured when electrons and photons are absorbed by the crystals which generates an electromagnetic \ti{shower}, as seen in bottom right picture of the Figure \ref{fig:ecal}; the shower is seen as a \textit{cluster} of energy which depending on the amount of energy deposited can involve several crystals. The ECAL barrel (EB) covers the region $|\eta|$ < 1.479, using crystals of depth of 23 cm and  $2.2\times 2.2$ cm$^2$ transverse section; the ECAL endcap (EE) covers the region 1.479 < $|\eta|$ < 3.0 using crystals of depth 22 cm and transverse section of $2.86\times2.86$ cm$^2$; the photodetectors used are vacuum phototriodes (VPTs). Each EE is divided in two structures called \ti{Dees}.
 
-\noindent In front of the EE, it is installed the preshower detector (ES) which covers the region $1.653 < |\eta| < 2.6$. The ES provides a precise measurement of the position of electromagnetic showers, which allows to distinguish electrons and photons signals from $\pi^0$ decay signals. The ES is composed of a layer of lead absorber followed by a layer of plastic scintillators
+The preshower detector (ES) is installed in front of the EE and covers the region $1.653 < |\eta| < 2.6$. The ES provides a precise measurement of the position of electromagnetic showers, which allows to distinguish electrons and photon signals from $\pi^0$ decay signals. The ES is composed of a layer of lead radiators followed by a layer of silicon strip sensors. The lead radiators initiate electromagnetic showers when reached by photons and electrons, then, the strip sensors measure the deposited energy and the transverse shower profiles. The full ES thickness is 20 cm.
 
 \subsection{Hadronic calorimeter}
 
@@ -320,9 +306,9 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:hcal}
 \end{figure}
 
-\noindent Hadrons are not absorbed by the ECAL but by the hadron calorimeter (HCAL), which is made of a combination of alternating brass absorber layers and silicon photomultiplier(SiPM) layers; therefore, particles passing through the scintillator material produce showers, as in the ECAL, as a result of the inelastic scattering of the hadrons with the detector material. Since the particles are not absorbed in the scintillator, their energy is sampled; therefore the total energy is not measured but estimated from the energy clusters, which reduce the resolution of the detector. Brass was chosen as the absorber material due to its short interaction length ($\lambda_I=16.42$cm) and its non-magnetivity. Figure \ref{fig:hcal} shows a schematic view of the CMS HCAL.\\
+Hadrons are not absorbed by the ECAL\footnote{Most hadrons are not absorbed, but few low-energy ones might be.} but by the hadron calorimeter (HCAL), which is made of a combination of alternating brass absorber layers and silicon photomultiplier(SiPM) layers; therefore, particles passing through the scintillator material produce showers, as in the ECAL, as a result of the inelastic scattering of the hadrons with the detector material. Since the particles are not absorbed in the scintillator, their energy is sampled; therefore the total energy is not measured but estimated from the energy clusters, which reduces the resolution of the detector. Brass was chosen as the absorber material due to its short interaction length ($\lambda_I=16.42$cm) and its non-magnetivity. Figure \ref{fig:hcal} shows a schematic view of the CMS HCAL.
 
-\noindent The HCAL is divided into four sections; the Hadron Barrel (HB), the Hadron Outer (HO), the Hadron Endcap (HE) and the Hadron Forward (HF) sections. The HB covers the region $0<|\eta|<1.4$, while the HE covers the region $1.3<|\eta|<3.0$. The HF, made of quartz fiber scintillator and steel as absorption material, covers the forward region $3.0<|\eta|<5.2$. Both the HB and HF are located inside the solenoid. The HO is placed outside the magnet as an additional layer of scintillators with the purpose of measure the energy tails of particles passing through the HB and the magnet (see Figure \ref{fig:hcal} top and bottom right). The upgrades made to the HCAL during the technical stop 2016-2017 consisted in the replacement of the photo transducer, in order to improve the efficiency.
+The HCAL is divided into four sections; the Hadron Barrel (HB), the Hadron Outer (HO), the Hadron Endcap (HE) and the Hadron Forward (HF) sections. The HB covers the region $0<|\eta|<1.4$, while the HE covers the region $1.3<|\eta|<3.0$. The HF, made of quartz fiber scintillator and steel as absorption material, covers the forward region $3.0<|\eta|<5.2$. Both the HB and HF are located inside the solenoid. The HO is placed outside the magnet as an additional layer of scintillators with the purpose of measure the energy tails of particles passing through the HB and the magnet (see Figure \ref{fig:hcal} top and bottom right).% The upgrades made to the HCAL during the technical stop 2016-2017 consisted in the replacement of the photo transducer, in order to improve the efficiency.
 
 \subsection{Superconducting solenoid magnet}
 
@@ -335,9 +321,9 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:yoke}
 \end{figure}
 
-\noindent The superconducting magnet installed in the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact, the tracking system takes advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it; the unambiguous determination of the sign for high momentum muons was a driven principle during the design of the magnet. The magnet has a diameter of 6.3 m, a length of 12.5 m and a cold mass of 220 t; the generated magnetic field reaches a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a helium cryogenic system; the current circulating in the cables reaches 18800 A under normal running conditions. The left side of Figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible. \\
+The superconducting magnet installed in the CMS detector is designed to provide an intense and highly uniform magnetic field in the central part of the detector. In fact, the tracking system takes advantage of the bending power of the magnetic field to measure with precision the momentum of the particles that traverse it; the unambiguous determination of the sign for high momentum muons was a driving principle during the design of the magnet. The magnet has a diameter of 6.3 m, a length of 12.5 m and a cold mass of 220 t; the generated magnetic field reaches a strength of 3.8T. Since it is made of Ni-Tb superconducting cable it has to operate at a temperature of 4.7 K by using a helium cryogenic system; the current circulating in the cables reaches 18800 A under normal running conditions. The left side of Figure \ref{fig:yoke} shows an artistic view of the CMS magnet, while the right side shows a transverse view of the cold mass where the winding structure is visible.
 
-\noindent The yoke (see Figure \ref{fig:yoke}), composed of 5 barrel wheels and 6 endcap disks made of iron, serves not only as the media for magnetic flux return but also provides the house for the muon detector system and structural stability to the full detector.     
+The yoke (see Figure \ref{fig:yoke}), composed of 5 barrel wheels and 6 endcap disks made of iron, serves not only as the media for magnetic flux return but also provides housing for the muon detector system and structural stability to the full detector.     
 
 \subsection{Muon system }
 
@@ -349,22 +335,21 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:muon_chambers}
 \end{figure}
 
-\noindent Muons are the only charged particles able to pass through all the CMS detector due to their low ionization energy loss; thus, muons can be separated easily from the high amount of particles produced in a \pp collision. Also, muons are expected to be produced in the decay of several new particles; therefore, a good detection of muons was on the leading principles when designing the CMS detector.\\
+Muons are the only charged particles able to pass through all the CMS detector due to their low ionization energy loss; thus, muons can be separated easily from the high amount of particles produced in a \pp collision. Also, muons are expected to be produced in the decay of several new particles; therefore, good detection of muons was one of the leading principles when designing the CMS detector.
 
-\noindent The CMS muon detection system (muon spectrometer) is embedded in the return yoke as seen in Figure \ref{fig:muon_chambers}. It is composed of three different detector types, the drift tube chambers (DT), Cathode strip chambers (CSC), and resistive plate chambers (RPC); DT are located in the central region $\eta< 1.2$ arranged in four layers of drift chambers filled with an Ar/CO$_2$ gas mixture.\\
+The CMS muon detection system (muon spectrometer) is embedded in the return yoke as seen in Figure \ref{fig:muon_chambers}. It is composed of three different detector types, the drift tube chambers (DT), cathode strip chambers (CSC), and resistive plate chambers (RPC); DT are located in the central region $\eta< 1.2$ arranged in four layers of drift chambers filled with an Ar/CO$_2$ gas mixture.
 
-\noindent The muon endcaps are made of CSCs covering the region $\eta< 2.4$ and filled with a mixture of Ar/CO$_2$/CF$_4$. The reason behind using a different detector type lies on the different conditions in the forward region like the higher muon rate and higher residual magnetic field compared to the central region.\\
+The muon endcaps are made of CSCs covering the region $\eta< 2.4$ and filled with a mixture of Ar/CO$_2$/CF$_4$. The reason behind using a different detector type lies on the different conditions in the forward region like the higher muon rate and higher residual magnetic field compared to the central region.
 
-\noindent The third type of detector used in the muon system is a set of four disks of RPCs working in avalanche mode. The RPCs provide good spatial and time resolutions. The track of $high-p_T$ muon candidates is built combining information from the tracking system and the signal from up to six RPCs and four DT chambers.
+The third type of detector used in the muon system is a set of four disks of RPCs working in avalanche mode. The RPCs provide good spatial and time resolutions. The track of high-$p_T$ muon candidates is built combining information from the tracking system and the signal from up to six RPCs and four DT chambers.
 
-\noindent The muon tracks are reconstructed from the hits in the several layers of the muon system. 
-
+The muon tracks are reconstructed from the hits in the several layers of the muon system. 
 
 \subsection{CMS trigger system}
 
-\noindent Under normal conditions, CMS expects \pp collisions every 25 ns, \ie, an interaction rate of 40 MHz for which it is not possible to store the recorded data in full. In order to handle this high event rate data, an online event selection, known as triggering, is performed; triggering reduce the event rate to 100 Hz for storage and further offline analysis.\\        
+CMS expects \pp collisions every 25 ns, \ie, an interaction rate of 40 MHz for which it is not possible to store the recorded data in full. In order to handle this high event rate data, an online event selection, known as triggering, is performed; triggering reduces the event rate to 100 Hz for storage and further offline analysis.        
 
-\noindent The trigger system starts with a reduction of the event rate to 100 kHz in the so-called \ti{level 1 trigger (L1)}. L1 is based on dedicated programmable hardware like Field Programmable Gate Arrays (FPGAs) and Application Specific Integrated Circuits (ASICs), partly located in the detector itself; another portion is located in the CMS under-ground cavern. Hit patterns information from the muon chambers and the energy deposits in the calorimeter are used to decide if an event is accepted or rejected, according to selection requirements previously defined, which reflect the interesting physics processes. Figure \ref{fig:l1} shows the L1 trigger architecture.\\
+The trigger system starts with a reduction of the event rate to 100 kHz in the so-called \ti{ the level 1 trigger} (L1). L1 is based on dedicated programmable hardware like Field Programmable Gate Arrays (FPGAs) and Application Specific Integrated Circuits (ASICs), partly located in the detector itself; another portion is located in the CMS underground cavern. Hit pattern information from the muon chambers and the energy deposits in the calorimeter are used to decide if an event is accepted or rejected, according to selection requirements previously defined, which reflect the interesting physics processes. Figure \ref{fig:l1} shows the L1 trigger architecture.
 
 \begin{figure}[h!]
   \centering
@@ -373,15 +358,15 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:l1}
 \end{figure}
 
-\noindent The second stage in the trigger system is called \ti{ high-level trigger (HLT)}; events accepted by L1 are passed to HLT in order to make an initial reconstruction of them. HLT is software based and runs on a dedicated server farm, using selection algorithms and high-level object definitions; the event rate at HLT is reduced to 100 Hz. The first HLT stage takes information from the muon detectors and the calorimeters to make the initial object reconstruction; in the next HLT stage, information from the pixel and strip detectors is used to do first fast-tracking and then full tracking online. This initial object reconstruction is used in further steps of the trigger system. \\
+The second stage in the trigger system is called \ti{the high-level trigger} (HLT); events accepted by L1 are passed to HLT in order to make an initial reconstruction of them. HLT is software based and runs on a dedicated server farm, using selection algorithms and high-level object definitions; the event rate at HLT is reduced to 100 Hz. The first HLT stage takes information from the muon detectors and the calorimeters to make the initial object reconstruction; in the next HLT stage, information from the pixel and strip detectors is used to do first fast tracking and then full tracking online. This initial object reconstruction is used in further steps of the trigger system.
 
-\noindent Events and preliminary reconstructed physics objects from HLT are sent to be fully reconstructed at the CERN computing center. Again, the pixel detector information provides high-quality seeds for the track reconstruction algorithm offline, primary vertex reconstruction, electron and photon identification, muon reconstruction, $\tau$ identification, and b-tagging. After full reconstruction, data sets are made available for offline analyses.\\ 
+Events and preliminary reconstructed physics objects from HLT are sent to be fully reconstructed at the CERN computing center know also as Tier-0 facility. Again, the pixel detector information provides high-quality seeds for the track reconstruction algorithm offline, primary vertex reconstruction, electron and photon identification, muon reconstruction, $\tau$ identification, and b-tagging. After full reconstruction, data sets are made available for offline analyses.
 
-\noindent During the 2016-2017 technical stop, the L1 system was updated in order to improve the physics object identification by improving the algorithms and accounting for the increasing pile-up scenario.  
+%During the 2016-2017 technical stop, the L1 system was updated in order to improve the physics object identification by improving the algorithms and accounting for the increasing pile-up scenario.  
 
 \subsection{CMS computing}
 
-\noindent After the data, coming from the experiment, are processed at several levels, they have to be stored and made available for further analysis; in order to cope all the tasks implied in the offline data processing, like transfer, simulation, reconstruction and reprocessing, among others, a big computing power is required. The CMS computing system is based on the distributed architecture concept, where users of the system and physical computer centers are distributed worldwide and interconnected by high-speed networks.
+Data coming from the experiment have to be stored and made available for further analysis; in order to cope with all the tasks implied in the offline data processing, like transfer, simulation, reconstruction and reprocessing, among others, a large computing power is required. The CMS computing system is based on the distributed architecture concept, where users of the system and physical computer centers are distributed worldwide and interconnected by high-speed networks.
 
 \begin{figure}[h!]
   \centering
@@ -390,36 +375,36 @@ the sharing is enhanced by arranging the blades in the turbine-like layout.
   \label{fig:wlcg}
 \end{figure}
 
-\noindent The worldwide LHC computing grid (WLCG) is the mechanism used to provide that distributed environment. WLCG is a tiered structure connecting computing centers around the world, which provides the necessary storage and computing facilities. The primary computing centers of the WLCG are located at the CERN and the Wigner datacenter in Budapest and are known as Tier-0 as shown in Figure \ref{fig:wlcg}. The main responsibilities for each tier level are \cite{wlcg}
+The worldwide LHC computing grid (WLCG) is the mechanism used to provide that distributed environment. WLCG is a tiered structure connecting computing centers around the world, which provides the necessary storage and computing facilities. The primary computing centers of the WLCG are located at the CERN and the Wigner datacenter in Budapest and are known as Tier-0 as shown in Figure \ref{fig:wlcg}. The main responsibilities for each tier level are \cite{wlcg}
 
 \begin{itemize}
 \item \textbf{Tier-0}: initial reconstruction of recorded events and storage of the resulting datasets, the distribution of raw data to the Tier-1 centers.
 \item \textbf{Tier-1}: provide storage capacity, support for the Grid, safe-keeping of a proportional share of raw and reconstructed data, large-scale reprocessing and safe-keeping of corresponding output, generation of simulated events, distribution of data to Tier 2s, safe-keeping of a share of simulated data produced at these Tier 2s.
-\item \textbf{Tier-2}: store sufficient data and provide adequate computing power for specific analysis tasks, provide analysis requirements and proportional share of simulated event production and reconstruction.
+\item \textbf{Tier-2}: store sufficient data and provide adequate computing power for specific analysis tasks and proportional share of simulated event production and reconstruction.
 \end{itemize}
 
-\noindent Aside from the general computing strategy to manage the huge amount of data produced by experiments, CMS uses a framework to perform a variety of processing, selection and analysis tasks. The central concept of the CMS data model referred to as \ti{event data model} (EDM) is the \ti{Event}; therefore, an event is the unit that contains the information from a single bunch crossing as well as any data derived from that information like the reconstructed objects, the details under which additional data are derived.\\
+Aside from the general computing strategy to manage the huge amount of data produced by experiments, CMS uses a software framework to perform a variety of processing, selection and analysis tasks. The central concept of the CMS data model referred to as \ti{event data model} (EDM) is the \ti{Event}; therefore, an event is the unit that contains the information from a single bunch crossing, any data derived from that information like the reconstructed objects, and the details of the derivaction.
 
-\noindent Events are passed as the input to the \ti{physics modules} that obtain information from them and create new one; for instance, \ti{event data producers} add new data into the events, \ti{analyzers} produce an information summary from an event set, \ti{filters} perform selection and triggering.\\
+Events are passed as the input to the \ti{physics modules} that obtain information from them and create new information; for instance, \ti{event data producers} add new data into the events, \ti{analyzers} produce an information summary from an event set, \ti{filters} perform selection and triggering.
 
-\noindent CMS uses several event formats with different levels of detail and precision
+CMS uses several event formats with different levels of detail and precision
 
 \begin{itemize}
-\item \textbf{Raw format}: events in this format contain the full recorded information from the detector as well as trigger decision and other metadata. An extended version of raw data is used to store information from the CMS Monte Carlo simulation tools. Raw data are stored permanently, occupying about 2MB/event   
-\item \textbf{RECO format}: events in this format correspond to raw data that have been submitted to reconstruction algorithms like primary and secondary vertex reconstruction, particle ID, track-finding. RECO events contain physical objects and all the information used to reconstruct them; average size is about 0.5 MB/event.     
-\item \textbf{AOD format}: Analysis Object Data (AOD) is the data format used in the physics analyses given that it contains the parameters describing the high-level physics objects in addition to enough information to allow a kinematic refitting if needed. AOD events are filtered versions of the RECO events to which skimming or other kind processes have been applied. Requires about 100 kB/event.
+\item \textbf{Raw format}: events in this format contain the full recorded information from the detector as well as trigger decision and other metadata. An extended version of raw data is used to store information from the CMS Monte Carlo simulation tools (see Chapter \ref{ch:gensimreco}). Raw data are stored permanently, occupying about 2MB/event   
+\item \textbf{RECO format}: events in this format correspond to raw data that have been submitted to reconstruction algorithms like primary and secondary vertex reconstruction, particle ID, and track finding. RECO events contain physics objects and all the information used to reconstruct them; average size is about 0.5 MB/event.     
+\item \textbf{AOD format}: Analysis Object Data (AOD) is the data format used in the physics analyses given that it contains the parameters describing the high-level physics objects in addition to enough information to allow a kinematic refitting if needed. AOD events are filtered versions of the RECO events to which skimming or other filtering have been applied, hence AOD events are subsets of RECO events. Requires about 100 kB/event.
 \item \textbf{Non-event data} are data needed to interpret and reconstruct events. Some of the non-event data used by CMS contains information about the detector contraction and condition data like calibrations, alignment, and detector status.  
 \end{itemize}
 
-\noindent Figure \ref{fig:dataflow} shows the data flow scheme between CMS detector and hardware tiers.
+\noindent Figure \ref{fig:dataflow} shows the data flow scheme between CMS detector and tiers.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{dataflow}
   %\includegraphics[scale=0.15]{dataflow2}
-  \caption[Data flow from CMS detector through hardware Tiers]{Data flow from CMS detector through hardware Tiers.}
+  \caption[Data flow from CMS detector through hardware Tiers]{Data flow from CMS detector through tiers.}
   \label{fig:dataflow}
 \end{figure}
 
 
-\noindent  The whole collection of software built as a framework is referred to as \ti{CMSSW}. This framework provides the services needed by the simulation, calibration and alignment, and reconstruction modules that process event data, so that physicists can perform analysis. The CMSSW event processing model is composed of one executable, called cmsRun, and several plug-in modules which contains all the tools  (calibration, reconstruction algorithms) needed to process an event. The same executable is used for both detector and Monte Carlo data \cite{cmssw}.
+\noindent  The whole collection of software built as a framework is referred to as \ti{CMSSW}. This framework provides the services needed by the simulation, calibration and alignment, and reconstruction modules that process event data, so that physicists can perform analysis. The CMSSW event processing model is composed of one executable, called cmsRun, and several plug-in modules which contains all the tools  (calibration, reconstruction algorithms) needed to process an event. The same executable is used for both detector data and Monte Carlo simulations \cite{cmssw}.
