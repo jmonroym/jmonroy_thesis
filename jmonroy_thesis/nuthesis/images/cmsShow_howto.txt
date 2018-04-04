@@ -1,0 +1,9 @@
+1. login into lxplus
+2. go to CMSSW_9_4_0/src
+3. run: edmPickEvents.py --runInteractive "DAS data sample name " eventlist.txt
+for example:  edmPickEvents.py --runInteractive "/DoubleMuon/Run2016F-PromptReco-v1/MINIAOD" ev_list_DoubleMoun_Run2016F.txt
+the output is a root file name pickevents.root
+4. if several eventlist.txt files, dont forget to change the uotput file
+5. run again the script for each file: edmPickEvents.py --runInteractive "DAS data sample name 2 " eventlist2.txt
+6. if data were produced with CMSSW_8_3_0 or earlier, move the output root files to CMSSW_8_0_8/src and run: cmsShow output.root
+   if not stay at CMSSW_9_4_0/src and run: cmsShow outputfile.root  
