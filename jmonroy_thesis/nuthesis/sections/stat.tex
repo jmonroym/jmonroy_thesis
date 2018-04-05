@@ -10,8 +10,8 @@ Multivariate data analysis (MVA) makes reference to statistical techniques used 
 Processes with small cross section, as the \tHq process, normally are hidden behind more common processes; therefore, a data set is composed of a subset of events with characteristic features of interest (signal) mixed randomly with a much larger number of events that can mimic these features of interest (background); this implies that it is not possible to say with total certainty that a given event is signal or background. In that sense, the challenge can be formulated as one where a set of events have to be classified according to some features; these features correspond to the measurements of several parameters like energy or momentum, organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
 
 \begin{itemize}
-\item Signal hypotheses $\to f(\textbf{x}|s)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the events is a signal event. 
-\item Background hypotheses $ \to f(\textbf{x}|b)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the event is a background event.
+\item $f(\textbf{x}|s)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the events is a signal event (signal hypothesis). 
+\item $f(\textbf{x}|b)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the event is a background event (background hypotheses).
 \end{itemize}
 
 Figure \ref{fig:scatter_plot} shows three ways to perform a classification of events for which measurements of two properties, \ie two input variables, have been performed; blue circles represent signal events while red triangles represent background events. The classification on the left is \textit{cut-based} requiring $x_1<c_1$ and $x_2<c_2$; usually the cut values are chosen according to some knowledge about the event process. In the center, the classification is performed by stating a cut involving a linear function of the input variables and so the boundary, while in the right the the relationship between the input variables is not linear thus the boundary is not linear either.          
@@ -161,75 +161,64 @@ Once events are classified, the next step consists in finding the parameters tha
 
 \subsection{Nuisance parameters.}
 
-The unknown parameter vector $\bm{\theta}$ is made of two types of parameters: on one side, those parameters that provide information about the physical observables of interest for the experiment (\ti{parameters of interest}). On the other side, the \ti{nuisance parameters} that are not of direct interest for the experiment but that needs to be included in the analysis in order to achieve a satisfactory description of the data; they represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis.
+The unknown parameter vector $\bm{\theta}$ is made of two types of parameters: on one side, those parameters that provide information about the physical observables of interest for the experiment or \ti{parameters of interest}. On the other side, the \ti{nuisance parameters} that are not of direct interest for the experiment but that needs to be included in the analysis in order to achieve a satisfactory description of the data; they represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis.
 
-The nuisance parameters can be estimated using dedicated data samples like data from a test beam for calibration purposes. 
+Nuisance parameters can be estimated from experimental data; for instance, data samples from a test beam are usually employed for calibration purposes. In cases where experimental samples are not availables, the estimation of nuisance parameters makes use of dedicated simulation programs to provide the required samples.
 
-The estimation of the unknown parameters from experimental data samples is written in terms of a central value using the notation
+The estimation of the unknown parameters involves certain deviation from their true values, hence, the measurement of the nuisance parameter is written in terms of an estimated value, also called central value,  $\hat{\theta}$ and its uncertainty $\delta \theta$ using the notation
 
 \beqn
 \theta=\hat{\theta}\pm\delta \theta  
 \eeqn
 
-\noindent where the interval $[\hat{\theta}+\delta \theta, \hat{\theta}-\delta \theta]$ is called \ti{confidence interval}; it is usually interpreted, in the limit of infinite number of experiments, as the interval where the true value of the unknown parameter $\theta$ is contained with a probability of 0.6827 (if no other convention is stated).  
+\noindent where the interval $[\hat{\theta}+\delta \theta, \hat{\theta}-\delta \theta]$ is called \ti{confidence interval}; it is usually interpreted, in the limit of infinite number of experiments, as the interval where the true value of the unknown parameter $\theta$ is contained with a probability of 0.6827 (if no other convention is stated); thah interval represents the area under a Gaussian distribution in the interval $\pm 1\sigma$.    
 
-The nuisance parameter uncertainties produce \ti{systematic uncertainties} while the uncertainties associated to fluctuations in data and related to the estimation of the parameters of interest produce \ti{statistical uncertainties}.
-
-
-
-
-
-
+The uncertainties associated to nuisance parameters produce \ti{systematic uncertainties} in the final measurement, while the uncertainties related only to fluctuations in data and that affect the determination of parameters of interest produce \ti{statistical uncertainties}.
 
 \subsection{Maximum likelihood estimation method}
 
-The likelihood function for N events in a sample is the combination of all the likelihoods functions
+The estimation of the unknown parameters that are in best agreement with the observed data is performed through a function of the data sample that return the estimate of those parameters; that function is called an \ti{estimator}. Estimators are usually constructed using mathematical procedures encoded in algorithms. 
+
+In this thesis, the estimator used is the likelihood function $f(\textbf{x}|\bm{\theta})$\footnote{analogue to the likely functions described in previous sections} which depends on a set of measured variables $\textbf{x}$ and a set of unknown parameters $\bm{\theta}$. The likelihood function for N events in a sample is the combination of all the individual likelihoods functions, \ie, 
 
 \beqn
 L(\bm{\theta})=\prod_{i=1}^N f(\textbf{x}^i|\bm{\theta})=\prod_{i=1}^N f(x^i_1,...,x_n^i;\theta_1,...,\theta_m)\label{eqn:ml}
 \eeqn
 
+\noindent and the estimation method used is the \ti{Maximum Likelihood Estimation} method (MLE); it is based on the combined likelihood function defined by eqn. \ref{eqn:ml} and the procedure seeks for the parameter set that corresponds to the maximum value of the combined likelihood function, \ie, the \ti{maximum likelihood estimator} of the unknown parameter vector $\bm{\theta}$ is the function that produce the vector of \ti{best estimators} $\bm{\hat \theta}$ for which the likelihood function $L(\bm{\theta})$ evaluated at the measured sample $\textbf{x}$ is maximum.  
 
-
-
-The function that produce the estimate of a parameter is called \ti{estimator}, therefore, estimators are usually constructed using mathematical procedures encoded in algorithms. The estimation method used in this thesis is the \ti{Maximum Likelihood Estimation} method (MLE); it is based on the combined likelihood function defined by eqn. \ref{eqn:ml} and the procedure seeks for the parameter set that corresponds to the maximum value of the combined likelihood function, \ie, the \ti{maximum likelihood estimator} of the unknown parameter vector $\bm{\theta}$ is the function that produce the vector $\bm{\hat \theta}$ for which the likelihood function $L(\bm{\theta})$ evaluated at the measured sample $\textbf{x}$ is maximum.  
-
-Usually, the logarithm of the likelihood function is used in the numerical algorithms implementations in order to avoid underflow the numerical precision of the computers due to the product of low likelihoods. In addition, it is usual minimize the negative logarithm of the likelihood function instead of maximizing the logarithm of it because in this way the procedure consist of differentiate a sum of therms and set the sum to zero; therefore
+Usually, the logarithm of the likelihood function is used in the numerical algorithms implementations in order to avoid underflow the numerical precision of the computers due to the product of low likelihoods. In addition, it is usual to minimize the negative logarithm of the likelihood function instead of maximizing the logarithm of it because in this way the procedure consist of differentiate a sum of therms and set the sum to zero; therefore, the negative log-likelihood function is
 
 \beqn
 F(\bm{\theta}) = -\textrm{ln}L(\bm{\theta})=-\sum_{i=1}^N f(\textbf{x}^i|\bm{\theta}).
 \eeqn
 
-The minimization process is performed by the software MINUIT \cite{minuit} implemented in the ROOT analysis framework. In case of large data samples the computational resources needed to calculate the likelihood function are too big; therefore, the parameter estimation is performed using binned distributions of the variables of interest for which the \ti{binned likelihood function} is given by
+The minimization process is performed by the software MINUIT \cite{minuit} implemented in the ROOT analysis framework.   In case of data samples with large number of measurements, the computational resources necessary to calculate the likelihood function are too big; therefore, the parameter estimation is performed using binned distributions of the variables of interest for which the \ti{binned likelihood function} is given by
 \beqn
-L(data|\mu,\theta)=\prod_{i=1} \frac{(\mu s_i(\theta)+ b_i(\theta))^{n_i}}{n_i!} e^{-\mu s_i(\theta)-b_i(\theta)},\label{eqn:bml}
+L(data|r,\bm{\theta})=\prod_{i=1} \frac{(r\cdot s_i(\bm{\theta})+ b_i(\bm{\theta}))^{n_i}}{n_i!} e^{-r\cdot s_i(\bm{\theta})-b_i(\bm{\theta})} \prod_{j=1}\frac{1}{\sqrt{2\pi}\sigma_{\theta_j}^2}e^{-(\theta_j-\theta_{0,j})^2/2\sigma_{\theta_j}^2} ,\label{eqn:bml}
 \eeqn
 
-\noindent with $s_i$ and $b_i$ the expected number of signal and background yields for bin $i$ respectively, $n_i$ is the observed number of events in the bin $i$ and $\mu = \sigma/\sigma_{SM}$ is the signal strength. Notice that the number of entries per bin follows a Poisson distribution. The analysis presented in this thesis is based on the binned distribution of the ratio signal/background obtained from the BDT outputs.   
+\noindent with $s_i$ and $b_i$ the expected number of signal and background yields for bin $i$ respectively, $n_i$ is the observed number of events in the bin $i$ and $r = \sigma/\sigma_{SM}$ is the signal strength. Note that the number of entries per bin follows a Poisson distribution. The effect of the nuisance parameters have been included in the likelihood function through the multiplication by a Gaussian distribution that models the nuisance. The three parameters, r, $s_i$ and $b_i$ are jointly fitted to get the value of r.
 
+%The analysis presented in this thesis is based on the binned distribution of the ratio signal/background obtained from the BDT outputs
+
+\section{Exclusion limits }
+
+
+
+
+\section{asymptotic limits }
+
+
+ 
 \subsection{Hypothesis test}
 
 The test statistic mentioned in section \ref{sec:mva}involving  
 
 
+; it is achieved, according to the Neyman-Pearson lemma\cite{npl}, by defining the acceptance region such that, for $\textbf{x}$ inside the region, the likelihood ratio, i.e., the ratio of probability distribution functions for signal and background,
 
 
-; it is achieved, according to the Neyman-Pearson lemma\cite{npl},
-
-
-
-
-
-
-by defining the acceptance region such that, for $\textbf{x}$ inside the region, the likelihood ratio, i.e., the ratio of probability distribution functions for signal and background,
-
-
-
-\section{exclusion limits }
-\section{asymptotic limits }
-
-
- 
 
 
 
