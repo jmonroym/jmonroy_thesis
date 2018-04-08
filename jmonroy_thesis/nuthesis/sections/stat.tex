@@ -151,14 +151,15 @@ On the other side, variables correlations play an important role for some MVA me
   \caption[BDT output example.]{Left: Output distributions for the gradient boosted decision tree (BDTG) classifier using a sample of signal (\pp $to$ \tHq) and background (\pp $\to$ \ttbar) events. Right: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers running over the same sample used to produce the plot on the left.}\label{fig:bdt_output}
 \end{figure}
 
-
 Left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal (\pp $\to$ \tHq) and background (\pp $\to$ \ttbar) events; this plot is the equivalent to the one showed in Figure \ref{fig:scalar_test}. A forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. The BDTG classifier offers a good separation power; while there is a small overtraining in the signal distribution, the background distribution seems to be well predicted which might indicate that the sample is composed of more background than signal events.
 
 Right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms; these curves are known as ROC curves and give an indication of the performance of the classifier. The best performance is achieved with the BDTG classifier (BDTA\_GRAD).   
 
 \section{Statistical inference.}
 
-Once events are classified, the next step consists in finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these \ti{unknown parameters} and their uncertainties from the experimental data is called \ti{inference}. 
+Once events are classified, the next step consists in finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these \ti{unknown parameters} and their uncertainties from the experimental data is called \ti{inference}.
+
+The statistical inference tools used in this analysis are implemented in the RooFit toolkit \cite {roofit} and COMBINE package \cite{combine} included in the CMSSW software framework. 
 
 \subsection{Nuisance parameters.}
 
@@ -194,7 +195,7 @@ Usually, the logarithm of the likelihood function is used in numerical algorithm
 F(\bm{\theta}) = -\textrm{ln}L(\bm{\theta})=-\sum_{i=1}^N f(\textbf{x}^i|\bm{\theta}).
 \eeqn
 
-The minimization process is performed by the software MINUIT \cite{minuit} implemented in the ROOT analysis framework.   In case of data samples with large number of measurements, the computational resources necessary to calculate the likelihood function are too big; therefore, the parameter estimation is performed using binned distributions of the variables of interest for which the \ti{binned likelihood function} is given by
+The minimization process is performed by the software MINUIT \cite{minuit} implemented in the ROOT analysis framework. In case of data samples with large number of measurements, the computational resources necessary to calculate the likelihood function are too big; therefore, the parameter estimation is performed using binned distributions of the variables of interest for which the \ti{binned likelihood function} is given by
 \beqn
 L(\textbf{x}|r,\bm{\theta})=\prod_{i=1} \frac{(r\cdot s_i(\bm{\theta})+ b_i(\bm{\theta}))^{n_i}}{n_i!} e^{-r\cdot s_i(\bm{\theta})-b_i(\bm{\theta})} \prod_{j=1}\frac{1}{\sqrt{2\pi}\sigma_{\theta_j}^2}e^{-(\theta_j-\theta_{0,j})^2/2\sigma_{\theta_j}^2} ,\label{eqn:bml}
 \eeqn
@@ -227,7 +228,7 @@ t_r=-2\textrm{ln} \lambda(r)
 \end{figure}
 
 
-The expected probability density function (p.d.f) $f({t_r|r,\bm{\theta}})$ of the test statistic $t_r$ can be obtained numerically by generating MC pseudo-experiments assuming each $H_0$ and $H_1$ as shown in Figure \ref{fig:t_r}. The probability that $t_r$ takes a value equal or greater than the observed value ($t_{r,obs}$) when a signal with a signal modifier $r$ is present in the data sample, is called \ti{p-value} of the observation; it can be calculated using 
+The expected probability density function (p.d.f) $f({t_r|r,\bm{\theta}})$ of the test statistic $t_r$ can be obtained numerically by generating MC pseudo-experiments assuming each $H_0(b)$ and $H_1(s+b)$ as shown in Figure \ref{fig:t_r}. The probability that $t_r$ takes a value equal or greater than the observed value ($t_{r,obs}$) when a signal with a signal modifier $r$ is present in the data sample, is called \ti{p-value} of the observation; it can be calculated using 
 
 \beqn
 p_r=\int_{t_{r,obs}}^\infty f(t'_r|r, \bm{\theta}) dt'_r,
@@ -245,13 +246,15 @@ p_r=\int_{t_{r,obs}}^\infty f(t'_r|r, \bm{\theta}) dt'_r,
 1-p_b=\int_{t_{r,obs}}^\infty f(t'_r|0,\bm{\theta}) dt'_r,
 \eeqn
 
-If the $t_r$ p.d.f. for both hypotheses are well separated, as shown in the top side of Figure \ref{fig:t_r2}, the experiment is sensitive to the presence of signal in the sample. If the signal presence is small, both p.d.f. will be largely overlapped and either the signal hypothesis could be rejected with not enough justification because experiment is not sensitive to the signal or a fluctuation of the background could be misinterpreted as presence of signal with the corresponding rejection of the background-only hypothesis. These issues are corrected by using the modified p-value \cite{read}
+If the $t_r$ p.d.f. for both hypotheses are well separated, as shown in the top side of Figure \ref{fig:t_r2}, the experiment is sensitive to the presence of signal in the sample. If the signal presence is small, both p.d.f. will be largely overlapped (bottom of Figure \ref{fig: t_r2}) and either the signal hypothesis could be rejected with not enough justification because experiment is not sensitive to the signal or a fluctuation of the background could be misinterpreted as presence of signal with the corresponding rejection of the background-only hypothesis. These issues are corrected by using the modified p-value \cite{read}
 
 \beqn
-p'_r= \frac{p_r}{1-p_b} \equiv CL_s
+p'_r= \frac{p_r}{1-p_b} \equiv CL_s.\label{eqn:cls}
 \eeqn
 
-the upper limit of the parameter of interest $r^{up}$ if determined by scanning over $r$ and find the value for which $p_r^{'up}=0.05$. The expected upper limit can be calculated using pseudo-experiments based on the background-only hypothesis and obtaining a distribution for $r^{up}_{ps}$; the median of that distribution corresponds to the expected upper limit, while the $\pm 1\sigma$ and $\pm2\sigma$ deviations correspond to the values of the distribution that defines the 68\% and 95\% of the area under the distribution centered in the median. It is usual to present all the information about the expected and observed limits in the so-called \ti{Brazilian-flag plot} as the one showed in Figure \ref{fig:hgg}.
+If $H_1$ is true, then $p_b$ is small, $CL_s\simeq p_r$ and $H_0$ is rejected; if there is large overlap and an statistical fluctuation cause that $p_b$ is large, then both numerator and denominator in Eqn. \ref{eqn:cls} become small but $CL_s$ would allow the rejection of $H_1$ even if there is poor sensitivity to signal.     
+
+The upper limit of the parameter of interest $r^{up}$ is determined by excluding the range of values of $r$ for which $CL_s(r,\bm{\theta})$ is lower than the confidence level desired, normally 90\% or 95\%, e.g,scanning over $r$ and finding the value for which $p_r^{'up}=0.05$. The expected upper limit can be calculated using pseudo-experiments based on the background-only hypothesis and obtaining a distribution for $r^{up}_{ps}$; the median of that distribution corresponds to the expected upper limit, while the $\pm 1\sigma$ and $\pm2\sigma$ deviations correspond to the values of the distribution that defines the 68\% and 95\% of the area under the distribution centered in the median. It is usual to present all the information about the expected and observed limits in the so-called \ti{Brazilian-flag plot} as the one showed in Figure \ref{fig:hgg}.
 
 \begin{figure}[!h]
   \centering
@@ -259,8 +262,10 @@ the upper limit of the parameter of interest $r^{up}$ if determined by scanning 
   \caption[Example of Brazilian flag plot]{ Brazilian flag plot of CMS experiment limits for Higgs boson decaying to photons \cite{hgg}.}\label{fig:hgg}
 \end{figure}
 
+\section{Asymptotic limits}
 
+As said before, the complexity of the likelihood functions, the construction of test statistics, and the calculation of the limits and their uncertainties is not always manageable and requires extensive computational resources; in order to overcome those issues, asymptotic approximations for likelihood-based test statistics, like the ones described in previous sections, have been developed \cite{wald,asymptotic} using Wilks' theorem. Asymptotic approximations replace the construction of the test statistics p.d.f.s using MC pseudo-experiments, with the approximate calculation of the test statistics p.d.f.s by employing the so-called \ti{Asimov dataset}.
 
-%According to the Wilks' theorem \cite{wilks}, with a sample  a large number of events, in an experiment where two hypothesis $H_0$ and $H_1$ defined in terms of sets of parameters
+The Asimov dataset is defined as the dataset that produce the true values of the nuisance parameters when it is used to evaluate the estimators for all the parameters; it is obtained by setting the values of the variables in the dataset to their expected values \cite{asymptotic}.
 
-%\section{asymptotic limits }
+Limits calculated by using the asymptotic approximation and the Asimov dataset are know as \ti{asymptotic limits}.
