@@ -6,17 +6,29 @@
 %______________________ INTRODUCCION ______________________
 \section{Introduction}\label{sec:Intro_analysis}
 
-The Higgs boson discovery, supported on experimental observations and theoretical predictions made about the SM, gives the clue of the way in that elementary particles acquire mass through the Higgs mechanism; therefore, knowing the Higgs mass, the Higgs-vector boson and Higgs-fermion couplings can be determined. In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are limited in sensitivity to measure the square of the coupling; the production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also, to the CP phase of the Higgs couplings.
+The Higgs boson discovery, supported on experimental observations and theoretical predictions made about the SM, gives the clue of the way in that elementary particles acquire mass through the Higgs mechanism; therefore, knowing the Higgs mass, the Higgs-vector boson and Higgs-fermion couplings can be determined. In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are limited in sensitivity to measure the square of the coupling. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also, to the CP phase of the Higgs couplings.
 
-This chapter presents the search for the associated production of a Higgs boson and a single top quark events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, which corresponds to an integrated luminosity of 35.9\fbinv, is used.
+This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, which corresponds to an integrated luminosity of 35.9\fbinv, is used.
 
-As shown in section \ref{sec:thq}, the SM cross section of the associated production of a Higgs boson and a single top quark (\tHq) process is driven by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity; in this analysis both contributions are combined and referred as \tH channel. A third contribution comes from \ttH process. The purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1). The analysis exploits signatures with two leptons of the same sign (\ti{2lss channel}) and three leptons (\ti{3l channel}) in the final state.
+As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is driven by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred as \tH channel. A third contribution comes from \ttH process. The purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1). The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
 
 Constraints on the sign of the Higgs-top coupling ($y_t$) have been derived from the decay rate of Higgs boson to photon pairs \cite{biswas} and from the cross section for associated production of Higgs and Z bosons via gluon fusion \cite{hespel}, with recent results disfavoring negative signs of the coupling \cite{cms_ht_couplings,comb_ht_couplings,diboson}, although the negative sign coupling have not been completely excluded.
 
-The analysis presented here, expands previous analyses performed at 8 TeV~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}; it also complements searches in other decay channels targeting $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
+The analysis presented here, expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}; it also complements searches in other decay channels targeting $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
 
 The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then defined. Following, the background predictions, the signal extraction, and the statistical treatment of the selected events as well as the systematic uncertainties are described. The final section present the results for the exclusion limits as a function of the ratio of \Ct and the dimensionless modifier of the Higgs-vector boson coupling \CV.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{workflow}
+\end{center}
+\caption[Analysis strategy workflow]{A schematic overview of the analysis workflow. Based on sets of optimized physics object definitions and selection criteria, signal and background events in a data sample are discriminated. The discrimination is performed by a BDT, previously trained using MC samples of the dominant backgrounds, using discriminant variables based on the \bjet multiplicity, the activity in the forward region of the detector, and the kinematic properties of leptons. The $CL_s$ limits on the combined \ttH + \tH production cross section, as a function of the relative coupling strengths are calculated. }
+\label{fig:workflow}
+\end{figure}
+
+The analysis is designed to efficiently identify and select prompt leptons from on-shell W and Z boson decays and to reject non-prompt leptons from $b$ quark decays and spurious lepton signatures from hadronic jets. Events are then selected in the $2lss$ and $3l$ channels, and are required to contain hadronic jets, some of which must be consistent with $b$ quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated multivariate discriminants, trained to separate the \tHq signal from the two dominant backgrounds, in all categories. The fit result is then used to set an upper limit on the combined \ttH + \tH production cross section, as a function of the relative coupling strengths of Higgs-top quark and Higgs-Vector boson. Figure \ref{fig:workflow} shows an schematic overview of the analysis strategy workflow. 
+
+With respect to the 8 TeV analysis, the object selections have been adjusted for the updated LHC running conditions at 13 TeV, the lepton identification has been improved, and more powerful multivariate analysis techniques are used for the signal extraction.
 
 %% dont forget to describe explicitely the analysis strategy here or later but do it
 
@@ -27,21 +39,21 @@ The first sections present the characteristic \tHq signature as well as the expe
 \begin{center}
 \includegraphics[width=\textwidth]{thq_sign}
 \end{center}
-\caption[\tHq event signature]{\tHq event signature. Left: Feynman diagram including the whole evolution up to the final state for the case of the Higgs boson emitted by the W boson (top); Feynman diagram for the case where the Higgs boson is emitted by the top quark. Right: Schematic view as it would be seen in the detector; the circle in the Feynman diagrams on the left corresponds to the circle in the center of the schematic view as indicated by the line connecting them. In the 2lss channel, one of the W bosons from the Higgs boson decays to two light-quark jets while in the 3l channel both W bosons decays to leptons.}
+\caption[\tHq event signature]{\tHq event signature. Left: Feynman diagram including the whole evolution up to the final state for the case of the Higgs boson emitted by the W boson (top); Feynman diagram for the case where the Higgs boson is emitted by the top quark. Right: Schematic view as it would be seen in the detector; the circle in the Feynman diagrams on the left corresponds to the circle in the center of the schematic view as indicated by the line connecting them. In the $2lss$ channel, one of the W bosons from the Higgs boson decays to two light-quark jets while in the $3l$ channel both W bosons decay to leptons.}
 \label{fig:thq_sign}
 \end{figure}
 
-In order to select events of \tHq process, its features are translated into a set of selection rules; figure \ref{fig:thq_sign} shows the Feynman diagram and an schematic view of the \tHq process from the \pp collision to the final state configuration. A single top quark is produced accompanied by a light quark, denoted as q; this light quark is produced predominantly in the forward region of the detector. The Higgs boson which can be either emitted by the exchanged W boson or directly by the singly produced top quark.
+In order to select events of \tHq process, its features are translated into a set of selection rules; Figure \ref{fig:thq_sign} shows the Feynman diagram and an schematic view of the \tHq process from the \pp collision to the final state configuration. A single top quark is produced accompanied by a light quark, denoted as q; this light quark is produced predominantly in the forward region of the detector. The Higgs boson can be either emitted by the exchanged W boson or directly by the singly produced top quark.
 
-The top quark and Higgs boson decay after their production in the detector due to their high masses/low lifetimes. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay hadronically  in the 2lss channel case and leptonically in the 3l channel case, while $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
+Due to their high masses/short lifetimes, top quark and Higgs boson decay after their production within the detector. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay hadronically in the $2lss$ channel case and leptonically in the $3l$ channel case, while $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
 
 In summary, the signal process is characterized by a the final state with
 
 \begin{itemize}
 \item one light-flavored forward jet,
 \item one central b-jet,
-\item 2lss channel $\to$ two leptons of the same sign, two neutrinos and two light (often soft) jets,
-\item 3l channel $\to$ three leptons, three neutrinos and no central light-flavored jets,
+\item $2lss$ channel $\to$ two leptons of the same sign, two neutrinos and two light (often soft) jets,
+\item $3l$ channel $\to$ three leptons, three neutrinos and no central light-flavored jets,
 \end{itemize}
 
 The presence of neutrinos is inferred from the presence of MET. The analysis has been made public by CMS as a Physics Analysis Summary\cite{CMS_PAS_HIG_17-005} combining the result for the three lepton and two lepton same-sign channels. Currently, an effort to turn the analysis into a paper is ongoing.
@@ -54,12 +66,12 @@ The background processes are those that can mimic the signal signature or at lea
 
 \begin{itemize}
 
-\item Irreducible backgrounds where genuine prompt leptons are produced in on-shell W and Z boson decays; they can be reliantly estimated directly from MC simulated events, using higher-order cross sections or data control regions for the overall normalization.
+\item irreducible backgrounds: where genuine prompt leptons are produced in on-shell W and Z boson decays; they can be reliantly estimated directly from MC simulated events, using higher-order cross sections or data control regions for the overall normalization.
 
-\item Reducible backgrounds where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet, either a genuine lepton from heavy flavor decays. misreconstructed jets, also known as \ti{mis-ID leptons} or \ti{fake leptons}, are considered non-prompt leptons as well. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but correlating those hits with nearby jets could be a way of removing them. Reducible backgrounds are not well predicted by simulation, and are estimated using data-driven methods.
+\item reducible backgrounds: where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet; genuine leptons from heavy flavor decays and misreconstructed jets, also known as \ti{mis-ID leptons} or \ti{fake leptons}, are considered non-prompt leptons. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but correlating those hits with nearby jets could be a way of removing them. The misassignment of electron charge in processes like \ttbar or Drell-Yan, represent an additional source of background, but it is relevant only for the $2lss$ channel. Reducible backgrounds are not well predicted by simulation, hence, they are estimated using data-driven methods. 
 \end{itemize}
 
-The main sources of background events in the case of \tHq process are \ttbar process and \ttbar + $X (X=W,Z,\gamma)$ processes, here represented together as \ttV process. Figure \ref{fig:ttbar_sign} shows the signature for \ttbar and \ttW processes;     
+The main sources of background events for \tHq process are \ttbar process and \ttbar + $X (X=W,Z,\gamma)$ processes, the latter regarded together as \ttV process. Figure \ref{fig:ttbar_sign} shows the signature for \ttbar and \ttW processes.     
 
 \begin{figure}[!htb]
 \centering
@@ -68,22 +80,26 @@ The main sources of background events in the case of \tHq process are \ttbar pro
 \label{fig:ttbar_sign}
 \end{figure}
 
-The largest contribution to irreducible backgrounds involving prompt leptons comes from \ttW, \ttZ, processes for which the number of ($b-$)jets (($b-$)jet multiplicity) is higher than that of the signal events, while for other contributing background events, \WZ, $ZZ$, and rare SM processes like $W^\pm W^\pm qq$, $\ttbar\ttbar$, $tZq$, $tZW$, $WWW$, $WWZ$, $WZZ$, $ZZZ$, the ($b-$)jet multiplicity is lower compared to that of the signal events. None of the irreducible backgrounds present activity in the forward region of the detector.
+The largest contribution to irreducible backgrounds comes from \ttW and \ttZ processes for which the number of ($b-$)jets (($b-$)jet multiplicity) is higher than that of the signal events, while for other contributing background events,  \WZ, $ZZ$, and rare SM processes like $W^\pm W^\pm qq$, $\ttbar\ttbar$, $tZq$, $tZW$, $WWW$, $WWZ$, $WZZ$, $ZZZ$, the ($b-$)jet multiplicity is lower compared to that of the signal events. None of the irreducible backgrounds present activity in the forward region of the detector.
 
-On the side of the reducible backgrounds, the largest contribution comes from the \ttbar events which have a very similar signature to the signal events but does no present activity in the forward region of the detector either; A particular feature of the \ttbar events is their charge-symmetry which is also a difference with the signal events.
+On the side of the reducible backgrounds, the largest contribution comes from the \ttbar events which have a very similar signature to the signal events but does no present activity in the forward region of the detector either; A particular feature of the \ttbar events is their charge-symmetry, which is also a difference with respect to the signal events.
 
-The charge misidentification plays an important role in the the 2lss channel since leptons in processes like \ttbar + jets or Z + jets can be charge misidentified, leading to backgrounds increments. An identification variable have been designed in order to reject this type of background events.         
+The charge misidentification plays an important role in the the $2lss$ channel since leptons in processes like \ttbar + jets or Z + jets can be charge misidentified, leading to backgrounds increments. An identification variable have been designed in order to reject this type of background events.         
 
 %______________________ Samples  ______________________
-\section{Data and MC Samples}
-\label{secc:samples}
+\section{Data and MC Samples} \label{secc:samples}
+
+The data set used in this analysis was collected by the CMS experiment during 2016 at  and correspond to a total integrated luminosity of 35.9\fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples, that corresponds to the 23 Sep 2016 (Run B to G) and PromptReco (Run H) versions of the datasets. The MC samples used in this analysis correspond to the RunIISummer16MiniAODv2 campaign produced with CMSSW 80X. The two signal samples (for \tHq\ and \tHW) were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections, see Tab.~\ref{tab:sigsamples}.Each sample is generated with a set of event weights corresponding to different values of \Ct and \CV couplings as shown in Tab.~\ref{tab:reweight}.
+
+
+
+
+
+
 
 Technical developments on the event generator side allow for an event-wise reweighting that can change the event kinematics based on specific generation parameters. This way not only the case of \Ct=-1, but a whole range of \Ct and \CV values can be investigated.
 
 
-
-
-The data considered in this analysis were collected by the CMS experiment during 2016 and correspond to a total integrated luminosity of 35.9\fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples, that corresponds to the 23 Sep 2016 (Run B to G) and PromptReco (Run H) versions of the datasets. The MC samples used in this analysis correspond to the RunIISummer16MiniAODv2 campaign produced with CMSSW 80X. The two signal samples (for \tHq\ and \tHW) were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections, see Tab.~\ref{tab:sigsamples}.Each sample is generated with a set of event weights corresponding to different values of \Ct and \CV couplings as shown in Tab.~\ref{tab:reweight}.
 
 \subsection{Full 2016 dataset and MC samples}
 \begin{table}[ht!]
@@ -322,53 +338,11 @@ $\mu\mu$ & $1.00 \pm 0.01$ \\
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %______________________ object id ______________________
 \section{Object Identification}\label{sec:ob_id}
 
 
-In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. The object reconstruction and selection strategy used in this thesis is inherited from the analyses in references \cite{CMS_AN_2016-211,CMS_AN_2017-029}, thus, the information provided in this section is extracted from those documents unless other references are stated.
-
-\subsection{Jets and \bjet tagging.}
-
-In this analysis, jets are reconstructed by clustering PF candidates using the anti-$k_t$ algorithm with parameter distance $\Delta R=0.4$; those charged hadrons that are not consistent with the selected primary vertex are discarded from the clustering. The jet energy is then corrected for the varying response of the detector as a function of transverse momentum \pt and pseudorapidity \etac. Jets are selected for use in the analysis only if they have $\pt > 25$ GeV and are separated from any selected leptons by $\Delta R > 0.4$.
-
-Jets coming from the primary vertex and jets coming from pile-up vertices are distinguished using a MVA discriminator based on the differences in the jet shapes, in the relative multiplicity of charged and neutral components, and in the different fraction of transverse momentum which is carried by the hardest components. Jet tracks are also required to be compatible with the primary
-vertex.
-
-Jets originated from the hadronization of a $b$ quark are selected using a MVA likelihood discriminant which uses track-based lifetime information and reconstructed secondary vertices (CSV algorithm). Only jets within the CMS tracker acceptance ($\eta < 2.4$) are identified with this tool. Data samples are used to measure the efficiency of the \bjet tagging and the probability to misidentify jets from light quarks or gluons; in both cases the measurements are parametrized as a function of the jet \pt and \etac and later used to correct differences between the data and MC simulation in the $b$ tagging performance, by applying per-jet weights to the simulation, dependent on the jet \pt, \etac, $b$ tagging discriminator, and flavor (from simulation truth)\cite{btag_corr}. The per-event weight is taken as the product of the per-jet weights, including those of the jets associated to the leptons. The weights are derived on \ttbar and Z+jets events.
-
-Two working points are defined, based on the CSV algorithm output: \ti{loose'} working point (CSV>0.46) with a $b$ signal tagging efficiency of about 83\% and a mistagging rate of about 8\%; and \ti{medium} working point (CSV>0.80) with $b-$tagging efficiency of about 69\% and mistagging rate of order 1\% \cite{btag_points}. Tagging of jets from charm quarks have efficiencies of about 40\%  and 18\% for loose and medium working points respectively. Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
-
-
-% FIXME Something about forward jets?
-
-
-
-
-\subsection{Missing Energy MET.}
-
-As stated in section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by 
-
-\beqn
-E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
-\eeqn
-
-\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
+In this section, the specific definitions of the physical objects in terms of the numerical values assigned to the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. The object reconstruction and selection strategy used in this thesis is inherited from the analyses in References \cite{CMS_AN_2016-211,CMS_AN_2017-029}, thus, the information in this section is extracted from those documents unless other References are stated.
 
 \subsection{Lepton reconstruction and identification}
 
@@ -378,7 +352,7 @@ The process of reconstruction and identification of electron and muon candidates
 
 The identification variables include not only observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction (jet-related variables); an initial loose preselection of leptons candidates is performed and then an MVA discriminator, referred to as \ti{lepton MVA} discriminator, is used to distinguish signal leptons from background leptons.
 
-\subsubsection*{Muons.}
+\subsubsection*{Muons}
 
 The Physics Objects Groups (POG) at CMS, are in charge of studying and defining the set of selection criteria applied on the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the strength of the requirements.
 
@@ -392,19 +366,19 @@ The muon candidates are reconstructed by combining information from the tracker 
 
 Only muons within the muon system acceptance $|\eta| < 2.4$ and minimum \pt  of 5 GeV are considered. %The requirements for each working point are listed in table \ref{tab:muonid}. 
 
-\subsubsection*{Electrons.}
+\subsubsection*{Electrons}
 
-Electrons are reconstructed using information from the tracker and from the electromagnetic calorimeter and identified by an MVA algorithm (\ti{MVA eID} discriminant) using the shape of the calorimetric shower variables like the shape in \etac and \phic, the cluster circularity, widths along \etac and \phic; track-cluster matching variables like $E_{tot}/p_{in}$, $E_{Ele}/p_{out}$, $\Delta \eta_{in}$,  $\Delta \eta_{out}$, $\Delta \phi_{in}$, $1/E - 1/p$; and track quality variables like $\xi^2$ of the GSF tracks, the number of hits used by the GSF filter\cite{mva_eid}.
+Electrons are reconstructed using information from the tracker and from the electromagnetic calorimeter and identified by an MVA algorithm (\ti{MVA eID} discriminant) using the shape of the calorimetric shower variables like the shape in \etac and \phic, the cluster circularity, widths along \etac and \phic; track-cluster matching variables like $E_{tot}/p_{in}$, $E_{Ele}/p_{out}$, $\Delta \eta_{in}$,  $\Delta \eta_{out}$, $\Delta \phi_{in}$, $1/E - 1/p$; and track quality variables like $\chi^2$ of the GSF tracks, the number of hits used by the GSF filter\cite{mva_eid}.
 
-A loose selection based on \etac-dependent cuts on this discriminant is used to preselect electron candidates, the full shape of the discriminant is used in the lepton MVA selection to separate signal leptons from background leptons (described in section \ref{sssec:leptonmva}).
+A loose selection based on \etac-dependent cuts on this discriminant is used to preselect electron candidates, the full shape of the discriminant is used in the lepton MVA selection to separate signal leptons from background leptons (described in Section \ref{sssec:leptonmva}).
 
 In order to reject electrons from photon conversions, electron candidates with missing hits in the pixel tracker layers or matched to a conversion secondary vertex are discarded. Electrons are selected for the analysis if they have \pt > 7 GeV and are located within the tracker system acceptance region ($|\eta|$ < 2.5). %All the electron selection criteria are listed in table\ref{tab:eleid}.
 
-\subsubsection*{Lepton vertexing and pile-up rejection.}
+\subsubsection*{Lepton vertexing and pile-up rejection}
 
-The impact parameter in the transverse plane $d_0$ , impact parameter along the z axis $d_z$ , and the impact parameter significance in the detector space $SIP_{3D}$, are considered to perform the identification and rejection of pile-up, misreconstructed tracks, and background leptons from b-hadron decays; pile-up and misreconstructed track mitigation is achieved by imposing loose cuts on the impact parameter variables. The full shape of the those variables is used in a lepton MVA classifier to achieve the best separation between the signal and the background leptons.
+The impact parameter in the transverse plane $d_0$ , impact parameter along the $z$-axis $d_z$ , and the impact parameter significance in the detector space $SIP_{3D}$, are considered to perform the identification and rejection of pile-up, misreconstructed tracks, and background leptons from b-hadron decays; pile-up and misreconstructed track mitigation is achieved by imposing loose cuts on the impact parameter variables. The full shape of the those variables is used in a lepton MVA classifier to achieve the best separation between the signal and the background leptons.
 
-\subsubsection*{Lepton isolation.}
+\subsubsection*{Lepton isolation}
 
 PF is able to recognize leptons from two different sources: on one side, leptons from the decays of heavy particles, such as W and Z bosons, which are normally isolated in space from the hadronic activity in the event; on the other side, leptons from the decays of hadrons and jets misidentified as leptons, which are not isolated as the former. For highly boosted systems, like the lepton and the $b$-jet generated in the semileptonic decay of a boosted top, the decay products tend to be more closer and sometimes they even overlap; thus, the PF standard definition of isolation in terms of the separation between the lepton candidates and other PF objects in the \etac-\phic plane,
 
@@ -441,7 +415,7 @@ $|\eta|$ range & $\mathcal{A}$(e) neutral/charged & A ($\mu$) neutral/charged \\
 
 A loose cut on $I_{mini}$ is applied to pre-select the muon and electron candidates; however, the full shape is used in the lepton MVA discriminator when performing the signal lepton selection.
 
-\subsubsection*{Jet-related variables.}
+\subsubsection*{Jet-related variables}
 
 In order to reject misidentified leptons from $b-$jets, mostly coming from tt+jets, Drell-Yan+jets, and W+jets events, the vertexing and isolation described in previous sections are complemented with additional variables related to the closest reconstructed jet to the lepton, \ie, the PF jets reconstructed\footnote{charged hadrons from PU vertices are not removed prior to the jet clustering.} around the leptons with $\Delta R=\sqrt{( \eta^l - \eta^{jet})^2 + (\phi^l - \phi^{jet})^2} < 0.5$. The identification variables used in the lepton MVA discriminator are the ratio $\pt^l/\pt^{jet}$, the CSV b-tagging discriminator value of the jet, the number of charged tracks of the jet, and the relative \pt given by
 
@@ -450,11 +424,11 @@ p_T^{rel}=\frac{(\vec{p}_{jet}-\vec{p}_l)\cdot\vec{p}_l}{||\vec{p}_{jet} - \vec{
 \eeqn
 
 
-\subsubsection*{LeptonMVA discriminator.}\label{sssec:leptonmva}
+\subsubsection*{LeptonMVA discriminator}\label{sssec:leptonmva}
 
 Electrons and muons passing the basic selection process described above are referred to as \ti{loose leptons}. Additional discrimination between signal leptons and background leptons is crucial considering that the rate of \ttbar production is much larger than the signal, hence, an overwhelming background from \ttbar production. To maximally exploit the available information in each event to that end, the dedicated lepton MVA discriminator, based on a boosted decision tree (BDT) algorithm, has been built so that all the identification variables can be used together.
 
-The lepton MVA discriminator training is performed using simulated signal Loose leptons from the \ttH MC sample and fake leptons from the \ttbar+jets MC sample, separately for muons and electrons. The input variables used include vertexing, isolation and jet-related variables, the \pt and \etac of the lepton, the electron MVA eID discriminator and the muon segment-compatibility variables. An additional requirement known as \ti{tight-charge} requirement, is imposed by comparing two independent measurement of the charge, one from the ECAL supercluster and the other from the tracker; thus, the consistency in the measurements of the electron charge is ensured so that events with a wrong electron charge assignment are rejected; this variable is particularly used in the 2lss channel to suppress opposite-sign events for which the charge of one of the leptons has been mismeasured. The tight-charge requirement for muons is represented by the requirement of a consistently well measured track transverse momentum given by $\Delta p_T/p_T < 0.2$.          
+The lepton MVA discriminator training is performed using simulated signal Loose leptons from the \ttH MC sample and fake leptons from the \ttbar+jets MC sample, separately for muons and electrons. The input variables used include vertexing, isolation and jet-related variables, the \pt and \etac of the lepton, the electron MVA eID discriminator and the muon segment-compatibility variables. An additional requirement known as \ti{tight-charge} requirement, is imposed by comparing two independent measurement of the charge, one from the ECAL supercluster and the other from the tracker; thus, the consistency in the measurements of the electron charge is ensured so that events with a wrong electron charge assignment are rejected; this variable is particularly used in the $2lss$ channel to suppress opposite-sign events for which the charge of one of the leptons has been mismeasured. The tight-charge requirement for muons is represented by the requirement of a consistently well measured track transverse momentum given by $\Delta p_T/p_T < 0.2$.          
 Leptons are selected for the final analysis if they pass a given threshold of the BDT output, and are referred to as \ti{tight leptons} in the following.          
 
 The validation of the lepton MVA algorithm and the lepton identification variables is performed using data in various control regions; the details about that validation are not discussed here but can be found in Reference \cite{CMS_AN_2017-029}. 
@@ -531,41 +505,111 @@ Efficiencies of reconstruction and selecting loose leptons are measured both for
 
 \begin{figure}[!hb]
 \centering
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_eb_2lss_pt.pdf}
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_ee_2lss_pt.pdf}\\
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_mb_2lss_pt.pdf}
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_me_2lss_pt.pdf}
-\caption[Tight vs loose lepton selection efficiencies in the 2lss channel.]{Tight vs loose selection efficiencies for electrons (top), and muons (bottom), for the 2lss definition, \ie, including the tight-charge requirement.}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_2lss_pt.pdf}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_2lss_pt.pdf}\\
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_mb_2lss_pt.pdf}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_me_2lss_pt.pdf}
+\caption[Tight vs loose lepton selection efficiencies in the $2lss$ channel.]{Tight vs loose selection efficiencies for electrons (top), and muons (bottom), for the $2lss$ definition, \ie, including the tight-charge requirement.}
 \label{fig:2lss_eff}
 \end{figure}
 
 \begin{figure}[!ht]
 \centering
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_eb_3l_pt.pdf}
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_ee_3l_pt.pdf}\\
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_mb_3l_pt.pdf}
-  \includegraphics[width=0.3\linewidth]{lepmva_efficiency/tnp_eff_me_3l_pt.pdf}
-\caption[Tight vs loose lepton selection efficiencies in the 3l channel.]{Tight vs loose selection efficiencies for electrons (top), and muons (bottom), for the 3l channel not including the tight-charge requirement.}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_3l_pt.pdf}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_3l_pt.pdf}\\
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_mb_3l_pt.pdf}
+  \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_me_3l_pt.pdf}
+\caption[Tight vs loose lepton selection efficiencies in the $3l$ channel.]{Tight vs loose selection efficiencies for electrons (top), and muons (bottom), for the $3l$ channel not including the tight-charge requirement.}
 \label{fig:3l_eff}
 \end{figure}
 
-The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from the reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
+The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from the Reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
 
-The efficiency of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons are determined by using a tag and probe method on a sample of Drell-Yan enriched events. Figures \ref{fig:2lss_eff} and \ref{fig:3l_eff} show the efficiencies for the 2lss channel and 3l channel respectively. Efficiencies in the 2lss channel have been produced including the tight-charge requirement, while for the 3l channel it is not included. Number of passed and failed probes are determined from a fit to the invariant mass of the dilepton system.
+The efficiency of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons are determined by using a tag and probe method on a sample of Drell-Yan enriched events. Figures \ref{fig:2lss_eff} and \ref{fig:3l_eff} show the efficiencies for the $2lss$ channel and $3l$ channel respectively. Efficiencies in the $2lss$ channel have been produced including the tight-charge requirement, while for the $3l$ channel it is not included. Number of passed and failed probes are determined from a fit to the invariant mass of the dilepton system. Simulation is corrected using these scale factors; note that they depends on \etac and \pt.   
 
-Simulation is corrected using these scale factors; note that they depends on \etac and \pt.   
+\subsection{Jets and \bjet tagging}
+
+In this analysis, jets are reconstructed by clustering PF candidates using the anti-$k_t$ algorithm with parameter distance $\Delta R=0.4$; those charged hadrons that are not consistent with the selected primary vertex are discarded from the clustering. The jet energy is then corrected for the varying response of the detector as a function of transverse momentum \pt and pseudorapidity \etac. Jets are selected for use in the analysis only if they have $\pt > 25$ GeV and are separated from any selected leptons by $\Delta R > 0.4$.
+
+Jets coming from the primary vertex and jets coming from pile-up vertices are distinguished using a MVA discriminator based on the differences in the jet shapes, in the relative multiplicity of charged and neutral components, and in the different fraction of transverse momentum which is carried by the hardest components. Jet tracks are also required to be compatible with the primary
+vertex.
+
+Jets originated from the hadronization of a $b$ quark are selected using a MVA likelihood discriminant which uses track-based lifetime information and reconstructed secondary vertices (CSV algorithm). Only jets within the CMS tracker acceptance ($\eta < 2.4$) are identified with this tool. Data samples are used to measure the efficiency of the \bjet tagging and the probability to misidentify jets from light quarks or gluons; in both cases the measurements are parametrized as a function of the jet \pt and \etac and later used to correct differences between the data and MC simulation in the $b$ tagging performance, by applying per-jet weights to the simulation, dependent on the jet \pt, \etac, $b$ tagging discriminator, and flavor (from simulation truth)\cite{btag_corr}. The per-event weight is taken as the product of the per-jet weights, including those of the jets associated to the leptons. The weights are derived on \ttbar and Z+jets events.
+
+Two working points are defined, based on the CSV algorithm output: \ti{loose'} working point (CSV>0.46) with a $b$ signal tagging efficiency of about 83\% and a mistagging rate of about 8\%; and \ti{medium} working point (CSV>0.80) with $b-$tagging efficiency of about 69\% and mistagging rate of order 1\% \cite{btag_points}. Tagging of jets from charm quarks have efficiencies of about 40\%  and 18\% for loose and medium working points respectively. Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
+
+
+% FIXME Something about forward jets?
+
+\subsection{Missing Energy MET}
+
+As stated in Section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by 
+
+\beqn
+E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
+\eeqn
+
+\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Event selection}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -586,16 +630,6 @@ Simulation is corrected using these scale factors; note that they depends on \et
 
 
 
-The analysis is designed to efficiently identify and select prompt leptons from on-shell W and
-
-Z boson decays and to reject non-prompt leptons from b quark decays and spurious lepton
-
-signatures from hadronic jets. Events are then selected in the various lepton channels, and are
-
-required to contain hadronic jets, some of which must be consistent with b quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated
-
-multivariate discriminants (trained to separate the tHq signal from the two dominant backgrounds) in all categories
-
 
 
 
@@ -605,10 +639,10 @@ multivariate discriminants (trained to separate the tHq signal from the two domi
 
 . Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
 
-Dont forget to mention previous constrains to ct check reference \ref{biswas} and references https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
+Dont forget to mention previous constrains to ct check Reference \ref{biswas} and References https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
 
 
-\noindent We selects events with three leptons and a \bjet tagged jet in the final state. The \tHq \ signal contribution is then determined in a fit of the observed data to two multivariate classifier outputs, each trained to discriminate against one of the two dominant backgrounds of events with non-prompt leptons from \ttbar\ and of associated production of \ttbar and vector bosons (\ttW, \ttZ). The fit result is then used to set an upper limit on the combined \ttH, \tHq and \tHW production cross section, as a function of the relative coupling strengths of Higgs and top quark and Higgs and W boson, respectively.
+
 
 
 
@@ -761,7 +795,7 @@ The MVA analysis consist of two stages: first a ``training'' where the MVA metho
 \label{mva_input_ttv}
 \end{figure}
 
-%% The input variables distributions for 2lss channel for signal against the \ttbar\ and \ttV\ are shown in Figure~\ref{mva_input_2lss_tt} and Figure~\ref{mva_input_2lss_ttv} respectively.
+%% The input variables distributions for $2lss$ channel for signal against the \ttbar\ and \ttV\ are shown in Figure~\ref{mva_input_2lss_tt} and Figure~\ref{mva_input_2lss_ttv} respectively.
 %% \begin{figure} [!h]
 %%   \centering
 %%   \includegraphics[width=\textwidth]{6var_tt.pdf}
@@ -893,7 +927,7 @@ The TMVA settings used in the BDT training are shown in Tab.~\ref{tab:bdtsetting
 
 \section{Additional discriminating variables}
 
-Two additional discriminating variables were tested considering the fact that the forward jet in the background could come from the pileup; since we have a real forward jet in the signal, it could give some improvement in the discriminating power. The additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID). Distributions for these variables in the three lepton channel are shown in the figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly real jets. 
+Two additional discriminating variables were tested considering the fact that the forward jet in the background could come from the pileup; since we have a real forward jet in the signal, it could give some improvement in the discriminating power. The additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID). Distributions for these variables in the three lepton channel are shown in the Figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly real jets. 
 
 \begin{figure} [!h]
   \centering
