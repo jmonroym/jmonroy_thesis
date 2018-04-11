@@ -1,0 +1,212 @@
+% Customizable fields and text areas start with % >> below.
+% Lines starting with the comment character (%) are normally removed before release outside the collaboration, but not those comments ending lines
+
+% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+\RCS$Revision: 391436 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-17-029/trunk/AN-17-029.tex $
+\RCS$Id: AN-17-029.tex 391436 2017-03-04 14:45:21Z peruzzi $
+%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
+% This allows for switching between one column and two column (cms@external) layouts
+% The widths should  be modified for your particular figures. You'll need additional copies if you have more than one standard figure size.
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+\newcommand{\ttH}{\ensuremath{\ttbar\PH}}
+\newcommand{\ttZ}{\ensuremath{\ttbar\Z}}
+\newcommand{\ttW}{\ensuremath{\ttbar\PW}}
+\newcommand{\ttV}{\ensuremath{\ttbar\mathrm{V}}}
+\newcommand{\Zll}{\ensuremath{\mathrm{Z}\to\ell^+\ell^-}\xspace}
+\newcommand{\Ztt}{\ensuremath{\mathrm{Z}\to\tau^+\tau^-}\xspace}
+\newcommand{\reliso}{\ensuremath{I_\mathrm{rel}}\xspace}
+\newcommand{\sip}{\ensuremath{S_\mathrm{IP3D}}\xspace}
+\newcommand{\Pgth}{\ensuremath{\Pgt_{\rm h}}\xspace}
+\newcommand{\ptRatio}{\ensuremath{\pt^\text{ratio}}\xspace}
+\newcommand{\ptRel}{\ensuremath{\pt^\text{rel}}\xspace}
+\newcommand{\relIso}{\ensuremath{I_\text{rel}}\xspace}
+\newcommand{\miniIso}{\ensuremath{I_\text{mini}}\xspace}
+
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{AN-17-029} % This is over-written in the CMS environment: useful as preprint no. for export versions
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+\title{Search for ttH in multilepton final states with the full 2016 dataset}
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author* form
+
+\address[cern]{CERN}
+\address[ndu]{University of Notre Dame}
+\address[neb]{University of Nebraska}
+\address[ihep]{IHEP}
+\address[iphc]{IPHC}
+\address[vub]{VUB}
+\address[llr]{LLR}
+\address[ovi]{University of Oviedo}
+
+\author[iphc]{Daniel Bloch}
+\author[cern]{Cristina Botta}
+\author[iphc]{Nicolas Chanon}
+\author[iphc]{Xavier Coubez}
+\author[ndu]{Kevin Lannon}
+\author[iphc]{Anne-Catherine Le Bihan}
+\author[ihep]{Binghuan Li}
+\author[iphc]{Jing Li}
+\author[ndu]{Charlie Mueller}
+\author[cern]{Marco Peruzzi}
+\author[cern]{Giovanni Petrucciani}
+\author[ihep]{Francesco Romeo}
+\author[ovi]{Sergio Sanchez Cruz}
+\author[vub]{Kirill Skovpen}
+\author[ndu]{Geoffrey Smith}
+\author[neb]{Benjamin Stieger}
+\author[llr]{Thomas Strebler}
+\author[ovi]{Pietro Vischia}
+\author[ihep]{Huaqiao Zhang}
+
+
+% >> Date
+% The date is in yyyy/mm/dd format. Today has been
+% redefined to match, but if the date needs to be fixed, please write it in this fashion.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+% For the final version it is best to "touch" the head file to make sure it has the latest date.
+\date{\today}
+
+% >> Abstract
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %**                  to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. For PASs: **DO NOT use tex macros**         in the abstract: CDS MathJax processor used on the abstract doesn't understand them _and_ will only look within $$. The abstracts for papers are hand formatted so macros are okay.
+\abstract{A search for the standard model Higgs boson produced in association with a top quark pair is presented, using the full pp collision dataset collected by the CMS experiment in 2016. We target final states where the Higgs boson decays to either a W, Z or tau pair by selecting events with two isolated same-sign leptons, or more than three leptons, and b-jets.}
+
+% >> PDF Metadata
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible and are in plain text:
+% (1) no TeX! -- for \sqrt{s} use sqrt(s) -- this will show with extra quote marks in the draft version but is okay).
+% (2) no %.
+% (3) No curly braces {}.
+\hypersetup{%
+pdfauthor={The ttH multilepton working group},%
+pdftitle={Search for ttH in multilepton final states with the full 2016 dataset},%
+pdfsubject={CMS},%
+pdfkeywords={CMS, physics, higgs, top}}
+
+\maketitle %maketitle comes after all the front information has been supplied
+% >> Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Begin text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% **DO NOT REMOVE THE BIBLIOGRAPHY** which is located before the appendix.
+%% You can take the text between here and the bibiliography as an example which you should replace with the actual text of your document.
+%% If you include other TeX files, be sure to use "\input{filename}" rather than "\input filename".
+%% The latter works for you, but our parser looks for the braces and will break when uploading the document.
+%%%%%%%%%%%%%%%
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\label{sec:intro}
+\input{intro.tex}
+
+\section{Data and MC Samples}
+\label{sec:samples}
+\input{samples.tex}
+\input{trigger.tex}
+
+\section{Event reconstruction and object identification}
+\label{sec:objects}
+\input{jetsbtagging.tex}
+\input{met.tex}
+\input{leptons.tex}
+\input{tau.tex}
+
+%% flushes all plots before starting
+%% next section
+\clearpage
+\section{Event selection}
+\label{sec:selection}
+\input{selection.tex}
+
+
+\section{Signal extraction}
+\label{sec:extraction}
+\input{extraction.tex}
+
+\clearpage
+
+\section{Signal modeling}
+\label{sec:signal}
+\input{signal.tex}
+
+\clearpage
+
+\section{Background predictions}
+\label{sec:backgrounds}
+\input{irreduciblebkg.tex}
+\input{dibosons.tex}
+\input{chargeflip.tex}
+\clearpage
+\input{fakerate.tex}
+
+\clearpage
+
+%\section{Summary of systematic uncertainties}
+%\label{sec:systematics}
+%\input{systematics.tex}
+
+\section{Results}
+\label{sec:results}
+\input{results.tex}
+
+\clearpage
+
+\appendix
+
+\section{Control region plots}
+\label{sec:controlregions}
+\input{controlregions.tex}
+\input{mem.tex}
+
+%\clearpage
+%\input{reconstruction.tex}
+
+\clearpage
+\input{Hjjtagger.tex}
+
+\clearpage
+
+\input{kmeans.tex}
+
+\clearpage
+
+\input{BDTtraining.tex}
+
+\clearpage
+
+%\section{Post-fit distributions}
+%\label{sec:postfit}
+%\input{postfit_shapes.tex}
+%
+%\clearpage
+
+%\section{Cross checks on the fit}
+%\label{sec:fits}
+%\input{details_fit.tex}
+%
+%\clearpage
+
+%% **DO NOT REMOVE BIBLIOGRAPHY**
+\bibliography{auto_generated}   % will be created by the tdr script.
+
+%% examples of appendices. **DO NOT PUT \end{document} at the end
+
+%\clearpage
+%\appendix
+%\section{PTDR symbol definitions\label{app:symdef}}
+
+
+%%% DO NOT ADD \end{document}!
+

@@ -1,0 +1,158 @@
+In the following we list as reference the set of samples of the RunIISummer16MiniAODv2
+(CMSSW 80X) campaign used for the studies and results presented in this analysis.
+
+\subsection{Data Samples}
+The data used in this analysis has been collected with the CMS detector in 2016. 
+We use data collected only during periods when the CMS magnet was on, 
+corresponding to a total integrated luminosity of 36.9~fb$^{-1}$~\cite{goldjson}.
+We use the 23Sep2016 (Run B to G) and PromptReco (Run H) versions of the datasets.
+
+% Details on the
+%various datasets contributing to our analysis are given in
+%table~\ref{tab:datasets80X}.
+%
+%\begin{table}[h]
+%\footnotesize
+%\centering
+%\resizebox{\linewidth}{!}{
+%\begin{tabular}{l | l | l}
+%\hline
+%Dataset & Run Range & Int. Lumi (fb$^{-1}$) \\
+%\hline
+%/DoubleMuon/Run2016B-PromptReco-v2/MINIAOD       & 273150 - 275338 & 3.99 \\
+%Total DoubleMuon & & 3.99 \\
+%\hline
+%/DoubleEG/Run2016B-PromptReco-v2/MINIAOD       & 273150 - 275338 & 3.99 \\
+%Total DoubleEG & & 3.99 \\
+%\hline 
+%/MuonEG/Run2016B-PromptReco-v2/MINIAOD       & 273150 - 275338 & 3.99 \\
+%Total MuonEG & & 3.99 \\
+%\hline
+%/SingleMuon/Run2016B-PromptReco-v2/MINIAOD       & 273150 - 275338 & 3.99 \\
+%Total SingleMuon & & 3.99 \\
+%\hline
+%/SingleElectron/Run2016B-PromptReco-v2/MINIAOD       & 273150 - 275338 & 3.99 \\
+%Total SingleElectron & & 3.99 \\
+%\hline
+%\end{tabular}}
+%\caption{The datasets used in this analysis (CMSSW 80X), with corresponding run ranges and integrated luminosities. 
+%Luminosities listed here are derived using the brilcalc tool~\cite{brilcalc}.}
+%\label{tab:datasets80X}
+%\end{table}
+
+\subsection{Signal Samples}
+
+%xsecs: https://twiki.cern.ch/twiki/bin/viewauth/LHCPhysics/CERNYellowReportPageAt1314TeV
+
+We use simulated Monte-Carlo events to model both the ttH signal and the various standard model backgrounds. 
+%The ttH events are simulated at next-to-leading-order (NLO) accuracy using aMC@NLO~\cite{amcatnlo}, and matched to 
+%PYTHIA~\cite{Sjostrand:2007gs} for the parton shower. An additional
+%POWHEG~\cite{Alioli:2010xd} ttH sample provides more statistics when
+%training boosted descision trees during the signal extraction phase,
+%but is not used in computing the final result of the analysis.More
+%details on the samples and the NLO cross section are reported in
+Details on the used sample are in 
+Table~\ref{tab:sigsamps80X}.
+
+\begin{table}[h]
+\footnotesize
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l | l}
+\hline
+Sample & Xsec (pb) \\
+\hline
+%/ttHJetToNonbb\_M125\_13TeV\_amcatnloFXFX\_madspin\_pythia8\_mWCutfix/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM\_80X\_mcRun2\_asymptotic\_2016\_miniAODv2\_v0\_ext1-v2/MINIAODSIM & 0.2586 \\
+%/ttHToNonbb\_M125\_13TeV\_powheg\_pythia8/RunIISpring16MiniAODv2-PUSpring16RAWAODSIM\_80X\_mcRun2\_asymptotic\_2016\_miniAODv2\_v0-v1/MINIAODSIM & 0.2586 \\
+/ttHToNonbb\_M125\_TuneCUETP8M2\_ttHtranche3\_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.5085*(1-0.577)\\ %0.2586 \\
+\hline
+\end{tabular}}
+\caption{Signal samples used in this analysis (CMSSW 80X).}
+\label{tab:sigsamps80X}
+\end{table}
+
+\subsection{Background Samples}
+
+%[[SummaryTable1G25ns][ref]] (NLO)
+%HiggsToBBMCSamples
+%LHCPhysics.TtbarNNLO
+%SingleTopRefXsec
+
+In this section, we list the Monte-Carlo samples used to model our backgrounds. A variety of methods are used to produce
+these samples: for our dominant backgrounds (ttbar, ttW, ttZ), we use the same aMC@NLO$\to$PYTHIA chain 
+used for the ttH signal and the NLO cross sections. Other minor backgrounds may use other generators, such as PYTHIA or POWHEG matched to PYTHIA. 
+See table~\ref{tab:backsamps80X} for more details. \\
+
+The nominal $\ttbar\Z$ MC sample is generated with the
+requirement $m_{\ell^+\ell^-} > 10\GeV$, because of this, we also use LO Madgraph to
+generate the remaining part of the phase space ($1 < m_{\ell^+\ell^-} < 10\GeV$). 
+This private sample was produced both in the context of the
+RunIISpring16MiniAODv2 and RunIISpring16MiniAODv1 (CMSSW 80X) campaigns. Another sample not yet available in both campaigns is the
+$\ttbar\PW\PW$. Nevertheless in the RunI analysis we proved that in all the analyzed final states, the contribution of the process is found to be
+at least an order of magnitude smaller than $\ttbar\PW$ and $\ttbar\Z$.
+
+
+
+\begin{table}
+\footnotesize
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l | l}
+\hline
+Sample & Xsec (pb) \\
+\hline
+/TTWJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v3/MINIAODSIM & 0.2043 \\
+/TTWJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext2-v1/MINIAODSIM & 0.2043 \\
+/TTZToLLNuNu\_M-10\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 0.2529 \\
+/TTZToLL\_M-1to10\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.0493 \\
+/WGToLNuG\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 585.8 \\
+/ZGTo2LG\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 131.3 \\
+/TGJets\_TuneCUETP8M1\_13TeV\_amcatnlo\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 2.967 \\
+/TGJets\_TuneCUETP8M1\_13TeV\_amcatnlo\_madspin\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 2.967 \\
+/TTGJets\_TuneCUETP8M1\_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 3.697 \\
+Rares /WpWpJJ\_EWK-QCD\_TuneCUETP8M1\_13TeV-madgraph-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.03711 \\
+Rares /WWTo2L2Nu\_DoubleScattering\_13TeV-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.1729 \\
+Rares /WWW\_4F\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.2086 \\
+Rares /WWZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.1651 \\
+Rares /WZZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.05565 \\
+Rares /ZZZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.01398 \\
+Rares /tZq\_ll\_4f\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 0.0758 \\
+Rares /TTTT\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 0.009103 \\
+
+\hline \hline
+/TTJets\_SingleLeptFromTbar\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 182.18 \\
+/TTJets\_SingleLeptFromTbar\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 182.18 \\
+/TTJets\_SingleLeptFromT\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 182.18 \\
+/TTJets\_SingleLeptFromT\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 182.18 \\
+/TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 87.3 \\
+/TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 87.3 \\
+/ST\_tW\_top\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 35.6 \\
+/ST\_tW\_antitop\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v1/MINIAODSIM & 35.6 \\
+/ST\_t-channel\_top\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 136.02 \\
+/ST\_t-channel\_antitop\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 80.95 \\
+/ST\_s-channel\_4f\_leptonDecays\_13TeV-amcatnlo-pythia8\_TuneCUETP8M1/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 3.68 \\
+/DYJetsToLL\_M-10to50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 18610 \\
+/DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6\_ext1-v2/MINIAODSIM & 6025.2 \\
+/WJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 61526.7 \\
+/WZTo3LNu\_TuneCUETP8M1\_13TeV-powheg-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 4.42965 \\
+/WWTo2L2Nu\_13TeV-powheg/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 10.481 \\
+/ZZTo4L\_13TeV\_powheg\_pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 1.256 \\
+\hline
+\end{tabular}}
+\caption{List of background samples used in this analysis (CMSSW
+  80X). In the first section of the table are listed the samples of
+  the processes for which we use the simulation to extract the final
+  yields and shapes, in the second section the samples of the
+  processes we will estimate from data. The MC simulation is used to
+  design the data driven methods and derive the associated systematics.}
+\label{tab:backsamps80X}
+\end{table}
+
+
+
+
+
+
+
+\clearpage
+

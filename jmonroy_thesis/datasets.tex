@@ -1,6 +1,125 @@
 \chapter{Datasets and triggers}
 
 \begin{table}[ht!]
+  \centering 
+  \begin{tabular}{l}\hline
+    Dataset name  \\ \hline
+    \verb|/JetHT/Run2016X-23Sep2016-vY/MINIAOD|\\          
+    \verb|/HTMHT/Run2016X-23Sep2016-vY/MINIAOD|\\         
+    \verb|/MET/Run2016X-23Sep2016-vY/MINIAOD|\\            
+    \verb|/SingleElectron/Run2016X-23Sep2016-vY/MINIAOD|\\ 
+    \verb|/SingleMuon/Run2016X-23Sep2016-vY/MINIAOD|\\   
+    \verb|/SinglePhoton/Run2016X-23Sep2016-vY/MINIAOD|\\   
+    \verb|/DoubleEG/Run2016X-23Sep2016-vY/MINIAOD|\\     
+    \verb|/MuonEG/Run2016X-23Sep2016-vY/MINIAOD|\\     
+    \verb|/DoubleMuon/Run2016X-23Sep2016-vY/MINIAOD|\\
+    \verb|/Tau/Run2016B-23Sep2016-v3/MINIAOD|\\\hline
+    \verb|/JetHT/Run2016H-PromptReco-v3/MINIAOD|\\        
+    \verb|/HTMHT/Run2016H-PromptReco-v3/MINIAOD|\\        
+    \verb|/MET/Run2016H-PromptReco-v3/MINIAOD|\\          
+    \verb|/SingleElectron/Run2016H-PromptReco-v3/MINIAOD|\\
+    \verb|/SingleMuon/Run2016H-PromptReco-v3/MINIAOD|\\   
+    \verb|/SinglePhoton/Run2016H-PromptReco-v3/MINIAOD|\\ 
+    \verb|/DoubleEG/Run2016H-PromptReco-v3/MINIAOD|\\     
+    \verb|/MuonEG/Run2016H-PromptReco-v3/MINIAOD|\\       
+    \verb|/DoubleMuon/Run2016H-PromptReco-v3/MINIAOD|\\\hline 
+  \end{tabular}
+  \caption[Full 2016 dataset.]{Full 2016 dataset used in the analysis. In the first section of the table are listed the 23Sep2016 samples; in the Run2016X-23Sep-vY label, X:B-G tag the run while Y:1,3 tag the version of the data sample. Second section list the PromptReco version of the dataset.}\label{tab:dataset}
+\end{table}
+
+\begin{table}
+  \centering \footnotesize
+  \begin{tabular}{ll}\hline
+    Same-sign dilepton (==2 muons)\\\hline
+    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*| \\
+    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
+    \verb|HLT_IsoMu24_v*| \\
+    \verb|HLT_IsoTkMu24_v*|\\\hline
+    Same-sign dilepton (==2 electrons)\\\hline
+    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
+    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\\hline
+    Same-sign dilepton (==1 muon, ==1 electron)\\\hline
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*| \\
+    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
+    \verb|HLT_IsoMu24_v*| \\
+    \verb|HLT_IsoTkMu24_v*| \\
+    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\\hline
+    Three lepton\\\hline
+    \verb|HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_TripleMu_12_10_5_v*|\\
+    \verb|HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v|* \\
+    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*|\\
+    \verb|HLT_IsoTkMu22_eta2p1_v*|\\
+    \verb|HLT_IsoMu24_v*|\\
+    \verb|HLT_IsoTkMu24_v*|\\
+    \verb|HLT_Ele27_WPTight_Gsf_v*|\\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*|\\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
+    \hline
+  \end{tabular}
+  \caption[HLT ]{Table of high-level triggers considered in the analysis.} \label{tab:triggers}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{table}[ht!]
   \centering \small
   \begin{tabular}{lll}
     Sample & $\sigma$ [pb] & BF \\ \hline
@@ -9,6 +128,7 @@
   \end{tabular}
   \caption[Signal samples and their cross section and branching fraction.]{Signal samples and their cross section and branching fraction used in this analysis. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
 \end{table}
+
 
 
 \begin{table}[!htbp]
@@ -127,77 +247,5 @@ Different MC generators were used to generate the background processes. The domi
   \caption[Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.]{Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.} \label{tab:ttvlo_samples}
 \end{table}
 
-\begin{table}
-  \centering \footnotesize
-  \begin{tabular}{ll}
-    Same-sign dilepton (==2 muons)\\
-    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
-    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
-    \verb|HLT_IsoMu22_v*|\\
-    \verb|HLT_IsoTkMu22_v*|\\
-    \verb|HLT_IsoMu22_eta2p1_v*| \\
-    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
-    \verb|HLT_IsoMu24_v*| \\
-    \verb|HLT_IsoTkMu24_v*|\\\hline
-    Same-sign dilepton (==2 electrons)\\
-    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
-    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
-    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
-    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\\hline
-    Same-sign dilepton (==1 muon, ==1 electron)\\
-    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
-    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
-    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-    \verb|HLT_IsoMu22_v*|\\
-    \verb|HLT_IsoTkMu22_v*|\\
-    \verb|HLT_IsoMu22_eta2p1_v*| \\
-    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
-    \verb|HLT_IsoMu24_v*| \\
-    \verb|HLT_IsoTkMu24_v*| \\
-    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
-    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\
-    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\\hline
-    Three lepton and Four lepton\\
-    \verb|HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v*|\\
-    \verb|HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v*|\\
-    \verb|HLT_TripleMu_12_10_5_v*|\\
-    \verb|HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v*|\\
-    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
-    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
-    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v|* \\
-    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
-    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
-    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
-    \verb|HLT_IsoMu22_v*|\\
-    \verb|HLT_IsoTkMu22_v*|\\
-    \verb|HLT_IsoMu22_eta2p1_v*|\\
-    \verb|HLT_IsoTkMu22_eta2p1_v*|\\
-    \verb|HLT_IsoMu24_v*|\\
-    \verb|HLT_IsoTkMu24_v*|\\
-    \verb|HLT_Ele27_WPTight_Gsf_v*|\\
-    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*|\\
-    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
-    \hline
-  \end{tabular}
-  \caption{Table of high-level triggers that we consider in the analysis.} \label{tab:triggers}
-\end{table}
-
-\subsubsection*{Trigger efficiency scale factors}
-The efficiency of events to pass the trigger is measured in simulation (trivially using generator information) and in the data (using event collected by an uncorrelated MET trigger). Small differences between the data and MC efficiencies are corrected by applying scale factors as shown in Tab.~\ref{tab:trigSFs}. The exact procedure and control plots are documented in ~\cite{CMS_AN_2017-029} for the current analysis.
-
-\begin{table}
-  \centering
-  \begin{tabular}{ll}
-    Category & Scale Factor \\\hline
-    ee   & $1.01 \pm 0.02$ \\
-    e$\mu$   & $1.01 \pm 0.01$ \\
-    $\mu\mu$ & $1.00 \pm 0.01$ \\
-    3l       & $1.00 \pm 0.03$ \\\hline
-  \end{tabular}
-  \caption[Trigger efficiency scale factors and associated uncertainties.]{Trigger efficiency scale factors and associated uncertainties, shown here rounded to the nearest percent.}
-  \label{tab:trigSFs}
-\end{table}
 
 

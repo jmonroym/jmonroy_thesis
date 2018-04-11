@@ -1,0 +1,57 @@
+A complete reconstruction of the individual particles from
+each collision event is obtained via the particle-flow (PF) algorithm.
+The technique uses the information from all CMS sub-detectors to identify and
+reconstruct individual particles in the collision
+event~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-002}. The particles are
+classified into mutually exclusive categories: charged hadrons,
+neutral hadrons, photons, muons, and electrons.
+
+\subsection{Jets and B-tagging}
+Jets are reconstructed by clustering PF candidates using the
+anti-$\mathrm{k_T}$ algorithm with distance parameter $\Delta
+\mathrm{R}=0.4$ as implemented in the \textsc{fastjet} package~\cite{Cacciari:fastjet1,Cacciari:fastjet2}. 
+The charged hadrons not coming from the primary vertices are subtracted from the
+PF candidates considered in the clustering. The primary vertex is
+chosen as the vertex with the highest sum of $\PT^2$ of its
+constituent tracks. The prescribed jet energy corrections are applied as a function
+of the jet $E_T$ and $\eta$~\cite{cmsJEC}. In addition, a multivariate
+discriminator is applied to distinguish between jets coming from the
+primary vertex and jets coming from pile-up vertices.  The
+discrimination is based on the differences in the jet shapes, in the
+relative multiplicity of charged and neutral components, and in the
+different fraction of transverse momentum which is carried by the
+hardest components.  Within the tracker acceptance the jet tracks are
+also required to be compatible with the primary vertex. Jets are only
+considered if they have a transverse energy above $25 \GeV$ and
+$|\eta|<$2.4. In addition, they have to be separated from any lepton
+candidates passing the Fakeable Object selection, described below, by requiring $\Delta \mathrm{R} = \sqrt{(\eta^{\ell} -
+\eta^{jet})^{2} + (\phi^{\ell} - \phi^{jet})^{2}}>0.4$.
+
+The CSVv2 b-tagging algorithm~\cite{Chatrchyan:2012jua} is used to
+identify jets that are likely to originate from the hadronization of bottom
+quarks.  This algorithm combines both secondary vertex information and
+track impact parameter information together in a likelihood
+discriminant. The discriminant output value ranges from
+zero to one. It distinguishes between $b$-jets and jets
+originating from light quarks, gluons and charm quarks.  The
+efficiency to tag $b$-jets and the rate of misidentification of non-b
+jets depend on the operating point chosen. Both the efficiency
+and the fake rate are parameterised as a function of the transverse momentum and
+pseudorapidity of the jets. These performance measurements are
+obtained directly from data in samples that can be enriched in b jets,
+such as $\ttbar$ and multijet events where a muon can be found inside the one of jets.
+Two working points for the CSVv2 output discriminant  are used in the analysis. The
+\emph{loose} one (CSVv2 $>$ 0.5426) has approximately ${85}$\% efficiency to tag jets
+with $b$ quarks and a ${10}$\% chance to tag jets with only light quarks
+or gluons.  The \emph{medium} working point (CSVv2 $>$ 0.8484) has
+approximately ${70}$\% efficiency for tagging jets with $b$ quarks
+and ${1.5}$\% efficiency to tag jets with only light quarks or gluons
+~\cite{Chatrchyan:2012jua}.\\
+
+%We correct for data/sim differences in the b-tagging performance by
+%applying to the simulation per-jet weights dependent on the jet pt,
+%eta, b-tagging discriminator and flavour (from simulation truth). 
+%The weights are derived on ttbar and Z+jets events. 
+%The per-event weight is taken as the product of the per-jet weight, 
+%including those of the jets associated to the leptons.\\
+

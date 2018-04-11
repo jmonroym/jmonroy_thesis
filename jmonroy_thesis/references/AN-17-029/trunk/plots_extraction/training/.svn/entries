@@ -1,0 +1,46 @@
+10
+
+dir
+427704
+svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-17-029/trunk/plots_extraction/training
+svn+ssh://svn.cern.ch/reps/tdr2
+
+
+
+2017-03-01T18:22:40.464332Z
+390467
+fromeo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4525493e-7705-40b1-a816-d608a930855b
+
+train_2lss_ttbar_bdtv8_value
+dir
+
+2lss
+dir
+
+train_3l_ttbar
+dir
+
+train_3l_ttv
+dir
+
+train_2lss_ttv_hj_value
+dir
+
+3l
+dir
+

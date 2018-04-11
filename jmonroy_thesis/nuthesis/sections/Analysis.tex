@@ -89,7 +89,76 @@ The charge misidentification plays an important role in the the $2lss$ channel s
 %______________________ Samples  ______________________
 \section{Data and MC Samples} \label{secc:samples}
 
-The data set used in this analysis was collected by the CMS experiment during 2016 at  and correspond to a total integrated luminosity of 35.9\fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples, that corresponds to the 23 Sep 2016 (Run B to G) and PromptReco (Run H) versions of the datasets. The MC samples used in this analysis correspond to the RunIISummer16MiniAODv2 campaign produced with CMSSW 80X. The two signal samples (for \tHq\ and \tHW) were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections, see Tab.~\ref{tab:sigsamples}.Each sample is generated with a set of event weights corresponding to different values of \Ct and \CV couplings as shown in Tab.~\ref{tab:reweight}.
+\subsection{ Full 2016 data set}
+
+The data set used in this analysis was collected by the CMS experiment during 2016 at while running at $\sqrt{s}=13$TeV and corresponds to a total integrated luminosity of 35.9\fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples; that corresponds to the \verb|23Sep2016 (Run B to G)| and \verb|PromptReco (Run H)| versions of the datasets.
+
+Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The certified luminosity sections are selected using the golden JSON file defined by the CMS experiment \cite{json}.
+
+\subsection{Triggers}
+
+The events considered are those online-reconstructed events triggered by one, two, or three leptons. Single-lepton triggers are included in order to boost the acceptance of events where the \pt of the sub-leading lepton falls below the threshold of the double-lepton triggers. The trigger efficiency is increased by including double-lepton triggers in the $3l$ category, and single-lepton triggers in all categories; it is possible given the logical ``or'' of the trigger decisions of all the individual triggers in a given category. Table ~\ref{tab:triggers} shows the lowest-threshold non-prescaled triggers present in the High-Level Trigger (HLT) menus for both Monte-Carlo and data in 2016.
+
+\subsubsection*{Trigger efficiency scale factors}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_uu_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_uu_ARCv2_change_3l_pt_ranges.pdf} \\
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_uu_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_uu_ARCv2_change_3l_pt_ranges.pdf}
+\caption[Trigger efficiency for the same-sign $\mu\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $\mu\mu$ category, as as a function of the \pt and  \etac of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\label{fig:trigeffsmumu}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_eu_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_eu_ARCv2_change_3l_pt_ranges.pdf} \\
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
+\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category, as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\label{fig:trigeffsemu}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_ee_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_ee_ARCv2_change_3l_pt_ranges.pdf} \\
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
+\caption[Trigger efficiency for the $ee$ category]{Comparison between data an MC trigger efficiencies in the same-sign $ee$ category, as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\label{fig:trigeffsee}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_3l_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_3l_ARCv2_change_3l_pt_ranges.pdf} \\
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_3l_ARCv2_change_3l_pt_ranges.pdf}
+\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_3l_ARCv2_change_3l_pt_ranges.pdf}
+\caption[Trigger efficiency for the $3l$ category]{Comparison between data an MC trigger efficiencies in the $3l$ category, as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\label{fig:trigeffs3l}
+\end{figure}
+
+Trigger efficiency describes the ability of events to pass the trigger requirements. It is measured in simulated events using generator information given that there is no trigger bias with the MC sample. Measuring the trigger efficiency in data requires a more elaborated procedure; first, select a set of events collected by a trigger that is uncorrelated with the lepton triggers such that the selected events form an unbiased sample. In this analysis, that uncorrelated trigger is a MET trigger. Second step is looking for candidate events with exactly two good leptons (exactly three good leptons for the $3l$ channel). Finally,  measure the efficiency for the candidate events to pass the logical ``or'' of triggers being considered in a given event category as defined in Table ~\ref{tab:triggers}.
+
+Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, \ref{fig:trigeffsee}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies. Applied flat scale factors in each category are shown in Tab.~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
+
+\begin{table}
+\centering
+\begin{tabular}{ll}
+Category & Scale Factor \\\hline
+    ee   & $1.01 \pm 0.02$ \\
+e$\mu$   & $1.01 \pm 0.01$ \\
+$\mu\mu$ & $1.00 \pm 0.01$ \\
+3l       & $1.00 \pm 0.03$ \\\hline
+\end{tabular}
+\caption[Trigger efficiency scale factors and associated uncertainties.]{Trigger efficiency scale factors and associated uncertainties, shown here rounded to the nearest percent.}
+\label{tab:trigSFs}
+\end{table}
+
+\subsection{Signal modeling and MC samples}
 
 
 
@@ -97,11 +166,42 @@ The data set used in this analysis was collected by the CMS experiment during 20
 
 
 
-Technical developments on the event generator side allow for an event-wise reweighting that can change the event kinematics based on specific generation parameters. This way not only the case of \Ct=-1, but a whole range of \Ct and \CV values can be investigated.
 
 
 
-\subsection{Full 2016 dataset and MC samples}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Technical developments on the event generator side allow for an event-wise reweighting that can change the event kinematics based on specific generation parameters; in this way, not only the case of \Ct=-1, but a whole range of \Ct and \CV values may be investigated. The MC samples used in this analysis correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X. The two signal samples, for \tHq\ and \tHW, were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections (see Table~\ref{tab:sigsamples}). Each sample is generated with a set of event weights corresponding to different values of \Ct and \CV couplings as shown in Table ~\ref{tab:reweight}.
+
 \begin{table}[ht!]
 \centering \small
 \begin{tabular}{lll}
@@ -109,73 +209,12 @@ Sample & $\sigma$ [pb] & BF \\ \hline
 \verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.7927 & 0.324 \\
 \verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.1472 & 1.0   \\\hline
 \end{tabular}
-\caption[Signal samples and their cross section and branching fraction.]{Signal samples and their cross section and branching fraction used in this analysis. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
+\caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
 \end{table}
 
 
-\begin{table}[!htbp]
-  \centering
-  \scriptsize
-  \begin{tabular}{lllllll}
-        &       & \multicolumn{2}{c}{\tHq} & \multicolumn{2}{c}{\tHW} & \\\hline
-   \CV\ & \Ct\  & sum of    & cross         & sum of    & cross        & \\
-        &       & weights   & section [pb]  & weights   & section [pb] & LHE weights       \\\hline
-   1.0  & -3.0  & 35.700022 & 2.991         & 11.030445 & 0.6409       & LHEweight\_wgt[446]\\
-   1.0  & -2.0  & 20.124298 & 1.706         & 5.967205  & 0.3458       & LHEweight\_wgt[447]\\
-   1.0  & -1.5  & 14.043198 & 1.205         & 4.029093  & 0.2353       & LHEweight\_wgt[448]\\
-   1.0  & -1.25 & 11.429338 & 0.9869        & 3.208415  & 0.1876       & LHEweight\_wgt[449]\\
-   1.0  & -1.0  &           & 0.7927        &           & 0.1472       & \\
-   1.0  & -0.75 & 7.054998  & 0.6212        & 1.863811  & 0.1102       & LHEweight\_wgt[450]\\
-   1.0  & -0.5  & 5.294518  & 0.4723        & 1.339886  & 0.07979      & LHEweight\_wgt[451]\\
-   1.0  & -0.25 & 3.818499  & 0.3505        & 0.914880  & 0.05518      & LHEweight\_wgt[452]\\
-   1.0  & 0.0   & 2.627360  & 0.2482        & 0.588902  & 0.03881      & LHEweight\_wgt[453]\\
-   1.0  & 0.25  & 1.719841  & 0.1694        & 0.361621  & 0.02226      & LHEweight\_wgt[454]\\
-   1.0  & 0.5   & 1.097202  & 0.1133        & 0.233368  & 0.01444      & LHEweight\_wgt[455]\\
-   1.0  & 0.75  & 0.759024  & 0.08059       & 0.204034  & 0.01222      & LHEweight\_wgt[456]\\
-   1.0  & 1.0   & 0.705305  & 0.07096       & 0.273617  & 0.01561      & LHEweight\_wgt[457]\\
-   1.0  & 1.25  & 0.936047  & 0.0839        & 0.442119  & 0.02481      & LHEweight\_wgt[458]\\
-   1.0  & 1.5   & 1.451249  & 0.1199        & 0.709538  & 0.03935      & LHEweight\_wgt[459]\\
-   1.0  & 2.0   & 3.335034  & 0.2602        & 1.541132  & 0.08605      & LHEweight\_wgt[460]\\
-   1.0  & 3.0   & 10.516125 & 0.8210        & 4.391335  & 0.2465       & LHEweight\_wgt[461]\\\hline
-        &       &           &               &           &              & \\\hline
-   1.5  & -3.0  & 45.281492 & 3.845         & 13.426212 & 0.7825       & LHEweight\_wgt[462]\\
-   1.5  & -2.0  & 27.606715 & 2.371         & 7.809713  & 0.4574       & LHEweight\_wgt[463]\\
-   1.5  & -1.5  & 20.476088 & 1.784         & 5.594971  & 0.3290       & LHEweight\_wgt[464]\\
-   1.5  & -1.25 & 17.337465 & 1.518         & 4.635978  & 0.2749       & LHEweight\_wgt[465]\\
-   1.5  & -1.0  & 14.483302 & 1.287         & 3.775902  & 0.2244       & LHEweight\_wgt[466]\\
-   1.5  & -0.75 & 11.913599 & 1.067         & 3.014744  & 0.1799       & LHEweight\_wgt[467]\\
-   1.5  & -0.5  & 9.628357  & 0.874         & 2.352505  & 0.1410       & LHEweight\_wgt[468]\\
-   1.5  & -0.25 & 7.627574  & 0.702         & 1.789184  & 0.1081       & LHEweight\_wgt[469]\\
-   1.5  & 0.0   & 5.911882  & 0.5577        & 1.324946  & 0.08056      & LHEweight\_wgt[470]\\
-   1.5  & 0.25  & 4.479390  & 0.4365        & 0.959295  & 0.05893      & LHEweight\_wgt[471]\\
-   1.5  & 0.5   & 3.331988  & 0.3343        & 0.692727  & 0.04277      & LHEweight\_wgt[472]\\
-   1.5  & 0.75  & 2.469046  & 0.2558        & 0.525078  & 0.03263      & LHEweight\_wgt[473]\\
-   1.5  & 1.0   & 1.890565  & 0.2003        & 0.456347  & 0.02768      & LHEweight\_wgt[474]\\
-   1.5  & 1.25  & 1.596544  & 0.1689        & 0.486534  & 0.02864      & LHEweight\_wgt[475]\\
-   1.5  & 1.5   & 1.586983  & 0.1594        & 0.615638  & 0.03509      & LHEweight\_wgt[476]\\
-   1.5  & 2.0   & 2.421241  & 0.2105        & 1.170602  & 0.06515      & LHEweight\_wgt[477]\\
-   1.5  & 3.0   & 7.503280  & 0.5889        & 3.467546  & 0.1930       & LHEweight\_wgt[478]\\\hline
-        &       &           &               &           & \\ \hline
-   0.5  & -3.0  & 27.432685 & 2.260         & 8.929074  & 0.5136       & LHEweight\_wgt[479]\\
-   0.5  & -2.0  & 13.956013 & 1.160         & 4.419093  & 0.2547       & LHEweight\_wgt[480]\\
-   0.5  & -1.5  & 8.924438  & 0.7478        & 2.757611  & 0.1591       & LHEweight\_wgt[481]\\
-   0.5  & -1.25 & 6.835341  & 0.5726        & 2.075247  & 0.1204       & LHEweight\_wgt[482]\\
-   0.5  & -1.0  & 5.030704  & 0.4273        & 1.491801  & 0.08696      & LHEweight\_wgt[483]\\
-   0.5  & -0.75 & 3.510528  & 0.2999        & 1.007273  & 0.05885      & LHEweight\_wgt[484]\\
-   0.5  & -0.5  & 2.274811  & 0.1982        & 0.621663  & 0.03658      & LHEweight\_wgt[485]\\
-   0.5  & -0.25 & 1.323555  & 0.1189        & 0.334972  & 0.01996      & LHEweight\_wgt[486]\\
-   0.5  & 0.0   & 0.656969  & 0.06223       & 0.147253  & 0.008986     & LHEweight\_wgt[487]\\
-   0.5  & 0.25  & 0.274423  & 0.02830       & 0.058342  & 0.003608     & LHEweight\_wgt[488]\\
-   0.5  & 0.5   & 0.176548  & 0.01778       & 0.068404  & 0.003902     & LHEweight\_wgt[489]\\
-   0.5  & 0.75  & 0.363132  & 0.03008       & 0.177385  & 0.009854     & LHEweight\_wgt[490]\\
-   0.5  & 1.0   & 0.834177  & 0.06550       & 0.385283  & 0.02145      & LHEweight\_wgt[491]\\
-   0.5  & 1.25  & 1.589682  & 0.1241        & 0.692099  & 0.03848      & LHEweight\_wgt[492]\\
-   0.5  & 1.5   & 2.629647  & 0.2047        & 1.097834  & 0.06136      & LHEweight\_wgt[493]\\
-   0.5  & 2.0   & 5.562958  & 0.4358        & 2.206057  & 0.1246       & LHEweight\_wgt[494]\\
-   0.5  & 3.0   & 14.843102 & 1.177         & 5.609519  & 0.3172       & LHEweight\_wgt[495]\\ \hline
-    \end{tabular} 
-    \caption[\CV\ and \Ct\ combinations.]{\CV\ and \Ct\ combinations generated for the two signal samples and their NLO cross sections. The \tHq\ cross section is multiplied by the branching fraction of the enforced leptonic decay of the top quark (0.324). See also Ref.~\cite{THQProdTwiki}.}\label{tab:reweight}
- \end{table}
+
+
 
 Different MC generators were used to generate the background processes. The dominant sources (\ttbar, \ttW, \ttZ, \ttH) were produced using \textsc{aMC@NLO} interfaced to PYTHIA8, and are scaled to NLO cross sections. Other processes are simulated using POWHEG interfaced to PYTHIA, or bare PYTHIA (see table ~\ref{tab:bgsamples} and ~\cite{CMS_AN_2016-211} for more details).
 
@@ -229,80 +268,6 @@ Sample                                                                        & 
 \caption[Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.]{Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.} \label{tab:ttvlo_samples}
 \end{table}
 
-\subsection{Triggers}
-We consider online-reconstructed events triggered by one, two, or three leptons. Single-lepton triggers are included to boost the acceptance of events where the \pt\ of the sub-leading lepton falls below the threshold of the double-lepton triggers. Additionally, by including double-lepton triggers in the $\geq$ 3 lepton category, as well as single-lepton triggers in all categories, we increase the efficiency, considering the logical ``or'' of the trigger decisions of all the individual triggers in a given category. Tab.~\ref{tab:triggers} shows the lowest-threshold non-prescaled triggers present in the High-Level Trigger (HLT) menus for both Monte-Carlo and data in 2016.
-\begin{table}
-\centering \footnotesize
-\begin{tabular}{ll}
-Same-sign dilepton (==2 muons)\\
-\verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
-\verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
-\verb|HLT_IsoMu22_v*|\\
-\verb|HLT_IsoTkMu22_v*|\\
-\verb|HLT_IsoMu22_eta2p1_v*| \\
-\verb|HLT_IsoTkMu22_eta2p1_v*| \\
-\verb|HLT_IsoMu24_v*| \\
-\verb|HLT_IsoTkMu24_v*|\\\hline
-Same-sign dilepton (==2 electrons)\\
-\verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
-\verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
-\verb|HLT_Ele27_WPTight_Gsf_v*| \\
-\verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\\hline
-Same-sign dilepton (==1 muon, ==1 electron)\\
-\verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
-\verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
-\verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-\verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-\verb|HLT_IsoMu22_v*|\\
-\verb|HLT_IsoTkMu22_v*|\\
-\verb|HLT_IsoMu22_eta2p1_v*| \\
-\verb|HLT_IsoTkMu22_eta2p1_v*| \\
-\verb|HLT_IsoMu24_v*| \\
-\verb|HLT_IsoTkMu24_v*| \\
-\verb|HLT_Ele27_WPTight_Gsf_v*| \\
-\verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\
-\verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\\hline
-Three lepton and Four lepton\\
-\verb|HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v*|\\
-\verb|HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v*|\\
-\verb|HLT_TripleMu_12_10_5_v*|\\
-\verb|HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v*|\\
-\verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
-\verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
-\verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
-\verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v|* \\
-\verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
-\verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
-\verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
-\verb|HLT_IsoMu22_v*|\\
-\verb|HLT_IsoTkMu22_v*|\\
-\verb|HLT_IsoMu22_eta2p1_v*|\\
-\verb|HLT_IsoTkMu22_eta2p1_v*|\\
-\verb|HLT_IsoMu24_v*|\\
-\verb|HLT_IsoTkMu24_v*|\\
-\verb|HLT_Ele27_WPTight_Gsf_v*|\\
-\verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*|\\
-\verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
-\hline
-\end{tabular}
-\caption{Table of high-level triggers that we consider in the analysis.} \label{tab:triggers}
-\end{table}
-
-\subsubsection*{Trigger efficiency scale factors}
-The efficiency of events to pass the trigger is measured in simulation (trivially using generator information) and in the data (using event collected by an uncorrelated MET trigger). Small differences between the data and MC efficiencies are corrected by applying scale factors as shown in Tab.~\ref{tab:trigSFs}. The exact procedure and control plots are documented in ~\cite{CMS_AN_2017-029} for the current analysis.
-
-\begin{table}
-\centering
-\begin{tabular}{ll}
-Category & Scale Factor \\\hline
-    ee   & $1.01 \pm 0.02$ \\
-e$\mu$   & $1.01 \pm 0.01$ \\
-$\mu\mu$ & $1.00 \pm 0.01$ \\
-3l       & $1.00 \pm 0.03$ \\\hline
-\end{tabular}
-\caption[Trigger efficiency scale factors and associated uncertainties.]{Trigger efficiency scale factors and associated uncertainties, shown here rounded to the nearest percent.}
-\label{tab:trigSFs}
-\end{table}
 
 
 
@@ -523,7 +488,7 @@ Efficiencies of reconstruction and selecting loose leptons are measured both for
 \label{fig:3l_eff}
 \end{figure}
 
-The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from the Reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
+The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from Reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
 
 The efficiency of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons are determined by using a tag and probe method on a sample of Drell-Yan enriched events. Figures \ref{fig:2lss_eff} and \ref{fig:3l_eff} show the efficiencies for the $2lss$ channel and $3l$ channel respectively. Efficiencies in the $2lss$ channel have been produced including the tight-charge requirement, while for the $3l$ channel it is not included. Number of passed and failed probes are determined from a fit to the invariant mass of the dilepton system. Simulation is corrected using these scale factors; note that they depends on \etac and \pt.   
 

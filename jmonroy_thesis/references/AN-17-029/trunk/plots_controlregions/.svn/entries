@@ -1,0 +1,64 @@
+10
+
+dir
+427704
+svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-17-029/trunk/plots_controlregions
+svn+ssh://svn.cern.ch/reps/tdr2
+
+
+
+2017-03-01T23:13:13.235655Z
+390566
+peruzzi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4525493e-7705-40b1-a816-d608a930855b
+
+cr_ttbar_data_norm_2j
+dir
+
+cr_ttz_data_frdata
+dir
+
+cr_ttbar_data_norm_3j
+dir
+
+cr_ttbar_data_norm_4j
+dir
+
+leptons
+dir
+
+2lss_appl_data
+dir
+
+3l_appl_1fo_data
+dir
+
+cr_ttbar_data
+dir
+
+cr_3j_data_frdata
+dir
+
+cr_ttz_data_frdata_4j
+dir
+
+2lss_appl_1fo_data
+dir
+
+cr_wz_data_frdata
+dir
+

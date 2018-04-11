@@ -1,0 +1,43 @@
+10
+
+dir
+427704
+svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-17-029/trunk/plots_extraction
+svn+ssh://svn.cern.ch/reps/tdr2
+
+
+
+2017-03-04T17:18:33.485569Z
+391466
+fromeo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4525493e-7705-40b1-a816-d608a930855b
+
+binning
+dir
+
+categories
+dir
+
+selection
+dir
+
+training
+dir
+
+selection_data
+dir
+

@@ -1,0 +1,21 @@
+\subsection{Taus}
+\label{subsec:taus}
+
+Hadronically decaying taus ($\tau_h$) are reconstructed using the hadron-plus-strips algorithm \cite{Khachatryan:2015dfa}.
+ $\tau_h$ candidates are required to pass the ``decay mode finding'' discriminator, either being reconstruncted in 1- or
+ 3-prong decay modes with or without additional $\pi^0$'s. In addition, they have to fulfill $p_T>~20~\mathrm{GeV}$ 
+and $|\eta|<2.3$, following Tau POG recommandations.
+
+The tau identification criteria applied are based on a tau discriminator, 
+using an MVA specifically trained with $t\bar{t}$ and $t\bar{t}H$ events with an isolation cone 
+of $\Delta R=0.3$ \cite{AN:MVA_tau_ID_2015}, which increases the efficiency of the tau isolation 
+in $t\bar{t}H$ with respect to the default discriminators using an isolation cone of $\Delta R=0.5$. 
+The medium working point is used for the tau selection ("byMediumIsolationMVArun2v1DBdR03oldDMwLT").
+
+Reconstructed $\tau_h$ candidates are removed if they overlap within $\Delta R = 0.4$ with \textit{loose} 
+electrons or muons. No dedicated discriminators against background from prompt electrons and muons are applied 
+since the contribution from background events with additional prompt electrons and muons passing the $\tau_h$ 
+selection criteria but not the muon and electron pre-selection requirements is negligible.
+
+In order to ensure orthogonality of our selection from the phase space covered by the 2lss+$\tau_h$, 3l+$\tau_h$ channels,
+covered in HIG-17-003, we veto the presence in the event of any $\tau_h$ passing the above selection.
