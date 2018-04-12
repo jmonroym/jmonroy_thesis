@@ -117,17 +117,17 @@ The events considered are those online-reconstructed events triggered by one, tw
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_eu_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category, as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
-\label{fig:trigeffsemu}
-\end{figure}
+%\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category ($1^{rs}$ and $2^{nd}$ rows) and same-sign $ee$ category ($3^{rd}$ and $4^{th}$ rows), as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+%\label{fig:trigeffsemu}
+%\end{figure}
 
-\begin{figure}[htp]
-\centering
+%\begin{figure}[htp]
+%\centering
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_ee_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_ee_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the $ee$ category]{Comparison between data an MC trigger efficiencies in the same-sign $ee$ category, as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\caption[Trigger efficiency for the $ee$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category ($1^{rs}$ and $2^{nd}$ rows) and same-sign $ee$ category ($3^{rd}$ and $4^{th}$ rows), as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
 \label{fig:trigeffsee}
 \end{figure}
 
@@ -143,8 +143,9 @@ The events considered are those online-reconstructed events triggered by one, tw
 
 Trigger efficiency describes the ability of events to pass the trigger requirements. It is measured in simulated events using generator information given that there is no trigger bias with the MC sample. Measuring the trigger efficiency in data requires a more elaborated procedure; first, select a set of events collected by a trigger that is uncorrelated with the lepton triggers such that the selected events form an unbiased sample. In this analysis, that uncorrelated trigger is a MET trigger. Second step is looking for candidate events with exactly two good leptons (exactly three good leptons for the $3l$ channel). Finally,  measure the efficiency for the candidate events to pass the logical ``or'' of triggers being considered in a given event category as defined in Table ~\ref{tab:triggers}.
 
-Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, \ref{fig:trigeffsee}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies. Applied flat scale factors in each category are shown in Tab.~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
+Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsee}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
 
+Applied flat scale factors in each category are shown in Tab.~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
 \begin{table}
 \centering
 \begin{tabular}{ll}
@@ -160,61 +161,68 @@ $\mu\mu$ & $1.00 \pm 0.01$ \\
 
 \subsection{Signal modeling and MC samples}
 
+Current event generators allow for adjusting the kinematics of the generated events, based on an event-wise reweighting; in this way, several generation parameters phase spaces can be explored according to the experimental interests. The signal samples used in this analysis were generated in such a way that not only the case \Ct=-1, but an extended range of \Ct and \CV values may be investigated.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{tHQ_xsec_cfcv}
+\includegraphics[width=0.49\textwidth]{tWH_xsec_cfcv} 
+\caption[\tHq and \tHW cross section in the \Ct-\CV phase space]{\tHq and \tHW cross section in the \Ct-\CV phase space \cite{THQProdTwiki}.}
+\label{fig:ktkv_phase_space}
+\end{figure}
+
+\tHq and \tHW cross section in the \Ct-\CV phase space are shown in Figure \ref{fig:ktkv_phase_space}. As said in section \ref{sec:event_generation}, the \tHq sample was generated using the 4F scheme which provides a better description of the additional $b$ quark from the initial gluon splitting, while the \tHW sample was generated using the 5F scheme in order to remove its the interference with \ttH at LO.
 
 
+\subsubsection*{MC signal samples}
 
+The two signal samples, \tHq\ and \tHW, correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X; they were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.2.2.3), in LO order mode at $\sqrt{s}=13$ TeV, and are normalized to NLO cross sections (see Table~\ref{tab:sigsamples}). The Higgs boson is assumed to be SM-like except for the values of its couplings to the top quark and W boson. Each sample was generated with a set of event weights corresponding to 51 different values of (\Ct, \CV) couplings, accessible in terms of LHE event weights as shown in Table ~\ref{tab:reweight}; however, the main interest is the (\Ct=-1,\CV=1) case. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Technical developments on the event generator side allow for an event-wise reweighting that can change the event kinematics based on specific generation parameters; in this way, not only the case of \Ct=-1, but a whole range of \Ct and \CV values may be investigated. The MC samples used in this analysis correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X. The two signal samples, for \tHq\ and \tHW, were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections (see Table~\ref{tab:sigsamples}). Each sample is generated with a set of event weights corresponding to different values of \Ct and \CV couplings as shown in Table ~\ref{tab:reweight}.
-
-\begin{table}[ht!]
+\begin{table}[h]
 \centering \small
 \begin{tabular}{lll}
 Sample & $\sigma$ [pb] & BF \\ \hline
-\verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.7927 & 0.324 \\
-\verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.1472 & 1.0   \\\hline
+\verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.7927 & 0.324 \\
+\verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.1472 & 1.0   \\\hline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\verb|ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix|   & 0.2151 (0.5071*0.418)  & \\
+                                                                        
 \end{tabular}
-\caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
+\caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed ~\cite{THQProdTwiki}.}\label{tab:sigsamples}
 \end{table}
 
-
-
-
+\subsubsection*{MC background samples}
 
 Different MC generators were used to generate the background processes. The dominant sources (\ttbar, \ttW, \ttZ, \ttH) were produced using \textsc{aMC@NLO} interfaced to PYTHIA8, and are scaled to NLO cross sections. Other processes are simulated using POWHEG interfaced to PYTHIA, or bare PYTHIA (see table ~\ref{tab:bgsamples} and ~\cite{CMS_AN_2016-211} for more details).
 
@@ -225,7 +233,7 @@ Different MC generators were used to generate the background processes. The domi
 Sample                                                                        & $\sigma$ [pb] \\\hline
 \verb|TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8|           & 0.2043 \\
 \verb|TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                   & 0.2529 \\
-\verb|ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix|         & 0.2151 \\
+
 \verb|/store/cmst3/group/susy/gpetrucc/13TeV/u/TTLL_m1to10_LO_NoMS_for76X/|   & 0.0283 \\
 \verb|WGToLNuG_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                        & 585.8 \\
 \verb|ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|                        & 131.3 \\

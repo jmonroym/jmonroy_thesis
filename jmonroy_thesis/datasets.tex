@@ -84,53 +84,6 @@
   \caption[HLT ]{Table of high-level triggers considered in the analysis.} \label{tab:triggers}
 \end{table}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{table}[ht!]
-  \centering \small
-  \begin{tabular}{lll}
-    Sample & $\sigma$ [pb] & BF \\ \hline
-    \verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.7927 & 0.324 \\
-    \verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.1472 & 1.0   \\\hline
-  \end{tabular}
-  \caption[Signal samples and their cross section and branching fraction.]{Signal samples and their cross section and branching fraction used in this analysis. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
-\end{table}
-
-
-
 \begin{table}[!htbp]
   \centering
   \scriptsize
@@ -192,7 +145,7 @@
     0.5  & 2.0   & 5.562958  & 0.4358        & 2.206057  & 0.1246       & LHEweight\_wgt[494]\\
     0.5  & 3.0   & 14.843102 & 1.177         & 5.609519  & 0.3172       & LHEweight\_wgt[495]\\ \hline
   \end{tabular}
-  \caption[\CV\ and \Ct\ combinations.]{\CV\ and \Ct\ combinations generated for the two signal samples and their NLO cross sections. The \tHq\ cross section is multiplied by the branching fraction of the enforced leptonic decay of the top quark (0.324). See also Ref.~\cite{THQProdTwiki}.}\label{tab:reweight}
+  \caption[\CV\ and \Ct\ combinations.]{\CV\ and \Ct\ combinations generated for the two signal samples and their NLO cross sections. The \tHq\ cross section is multiplied by the branching fraction of the enforced leptonic decay of the top quark (0.324) \cite{THQProdTwiki}.}\label{tab:reweight}
 \end{table}
 
 Different MC generators were used to generate the background processes. The dominant sources (\ttbar, \ttW, \ttZ, \ttH) were produced using \textsc{aMC@NLO} interfaced to PYTHIA8, and are scaled to NLO cross sections. Other processes are simulated using POWHEG interfaced to PYTHIA, or bare PYTHIA (see table ~\ref{tab:bgsamples} and ~\cite{CMS_AN_2016-211} for more details).
