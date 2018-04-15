@@ -1,0 +1,71 @@
+The unblinded (\textcolor{red}{not yet}) distribution of BDT outputs are shown in Fig.~\ref{fig:bdt_outputs}.
+The distributions in the final binning used in the signal extraction is shown in Fig.~\ref{fig:finalbins}.
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.35\textwidth]{figures/3lsignal/thqMVA_ttv_3l.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/3lsignal/thqMVA_tt_3l.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/mumu/thqMVA_ttv_2lss.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/mumu/thqMVA_tt_2lss.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/emu/thqMVA_ttv_2lss.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/emu/thqMVA_tt_2lss.pdf}
+\
+\caption{Distribution of individual BDT outputs for the three lepton channel (top), the \mumu\ channel (middle), and the \emu\ channel (bottom), for training against \ttV\ (left) and against \ttbar\ (right).}
+\label{fig:bdt_outputs}
+\end{figure}
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.35\textwidth]{figures/3lsignal/finalBins.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/3lsignal/finalBins_log.pdf} \\
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/mumu/finalBins.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/mumu/finalBins_log_mm.pdf} \\
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/emu/finalBins.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/signalregion_2lss/emu/finalBins_log_em.pdf}
+\
+\caption{Expected distributions in the final binning used for the signal extraction, for the three lepton channel (top), the \mumu\ channel (middle), and the \emu\ channel (bottom). Linear scale (left), and logarithmic scale (right).}
+\label{fig:finalbins}
+\end{figure}
+
+We calculate asymptotic upper CL$_\text{S}$ limits at 95\% C.L. on the combined production cross section of \tHq\ and \tHW\ (reported as a multiple of the predicted cross section), for each of the 51 coupling configurations reported in Tab.~\ref{tab:reweight}.
+The full results are shown in Fig.~\ref{fig:limits_cv} and the two scenarios of exactly inverted couplings ($\CV=1.0$,$\Ct=-1.0$) and the standard model are reported in Tab.~\ref{tab:limits}. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llcccc}
+Scenario  & Channel   & Obs. Limit & \multicolumn{3}{c}{Exp. Limit}         \\
+           &                                  &            & Median         & $\pm1\sigma$   & $\pm2\sigma$  \\ \hline
+$\CV=1.0$  & \mumu\                           & x          & 1.83           & [1.28, 2.65]   & [0.94, 3.70]   \\
+$\Ct=-1.0$ & \emu\                            & x          & 1.86           & [1.32, 2.67]   & [0.98, 3.68]   \\
+           & \ee\                             & x          & 3.39           & [2.39, 4.88]   & [1.77, 6.79]   \\
+           & \threel\                         & x          & 1.52           & [1.03, 2.28]   & [0.74, 3.31]   \\
+           & Combined ($\mu\mu,3\ell$)        & \textbf{x} & \textbf{1.21}  & [0.84, 1.79]   & [0.61, 2.55]   \\
+           & Combined ($\mu\mu,\Pe\mu,3\ell$) & \textbf{x} & \textbf{1.09}  & [0.75, 1.59]   & [0.55, 2.26]   \\
+           & Combined (all channels)          & \textbf{x} & \textbf{1.07}  & [0.74, 1.57]   & [0.54, 2.23]   \\ \hline
+$\CV=1.0$  & \mumu\                           & x          & 27.16          & [19.37, 38.51] & [14.45, 52.79] \\
+$\Ct=1.0$  & \emu\                            & x          & 29.38          & [21.06, 41.34] & [15.78, 56.11] \\
+           & \ee\                             & x          & 49.51          & [35.09, 70.83] & [26.11, 97.93] \\
+           & \threel\                         & x          & 25.25          & [17.57, 36.93] & [12.90, 52.15] \\
+           & Combined ($\mu\mu,3\ell$)        & \textbf{x} & \textbf{20.06} & [14.12, 28.88] & [10.45, 40.16] \\
+           & Combined ($\mu\mu,\Pe\mu,3\ell$) & \textbf{x} & \textbf{18.36} & [12.92, 26.46] & [ 9.56, 36.78] \\
+(SM)       & Combined (all channels)          & \textbf{x} & \textbf{18.03} & [12.69, 25.94] & [ 9.40, 26.03] \\ \hline
+\end{tabular}
+\caption{Expected and observed (once unblinded) CL$_\text{S}$ limits (at 95\% C.L.) on the combined $\cPqt\PH$ production in the same-sign dilepton and three lepton channels, and for their combination, for a scenario with inverted couplings ($\CV=1.0$,$\Ct=-1.0$, top three rows), and for the standard model ($\CV=\Ct=1.0$, bottom three rows). Numbers are for 12.9\fbinv.}
+\label{tab:limits}
+\end{table}
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.5\textwidth]{figures/limits/limits_comb3_cv_1p0.pdf}\\
+ \includegraphics[width=0.5\textwidth]{figures/limits/limits_comb3_cv_1p5.pdf}\\
+ \includegraphics[width=0.5\textwidth]{figures/limits/limits_comb3_cv_0p5.pdf}
+\
+\caption{Expected asymptotic limit on $\frac{\sigma}{\sigma_{theor}}$ as a function of \Ct\ for $\CV=1.0$, $\CV=1.5$, $\CV=0.5$ (top to bottom) for the combination of three lepton channel, \mumu, and \emu\ channel.}
+\label{fig:limits_cv}
+\end{figure}
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=1.0\textwidth]{figures/limits/impacts/impacts_1.pdf}\\
+\caption{Post-fit pulls and impacts of the 20 nuisance parameters with largest impacts for a fit to the Asimov dataset with fixed signal strength.}
+\label{fig:impacts}
+\end{figure}

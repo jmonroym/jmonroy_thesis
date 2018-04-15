@@ -1,0 +1,75 @@
+Table~\ref{tab:uncertainties} shows all sources of systematic uncertainty currently considered in the analysis.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lll}\hline
+Source                          & Channel     & Size \\\hline
+\multicolumn{3}{l}{\bf Experimental uncertainties} \\
+Luminosity                      & all         & 1.06 \\
+Loose lepton efficiency         &             & 1.02 per lepton  \\
+Tight lepton efficiency         &             & 1.03 per lepton  \\
+Trigger efficiency              & \mumu\      & 1.01 \\
+                                & \emu\       & 1.02 \\
+                                & \threel\    & 1.09 \\
+Jet energy scale                & all         & templates \\
+Forward jet modeling            & all         & templates \\
+\cPqb\ tagging efficiency       & all         & templates \\ \hline
+
+\multicolumn{3}{l}{\bf Theory uncertainties} \\
+$Q^2$ scale (\tHq)              & all         & 0.961/1.027 \textcolor{red}{($\Ct=-1$ point)}\\
+$Q^2$ scale (\tHW)              & all         & 0.982/1.020 \textcolor{red}{($\Ct=-1$ point)}\\
+$Q^2$ scale (\ttH)              & all         & 0.915/1.058\\
+$Q^2$ scale (\ttW)              & all         & 1.12\\
+$Q^2$ scale (\ttZ)              & all         & 1.11\\
+pdf (\ttH)                      & all         & 1.036\\
+pdf $\Pg\Pg$ (\ttZ)             & all         & 0.966\\
+pdf $\Pq\Paq$ (\ttW)            & all         & 1.04\\
+pdf $\Pq\Pg$ (\tHq)             & all         & 1.037\\
+pdf $\Pq\Pg$ (\tHW)             & all         & 1.040\\ \hline
+\multicolumn{3}{l}{\bf Higgs branching fractions} \\
+\verb|param_alphaS|             & all         & 1.012\\
+\verb|param_mB|                 & all         & 0.981\\
+\verb|HiggsDecayWidthTHU_hqq|   & all         & 0.988\\
+\verb|HiggsDecayWidthTHU_hvv|   & all         & 1.004\\
+\verb|HiggsDecayWidthTHU_hll|   & all         & 1.019\\\hline
+
+\multicolumn{3}{l}{\bf Backgrounds}         \\
+\WZ\ control region statistics  & \threel\    & 1.10 \\
+\WZ\ control region backgrounds & \threel\    & 1.20 \\
+\WZ\ modeling                   & \threel\    & 1.07  \\
+$\WZ+4\text{jet}$ background    & \mumu,\emu\ & 2.0 \\
+Rare SM processes               & all         & 1.50 \\
+Charge flips                    & \emu\       & 1.30 \\\hline
+\multicolumn{3}{l}{\bf Fake rate estimate}     \\
+Electron normalization          &             & 1.17 in \emu, 1.40 in \threel\ \\
+Muon normalization              &             & 1.35 in \mumu, 1.17 in \emu, 1.40 in \threel\ \\
+Electron shape                  & \emu\       & (1.10/1.20; 1.10/0.83) shape variation \\
+                                & \threel\    & (1.10/1.20) shape variation \\
+Muon shape                      & \mumu\      & (1.20/1.40; 1.20/0.71) shape variation \\
+                                & \emu\       & (1.10/1.20) shape variation \\
+                                & \threel\    & (1.10/1.20; 1.10/0.83) shape variation \\
+Electron closure                & \emu\       & 0.95 norm., (1.03/1.15) shape var. \\
+                                & \threel\    & 0.95 norm., (1.05/1.05) shape var. \\
+Muon closure                    & \mumu\      & 1.10 norm., (1.05/1.10) shape var. \\
+                                & \emu\       & 1.05 norm., (1.03/1.15) shape var. \\
+                                & \threel\    & 1.05 norm., (1.05/1.05) shape var. \\\hline
+
+   \end{tabular} 
+   \caption{Pre-fit size of systematic uncertainties. \textcolor{red}{Fake rate shapes and other items labeled in red are still subject to change.}}\label{tab:uncertainties}
+ \end{table}
+
+\textbf{Experimental uncertainties}
+A normalization uncertainty is derived from the measurement of data/MC scale factors for lepton and trigger efficiencies.
+Jet energy scale uncertainties and \cPqb\ tagging efficiency are evaluated using dedicated shape templates derived from a variation of the jet energy scale within its uncertainty and from varying the \cPqb\ tagging data/MC scale factors within their uncertainty.
+
+The forward jet $\eta$ distribution is poorly modeled in simulation, see Appendix~\ref{app:fwdcontrol}.
+To estimate the effect of a mismodeled forward jet distribution, we reweight the events in simulation (\ie\ for signal and the irreducible backgrounds) based on the normalized data/MC ratio in the control region and thereby derive an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement.
+
+\textbf{Theory uncertainties}
+$Q^2$ scale and parton distribution function (pdf) uncertainties are applied as an overall normalization uncertainty using numbers from the NLO theory calculation.
+
+\textbf{Backgrounds}
+In addition to the theory uncertainties on the main irreducible backgrounds of \ttW, \ttZ, and \ttH, the smaller irreducible backgrounds and the charge mis-identification estimate are covered with flat normalization uncertainties.
+The \WZ\ contribution is normalized in a data control region and an uncertainty on the scale factor is derived in the process.
+Finally, the dominant uncertainty relates to the estimate of the reducible non-prompt lepton contribution using a fake rate method.
+The main normalization uncertainty on the used fake rates derives from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution, see Ref.~\cite{CMS_AN_2017-029}.
+Furthermore, shape variations resembling data/MC differences and deviations in closure test are evaluated as shape uncertainties.

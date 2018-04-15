@@ -1,0 +1,235 @@
+\subsection{Full 2016 dataset and MC samples}
+
+The data considered in this analysis were collected by the CMS experiment during 2016 and correspond to a total integrated luminosity of 35.9\fbinv.
+The data used were collected only in periods when the CMS magnet was on.
+We use the 23 Sep 2016 (Run B to G) and PromptReco (Run H) versions of the datasets. 
+
+The MC samples used in this analysis correspond to the RunIISummer16MiniAODv2 campaign produced with CMSSW 80X. 
+
+The two signal samples (for \tHq\ and \tHW) were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222), in leading-order order mode, and are normalized to next-to-leading-order cross sections, see Tab.~\ref{tab:sigsamples}.
+Each sample is generated with a set of event weights corresponding to different values of \Ct\ and \CV\ couplings, see Tab.~\ref{tab:reweight}.
+
+\begin{table}[h] 
+  \centering
+  \begin{tabular}{lll}
+    Sample & $\sigma$ [pb] & BF \\
+    \hline
+    \verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.7927 & 0.324 \\
+    \verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/| & 0.1472 & 1.0   \\
+    \hline
+  \end{tabular}
+  \caption{Signal samples and their cross section and branching fraction used in this analysis. See Ref.~\cite{THQProdTwiki} for more details.}\label{tab:sigsamples}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \footnotesize
+  \begin{tabular}{lllllll}
+        &       & \multicolumn{2}{c}{\tHq} & \multicolumn{2}{c}{\tHW} & \\\hline
+   \CV\ & \Ct\  & sum of    & cross         & sum of    & cross        & \\
+        &       & weights   & section [pb]  & weights   & section [pb] & LHE weights       \\\hline
+   1.0  & -3.0  & 35.700022 & 2.991         & 11.030445 & 0.6409       & LHEweight\_wgt[446]\\
+   1.0  & -2.0  & 20.124298 & 1.706         & 5.967205  & 0.3458       & LHEweight\_wgt[447]\\
+   1.0  & -1.5  & 14.043198 & 1.205         & 4.029093  & 0.2353       & LHEweight\_wgt[448]\\
+   1.0  & -1.25 & 11.429338 & 0.9869        & 3.208415  & 0.1876       & LHEweight\_wgt[449]\\
+   1.0  & -1.0  &           & 0.7927        &           & 0.1472       & \\
+   1.0  & -0.75 & 7.054998  & 0.6212        & 1.863811  & 0.1102       & LHEweight\_wgt[450]\\
+   1.0  & -0.5  & 5.294518  & 0.4723        & 1.339886  & 0.07979      & LHEweight\_wgt[451]\\
+   1.0  & -0.25 & 3.818499  & 0.3505        & 0.914880  & 0.05518      & LHEweight\_wgt[452]\\
+   1.0  & 0.0   & 2.627360  & 0.2482        & 0.588902  & 0.03881      & LHEweight\_wgt[453]\\
+   1.0  & 0.25  & 1.719841  & 0.1694        & 0.361621  & 0.02226      & LHEweight\_wgt[454]\\
+   1.0  & 0.5   & 1.097202  & 0.1133        & 0.233368  & 0.01444      & LHEweight\_wgt[455]\\
+   1.0  & 0.75  & 0.759024  & 0.08059       & 0.204034  & 0.01222      & LHEweight\_wgt[456]\\
+   1.0  & 1.0   & 0.705305  & 0.07096       & 0.273617  & 0.01561      & LHEweight\_wgt[457]\\
+   1.0  & 1.25  & 0.936047  & 0.0839        & 0.442119  & 0.02481      & LHEweight\_wgt[458]\\
+   1.0  & 1.5   & 1.451249  & 0.1199        & 0.709538  & 0.03935      & LHEweight\_wgt[459]\\
+   1.0  & 2.0   & 3.335034  & 0.2602        & 1.541132  & 0.08605      & LHEweight\_wgt[460]\\
+   1.0  & 3.0   & 10.516125 & 0.8210        & 4.391335  & 0.2465       & LHEweight\_wgt[461]\\\hline
+        &       &           &               &           &              & \\\hline
+   1.5  & -3.0  & 45.281492 & 3.845         & 13.426212 & 0.7825       & LHEweight\_wgt[462]\\
+   1.5  & -2.0  & 27.606715 & 2.371         & 7.809713  & 0.4574       & LHEweight\_wgt[463]\\
+   1.5  & -1.5  & 20.476088 & 1.784         & 5.594971  & 0.3290       & LHEweight\_wgt[464]\\
+   1.5  & -1.25 & 17.337465 & 1.518         & 4.635978  & 0.2749       & LHEweight\_wgt[465]\\
+   1.5  & -1.0  & 14.483302 & 1.287         & 3.775902  & 0.2244       & LHEweight\_wgt[466]\\
+   1.5  & -0.75 & 11.913599 & 1.067         & 3.014744  & 0.1799       & LHEweight\_wgt[467]\\
+   1.5  & -0.5  & 9.628357  & 0.874         & 2.352505  & 0.1410       & LHEweight\_wgt[468]\\
+   1.5  & -0.25 & 7.627574  & 0.702         & 1.789184  & 0.1081       & LHEweight\_wgt[469]\\
+   1.5  & 0.0   & 5.911882  & 0.5577        & 1.324946  & 0.08056      & LHEweight\_wgt[470]\\
+   1.5  & 0.25  & 4.479390  & 0.4365        & 0.959295  & 0.05893      & LHEweight\_wgt[471]\\
+   1.5  & 0.5   & 3.331988  & 0.3343        & 0.692727  & 0.04277      & LHEweight\_wgt[472]\\
+   1.5  & 0.75  & 2.469046  & 0.2558        & 0.525078  & 0.03263      & LHEweight\_wgt[473]\\
+   1.5  & 1.0   & 1.890565  & 0.2003        & 0.456347  & 0.02768      & LHEweight\_wgt[474]\\
+   1.5  & 1.25  & 1.596544  & 0.1689        & 0.486534  & 0.02864      & LHEweight\_wgt[475]\\
+   1.5  & 1.5   & 1.586983  & 0.1594        & 0.615638  & 0.03509      & LHEweight\_wgt[476]\\
+   1.5  & 2.0   & 2.421241  & 0.2105        & 1.170602  & 0.06515      & LHEweight\_wgt[477]\\
+   1.5  & 3.0   & 7.503280  & 0.5889        & 3.467546  & 0.1930       & LHEweight\_wgt[478]\\\hline
+        &       &           &               &           & \\ \hline
+   0.5  & -3.0  & 27.432685 & 2.260         & 8.929074  & 0.5136       & LHEweight\_wgt[479]\\
+   0.5  & -2.0  & 13.956013 & 1.160         & 4.419093  & 0.2547       & LHEweight\_wgt[480]\\
+   0.5  & -1.5  & 8.924438  & 0.7478        & 2.757611  & 0.1591       & LHEweight\_wgt[481]\\
+   0.5  & -1.25 & 6.835341  & 0.5726        & 2.075247  & 0.1204       & LHEweight\_wgt[482]\\
+   0.5  & -1.0  & 5.030704  & 0.4273        & 1.491801  & 0.08696      & LHEweight\_wgt[483]\\
+   0.5  & -0.75 & 3.510528  & 0.2999        & 1.007273  & 0.05885      & LHEweight\_wgt[484]\\
+   0.5  & -0.5  & 2.274811  & 0.1982        & 0.621663  & 0.03658      & LHEweight\_wgt[485]\\
+   0.5  & -0.25 & 1.323555  & 0.1189        & 0.334972  & 0.01996      & LHEweight\_wgt[486]\\
+   0.5  & 0.0   & 0.656969  & 0.06223       & 0.147253  & 0.008986     & LHEweight\_wgt[487]\\
+   0.5  & 0.25  & 0.274423  & 0.02830       & 0.058342  & 0.003608     & LHEweight\_wgt[488]\\
+   0.5  & 0.5   & 0.176548  & 0.01778       & 0.068404  & 0.003902     & LHEweight\_wgt[489]\\
+   0.5  & 0.75  & 0.363132  & 0.03008       & 0.177385  & 0.009854     & LHEweight\_wgt[490]\\
+   0.5  & 1.0   & 0.834177  & 0.06550       & 0.385283  & 0.02145      & LHEweight\_wgt[491]\\
+   0.5  & 1.25  & 1.589682  & 0.1241        & 0.692099  & 0.03848      & LHEweight\_wgt[492]\\
+   0.5  & 1.5   & 2.629647  & 0.2047        & 1.097834  & 0.06136      & LHEweight\_wgt[493]\\
+   0.5  & 2.0   & 5.562958  & 0.4358        & 2.206057  & 0.1246       & LHEweight\_wgt[494]\\
+   0.5  & 3.0   & 14.843102 & 1.177         & 5.609519  & 0.3172       & LHEweight\_wgt[495]\\ \hline
+    \end{tabular} 
+    \caption{\CV\ and \Ct\ combinations generated for the two signal samples and their NLO cross sections. The \tHq\ cross section is multiplied by the branching fraction of the enforced leptonic decay of the top quark (0.324). See also Ref.~\cite{THQProdTwiki}.}\label{tab:reweight}
+ \end{table}
+
+Different MC generators were used to generate the background processes.
+The dominant sources (\ttbar, \ttW, \ttZ, \ttH) were produced using \textsc{aMC@NLO} interfaced to \PYTHIA8, and are scaled to NLO cross sections.
+Other processes are simulated using \POWHEG\ interfaced to \PYTHIA, or bare \PYTHIA.
+See table~\ref{tab:bgsamples} for more details.
+See also AN-2016-211 (Ref.~\cite{CMS_AN_2016-211}) for more details.
+
+\begin{table}
+\footnotesize
+\centering
+\begin{tabular}{ll}
+	Sample & $\sigma$ [pb] \\
+	\hline
+	\verb|TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8|           & 0.2043 \\
+	\verb|TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                   & 0.2529 \\
+	\verb|ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix|         & 0.2151 \\
+	\verb|/store/cmst3/group/susy/gpetrucc/13TeV/u/TTLL_m1to10_LO_NoMS_for76X/|   & 0.0283 \\
+	\verb|WGToLNuG_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                        & 585.8 \\
+	\verb|ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|                        & 131.3 \\
+	\verb|TGJets_TuneCUETP8M1_13TeV_amcatnlo_madspin_pythia8|                     & 2.967 \\
+	\verb|TTGJets_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8|                & 3.697 \\
+	\verb|WpWpJJ_EWK-QCD_TuneCUETP8M1_13TeV-madgraph-pythia8|                     & 0.03711 \\
+	\verb|ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.01398 \\
+	\verb|WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.1651 \\
+	\verb|WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.05565 \\
+	\verb|WW_DoubleScattering_13TeV-pythia8|                                      & 1.64 \\
+	\verb|tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1|                          & 0.0758 \\
+	\verb|ST_tWll_5f_LO_13TeV-MadGraph-pythia8|                                   & 0.01123 \\
+	\verb|TTTT_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                               & 0.009103 \\
+	\verb|WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8|                             & 4.4296 \\
+	\verb|ZZTo4L_13TeV_powheg_pythia8|                                            & 1.256 \\
+	\hline
+	\verb|TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|       & 182.1754 \\
+	\verb|TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|          & 182.1754 \\
+	\verb|TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                   & 87.3 \\
+	\verb|DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|            & 18610 \\
+	\verb|DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                 & 6024 \\
+	\verb|WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|                     & 61526.7 \\
+	\verb|ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1|         & 35.6 \\
+	\verb|ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1|     & 35.6 \\
+	\verb|ST_t-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1|       & 70.3144\\
+	\verb|ST_t-channel_antitop_4f_leptonDecays_13TeV-powheg-pythia8_TuneCUETP8M1| & 26.2278\\
+	\verb|ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1|       & 3.68064 \\
+	\verb|WWTo2L2Nu_13TeV-powheg|                                                 & 10.481 \\
+	\hline
+\end{tabular}
+\caption{List of background samples used in this analysis (CMSSW
+  80X). In the first section of the table are listed the samples of
+  the processes for which we use the simulation to extract the final
+  yields and shapes, in the second section the samples of the
+  processes we will estimate from data. The MC simulation is used to
+  design the data driven methods and derive the associated systematics.} \label{tab:bgsamples}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{ll}
+	Sample & $\sigma$ [pb] \\
+	\hline
+	\verb|ttWJets_13TeV_madgraphMLM| & 0.6105 \\
+	\verb|ttZJets_13TeV_madgraphMLM| & 0.5297/0.692 \\
+	\hline
+\end{tabular}
+\caption{Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.} \label{tab:ttvlo_samples}
+\end{table}
+
+\subsection{Triggers}
+We consider online-reconstructed events triggered by one, two, or three leptons.
+Single-lepton triggers are included to boost the acceptance of events where the \pt\ of the sub-leading lepton falls below the threshold of the double-lepton triggers.
+Additionally, by including double-lepton triggers in the $\geq$ 3 lepton category, as well as single-lepton triggers in all categories, we increase the efficiency, considering the logical ``or'' of the trigger decisions of all the individual triggers in a given category.
+Tab.~\ref{tab:triggers} shows the lowest-threshold non-prescaled triggers present in the High-Level Trigger (HLT) menus for both Monte-Carlo and data in 2016.
+
+\begin{table}[h]
+\centering
+	\begin{tabular}{l}
+    \hline
+    Same-sign dilepton (==2 muons)\\
+    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*| \\
+    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
+    \verb|HLT_IsoMu24_v*| \\
+    \verb|HLT_IsoTkMu24_v*|\\\hline
+    Same-sign dilepton (==2 electrons)\\
+    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
+    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\\hline
+    Same-sign dilepton (==1 muon, ==1 electron)\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*| \\
+    \verb|HLT_IsoTkMu22_eta2p1_v*| \\
+    \verb|HLT_IsoMu24_v*| \\
+    \verb|HLT_IsoTkMu24_v*| \\
+    \verb|HLT_Ele27_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*| \\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\\hline
+    Three lepton and Four lepton\\
+    \verb|HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_TripleMu_12_10_5_v*|\\
+    \verb|HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*| \\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*|\\
+    \verb|HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v|* \\
+    \verb|HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*|\\
+    \verb|HLT_IsoMu22_v*|\\
+    \verb|HLT_IsoTkMu22_v*|\\
+    \verb|HLT_IsoMu22_eta2p1_v*|\\
+    \verb|HLT_IsoTkMu22_eta2p1_v*|\\
+    \verb|HLT_IsoMu24_v*|\\
+    \verb|HLT_IsoTkMu24_v*|\\
+    \verb|HLT_Ele27_WPTight_Gsf_v*|\\
+    \verb|HLT_Ele25_eta2p1_WPTight_Gsf_v*|\\
+    \verb|HLT_Ele27_eta2p1_WPLoose_Gsf_v*|\\
+	\hline
+    \end{tabular}
+    \caption{Table of high-level triggers that we consider in the analysis.} \label{tab:triggers}
+\end{table}
+
+\subsubsection{Trigger efficiency scale factors}
+The efficiency of events to pass the trigger is measured in simulation (trivially using generator information) and in the data (using event collected by an uncorrelated MET trigger).
+Small differences between the data and MC efficiencies are corrected by applying scale factors as shown in Tab.~\ref{tab:trigSFs}.
+The exact procedure and control plots are documented in Refs~\cite{CMS_AN_2016-211} (for the ICHEP dataset), and in~\cite{CMS_AN_2017-029} for the current analysis.
+
+\begin{table}
+\centering
+\begin{tabular}{ll}
+	Category & Scale Factor \\
+	\hline
+	ee       & $1.01 \pm 0.02$ \\
+	e$\mu$   & $1.01 \pm 0.01$ \\
+	$\mu\mu$ & $1.00 \pm 0.01$ \\
+	3l       & $1.00 \pm 0.03$ \\
+	\hline
+\end{tabular}
+\caption{Trigger efficiency scale factors and associated uncertainties, shown here rounded to the nearest percent.}
+\label{tab:trigSFs}
+\end{table}

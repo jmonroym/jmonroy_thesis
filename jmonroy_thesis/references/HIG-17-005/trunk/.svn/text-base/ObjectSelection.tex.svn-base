@@ -1,0 +1,34 @@
+\section{Object Selection}\label{sec:objects}
+The CMS particle-flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001} provides a global event description which optimally combines the information from all sub-detectors to reconstruct and identify all individual particles in the event.
+The particles are classified into mutually exclusive categories: neutral and charged hadrons, photons, muons, and electrons.
+
+Hadronic jets are reconstructed by clustering PF candidates with the anti-\kt\ algorithm using a distance parameter of $0.4$, as implemented in the \textsc{fastjet} package~\cite{Cacciari:fastjet1,Cacciari:fastjet2}.
+Charged hadrons that are not consistent with the selected primary interaction vertex are discarded from the clustering.
+The jet energy is then corrected for the varying response of the detector as a function of transverse momentum (\pt) and pseudorapidity ($\eta$)~\cite{cmsJEC}. %% FIXME: Check if reference is up to date
+Jets are selected for use in the analysis only if they have $\pt>25\GeV$ and are separated from any selected leptons by $\Delta\mathrm{R}>0.4$.
+
+Jets that are likely to have originated from the hadronization of a \cPqb\ quark, are selected through a multivariate likelihood discriminant that uses track-based lifetime information and reconstructed secondary vertices (``combined secondary vertex'' or CSV algorithm)~\cite{Chatrchyan:2012jua}.
+Only jets with $|\eta| < 2.4$ (within the CMS tracker acceptance) are identified with this technique.
+The efficiency to correctly tag \cPqb\ jets and the probability to misidentify jets from light quarks or gluons are measured in data as a function of the jet \pt\ and $\eta$, and are used to correct for differences in the performance of the algorithm in simulated events.
+Two working points based on the algorithm output are used: ``loose'', with a \cPqb\ signal tagging efficiency of about $83\%$ and a mistagging rate of about $8\%$; and ``medium'', with \cPqb\ efficiency of about $69\%$ and mistagging rate of order $1\%$~\cite{BTV-15-001}.
+Tagging efficiencies for jets from charm quarks are about $40\%$ ($18\%$) for the loose (medium) working point.  Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
+
+Muon candidates are reconstructed by combining information from the silicon tracker and the outer muon spectrometer of CMS in a global fit~\cite{Chatrchyan:2012xi}.
+The quality of the spatial matching between the individual measurements in the tracker and the muon system is used to discriminate genuine prompt muons from hadrons punching through the calorimeters and from muons produced by in-flight decays of kaons and pions.
+In the analysis, muon candidates are considered if they have $\pt>5\GeV$ and $|\eta|<2.4$.
+In the same-sign dilepton event categories, the relative uncertainty in the muon \pt\ from the fit is required to be better than 20\% to ensure a high-quality charge measurement.
+
+Electrons are reconstructed using information from the tracker and from the electromagnetic calorimeter~\cite{Khachatryan:2015hwa}.
+Genuine electrons are identified by a multivariate algorithm using the shape of the calorimetric shower and the quality of the reconstructed track.
+Furthermore, to reject electrons produced in photon conversions, candidates with missing hits in the innermost tracking layers or matched to a conversion secondary vertex are discarded.
+Electrons are selected for the analysis if they have $\pt>7\GeV$ and $|\eta|<2.5$.
+To suppress electrons with a misassigned electric charge in the same-sign dilepton categories, candidates are required to have consistent charge measurements from three independent observables based on the calorimeter energy deposits and the track curvature.
+
+Electrons and muons passing the criteria described above are referred to as ``loose leptons'' in the following.
+A further discrimination between prompt signal leptons (\ie\ from \PW\ and \Z\ boson decays and from leptonic \Pgt\ decays) and non-prompt and spurious leptons from \cPqb\ hadron decays, decays-in-flight, and photon conversions is crucial in light of the overwhelming background from \ttbar\ production.
+The small probabilities of having the second type of leptons results in a sizable number of background events since the rate of \ttbar\ production is much larger than the signal.
+To maximally exploit the available information in each event to that end, a multivariate discriminator based on a boosted decision tree (BDT) algorithm is built, taking as input not just observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction.
+The jet reconstruction and \cPqb-tagging algorithms are run on these, and their output is used to train the algorithm.
+In particular, the ratio between the lepton \pt\ and the reconstructed jet \pt, and the transverse momentum of the lepton with respect to the jet axis provide good separation power in addition to more traditional observables like the relative isolation of the lepton (calculated in a variable cone size depending on the lepton \pt~\cite{Rehermann:2010vq,SUS-15-008}), and the impact parameters of the lepton trajectory.
+The BDT algorithm is trained on prompt leptons in simulated \ttH\ signal and non-prompt leptons in \ttbar\ background events and validated using data in various control regions.
+Leptons are then selected for the final analysis if they pass a given threshold of the BDT output, and are referred to as ``tight leptons'' in the following.

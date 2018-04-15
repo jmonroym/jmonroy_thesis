@@ -1,0 +1,88 @@
+\section{Event Selection}\label{sec:eventselection}
+Events are selected at the trigger level to contain either one, two, or three leptons with minimal transverse momentum thresholds for the leading lepton.  The \pt\ thresholds are set at 24\GeV\ for muons and at 27\GeV\ for electrons for single-lepton triggers.
+For double-lepton triggers, the \pt\ thresholds on the leading and sub-leading legs are 17 and 8\GeV\ for muons and 23 and 12\GeV\ for electrons.
+Three-lepton triggers apply a threshold on the third hardest lepton in the event of 5 and 9\GeV\ for muons and electrons, respectively.
+% The expected trigger efficiency for events with two high \pt leptons is higher than 98\%, and almost 100\% for those with three leptons.
+
+At the offline event selection level, the analysis targets the unique topology of the \tHq\ signal with \HWW\ and $\cPqt\to\PW\cPqb\to\ell\nu\cPqb$, resulting in a state with three \PW\ bosons, one \cPqb\ quark, and a light spectator quark at high rapidity.
+Two channels are exploited, in which either all three \PW\ bosons decay leptonically, or the pair with equal electrical charge, resulting in a signature of either three charged leptons (muons or electrons), or two same-sign leptons with two light-quark jets.
+% A smaller contribution from leptonic \Pgt\ decays from the \HTT\ decay mode  is suppressed in the same-sign dilepton channels by a veto on the presence of hadronically decaying \Pgt~leptons.
+This selection naturally includes contributions from \HTT\ and \HZZ\ as well.
+% This is included to allow a direct combination with a dedicated analysis targeting the \HTT signature.
+Both the three- and two-lepton signatures are accompanied by a \cPqb\ quark and a light-flavor forward jet.
+
+The main analysis strategy is to obtain a selection of events compatible with certain signal characteristics at a pre-selection level and then extract the signal contribution in a second analysis step, using multivariate discriminators against the main backgrounds of \ttW/\ttZ\ and non-prompt leptons from \ttbar\ .
+The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
+
+In the leptonic channels investigated in this analysis, the main backgrounds are expected to arise from the production of top quarks, either in the dominant \ttbar\ mode, where multi-lepton and same-sign dilepton signatures can occur when a non-prompt lepton from heavy-flavor decay passes the signal selection, or in associated production with a \W/\Z or Higgs boson.
+Processes with single top quarks also contribute, mostly in the associated production with a \Z\ boson ($\mathrm{tZq}$) or when produced with both a \W\ and a \Z\ boson ($\mathrm{tZW}$).
+Contributions from diboson production, while having a comparatively large cross section, can be strongly suppressed by imposing a veto on lepton pairs compatible with a \Z-boson decay (``\Z-veto'') or by altogether vetoing additional leptons in the event.
+Diboson processes are further suppressed relative to processes involving top quarks when requiring \cPqb-tagged jets in the event.
+
+An additional background in the case of same-sign dileptons arises when the charge of a lepton in events with an originally opposite-sign pair is misidentified.
+Furthermore, the same-sign channel receives some contribution from the associated production of two \PW\ bosons of equal charge, and two light jets, \WWqq.
+Same-sign \PW\ boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions.
+
+A relatively loose selection is applied to maintain a large signal efficiency while suppressing the main backgrounds.
+It is summarized for both the three-lepton and same-sign dilepton channel in Tab.~\ref{tab:cuts}.
+The selections are based on the number of leptons, reconstructed invariant mass ($m_{\ell\ell}$), and \cPqb-tagged jet multiplicity, which are characteristic of the \tHq\ process.
+A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for \ttH\ in multilepton channels~\cite{PAS-HIG-17-004}.
+
+\begin{table}[!h]
+  \centering
+    \begin{tabular}{p{8cm}l} \hline
+      {\bf Same-sign $\ell\ell$ channel (\mumu/\emu)}  & {\bf $\ell\ell\ell$ channel}              \\
+	\hline \hline
+      %No loose leptons with $m_{\ell\ell} < 12\GeV$    & No loose leptons with $m_{\ell\ell} < 12\GeV$ \\
+	\multicolumn{2}{c}{No loose leptons with $m_{\ell\ell} < 12\GeV$} \\
+      % Two or more jets with $\pt>25\GeV$               & Two or more jets with $\pt>25\GeV$        \\
+      %One or more \cPqb\ tagged jets                   & One or more \cPqb\ tagged jets       \\
+	\multicolumn{2}{c}{One or more \cPqb\ tagged jets} \\
+      %One or more non-tagged jets                      & One or more non-tagged jets        \\
+	\multicolumn{2}{c}{One or more non-tagged jets} \\
+	\hline
+      Exactly two tight same-sign leptons              & Exactly three tight leptons               \\
+      $\pt>25/15\GeV$                                  & $\pt>25/15/15\GeV$               \\
+                                                       & No lepton pair with $|m_{\ell\ell}-m_\Z|<15\GeV$ \\
+      \hline
+    \end{tabular}
+    \caption{Summary of event selection.\label{tab:cuts}}
+\end{table}
+
+The expected and observed event yields of this selection are shown in Tab.~\ref{tab:yields}.
+For the \tH\ and \ttH\ processes, the largest contribution comes from Higgs decays to $\PW\PW$ (about $75\%$), followed by $\tau\tau$ (about $20\%$) and $\Z\Z$ (about $5\%$).
+Other Higgs production modes contribute negligible event yields ($<5\%$ of the \tH+\ttH\ yield).
+
+\begin{table}[!h]
+  \centering
+      \begin{tabular}{lrrr}
+  \hline
+  Process                       & $\ell\ell\ell$              & \mumu\                       & \emu\           \\
+  \hline
+  $\ttW$                        & $ 22.50 \pm 0.35$   & $ 68.03 \pm 0.61 $  & $ 97.00 \pm 0.71 $ \\
+  $\ttZ/\ttG$                   & $ 32.80 \pm 1.79$   & $ 25.89 \pm 1.12 $  & $ 64.82 \pm 2.42 $ \\
+  $\WZ$                         & $  8.22 \pm 0.86$   & $ 15.07 \pm 1.19 $  & $ 26.25 \pm 1.57 $ \\
+  $\ZZ$                         & $  1.62 \pm 0.33$   & $  1.16 \pm 0.29 $  & $  2.86 \pm 0.45 $ \\
+  $\WWqq$                       & --                  & $  3.96 \pm 0.52 $  & $  6.99 \pm 0.69 $ \\
+  $\PW^\pm\PW^\pm \text{(DPS)}$ & --                  & $  2.48 \pm 0.42 $  & $  4.17 \pm 0.54 $ \\
+  VVV                           & $  0.42 \pm 0.16$   & $  2.99 \pm 0.34 $  & $  4.85 \pm 0.43 $ \\ 
+  $\mathrm{tttt}$               & $  1.84 \pm 0.44$   & $  2.32 \pm 0.45 $  & $  4.06 \pm 0.57 $ \\
+  $\mathrm{tZq}$                & $  3.92 \pm 1.48$   & $  5.77 \pm 2.24 $  & $ 10.73 \pm 3.03 $ \\
+  $\mathrm{tZW}$                & $  1.70 \pm 0.12$   & $  2.13 \pm 0.13 $  & $  3.91 \pm 0.18 $ \\
+  $\gamma$ conversions          & $  7.43 \pm 1.94$   & --                  & $ 23.81 \pm 6.04 $ \\ \hline
+  Non-prompt                    & $ 25.61 \pm 1.26$   & $ 80.94 \pm 2.02 $  & $135.34 \pm 2.83 $ \\
+  Charge flips                  & --                  & --                  & $ 58.20 \pm 0.30 $ \\ \hline
+  Total Background              & $106.05 \pm 3.45$   & $210.74 \pm 3.61 $  & $443.30 \pm 8.01 $ \\ \hline
+  $\ttH$                        & $ 18.29 \pm 0.41$   & $ 24.18 \pm 0.48 $  & $ 35.21 \pm 0.58 $ \\
+  $\tHq$ (SM)                   & $  0.52 \pm 0.02$   & $  1.43 \pm 0.04 $  & $  1.92 \pm 0.04 $ \\
+  $\tHW$ (SM)                   & $  0.62 \pm 0.03$   & $  0.71 \pm 0.03 $  & $  1.11 \pm 0.04 $ \\ \hline
+  Total SM                      & $125.48 \pm 3.47$   & $237.06 \pm 3.64 $  & $481.54 \pm 8.03 $ \\ \hline % Added by hand
+
+  $\tHq$ ($\CV=1=-\Ct$)         & $  7.48 \pm 0.14$   & $ 18.48 \pm 0.22 $  & $ 27.41 \pm 0.27 $ \\
+  $\tHW$ ($\CV=1=-\Ct$)         & $  7.38 \pm 0.16$   & $  7.72 \pm 0.17 $  & $ 11.23 \pm 0.20 $ \\ \hline
+  {\bf Data}                    &\multicolumn{1}{l}{{\bf 149}}&\multicolumn{1}{l}{{\bf 280}} & \multicolumn{1}{l}{{\bf 525}} \\
+        \hline
+      \end{tabular}
+      \caption{Data yields and expected backgrounds after the event pre-selection for the three channels in 35.9~\fbinv\ of integrated luminosity. Uncertainties are statistical only.\label{tab:yields}}
+\end{table}
+

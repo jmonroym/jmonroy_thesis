@@ -1,0 +1,21 @@
+Since electrons are more easily feakables than muons, it suggest that the contribution from fakes is bigger for the events where the electron is the softer; that motivates the splitting of the channels which could give rise to an improvement in the limit; in the case of the same-sign dilepton channel, it was splitted into  $\emu \to  \emu + \mu^\pm e^\pm $ channels, while for the three lepton channel the splitting was done considering events where a pair of same-flavor leptons have the same sign(3lsfss) or opposite sign (3lsfos), thus $3l \to 3lsfss + 3lsfos$. Limits were calculated for each channel and then compared to the ones before the splitting as show in the Tab. ~\ref(tab:split_channel_limit).
+
+In the case of same-sign dileptons channels, the limit improves from 2.18 (inclusive \emu channel) to 2.12 after combining the exclusive channels. The three lepton channel improves from 1.96 (inclusive channel) to 1.90 when running 3lsfss and 3lsfos separately.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+Scenario   & Channel                            & Exp. Limit (median) \\
+$\CV=1.0$  & \emu\ (inclusive)                  & \textbf{2.18}       \\
+$\Ct=-1.0$ & \emu\ (exclusive)                  & 2.59                \\
+           & $\mu^\pm e^\pm$ (exclusive)        & 2.93                \\
+           & Combined ($\emu\,\mu^\pm e^\pm$)   & \textbf{1.12}       \\
+           & \threel\ (inclusive)               & \textbf{1.96}       \\
+           & \threel\ (3lsfss)                  &                     \\
+           & \threel\ (3lsfss)                  &                     \\
+           & Combined (3lsfss, 3lsfos)          & \textbf{1.90}       \\
+\end{tabular}
+\caption{Expected limits (at 95\% C.L.) on the combined $\cPqt\PH$ production in the same-sign dilepton and three lepton channels, and for their combination, for a scenario with inverted couplings ($\CV=1.0$,$\Ct=-1.0$). Numbers are for 36.5\fbinv.}
+\label{tab:limits}
+\end{table}
+

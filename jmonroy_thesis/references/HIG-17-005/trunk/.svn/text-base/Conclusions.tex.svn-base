@@ -1,0 +1,9 @@
+\section{Conclusions}\label{sec:conclusions}
+A search for the production of a Higgs boson in association with a single top quark has been presented, using the CMS detector and the full 2016 data sample of pp collisions at 13\TeV, corresponding to an integrated luminosity of 35.9\fbinv.
+Three channels have been analyzed, targeting the Higgs boson decaying to a pair of \PW\ or \Z\ bosons, or two \Pgt~leptons and the leptonic decay of the top: two same-sign leptons (\mumu, \emu) and three leptons.
+This process can benefit from a greatly enhanced production cross section in the case of anomalous top-Higgs couplings, and the results are used to constrain these couplings.
+
+Combining the results from all three channels yields a 95\% confidence level (C.L.) upper limit on the production cross section times branching ratio of events containing a SM Higgs boson of $0.56\,\mathrm{pb}$, with an expected limit of $0.24\,\mathrm{pb}$.% with inverted top quark coupling ($\Ct=-1.0$, $\CV=1.0$) of \textcolor{red}{XX} times the predicted value, where the expected limit was $0.7$.
+%% FIXME: Need to write something about the excess
+
+Values of the ratio of Higgs-top coupling modifier \Ct\ and Higgs-vector boson coupling modifier \CV\ are outside the range $-1.25$ to $+1.60$ are excluded at 95\% C.L.

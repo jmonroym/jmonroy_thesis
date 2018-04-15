@@ -1,0 +1,135 @@
+% Customizable fields and text areas start with % >> below.
+% Lines starting with the comment character (%) are normally removed before release outside the collaboration, but not those comments ending lines
+
+% svn info. These are modified by svn at checkout time.
+% The last version of these macros found before the maketitle will be the one on the front page,
+% so only the main file is tracked.
+% Do not edit by hand!
+\RCS$Revision$
+\RCS$HeadURL$
+\RCS$Id$
+%%%%%%%%%%%%% local definitions %%%%%%%%%%%%%%%%%%%%%
+% This allows for switching between one column and two column (cms@external) layouts
+% The widths should  be modified for your particular figures. You'll need additional copies if you have more than one standard figure size.
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+\newcommand{\W}{\ensuremath{\cmsSymbolFace{W}}\xspace}
+\newcommand{\ZZ}{\ensuremath{\cmsSymbolFace{ZZ}}\xspace}
+\newcommand{\WW}{\ensuremath{\cmsSymbolFace{WW}}\xspace}
+\newcommand{\WZ}{\ensuremath{\cmsSymbolFace{WZ}}\xspace}
+\newcommand{\VVV}{\ensuremath{\cmsSymbolFace{VVV}}\xspace}
+\newcommand{\WVV}{\ensuremath{\cmsSymbolFace{WVV}}\xspace}
+\newcommand{\tautau}{\ensuremath{\Pgt\Pgt}\xspace}
+\newcommand{\gaga}{\ensuremath{\Pgg\Pgg}\xspace}
+\newcommand{\ttW}{\ensuremath{\ttbar\cmsSymbolFace{W}^{\pm}}\xspace}
+\newcommand{\ttWW}{\ensuremath{\ttbar\WW}\xspace}
+\newcommand{\ttZ}{\ensuremath{\ttbar\cmsSymbolFace{Z}}\xspace}
+\newcommand{\ttH}{\ensuremath{\ttbar\cmsSymbolFace{H}}\xspace}
+\newcommand{\ttG}{\ensuremath{\ttbar\gamma}\xspace}
+\newcommand{\ttV}{\ensuremath{\ttbar\cmsSymbolFace{V}}\xspace}
+\newcommand{\ttGStar}{\ensuremath{\ttbar\gamma^*}\xspace}
+\newcommand{\tZq}{\ensuremath{\cPqt\Z\Pq}\xspace}
+\newcommand{\WWqq}{\ensuremath{\W^{\pm}\W^{\pm}{\rm qq}}\xspace}
+\newcommand{\WWDPI}{\ensuremath{\W^{\pm}\W^{\pm}(\mathrm{DPI})}\xspace}
+\newcommand{\CV}{\ensuremath{\kappa_\text{V}}\xspace}
+\newcommand{\Ct}{\ensuremath{\kappa_\cPqt}\xspace}
+
+% Macros for THq:
+\newcommand{\Hbb}{\ensuremath{\PH\rightarrow\rm{b\overline{b}}}\xspace}
+%\newcommand{\HWW}{\ensuremath{\PH\rightarrow\PWp\PWm}\xspace}
+\newcommand{\HWW}{\ensuremath{\PH\rightarrow\W\W}\xspace}
+\newcommand{\HZZ}{\ensuremath{\PH\rightarrow\Z\Z}\xspace}
+\newcommand{\HTT}{\ensuremath{\PH\rightarrow\tautau}\xspace}
+\newcommand{\Htautau}{\ensuremath{\PH\rightarrow\tautau}\xspace}
+\newcommand{\Hgg}{\ensuremath{\PH\rightarrow\gaga}\xspace}
+\newcommand{\tHqWW}{\ensuremath{\cPqt\PH(\W\W)\mathrm{q}}\xspace}
+\newcommand{\tHqtt}{\ensuremath{\cPqt\PH(\tautau)\mathrm{q}}\xspace}
+\newcommand{\tHWWW}{\ensuremath{\cPqt\PH(\W\W)\W}\xspace}
+\newcommand{\tHWtt}{\ensuremath{\cPqt\PH(\tautau)\W}\xspace}
+\newcommand{\tHq}{\ensuremath{\cPqt\PH\mathrm{q}}\xspace}
+\newcommand{\tHW}{\ensuremath{\cPqt\PH\W}\xspace}
+\newcommand{\tH}{\ensuremath{\cPqt\PH}\xspace}
+
+% Channels
+\newcommand{\ee}{\ensuremath{\Pe\Pe}\xspace}
+\newcommand{\emu}{\ensuremath{\Pe\Pgm}\xspace}
+\newcommand{\mumu}{\ensuremath{\Pgm\Pgm}\xspace}
+\newcommand{\threel}{\ensuremath{\ell\ell\ell}\xspace}
+
+%%%%%%%%%%%%%%%  Title page %%%%%%%%%%%%%%%%%%%%%%%%
+\cmsNoteHeader{HIG-17-005} % This is over-written in the CMS environment: useful as preprint no. for export versions
+% >> Title: please make sure that the non-TeX equivalent is in PDFTitle below
+\title{Search for production of a Higgs boson and a single top quark in multilepton final states in proton collisions at $\sqrt{s}=13~\mathrm{TeV}$}
+
+% >> Authors
+%Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
+%For multiple affiliations, create an address entry for the combination
+%To mark authors as primary, use the \author* form
+\author[cern]{The CMS Collaboration}
+
+% >> Date
+% The date is in yyyy/mm/dd format. Today has been
+% redefined to match, but if the date needs to be fixed, please write it in this fashion.
+% For papers and PAS, \today is taken as the date the head file (this one) was last modified according to svn: see the RCS Id string above.
+% For the final version it is best to "touch" the head file to make sure it has the latest date.
+\date{\today}
+
+% >> Abstract
+% Abstract processing:
+% 1. **DO NOT use \include or \input** to include the abstract: our abstract extractor will not search through other files than this one.
+% 2. **DO NOT use %**                  to comment out sections of the abstract: the extractor will still grab those lines (and they won't be comments any longer!).
+% 3. For PASs: **DO NOT use tex macros**         in the abstract: CDS MathJax processor used on the abstract doesn't understand them _and_ will only look within $$. The abstracts for papers are hand formatted so macros are okay.
+\abstract{A search for the production of a Higgs boson in association with a single top quark is presented, focusing on leptonic signatures provided by the $\mathrm{H}\rightarrow\mathrm{W}\mathrm{W}$, $\mathrm{H}\rightarrow\tau\tau$, and $\mathrm{H}\rightarrow\mathrm{Z}\mathrm{Z}$ decay modes. Due to strong interference of the two main leading-order diagrams, the production cross section of this process is highly sensitive to the relative sign of the top-Higgs coupling modifier, $\kappa_{\mathrm{t}}$, and the coupling modifier of vector bosons to the Higgs, $\kappa_{\mathrm{V}}$. The analysis exploits signatures with two same-sign leptons or three leptons in the final state, and uses the 2016 data sample collected with the CMS detector at the LHC at a center of mass energy of $13~\mathrm{TeV}$, which corresponds to an integrated luminosity of $35.9~\mathrm{fb}^{-1}$. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a $95\%$ confidence level (C.L.) upper limit on the combined $\mathrm{tH}+\mathrm{t\overline{t}H}$ production cross section times branching ratio of $0.64\,\mathrm{pb}$, with an expected limit of $0.32\,\mathrm{pb}$, for a scenario with $\kappa_\mathrm{t}=-1.0$ and $\kappa_\mathrm{V}=1.0$. Values of $\kappa_\mathrm{t}$ outside the range of $-1.25$ to $+1.60$ are excluded at $95\%$ C.L., assuming $\kappa_\mathrm{V}=1.0$.
+}
+
+% >> PDF Metadata
+% Do not comment out the following hypersetup lines (metadata). They will disappear in NODRAFT mode and are needed by CDS.
+% Also: make sure that the values of the metadata items are sensible and are in plain text:
+% (1) no TeX! -- for \sqrt{s} use sqrt(s) -- this will show with extra quote marks in the draft version but is okay).
+% (2) no %.
+% (3) No curly braces {}.
+\hypersetup{%
+pdfauthor={The CMS Collaboration},%
+pdftitle={Search for production of a Higgs boson and a single top quark in multilepton final states in proton collisions at $\sqrt{s}=13~\mathrm{TeV}$},%
+pdfsubject={CMS},%
+pdfkeywords={CMS, physics, higgs, top, tHq, multilepton}}
+
+\maketitle
+
+%% Layout:
+% tHq, previous analyses, signal signature, analysis strategy
+\input{Introduction}
+
+% PF algorithm, object selection, lepton mva
+\input{ObjectSelection}
+
+% Triggers, event selection, yield table
+\input{EventSelection}
+
+% BDT, input variables
+\input{SignalDiscrimination}
+
+% MC generators, theory systematics, irreducible backgrounds
+%% These input names don't make much sense...
+\input{Modeling}
+\input{Systematics}
+\input{Backgrounds} % Fake rate and charge flip backgrounds
+
+% Limits and signal strengths
+\input{Results}
+
+% Conclusions
+\input{Conclusions}
+
+
+%% **DO NOT REMOVE BIBLIOGRAPHY**
+\clearpage\newpage
+\bibliography{auto_generated}   % will be created by the tdr script.
+
+%%%%%%%%%%%%%%%
+\end{document}
+
+

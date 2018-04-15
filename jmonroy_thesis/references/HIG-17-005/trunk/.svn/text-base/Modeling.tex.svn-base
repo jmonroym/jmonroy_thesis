@@ -1,0 +1,14 @@
+\section{Modeling of signal and background processes}\label{sec:experiment}
+The \tHq\ and \tHW\ signal events are generated using \textsc{MG5\_}a\textsc{MC@NLO} (version 5.222)~\cite{amcatnlo} at leading-order precision, using the \textsc{MLM} merging scheme~\cite{Alwall:2007fs} and the \textsc{NNPDF3.0} PDF set~\cite{Ball:2014uwa}, and are normalized to next-to-leading order cross sections.
+The \tHq\ events are generated with the four-flavor scheme while the \tHW\ process uses the five-flavor scheme to eliminate leading-order interference with the \ttH\ process~\cite{Demartin:2016axk}.
+Event weights are produced in the generation of both samples to allow a reshaping of observables for 51 different coupling configurations: $17$ values of \Ct\ between $-3.0$ and $+3.0$ for three values of \CV: $+0.5$, $+1.0$, and $+1.5$, corresponding to 33 unique values of $\Ct/\CV$, ranging from $-6.0$ to $6.0$, and therefore 33 distinct kinematic configurations.
+
+\textsc{MG5\_}a\textsc{MC@NLO} in NLO mode is used for the \ttH\ process and the main backgrounds: \ttW, \ttZ, \ttbar+jets, and $\ttbar\gamma$+jets, using parton-shower merging at NLO~\cite{Frederix:2012ps}.
+Other minor backgrounds are simulated with different generators, such as \textsc{POWHEG}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Re:2010bp,Alioli:2009je,Melia:2011tj} and \MADGRAPH\ at leading order (LO) QCD accuracy.
+All generated events are interfaced to \textsc{Pythia8} (v8.205)~\cite{PYTHIA8} for the parton shower and hadronization steps.
+Pileup interactions are simulated to reflect the observed multiplicity in data.
+The simulated events are weighted according to the actual pileup in data, estimated from the measured bunch-to-bunch instantaneous luminosity and the total inelastic cross section, 69.2 mb.
+All events are finally passed through a full simulation of the CMS detector based on \GEANTfour~\cite{GEANT}, and reconstructed using the same algorithms as used for the data.
+
+Furthermore, the trigger selection is simulated and applied for generated signal events.
+Residual differences in the trigger efficiency between data and MC are studied and corrected for, using the measured trigger efficiencies of the data.

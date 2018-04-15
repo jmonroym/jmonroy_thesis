@@ -33,7 +33,7 @@ With respect to the 8 TeV analysis, the object selections have been adjusted for
 %% dont forget to describe explicitely the analysis strategy here or later but do it
 
 %---------------------------------tHq signature
-\section{\tHq signature}\label{sec:thw_sign}
+\section{\tHq signature}\label{sec:thq_sign}
 
 \begin{figure}[!h]
 \begin{center}
@@ -45,7 +45,7 @@ With respect to the 8 TeV analysis, the object selections have been adjusted for
 
 In order to select events of \tHq process, its features are translated into a set of selection rules; Figure \ref{fig:thq_sign} shows the Feynman diagram and an schematic view of the \tHq process from the \pp collision to the final state configuration. A single top quark is produced accompanied by a light quark, denoted as q; this light quark is produced predominantly in the forward region of the detector. The Higgs boson can be either emitted by the exchanged W boson or directly by the singly produced top quark.
 
-Due to their high masses/short lifetimes, top quark and Higgs boson decay after their production within the detector. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay hadronically in the $2lss$ channel case and leptonically in the $3l$ channel case, while $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
+Due to their high masses/short lifetimes, top quark and Higgs boson decay after their production within the detector. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay leptonically either all the three in the $3l$ channel or the pair with equal electrical charge in the $2lss$ channel case; $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
 
 In summary, the signal process is characterized by a the final state with
 
@@ -184,169 +184,19 @@ The two signal samples, \tHq\ and \tHW, correspond to the \verb|RunIISummer16Min
 Sample & $\sigma$ [pb] & BF \\ \hline
 \verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.7927 & 0.324 \\
 \verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.1472 & 1.0   \\\hline
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\verb|ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix|   & 0.5071 & 0.418 \\\hline
+\verb|/ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix/|   & 0.2151 & 1.0 \\\hline
                                                                         
 \end{tabular}
 \caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed ~\cite{THQProdTwiki}.}\label{tab:sigsamples}
 \end{table}
 
+The \ttH sample was produced using \textsc{AMC@NLO} interfaced to \textsc{PYTHIA} 8 for the parton shower, and is scaled to NLO cross sections. The \ttH cross section depends quadratically on \Ct; however, in contrast to the \tHq and tHW samples, the scaling is not performed during the sample generation process but in the analysis code since it was decided to include the \ttH process as part of the signal in the course of the analysis.     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+% add something about why tth is included as signal and why? if it is not sensitive to kt sign , 
 
 \subsubsection*{MC background samples}
 
-Different MC generators were used to generate the background processes. The dominant sources (\ttbar, \ttW, \ttZ, \ttH) were produced using \textsc{aMC@NLO} interfaced to PYTHIA8, and are scaled to NLO cross sections. Other processes are simulated using POWHEG interfaced to PYTHIA, or bare PYTHIA (see table ~\ref{tab:bgsamples} and ~\cite{CMS_AN_2016-211} for more details).
-
-\begin{table}
-\footnotesize
-\centering \scriptsize
-\begin{tabular}{ll}
-Sample                                                                        & $\sigma$ [pb] \\\hline
-\verb|TTWJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8|           & 0.2043 \\
-\verb|TTZToLLNuNu_M-10_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                   & 0.2529 \\
-
-\verb|/store/cmst3/group/susy/gpetrucc/13TeV/u/TTLL_m1to10_LO_NoMS_for76X/|   & 0.0283 \\
-\verb|WGToLNuG_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                        & 585.8 \\
-\verb|ZGTo2LG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|                        & 131.3 \\
-\verb|TGJets_TuneCUETP8M1_13TeV_amcatnlo_madspin_pythia8|                     & 2.967 \\
-\verb|TGJets_TuneCUETP8M1_13TeV_amcatnlo_madspin_pythia8|                     & 2.967 \\
-\verb|TTGJets_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8|                & 3.697 \\
-\verb|WpWpJJ_EWK-QCD_TuneCUETP8M1_13TeV-madgraph-pythia8|                     & 0.03711 \\
-\verb|ZZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.01398 \\
-\verb|WWZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.1651 \\
-\verb|WZZ_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                                & 0.05565 \\
-\verb|WW_DoubleScattering_13TeV-pythia8|                                      & 1.64 \\
-\verb|tZq_ll_4f_13TeV-amcatnlo-pythia8_TuneCUETP8M1|                          & 0.0758 \\
-\verb|ST_tWll_5f_LO_13TeV-MadGraph-pythia8|                                   & 0.01123 \\
-\verb|TTTT_TuneCUETP8M1_13TeV-amcatnlo-pythia8|                               & 0.009103 \\
-\verb|WZTo3LNu_TuneCUETP8M1_13TeV-powheg-pythia8|                             & 4.4296 \\
-\verb|ZZTo4L_13TeV_powheg_pythia8|                                            & 1.256 \\ \hline
-\verb|TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|       & 182.1754 \\
-\verb|TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|          & 182.1754 \\
-\verb|TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                   & 87.3 \\
-\verb|DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|            & 18610 \\
-\verb|DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8|                 & 6024 \\
-\verb|WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8|                     & 61526.7 \\
-\verb|ST_tW_top_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1|         & 35.6 \\
-\verb|ST_tW_antitop_5f_inclusiveDecays_13TeV-powheg-pythia8_TuneCUETP8M1|     & 35.6 \\
-\verb|ST_t-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1|       & 70.3144\\
-\verb|ST_t-channel_antitop_4f_leptonDecays_13TeV-powheg-pythia8_TuneCUETP8M1| & 26.2278\\
-\verb|ST_s-channel_4f_leptonDecays_13TeV-amcatnlo-pythia8_TuneCUETP8M1|       & 3.68064 \\
-\verb|WWTo2L2Nu_13TeV-powheg|                                                 & 10.481 \\\hline
-\end{tabular}
-\caption[List of background samples used in this analysis (CMSSW 80X).]{List of background samples used in this analysis (CMSSW 80X). In the first section of the table are listed the samples of the processes for which we use the simulation to extract the final yields and shapes, in the second section the samples of the processes we will estimate from data. The MC simulation is used to design the data driven methods and derive the associated systematics.} \label{tab:bgsamples}
-\end{table}
-
-\begin{table}
-\centering
-\begin{tabular}{ll}
-                          Sample & $\sigma$ [pb] \\\hline
-\verb|ttWJets_13TeV_madgraphMLM| & 0.6105 \\
-\verb|ttZJets_13TeV_madgraphMLM| & 0.5297/0.692 \\\hline
-\end{tabular}
-\caption[Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.]{Leading-order \ttW\ and \ttZ\ samples used in the signal BDT training.} \label{tab:ttvlo_samples}
-\end{table}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Several MC generators were used to generate the samples of the background processes. The dominant background sources (\ttbar, \ttW, \ttZ) were produced using \textsc{aMC@NLO} interfaced to PYTHIA8, and are scaled to NLO cross sections. Other minor background processes are simulated using POWHEG interfaced to PYTHIA, or bare PYTHIA as stated in the sample names in Table ~\ref{tab:bgsamples}. Pileup interactions are included in the simulation in order to reflect the observed multiplicity in data; the simulated events are weighted according to the actual pileup in data, estimated from the measured bunch-to-bunch instantaneous luminosity and the total inelastic cross section, 69.2 mb. All events are finally passed through a full simulation of the CMS detector based on GEANT4, and reconstructed using the same algorithms as used for the data.
 %______________________ object id ______________________
 \section{Object Identification}\label{sec:ob_id}
 
@@ -507,12 +357,8 @@ In addition to the previously defined requirements for jets, they are required t
 
 \subsection{Lepton selection efficiency}
 
-Efficiencies of reconstruction and selecting loose leptons are measured both for muons and electrons using a tag and probe method on both data and MC, using $Z\rightarrow\ell^{+}\ell^{-}$ \cite{tnp}. The scale factors are derived from the ratio of efficiencies $\varepsilon_{i}(p_T, \eta)$ measured for a given lepton in data/MC, according to 
-\beqn
-\rho(p_T, \eta)= \frac{\varepsilon_{data}(p_T, \eta)}{\varepsilon_{MC}(p_T, \eta)}.
-\eeqn
 
-\begin{figure}[!hb]
+\begin{figure}[!ht]
 \centering
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_2lss_pt.pdf}
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_2lss_pt.pdf}\\
@@ -522,7 +368,7 @@ Efficiencies of reconstruction and selecting loose leptons are measured both for
 \label{fig:2lss_eff}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 \centering
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_3l_pt.pdf}
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_3l_pt.pdf}\\
@@ -531,6 +377,11 @@ Efficiencies of reconstruction and selecting loose leptons are measured both for
 \caption[Tight vs loose lepton selection efficiencies in the $3l$ channel.]{Tight vs loose selection efficiencies for electrons (top), and muons (bottom), for the $3l$ channel not including the tight-charge requirement.}
 \label{fig:3l_eff}
 \end{figure}
+
+Efficiencies of reconstruction and selecting loose leptons are measured both for muons and electrons using a tag and probe method on both data and MC, using $Z\rightarrow\ell^{+}\ell^{-}$ \cite{tnp}. The scale factors are derived from the ratio of efficiencies $\varepsilon_{i}(p_T, \eta)$ measured for a given lepton in data/MC, according to 
+\beqn
+\rho(p_T, \eta)= \frac{\varepsilon_{data}(p_T, \eta)}{\varepsilon_{MC}(p_T, \eta)}.
+\eeqn
 
 The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from Reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
 
@@ -560,65 +411,113 @@ E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
 
 \noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Event selection}
+
+Events are selected considering the features of the signal process and the decay signature as described in Section \ref{sec:thq_sign}. At the trigger level, events are selected to contain either one, two, or three leptons with minimal \pt thresholds:
+\begin{itemize}
+\item single-lepton trigger $\to$ 24 GeV for muons and at 27 GeV for electrons
+\item double-lepton triggers $\to$ leading and sub-leading leptons: 17 and 8 GeV for muons and 23 and 12 GeV for electrons.
+\item three-lepton triggers $\to$ threshold on the third hardest lepton in the event: 5 and 9 GeV for muons and electrons, respectively.
+\end{itemize}
+
+The offline event selection level targets the specific topology of the \tHq signal with $H\to WW$ and $t \to Wb \to l\nu b$; therefore, the resulting state is composed of three W bosons, one $b$ quark, and a light spectator quark at high rapidity. The selection criteria for the two channels exploited in this analysis are summarized in Table \ref{tab:cuts}.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{p{8cm}l} \hline
+\textbf{Same-sign $\ell\ell$ channel }           & \textbf{$\ell\ell\ell$ channel}              \\\hline
+\multicolumn{2}{c}{have fired one of the corresponding trigger paths}\\
+\multicolumn{2}{c}{No loose leptons with $m_{\ell\ell} < 12$GeV} \\
+\multicolumn{2}{c}{One or more $b$ tagged jets} \\
+\multicolumn{2}{c}{One or more non-tagged jets} \\\hline
+Exactly two tight same-sign leptons              & Exactly three tight leptons \\
+$\pt>25/15$GeV                                   & $\pt>25/15/15$GeV               \\
+                                                 & No lepton pair with $|m_{\ell\ell}-m_Z|<15$GeV \\\hline
+\end{tabular}
+\caption{Summary of event selection.\label{tab:cuts}}
+\end{table}
+
+In the $2lss$ channel, events with additional tight leptons are vetoed as well as those for which a loose lepton pair has an invariant mass below 12 GeV. A threshold in \pt of the leading and sub-leading leptons is also required. events where the two electrons have invariant mass within 10 GeV of the Z boson mass are discarded in order to reject events from DY+jets production with charge misidentified electrons.
+
+In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25 \textrm{GeV, }> 15\textrm{ GeV, and }> 15\textrm{ GeV}$. Events with an opposite-sign, same-flavor (OSSF) lepton combination with invariant mass within 15 GeV of the Z boson mass are discarded in order to reject events from \WZ +jets production.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This selection includes contributions from $H \to \tau\tau$ and $H\to ZZ$ as well. In both channels, the lepton signatures are accompanied by a $b$ quark and a light-flavor forward jet.
+
+
+Once the events are selected in agreement with the signal characteristics, the extraction of the signal contribution is performed using multivariate discriminators against the main backgrounds of \ttW/\ttZ and non-prompt leptons from \ttbar. The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
+
+
+
+
+
+
+
+
+
+
+
+In the leptonic channels investigated in this analysis, the main backgrounds are expected to arise from the production of top quarks, either in the dominant tt mode, where multi-lepton and same-sign dilepton signatures can occur when a non-prompt lepton from heavy-flavor decay passes the signal selection, or in associated production with a W/Z or Higgs boson. Processes with single top quarks also contribute, mostly in the associated production with a Z boson (tZq) or when produced with both a W and a Z boson (tZW). Contributions from diboson production, while having a comparatively large cross section, can be strongly suppressed by imposing a veto on lepton pairs compatible with a Z-boson decay (“Z-veto”) or by altogether vetoing additional leptons in the event. Diboson processes are further suppressed relative to processes involving top quarks when requiring b-tagged jets in the event. An additional background in the case of same-sign dileptons arises when the charge of a lepton in events with an originally opposite-sign pair is misidentified. Furthermore, the same-sign channel receives some contribution from the associated production of two W bosons of equal charge, and two light jets, W±W±qq. Same-sign W boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions. A relatively loose selection is applied to maintain a large signal efficiency while suppressing the main backgrounds. It is summarized for both the three-lepton and same-sign dilepton channel in Tab. 1. The selections are based on the number of leptons, reconstructed invariant mass (m``), and b-tagged jet multiplicity, which are characteristic of the tHq process. A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels [17]. The expected and observed event yields of this selection are shown in Tab. 2. For the tH and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed  by ττ (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the tH +ttH yield).
+
+
+
+
+
+
 
 
 
@@ -635,6 +534,27 @@ E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
 .
 .
 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

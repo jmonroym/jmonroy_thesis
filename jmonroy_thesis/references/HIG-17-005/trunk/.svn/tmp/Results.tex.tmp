@@ -1,0 +1,119 @@
+\section{Results}\label{sec:results}
+After applying the event pre-selection on the dataset, X events are observed in the same-sign \mumu\ channel, X in the same-sign \emu\ channel, and X events in the trilepton channel (\threel).
+A simultaneous fit is performed on the BDT classifier outputs for each channel, separately for each of the 51 coupling configuration points.
+The corresponding post-fit (\textcolor{red}{pre-fit until unblinding)} BDT output shapes are shown in Fig.~\ref{fig:postfitshapes}.
+
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs2Leptons/mm/thqMVA_ttv_2lss.pdf}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs2Leptons/mm/thqMVA_tt_2lss.pdf}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs2Leptons/em/thqMVA_ttv_2lss.pdf}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs2Leptons/em/thqMVA_tt_2lss.pdf}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs3Leptons/thqMVA_ttv_3l.pdf}
+    \includegraphics[width=0.35\textwidth]{Figures/likelihoodPDFs3Leptons/thqMVA_tt_3l.pdf}
+  \end{center}
+  \caption{Pre-fit BDT classifier outputs, for the \mumu\ (left), \emu\ (center), and tri-lepton channel (right), for 19.7~\fbinv.
+  In the box below each distribution, the ratio of the observed and predicted event yields is shown.
+  The grey band represents the pre-fit statistical and systematical uncertainties. \textcolor{red}{To be replaced with unblinded post-fit distributions.}\label{fig:postfitshapes}}
+\end{figure}
+
+
+% The signal is scanned in these three statistically independent samples, and the upper limit computed with the Bayesian-Frequentist hybrid approach CLs~\cite{ALread:2012,Junk:1999kv}.
+
+The expected 95\% confidence level upper limits on the predicted cross sections for the case of inverted couplings ($\Ct=-1$) for each of the individual channels are, respectively, 1.9, 3.6, and 2.6 times the predicted values for the \mumu, \emu, and trilepton final states.
+The combination of all three channels yields an expected result of 1.4 times the $\Ct=-1$ cross section.
+In this evaluation, all extra Higgs yields arising from the $\Ct=-1$ condition are considered as signal.
+
+The obtained observed upper limits in the three channels are, respectively, X.X (\mumu), X.X (\emu), and X.X (\threel) times the predicted $\Ct=-1$ cross section, with a combined limit of X.X. \textcolor{red}{Still blinded.}
+Table~\ref{tab:limits} summarizes the results for the inverted coupling scenario and for the standard model.
+
+The limits for each of the 51 coupling configurations, and their 68\% and 95\% C.L. uncertainty ranges, are shown in Fig.~\ref{fig:limits}.
+% Table~\ref{tab:syst_impact} gives a summary of the impact of each single source of systematic uncertainty on the final combined limit.
+% The dominant impact is related to the estimation of non-prompt lepton backgrounds in all three channels.
+Without further optimization, the same-sign \ee\ channel provides no additional sensitivity, and is not included in the result.
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{llcccc}
+     Scenario  & Channel  & Obs. Limit & \multicolumn{3}{c}{Exp. Limit}         \\
+               &          &            & Median         & $\pm1\sigma$  & $\pm2\sigma$  \\ \hline
+<<<<<<< .mine
+    $\CV=1.0$  & \mumu\   & x          & 1.74          & [1.2, 2.5]   & [0.8, 3.7]   \\
+    $\Ct=-1.0$ & \emu\    & x          & 2.23          & [1.5, 3.2]   & [1.1, 4.5]   \\
+               & \threel\ & x          & 1.96          & [1.3, 3.0]   & [0.9, 4.5]   \\ 
+               & Combined & \textbf{x} & \textbf{1.18}  & [0.8, 1.7]   & [0.6, 2.5 ]   \\ \hline
+    $\CV=1.0$  & \mumu\   & x          & 28.15          & [19.6 , 41.0 ] & [14.5 , 58.0 ] \\
+    $\Ct=1.0$  & \emu\    & x          & 37.76          & [26.7 , 54.2 ] & [19.9 , 75.3 ] \\
+               & \threel\ & x          & 37.59          & [25.6 , 56.6 ] & [18.5 , 82.8 ] \\
+               & Combined & \textbf{x} & \textbf{21.44} & [14.9 , 31.4 ] & [11.0 , 44.5 ] \\ hline
+
+=======
+    $\CV=1.0$  & \mumu\   & x          & 2.78           & [1.99, 3.93]   & [1.49, 5.39]   \\
+    $\Ct=-1.0$ & \emu\    & x          & 3.53           & [2.54, 4.97]   & [1.90, 6.77]   \\
+               & \threel\ & x          & 1.96           & [1.32, 3.01]   & [0.95, 4.48]   \\ 
+               & Combined & \textbf{x} & \textbf{1.52}  & [1.06, 2.24]   & [0.77, 3.18]   \\ \hline
+    $\CV=1.0$  & \mumu\   & x          & 35.36          & [25.43, 49.77] & [19.11, 67.79] \\
+    $\Ct=1.0$  & \emu\    & x          & 45.20          & [32.46, 63.60] & [24.37, 86.43] \\
+               & \threel\ & x          & 36.72          & [25.01, 55.29] & [18.13, 80.80] \\
+               & Combined & \textbf{x} & \textbf{24.07} & [16.94, 34.68] & [12.53, 48.28] \\ \hline
+>>>>>>> .r387908
+    \end{tabular}
+    \caption{Expected and observed 95\% C.L. upper limits on production cross section for a scenario of inverted couplings ($\Ct=-1.0$ and $\Ct=1.0$, top panel) standard model ($\Ct=1.0$ and $\CV=1.0$, bottom panel) on \tH\ production, as a multiple of the predicted values. The $\pm$1$\sigma$ and $\pm$2$\sigma$ probability ranges are also given.
+    \label{tab:limits}}
+  \end{center}
+\end{table}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/limits_comb3_cv_1p0.pdf}
+  \includegraphics[width=0.6\textwidth]{Figures/limits_comb3_cv_1p5.pdf} \\
+  \includegraphics[width=0.6\textwidth]{Figures/limits_comb3_cv_0p5.pdf} \\
+  \caption{Observed (\textcolor{red}{not yet}) and expected 95\% C.L. upper limit on the \tH\ cross section for different values of the top-Higgs coupling \Ct, for $\CV=1.0$ (top), $\CV=1.5$ (middle), and $\CV=0.5$ (bottom), including $\pm1\sigma$~(green) and $\pm2\sigma$~(yellow) probability bands.\label{fig:limits}}
+\end{figure}
+
+% \begin{table}[!h]
+%   \begin{center}
+%       \begin{tabular}{llcc}
+%         \hline
+%         Source of uncertainty                                & Type  & Exclusive   & Removal (\%)  \\
+%                                                              &       & source (\%) & \\ \hline
+%         Luminosity                                           & rate  & $<$ 1       & $<$ 1   \\
+%         Pileup                                               & rate  & $<$ 1       & $<$ 1   \\
+%         Lepton trigger efficiency                            & rate  & $<$ 1       & $<$ 1   \\
+%         Lepton selection efficiencies                        & rate  & $<$ 1       & $<$ 1   \\
+%         Electron energy scale                                & shape & $<$ 1       & $<$ 1   \\
+%         Jet energy corrections                               & shape & $<$ 1       & $<$ 1   \\
+%         b-tagging efficiencies                               & shape & $<$ 1       & $<$ 1   \\
+
+%         \hline
+%         Flavour Scheme                                       & rate  & 2           & 1       \\
+%         Higgs branching fractions                            & rate  & $<$ 1       & $<$ 1   \\
+%         Renormalization/factorization scale                  & rate  & $<$ 1       & $<$ 1   \\
+%         Parton density functions (pdf)                       & rate  & $<$ 1       & $<$ 1   \\
+
+%         \hline
+%         Irreducible background normalization                 & rate  & $<$ 1       & $<$ 1    \\
+%         $\mu$ fake-rate normalization (SS)                   & rate  & 26          & 19      \\
+%         e fake-rate normalization (SS)                       & rate  & 12          & 5      \\
+%         $\mu$ fake-rate leptons shape (SS)                   & shape & $<$ 1       & 1      \\
+%         e fake-rate leptons shape  (SS)                      & shape & $<$ 1       & 2      \\
+%         Non-prompt closure test (\threel)                    & rate  & 3           & 3      \\
+%         QCD control region variation for fake-rate (\threel) & shape & 1           & $<$ 1  \\
+%         Fake-rate variation within stat. uncert. (\threel)   & shape & 1           & $<$ 1  \\
+%         Charge misidentification  (SS)                       & rate  & $<$ 1       & $<$ 1  \\
+
+%         \hline
+%         Stat. uncert. for non-prompt leptons (\threel)       & shape & 2           & 3      \\
+%         Stat. uncert. for non-prompt leptons (SS)            & shape & 4           & 3      \\
+
+%         \hline
+%       \end{tabular}
+%     \caption{Summary of the impact of single systematic uncertainties.
+%     Deterioration of a hypothetical combined limit without systematic uncertainties, when using a single source of uncertainty only (left column) and improvement of the final limit when omitting a single source of systematic uncertainties (right column).
+%     Values denoted with $<$ 1 have a negligible impact on the significant digits quoted in the results table.
+%     \label{tab:syst_impact}}
+%   \end{center}
+% \end{table}
+
+
+

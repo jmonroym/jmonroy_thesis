@@ -1,0 +1,35 @@
+\subsection{Signal modeling}\label{sec:syst}
+Systematic uncertainties on the signal selection efficiency arise from correction factors applied to the simulated events to better match the measured detector performance and also from theoretical uncertainties in the modeling of the signal process.
+
+Scale factors applied to correct for data/MC differences in the trigger efficiency, lepton reconstruction and identification performance, and lepton selection efficiency carry a combined uncertainty of about 5\% per lepton.
+The impact of the uncertainty in the signal selection efficiency from jet energy corrections is evaluated by varying the correction factors within their uncertainty and propagating the effect to the final result by recalculating all kinematic quantities.
+Effects on the overall normalization of event yields and on the shape of kinematic properties are both taken into account.
+Jet energy resolution effects have negligible impact on this analysis.
+Correction factors for data/MC differences in the \cPqb-tagging performance are applied depending on the \pt\ and $\eta$, and on the flavor of the jet, and their effect on the signal efficiency is evaluated by varying the factors within their measured uncertainty and recalculating the overall event scale factors.
+
+The uncertainties from unknown higher orders of \tHq\ and \tHW\ production are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct\ and \CV.
+The \ttH\ signal component has an uncertainty of about $+5.8/\!-9.2\%$ from $Q^2$ scale variations and a further $3.6\%$ from the knowledge of PDFs and $\alpha_S$~\cite{deFlorian:2016spz}.
+
+% This varies both the overall rate and the shape of kinematic distributions for the simulated signal events.
+Uncertainties related to the choice of PDF set and its scale are estimated to be about $3.7\%$ for \tHq\ and about $4.0\%$ for \tHW. %% FIXME Citation
+
+\subsection{\ttV, \WZ, and \ZZ\ backgrounds}
+%\subsection{\ttbar+vector boson backgrounds and \ttH\ signal}
+Backgrounds from associated production of \ttbar\ pairs and electroweak bosons (\ttW\ and \ttZ) are estimated directly from simulated events, which are corrected for data/MC differences and inefficiencies in the same way as signal events.
+Their production cross sections are calculated at next-to-leading order of QCD and EWK, with theoretical uncertainties from unknown higher orders of $12\%$ for \ttW\ and $10\%$ for \ttZ.
+Further uncertainties arise from the knowledge of PDFs and $\alpha_S$ of about $4\%$ each for \ttW\ and \ttZ.
+
+%\subsection{\WZ\ and \ZZ\ backgrounds}
+Diboson production with leptonic \Z\ decays and additional jet radiation in the final state can lead to signatures very similar to that of the signal.
+Due to the larger cross section, the main contribution arises from \WZ\ production.
+Inclusive production cross sections for both \WZ\ and \ZZ\ have been measured at the LHC and agree well with the NLO calculations.%% FIXME Reference
+ However, the good agreement of the cross section measurements in the inclusive phase space does not necessarily hold in the signal region of this analysis, which requires the presence of hadronic jets, including \cPqb\ jets.
+Therefore, a dedicated control region dominated by \WZ\ production is used to constrain the overall normalization of this process.
+It is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a \Z\ boson decay.
+Furthermore, at least two jets are required, with a veto on jets that pass the loose \cPqb\ tag selection to ensure exclusivity with the signal selection.
+A scale factor is then extracted from the predicted distribution of \WZ\ events in the control region, and the observed data, keeping other processes fixed.
+Finally, this factor is used to scale the diboson prediction in the signal selection.
+
+The majority of diboson events passing the signal selection contain jets from light quarks and gluons that are incorrectly tagged as \cPqb\ jets, making this estimate mainly sensitive to the experimental uncertainty in the mis-tag rate rather than the theoretical uncertainty in the jet flavor composition.
+The overall uncertainty assigned to the diboson prediction is estimated from the statistical uncertainty due to the limited sample size in the control region (30\%), the residual background in the control region (20\%), the uncertainties on the \cPqb-tagging rate (10--40\%), and from the knowledge of PDFs and the theoretical uncertainties of the extrapolation (up to 10\%). %% FIXME: Check these numbers
+

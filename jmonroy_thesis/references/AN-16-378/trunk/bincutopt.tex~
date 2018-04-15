@@ -1,0 +1,52 @@
+The effect of tighter preselection cuts on the cross section limit was evaluated by setting tighter cuts and calculating the new limit. Table \ref{cut_limit} show the several variations made. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}\hline
+Variable name                   & Variation                & Limit (r) \\ \hline\hline
+Loose cuts                      & see table (include ref)  & $<2.92887$\\\hline
+nBJetLoose25                    & $\geq 1 \to \geq 2$      & $<3.8057$\\\hline
+nBJetMedium25$\geq 1$           & Loose to Medium tag Bjet & $<2.7559$\\\hline
+MaxEtaJet25                     & $\geq 0 \to \geq 1$      & $<2.9385$\\\hline
+MaxEtaJet25                     & $\geq 0 \to \geq 1.5$    & $<2.9990$\\\hline
+met_pT$> 30$                    & add MET cut              & $<2.9053$\\\hline
+Zveto                           & $>10 \to > 15$           & $<2.7881$\\\hline
+nBJetMedium25$\geq 1$ + Zveto   & combined                 & $<2.6162$\\\hline
+\end{tabular}
+\caption{Limit variation as a function of tighter cuts}
+\label{cut_limit}
+\end{table}
+
+
+
+
+
+the cross section limit can change as a function of the bin size in the signal/bg mva1vs mva2 2D plot. Several sizes and binning combination were tested in order to optimize the limit as shown in figure \ref{bins}, turning the 2d histogram of mva1 vs mva2 into a 1d histogram for shape fitting in combine. Among the combinations, the best limit was found for 10 bins.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=4cm ,height=4cm]{figures/bin_scheeme.pdf} 
+\caption{Binning combination scheme.}
+\label{input_var}
+\end{figure}
+
+
+the limits of the bins are at:
+
+default: x_1=-0.5 ; x_2=0.0 ; x_3=0.5 ; y_1=-0.5 ; y_2=0.0 ; y_3=0.5
+cross section limit: r<2.9287
+
+optimized: x_1=-0.5 ; x_2=0.4 ; x_3=0.7 ; y_1=-0.5 ; y_2=0.4 ; y_3=0.7
+cross section limit: r<2.8105
+
+
+
+
+if we additionally consider the optimization using tighter pre-selection cuts (see pre-section studies)
+
+we get as optimized limit: r<2.5938
+
+
+
+
+
