@@ -44,7 +44,7 @@ Note that the tails of the distributions indicate that some signal events fall i
 
 \noindent where A is the acceptance region. If the background hypothesis is the \textit{null hypothesis ($H_0$)}, the signal hypothesis would be \textit{alternative hypothesis ($H_1$)}; in this context, the background efficiency corresponds to the significance level of the test ($\alpha$) and describes the misidentification probability, while the signal efficiency corresponds to the power of the test (1-$\beta$)\footnote{$\beta$ is the fraction of signal events that fall out of the acceptance region} and describes the probability of rejecting the background hypothesis if the signal hypothesis is true. What is sought in an analysis is to maximize the power of the test relative to the significance level, \ie, set a selection with the largest possible selection efficiency and the smallest possible misidentification probability.
 
-\subsection{Decision trees }
+\subsection{Decision trees}\label{subsec:dt}
 
 For this thesis, the implementation of the MVA strategy, described above, is performed through decision trees by using the TMVA software package \cite{tmva} included in the ROOT analysis framework \cite{root}. In a simple picture, a decision tree classifies events according to their input variables values by setting a cut on each input variable and checking which events are on which side of the cut, just as proposed in the MVA strategy, but in addition, as a machine learning algorithm, decision trees offer the possibility to be trained and then perform the classification efficiently.   
 

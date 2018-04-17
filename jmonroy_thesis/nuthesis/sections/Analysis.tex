@@ -117,19 +117,19 @@ The events considered are those online-reconstructed events triggered by one, tw
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_eu_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
-%\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category ($1^{rs}$ and $2^{nd}$ rows) and same-sign $ee$ category ($3^{rd}$ and $4^{th}$ rows), as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
-%\label{fig:trigeffsemu}
-%\end{figure}
+\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\label{fig:trigeffsemu}
+\end{figure}
 
 %\begin{figure}[htp]
 %\centering
-\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_ee_ARCv2_change_3l_pt_ranges.pdf}
-\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_ee_ARCv2_change_3l_pt_ranges.pdf} \\
-\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
-\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the $ee$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category ($1^{rs}$ and $2^{nd}$ rows) and same-sign $ee$ category ($3^{rd}$ and $4^{th}$ rows), as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
-\label{fig:trigeffsee}
-\end{figure}
+%\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_pt_ee_ARCv2_change_3l_pt_ranges.pdf}
+%\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_ee_ARCv2_change_3l_pt_ranges.pdf} \\
+%\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
+%\includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_ee_ARCv2_change_3l_pt_ranges.pdf}
+%\caption[Trigger efficiency for the $ee$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category ($1^{rs}$ and $2^{nd}$ rows) and same-sign $ee$ category ($3^{rd}$ and $4^{th}$ rows), as as a function of the \pt and $\eta$ of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+%\label{fig:trigeffsee}
+%\end{figure}
 
 \begin{figure}[htp]
 \centering
@@ -143,7 +143,7 @@ The events considered are those online-reconstructed events triggered by one, tw
 
 Trigger efficiency describes the ability of events to pass the trigger requirements. It is measured in simulated events using generator information given that there is no trigger bias with the MC sample. Measuring the trigger efficiency in data requires a more elaborated procedure; first, select a set of events collected by a trigger that is uncorrelated with the lepton triggers such that the selected events form an unbiased sample. In this analysis, that uncorrelated trigger is a MET trigger. Second step is looking for candidate events with exactly two good leptons (exactly three good leptons for the $3l$ channel). Finally,  measure the efficiency for the candidate events to pass the logical ``or'' of triggers being considered in a given event category as defined in Table ~\ref{tab:triggers}.
 
-Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsee}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
+Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
 
 Applied flat scale factors in each category are shown in Tab.~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
 \begin{table}
@@ -185,7 +185,6 @@ Sample & $\sigma$ [pb] & BF \\ \hline
 \verb|/THQ_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.7927 & 0.324 \\
 \verb|/THW_Hincl_13TeV-madgraph-pythia8_TuneCUETP8M1/|                  & 0.1472 & 1.0   \\\hline
 \verb|/ttHJetToNonbb_M125_13TeV_amcatnloFXFX_madspin_pythia8_mWCutfix/|   & 0.2151 & 1.0 \\\hline
-                                                                        
 \end{tabular}
 \caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed ~\cite{THQProdTwiki}.}\label{tab:sigsamples}
 \end{table}
@@ -431,7 +430,8 @@ The offline event selection level targets the specific topology of the \tHq sign
 \multicolumn{2}{c}{No loose leptons with $m_{\ell\ell} < 12$GeV} \\
 \multicolumn{2}{c}{One or more $b$ tagged jets |\etac|<2.4} \\
 \multicolumn{2}{c}{One or more non-tagged jets: central $\to$ \pt>25 GeV, \etac<2.4} \\
-\multicolumn{2}{c}{\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4} \\\hline
+\multicolumn{2}{c}{\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4} \\
+\multicolumn{2}{c}{$E_T^{miss} LD > 0.2$} \\\hline
 Exactly two tight same-sign leptons              & Exactly three tight leptons \\
 Lepton $\pt>25/15$GeV                            & Lepton $\pt>25/15/15$GeV               \\
 Electrons are triple-charge consistent.          & No OSSF lepton pair with $|m_{\ell\ell}-m_Z|<15$GeV \\
@@ -444,75 +444,37 @@ In the $2lss$ channel, events with additional tight leptons are vetoed as well a
 
 In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25 \textrm{GeV, }> 15\textrm{ GeV, and }> 15\textrm{ GeV}$. Events with an opposite-sign, same-flavor lepton combination (OSSF) with invariant mass within 15 GeV of the Z boson mass are discarded in order to reject events from \WZ +jets production.
 
-The selection criteria in Table \ref{tab:cuts} represent a relatively loose selection that allows to maintain a large signal efficiency while suppressing the main backgrounds. This selection includes contributions from $H \to \tau\tau$ and $H\to ZZ$ as well.
+The selection criteria in Table \ref{tab:cuts} represent a relatively loose selection that allows to maintain a large signal efficiency while suppressing the main backgrounds. This selection includes contributions from $H \to \tau\tau$ and $H\to ZZ$ as well. The events obtained from the selection are then used to extract the signal contribution in a second analysis step, using BDT discriminators against the main backgrounds of \ttW/\ttZ and non-prompt leptons from \ttbar. The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
+
+\vspace{15cm}
+
+
+
+
+
+
 
 
 
 
 
 %______________________ Background predictions ______________________
-\section{Background predictions}\label{sec:bg}
+\section{Background modeling and predictions}\label{sec:bg}
 
 Irreducible backgrounds are reliantly estimated from MC simulated events; therefore, in this analysis all backgrounds involving prompt leptons are estimated in this way. Reducible backgrounds, are not well predicted by simulation, hence, they are estimated using data-driven methods; in the case of non-prompt leptons, a fake rate method is used.
 
-\subsection{\ttV backgrounds}
+Drell-Yan contribution is reduced in the $3l$ channel due to the requirement of an additional lepton, the jet counting and the Z-veto. Three boson contributions are reduced by rejecting events with extra leptons and by requiring forward jets or $b$-jets 
+
+The $2lss$ channel receives contribution from the associated production of two W bosons of equal charge and two light jets $W^\pm W^\pm qq$ and from same-sign W boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions.
 
 Backgrounds from \ttW and \ttZ processes are estimated using simulated events, corrected for data/MC differences and inefficiencies (trigger and lepton selection) in the same way as signal events. Their production cross sections are calculated at NLO order of QCD and EWK, considering theoretical uncertainties from unknown higher orders of 12\% for \ttW and 10\% for \ttZ. Additional uncertainties arise from the knowledge of PDFs and αS of about 4\% each for \ttW and \ttZ.
 
+
 \subsection{Diboson backgrounds}
 
+Background contamination from diboson processes is strongly suppressed by imposing the Z-veto, vetoing additional leptons and requiring $b$-jets in the event. The diboson contribution is also estimated from simulated events; however, the overall normalization of this process is obtained from a dedicated control region. The motivation behind that strategy is that even thought the measured inclusive cross section for diboson processes (WZ,ZZ) is in good agreement with the NLO calculations \cite{CMS_AN_2017-029}, that agreement is perturbed when leptonic Z decays and hadronic jets in the final state are required; those requirements are precisely the ones that make the diboson production a background for the \tHq signal. Thus, by using a dedicated control region dominated by WZ production\footnote{ZZ background is strongly reduced by the cut on MET.}, the overall normalization is constrained.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The measured inclusive cross section for diboson processes (WZ,ZZ) is in good agreement with the NLO calculations \cite{CMS_AN_2017-029}, however, that agreement is perturbed when the requirement of hadronic jets in the final state is imposed, as it is \tHq signal. For this analysis, that perturbation implies that it is necessary to constrain the overall normalization of this process using a dedicated control region, dominated by WZ production due to the large cross section. It is defined by the presence of exactly three tight leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, inverting the Z-veto which makes the control region orthogonal to signal region; one or more central jets passing CSVv2 loose working point. A scale factor is extracted from the predicted distribution of WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. Figure \ref{fig:3lzcontrol} shows the distribution of some variables in the diboson control region.
+The control region is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, invert the Z-veto which makes the control region orthogonal to signal region; the b-jet tagging requirements is also inverted with respect to the signal region, \ie, require two not $b$-jets. A scale factor is extracted from the predicted distribution of WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. More details about the procedure used can be found in Reference \cite{CMS_AN_2017-029} from where the scale factor is taken.
 
 \begin{figure} [!h]
 \centering
@@ -526,18 +488,14 @@ The measured inclusive cross section for diboson processes (WZ,ZZ) is in good ag
 \label{fig:3lzcontrol}
 \end{figure}
               
+In order to test the usability of the diboson background scale factor in this analysis, a Z-enriched control region\footnote{This control region is different to the one used to find the scale factor.} was defined by inverting the Z-veto and requiring exactly three tight leptons with \pt> 25/15/15 GeV, one or more jets passing the CSVv2 loose working point and less than four central jets. Figure \ref{fig:3lzcontrol} shows the distribution of three variables in the diboson control region; the good agreement between MC and data motivates the adoption of the diboson background scale factor. 
+
+ 
 
 
 
 
-
-Drell-Yan contribution is reduced in the $3l$ channel due to the requirement of an additional lepton, the jet counting and the Z-veto. Three boson contributions are reduced by rejecting events with extra leptons and by requiring forward jets or $b$-jets 
-
-The $2lss$ channel receives contribution from the associated production of two W bosons of equal charge and two light jets $W^\pm W^\pm qq$.
-
-Same-sign W boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions.
-
-The expected number of events for each irreducible background are corrected for data/MC differences and inefficiencies in the same way as signal events. Their production cross sections are calculated at NLO of QCD and EWK, with theoretical uncertainties from unknown higher orders of 12\% for \ttW and 10\% for \ttZ. Further uncertainties arise from the knowledge of PDFs and $\alpha_s$ of about 4\% each for \ttW and \ttZ.
+. Their production cross sections are calculated at NLO of QCD and EWK, with theoretical uncertainties from unknown higher orders of 12\% for \ttW and 10\% for \ttZ. Further uncertainties arise from the knowledge of PDFs and $\alpha_s$ of about 4\% each for \ttW and \ttZ.
 
 
 
@@ -560,7 +518,7 @@ In the $2lss$ channel case, additional background arises when the charge of a le
 
 
 
-where the contribution to the final selection is estimated by extrapolating from a sideband (or ``application region'') with a looser lepton definition (the fakeable object definitions in Tabs.~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) to the signal selection. The tight-to-loose ratios (or ``fake rates'') are measured in several background dominated data events with dedicated triggers, subtracting the residual prompt lepton contribution using MC. Non-prompt leptons in our signal regions are predominantly produced in \ttbar events, with a much smaller contribution, from Drell--Yan production. The systematic uncertainty on the normalization of the non-prompt background estimation is on the order of 50\%, and thereby one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular. It consists of several individual sources, such as the result of closure tests of the method using simulated events, limited statistics in the data control regions due to necessary prescaling of lepton triggers, and the uncertainty in the subtraction of residual prompt leptons from the control region.
+where the contribution to the final selection is estimated by extrapolating from a sideband (or \ti{application region}) with a looser lepton definition (the fakeable object definitions in Tabs.~\ref{tab:muonIDs} and~\ref{tab:eleIDs}) to the signal selection. The tight-to-loose ratios (or \ti{fake rates}) are measured in several background dominated data events with dedicated triggers, subtracting the residual prompt lepton contribution using MC. Non-prompt leptons in our signal regions are predominantly produced in \ttbar events, with a much smaller contribution, from Drell--Yan production. The systematic uncertainty on the normalization of the non-prompt background estimation is on the order of 50\%, and thereby one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular. It consists of several individual sources, such as the result of closure tests of the method using simulated events, limited statistics in the data control regions due to necessary prescaling of lepton triggers, and the uncertainty in the subtraction of residual prompt leptons from the control region.
 
 The fake background where the leptons pass the looser selection are weighted according to how many of them fail the tight criteria. Events with a single failing lepton are weighted with the factor $f/(1-f)$ for the estimate to the tight selection region, where $f$ is the fake rate. Events with two failing leptons are given the negative weight $-f_{i}f_{j}/(1-f_{i})(1-f_{j})$, and for three leptons the weight is positive and equal to the product of $f/(1-f)$ factor evaluated for each failing lepton.
 
@@ -638,73 +596,13 @@ Once the events are selected in agreement with the signal characteristics, the e
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 . Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
 
 Dont forget to mention previous constrains to ct check Reference \ref{biswas} and References https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
 
+%
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\vspace{15cm}
 
 
 
@@ -717,143 +615,141 @@ Dont forget to mention previous constrains to ct check Reference \ref{biswas} an
 \section{Signal discrimination }
 \label{secc:signal_disc}
 
-The \tHq signal is separated from the main backgrounds using a boosted decision tree (BDT) classifier, trained on simulated signal and background events. A set of discriminating variables are given as input to the BDT which produces a output distribution maximizing the discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used while Figures~\ref{fig:input_vars_3l} show their distributions for the relevant signal and background samples, for the three lepton channel. Two BDT classifiers are trained for the two main backgrounds expected in the analysis: events with prompt leptons from \ttW and \ttZ (also referred to as \ttV), and events with non-prompt leptons from \ttbar. The datasets used in the training are the \tHq signal (see Tab.~\ref{tab:sigsamples}), and LO MADGRAPH samples of \ttW and \ttZ, in an admixture proportional to their respective cross sections (see Tab.~\ref{tab:ttvlo_samples}).
+The production cross section for the signal processes \tHq, \tHW, and \ttH is only about 600 fb (the enhancement provided by inverted couplings, \Ct = -1 almost double it), resulting in a small signal to background ratio even for a tight selection. A multivariate method is hence employed to train a discriminator to separate \tH signal events from the dominant background events (\ttbar and \ttV).
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{lp{10cm}}
-Variable name        & Description\\ \hline
-nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
-MaxEtaJet25          & Maximum $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
-% nBJetLoose25         & Number of jets with $\pt>25\GeV$, CSV loose\\
-totCharge            & Sum of lepton charges \\
-nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\
-detaFwdJetBJet       & $\Delta \eta$ between forward light jet and hardest CSV loose jet\\
-detaFwdJet2BJet      & $\Delta \eta$ between forward light jet and second hardest CSV loose jet (defaults to -1 in events with only one CSV loose jet) \\
-detaFwdJetClosestLep & $\Delta \eta$ between forward light jet and closest lepton\\
-dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\
-minDRll              & minimum $\Delta R$ between any two leptons\\
-Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for ss2l)\\ \hline
-\end{tabular}
-\caption{MVA input discriminating variables}
-\label{tab:bdtinputs}
-\end{table}
+\subsection{MVA classifiers evaluation}
 
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.245\textwidth]{Lep3Pt.pdf} 
- \includegraphics[width=0.245\textwidth]{dEtaFwdJetBJet.pdf}
- \includegraphics[width=0.245\textwidth]{dEtaFwdJet2BJet.pdf}
- \includegraphics[width=0.245\textwidth]{dEtaFwdJetClosestLep.pdf} \\
- \includegraphics[width=0.245\textwidth]{dPhiHighestPtSSPair.pdf}
- \includegraphics[width=0.245\textwidth]{maxEtaJet25.pdf}
- \includegraphics[width=0.245\textwidth]{minDRll.pdf}
- \includegraphics[width=0.245\textwidth]{nJet25.pdf} \\
- \includegraphics[width=0.245\textwidth]{nJetEta1.pdf}
- \includegraphics[width=0.245\textwidth]{totCharge.pdf}
-\caption[Input variables to the BDT for signal discrimination not normalized.]{Distributions of input variables to the BDT for signal discrimination, three lepton channel.} 
-\label{fig:input_vars_3l}
-\end{figure}    
-
-%% \begin{figure} [!h]
-%%   \centering
-%%   \includegraphics[width=0.245\textwidth]{Lep2Pt_mumu.pdf} 
-%%   \includegraphics[width=0.245\textwidth]{dEtaFwdJetBJet_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{dEtaFwdJet2BJet_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{dEtaFwdJetClosestLep_mumu.pdf} \\
-%%   \includegraphics[width=0.245\textwidth]{dPhiHighestPtSSPair_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{maxEtaJet25_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{minDRll_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{nJet25_mumu.pdf} \\
-%%   \includegraphics[width=0.245\textwidth]{nJetEta1_mumu.pdf}
-%%   \includegraphics[width=0.245\textwidth]{totCharge_mumu.pdf}
-%%  \caption{Distributions of input variables to the BDT for signal discrimination, two lepton same sign channel.}
-%% \label{fig:input_vars_2lss}
-%% \end{figure}    
-
-The MVA analysis consist of two stages: first a ``training'' where the MVA method is trained to discriminate between simulated signal and background events, then a ``test'' stage where the trained algorithm is used to classify different events from the samples. The sample is obtained from a pre-selection (see Tab.~\ref{tab:evsel} with pre-selection cuts). Figures~\ref{mva_input_tt} show the input variables distributions as seen by the MVA algorithm. Note that in contrast to the distributions in Fig.~\ref{fig:input_vars_3l} only the main backgrounds (\ttbar\ from simulation, \ttV) are included.
+Several MVA classifier algorithms were evaluated in order to determine the most appropriate method for this analysis\footnote{The choice of the tested algorithms was based on the experience from previous analyses and considering the expertise of the members of the \tHq and \ttH analyses groups. Only the BDT classifier is described in this thesis and a detailed description of all available methods can be found in Reference \cite{tmva}}. The comparison is based on the performance of the classifiers, encoded in the plot of the background rejection as a function of the signal efficiency (ROC curve). The top side of Figure ~\ref{roc} shows the ROC curves for the several methods evaluated; two separate training were performed in the $3l$ channel against \ttbar\ and \ttV\ processes.
 
 \begin{figure} [!h]
   \centering
-  \includegraphics[width=\textwidth]{mva_input1_tt.pdf}
-  \includegraphics[width=\textwidth]{mva_input2_tt.pdf}
-\caption[BDT input variables. Discrimination against \ttbar.]{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttbar) for the three lepton channel, discriminated against \ttbar\ (fakes) background.} 
-\label{mva_input_tt}
-\end{figure}
+   \includegraphics[width=0.49\textwidth]{roc_ttv_3l_multimva.pdf}
+   \includegraphics[width=0.49\textwidth]{roc_tt_3l_multimva.pdf} \\
+   \includegraphics[width=0.49\textwidth]{roc_ttv_2lss.pdf}
+   \includegraphics[width=0.49\textwidth]{roc_tt_2lss.pdf} 
 
-\begin{figure} [!h]
-  \centering
-  \includegraphics[width=\textwidth]{mva_input1_ttv.pdf}
-  \includegraphics[width=\textwidth]{mva_input2_ttv.pdf}
-\caption[BDT input variables. Discrimination against \ttV\ .]{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttW+\ttZ) for the three lepton channel, discriminated against \ttV\ background.}                                                                                                                                                         
-\label{mva_input_ttv}
-\end{figure}
-
-%% The input variables distributions for $2lss$ channel for signal against the \ttbar\ and \ttV\ are shown in Figure~\ref{mva_input_2lss_tt} and Figure~\ref{mva_input_2lss_ttv} respectively.
-%% \begin{figure} [!h]
-%%   \centering
-%%   \includegraphics[width=\textwidth]{6var_tt.pdf}
-%%   \includegraphics[width=0.66\textwidth]{4var_tt.pdf}
-%% \caption{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttbar) for the same sign dilepton channel, discriminated against \ttbar\ background.} 
-%% \label{mva_input_2lss_tt}
-%% \end{figure}
-
-%% \begin{figure} [!h]
-%%   \centering
-%%   \includegraphics[width=\textwidth]{6var_ttv.pdf}
-%%   \includegraphics[width=0.66\textwidth]{4var_ttv.pdf}
-%% \caption{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttW+\ttZ) for the same sign dilepton channel, discriminated against \ttV\ background.}
-%% \label{mva_input_2lss_ttv}
-%% \end{figure}
-
-Note that splitting the training in two groups reveals that some variables show opposite behavior for the two background sources; potentially screening the discrimination power if they were to be used in a single discriminant. For some other variables the distributions are similar in both background cases.
-
-From table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extend. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In case a boosted decision tree (BDT) method however, correlations do not affect the performance. Figure~\ref{mva_corr} show the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity. Same trend is seen in case of the same sign dilepton channel in Figure~\ref{mva_corr_2lss}.
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.32\textwidth]{corr_signal.pdf}
-   \includegraphics[width=0.32\textwidth]{corr_tt.pdf}
-   \includegraphics[width=0.32\textwidth]{corr_ttv.pdf}
-
-\caption[Correlation matrices for the BDT input variables.]{ Signal (left), \ttbar\ background (middle), and \ttV\ background (right.) correlation matrices for the input variables in the TMVA analysis for the three lepton channel.}
-\label{mva_corr}
-\end{figure}
-
-%% \begin{figure} [!h]
-%%   \centering
-%%   \includegraphics[width=0.32\textwidth]{sig_corr_tt_2lss.pdf}
-%%   \includegraphics[width=0.32\textwidth]{bkg_corr_tt_2lss.pdf}
-%%   \includegraphics[width=0.32\textwidth]{bkg_corr_ttv_2lss.pdf}
-%% \caption{Signal and Background correlation matrices for the input variables in the TMVA analysis for the same sign dilepton channel, for the signal (left), \ttbar\ background (middle), and \ttV\ background (right.)}
-%% \label{mva_corr_2lss}
-%% \end{figure}
-
-\subsection{Classifiers response}
-Several MVA algorithms were evaluated to determine the most appropriate method for this analysis. The plots in Fig.~\ref{roc} (top) show the background rejection as a function of the signal efficiency for \ttbar\ and \ttV\ trainings (ROC curves) for the different algorithms that were evaluated.
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.4\textwidth]{roc_ttv_3l_multimva.pdf}
-   \includegraphics[width=0.4\textwidth]{roc_tt_3l_multimva.pdf} \\
-   \includegraphics[width=0.4\textwidth]{bdt_response_ttv_3l.pdf}
-   \includegraphics[width=0.4\textwidth]{bdt_response_tt_3l.pdf}
-\caption[MVA classifiers performance.]{Top: background rejection vs signal efficiency (ROC curves) for various MVA classifiers (top) in the three lepton channel against \ttV\ (left) and \ttbar\ (right). Bottom: classifier output distributions for the gradient boosted decision trees, for training against \ttV\ (left) and against \ttbar\ (right).}
+\caption[MVA classifiers performance.]{ Top: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers in the $3l$ channel for training against \ttV\ (left) and \ttbar\ (right). Bottom: background rejection vs signal efficiency (ROC curve) in the $2lss$ channel for a single discriminator: BDTG, against \ttV\ (left) and \ttbar\ (right).}
 \label{roc}
 \end{figure} 
 
-%% \begin{figure} [!h]
-%%   \centering
-%%    \includegraphics[width=0.4\textwidth]{roc_ttv_2lss.pdf}
-%%    \includegraphics[width=0.4\textwidth]{roc_tt_2lss.pdf} \\
-%%    \includegraphics[width=0.4\textwidth]{bdt_output_ttv_2lss.pdf}
-%%    \includegraphics[width=0.4\textwidth]{bdt_output_tt_2lss.pdf}
-%% \caption{Top: background rejection vs signal efficiency (ROC curve) in the same sign dilepton channel for a single discriminator: BDTG, against \ttV\ (left) and \ttbar\ (right). Bottom: classifier output distribution, for training against \ttV\ (left) and against \ttbar\ (right).}
-%% \label{output_2lss}
-%% \end{figure}
+In both cases the gradient boosted decision tree (\ti{BDTA\_GRAD}) classifier offers the best results, followed by the adaptive BDT classifier (\ti{BDTA}); the several Fisher classifiers tested, differ in their parameters and/or boosting method  but they offer similar performance among them, while the k-Nearest Neighbour (kNN) classifier performance is below the rest of the classifiers. The corresponding ROC curves and in the $2lss$ channel for trainings against \ttV (left) and \ttbar(right) processes are shown in the bottom side of Figure ~\ref{roc}; the BDTG performance is similar to that in the $3l$ channel.
 
-In both cases the gradient boosted decision tree (``BDTA\_GRAD'') classifier offers the best results, followed by an adaptive BDT classifier (``BDTA''). The BDTA\_GRAD classifier output distributions for signal and backgrounds are shown on the bottom of Fig.~\ref{roc}. As expected, a good discrimination power is obtained using default discriminator parameter values, with minimal overtraining. TMVA provides a ranking of the input variables by their importance in the classification process, shown in Tab.~\ref{ranking}.
+\subsection{Discriminating variables}
+
+The classifier chosen to separate the \tHq signal from the main backgrounds is the boosted decision tree (BDTG) classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of table \ref{tab:bgsamples} and the samples marked with an * in the same table.
+
+As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a discriminator with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis.
+
+The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lp{10cm}}\hline
+Variable name        & Description\\ \hline
+nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
+nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
+MaxEtaJet25          & Max. $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
+detaFwdJetClosestLep & $\Delta \eta$ forward light jet and closest lepton\\
+detaFwdJetBJet       & $\Delta \eta$ forward light jet and hardest CSV loose jet\\
+detaFwdJet2BJet      & $\Delta \eta$ forward light jet and second hardest CSV loose jet \\\hline
+Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for ss2l)\\
+totCharge            & Sum of lepton charges \\
+minDRll              & Min $\Delta R$ any two leptons\\
+dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hline
+\end{tabular}
+\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to jet multiplicities; second section lists variables related to forward jet activity, and third section lists variables related to lepton kinematics.}
+\label{tab:bdtinputs}
+\end{table}
+
+Plots in Figures ~\ref{fig:input_vars_3l} and ~\ref{fig:input_vars_2lss} show the BDTG input variables distributions for the signal and background samples, in the $2lss$ and $3l$ channels respectively.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.32\textwidth]{Lep3Pt.pdf} 
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet.pdf}
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet.pdf}\\
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJetClosestLep.pdf}
+ \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
+ \includegraphics[width=0.32\textwidth]{maxEtaJet25.pdf}\\
+ \includegraphics[width=0.32\textwidth]{minDRll.pdf}
+ \includegraphics[width=0.32\textwidth]{nJet25.pdf} 
+ \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}\\
+ \includegraphics[width=0.32\textwidth]{totCharge.pdf}
+\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables (not normalized) for signal discrimination in the $3l$ channel.} 
+\label{fig:input_vars_3l}
+\end{figure}    
+
+
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=0.32\textwidth]{Lep2Pt_mumu.pdf} 
+  \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet_mumu.pdf}
+  \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet_mumu.pdf}\\
+  \includegraphics[width=0.32\textwidth]{dEtaFwdJetClosestLep_mumu.pdf} 
+  \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair_mumu.pdf}
+  \includegraphics[width=0.32\textwidth]{maxEtaJet25_mumu.pdf}\\
+  \includegraphics[width=0.32\textwidth]{minDRll_mumu.pdf}
+  \includegraphics[width=0.32\textwidth]{nJet25_mumu.pdf} 
+  \includegraphics[width=0.32\textwidth]{nJetEta1_mumu.pdf}\\
+  \includegraphics[width=0.32\textwidth]{totCharge_mumu.pdf}
+ \caption{Distributions of input variables to the BDT for signal discrimination, two lepton same sign channel.}
+\label{fig:input_vars_2lss}
+\end{figure}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.49\textwidth]{bdt_response_ttv_3l.pdf}
+   \includegraphics[width=0.49\textwidth]{bdt_response_tt_3l.pdf}\\
+   \includegraphics[width=0.49\textwidth]{bdt_output_ttv_2lss.pdf}
+   \includegraphics[width=0.49\textwidth]{bdt_output_tt_2lss.pdf}
+\caption[BDTG classifier output.]{Top:  Bottom: The output from the BDTG (BDTA\_GRAD label in the ROC curve) classifier training against \ttV (left) and \ttbar(right) Bottom: classifier output distribution, for training against \ttV\ (left) and against \ttbar\ (right).}
+\label{fig:output_2lss}
+\end{figure}
+
+
+The BDTA\_GRAD classifier output distributions for signal and backgrounds are shown on the bottom of Figure ~\ref{roc}. As expected, a good discrimination power is obtained using default discriminator parameter values, with minimal overtraining.
+, while a reduction in the overtraining is visible.  
+
+
+
+
+Figure \ref{fig:output_2lss} shows the ROC curves and the BDTG classifier outputs in the $2lss$ channel for trainings against \ttV and \ttbar(right) processes. The BDTG performance is similar to that in the $3l$ channel, while a reduction in the overtraining is visible.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Two BDTG classifiers are trained for the two main backgrounds expected in the analysis: events with prompt leptons from \ttW and \ttZ (also referred to as \ttV), and events with non-prompt leptons from \ttbar. The datasets used in the training are the \tHq signal (see Tab.~\ref{tab:sigsamples}), and LO MADGRAPH samples of \ttW and \ttZ, in an admixture proportional to their respective cross sections (see Tab.~\ref{tab:ttvlo_samples}).
+
+
+
+
+TMVA provides a ranking of the input variables by their importance in the classification process, shown in Table~\ref{ranking}.
 
 \begin{table}[h!]
 \centering
@@ -877,26 +773,29 @@ Rank  & Variable             & Importance  & Variable             & Importance \
 \label{ranking}
 \end{table}
 
-%% \begin{table}[h!]
-%% \centering
-%% \footnotesize
-%% \begin{tabular}{lllll}
-%%       &\multicolumn{2}{c}{ttbar training}             & \multicolumn{2}{c}{ttV training}\\\hline
-%% Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
-%%     1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
-%%     2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
-%%     3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
-%%     4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
-%%     5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
-%%     6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
-%%     7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
-%%     8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
-%%     9 & nJet25\_Recl         & 6.254e-02   & nJetEta1             & 5.948e-02\\
-%%    10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
-%% \end{tabular}
-%% \caption{TMVA input variables ranking for BDTA\_GRAD method in same-sign dilepton channel.}
-%% \label{ranking}
-%% \end{table}
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabular}{lllll}
+      &\multicolumn{2}{c}{ttbar training}             & \multicolumn{2}{c}{ttV training}\\\hline
+Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
+    1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
+    2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
+    3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
+    4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
+    5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
+    6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
+    7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
+    8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
+    9 & nJet25\_Recl         & 6.254e-02   & nJetEta1             & 5.948e-02\\
+   10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
+\end{tabular}
+\caption{TMVA input variables ranking for BDTA\_GRAD method in same-sign dilepton channel.}
+\label{ranking}
+\end{table}
+
+
+
 
 
 The TMVA settings used in the BDT training are shown in Tab.~\ref{tab:bdtsettings}.
@@ -920,6 +819,69 @@ The TMVA settings used in the BDT training are shown in Tab.~\ref{tab:bdtsetting
 \end{table}
 
 
+
+
+
+
+The MVA analysis consist of two stages: first a \ti{training} where the MVA method is trained to discriminate between simulated signal and background events, then a \ti{test} stage where the trained algorithm is used to classify different events from the samples. The sample is obtained from a pre-selection (see Tab.~\ref{tab:evsel} with pre-selection cuts). Figures~\ref{mva_input_tt} show the input variables distributions as seen by the MVA algorithm. Note that in contrast to the distributions in Fig.~\ref{fig:input_vars_3l} only the main backgrounds (\ttbar\ from simulation, \ttV) are included.
+
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=\textwidth]{mva_input1_tt.pdf}
+  \includegraphics[width=\textwidth]{mva_input2_tt.pdf}
+\caption[BDT input variables. Discrimination against \ttbar.]{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttbar) for the three lepton channel, discriminated against \ttbar\ (fakes) background.} 
+\label{mva_input_tt}
+\end{figure}
+
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=\textwidth]{mva_input1_ttv.pdf}
+  \includegraphics[width=\textwidth]{mva_input2_ttv.pdf}
+\caption[BDT input variables. Discrimination against \ttV\ .]{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttW+\ttZ) for the three lepton channel, discriminated against \ttV\ background.}                                                                                                                                                         
+\label{mva_input_ttv}
+\end{figure}
+
+The input variables distributions for $2lss$ channel for signal against the \ttbar\ and \ttV\ are shown in Figure~\ref{mva_input_2lss_tt} and Figure~\ref{mva_input_2lss_ttv} respectively.
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=\textwidth]{6var_tt.pdf}
+  \includegraphics[width=0.66\textwidth]{4var_tt.pdf}
+\caption{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttbar) for the same sign dilepton channel, discriminated against \ttbar\ background.} 
+\label{mva_input_2lss_tt}
+\end{figure}
+
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=\textwidth]{6var_ttv.pdf}
+  \includegraphics[width=0.66\textwidth]{4var_ttv.pdf}
+\caption{BDT inputs as seen by TMVA (signal, in blue, is \tHq, background, in red, is \ttW+\ttZ) for the same sign dilepton channel, discriminated against \ttV\ background.}
+\label{mva_input_2lss_ttv}
+\end{figure}
+
+Note that splitting the training in two groups reveals that some variables show opposite behavior for the two background sources; potentially screening the discrimination power if they were to be used in a single discriminant. For some other variables the distributions are similar in both background cases.
+
+From table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extend. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In case a boosted decision tree (BDT) method however, correlations do not affect the performance. Figure~\ref{mva_corr} show the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity. Same trend is seen in case of the same sign dilepton channel in Figure~\ref{mva_corr_2lss}.
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.32\textwidth]{corr_signal.pdf}
+   \includegraphics[width=0.32\textwidth]{corr_tt.pdf}
+   \includegraphics[width=0.32\textwidth]{corr_ttv.pdf}
+
+\caption[Correlation matrices for the BDT input variables.]{ Signal (left), \ttbar\ background (middle), and \ttV\ background (right.) correlation matrices for the input variables in the TMVA analysis for the three lepton channel.}
+\label{mva_corr}
+\end{figure}
+
+\begin{figure} [!h]
+  \centering
+  \includegraphics[width=0.32\textwidth]{sig_corr_tt_2lss.pdf}
+  \includegraphics[width=0.32\textwidth]{bkg_corr_tt_2lss.pdf}
+  \includegraphics[width=0.32\textwidth]{bkg_corr_ttv_2lss.pdf}
+\caption{Signal and Background correlation matrices for the input variables in the TMVA analysis for the same sign dilepton channel, for the signal (left), \ttbar\ background (middle), and \ttV\ background (right.)}
+\label{mva_corr_2lss}
+\end{figure}
+
+
 \section{Additional discriminating variables}
 
 Two additional discriminating variables were tested considering the fact that the forward jet in the background could come from the pileup; since we have a real forward jet in the signal, it could give some improvement in the discriminating power. The additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID). Distributions for these variables in the three lepton channel are shown in the Figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly real jets. 
@@ -928,7 +890,7 @@ Two additional discriminating variables were tested considering the fact that th
   \centering
    \includegraphics[width=0.9\textwidth]{fwd_add_var_ttv_3l.pdf}\\
    \includegraphics[width=0.9\textwidth]{fwd_add_var_tt_3l.pdf}
-\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for ttv training(Top row) and tt training (bottom row) in the three lepton channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for ``pileup jets'' while ``real jets'' are tagged as 1.}
+\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for ttv training(Top row) and tt training (bottom row) in the three lepton channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for \ti{pileup jets} while \ti{real jets} are tagged as 1.}
 \label{fwd_add_var_3l}
 \end{figure}
 
@@ -1054,7 +1016,7 @@ base 10 var tt   & 0.777\\
 
 %% The overall higgs decay width (modified by both \Ct\ and \CV) becomes irrelevant if limits are quoted as absolute cross sections rather than multiples of the expected cross section (which depends on the overall Higgs decay width).
 
-%% % Two possibilities are explored: one where the $\gamma\gamma$, $\Z\gamma$, and $\Pg\Pg$ decays are modified with \Ct\ (referred to as the ``resolved'' model henceforth), and one where they are kept fixed at their SM values.
+%% % Two possibilities are explored: one where the $\gamma\gamma$, $\Z\gamma$, and $\Pg\Pg$ decays are modified with \Ct\ (referred to as the \ti{resolved} model henceforth), and one where they are kept fixed at their SM values.
 %% % In both cases, the $\PH\to\cPqc\cPqc$ branching is left unchanged with \Ct.
 
 %% The 1D histograms of events as categorized in regions of the 2D BDT plane is then used in a maximum likelihood fit of signal and background shapes, where the \tHq, \tHW, and \ttH\ signals are floating with a common signal strength modifier $r$, producing a 95\% C.L. upper limit the observed cross section of $\tHq+\tHW+\ttH$.
