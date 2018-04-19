@@ -428,14 +428,15 @@ The offline event selection level targets the specific topology of the \tHq sign
 \textbf{Same-sign $\ell\ell$ channel }           & \textbf{$\ell\ell\ell$ channel}              \\\hline
 \multicolumn{2}{c}{have fired one of the corresponding trigger paths}\\
 \multicolumn{2}{c}{No loose leptons with $m_{\ell\ell} < 12$GeV} \\
-\multicolumn{2}{c}{One or more $b$ tagged jets |\etac|<2.4} \\
+\multicolumn{2}{c}{One or more $b$ tagged jets (CSV medium) |\etac|<2.4} \\
 \multicolumn{2}{c}{One or more non-tagged jets: central $\to$ \pt>25 GeV, \etac<2.4} \\
 \multicolumn{2}{c}{\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4} \\
 \multicolumn{2}{c}{$E_T^{miss} LD > 0.2$} \\\hline
 Exactly two tight same-sign leptons              & Exactly three tight leptons \\
 Lepton $\pt>25/15$GeV                            & Lepton $\pt>25/15/15$GeV               \\
 Electrons are triple-charge consistent.          & No OSSF lepton pair with $|m_{\ell\ell}-m_Z|<15$GeV \\
-Muon \pt resolution: $\Delta p_T/p_T < 0.2$.     &                                                      \\\hline
+Muon \pt resolution: $\Delta p_T/p_T < 0.2$.     &                                                      \\
+No ee pair with $|m_{ee}-m_Z|<10$GeV&                                                    \\\hline
 \end{tabular}
 \caption{Summary of event selection.}\label{tab:cuts}
 \end{table}
@@ -446,11 +447,437 @@ In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25 
 
 The selection criteria in Table \ref{tab:cuts} represent a relatively loose selection that allows to maintain a large signal efficiency while suppressing the main backgrounds. This selection includes contributions from $H \to \tau\tau$ and $H\to ZZ$ as well. The events obtained from the selection are then used to extract the signal contribution in a second analysis step, using BDT discriminators against the main backgrounds of \ttW/\ttZ and non-prompt leptons from \ttbar. The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
 
-\vspace{15cm}
+%______________________ Signal discrimination ______________________
+\section{Signal discrimination }
+\label{secc:signal_disc}
+
+The production cross section for the signal processes \tHq, \tHW, and \ttH is only about 600 fb (the enhancement provided by inverted couplings, \Ct = -1 almost double it), resulting in a small signal to background ratio even for a tight selection. A multivariate method is hence employed to train a discriminator to separate \tH signal events from the dominant background events (\ttbar and \ttV).
+
+\subsection{MVA classifiers evaluation}
+
+Several MVA classifier algorithms were evaluated in order to determine the most appropriate method for this analysis\footnote{The choice of the tested algorithms was based on the experience from previous analyses and considering the expertise of the members of the \tHq and \ttH analyses groups. Only the BDT classifier is described in this thesis and a detailed description of all available methods can be found in Reference \cite{tmva}}. The comparison is based on the performance of the classifiers, encoded in the plot of the background rejection as a function of the signal efficiency (ROC curve). The top row of Figure ~\ref{roc} shows the ROC curves for the several methods evaluated; two separated training were performed in the $3l$ channel: against \ttbar\ (right) and \ttV\ (left) processes.
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.49\textwidth]{roc_ttv_3l_multimva.pdf}
+   \includegraphics[width=0.49\textwidth]{roc_tt_3l_multimva.pdf} \\
+   \includegraphics[width=0.49\textwidth]{roc_ttv_2lss.pdf}
+   \includegraphics[width=0.49\textwidth]{roc_tt_2lss.pdf} 
+
+\caption[MVA classifiers performance.]{ Top: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers in the $3l$ channel for training against \ttV\ (left) and \ttbar\ (right). Bottom: background rejection vs signal efficiency (ROC curve) in the $2lss$ channel for a single discriminator: BDTG, against \ttV\ (left) and \ttbar\ (right).}
+\label{roc}
+\end{figure} 
+
+In both cases the gradient boosted decision tree \ti{BDTG} (BDTA\_GRAD in the plot) classifier offers the best results, followed by the adaptive BDT classifier (\ti{BDTA}); the several Fisher classifiers tested, which differ in their parameters and/or boosting method, they offer similar performance among them, while the k-Nearest Neighbour (kNN) classifier performance is below the rest of the classifiers. The corresponding ROC curves and in the $2lss$ channel for trainings against \ttV (left) and \ttbar(right) processes are shown in the bottom row of Figure ~\ref{roc}; the BDTG performance is similar to that in the $3l$ channel.
+
+\subsection{Discriminating variables}
+
+The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of table \ref{tab:bgsamples} and the samples marked with an * in the same table.
+
+As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a discriminator with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis.
+
+The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lp{10cm}}\hline
+Variable name        & Description\\ \hline
+nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
+nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
+MaxEtaJet25          & Max. $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
+detaFwdJetClosestLep & $\Delta \eta$ forward light jet and closest lepton\\
+detaFwdJetBJet       & $\Delta \eta$ forward light jet and hardest CSV loose jet\\
+detaFwdJet2BJet      & $\Delta \eta$ forward light jet and second hardest CSV loose jet \\\hline
+Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for ss2l)\\
+totCharge            & Sum of lepton charges \\
+minDRll              & Min $\Delta R$ any two leptons\\
+dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hline
+\end{tabular}
+\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to jet multiplicities; second section lists variables related to forward jet activity, and third section lists variables related to lepton kinematics.}
+\label{tab:bdtinputs}
+\end{table}
+
+Plots in Figure ~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples, in the $3l$ channels.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.32\textwidth]{Lep3Pt.pdf} 
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet.pdf}
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet.pdf}\\
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJetClosestLep.pdf}
+ \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
+ \includegraphics[width=0.32\textwidth]{maxEtaJet25.pdf}\\
+ \includegraphics[width=0.32\textwidth]{minDRll.pdf}
+ \includegraphics[width=0.32\textwidth]{nJet25.pdf} 
+ \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}\\
+ \includegraphics[width=0.32\textwidth]{totCharge.pdf}
+\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables (not normalized) for signal discrimination in the $3l$ channel.} 
+\label{fig:input_vars_3l}
+\end{figure}    
+
+All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure ~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while \tHq peak around 18 GeV; although the discrimination power does not cover all the backgrounds, it counts for the final discriminator. A similar situation can be seen in the plot for the number of jets (row three, column two); \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process. The discrimination power is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event (row two, column three). The same or equivalent input variables are found to be performing well for both $3l$ and $2lss$ channels. Figure ~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
+
+\subsubsection*{Discrimination power from BDTG classifier}
+
+%% \begin{figure} [!h]
+%%   \centering
+%%   \includegraphics[width=\textwidth]{mva_input1_tt.pdf}
+%%   \includegraphics[width=\textwidth]{mva_input2_tt.pdf}
+%% \caption[BDT input variables. Discrimination against \ttbar in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq signal (blue) discriminated against \ttbar\ background (red).} 
+%% \label{mva_input_tt}
+%% \end{figure}
 
 
 
+The Discrimination power of the input variables can also be evaluated from the BDTG training, exclusively for the training samples, \ie, dominant backgrounds (\ttbar and \ttV); the training samples are submitted to the selection cuts on Table ~\ref{tab:cuts}.
 
+\begin{figure} [!ht]
+  \centering
+  \includegraphics[width=\textwidth]{mva_input1.pdf}
+  \caption[BDT input variables. Discrimination against \ttbar and \ttV\ in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq signal(blue) discriminated against \ttV\ background (red).}
+\label{fig:mva_input_comp}
+\end{figure}
+
+Figure \ref{fig:mva_input_comp} shows the comparison between input variables for the two trainings in the $3l$ channel; it reveals that some variables show opposite behavior for the two background sources, which results in potentially screening the discrimination power if they were to be used in a single discriminant, \ie, if the training would join \ttbar and \ttV. For some other variables the distributions are similar in both background cases. In contrast to the distributions in Figure ~\ref{fig:input_vars_3l} only the dominant backgrounds are included; however, the discrimination power agrees among plots.
+
+Figures in the Appendix ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\ref{mva_input_tt}, and ~\ref{mva_input_ttv} show the input variables distributions for the $2lss$ and $3l$ channel as seen by the BDTG classifier. 
+
+\subsubsection*{Input variables correlations}
+
+\begin{figure} [!ht]
+  \centering
+      \includegraphics[width=0.32\textwidth]{sig_corr_tt_2lss.pdf}
+      \includegraphics[width=0.32\textwidth]{bkg_corr_tt_2lss.pdf}
+      \includegraphics[width=0.32\textwidth]{bkg_corr_ttv_2lss.pdf}\\
+      \includegraphics[width=0.32\textwidth]{corr_signal.pdf}
+      \includegraphics[width=0.32\textwidth]{corr_tt.pdf}
+      \includegraphics[width=0.32\textwidth]{corr_ttv.pdf}
+\caption[Correlation matrices for the BDT input variables.]{ Signal (left), \ttbar\ background (middle), and \ttV\ background (right.) correlation matrices for the input variables in the BDTG classifier for the $2lss$ (top) and  $3l$ (bottom) channels.}
+\label{mva_corr}
+\end{figure}
+
+From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extend. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure ~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity.
+
+
+\subsection{BDTG classifiers response}
+
+After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure ~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining is also visible.
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.49\textwidth]{bdta_grad_output_3l_ttv}
+   \includegraphics[width=0.49\textwidth]{bdta_grad_output_3l_tt}
+\caption[BDTG classifier response. Default parameters.]{BDTG classifier output for trainings against \ttV (left) and \ttbar(right). Default BDTG  parameters have been used.}
+\label{fig:bdtg_output_default}
+\end{figure}
+
+In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} list the set of parameters found to be most discriminant with minimal overtraining as shown in Figure \ref{fig:output_2lss}.  
+
+\begin{table} [!h]
+\centering
+\begin{tabular}{lll}\hline
+  \verb|TMVA.Types.kBDT                  | \\\hline
+  \verb|Option            Default   Used |\\
+  \verb|NTrees            200       800  |\\
+  \verb|BoostType         AdaBoost  Grad | \\
+  \verb|Shrinkage         1         0.1  | \\ 
+  \verb|nCuts             20        50   | \\
+  \verb|MaxDepth          3              | \\ \hline
+\end{tabular}
+\caption[Configuration used in the final BDTG training.]{Configuration used in the final BDTG training. Parameters not listed were not tested.}\label{tab:bdtsettings}
+\end{table}
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.49\textwidth]{bdt_output_ttv_2lss.pdf}
+   \includegraphics[width=0.49\textwidth]{bdt_output_tt_2lss.pdf}\\
+   \includegraphics[width=0.49\textwidth]{bdt_response_ttv_3l.pdf}
+   \includegraphics[width=0.49\textwidth]{bdt_response_tt_3l.pdf}
+\caption[BDTG classifier output.]{BDTG classifiers output for training against \ttV (left) and \ttbar(right) for $2lss$ channel(top) and $3l$ channel (bottom) .}
+\label{fig:output_2lss}
+\end{figure}
+
+\begin{table}[h!]
+%\centering
+\footnotesize
+\begin{tabular}{llrlr}\hline
+      &\multicolumn{2}{c}{$2lss$ channel}         & \multicolumn{2}{c}{$3l$ channel}            \\\hline
+      &\ttbar training       & \ttV training       & \ttbar training      & \ttV training        \\%\hline
+Rank  & Variable             & Variable            & Variable             & Variable             \\ \hline
+    1 & minDRll              & dEtaFwdJetBJet      & dEtaFwdJetClosestLep & maxEtaJet25          \\
+    2 & dEtaFwdJetClosestLep & Lep3Pt              & minDRll              & dEtaFwdJet2BJet      \\
+    3 & dEtaFwdJetBJet       & maxEtaJet25         & maxEtaJet25          & dEtaFwdJetBJet       \\
+    4 & dPhiHighestPtSSPair  & dEtaFwdJet2BJet     & dPhiHighestPtSSPair  & Lep2Pt               \\
+    5 & Lep3Pt               & dEtaFwdJetClosestLep& Lep2Pt               & dEtaFwdJetClosestLep \\
+    6 & maxEtaJet25          & minDRll             & dEtaFwdJetBJet       & minDRll              \\
+    7 & dEtaFwdJet2BJet      & dPhiHighestPtSSPair & dEtaFwdJet2BJet      & nJet25               \\
+    8 & nJetEta1             & nJet25              & nJetEta1             & dPhiHighestPtSSPair  \\
+    9 & nJet25               & nJetEta1            & nJet25               & nJetEta1             \\
+   10 & lepCharge            & lepCharge           & lepCharge            & lepCharge            \\\hline
+\end{tabular}
+\caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $3l$ channel and $2lss$ channel. In both trainings the rankings show almost the same 5 variables in the first places.}
+\label{ranking}
+\end{table}
+
+The ranking of the input variables by their importance in the classification process is shown in Table~\ref{ranking}; for both trainings the rankings show almost the same 5 variables in the first places.
+
+
+%% \begin{table}[h!]
+%% \centering
+%% \footnotesize
+%% \begin{tabular}{lllll}\hline
+%%       &\multicolumn{2}{c}{\ttbar training}  & \multicolumn{2}{c}{\ttV training}\\\hline
+%% Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
+%%     1 & minDRll              & 1.329e-01   & dEtaFwdJetBJet       & 1.264e-01\\
+%%     2 & dEtaFwdJetClosestLep & 1.294e-01   & Lep3Pt               & 1.224e-01\\
+%%     3 & dEtaFwdJetBJet       & 1.209e-01   & maxEtaJet25          & 1.221e-01\\
+%%     4 & dPhiHighestPtSSPair  & 1.192e-01   & dEtaFwdJet2BJet      & 1.204e-01\\
+%%     5 & Lep3Pt               & 1.158e-01   & dEtaFwdJetClosestLep & 1.177e-01\\
+%%     6 & maxEtaJet25          & 1.121e-01   & minDRll              & 1.143e-01\\
+%%     7 & dEtaFwdJet2BJet      & 9.363e-02   & dPhiHighestPtSSPair  & 9.777e-02\\
+%%     8 & nJetEta1             & 6.730e-02   & nJet25\_Recl         & 9.034e-02\\
+%%     9 & nJet25\_Recl         & 6.178e-02   & nJetEta1             & 4.749e-02\\
+%%    10 & lepCharge            & 4.701e-02   & lepCharge            & 4.116e-02\\\hline
+%%     1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
+%%     2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
+%%     3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
+%%     4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
+%%     5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
+%%     6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
+%%     7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
+%%     8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
+%%     9 & nJet25               & 6.254e-02   & nJetEta1             & 5.948e-02\\
+%%    10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
+%% \end{tabular}
+%% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
+%% \label{ranking}
+%% \end{table}
+
+\subsection{Additional discriminating variables}
+
+\begin{figure} [!h]
+  \centering
+   \includegraphics[width=0.9\textwidth]{fwd_add_var_ttv_3l.pdf}\\
+   \includegraphics[width=0.9\textwidth]{fwd_add_var_tt_3l.pdf}
+\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for \ttV training (top row) and \ttbar training (bottom row) in the $3l$ channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for \ti{pileup jets} while \ti{primary vertex jets} are tagged as 1.}
+\label{fwd_add_var_3l}
+\end{figure}
+
+Given that the forward jet in background processes could be originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID); their distributions in the $3l$ channel are shown in Figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly originated in the primary vertex. 
+
+The testing was performed by including in the BDTG input one variable at a time, so the discrimination power of each variable can be evaluated individually, and then both simultaneously. fwdJetPUID was ranked in the last place in importance (11) in both training (\ttV and \ttbar) while fwdJetPt25 was ranked 3 in the \ttV training and 7 in the \ttbar training. When training using 12 variables, fwdJetPt25 was ranked 5 and 7 in the \ttV and \ttbar trainings respectively, while fwdJetPUID was ranked 12 in both cases.
+
+\begin{table}[!hb]
+\centering
+\begin{tabular}{lcc}\hline
+               &\multicolumn{2}{c}{ROC-integral} \\               
+               & \ttV  & \ttbar\\\hline                        
+base 10 var    & 0.848 & 0.777\\      
++ fwdJetPUID   & 0.849 & 0.777\\      
++ fwdJetPt25   & 0.856 & 0.787\\      
+12 var         & 0.856 & 0.787\\\hline
+\end{tabular}
+\caption[ROC-integral for all the testing cases.]{ROC-integral for all the testing cases performed in the evaluation of the additional variables discriminating power. The improvement in the discrimination performance provided by the additional variables is about 1\% .}\label{tab:add_var_improvement}
+\end{table}
+
+The improvement in the discrimination performance provided by the additional variables is about 1\%, so it was decided not to include them in the procedure. Table ~\ref{tab:add_var_improvement} show the ROC-integral for all the testing cases performed.
+
+\subsection{Signal extraction procedure}
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.49\textwidth]{hthq.pdf}
+ \includegraphics[width=0.49\textwidth]{hthw.pdf}\\
+ \includegraphics[width=0.49\textwidth]{hbg.pdf}
+ \includegraphics[width=0.49\textwidth]{hratio.pdf}
+\caption[2D BDT classifier output planes]{BDT classifier output planes (training vs \ttbar\ on x-axis and vs \ttV\ on y-axis) for the \tHq\ and \tHW\ signals (top row), and for the combined backgrounds (bottom left). Bottom right: S/B ratio (combining \tHq\ and \tHW) in the same plane. Plots are for $3l$ channel.}
+\label{fig:mva12}
+\end{figure}
+
+Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure ~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is showed in the bottom right plot of Figure ~\ref{fig:mva12}.      
+
+Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure ~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Sec.~\ref{sec:binopt}).
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.8\textwidth]{hratio_binning.pdf}
+\caption{Binning overlaid on the S/B ratio map on the plane of classifier outputs.}
+\label{fig:binning}
+\end{figure}
+
+From this event categorization, a 1D histogram of expected distribution is produced for each signal and background process, and fit to the observed data (or the Asimov dataset for expected limits).
+
+\subsection{Binning and selection optimization}\label{sec:binopt}
+
+The effect of the choice of pre-selection cuts and the number of bins of the 1D histogram on the cross section limit is evaluated by varying the most important cuts and re-calculating the limit in each case. In this analysis, the optimization was performed in the $3l$ channel, by evaluating the upper limits on the \tHq+\ \tHW\ expected signal strength only (without \ttH component), always evaluated at $\Ct=-1.0$, $\CV=1.0$.
+
+Table~\ref{cut_limit} shows the several variations explored, compared with a baseline; the baseline is similar to the selection reported in Table~\ref{tab:cuts} but only a loose CSV jet and a Z veto of $\pm10$ GeV are required. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+Selection                         & Variation                & Expected limit \\ \hline
+Baseline                          &                          & $<2.93$\\
+Loose CSV tags                    & $\geq 1 \to \geq 2$      & $<3.81$\\
+Medium CSV tags                   & $\geq 0 \to \geq 1$      & $<2.76$\\
+Light forward jet $\eta$          & $\geq 0 \to \geq 1$      & $<2.94$\\
+Light forward jet $\eta$          & $\geq 0 \to \geq 1.5$    & $<3.00$\\
+MET>30 GeV                        &                          & $<2.91$\\
+Z veto ($|m_{\ell\ell}-m_Z|$)     & $>10$GeV $\to >15$ GeV   & $<2.79$\\
+One medium CSV + 15 GeV\ Z veto   & combined                 & $<2.62$\\\hline
+\end{tabular}
+\caption[Selection cuts optimization.]{Signal strength limit variation as a function of tighter cuts. The baseline selection corresponds to a looser selection compared to the one reported in Tab.~\ref{tab:cuts} where only a CSV-loose \bjet is required, and the Z veto is loosened to $\pm10$ GeV. The optimal selection determined here corresponds to the baseline plus the two variations in the last row.}
+\label{cut_limit}
+\end{table}
+
+The optimal limit is found when requiring a slightly tighter selection with respect to the baseline. The optimal selection is reported in Table~\ref{tab:cuts}.
+
+The signal strength limit also depends on the chosen binning in the 2D plane as the S/B ratio varies across the plane, hence, several sizes and binning combinations were tested in order to improve the limit. Figure ~\ref{bins} shows some of the binning combinations tested; in the default combination all the bins have the same size, while the best limit was found for a set of 10 bins. The bin borders and the resulting limits are shown in Table ~\ref{bin_limits}.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=\textwidth]{bin_scheme.pdf} 
+\caption{Binning combination scheme.}
+\label{bins}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llllllll}\hline
+Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\%\hline 
+                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline           
+16 (default)    &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.91$\\
+16              &-0.5 & 0.3 & 0.7 &-0.5 & 0.3 & 0.7 & $<2.83$\\
+10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.93$\\
+10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.7 & $<2.86$\\
+10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.5 & $<2.84$\\
+10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.7 & $<2.87$\\
+\textbf{10}     &\textbf{-0.5} &\textbf{0.4} &\textbf{0.7} &\textbf{-0.5} &\textbf{0.4} &\textbf{0.7} &$\mathbf{<2.81}$\\\hline
+\end{tabular}
+\caption[Limit variation as a function of bin size.]{Limit variation as a function of bin size. The final bin borders used in the $3l$ channel are indicated in bold.}
+\label{bin_limits}
+\end{table}
+
+Combining the optimization of binning and using the tighter pre-selection cuts, the expected limit in the $3l$ channel alone reaches \textbf{r<2.59}.
+
+A similar binning optimization was made for $2lss$ channel, including other binning combinations. First, the $3l$ channel binning was used to estimate the expected limit, then, bin borders were varied to obtain the best possible expected limit. The bin borders and the resulting signal strength limits for the same-sign dimuon channel are shown in Table~\ref{bin_limits_2lss}:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{llllllll}\hline
+Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\
+                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline
+16              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
+12              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
+12              &-0.3 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
+12              &-0.3 & 0.3 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
+12              &-0.3 & 0.3 & 0.7 &-0.4 & 0.4 & 0.7 & $<1.70$\\
+12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.4 & 0.7 & $<1.70$\\
+12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.7 & $<1.68$\\
+12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.1 & 0.7 & $<1.70$\\
+12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.6 & $<1.70$\\
+10              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.75$\\
+\textbf{10}     &\textbf{-0.3} &\textbf{ 0.3} &\textbf{ 0.7} &\textbf{-0.3} &\textbf{ 0.2} &\textbf{ 0.6} &$\mathbf{<1.69}$\\\hline
+\end{tabular}
+\caption{Limit variation as a function of bin size in the same-sign dimuon channel. (In bold: the final bin borders used in the $2lss$ channel.)}
+\label{bin_limits_2lss}
+\end{table}
+
+The expected limit was found to be \textbf{r<1.69} for optimized bin borders in 10 bins and optimized pre-selection cuts.
+
+Two additional binning strategies were tested, however, the obtained limits are degraded; they are documented in Appendix \ref{app:ad_binning}.   
+
+%%%%-------------------signal model----------------
+
+\section{Signal model}
+
+The goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. The simulated \tHq, \tHW, and \ttH\ signal events are used with event-by-event weights to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, we can produce limits for different values of \CV\ and \Ct. (See Tab.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated.) The slight shape-dependence of the BDT outputs as a function of the couplings is documented in Appendix ~\ref{sec:bdtvscvct}.
+
+Apart from the \Ct/\CV\ interference of the \tHq\ and \tHW\ production cross sections, the cross section of \ttH\ scales as $\Ct^2$. Furthermore, the Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top-quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ changes with changing \CV.
+
+We hence set an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH.
+
+If we assume a modifier for the Higgs-to-tau coupling ($\kappa_\tau$) to be equal to $\Ct$, the relative fractions of $\WW$, $\ZZ$, and $\tautau$ in our selection will only depend on the ratio of $\Ct/\CV$.
+Any limit set at any given value of $\Ct/\CV$ is thus valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier.
+Rather than as a function of the $\Ct/\CV$ ratio, limits could (equivalently) be reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign.
+Such a parameter, further referred to as \ft, as defined in Equation ~\ref{eq:ft}, spans the entire possible parameter space between $-1.0$ and $1.0$, with the SM expectation at $0.5$.
+Absolute values of $1.0$ or $0.0$ would then correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
+
+\begin{equation} \label{eq:ft}
+	\ft = \mathrm{sign}(\Ct/\CV) \times \frac{\Ct^2}{\Ct^2+\CV^2}.
+\end{equation}
+
+Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{rrrrr}
+ $\ft$ & \Ct/\CV & $\CV=0.5$ & $\CV=1.0$ & $\CV=1.5$ \\ \hline
+  -0.973 & -6.000 & -3.00 &       &       \\
+  -0.941 & -4.000 & -2.00 &       &       \\
+  -0.900 & -3.000 & -1.50 & -3.00 &       \\
+  -0.862 & -2.500 & -1.25 &       &       \\
+  -0.800 & -2.000 & -1.00 & -2.00 & -3.00 \\
+  -0.692 & -1.500 & -0.75 & -1.50 &       \\
+  -0.640 & -1.333 &       &       & -2.00 \\
+  -0.610 & -1.250 &       & -1.25 &       \\
+  -0.500 & -1.000 & -0.50 & -1.00 & -1.50 \\
+  -0.410 & -0.833 &       &       & -1.25 \\
+  -0.360 & -0.750 &       & -0.75 &       \\
+  -0.308 & -0.667 &       &       & -1.00 \\
+  -0.200 & -0.500 & -0.25 & -0.50 & -0.75 \\
+  -0.100 & -0.333 &       &       & -0.50 \\
+  -0.059 & -0.250 &       & -0.25 &       \\
+  -0.027 & -0.167 &       &       & -0.25 \\
+   0.000 &  0.000 &  0.00 &  0.00 &  0.00 \\
+   0.027 &  0.167 &       &       &  0.25 \\
+   0.059 &  0.250 &       &  0.25 &       \\
+   0.100 &  0.333 &       &       &  0.50 \\
+   0.200 &  0.500 &  0.25 &  0.50 &  0.75 \\
+   0.308 &  0.667 &       &       &  1.00 \\
+   0.360 &  0.750 &       &  0.75 &       \\
+   0.410 &  0.833 &       &       &  1.25 \\
+   0.500 &  1.000 &  0.50 &  1.00 &  1.50 \\
+   0.610 &  1.250 &       &  1.25 &       \\
+   0.640 &  1.333 &       &       &  2.00 \\
+   0.692 &  1.500 &  0.75 &  1.50 &       \\
+   0.800 &  2.000 &  1.00 &  2.00 &  3.00 \\
+   0.862 &  2.500 &  1.25 &       &       \\
+   0.900 &  3.000 &  1.50 &  3.00 &       \\
+   0.941 &  4.000 &  2.00 &       &       \\
+   0.973 &  6.000 &  3.00 &       &       \\ \hline
+\end{tabular}
+\caption{The 33 distinct values of $\Ct/\CV$ and \ft\ as mapped by the 51 \Ct\ and \CV\ points.}
+\label{tab:ctcvvalues}
+\end{table}
+
+The overall higgs decay width (modified by both \Ct\ and \CV) becomes irrelevant if limits are quoted as absolute cross sections rather than multiples of the expected cross section (which depends on the overall Higgs decay width).
+
+% Two possibilities are explored: one where the $\gamma\gamma$, $\Z\gamma$, and $\Pg\Pg$ decays are modified with \Ct\ (referred to as the ``resolved'' model henceforth), and one where they are kept fixed at their SM values.
+% In both cases, the $\PH\to\cPqc\cPqc$ branching is left unchanged with \Ct.
+
+The 1D histograms of events as categorized in regions of the 2D BDT plane is then used in a maximum likelihood fit of signal and background shapes, where the \tHq, \tHW, and \ttH\ signals are floating with a common signal strength modifier $r$, producing a 95\% C.L. upper limit the observed cross section of $\tHq+\tHW+\ttH$.
+
+This is done separately for each point of \Ct\ and \CV, where the cross sections and branching fractions are scaled accordingly in each point.
+Limits at fixed values of $\Ct/\CV$ are by construction identical.
+Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrscalingK6_0p5}--\ref{tab:xsbrscalingK6_1p5} in Appendix~\ref{sec:xsbrscalings} show the scalings of cross section times branching fraction, as well as branching fractions alone for each of the Higgs decay modes and each of the signal components.
+
+%% Leaving out the limit plots in each channel for now.
+% \begin{figure} [!h]
+%  \centering
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p0.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p0.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p0.pdf} \\
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p5.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p5.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p5.pdf} \\
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_0p5.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_0p5.pdf}
+%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_0p5.pdf}
+% \
+% \caption{Expected asymptotic limit on $\frac{\sigma}{\sigma_{theor}}$ as a function of \Ct\ for $\CV=1.0$, $\CV=1.5$, $\CV=0.5$ (top to bottom) for the three lepton channel (left), the \mumu\ channel (middle), and the \emu\ channel (right).}
+% \label{fig:limits_cv_3l}
+% \end{figure}
 
 
 
@@ -603,556 +1030,6 @@ Dont forget to mention previous constrains to ct check Reference \ref{biswas} an
 %
 
 \vspace{15cm}
-
-
-
-
-
-
-
-
-%______________________ Signal discrimination ______________________
-\section{Signal discrimination }
-\label{secc:signal_disc}
-
-The production cross section for the signal processes \tHq, \tHW, and \ttH is only about 600 fb (the enhancement provided by inverted couplings, \Ct = -1 almost double it), resulting in a small signal to background ratio even for a tight selection. A multivariate method is hence employed to train a discriminator to separate \tH signal events from the dominant background events (\ttbar and \ttV).
-
-\subsection{MVA classifiers evaluation}
-
-Several MVA classifier algorithms were evaluated in order to determine the most appropriate method for this analysis\footnote{The choice of the tested algorithms was based on the experience from previous analyses and considering the expertise of the members of the \tHq and \ttH analyses groups. Only the BDT classifier is described in this thesis and a detailed description of all available methods can be found in Reference \cite{tmva}}. The comparison is based on the performance of the classifiers, encoded in the plot of the background rejection as a function of the signal efficiency (ROC curve). The top row of Figure ~\ref{roc} shows the ROC curves for the several methods evaluated; two separated training were performed in the $3l$ channel: against \ttbar\ (right) and \ttV\ (left) processes.
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.49\textwidth]{roc_ttv_3l_multimva.pdf}
-   \includegraphics[width=0.49\textwidth]{roc_tt_3l_multimva.pdf} \\
-   \includegraphics[width=0.49\textwidth]{roc_ttv_2lss.pdf}
-   \includegraphics[width=0.49\textwidth]{roc_tt_2lss.pdf} 
-
-\caption[MVA classifiers performance.]{ Top: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers in the $3l$ channel for training against \ttV\ (left) and \ttbar\ (right). Bottom: background rejection vs signal efficiency (ROC curve) in the $2lss$ channel for a single discriminator: BDTG, against \ttV\ (left) and \ttbar\ (right).}
-\label{roc}
-\end{figure} 
-
-In both cases the gradient boosted decision tree \ti{BDTG} (BDTA\_GRAD in the plot) classifier offers the best results, followed by the adaptive BDT classifier (\ti{BDTA}); the several Fisher classifiers tested, which differ in their parameters and/or boosting method, they offer similar performance among them, while the k-Nearest Neighbour (kNN) classifier performance is below the rest of the classifiers. The corresponding ROC curves and in the $2lss$ channel for trainings against \ttV (left) and \ttbar(right) processes are shown in the bottom row of Figure ~\ref{roc}; the BDTG performance is similar to that in the $3l$ channel.
-
-\subsection{Discriminating variables}
-
-The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of table \ref{tab:bgsamples} and the samples marked with an * in the same table.
-
-As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a discriminator with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis.
-
-The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{lp{10cm}}\hline
-Variable name        & Description\\ \hline
-nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
-nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
-MaxEtaJet25          & Max. $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
-detaFwdJetClosestLep & $\Delta \eta$ forward light jet and closest lepton\\
-detaFwdJetBJet       & $\Delta \eta$ forward light jet and hardest CSV loose jet\\
-detaFwdJet2BJet      & $\Delta \eta$ forward light jet and second hardest CSV loose jet \\\hline
-Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for ss2l)\\
-totCharge            & Sum of lepton charges \\
-minDRll              & Min $\Delta R$ any two leptons\\
-dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hline
-\end{tabular}
-\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to jet multiplicities; second section lists variables related to forward jet activity, and third section lists variables related to lepton kinematics.}
-\label{tab:bdtinputs}
-\end{table}
-
-Plots in Figure ~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples, in the $3l$ channels.
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.32\textwidth]{Lep3Pt.pdf} 
- \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet.pdf}
- \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet.pdf}\\
- \includegraphics[width=0.32\textwidth]{dEtaFwdJetClosestLep.pdf}
- \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
- \includegraphics[width=0.32\textwidth]{maxEtaJet25.pdf}\\
- \includegraphics[width=0.32\textwidth]{minDRll.pdf}
- \includegraphics[width=0.32\textwidth]{nJet25.pdf} 
- \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}\\
- \includegraphics[width=0.32\textwidth]{totCharge.pdf}
-\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables (not normalized) for signal discrimination in the $3l$ channel.} 
-\label{fig:input_vars_3l}
-\end{figure}    
-
-All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure ~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while \tHq peak around 18 GeV; although the discrimination power does not cover all the backgrounds, it counts for the final discriminator. A similar situation can be seen in the plot for the number of jets (row three, column two); \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process. The discrimination power is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event (row two, column three). The same or equivalent input variables are found to be performing well for both $3l$ and $2lss$ channels. Figure ~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
-
-\subsubsection*{Discrimination power from BDTG classifier}
-
-%% \begin{figure} [!h]
-%%   \centering
-%%   \includegraphics[width=\textwidth]{mva_input1_tt.pdf}
-%%   \includegraphics[width=\textwidth]{mva_input2_tt.pdf}
-%% \caption[BDT input variables. Discrimination against \ttbar in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq signal (blue) discriminated against \ttbar\ background (red).} 
-%% \label{mva_input_tt}
-%% \end{figure}
-
-
-
-The Discrimination power of the input variables can also be evaluated from the BDTG training, exclusively for the training samples, \ie, dominant backgrounds (\ttbar and \ttV); the training samples are submitted to the selection cuts on Table ~\ref{tab:cuts}.
-
-\begin{figure} [!ht]
-  \centering
-  \includegraphics[width=\textwidth]{mva_input1.pdf}
-  \caption[BDT input variables. Discrimination against \ttbar and \ttV\ in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq signal(blue) discriminated against \ttV\ background (red).}
-\label{fig:mva_input_comp}
-\end{figure}
-
-Figure \ref{fig:mva_input_comp} shows the comparison between input variables for the two trainings in the $3l$ channel; it reveals that some variables show opposite behavior for the two background sources, which results in potentially screening the discrimination power if they were to be used in a single discriminant, \ie, if the training would join \ttbar and \ttV. For some other variables the distributions are similar in both background cases. In contrast to the distributions in Figure ~\ref{fig:input_vars_3l} only the dominant backgrounds are included; however, the discrimination power agrees among plots.
-
-Figures ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\ref{mva_input_tt}, and ~\ref{mva_input_ttv} show the input variables distributions for the $2lss$ and $3l$ channel as seen by the BDTG classifier. 
-
-\subsubsection*{Input variables correlations}
-
-\begin{figure} [!ht]
-  \centering
-      \includegraphics[width=0.32\textwidth]{sig_corr_tt_2lss.pdf}
-      \includegraphics[width=0.32\textwidth]{bkg_corr_tt_2lss.pdf}
-      \includegraphics[width=0.32\textwidth]{bkg_corr_ttv_2lss.pdf}\\
-      \includegraphics[width=0.32\textwidth]{corr_signal.pdf}
-      \includegraphics[width=0.32\textwidth]{corr_tt.pdf}
-      \includegraphics[width=0.32\textwidth]{corr_ttv.pdf}
-\caption[Correlation matrices for the BDT input variables.]{ Signal (left), \ttbar\ background (middle), and \ttV\ background (right.) correlation matrices for the input variables in the BDTG classifier for the $2lss$ (top) and  $3l$ (bottom) channels.}
-\label{mva_corr}
-\end{figure}
-
-From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extend. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure ~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity.
-
-
-\subsection{BDTG classifiers response}
-
-After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure ~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining is also visible.
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.49\textwidth]{bdta_grad_output_3l_ttv}
-   \includegraphics[width=0.49\textwidth]{bdta_grad_output_3l_tt}
-\caption[BDTG classifier response. Default parameters.]{BDTG classifier output for trainings against \ttV (left) and \ttbar(right). Default BDTG  parameters have been used.}
-\label{fig:bdtg_output_default}
-\end{figure}
-
-In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} list the set of parameters found to be most discriminant with minimal overtraining as shown in Figure \ref{fig:output_2lss}.  
-
-\begin{table} [!h]
-\centering
-\begin{tabular}{lll}\hline
-  \verb|TMVA.Types.kBDT                  | \\\hline
-  \verb|Option            Default   Used |\\
-  \verb|NTrees            200       800  |\\
-  \verb|BoostType         AdaBoost  Grad | \\
-  \verb|Shrinkage         1         0.1  | \\ 
-  \verb|nCuts             20        50   | \\
-  \verb|MaxDepth          3              | \\ \hline
-\end{tabular}
-\caption[Configuration used in the final BDTG training.]{Configuration used in the final BDTG training. Parameters not listed were not tested.}\label{tab:bdtsettings}
-\end{table}
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.49\textwidth]{bdt_output_ttv_2lss.pdf}
-   \includegraphics[width=0.49\textwidth]{bdt_output_tt_2lss.pdf}\\
-   \includegraphics[width=0.49\textwidth]{bdt_response_ttv_3l.pdf}
-   \includegraphics[width=0.49\textwidth]{bdt_response_tt_3l.pdf}
-\caption[BDTG classifier output.]{BDTG classifiers output for training against \ttV (left) and \ttbar(right) for $2lss$ channel(top) and $3l$ channel (bottom) .}
-\label{fig:output_2lss}
-\end{figure}
-
-\begin{table}[h!]
-%\centering
-\footnotesize
-\begin{tabular}{llrlr}\hline
-      &\multicolumn{2}{c}{$2lss$ channel}         & \multicolumn{2}{c}{$3l$ channel}            \\\hline
-      &\ttbar training       & \ttV training       & \ttbar training      & \ttV training        \\%\hline
-Rank  & Variable             & Variable            & Variable             & Variable             \\ \hline
-    1 & minDRll              & dEtaFwdJetBJet      & dEtaFwdJetClosestLep & maxEtaJet25          \\
-    2 & dEtaFwdJetClosestLep & Lep3Pt              & minDRll              & dEtaFwdJet2BJet      \\
-    3 & dEtaFwdJetBJet       & maxEtaJet25         & maxEtaJet25          & dEtaFwdJetBJet       \\
-    4 & dPhiHighestPtSSPair  & dEtaFwdJet2BJet     & dPhiHighestPtSSPair  & Lep2Pt               \\
-    5 & Lep3Pt               & dEtaFwdJetClosestLep& Lep2Pt               & dEtaFwdJetClosestLep \\
-    6 & maxEtaJet25          & minDRll             & dEtaFwdJetBJet       & minDRll              \\
-    7 & dEtaFwdJet2BJet      & dPhiHighestPtSSPair & dEtaFwdJet2BJet      & nJet25               \\
-    8 & nJetEta1             & nJet25              & nJetEta1             & dPhiHighestPtSSPair  \\
-    9 & nJet25               & nJetEta1            & nJet25               & nJetEta1             \\
-   10 & lepCharge            & lepCharge           & lepCharge            & lepCharge            \\\hline
-\end{tabular}
-\caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $3l$ channel and $2lss$ channel. In both trainings the rankings show almost the same 5 variables in the first places.}
-\label{ranking}
-\end{table}
-
-The ranking of the input variables by their importance in the classification process is shown in Table~\ref{ranking}; for both trainings the rankings show almost the same 5 variables in the first places.
-
-
-%% \begin{table}[h!]
-%% \centering
-%% \footnotesize
-%% \begin{tabular}{lllll}\hline
-%%       &\multicolumn{2}{c}{\ttbar training}  & \multicolumn{2}{c}{\ttV training}\\\hline
-%% Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
-%%     1 & minDRll              & 1.329e-01   & dEtaFwdJetBJet       & 1.264e-01\\
-%%     2 & dEtaFwdJetClosestLep & 1.294e-01   & Lep3Pt               & 1.224e-01\\
-%%     3 & dEtaFwdJetBJet       & 1.209e-01   & maxEtaJet25          & 1.221e-01\\
-%%     4 & dPhiHighestPtSSPair  & 1.192e-01   & dEtaFwdJet2BJet      & 1.204e-01\\
-%%     5 & Lep3Pt               & 1.158e-01   & dEtaFwdJetClosestLep & 1.177e-01\\
-%%     6 & maxEtaJet25          & 1.121e-01   & minDRll              & 1.143e-01\\
-%%     7 & dEtaFwdJet2BJet      & 9.363e-02   & dPhiHighestPtSSPair  & 9.777e-02\\
-%%     8 & nJetEta1             & 6.730e-02   & nJet25\_Recl         & 9.034e-02\\
-%%     9 & nJet25\_Recl         & 6.178e-02   & nJetEta1             & 4.749e-02\\
-%%    10 & lepCharge            & 4.701e-02   & lepCharge            & 4.116e-02\\\hline
-%%     1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
-%%     2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
-%%     3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
-%%     4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
-%%     5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
-%%     6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
-%%     7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
-%%     8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
-%%     9 & nJet25               & 6.254e-02   & nJetEta1             & 5.948e-02\\
-%%    10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
-%% \end{tabular}
-%% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
-%% \label{ranking}
-%% \end{table}
-
-\subsection{Additional discriminating variables}
-
-\begin{figure} [!h]
-  \centering
-   \includegraphics[width=0.9\textwidth]{fwd_add_var_ttv_3l.pdf}\\
-   \includegraphics[width=0.9\textwidth]{fwd_add_var_tt_3l.pdf}
-\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for \ttV training (top row) and \ttbar training (bottom row) in the $3l$ channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for \ti{pileup jets} while \ti{primary vertex jets} are tagged as 1.}
-\label{fwd_add_var_3l}
-\end{figure}
-
-Given that the forward jet in background processes could be originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID); their distributions in the $3l$ channel are shown in Figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly originated in the primary vertex. 
-
-The testing was performed by including in the BDTG input one variable at a time, so the discrimination power of each variable can be evaluated individually, and then both simultaneously. fwdJetPUID was ranked in the last place in importance (11) in both training (\ttV and \ttbar) while fwdJetPt25 was ranked 3 in the \ttV training and 7 in the \ttbar training. When training using 12 variables, fwdJetPt25 was ranked 5 and 7 in the \ttV and \ttbar trainings respectively, while fwdJetPUID was ranked 12 in both cases.
-
-\begin{table}[!hb]
-\centering
-\begin{tabular}{lcc}\hline
-               &\multicolumn{2}{c}{ROC-integral} \\               
-               & \ttV  & \ttbar\\\hline                        
-base 10 var    & 0.848 & 0.777\\      
-+ fwdJetPUID   & 0.849 & 0.777\\      
-+ fwdJetPt25   & 0.856 & 0.787\\      
-12 var         & 0.856 & 0.787\\\hline
-\end{tabular}
-\caption[ROC-integral for all the testing cases.]{ROC-integral for all the testing cases performed in the evaluation of the additional variables discriminating power. The improvement in the discrimination performance provided by the additional variables is about 1\% .}\label{tab:add_var_improvement}
-\end{table}
-
-The improvement in the discrimination performance provided by the additional variables is about 1\%, so it was decided not to include them in the procedure. Table ~\ref{tab:add_var_improvement} show the ROC-integral for all the testing cases performed.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Signal extraction procedure}
-The two BDT classifiers introduced in the previous section, trained against the dominant \ttbar\ and \ttV\ backgrounds in each channel, are used to evaluate the limits in a fit to the classifier shape.
-Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other.
-Each event is now classified into one of ten 2D-bins according to its position in the plane, see Fig.~\ref{fig:binning}.
-The number of bins is chosen such that no bins are entirely empty for any process.
-The bin boundary positions have been studied and optimized with respect to the expected limit, see Sec.~\ref{sec:binopt}.
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.45\textwidth]{figures/hthq.pdf}
- \includegraphics[width=0.45\textwidth]{figures/hthw.pdf}\\
- \includegraphics[width=0.45\textwidth]{figures/hbg.pdf}
- \includegraphics[width=0.45\textwidth]{figures/hratio.pdf}
-\caption{BDT classifier output planes (training vs \ttbar\ on x-axis and vs \ttV\ on y-axis) for the \tHq\ and \tHW\ signals (top row), and for the combined backgrounds (bottom left). Backgrounds are evaluated as in the final background prediction, \ie\ these are not the samples used in the MVA training and this includes data-driven backgrounds. Bottom right shows the S/B ratio (combining \tHq\ and \tHW) in the same plane. Three lepton channel only.}
-\label{fig:mva12}
-\end{figure}
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.8\textwidth]{figures/hratio_binning.pdf}
-\caption{Binning overlaid on the S/B ratio map on the plane of classifier outputs.}
-\label{fig:binning}
-\end{figure}
-
-From this event categorization, a 1D histogram of expected distribution is produced for each signal and background process, and fit to the observed data (or the Asimov dataset for expected limits).
-
-
-\subsection{Binning and selection optimization}\label{sec:binopt}
-\emph{Note that the numbers in this subsection are upper limits on the \tHq+\tHW\ cross sections only (without \ttH), and are always evaluated at $\Ct=-1.0$, $\CV=1.0$.}
-\hrule
-
-The effect on the cross section limit of the choice of pre-selection cuts is evaluated by varying the most important cuts and re-calculating the limit (in the three lepton channel) in each case.
-Table~\ref{cut_limit} shows the several variations made, compared to a baseline corresponding to the selection reported in Tab.~\ref{tab:evsel}, but with only a loose CSV jet and a \Z\ veto of $\pm10\GeV$.
-The optimal limit is found when requiring a slightly tighter selection with respect to the baseline.
-This is the selection reported in Tab.~\ref{tab:evsel}.
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{lll}
-Selection                         & Variation                & Expected limit \\ \hline
-Baseline                          & see Tab.~\ref{tab:evsel} & $<2.93$\\
-Loose CSV tags                    & $\geq 1 \to \geq 2$      & $<3.81$\\
-Medium CSV tags                   & $\geq 0 \to \geq 1$      & $<2.76$\\
-Light forward jet $\eta$          & $\geq 0 \to \geq 1$      & $<2.94$\\
-Light forward jet $\eta$          & $\geq 0 \to \geq 1.5$    & $<3.00$\\
-$\MET>30\GeV$                     &                          & $<2.91$\\
-\Z\ veto ($|m_{\ell\ell}-m_\Z|$)  & $>10\GeV \to >15\GeV$    & $<2.79$\\
-One medium CSV + 15\GeV\ \Z\ veto & combined                 & $<2.62$\\\hline
-\end{tabular}
-\caption{Limit variation as a function of tighter cuts. The baseline selection corresponds to a looser selection as the one reported in Tab.~\ref{tab:evsel} (which is the optimal selection determined here (last line)), where only a CSV-loose \cPqb-tagged jet is required, and the \Z\ veto is loosened to $\pm10\GeV$.}
-\label{cut_limit}
-\end{table}
-
-The obtained cross section limit also depends on the chosen binning in the 2D plane as the S/B ratio varies across the plane, hence several sizes and binning combination were tested in order to optimize the limit.
-Figure~\ref{bins} show some of the binning combinations tested; in the default combination all the bins have the same size, while the best limit was found for a set of 10 bins.
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=\textwidth]{figures/bin_scheme.pdf} 
-\caption{Binning combination scheme.}
-\label{bins}
-\end{figure}
-
-The bins borders and the resulting cross section limits are shown in Tab.~\ref{bin_limits}:
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{llllllll}
-Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\\hline 
-                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline           
-16 (default)    &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.91$\\
-16              &-0.5 & 0.3 & 0.7 &-0.5 & 0.3 & 0.7 & $<2.83$\\
-10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.93$\\
-10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.7 & $<2.86$\\
-10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.5 & $<2.84$\\
-10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.7 & $<2.87$\\
-\textbf{10}     &\textbf{-0.5} &\textbf{ 0.4} &\textbf{ 0.7} &\textbf{-0.5} &\textbf{ 0.4} &\textbf{ 0.7} &$\mathbf{<2.81}$\\\hline
-\end{tabular}
-\caption{Limit variation as a function of bin size in the three lepton channel. (In bold: the final bin borders used in the analysis.)}
-\label{bin_limits}
-\end{table}
-
-
-Combining the optimization of binning and using the tighter pre-selection cuts, the expected limit in the three lepton channel alone reaches $r<2.59$.
-
-For same-sign dilepton channel, other binning combinations were also tested. 
-First the three lepton binning was used to estimate the expected limit then bin borders were varied to obtain the best possible expected limit.
-The bin borders and the resulting cross section limits for the same-sign dimuon channel are shown in Tab.~\ref{bin_limits_2lss}:
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{llllllll}
-Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\\hline
-                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline
-16              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
-12              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
-12              &-0.3 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
-12              &-0.3 & 0.3 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
-12              &-0.3 & 0.3 & 0.7 &-0.4 & 0.4 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.4 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.7 & $<1.68$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.1 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.6 & $<1.70$\\
-10              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.75$\\
-\textbf{10}     &\textbf{-0.3} &\textbf{ 0.3} &\textbf{ 0.7} &\textbf{-0.3} &\textbf{ 0.2} &\textbf{ 0.6} &$\mathbf{<1.69}$\\\hline
-\end{tabular}
-\caption{Limit variation as a function of bin size in the same-sign dimuon channel. (In bold: the final bin borders used in the analysis.)}
-\label{bin_limits_2lss}
-\end{table}
-
-The expected limit was found to be $r<1.69$ for optimized bin borders in 10 bins.
-
-
-\subsection{Other binning strategies}
-Two further strategies of clustering regions in the 2D plane of $BDT_{tt}$ vs $BDT_{ttV}$ into bins were attempted, following studies done in the \ttH\ multilepton analysis (and documented in greater detail in~\cite{CMS_AN_2017-029}).
-
-\textbf{Clustering by S/B ratio}
-The 2D plane is clustered into a given number of bins corresponding to regions where S/B is within a certain range.
-The bin borders are determined such that the number of background events in each bin is approximately equal.
-(See Sec.~5.3 in v4 of Ref.~\cite{CMS_AN_2017-029} for more details.)
-The resulting regions for same-sign dilepton and three lepton events are shown in Fig.~\ref{fig:sbbinning}, with the expected distribution of signal and main backgrounds in Fig.~\ref{fig:sbfinalbins}.
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.45\textwidth]{figures/binning/hTargetBinning_2lss.pdf}
- \includegraphics[width=0.45\textwidth]{figures/binning/hTargetBinning_3l.pdf}
-\caption{Binning by S/B regions for same-sign dilepton (left) and three leptons (right).}
-\label{fig:sbbinning}
-\end{figure}
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.45\textwidth]{figures/binning/likelihoodBased_1d_2lss.pdf}
- \includegraphics[width=0.45\textwidth]{figures/binning/likelihoodBased_1d_3l.pdf}
-\caption{Final bins (corresponding to S/B regions in the 2D plane) for same-sign dilepton (left) and three leptons (right).}
-\label{fig:sbfinalbins}
-\end{figure}
-
-Using this technique, the resulting limits (for the $\Ct=-1, \CV=1$ scenario) are about 20\% worse than with the binnings described above: \mumu\ changed from 1.82 to 2.15, \threel\ from 1.52 to 1.75.
-
-\textbf{$k$-Means geometric clustering}
-A second clustering strategy employs a recursive application of the $k$-means algorithm (see Appendix D in v4 of Ref.~\cite{CMS_AN_2017-029}) to separate the 2D plane into geometric regions.
-The resulting clustering (using the \ttH\ multilepton code on \tHq\ signal and \ttbar\ and \ttV\ background events) are shown in Fig.~\ref{fig:kmeansbinning}.
-The expected distribution of events for the signal and main background in these bins is shown in Fig.~\ref{fig:kmeansfinalbins}.
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.45\textwidth]{figures/binning/voronoi_2l_trial0.png}
- \includegraphics[width=0.45\textwidth]{figures/binning/voronoi_3l_trial0.png}
-\caption{Binning into geometric regions using a $k$-means algorithm for same-sign dilepton (left) and three leptons (right).}
-\label{fig:kmeansbinning}
-\end{figure}
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.45\textwidth]{figures/binning/recursiveNoOrdering_2l_trial0.png}
- \includegraphics[width=0.45\textwidth]{figures/binning/recursiveNoOrdering_3l_trial0.png}
-\caption{Final bins using a $k$-means algorithm for same-sign dilepton (left) and three leptons (right). Note that the bin numbering here is such that signal-like bins are lower.}
-\label{fig:kmeansfinalbins}
-\end{figure}
-
-Similarly to the S/B ratio binning, the limits using the $k$-means clustering are significantly worse than those of the bins described before.
-In the \mumu\ channel, the limit deteriorates from 1.82 to 2.05, whereas in \threel\ it changes from 1.58 to 1.78.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Signal model}
-The goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings.
-The simulated \tHq, \tHW, and \ttH\ signal events are used with event-by-event weights to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, we can produce limits for different values of \CV\ and \Ct.
-(See Tab.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated.)
-The slight shape-dependence of the BDT outputs as a function of the couplings is documented in App.~\ref{sec:bdtvscvct}.
-
-Apart from the \Ct/\CV\ interference of the \tHq\ and \tHW\ production cross sections, the cross section of \ttH\ scales as $\Ct^2$.
-Furthermore, the Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top-quark loops in the $\PH\to\gamma\gamma$, $\PH\to\Z\gamma$, and $\PH\to\Pg\Pg$ decays.
-The relative contributions from $\PH\to\WW$, $\PH\to\ZZ$, and $\PH\to\tautau$ changes with changing \CV.
-
-We hence set an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH.
-
-If we assume a modifier for the Higgs-to-tau coupling ($\kappa_\tau$) to be equal to $\Ct$, the relative fractions of $\WW$, $\ZZ$, and $\tautau$ in our selection will only depend on the ratio of $\Ct/\CV$.
-Any limit set at any given value of $\Ct/\CV$ is thus valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier.
-Rather than as a function of the $\Ct/\CV$ ratio, limits could (equivalently) be reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign.
-Such a parameter, further referred to as \ft, as defined in Eq.~\ref{eq:ft}, spans the entire possible parameter space between $-1.0$ and $1.0$, with the SM expectation at $0.5$.
-Absolute values of $1.0$ or $0.0$ would then correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
-\begin{equation} \label{eq:ft}
-	\ft = \mathrm{sign}(\Ct/\CV) \times \frac{\Ct^2}{\Ct^2+\CV^2}.
-\end{equation}
-
-Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{rrrrr}
- $\ft$ & \Ct/\CV & $\CV=0.5$ & $\CV=1.0$ & $\CV=1.5$ \\ \hline
-  -0.973 & -6.000 & -3.00 &       &       \\
-  -0.941 & -4.000 & -2.00 &       &       \\
-  -0.900 & -3.000 & -1.50 & -3.00 &       \\
-  -0.862 & -2.500 & -1.25 &       &       \\
-  -0.800 & -2.000 & -1.00 & -2.00 & -3.00 \\
-  -0.692 & -1.500 & -0.75 & -1.50 &       \\
-  -0.640 & -1.333 &       &       & -2.00 \\
-  -0.610 & -1.250 &       & -1.25 &       \\
-  -0.500 & -1.000 & -0.50 & -1.00 & -1.50 \\
-  -0.410 & -0.833 &       &       & -1.25 \\
-  -0.360 & -0.750 &       & -0.75 &       \\
-  -0.308 & -0.667 &       &       & -1.00 \\
-  -0.200 & -0.500 & -0.25 & -0.50 & -0.75 \\
-  -0.100 & -0.333 &       &       & -0.50 \\
-  -0.059 & -0.250 &       & -0.25 &       \\
-  -0.027 & -0.167 &       &       & -0.25 \\
-   0.000 &  0.000 &  0.00 &  0.00 &  0.00 \\
-   0.027 &  0.167 &       &       &  0.25 \\
-   0.059 &  0.250 &       &  0.25 &       \\
-   0.100 &  0.333 &       &       &  0.50 \\
-   0.200 &  0.500 &  0.25 &  0.50 &  0.75 \\
-   0.308 &  0.667 &       &       &  1.00 \\
-   0.360 &  0.750 &       &  0.75 &       \\
-   0.410 &  0.833 &       &       &  1.25 \\
-   0.500 &  1.000 &  0.50 &  1.00 &  1.50 \\
-   0.610 &  1.250 &       &  1.25 &       \\
-   0.640 &  1.333 &       &       &  2.00 \\
-   0.692 &  1.500 &  0.75 &  1.50 &       \\
-   0.800 &  2.000 &  1.00 &  2.00 &  3.00 \\
-   0.862 &  2.500 &  1.25 &       &       \\
-   0.900 &  3.000 &  1.50 &  3.00 &       \\
-   0.941 &  4.000 &  2.00 &       &       \\
-   0.973 &  6.000 &  3.00 &       &       \\ \hline
-\end{tabular}
-\caption{The 33 distinct values of $\Ct/\CV$ and \ft\ as mapped by the 51 \Ct\ and \CV\ points.}
-\label{tab:ctcvvalues}
-\end{table}
-
-The overall higgs decay width (modified by both \Ct\ and \CV) becomes irrelevant if limits are quoted as absolute cross sections rather than multiples of the expected cross section (which depends on the overall Higgs decay width).
-
-% Two possibilities are explored: one where the $\gamma\gamma$, $\Z\gamma$, and $\Pg\Pg$ decays are modified with \Ct\ (referred to as the ``resolved'' model henceforth), and one where they are kept fixed at their SM values.
-% In both cases, the $\PH\to\cPqc\cPqc$ branching is left unchanged with \Ct.
-
-The 1D histograms of events as categorized in regions of the 2D BDT plane is then used in a maximum likelihood fit of signal and background shapes, where the \tHq, \tHW, and \ttH\ signals are floating with a common signal strength modifier $r$, producing a 95\% C.L. upper limit the observed cross section of $\tHq+\tHW+\ttH$.
-
-This is done separately for each point of \Ct\ and \CV, where the cross sections and branching fractions are scaled accordingly in each point.
-Limits at fixed values of $\Ct/\CV$ are by construction identical.
-Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrscalingK6_0p5}--\ref{tab:xsbrscalingK6_1p5} in Appendix~\ref{sec:xsbrscalings} show the scalings of cross section times branching fraction, as well as branching fractions alone for each of the Higgs decay modes and each of the signal components.
-
-%% Leaving out the limit plots in each channel for now.
-% \begin{figure} [!h]
-%  \centering
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p0.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p0.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p0.pdf} \\
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p5.pdf} \\
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_0p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_0p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_0p5.pdf}
-% \
-% \caption{Expected asymptotic limit on $\frac{\sigma}{\sigma_{theor}}$ as a function of \Ct\ for $\CV=1.0$, $\CV=1.5$, $\CV=0.5$ (top to bottom) for the three lepton channel (left), the \mumu\ channel (middle), and the \emu\ channel (right).}
-% \label{fig:limits_cv_3l}
-% \end{figure}
 
 
 
