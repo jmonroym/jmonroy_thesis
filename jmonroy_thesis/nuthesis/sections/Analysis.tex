@@ -158,7 +158,7 @@ $\mu\mu$ & $1.00 \pm 0.01$ \\
 \label{tab:trigSFs}
 \end{table}
 
-\subsection{Signal modeling and MC samples}
+\subsection{MC samples}
 
 Current event generators allow for adjusting the kinematics of the generated events, based on an event-wise reweighting; in this way, several generation parameters phase spaces can be explored according to the experimental interests. The signal samples used in this analysis were generated in such a way that not only the case \Ct=-1, but an extended range of \Ct and \CV values may be investigated.
 
@@ -173,7 +173,7 @@ Current event generators allow for adjusting the kinematics of the generated eve
 \tHq and \tHW cross section in the \Ct-\CV phase space are shown in Figure \ref{fig:ktkv_phase_space}. As said in section \ref{sec:event_generation}, the \tHq sample was generated using the 4F scheme which provides a better description of the additional $b$ quark from the initial gluon splitting, while the \tHW sample was generated using the 5F scheme in order to remove its the interference with \ttH at LO.
 
 
-\subsubsection*{MC signal samples}
+\subsubsection*{MC signal samples}\label{ssec:mc_signal}
 
 The two signal samples, \tHq\ and \tHW, correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X; they were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.2.2.3), in LO order mode at $\sqrt{s}=13$ TeV, and are normalized to NLO cross sections (see Table~\ref{tab:sigsamples}). The Higgs boson is assumed to be SM-like except for the values of its couplings to the top quark and W boson. Each sample was generated with a set of event weights corresponding to 51 different values of (\Ct, \CV) couplings, accessible in terms of LHE event weights as shown in Table ~\ref{tab:reweight}; however, the main interest is the (\Ct=-1,\CV=1) case. 
 
@@ -397,7 +397,93 @@ Jets originated from the hadronization of a $b$ quark are selected using a MVA l
 Two working points are defined, based on the CSV algorithm output: \ti{loose'} working point (CSV>0.46) with a $b$ signal tagging efficiency of about 83\% and a mistagging rate of about 8\%; and \ti{medium} working point (CSV>0.80) with $b-$tagging efficiency of about 69\% and mistagging rate of order 1\% \cite{btag_points}. Tagging of jets from charm quarks have efficiencies of about 40\%  and 18\% for loose and medium working points respectively. Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
 
 
-% FIXME Something about forward jets?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection*{Forward jets}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The forward jet \etac distribution is poorly modeled in simulation. To estimate
+the effect of a mismodeled forward jet distribution, we reweight the events in simulation (i.e.
+for signal and the irreducible backgrounds) based on the normalized data/MC ratio in the
+control region and thereby derive an alternative shape of the BDT output distributions that
+reflects a hypothetical perfect data/MC agreement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Missing Energy MET}
 
@@ -548,8 +634,7 @@ The contribution from charge mis-ID electrons in signal selection of this analys
 
 \section{Pre-selection yields}
 
-The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}. For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed
-by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}.
+The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}; Figure ~\ref{fig:input_vars_presel} shows the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity. The remaining variables distributions are shown in Appendix \ref{app:presel_plots}. 
 
 \begin{table}[thb]
 \centering
@@ -578,6 +663,24 @@ Data (35.9\fbinv)             & \multicolumn{1}{l}{127}&\multicolumn{1}{l}{280} 
 \label{tab:yields-sel}
 \end{table}
 
+\begin{figure}[!htb]
+\centering
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_mm.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_mm.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_mm.pdf} \\
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_em.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_em.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_em.pdf} \\
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_3l.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_3l.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_3l.pdf} 
+\caption{Distributions of discriminating variables for the event pre-selection for the same-sign \mumu\ channel (top row), the same-sign \emu\ channel (middle row) and three lepton channel (bottom row), normalized to 35.9\fbinv, before fitting the signal discriminant to the observed data. Uncertainties are statistical and unconstrained (pre-fit) normalization systematics. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$.}
+\label{fig:input_vars_presel}
+\end{figure}
+
+For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed
+by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}.
+
 \begin{table}[hbt]
 \centering
 \begin{tabular}{lrrrr}\hline
@@ -600,23 +703,6 @@ $\tHW (H\to bb)$              & $<0.01$ & $<0.1$\% & $<0.01$ &$<0.1$\% \\ \hline
 \caption[Signal yields split by decay channels of the Higgs boson.]{Signal yields split by decay channels of the Higgs boson. Forward jet \pt cut at 25 GeV.}
 \label{tab:yield_hbr}
 \end{table}
-
-Figure ~\ref{fig:input_vars_presel} shows the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity. The remaining variables distributions are shown in Appendix \ref{app:presel_plots} 
-
-\begin{figure}[!htb]
-\centering
-        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_mm.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_mm.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/nJet25_mm.pdf} \\
-        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_em.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_em.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/nJet25_em.pdf} \\
-        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_3l.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_3l.pdf}
-        \includegraphics[width=0.31\linewidth]{polished/nJet25_3l.pdf} 
-\caption{Distributions of discriminating variables for the event pre-selection for the same-sign \mumu\ channel (top row), the same-sign \emu\ channel (middle row) and three lepton channel (bottom row), normalized to 35.9\fbinv, before fitting the signal discriminant to the observed data. Uncertainties are statistical and unconstrained (pre-fit) normalization systematics. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$.}
-\label{fig:input_vars_presel}
-\end{figure}
 
 A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between this both analyses are presented in Appendix \ref{app:overlap}.   
 
@@ -765,27 +851,27 @@ In order to explore further optimization in the BDTG performance, several change
 \label{fig:output_2lss}
 \end{figure}
 
-\begin{table}[h!]
-%\centering
-\footnotesize
-\begin{tabular}{llrlr}\hline
-      &\multicolumn{2}{c}{$2lss$ channel}         & \multicolumn{2}{c}{$3l$ channel}            \\\hline
-      &\ttbar training       & \ttV training       & \ttbar training      & \ttV training        \\%\hline
-Rank  & Variable             & Variable            & Variable             & Variable             \\ \hline
-    1 & minDRll              & dEtaFwdJetBJet      & dEtaFwdJetClosestLep & maxEtaJet25          \\
-    2 & dEtaFwdJetClosestLep & Lep3Pt              & minDRll              & dEtaFwdJet2BJet      \\
-    3 & dEtaFwdJetBJet       & maxEtaJet25         & maxEtaJet25          & dEtaFwdJetBJet       \\
-    4 & dPhiHighestPtSSPair  & dEtaFwdJet2BJet     & dPhiHighestPtSSPair  & Lep2Pt               \\
-    5 & Lep3Pt               & dEtaFwdJetClosestLep& Lep2Pt               & dEtaFwdJetClosestLep \\
-    6 & maxEtaJet25          & minDRll             & dEtaFwdJetBJet       & minDRll              \\
-    7 & dEtaFwdJet2BJet      & dPhiHighestPtSSPair & dEtaFwdJet2BJet      & nJet25               \\
-    8 & nJetEta1             & nJet25              & nJetEta1             & dPhiHighestPtSSPair  \\
-    9 & nJet25               & nJetEta1            & nJet25               & nJetEta1             \\
-   10 & lepCharge            & lepCharge           & lepCharge            & lepCharge            \\\hline
-\end{tabular}
-\caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $3l$ channel and $2lss$ channel. In both trainings the rankings show almost the same 5 variables in the first places.}
-\label{ranking}
-\end{table}
+%% \begin{table}[h!]
+%% %\centering
+%% \footnotesize
+%% \begin{tabular}{llrlr}\hline
+%%       &\multicolumn{2}{c}{$2lss$ channel}         & \multicolumn{2}{c}{$3l$ channel}            \\\hline
+%%       &\ttbar training       & \ttV training       & \ttbar training      & \ttV training        \\%\hline
+%% Rank  & Variable             & Variable            & Variable             & Variable             \\ \hline
+%%     1 & minDRll              & dEtaFwdJetBJet      & dEtaFwdJetClosestLep & maxEtaJet25          \\
+%%     2 & dEtaFwdJetClosestLep & Lep3Pt              & minDRll              & dEtaFwdJet2BJet      \\
+%%     3 & dEtaFwdJetBJet       & maxEtaJet25         & maxEtaJet25          & dEtaFwdJetBJet       \\
+%%     4 & dPhiHighestPtSSPair  & dEtaFwdJet2BJet     & dPhiHighestPtSSPair  & Lep2Pt               \\
+%%     5 & Lep3Pt               & dEtaFwdJetClosestLep& Lep2Pt               & dEtaFwdJetClosestLep \\
+%%     6 & maxEtaJet25          & minDRll             & dEtaFwdJetBJet       & minDRll              \\
+%%     7 & dEtaFwdJet2BJet      & dPhiHighestPtSSPair & dEtaFwdJet2BJet      & nJet25               \\
+%%     8 & nJetEta1             & nJet25              & nJetEta1             & dPhiHighestPtSSPair  \\
+%%     9 & nJet25               & nJetEta1            & nJet25               & nJetEta1             \\
+%%    10 & lepCharge            & lepCharge           & lepCharge            & lepCharge            \\\hline
+%% \end{tabular}
+%% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $3l$ channel and $2lss$ channel. In both trainings the rankings show almost the same 5 variables in the first places.}
+%% \label{ranking}
+%% \end{table}
 
 The ranking of the input variables by their importance in the classification process is shown in Table~\ref{ranking}; for both trainings the rankings show almost the same 5 variables in the first places.
 
@@ -820,6 +906,37 @@ The ranking of the input variables by their importance in the classification pro
 %% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
 %% \label{ranking}
 %% \end{table}
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabular}{llr}\hline
+      &\ttbar training          & \ttV\ training\\\hline
+Rank  & Variable                & Variable             \\ \hline
+    1 & minDRll                 & dEtaFwdJetBJet       \\
+    2 & dEtaFwdJetClosestLep    & Lep3Pt               \\
+    3 & dEtaFwdJetBJet          & maxEtaJet25          \\
+    4 & dPhiHighestPtSSPair     & dEtaFwdJet2BJet      \\
+    5 & Lep3Pt                  & dEtaFwdJetClosestLep \\
+    6 & maxEtaJet25             & minDRll              \\
+    7 & dEtaFwdJet2BJet         & dPhiHighestPtSSPair  \\
+    8 & nJetEta1                & nJet25\_Recl         \\
+    9 & nJet25\_Recl            & nJetEta1             \\
+   10 & lepCharge               & lepCharge            \\\hline
+    1 & dEtaFwdJetClosestLep    & maxEtaJet25          \\ 
+    2 & minDRll                 & dEtaFwdJet2BJet      \\
+    3 & maxEtaJet25             & dEtaFwdJetBJet       \\
+    4 & dPhiHighestPtSSPair     & Lep2Pt               \\
+    5 & Lep2Pt                  & dEtaFwdJetClosestLep \\
+    6 & dEtaFwdJetBJet          & minDRll              \\
+    7 & dEtaFwdJet2BJet         & nJet25\_Recl         \\
+    8 & nJetEta1                & dPhiHighestPtSSPair  \\
+    9 & nJet25                  & nJetEta1             \\
+   10 & lepCharge               & lepCharge            \\ \hline
+\end{tabular}
+\caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
+\label{ranking}
+\end{table}
 
 \subsection{Additional discriminating variables}
 
@@ -955,69 +1072,42 @@ The expected limit was found to be \textbf{r<1.69} for optimized bin borders in 
 
 Two additional binning strategies were tested, however, the obtained limits are degraded; they are documented in Appendix \ref{app:ad_binning}.   
 
-
-
-
-
-
-
-
-
-
-
-
-. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
-
-Dont forget to mention previous constrains to ct check Reference \ref{biswas} and References https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%-------------------signal model----------------
+%%%-------------------signal model----------------
 
 \section{Signal model}
 
-The goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. The simulated \tHq, \tHW, and \ttH\ signal events are used with event-by-event weights to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, we can produce limits for different values of \CV\ and \Ct. (See Tab.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated.) The slight shape-dependence of the BDT outputs as a function of the couplings is documented in Appendix ~\ref{sec:bdtvscvct}.
+It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is showed in Appendix ~\ref{sec:bdtvscvct}.
 
-Apart from the \Ct/\CV\ interference of the \tHq\ and \tHW\ production cross sections, the cross section of \ttH\ scales as $\Ct^2$. Furthermore, the Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top-quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ changes with changing \CV.
+In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{}:
 
-We hence set an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH.
+\begin{align}
+\sigma(\tHq) =& (2.633 \Ct^2 + 3.578 \CV^2 - 5.211 \Ct\CV) * \sigma_{SM}(\tHq),\\
+\sigma(\tHW) =& (2.909 \Ct^2 + 2.310 \CV^2 - 4.220 \Ct\CV) * \sigma_{SM}(\tHW),\\
+\sigma(\ttH) =& \Ct^2 * \sigma_{SM}(ttH).
+\end{align}
 
-If we assume a modifier for the Higgs-to-tau coupling ($\kappa_\tau$) to be equal to $\Ct$, the relative fractions of $\WW$, $\ZZ$, and $\tautau$ in our selection will only depend on the ratio of $\Ct/\CV$.
-Any limit set at any given value of $\Ct/\CV$ is thus valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier.
-Rather than as a function of the $\Ct/\CV$ ratio, limits could (equivalently) be reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign.
-Such a parameter, further referred to as \ft, as defined in Equation ~\ref{eq:ft}, spans the entire possible parameter space between $-1.0$ and $1.0$, with the SM expectation at $0.5$.
-Absolute values of $1.0$ or $0.0$ would then correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
+\begin{figure} [!h]
+ \centering
+  \includegraphics[width=0.48\textwidth]{xs_scaling.pdf}
+  \includegraphics[width=0.48\textwidth]{br_scaling.pdf}
+\caption[Scaling of the \tHq, \tHW, and \ttH\ production cross section  with \Ct/\CV.]{Scaling of the \tHq, \tHW, and \ttH\ production cross sections (left) and of the $H\to WW^*$, $H\to\tautau$, and $H\to\ZZ^*$ branching ratios (right), as a function of \Ct/\CV, for three different values of \CV.}
+\label{fig:xsbrscalings}
+\end{figure}
 
-\begin{equation} \label{eq:ft}
-	\ft = \mathrm{sign}(\Ct/\CV) \times \frac{\Ct^2}{\Ct^2+\CV^2}.
-\end{equation}
+The Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top-quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ also changes with changing \CV.
+
+If the Higgs-to-tau coupling modifier ($\kappa_\tau$) is assumed to be equal to \Ct, the relative fractions of \WW, \ZZ, and \tautau in the event selection will only depend on the ratio of $\Ct/\CV$; thus, any limit set at any given value of $\Ct/\CV$ is valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier. Figure \ref{fig:xsbrscalings} shows the \tHq, \tHW and \ttH cross sections(left) and the Higgs boson branching ratios $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ (right) as a function of the \Ct/\CV ratio. 
+
+Thus, this analysis sets an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH as a function of the ratio \Ct/\CV.
+
+Similar interpretation can be made if instead of reporting the limits as a function of the $\Ct/\CV$ ratio, they are reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign
+
+\beqn
+\ft = \mathrm{sign}\left(\frac{\Ct}{\CV}\right) \times \frac{\Ct^2}{\Ct^2+\CV^2}.
+\label{eq:ft}
+\eeqn
+
+\noindent this parameter covers the full space between $-1.0$ and $1.0$, with the SM expectation at $0.5$. Absolute values of $1.0$ or $0.0$ would correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
 
 Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
 
@@ -1059,157 +1149,74 @@ Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter 
    0.941 &  4.000 &  2.00 &       &       \\
    0.973 &  6.000 &  3.00 &       &       \\ \hline
 \end{tabular}
-\caption{The 33 distinct values of $\Ct/\CV$ and \ft\ as mapped by the 51 \Ct\ and \CV\ points.}
+\caption[\Ct/\CV ratios.]{The 33 distinct values of \Ct/\CV and \ft\ as mapped by the 51 \Ct\ and \CV\ points.}
 \label{tab:ctcvvalues}
 \end{table}
 
-The overall higgs decay width (modified by both \Ct\ and \CV) becomes irrelevant if limits are quoted as absolute cross sections rather than multiples of the expected cross section (which depends on the overall Higgs decay width).
+The overall Higgs decay width (modified by both \Ct\ and \CV) becomes irrelevant if limits are quoted as absolute cross sections rather than multiples of the expected cross section (which depends on it).
 
 % Two possibilities are explored: one where the $\gamma\gamma$, $\Z\gamma$, and $\Pg\Pg$ decays are modified with \Ct\ (referred to as the ``resolved'' model henceforth), and one where they are kept fixed at their SM values.
 % In both cases, the $\PH\to\cPqc\cPqc$ branching is left unchanged with \Ct.
 
-The 1D histograms of events as categorized in regions of the 2D BDT plane is then used in a maximum likelihood fit of signal and background shapes, where the \tHq, \tHW, and \ttH\ signals are floating with a common signal strength modifier $r$, producing a 95\% C.L. upper limit the observed cross section of $\tHq+\tHW+\ttH$.
+The 1D histograms of events as categorized in regions of the 2D BDTG plane are then used in a maximum likelihood fit of signal and background shapes, where the \tHq, \tHW, and \ttH\ signals are floating with a common signal strength modifier $r$, producing a 95\% C.L. upper limit the observed cross section of $\tHq+\tHW+\ttH$.
 
-This is done separately for each point of \Ct\ and \CV, where the cross sections and branching fractions are scaled accordingly in each point.
-Limits at fixed values of $\Ct/\CV$ are by construction identical.
-Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrscalingK6_0p5}--\ref{tab:xsbrscalingK6_1p5} in Appendix~\ref{sec:xsbrscalings} show the scalings of cross section times branching fraction, as well as branching fractions alone for each of the Higgs decay modes and each of the signal components.
-
-%% Leaving out the limit plots in each channel for now.
-% \begin{figure} [!h]
-%  \centering
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p0.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p0.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p0.pdf} \\
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_1p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_1p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_1p5.pdf} \\
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_3l_cv_0p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_mm_cv_0p5.pdf}
-%  \includegraphics[width=0.32\textwidth]{figures/limits/limits_2lss_em_cv_0p5.pdf}
-% \
-% \caption{Expected asymptotic limit on $\frac{\sigma}{\sigma_{theor}}$ as a function of \Ct\ for $\CV=1.0$, $\CV=1.5$, $\CV=0.5$ (top to bottom) for the three lepton channel (left), the \mumu\ channel (middle), and the \emu\ channel (right).}
-% \label{fig:limits_cv_3l}
-% \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% This is done separately for each point of \Ct\ and \CV, where the cross sections and branching fractions are scaled accordingly in each point.
-%% Limits at fixed values of $\Ct/\CV$ are by construction identical.
-%% Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrscalingK6_0p5}--\ref{tab:xsbrscalingK6_1p5} in Appendix~\ref{sec:xsbrscalings} show the scalings of cross section times branching fraction, as well as branching fractions alone for each of the Higgs decay modes and each of the signal components.
-
-%% %% Leaving out the limit plots in each channel for now.
-%% % \begin{figure} [!h]
-%% %  \centering
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_3l_cv_1p0.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_mm_cv_1p0.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_em_cv_1p0.pdf} \\
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_3l_cv_1p5.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_mm_cv_1p5.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_em_cv_1p5.pdf} \\
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_3l_cv_0p5.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_mm_cv_0p5.pdf}
-%% %  \includegraphics[width=0.32\textwidth]{limits/limits_2lss_em_cv_0p5.pdf}
-%% % \
-%% % \caption{Expected asymptotic limit on $\frac{\sigma}{\sigma_{theor}}$ as a function of \Ct\ for $\CV=1.0$, $\CV=1.5$, $\CV=0.5$ (top to bottom) for the $3l$ channel (left), the \mumu\ channel (middle), and the \emu\ channel (right).}
-%% % \label{fig:limits_cv_3l}
-%% % \end{figure}
-
-
-
-
+This procedure is done separately for each point  (\Ct,\CV) where the cross sections and branching fractions are scaled accordingly in each point. Limits at fixed values of \Ct/\CV are by construction identical.
+Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrscalingK6_0p5}--\ref{tab:xsbrscalingK6_1p5} in Appendix~\ref{sec:xsbrscalings} show the scalings of cross section times branching fraction, as well as branching fractions alone for each of the Higgs decay modes and each of the signal components. 
 
 %% %______________________ Systematic errors ______________________
 
-Systematic uncertainties on the signal selection efficiency arise from correction factors applied
-to the simulated events to better match the measured detector performance and also from theoretical
-uncertainties in the modeling of the signal process.
-Scale factors applied to correct for data/MC differences in the trigger efficiency, lepton reconstruction
-and identification performance, and lepton selection efficiency carry a combined
-uncertainty of about 5% per lepton. The impact of the uncertainty in the signal selection efficiency
-from jet energy corrections is evaluated by varying the correction factors within their
-uncertainty and propagating the effect to the final result by recalculating all kinematic quantities.
-Effects on the overall normalization of event yields and on the shape of kinematic properties
-are both taken into account. Jet energy resolution effects have negligible impact on this
+\section{Systematic uncertainties}
 
-analysis. Correction factors for data/MC differences in the b-tagging performance are applied
-depending on the pT and η, and on the flavor of the jet, and their effect on the signal efficiency
-is evaluated by varying the factors within their measured uncertainty and recalculating the
-overall event scale factors.
+The uncertainties present in this analysis can be either of statistical nature given the size of the samples and the probabilistic nature of the processes, or of systematic nature. The systematic uncertainties are associated to theoretical uncertainties originating in the limited knowledge of the processes, and also to experimental uncertainties originating for instance from the limited resolution of the detectors. In this section, the contributions to the systematic uncertainties from all the sources in this analysis are considered.
+
+Rate uncertainties associated to the application of scaling factors for the affected processes, and shape uncertainties which affect not only the normalization but also the shape of certain distributions, compose the systematic uncertainties. The latter can affect the analysis during the event selection; therefore, these systematic shape uncertainties are applied to the simulation samples.
+
+\textbf{Experimental uncertainties}.
+
+\bit
+\item \ti{Luminosity} The measurement of the luminosity delivered by the LHC is affected by experimental conditions like pileup and the number of protons per bunch. Due to variations in the LHC running parameters an uncertainty of 2.6\% is applied.
+
+\item \ti{Lepton efficiencies} Systematic uncertainties in the signal selection efficiency arise from correction factors applied to the simulated events in order to better match the measured detector performance; also from theoretical uncertainties in the modeling of the signal process. Data/MC differences in the trigger efficiency accounted with scale factors applied to correct for them, lepton reconstruction and identification performance, and lepton selection efficiency carry a combined uncertainty of about 5\% per lepton.
+
+\item \ti{Jets related uncertainties} Jet energy corrections affect the uncertainty in the signal selection efficiency it is evaluated by varying the correction factors within their uncertainties and propagating the effects to the final results by recalculating the kinematic quantities. The effects of the jet energy scale uncertainties, $b$-tagging efficiency and foeward jet mismodeling are evaluated using dedicated shape templates derived from a variation of the jet energy scale within its uncertainty and from varying the $b$-tagging and forward jet data/MC scale factors within their uncertainty. 
+\eit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\textbf{Theory uncertainties}
+$Q^2$ scale and parton distribution function (pdf) uncertainties are applied as an overall normalization uncertainty using numbers from the NLO theory calculation.
+
+\textbf{Backgrounds}
+In addition to the theory uncertainties on the main irreducible backgrounds of \ttW, \ttZ, and \ttH, the smaller irreducible backgrounds and the charge mis-identification estimate are covered with flat normalization uncertainties.
+The \WZ\ contribution is normalized in a data control region and an uncertainty on the scale factor is derived in the process.
+Finally, the dominant uncertainty relates to the estimate of the reducible non-prompt lepton contribution using a fake rate method.
+The main normalization uncertainty on the used fake rates derives from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution, see Ref.~\cite{CMS_AN_2017-029}.
+Furthermore, shape variations resembling data/MC differences and deviations in closure test are evaluated as shape uncertainties.
+
+
+
+
+
+
+
+
+
 The uncertainties from unknown higher orders of tHq and tHW production are estimated from
 a change in the Q2
 scale of double and half the initial value, evaluated for each point of κt
@@ -1218,6 +1225,147 @@ scale
 variations and a further 3.6% from the knowledge of PDFs and αS [41].
 Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7% for
 tHq and about 4.0% for tHW.
+
+
+
+
+
+Table~\ref{tab:uncertainties} shows all sources of systematic uncertainty currently considered in the analysis.
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lll}\hline
+Source                          & Channel     & Size \\\hline
+\multicolumn{3}{l}{\bf Experimental uncertainties} \\
+Luminosity                      & all         & 1.026 \\
+Loose lepton efficiency         &             & 1.02 per lepton  \\
+Tight lepton efficiency         &             & 1.03 per lepton  \\
+Trigger efficiency              & \mumu\      & 1.01 \\
+                                & \emu\       & 1.01 \\
+                                & \ee\        & 1.02 \\
+                                & \threel\    & 1.03 \\
+Jet energy scale                & all         & templates \\
+Forward jet modeling            & all         & templates, see Tab.~\ref{tab:ratioFwdJet} \\
+\cPqb\ tagging efficiency       & all         & templates \\ \hline
+
+\multicolumn{3}{l}{\bf Theory uncertainties} \\
+$Q^2$ scale (\tHq)              & all         & 0.92--1.06 (depending on \Ct, \CV)\\
+$Q^2$ scale (\tHW)              & all         & 0.93--1.05 (depending on \Ct, \CV)\\
+$Q^2$ scale (\ttH)              & all         & 0.915/1.058\\
+$Q^2$ scale (\ttW)              & all         & 1.12\\
+$Q^2$ scale (\ttZ)              & all         & 1.11\\
+pdf (\ttH)                      & all         & 1.036\\
+pdf $\Pg\Pg$ (\ttZ)             & all         & 0.966\\
+pdf $\Pq\Paq$ (\ttW)            & all         & 1.04\\
+pdf $\Pq\Pg$ (\tHq)             & all         & 1.037\\
+pdf $\Pq\Pg$ (\tHW)             & all         & 1.040\\ \hline
+\multicolumn{3}{l}{\bf Higgs branching fractions} \\
+\verb|param_alphaS|             & all         & 1.012\\
+\verb|param_mB|                 & all         & 0.981\\
+\verb|HiggsDecayWidthTHU_hqq|   & all         & 0.988\\
+\verb|HiggsDecayWidthTHU_hvv|   & all         & 1.004\\
+\verb|HiggsDecayWidthTHU_hll|   & all         & 1.019\\\hline
+
+\multicolumn{3}{l}{\bf Backgrounds}         \\
+\WZ\ control region statistics  & \threel\    & 1.10 \\
+\WZ\ control region backgrounds & \threel\    & 1.20 \\
+\WZ\ modeling                   & \threel\    & 1.07  \\
+$\WZ+2\text{jet}$ background    & \mumu,\emu\ & 1.50 \\
+Rare SM processes               & all         & 1.50 \\
+Charge flips                    & \emu\       & 1.30 \\\hline
+\multicolumn{3}{l}{\bf Fake rate estimate}     \\
+Electron FR measurement         &             & templates \\
+Muon FR measurement             &             & templates \\
+Electron closure                & \ee\        & 1.05 norm., (0.99 (\ttbar)/1.06 (\ttV)) shape var. \\
+                                & \emu\       & 0.94 norm., (0.98 (\ttbar)/1.07 (\ttV)) shape var. \\
+                                & \threel\    & 1.40 norm., (1.09 (\ttbar)/1.05 (\ttV)) shape var. \\
+Muon closure                    & \mumu\      & 1.07 norm., (0.97 (\ttbar)/0.91 (\ttV)) shape var. \\
+                                & \emu\       & 1.09 norm., (1.06 (\ttbar)/1.03 (\ttV)) shape var. \\
+                                & \threel\    & 1.09 norm., (0.95 (\ttbar)/0.83 (\ttV)) shape var. \\\hline
+   \end{tabular} 
+   \caption{Pre-fit size of systematic uncertainties.}\label{tab:uncertainties}
+ \end{table}
+
+
+\textbf{Fake rate closure uncertainties}
+The BDT output shapes are compared between a pure MC estimation of fake leptons (in \ttbar), and an application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events.
+The difference in the resulting normalization and output shapes, both the training vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations.
+See Figs~\ref{fig:frclosure_2lss_ee} to~\ref{fig:frclosure_3l_mufake} for the results of these closure tests and Tab.~\ref{tab:uncertainties} for the resulting pre-fit uncertainties.
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_ee_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_ee_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_ee_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_ee_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \ee\ selection.} 
+\label{fig:frclosure_2lss_ee}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_elfake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_elfake_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \emu\ selection with electron fakes.} 
+\label{fig:frclosure_2lss_em_elfake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_em_mufake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_em_mufake_shape.pdf}\\ 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \emu\ selection with muon fakes.} 
+\label{fig:frclosure_2lss_em_mufake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_mm_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_mm_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_2lss_mm_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_2lss_mm_shape.pdf} \\
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Same-sign \mumu\ selection.} 
+\label{fig:frclosure_2lss_mm}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_elfake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_elfake_shape.pdf} \\
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Three lepton selection with electron fakes.} 
+\label{fig:frclosure_3l_elfake}
+\end{figure} 
+
+\begin{figure}[htb]
+ \centering
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_tt_3l_mufake_shape.pdf} 
+ \includegraphics[width=0.245\textwidth]{figures/FR_closures/thqMVA_ttv_3l_mufake_shape.pdf} 
+\caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. Three lepton selection with muon fakes.} 
+\label{fig:frclosure_3l_mufake}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1389,6 +1537,13 @@ tHq and about 4.0% for tHW.
 %% \caption{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the left two plots, shape disagreement is estimated from the right two (normalized) plots. $3l$ selection with muon fakes.} 
 %% \label{fig:frclosure_3l_mufake}
 %% \end{figure}
+
+
+
+. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
+
+
+
 
 
 %% %______________________ Results ______________________
