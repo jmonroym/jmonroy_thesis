@@ -404,10 +404,10 @@ Two working points are defined, based on the CSV algorithm output: \ti{loose'} w
 As stated in Section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by 
 
 \beqn
-E_T^{miss} LD = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
+E^{miss}_{T\quad LD} = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
 \eeqn
 
-\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E_T^{miss} LD > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
+\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E^{miss}_{T\quad LD} > 0.2$ was chosen to ensure a good signal efficiency while keeping a good background rejection.
 
 \section{Event selection}
 
@@ -430,7 +430,7 @@ The offline event selection level targets the specific topology of the \tHq sign
 \multicolumn{2}{c}{One or more $b$ tagged jets (CSV medium) |\etac|<2.4} \\
 \multicolumn{2}{c}{One or more non-tagged jets: central $\to$ \pt>25 GeV, \etac<2.4} \\
 \multicolumn{2}{c}{\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4} \\
-\multicolumn{2}{c}{$E_T^{miss} LD > 0.2$} \\\hline
+\multicolumn{2}{c}{$E^{miss}_{T\quad LD} > 0.2$} \\\hline
 Exactly two tight same-sign leptons              & Exactly three tight leptons \\
 Lepton $\pt>25/15$GeV                            & Lepton $\pt>25/15/15$GeV               \\
 Electrons are triple-charge consistent.          & No OSSF lepton pair with $|m_{\ell\ell}-m_Z|<15$GeV \\
@@ -440,13 +440,121 @@ No ee pair with $|m_{ee}-m_Z|<10$GeV&                                           
 \caption{Summary of event pre-selection.}\label{tab:cuts}
 \end{table}
 
+In the $2lss$ channel, events with additional tight leptons are vetoed as well as those for which a loose lepton pair has an invariant mass below 12 GeV. A threshold in \pt of the leading and sub-leading leptons is also required. Events where the two electrons have invariant mass within 10 GeV of the Z boson mass (\ti{Z-veto}) are discarded in order to reject events from DY+jets production with charge misidentified electrons. In addition, contribution from the associated production of two W bosons of equal charge and two light jets $W^\pm W^\pm qq$ and from same-sign W boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions.
+
+In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25 \textrm{GeV, }> 15\textrm{ GeV, and }> 15\textrm{ GeV}$. Events with an opposite-sign same-flavor lepton combination (OSSF) with invariant mass within 15 GeV of the Z boson mass are discarded in order to reject events from \WZ +jets production.
+
+%______________________ Background predictions ______________________
+\section{Background modeling and predictions}\label{sec:bg}
+
 The dominant background contribution is expected to arise from top quark production processes, either \ttbar pair production or in \ttbar associated production with a W/Z. Processes with production of single top quarks also contribute, mainly in the associated production with a Z boson (\tZq) or when produced with both a W and a Z boson (\tZW). Background contamination from diboson processes is strongly suppressed by imposing the Z-veto, vetoing additional leptons and requiring $b$-jets in the event.
 
+The selection criteria in Table \ref{tab:cuts} represent a relatively loose selection that allows to maintain a large signal efficiency while suppressing the main backgrounds; thus that selection is called \ti{pre-selection}. The events obtained from the pre-selection are then used to extract the signal contribution in a second analysis step, using BDT discriminators against the main backgrounds of \ttW/\ttZ\ and non-prompt leptons from \ttbar. The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
+
+Irreducible backgrounds are reliantly estimated from MC simulated events; therefore, in this analysis all backgrounds involving prompt leptons are estimated in this way. Reducible backgrounds, like non-prompt lepton backgrounds, are not well predicted by simulation, hence, they are estimated using data-driven methods.
+
+\subsection{\ttV\ and diboson backgrounds}
+
+Backgrounds from \ttW and \ttZ\ processes are estimated using simulated events, corrected for data/MC differences and inefficiencies (trigger and lepton selection) in the same way as signal events. Their production cross sections are calculated at NLO order of QCD and EWK, considering theoretical uncertainties from unknown higher orders of 12\% for \ttW and 10\% for \ttZ. Additional uncertainties arise from the knowledge of PDFs and $\alpha_s$ of about 4\% each for \ttW and \ttZ.
+
+The diboson contribution is also estimated from simulated events; however, the overall normalization of this process is obtained from a dedicated control region. The motivation behind that strategy is that even thought the measured inclusive cross section for diboson processes (\WZ,\ZZ) is in good agreement with the NLO calculations \cite{CMS_AN_2017-029}, that agreement is perturbed when leptonic Z decays and hadronic jets in the final state are required; those requirements are precisely the ones that make the diboson production a background for the \tHq signal. Thus, by using a dedicated control region dominated by \WZ production\footnote{\ZZ background is strongly reduced by the cut on MET.}, the overall normalization is constrained.
+
+The control region is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, invert the Z-veto which makes the control region orthogonal to signal region; the b-jet tagging requirements is also inverted with respect to the signal region, \ie, require two not $b$-jets. A scale factor is extracted from the predicted distribution of \WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. More details about the procedure used can be found in Reference \cite{CMS_AN_2017-029} from where the scale factor is taken.
+
+\begin{figure} [!h]
+\centering
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep1Pt.pdf}
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep2Pt.pdf}
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep3Pt.pdf} \\
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/mZ1.pdf}
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/nBJetLoose25.pdf}
+        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/nJet25.pdf}
+\caption{Kinematic distributions in the diboson control region.}
+\label{fig:3lzcontrol}
+\end{figure}
+              
+In order to test the usability of the diboson background scale factor in this analysis, a Z-enriched control region\footnote{This control region is different to the one used to find the scale factor.} was defined by inverting the Z-veto and requiring exactly three tight leptons with \pt > 25/15/15 GeV, one or more jets passing the CSVv2 loose working point and less than four central jets. Figure \ref{fig:3lzcontrol} shows the distribution of three variables in the diboson control region; the good agreement between MC and data motivates the adoption of the diboson background scale factor.
+
+Most of the diboson events passing the signal selection contain jets from light quarks and gluons that are incorrectly tagged as $b$-jets; it makes the estimate mainly sensitive to the experimental uncertainty in the mis-tag rate rather than the theoretical uncertainty in the jet flavor composition. The overall uncertainty assigned to the diboson prediction is estimated from the statistical uncertainty due to the limited sample size in the control region (30\%), the residual background in the control region (20\%), the uncertainties on the $b$-tagging rate (10-40\%), and from the knowledge of PDFs and the theoretical uncertainties of the extrapolation (up to 10\%).
+
+\subsection{Non-prompt and charge mis-ID backgrounds}\label{ssec:fake_rate}
+
+The non-prompt lepton background contribution to the final selection is estimated using the fake factor method. The main idea of the method is to define a control region of events enriched in the background to estimate and determine a factor that relates (extrapolates) these events to those in the signal region. The method is data-driven in the sense that the control sample is selected from data, and the extrapolation factor is measured from data.
+
+In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution, from Drell-Yan production; therefore, the control region also know as \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased. The application regions for electrons and muons are defined by the fakeable object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates the fakeable definition it becomes the loose selection. 
+
+The ratio between the number of events that pass both, the loose and tight selections, and the number of events that pass the loose selection but fail the tight one, corresponds to the \ti{fake factor/fake rate (f)}. The measurement of the fake factor is made using two background dominated data samples, collected with dedicated triggers, %(subtracting the residual prompt lepton contribution using MC)
+as a function of \pt and |\etac| and separately for muons and electrons:
+
+\begin{itemize}
+\item A sample dominated by QCD multijet events, collected using single lepton triggers at relatively high \pt thresholds. It is used to extract ratios for lepton candidates with \pt above 30 GeV.
+\item A sample dominated by Z + jets events, where the two high \pt leptons resulting from the Z decay are used to trigger the events without biasing the \pt spectrum of a third lepton at low transverse momentum. It is used to determine the ratios for low \pt leptons. 
+\end{itemize}
+
+Processes like $W$ + jets, $Z$ + jets , \WZ and \ZZ produce prompt leptons that contaminate the samples; thus, they are suppressed by vetoing additional leptons in the selection, and the residual contamination is then subtracted using the transverse mass as a discriminating variable.
+
+The extrapolation from the application region to the signal region is performed by weighting the events in the application region using the fake factor according to the following rules:
+
+\begin{itemize}
+\item events with one lepton failing the tight criteria are weighted with the factor $\frac{f}{(1-f)}$ for the estimate to the signal region. 
+\item events with two leptons (i,j) failing the tight criteria are weighted with the factor $-\frac{f_if_j}{(1-f_i)(1-f_j)}$ for the estimate to the signal region. 
+\item events with three leptons (i,j,k) failing the tight criteria are weighted with the factor $\frac{f_if_jf_k}{(1-f_i)(1-f_j)(1-f_k)}$ for the estimate to the signal region. 
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+        \includegraphics[width=0.33\textwidth]{fr_mu_barrel}
+        \includegraphics[width=0.33\textwidth]{fr_el_barrel} \\
+        \includegraphics[width=0.33\textwidth]{fr_mu_endcap}
+        \includegraphics[width=0.33\textwidth]{fr_el_endcap}
+\caption[Fake rates]{Fake rate measurement in events in data for muons (left column) and electrons (right column). Predictions from simulated events in the measurement region (blue) and from non-prompt leptons in \ttbar (red) are included for comparison. Top row is for |\etac|<2.5 and bottom row for |\etac|>2.5.}
+\label{fig:frmeas-comb-data}
+\end{figure}
+
+Figure \ref{fig:frmeas-comb-data} shows the fake rates for electrons and muons used in this analysis which were taken from the studies in Reference \cite{CMS_AN_2017-029}.
+
+The resulting prediction of the event yield in the signal selection carries an uncertainty of 30-50\% which is composed of the statistical uncertainty in the measurement of the fake rates due to prescaling of lepton triggers, the uncertainty in the subtraction of residual prompt leptons from the control region, and from testing the closure of the method in simulated background events; hence, it is one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular.
+
+Finally, an additional source of background arises in the $2lss$ channel from events with an originally opposite-sign lepton pair for which the charge of one of the leptons is misidentified (\ti{charge mis-ID}); usually this happens because of the convertion of hard bremsstrahlung photons emitted from the initial lepton, hence, it is more likely to happen for electrons than for muons.
+
+The charge mis-ID background is estimated from the yield of opposite-sign event in the signal region by measuring the charge mis-ID probability in same-sign and opposite-sign events compatible with a Z boson decay, in several bins of \pt\ and \etac, and weighting events with opposite-sign leptons in the signal selection.
+
+\begin{table}[htp]
+\centering
+\begin{tabular}{lccc}\hline
+ Data                & $10\leq\pt<25$ GeV  & $25\leq\pt<50$ GeV  & 50 GeV$\leq\pt$ \\\hline
+$0\leq\eta<1.48$     & 0.0442 $\pm$ 0.0011 & 0.0179 $\pm$ 0.0004 & 0.0262 $\pm$ 0.0020 \\
+$1.48\leq\eta<2.5$   & 0.1329 $\pm$ 0.0066 & 0.1898 $\pm$ 0.0014 & 0.3067 $\pm$ 0.0113 \\\hline
+ MC                  &                     &                     &                      \\\hline
+$0\leq\eta<1.48$     & 0.0378 $\pm$ 0.0016 & 0.0222 $\pm$ 0.0003 & 0.0233 $\pm$ 0.0015 \\
+$1.48\leq\eta<2.5$   & 0.0956 $\pm$ 0.0044 & 0.2108 $\pm$ 0.0027 & 0.3157 $\pm$ 0.0018 \\\hline
+\end{tabular}
+\caption[Electron charge mis-ID probabilities.]{Electron charge mis-ID probabilities (in percent), determined in data (top) and Drell-Yan MC (bottom)\cite{CMS_AN_2017-029}.}
+\label{tab:chmisid_prob}
+\end{table}
+
+The charge mis-ID probability is found to be negligible for this analysis for muons, whereas for
+electrons it ranges from about 0.02\% in the barrel section (|\etac| < 1.48) up to about 0.35\% in the detector endcaps (1.48 < |\etac| < 2.5). as shown in Table \ref{tab:chmisid_prob} and Figure \ref{fig:chmisid_prob}.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.49\textwidth]{chmid_prob_barrel.pdf}
+\includegraphics[width=0.49\textwidth]{chmid_prob_endcap.pdf}
+\caption[Elecron mis-ID probabilities.]{Electron charge mis-ID probabilities as a function of \pt\ for |\etac|<2.5 (left) and |\etac|<2.5 (right) \cite{CMS_AN_2017-029}.}
+\label{fig:chmisid_prob}
+\end{figure}                            
+
+The contribution from charge mis-ID electrons in signal selection of this analysis comes mainly from \ttbar\ and Drell-Yan events. The systematic uncertainty of the normalization of the charge mis-id.\ estimate is evaluated at about 30\%, arising from a slight disagreement of the mis-ID.\ probability between data and simulation. Given that it only affects the $e\mu$ channel, it impact on the final sensitivity is very limited.
+
+\section{Pre-selection yields}
+
+The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}. For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed
+by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}.
 
 \begin{table}[thb]
 \centering
 \begin{tabular}{lrrrr}\hline
-\multicolumn{1}{c@{\qquad}}{} & \multicolumn{1}{c@{\qquad}}{$3\ell$} & \multicolumn{1}{c}{$\mumu$} & \multicolumn{1}{c@{\qquad}}{$e\mu$} & \multicolumn{1}{c}{$ee$} \\ \hline
+\multicolumn{1}{c@{\qquad}}{} & \multicolumn{1}{c@{\qquad}}{$3\ell$} & \multicolumn{1}{c}{$\mumu$} & \multicolumn{1}{c@{\qquad}}{$\emu$} & \multicolumn{1}{c}{$\ee$} \\ \hline
 $\ttW$                        & $  22.50 \pm 0.35$ & $ 68.03 \pm 0.61 $ & $ 97.00 \pm 0.71 $ & $ 29.63 \pm  0.39 $ \\
 $\ttZ\!/\!\gamma^*$           & $  32.80 \pm 1.79$ & $ 25.89 \pm 1.12 $ & $ 64.82 \pm 2.42 $ & $ 28.74 \pm  1.70 $ \\
 $\WZ$                         & $   8.22 \pm 0.86$ & $ 15.07 \pm 1.19 $ & $ 26.25 \pm 1.57 $ & $  9.31 \pm  0.93 $ \\
@@ -466,18 +574,9 @@ $\tHW$ ($\CV=-1.0$)           & $   7.38 \pm 0.16$ & $  7.72 \pm 0.17 $ & $ 11.2
 $\ttH$                        & $  18.29 \pm 0.41$ & $ 24.18 \pm 0.48 $ & $ 35.21 \pm 0.58 $ & $ 11.07 \pm  0.32 $ \\ \hline
 Data (35.9\fbinv)             & \multicolumn{1}{l}{127}&\multicolumn{1}{l}{280} & \multicolumn{1}{l}{525} & \multicolumn{1}{l}{208}\\\hline
 \end{tabular}
-\caption{Expected and observed yields for $35.9\fbinv$ after the selection in all final states. Uncertainties are statistical only.}
+\caption{Expected and observed yields for $35.9\fbinv$ after the pre-selection in all final states. Uncertainties are statistical only.}
 \label{tab:yields-sel}
 \end{table}
-
-In the $2lss$ channel, events with additional tight leptons are vetoed as well as those for which a loose lepton pair has an invariant mass below 12 GeV. A threshold in \pt of the leading and sub-leading leptons is also required. Events where the two electrons have invariant mass within 10 GeV of the Z boson mass (\ti{Z-veto}) are discarded in order to reject events from DY+jets production with charge misidentified electrons. In addition, contribution from the associated production of two W bosons of equal charge and two light jets $W^\pm W^\pm qq$ and from same-sign W boson pairs can also be produced in double parton scattering (DPS) processes, where each of the colliding protons gives two partons, resulting in two hard interactions.
-
-In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25 \textrm{GeV, }> 15\textrm{ GeV, and }> 15\textrm{ GeV}$. Events with an opposite-sign same-flavor lepton combination (OSSF) with invariant mass within 15 GeV of the Z boson mass are discarded in order to reject events from \WZ +jets production.
-
-The selection criteria in Table \ref{tab:cuts} represent a relatively loose selection that allows to maintain a large signal efficiency while suppressing the main backgrounds; thus that selection is called \ti{pre-selection}. The events obtained from the pre-selection are then used to extract the signal contribution in a second analysis step, using BDT discriminators against the main backgrounds of \ttW/\ttZ\ and non-prompt leptons from \ttbar. The shape of the discriminator variables is then fit to the observed data distribution to estimate the signal and background yields, simultaneously for all channels.
-
-The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}. For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed
-by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}.
 
 \begin{table}[hbt]
 \centering
@@ -502,231 +601,24 @@ $\tHW (H\to bb)$              & $<0.01$ & $<0.1$\% & $<0.01$ &$<0.1$\% \\ \hline
 \label{tab:yield_hbr}
 \end{table}
 
-%______________________ Background predictions ______________________
-\section{Background modeling and predictions}\label{sec:bg}
+Figure ~\ref{fig:input_vars_presel} shows the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity. The remaining variables distributions are shown in Appendix \ref{app:presel_plots} 
 
-Irreducible backgrounds are reliantly estimated from MC simulated events; therefore, in this analysis all backgrounds involving prompt leptons are estimated in this way. Reducible backgrounds, like non-prompt lepton backgrounds, are not well predicted by simulation, hence, they are estimated using data-driven methods.
-
-\subsection{\ttV and diboson backgrounds}
-
-Backgrounds from \ttW and \ttZ processes are estimated using simulated events, corrected for data/MC differences and inefficiencies (trigger and lepton selection) in the same way as signal events. Their production cross sections are calculated at NLO order of QCD and EWK, considering theoretical uncertainties from unknown higher orders of 12\% for \ttW and 10\% for \ttZ. Additional uncertainties arise from the knowledge of PDFs and $\alpha_s$ of about 4\% each for \ttW and \ttZ.
-
-The diboson contribution is also estimated from simulated events; however, the overall normalization of this process is obtained from a dedicated control region. The motivation behind that strategy is that even thought the measured inclusive cross section for diboson processes (WZ,ZZ) is in good agreement with the NLO calculations \cite{CMS_AN_2017-029}, that agreement is perturbed when leptonic Z decays and hadronic jets in the final state are required; those requirements are precisely the ones that make the diboson production a background for the \tHq signal. Thus, by using a dedicated control region dominated by WZ production\footnote{ZZ background is strongly reduced by the cut on MET.}, the overall normalization is constrained.
-
-The control region is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, invert the Z-veto which makes the control region orthogonal to signal region; the b-jet tagging requirements is also inverted with respect to the signal region, \ie, require two not $b$-jets. A scale factor is extracted from the predicted distribution of WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. More details about the procedure used can be found in Reference \cite{CMS_AN_2017-029} from where the scale factor is taken.
-
-\begin{figure} [!h]
+\begin{figure}[!htb]
 \centering
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep1Pt.pdf}
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep2Pt.pdf}
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/Lep3Pt.pdf} \\
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/mZ1.pdf}
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/nBJetLoose25.pdf}
-        \includegraphics[width=0.32\textwidth]{controlplots/3l-Z/nJet25.pdf}
-\caption{Kinematic distributions in the diboson control region.}
-\label{fig:3lzcontrol}
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_mm.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_mm.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_mm.pdf} \\
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_em.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_em.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_em.pdf} \\
+        \includegraphics[width=0.31\linewidth]{polished/dPhiHighestPtSSPair_3l.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/maxEtaJet25_40_3l.pdf}
+        \includegraphics[width=0.31\linewidth]{polished/nJet25_3l.pdf} 
+\caption{Distributions of discriminating variables for the event pre-selection for the same-sign \mumu\ channel (top row), the same-sign \emu\ channel (middle row) and three lepton channel (bottom row), normalized to 35.9\fbinv, before fitting the signal discriminant to the observed data. Uncertainties are statistical and unconstrained (pre-fit) normalization systematics. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$.}
+\label{fig:input_vars_presel}
 \end{figure}
-              
-In order to test the usability of the diboson background scale factor in this analysis, a Z-enriched control region\footnote{This control region is different to the one used to find the scale factor.} was defined by inverting the Z-veto and requiring exactly three tight leptons with \pt> 25/15/15 GeV, one or more jets passing the CSVv2 loose working point and less than four central jets. Figure \ref{fig:3lzcontrol} shows the distribution of three variables in the diboson control region; the good agreement between MC and data motivates the adoption of the diboson background scale factor.
 
-Most of the diboson events passing the signal selection contain jets from light quarks and gluons that are incorrectly tagged as $b$-jets; it makes the estimate mainly sensitive to the experimental uncertainty in the mis-tag rate rather than the theoretical uncertainty in the jet flavor composition. The overall uncertainty assigned to the diboson prediction is estimated from the statistical uncertainty due to the limited sample size in the control region (30\%), the residual background in the control region (20\%), the uncertainties on the $b$-tagging rate (10–40\%), and from the knowledge of PDFs and the theoretical uncertainties of the extrapolation (up to 10\%).
-
-\subsection{Non-prompt and charge mis-ID backgrounds}\label{ssec:fake_rate}
-
-The non-prompt lepton background contribution to the final selection is estimated using the fake factor method. The main idea of the method is to define a control region of events enriched in the background to estimate and determine a factor that relates (extrapolates) these events to those in the signal region. The method is data-driven in the sense that the control sample is selected from data, and the extrapolation factor is measured from data.
-
-In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution, from Drell-Yan production; therefore, the control region also know as \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased. The application regions for electrons and muons are defined by the fakeable object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates the fakeable definition it becomes the loose selection. 
-
-The number of events that pass both the loose and tight selections, divided by the number of events that pass the loose selection but fail the tight one corresponds to the \ti{fake factor/fake rate}. The measurement of the fake factor is made using two background dominated data samples collected with dedicated triggers (subtracting the residual prompt lepton contribution using MC) as a function of \pt and |\etac| and separately for muons and electrons:
-
-\begin{itemize}
-\item A sample dominated by QCD multijet events, collected using single lepton triggers at relatively high \pt thresholds is used to extract ratios for lepton candidates with \pt above 30 GeV.
-\item A sample dominated by Z + jets events, where the two high \pt leptons resulting from the Z decay are used to trigger the events without biasing the \pt spectrum of a third lepton at low transverse momentum. It is used to determine the ratios for low \pt leptons. 
-\end{itemize}
-
-Processes like W + jets, Z + jets , WZ and ZZ produce prompt leptons that contaminate the samples; thus, they are suppressed by vetoing additional leptons in the selection, and the residual contamination is then subtracted using the transverse mass as a discriminating variable.
-
-The extrapolation from the application region to the signal region is performed by weighting the events in the application region using the fake factor according to the following rules:
-
-\begin{itemize}
-\item events with one lepton failing the tight criteria are weighted with the factor $\frac{f}{(1-f)}$ for the estimate to the signal region. 
-\item events with two leptons (i,j) failing the tight criteria are weighted with the factor $-\frac{f_if_j}{(1-f_i)(1-f_j)}$ for the estimate to the signal region. 
-\item events with three leptons (i,j,k) failing the tight criteria are weighted with the factor $\frac{f_if_jf_k}{(1-f_i)(1-f_j)(1-f_k)}$ for the estimate to the signal region. 
-\end{itemize}
-
-The resulting prediction of the event yield in the signal selection carries an uncertainty of 30-50\% which is composed of the statistical uncertainty in the measurement of the fake rates due to prescaling of lepton triggers, the uncertainty in the subtraction of residual prompt leptons from the control region, and from testing the closure of the method in simulated background events, hence, it is one of the dominant limitations on the performance of multilepton analyses in general and this analysis in particular.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-In the $2lss$ channel case, additional background arises when the charge of a lepton in events with an originally opposite-sign pair is misidentified; usually this happens due to strongly asymmetric conversions of hard bremsstrahlung photons emitted from the initial lepton, therefore, it is more likely to happen for electrons than for muons.
-
-
-
-
-
-
-Finally, backgrounds from electron charge mis-identification (muon charge mis-id.\ is negligible) are estimated from the yield of opposite-sign event in the signal region using a measured charge mis-identification probability. The mis-id.\ probability is measured in same-sign and opposite-sign Drell--Yan events, in several bins of \pt\ and $\eta$. As for non-prompt leptons, the contribution from charge mis-identified electrons in our signal selection is predominantly from \ttbar\ and Drell--Yan events. The systematic uncertainty of the normalization of the charge mis-id.\ estimate is evaluated at about 30\%, stemming from a slight disagreement of the mis-id.\ probability between data and simulation. As it only affects the $e\mu$ channel, however, the impact of this background on the final sensitivity is very limited.
-
-Figures~\ref{fig:input_vars_3l_xsec} show the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity.
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.22\textwidth]{3lsignal/Lep3Pt.pdf} 
- \includegraphics[width=0.22\textwidth]{3lsignal/dEtaFwdJetBJet.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/dEtaFwdJet2BJet.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/dEtaFwdJetClosestLep.pdf} \\
- \includegraphics[width=0.22\textwidth]{3lsignal/dPhiHighestPtSSPair.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/maxEtaJet25.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/minDRll.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/nJet25.pdf} \\
- \includegraphics[width=0.22\textwidth]{3lsignal/maxEtaJet25.pdf}
- \includegraphics[width=0.22\textwidth]{3lsignal/totCharge.pdf}
-\caption[Input variables to the BDT for signal discrimination normalized.]{Distributions of input variables to the BDT for signal discrimination, three lepton channel, normalized to their cross section and to 35.9\fbinv.} 
-\label{fig:input_vars_3l_xsec}
-\end{figure}    
-
-
-
-
-
- A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels [17]. The expected and observed event yields of this selection are shown in Tab. 2. For the tH and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed  by ττ (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the tH +ttH yield).
-
-
-. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
-
-Dont forget to mention previous constrains to ct check Reference \ref{biswas} and References https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
-
-
-
-\vspace{15cm}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between this both analyses are presented in Appendix \ref{app:overlap}.   
 
 %______________________ Signal discrimination ______________________
 \section{Signal discrimination }
@@ -1062,6 +954,28 @@ Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\
 The expected limit was found to be \textbf{r<1.69} for optimized bin borders in 10 bins and optimized pre-selection cuts.
 
 Two additional binning strategies were tested, however, the obtained limits are degraded; they are documented in Appendix \ref{app:ad_binning}.   
+
+
+
+
+
+
+
+
+
+
+
+
+. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with kt = −1.0 and kV = 1.0. Values of kt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming kV = 1.0.
+
+Dont forget to mention previous constrains to ct check Reference \ref{biswas} and References https://link.springer.com/content/pdf/10.1007\%2FJHEP01\%282013\%29088.pdf (paragraph after eq 2)
+
+
+
+
+
+
+
 
 
 
