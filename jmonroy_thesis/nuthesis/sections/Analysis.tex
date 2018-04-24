@@ -1304,125 +1304,99 @@ Muon closure                    & \mumu\      & 1.07 norm., (0.97 (\ttbar)/0.91 
 %______________________ Results ______________________
 \section{Results}\label{sec:results}
 
-As a result of applying the event pre-selection on the dataset, $127$ events are observed in the $3l$ channel, $280$ in the $2lss$ \mumu\ channel and  $525$ in the $2lss$ \emu\ channel as shown in Table \ref{tab:yields-sel}. These events are then classified into one of ten categories, depending on the output of the two BDTG classifiers and according to the optimized binning strategy; the expected signal and background shapes for the distribution in the one-dimensional histogram (with ten bins) are fit to the observed data in a maximum likelihood fit, for all three channels simultaneously and separately for the signal shapes for each of the 33 $\Ct/\CV$ coupling configuration points.
-
-The \tH\ and \ttH\ production cross sections and the Higgs decay branching ratios are modified in each point with the Higgs-top (\Ct) and Higgs-vector boson (\CV) coupling strength. The Higgs-tau coupling strength modifier ($\kappa_\tau$) is assumed to be equal to \Ct, while % This includes modified branching ratios of $\PH\to\gamma\gamma$, $\PH\to\Z\gamma$, and $\PH\to\Pg\Pg$ with varying \Ct, and an accordingly adjusted overall Higgs decay width. % FIXME?
-the rest of the parameters are assumed to be at the SM predicted values; therefore, the combined signal shape is uniquely defined by the ratio of $\Ct/\CV$. In the fit, the signal components,  \tH\ and \ttH\, are floated with a common signal strength modifier (defined as the ratio to the expected cross section) to produce a 95\% confidence level (C.L.) upper limit on the observed $\tH+\ttH$ cross section times the combined branching ratio of $H\to WW^*+\tautau+ZZ^*$.
-
-The pre-fit distributions of BDTG outputs are shown in Fig.~\ref{fig:bdt_outputs_prefit}, while the pre-fit distributions in the final binning used in the signal extraction are shown in Fig.~\ref{fig:finalbins}.
-
+As a result of applying the event pre-selection on the dataset, $127$ events are observed in the $3l$ channel, $280$ in the $2lss$ \mumu\ channel and  $525$ in the $2lss$ \emu\ channel as shown in Table \ref{tab:yields-sel}. These events are then classified into one of ten categories, depending on the output of the two BDTG classifiers and according to the optimized binning strategy.
 \begin{figure}[!htb]
 \begin{center}
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_3l_40_3l.pdf}
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_em.pdf}
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_mm.pdf} \\
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_3l_40_3l.pdf}
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_em.pdf}
-        \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_mm.pdf}
+ \centering
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_3l_40_3l.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_em.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_mm.pdf} \\
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_3l_40_3l.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_em.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_mm.pdf}
 \end{center}
-\caption{Pre-fit BDT classifier outputs, for the three-lepton channel (left), \emu\ (center), and \mumu\ (right), for 35.9~\fbinv, for training against \ttV\ (top row) and against \ttbar\ (bottom row). In the box below each distribution, the ratio of the observed and predicted event yields is shown. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$. The grey band represents the unconstrained (pre-fit) statistical and systematical uncertainties.\label{fig:bdf_outputs_prefit}}
+\caption[Pre-fit BDT classifier outputs.]{Pre-fit BDT classifier outputs, for the three-lepton channel (left), \emu\ (center), and \mumu\ (right), for 35.9~\fbinv, for training against \ttV\ (top row) and against \ttbar\ (bottom row). In the box below each distribution, the ratio of the observed and predicted event yields is shown. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$. The grey band represents the unconstrained (pre-fit) statistical and systematical uncertainties.\label{fig:bdt_outputs_prefit}}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \begin{figure} [!h]
  \centering
- % \includegraphics[width=0.24\textwidth]{3lsignal/finalBins_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/mumu/finalBins_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/emu/finalBins_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/ee/finalBins_40.pdf} \\
- % \includegraphics[width=0.24\textwidth]{3lsignal/finalBins_log_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/mumu/finalBins_log_mm_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/emu/finalBins_log_em_40.pdf}
- % \includegraphics[width=0.24\textwidth]{signalregion_2lss/ee/finalBins_log_ee_40.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/tHq_3l_13TeV_prefit.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_mm_13TeV_prefit.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_em_13TeV_prefit.pdf} \\
+ \includegraphics[width=0.32\textwidth]{polished/finalBins_40_3l.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/finalBins_40_mm.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/finalBins_40_em.pdf} \\
+ %% \includegraphics[width=0.32\textwidth]{postfit/tHq_3l_13TeV_prefit.pdf}
+ %% \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_mm_13TeV_prefit.pdf}
+ %% \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_em_13TeV_prefit.pdf} \\
  \includegraphics[width=0.32\textwidth]{postfit/tHq_3l_13TeV_prefit_log.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_mm_13TeV_prefit_log.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_em_13TeV_prefit_log.pdf}
-\caption{Expected (pre-fit) distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. Linear scale (top row), and logarithmic scale (bottom row).}
-\label{fig:finalbins}
+\caption[Pre-fit distributions in the final binning.]{Expected (pre-fit) distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. Linear scale (top row), and logarithmic scale (bottom row).}
+\label{fig:finalbins_prefit}
 \end{figure}
+
+The pre-fit distributions of BDTG outputs are shown in Figure ~\ref{fig:bdt_outputs_prefit}, while the pre-fit distributions in the final binning used in the signal extraction are shown in Figure ~\ref{fig:finalbins_prefit}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The expected signal and background shapes for the distribution in the one-dimensional histogram (with ten bins) are fit to the observed data in a maximum likelihood fit, for all three channels simultaneously and separately for the signal shapes for each of the 33 $\Ct/\CV$ coupling configuration points.
+
+The \tH\ and \ttH\ production cross sections and the Higgs decay branching ratios are modified in each point with the Higgs-top (\Ct) and Higgs-vector boson (\CV) coupling strength
+
+
+
+while the Higgs-tau coupling strength modifier ($\kappa_\tau$) is assumed to be equal to \Ct, while % This includes modified branching ratios of $\PH\to\gamma\gamma$, $\PH\to\Z\gamma$, and $\PH\to\Pg\Pg$ with varying \Ct, and an accordingly adjusted overall Higgs decay width. % FIXME?
+the rest of the parameters are assumed to be at the SM predicted values; therefore, the combined signal shape is uniquely defined by the ratio of $\Ct/\CV$. In the fit, the signal components,  \tH\ and \ttH, are floated with a common signal strength modifier (defined as the ratio to the expected cross section) to produce a 95\% confidence level (C.L.) upper limit on the observed $\tH+\ttH$ cross section times the combined branching ratio of $H\to WW^* + ZZ^* + \tautau$.
+
+The post-fit categorized BDT output distributions obtained in the maximum likelihood fit to extract the limits, are shown in Figure ~\ref{fig:postfit}.
 
 \begin{figure} [!h]
  \centering
@@ -1432,9 +1406,11 @@ The pre-fit distributions of BDTG outputs are shown in Fig.~\ref{fig:bdt_outputs
  \includegraphics[width=0.32\textwidth]{postfit/tHq_3l_13TeV_fit_s_log.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_mm_13TeV_fit_s_log.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/tHq_2lss_em_13TeV_fit_s_log.pdf}
-\caption{Post-fit distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. Linear scale (top row), and logarithmic scale (bottom row).}
+\caption[Post-fit distributions in the final binning.]{Post-fit distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. Linear scale (top row), and logarithmic scale (bottom row).}
 \label{fig:postfit}
 \end{figure}
+
+As expected, the signal contribution is very small compared to the to the background contribution; however, it is possible to see the signal contribution in data by subtracting the background from the overall BDT output distributions as shown in Figure \ref{fig:postfit_bgsub_ITC} for the inverted coupling scenario (\CV=1,\Ct=-1) and Figure \ref{fig:postfit_bgsub_SM} for the SM-like scenario (\CV=1,\Ct=-1).  
 
 \begin{figure} [!h]
  \centering
@@ -1444,7 +1420,7 @@ The pre-fit distributions of BDTG outputs are shown in Fig.~\ref{fig:bdt_outputs
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_3l_13TeV_fit_s.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_mm_13TeV_fit_s.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_fit_s.pdf}
-\caption{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. For a fit in the inverted couplings scenario, as Figs.~\ref{fig:finalbins} and~\ref{fig:postfit}.}
+\caption[Background-subtracted distributions in the final binning (ITC).]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the inverted couplings scenario (\CV=1,\Ct=-1).}
 \label{fig:postfit_bgsub_ITC}
 \end{figure}
 
@@ -1456,18 +1432,42 @@ The pre-fit distributions of BDTG outputs are shown in Fig.~\ref{fig:bdt_outputs
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_3l_13TeV_fit_s.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_mm_13TeV_fit_s.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_fit_s.pdf}
-\caption{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for (from left to right) the three lepton channel, the \mumu\ channel, and the \emu\ channel. For a fit in the SM-like scenario ($\Ct=\CV=1$).}
+\caption[Background-subtracted distributions in the final binning (SM)]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for the three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the SM-like scenario ($\Ct=\CV=1$).}
 \label{fig:postfit_bgsub_SM}
 \end{figure}
 
-We calculate asymptotic upper CL$_\text{S}$ limits at 95\% C.L. on the combined production cross section of \tHq, \tHW, and \ttH\ (reported as an upper limit on the cross section times modified branching ratio), for each of the 51 coupling configurations, see Tab.~\ref{tab:limits}.
-The limits and best-fit values of the signal cross section (and corresponding signal strength at $\CV=1.0$) for each point are given in Tab.~\ref{tab:xslimits}, and in Tab.~\ref{tab:xslimits_chan} for the two main hypotheses, split by channel.
-In the SM point a signal strength of $1.82\,^{+0.34}_{-0.33}\mathrm{(stat.)}\,^{+0.55}_{-0.59}\mathrm{(syst.)}$ (compared to the SM cross section at $\CV=1.0$) is obtained, corresponding to a cross section of $0.33\pm0.12\,\mathrm{pb}$.
-The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$.
-Without considering systematic uncertainties, the significance increases to $6.2\,\sigma$.
-A scan of the observed and expected significances for each coupling configuration is shown in Fig.~\ref{fig:significances}.
+
+The observed 95\% C.L. upper limits on the tH + ttH signal cross sections for the case of inverted
+couplings (κt/κV = −1.0) for the individual channels are, respectively, 1.00, 0.84, and 0.70 pb
+for the µµ, eµ, and trilepton final states, corresponding to 2.3, 1.9, and 1.6 times the respective
+expected cross sections for κV = 1.0. The combination of all three channels yields a limit of
+0.64 pb on a signal shape expected for κt/κV = −1.0, corresponding to 1.4 times the expected
+tH + ttH cross section with κt = −1.0, κV = 1.0. In the standard model scenario (κt/κV = 1.0),
+the observed upper limit on the cross section times branching ratio is 0.56 pb, corresponding
+to 3.1 times the expected SM cross section of tH + ttH. Table 4 summarizes the results for the
+inverted coupling scenario and for the standard model.
+The best-fit combined signal strength for the standard model hypothesis is 1.8 ± 0.3(stat.) ±
+0.6(syst.), corresponding to an observed significance of 2.7σ (1.5σ expected) over a backgroundonly
+hypothesis. For a scenario of inverted couplings (κt = −1 = −κV), the best fit signal
+strength is 0.7 ± 0.4, corresponding to a significance of 1.7σ (2.5σ expected), whereas the fit
+prefers a signal strength compatible with 0 for a scenario with κt = 0 (where the ttH component
+vanishes).
+The expected and observed limits are shown in Fig. 7 as a function of κt/κV. Comparing the
+observed upper limit with the theoretical prediction of the tH + ttH cross section times BR for
+κV = 1.0 constrains the allowed range of coupling configurations κt/κV to between about −1.25
+and +1.60.
+The sensitivity of the analysis is limited by systematic uncertainties, predominantly by those
+concerning the normalizations of the main background components (the non-prompt lepton
+estimation, the scale uncertainties for ttW± and ttZ), as well as by the uncertainties on the
+measured lepton efficiency.
+
+
+
+
+The asymptotic upper CL$_\text{S}$ limits at 95\% C.L. on the combined production cross section of \tHq, \tHW, and \ttH\ (reported as an upper limit on the cross section times modified branching ratio), for each of the 51 coupling configurations, see Tab.~\ref{tab:limits}. The limits and best-fit values of the signal cross section (and corresponding signal strength at $\CV=1.0$) for each point are given in Tab.~\ref{tab:xslimits}, and in Tab.~\ref{tab:xslimits_chan} for the two main hypotheses, split by channel. In the SM point a signal strength of $1.82\,^{+0.34}_{-0.33}\mathrm{(stat.)}\,^{+0.55}_{-0.59}\mathrm{(syst.)}$ (compared to the SM cross section at $\CV=1.0$) is obtained, corresponding to a cross section of $0.33\pm0.12\,\mathrm{pb}$. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. Without considering systematic uncertainties, the significance increases to $6.2\,\sigma$. A scan of the observed and expected significances for each coupling configuration is shown in Fig.~\ref{fig:significances}.
 
 % The full results are shown in Fig.~\ref{fig:r_limits_cv} for the non-resolved model with fixed $\PH\to\gamma\gamma/\Z\gamma/\Pg\Pg$ branching ratios, and the two scenarios of exactly inverted couplings ($\CV=1.0$,$\Ct=-1.0$) and the standard model are reported in Tab.~\ref{tab:limits}.  %% FIXME
+
 The pulls and impacts of the most important nuisance parameters are shown in Fig.~\ref{fig:impacts}.
 
 \begin{table}[h!]
