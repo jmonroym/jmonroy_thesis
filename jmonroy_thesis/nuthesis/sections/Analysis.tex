@@ -1089,7 +1089,7 @@ The impact of the data/MC disagreement for forward jet \etac is observed to redu
 
 It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is showed in Appendix ~\ref{sec:bdtvscvct}.
 
-In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{}:
+In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{kcouplings}:
 
 \begin{align}
 \sigma(\tHq) =& (2.633 \Ct^2 + 3.578 \CV^2 - 5.211 \Ct\CV) * \sigma_{SM}(\tHq),\\
@@ -1380,35 +1380,12 @@ As expected, the signal contribution is very small compared to the to the backgr
 \label{fig:postfit_bgsub_SM}
 \end{figure}
 
-%% \begin{table}[h!]
-%% \centering
-%% \begin{tabular}{llcc}\hline
-%% Scenario        & Best fit signal strength  & Best fit $\sigma\times BR$ & Significance Obs.(exp.)          \\\hline
-%% $\Ct/\CV=-1.0$  & $0.68\pm0.40$             & $0.30 \pm 0.18$ pb         & $1.70 \sigma (2.51 \sigma) $     \\
-%% $\Ct/\CV=1.0$   & $1.82^{0.66}_{-0.67}$     & $0.33 \pm 0.12$ pb         & $2.73 \sigma (1.50 \sigma) $     \\\hline
-%% \end{tabular}
-%% \caption[Fit results for the ITC and SM scenarios]{Best fit for signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times modified branching ratio for the combination of all three channels, for the inverted top coupling and the SM-like scenarios.}
-%% \label{tab:fit_results}
-%% \end{table}
 
-The best-fit results for the signal strength in all the 33 $\Ct/\CV$ configurations are listed in Table \ref{tab:xslimits}; the inverted top coupling (ITC) and the SM-like scenarios are highlighted. The individual contributions from all the channels to the best-fit signal strength for the SM-like Higgs signal are listed in Table \ref{tab:sigstrengths}.
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{lr} \hline
-\threel\  & $r=1.44 {}_{-0.84} {}^{+0.91}$ \\
-\emu\     & $r=1.42 {}_{-1.03} {}^{+1.06}$ \\
-\mumu\    & $r=2.75 {}_{-1.11} {}^{+1.22}$ \\
-Combined  & $r=1.82 {}_{-0.69} {}^{+0.76}$ \\
-Expected  & $r=1.00 {}_{-0.65} {}^{+0.70}$ \\\hline
-\end{tabular}
-\caption{Best-fit signal strengths for a SM-like Higgs signal for the individual channels.}
-\label{tab:sigstrengths}
-\end{table}
+\subsection{$CL_S$ and cross section limits}
 
 \begin{table}[h!]
   \centering
-  \footnotesize1
+  \footnotesize
   \begin{tabular}{rr|ccc|cc}
         $f_t$  & \Ct/\CV\ & Exp.\ lim. & SM exp. & Obs.\ lim. & Best fit $\sigma$ [pb] & Best fit $r$ \\ \hline
         -0.973 & -6.000 & $0.328~_{-0.090}^{+0.136}$ & $0.507~_{-0.158}^{+0.206}$ & 0.603 & $0.305~_{-0.169}^{+0.155}$ & $0.013~_{-0.007}^{+0.007}$ \\
@@ -1460,7 +1437,7 @@ Expected  & $r=1.00 {}_{-0.65} {}^{+0.70}$ \\\hline
 \label{fig:xs_limits}
 \end{figure}
 
-Table \ref{tab:xslimits} also lists the expected background only, the expected SM-like Higgs signal, and the observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H \to WW^*+ZZ^*+\tautau$ branching ratio (in pb); the corresponding plots are shown in Figure \ref{fig:xs_limits} for \CV=1. The expected background-only limit is calculated on an Asimov dataset, while the expected SM-like limit is calculated on an Asimov dataset that includes the SM-like \tH\ and \ttH signals.
+Table \ref{tab:xslimits} lists the expected background only, the expected SM-like Higgs signal, and the observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H \to WW^*+ZZ^*+\tautau$ branching ratio (in pb); the corresponding plots are shown in Figure \ref{fig:xs_limits} for \CV=1. The expected background-only limit is calculated on an Asimov dataset, while the expected SM-like limit is calculated on an Asimov dataset that includes the SM-like \tH\ and \ttH signals.
 
 An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV=1) for the background-only expected limit; however, the inclusion of the SM-like \tH\ and \ttH signals reveals that the excess is actually about $1\sigma$; furthermore, looking at $\Ct/\CV=0$, \ie the \ttH component in the signal is zero, it is evident that the origin of the excess is mostly due to the presence of the \ttH component in the signal, given that the deviation of the observed limit from the expected one is much smaller that $1\sigma$; this is consistent with the results presented in Reference \cite{CMS_AN_2017-029}. It is also evident that, given the dependence of the \ttH cross section on $\Ct^2$, the source of the asymmetry in both, background-only and SM-like, limits is induced by the \tH\ component of the signal.     
 
@@ -1470,7 +1447,7 @@ An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV=1
  \includegraphics[width=0.48\textwidth]{limits/xs_limits_K6_smexp_split_cv.png}\\ 
  \includegraphics[width=0.48\textwidth]{limits/xs_limits_K6_alpha_split_cv.pdf}
  \includegraphics[width=0.48\textwidth]{limits/xs_limits_K6_alpha_smexp_split_cv.pdf}    
-\caption[asymptotic limits on the combined $\tH+\ttH$ cross section times modified BR, \CV=0.5,1.0,1.5 .]{Left (Right): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times modified BR as a function of $\Ct/\CV$ (top) and $\mathrm{sign}(\Ct/\CV)\times\frac{\Ct^2}{(\Ct^2+\CV^2)}$ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included for \CV=0.5,1.0,1.5 .}
+\caption[asymptotic limits on the combined $\tH+\ttH$ cross section times modified BR, \CV=0.5,1.0,1.5 .]{Left (Right): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times modified BR as a function of $\Ct/\CV$ (top) and $\mathrm{sign}(\Ct/\CV)\times\frac{\Ct^2}{(\Ct^2+\CV^2)}$ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included for \CV=0.5,1.0,1.5. Red areas on the top right plot correspond to the excluded regions. }
 \label{fig:xs_limits_cv}
 \end{figure}
 
@@ -1522,41 +1499,49 @@ $\Ct=1.0$  & \threel\                         & 3.0          & 0.91 & 1.22 &    
 \label{tab:limits}
 \end{table}
 
-The combination of all three channels yields a limit of about 0.64 pb on a signal shape expected for \Ct/\CV = -1.0, corresponding to 1.4 times the expected \tH + \ttH cross section with \Ct = 1.0, \CV = 1.0. In the standard model scenario (\Ct/\CV = 1.0), the observed upper limit on the cross section times branching ratio is 0.56 pb, corresponding to 3.1 times the expected SM cross section of \tH + \ttH. The summary of the expected and observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H\to WW^*+ ZZ^* +\tautau$ branching ratio for the ITC and SM-like scenarios split by channel are presented in Table \ref{tab:xslimits_chan}, whereas, the summary of the expected and observed CL$_\text{S}$ limits (at 95\% C.L.) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations thereof, for the ITC  and SM-like scenarios are presented in Table \ref{tab:limits}.
+The observed limit of about 0.64 pb on a signal shape expected for \Ct/\CV = -1.0 and for the combination of all three channels, corresponds to 1.4 times the expected \tH + \ttH cross section with \Ct = -1.0, \CV = 1.0. In the SM scenario (\Ct/\CV = 1.0), the observed upper limit on the cross section times branching ratio is 0.56 pb, corresponding to 3.1 times the expected SM cross section of \tH + \ttH. The summary of the results for the ITC and SM-like scenarios split by channel are presented in Table \ref{tab:xslimits_chan}, whereas, the summary of the expected and observed CL$_\text{S}$ limits (at 95\% C.L.) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations thereof, for the ITC  and SM-like scenarios are presented in Table \ref{tab:limits}.
 
 
 
+\subsection{Best fit}
 
+The best-fit results for the signal strength in all the 33 $\Ct/\CV$ configurations are also listed in Table \ref{tab:xslimits}; the inverted top coupling (ITC) and the SM-like scenarios are highlighted there and summarized in Table \ref{tab:fit_results_itc_sm}. The individual contributions from all the channels to the best-fit signal strength for the SM-like Higgs signal are listed in Table \ref{tab:sigstrengths}.
 
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccc}\hline
+Scenario        & Best fit signal strength  & Best fit $\sigma\times BR$ & Significance Obs.(exp.)          \\\hline
+$\Ct/\CV=-1.0$  & $0.68\pm0.40$             & $0.30 \pm 0.18$ pb         & $1.70 \sigma (2.51 \sigma) $     \\
+$\Ct/\CV=1.0$   & $1.82^{0.66}_{-0.67}$     & $0.33 \pm 0.12$ pb         & $2.73 \sigma (1.50 \sigma) $     \\\hline
+\end{tabular}
+\caption[Fit results for the ITC and SM scenarios]{Best fit for signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times modified branching ratio for the combination of all three channels, for the ITC and the SM-like scenarios.}
+\label{tab:fit_results_itc_sm}
+\end{table}
 
+\begin{table}[h!]
+\centering
+\begin{tabular}{lr} \hline
+\threel\  & $r=1.44 {}_{-0.84} {}^{+0.91}$ \\
+\emu\     & $r=1.42 {}_{-1.03} {}^{+1.06}$ \\
+\mumu\    & $r=2.75 {}_{-1.11} {}^{+1.22}$ \\
+Combined  & $r=1.82 {}_{-0.69} {}^{+0.76}$ \\
+Expected  & $r=1.00 {}_{-0.65} {}^{+0.70}$ \\\hline
+\end{tabular}
+\caption[Best-fit signal strengths for a SM-like Higgs signal.]{Best-fit signal strengths for a SM-like Higgs signal for the individual channels.}
+\label{tab:sigstrengths}
+\end{table}
 
+In the SM scenario, a signal strength of $1.82$ is obtained which corresponds to a cross section of $0.33 \mathrm{pb}$. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. For the ITC scenario, the best fit signal strength is $0.68$ , corresponding to a significance of $1.7\sigma (2.5 \sigma$ expected); a scan of the observed and expected significances over the \Ct/\CV configurations is shown in Fig.~\ref{fig:significances}. Note that the fit favors a signal strength compatible with zero for a scenario with \Ct = 0 (where the \ttH component vanishes).
 
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.48\textwidth]{significances/significances.pdf} 
+ \includegraphics[width=0.48\textwidth]{significances/significances_alpha.pdf}
+\caption[Observed and a priori expected significance of the fit result.]{Observed and a priori expected significance of the fit result (in a background-only hypothesis) as a function of $\Ct/\CV$ (top) and \ft\ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel.}
+\label{fig:significances}
+\end{figure}
 
-
-The best-fit combined signal strength for the standard model hypothesis is 1.8 ± 0.3(stat.) ± 0.6(syst.), corresponding to an observed significance of 2.7σ (1.5σ expected) over a background only
-hypothesis.
-
-
-
-For a scenario of inverted couplings (κt = −1 = −κV), the best fit signal strength is 0.7 ± 0.4, corresponding to a significance of 1.7σ (2.5σ expected), whereas the fit prefers a signal strength compatible with 0 for a scenario with κt = 0 (where the \ttH component vanishes).
-
-
-The sensitivity of the analysis is limited by systematic uncertainties, predominantly by those concerning the normalizations of the main background components (the non-prompt lepton estimation, the scale uncertainties for \ttW and \ttZ), as well as by the uncertainties on the measured lepton efficiency.
-
-
-
-
-
-
-
-
- In the SM point a signal strength of $1.82\,^{+0.34}_{-0.33}\mathrm{(stat.)}\,^{+0.55}_{-0.59}\mathrm{(syst.)}$ (compared to the SM cross section at $\CV=1.0$) is obtained, corresponding to a cross section of $0.33\pm0.12\,\mathrm{pb}$. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. Without considering systematic uncertainties, the significance increases to $6.2\,\sigma$. A scan of the observed and expected significances for each coupling configuration is shown in Fig.~\ref{fig:significances}.
-
-
-% The full results are shown in Fig.~\ref{fig:r_limits_cv} for the non-resolved model with fixed $\PH\to\gamma\gamma/\Z\gamma/\Pg\Pg$ branching ratios, and the two scenarios of exactly inverted couplings ($\CV=1.0$,$\Ct=-1.0$) and the standard model are reported in Tab.~\ref{tab:limits}.  %% FIXME
-
-The pulls and impacts of the most important nuisance parameters are shown in Fig.~\ref{fig:impacts}.
-
+A scan over the best fit values of the combined cross section times modified BR is shown in Figure \ref{fig:xs_fits_cv}. The fact that the best fit signal strength at \Ct=0, where the \ttH component of the signal is zero, is compatible with zero implies that the best fit for the cross section is also compatible with zero, which again reveals that the excess in the cross section limit with respect to the expectation is not \tH-like but \ttH-like.   
 
 \begin{figure} [!h]
  \centering
@@ -1568,14 +1553,7 @@ The pulls and impacts of the most important nuisance parameters are shown in Fig
 \label{fig:xs_fits_cv}
 \end{figure}
 
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.48\textwidth]{significances/significances.pdf} \\
- \includegraphics[width=0.48\textwidth]{significances/significances_alpha.pdf}
-\caption{Observed and a priori expected significance of the fit result (in a background-only hypothesis) as a function of $\Ct/\CV$ (top) and \ft\ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel.}
-\label{fig:significances}
-\end{figure}
+% The full results are shown in Fig.~\ref{fig:r_limits_cv} for the non-resolved model with fixed $\PH\to\gamma\gamma/\Z\gamma/\Pg\Pg$ branching ratios, and the two scenarios of exactly inverted couplings ($\CV=1.0$,$\Ct=-1.0$) and the standard model are reported in Tab.~\ref{tab:limits}.  %% FIXME
 
 % \begin{figure} [!h] %% FIXME: Put in appendix
 %  \centering
@@ -1589,30 +1567,39 @@ The pulls and impacts of the most important nuisance parameters are shown in Fig
 % \label{fig:r_limits_cv}
 % \end{figure}
 
-\begin{figure} [!h]
+
+\subsection{Effect of the nuisance parameters}
+
+The post-fit behavior of the most important nuisance parameters is presented in the pulls and impacts plots in Figures ~\ref{fig:impacts}, ~\ref{fig:impacts} and ~\ref{fig:impacts}. 
+
+Most of the nuisance parameters stay close to their initial values. The biggest impact on the signal strength limits is associated to the fake rates for muons, followed by the lepton efficiencies and nuisances associated to the QCD scales. The lower impact in the ITC scenario is associated to the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated to the forward jet in \tHq and p.d.f.s have the lower impact in the signal strength limit .
+
+\begin{figure} [!th]
  \centering
- \includegraphics[width=0.8\textwidth]{limits/impacts/impacts1.pdf}\\
- \includegraphics[width=0.8\textwidth]{limits/impacts/impacts2.pdf}\\
-\caption{Post-fit pulls and impacts of the 40 nuisance parameters with largest impacts for the fit on the observed data, for the $\Ct/\CV=-1.0$ hypothesis.}
+ \includegraphics[width=0.75\textwidth]{limits/impacts/impacts1.pdf}\\
+ %\includegraphics[width=0.8\textwidth]{limits/impacts/impacts2.pdf}\\
+ \includegraphics[width=0.75\textwidth]{limits/impacts/sm/impacts1.pdf}\\        
+\caption[Post-fit pulls and impacts.]{Post-fit pulls and impacts of the 20 nuisance parameters with largest impacts for the fit on the observed data, for the ITC (top) and SM (bottom) hypotheses.}
 \label{fig:impacts}
 \end{figure}
 
-\begin{figure} [!h]
- \centering
- \includegraphics[width=0.8\textwidth]{limits/impacts/sm/impacts1.pdf}\\
- \includegraphics[width=0.8\textwidth]{limits/impacts/sm/impacts2.pdf}\\
-\caption{Post-fit pulls and impacts of the 40 nuisance parameters with largest impacts for the fit on the observed data, for the standard model ($\Ct/\CV=1.0$) hypothesis.}
-\label{fig:impacts_sm}
-\end{figure}
+%% \begin{figure} [!h]
+%%  \centering
+%%  \includegraphics[width=0.8\textwidth]{limits/impacts/sm/impacts1.pdf}\\
+%%  \includegraphics[width=0.8\textwidth]{limits/impacts/sm/impacts2.pdf}\\
+%% \caption[Post-fit pulls an impacts for the $\Ct/\CV=1.0$ hypothesis.]{Post-fit pulls and impacts of the 40 nuisance parameters with largest impacts for the fit on the observed data, for the standard model ($\Ct/\CV=1.0$) hypothesis.}
+%% \label{fig:impacts_sm}
+%% \end{figure}
 
 \begin{figure} [!h]
  \centering
  \includegraphics[width=0.8\textwidth]{limits/impacts/asimov/impacts1.pdf}\\
- \includegraphics[width=0.8\textwidth]{limits/impacts/asimov/impacts2.pdf}\\
-\caption{Post-fit pulls and impacts of the 40 nuisance parameters with largest impacts for a fit to the Asimov dataset with fixed signal strength, for the $\Ct/\CV=-1.0$ hypothesis.}
+% \includegraphics[width=0.8\textwidth]{limits/impacts/asimov/impacts2.pdf}\\
+\caption[Post-fit pulls an impacts for a fit to the Asimov dataset.]{Post-fit pulls and impacts of the 20 nuisance parameters with largest impacts for a fit to the Asimov dataset with fixed signal strength, for the $\Ct/\CV=-1.0$ hypothesis.}
 \label{fig:impacts_asimov}
 \end{figure}
 
+The sensitivity of the analysis is limited by systematic uncertainties, predominantly by those concerning the normalizations of the main background components, \ie, the non-prompt lepton estimation, the scale uncertainties for \ttW and \ttZ, as well as by the uncertainties on the measured lepton efficiency.
 
 
 
