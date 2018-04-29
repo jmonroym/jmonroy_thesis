@@ -1599,4 +1599,33 @@ The sensitivity of the analysis is limited by systematic uncertainties, predomin
 
 \section{CP-mixing in \tHq}
 
+The sensitivity of the \tH production process to the CP-mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
+
+The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The cross section is scaled to its NLO prediction.
+
+The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized.
+
+
+%% The CP-mixing analysis strategy is analog to the one used in the study of the ITC;
+
+%% training of the \tXq reconstruction and subsequently the training of the classification. These trainings
+%% are repeated for each of the 21 new signal inputs.
+
+%% The effect of different CP-mixing angles on the shape of several of the BDT
+
+
+%% The BDTs for the classification are trained with only 100 trees as the privately produced \tXq
+%% samples contains fewer events than the officially produced sample and hence shows symptoms
+%% of overtraining if 800 trees are used in the training.
+
+
+%% Asymptotic $CL_S$ limits at 95\% C.L. are calculated after performing the fit. A peculiarity is the treatment of the \ttX background, as the cross section and the kinematics change for different CP-mixing angles. The cross section and the kinematics of the \ttX process are degenerate for $\alpha$ and $\pi- \alpha$ as shown in Figure . The \ttX background is scaled to its NLO cross section for each of the studied angles but shape variations are neglected, as the variations only become more pronounced for the studied angles, where the impact of \ttX in comparison to \tXq becomes negligible, as they correspond to the lowest \ttX cross sections. The cross sections for the \tXq and \ttX processes for each of the studied mixing angles can be found in Appendix \ref{}.
+
+
+%% The final classifier for the case of α = 90 ◦ shows a very similar behavior as the classifier of the main analysis for simulation and data, as is expected.
+
+%% An illustration of the expected and observed limits for all investigated CP-mixing angles can be found in Figure \ref{}
+
+%% Again a cubic spline fit was used to interpolate between the estimated values. For the case of a up fully pseudoscalar $X_0$ boson an upper limit of μ obs,α =90 ◦ = 25.7 has been observed, whereas a
+%% up limit of μ exp,α =90 ◦ = 22.7 is expected. The complete set of limit values for a CP-mixing angle of α = 90 ◦ can be found in Table 6.11. The determined upper limits are anti-proportional to the cross section of the corresponding value of α. The lowest observed upper limit is therefore found for a value of α = 180 ◦ , which can up exclude an enhancement of the cross section of μ obs,α =180 ◦ = 11.7. The limits for a CP-mixing angle of α = 0 ◦ and α = 180 ◦ are worse than the limits of their corresponding C t = +1 and C t = −1 points due to the training with fewer trees for reconstruction and classification. . For the pure CP-odd case the analysis is able up to exclude an enhanced production cross for \tXq section of μ obs ·σ α =90 ◦ = 25.7·0.275 pb = 7.1 pb.
 
