@@ -163,7 +163,7 @@ The statistical inference tools used in this analysis are implemented in the Roo
 
 \subsection{Nuisance parameters}
 
-The unknown parameter vector $\bm{\theta}$ is made of two types of parameters: those parameters that provide information about the physical observables of interest for the experiment or \ti{parameters of interest}, and the \ti{nuisance parameters} that are not of direct interest for the experiment but that need to be included in the analysis in order to achieve a satisfactory description of the data; they represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis.
+The unknown parameter vector $\bm{\theta}$ is made of two types of parameters: those parameters that provide information about the physical observables of interest for the experiment or \ti{parameters of interest}, and the \ti{nuisance parameters} that are not of a direct interest for the experiment but that need to be included in the analysis in order to achieve a satisfactory description of the data; they represent effects of the detector response like the finite resolutions of the detection systems, miscalibrations, and in general any source of uncertainty introduced in the analysis.
 
 Nuisance parameters can be estimated from experimental data; for instance, data samples from a test beam are usually employed for calibration purposes. In cases where experimental samples are not availables, the estimation of nuisance parameters makes use of dedicated simulation programs to provide the required samples.
 
@@ -175,11 +175,11 @@ The estimation of the unknown parameters involves certain deviations from their 
 
 \noindent where the interval $[\hat{\theta}-\delta \theta, \hat{\theta}+\delta \theta]$ is called \ti{confidence interval}; it is usually interpreted, in the limit of infinite number of experiments, as the interval where the true value of the unknown parameter $\theta$ is contained with a probability of 0.6827 (if no other convention is stated); this interval represents the area under a Gaussian distribution in the interval $\pm 1\sigma$.    
 
-The uncertainties associated with nuisance parameters produce \ti{systematic uncertainties} in the final measurement, while the uncertainties related only to fluctuations in data and that affect the determination of parameters of interest produce \ti{statistical uncertainties}.
+Conventionally, uncertainties are split into two classes: \ti{systematic}, associated with the systematic effects, and \ti{statistical}, related only to fluctuations in data and having statistical nature. 
 
 \subsection{Maximum likelihood estimation method}
 
-The estimation of the unknown parameters that are in best agreement with the observed data is performed through a function of the data sample that returns the estimate of those parameters; that function is called an \ti{estimator}. Estimators are usually constructed using mathematical expressions encoded in algorithms. 
+The estimation of the unknown parameters that are in best agreement with the observed data is performed through a function of the data sample that returns the estimate of those parameters; that function is called an \ti{estimator}. Estimators are usually constructed using mathematical expressions encoded in computer programs. 
 
 In this thesis, the estimator used is the likelihood function $f(\textbf{x}|\bm{\theta})$\footnote{analogue to the likelihood functions described in previous sections} which depends on a set of measured variables $\textbf{x}$ and a set of unknown parameters $\bm{\theta}$. The likelihood function for N events in a sample is the combination of all the individual likelihood functions, \ie, 
 
@@ -189,7 +189,7 @@ L(\bm{\theta})=\prod_{i=1}^N f(\textbf{x}^i|\bm{\theta})=\prod_{i=1}^N f(x^i_1,.
 
 \noindent and the estimation method used is the \ti{Maximum Likelihood Estimation} method (MLE); it is based on the combined likelihood function defined by eqn. \ref{eqn:ml} and the procedure seeks for the parameter set that corresponds to the maximum value of the combined likelihood function, \ie, the \ti{maximum likelihood estimator} of the unknown parameter vector $\bm{\theta}$ is the function that produces the vector of \ti{best estimators} $\bm{\hat \theta}$ for which the likelihood function $L(\bm{\theta})$ evaluated at the measured $\textbf{x}$ is maximum.  
 
-Usually, the logarithm of the likelihood function is used in numerical algorithm implementations in order to avoid underflow the numerical precision of the computers due to the product of low likelihoods. In addition, it is common to minimize the negative logarithm of the likelihood function, therefore, the negative log-likelihood function is
+Usually, the logarithm of the likelihood function is used in numerical algorithm implementations in order to avoid underflow the numerical precision of the computers due to the product of small likelihoods. In addition, it is common to minimize the negative logarithm of the likelihood function, therefore, the negative log-likelihood function is
 %instead of maximizing the logarithm of it because in this way the procedure consist of differentiate a sum of therms and setting the sum to zero;
 \beqn
 F(\bm{\theta}) = -\textrm{ln}L(\bm{\theta})=-\sum_{i=1}^N f(\textbf{x}^i|\bm{\theta}).
@@ -200,7 +200,7 @@ The minimization process is performed by the software MINUIT \cite{minuit} imple
 L(\textbf{x}|r,\bm{\theta})=\prod_{i=1} \frac{(r\cdot s_i(\bm{\theta})+ b_i(\bm{\theta}))^{n_i}}{n_i!} e^{-r\cdot s_i(\bm{\theta})-b_i(\bm{\theta})} \prod_{j=1}\frac{1}{\sqrt{2\pi}\sigma_{\theta_j}^2}e^{-(\theta_j-\theta_{0,j})^2/2\sigma_{\theta_j}^2} ,\label{eqn:bml}
 \eeqn
 
-\noindent with $s_i$ and $b_i$ the expected number of signal and background yields for the bin $i$, $n_i$ is the observed number of events in the bin $i$ and $r = \sigma/\sigma_{SM}$ is the signal strength. Note that the number of entries per bin follows a Poisson distribution. The effect of the nuisance parameters have been included in the likelihood function through the multiplication by a Gaussian distribution that models the nuisance. The three parameters, r, $s_i$ and $b_i$ are jointly fitted to estimate the value of r.
+\noindent with $s_i$ and $b_i$ the expected number of signal and background yields for the bin $i$, $n_i$ is the observed number of events in the bin $i$ and $r = \sigma/\sigma_{SM}$ is the signal strength. Note that the number of entries per bin follows a Poisson distribution. The effect of the nuisance parameters have been included in the likelihood function through Gaussian distributions that models the nuisance. The three parameters, r, $s_i$ and $b_i$ are jointly fitted to estimate the value of r.
 
 %The analysis presented in this thesis is based on the binned distribution of the ratio signal/background obtained from the BDT outputs
 
@@ -252,7 +252,7 @@ If the $t_r$ p.d.f.s for both hypotheses are well separated, as shown in the top
 p'_r= \frac{p_r}{1-p_b} \equiv CL_s.\label{eqn:cls}
 \eeqn
 
-If $H_1$ is true, then $p_b$ is small, $CL_s\simeq p_r$ and $H_0$ is rejected; if there is large overlap and an statistical fluctuation cause that $p_b$ is large, then both numerator and denominator in Eqn. \ref{eqn:cls} become small but $CL_s$ would allow the rejection of $H_1$ even if there is poor sensitivity to signal.     
+If $H_1$ is true, then $p_b$ is small, $CL_s\simeq p_r$ and $H_0$ is rejected; if there is large overlap and a statistical fluctuation causes that $p_b$ is large, then both numerator and denominator in Eqn. \ref{eqn:cls} become small but $CL_s$ would allow the rejection of $H_1$ even if there is poor sensitivity to signal.     
 
 The upper limit of the parameter of interest $r^{up}$ is determined by excluding the range of values of $r$ for which $CL_s(r,\bm{\theta})$ is lower than the confidence level desired, normally 90\% or 95\%, e.g, scanning over $r$ and finding the value for which $p_r^{'up}=0.05$. The expected upper limit can be calculated using pseudo-experiments based on the background-only hypothesis and obtaining a distribution for $r^{up}_{ps}$; the median of that distribution corresponds to the expected upper limit, while the $\pm 1\sigma$ and $\pm2\sigma$ deviations correspond to the values of the distribution that defines the 68\% and 95\% of the area under the distribution centered in the median. It is usual to present all the information about the expected and observed limits in the so-called \ti{Brazilian-flag plot} as the one showed in Figure \ref{fig:hgg}. The solid line represent the observed $CL_s$  
 
