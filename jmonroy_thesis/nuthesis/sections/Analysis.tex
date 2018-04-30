@@ -1,3 +1,4 @@
+\setcounter{chapter}{5}
 \hyphenation{Colli-sions}
 \hyphenation{Single}
 %______________________ Analysis ______________________
@@ -16,7 +17,7 @@ Constraints on the sign of the Higgs-top coupling ($y_t$) have been derived from
 
 The analysis presented here, expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}; it also complements searches in $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
 
-The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then described; after, the background predictions, the signal extraction, the statistical treatment of the selected events and the discussion of the systematic uncertainties are described. The final section present the results for the exclusion limits as a function of the ratio of \Ct and the dimensionless modifier of the Higgs-vector boson coupling \CV.  
+The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then described; after, the background predictions, the signal extraction, the statistical treatment of the selected events and the discussion of the systematic uncertainties are described. The final section presents the results for the exclusion limits as a function of the ratio of \Ct and the dimensionless modifier of the Higgs-vector boson coupling \CV.  
 
 \begin{figure}[!h]
 \begin{center}
@@ -64,13 +65,13 @@ The presence of neutrinos is inferred from the presence of MET.
 
 \section{Background processes}\label{sec:bg}
 
-The background processes are those that can mimic the signal signature or at least can be reconstructed as that as a result of certain circumstances. The backgrounds can be classified as
+The background processes are those that can mimic the signal signature or at least can be reconstructed as signal as a result of certain circumstances. The backgrounds can be classified as
 
 \begin{itemize}
 
 \item irreducible backgrounds: where genuine prompt leptons are produced in on-shell W and Z boson decays; they can be reliably estimated directly from MC simulated events, using higher-order cross sections or data control regions for the overall normalization.
 
-\item reducible backgrounds: where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet; genuine leptons from heavy flavor decays and misreconstructed jets, also known as \ti{mis-ID leptons} are considered non-prompt leptons or or \ti{fake leptons} as well as electrons from photon conversions. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but evaluation the correlation of those hits with nearby jets could be a way of removing them. The misassignment of electron charge in processes like \ttbar or Drell-Yan, represent an additional source of background, but it is relevant only for the $2lss$ channel. Reducible backgrounds are not well predicted by simulation, hence, they are estimated using data-driven methods. 
+\item reducible backgrounds: where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet; genuine leptons from heavy flavor decays and misreconstructed jets, also known as \ti{mis-ID leptons} are considered non-prompt leptons or or \ti{fake leptons} as well as electrons from photon conversions. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but evaluation the correlation of those hits with nearby jets could be a way of removing them. The misassignment of electron charge in processes like \ttbar or Drell-Yan, represents an additional source of background, but it is relevant only for the $2lss$ channel. Reducible backgrounds are not well predicted by simulation, hence, they are estimated using data-driven methods. 
 \end{itemize}
 
 The main sources of background events for \tHq process are \ttbar process and \ttV $(V=W,Z,\gamma)$ processes. Figure \ref{fig:ttbar_sign} shows the signature for \ttbar and \ttW processes.     
@@ -78,11 +79,11 @@ The main sources of background events for \tHq process are \ttbar process and \t
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{ttbar_signature}
-\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW(right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also showed. The \ttbar process signature is very similar to that of the signal process with one fake lepton and non forward activity. The \ttW process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
+\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW (right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also showed. The \ttbar process signature is very similar to that of the signal process with one fake lepton and non forward activity. The \ttW\ process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
 \label{fig:ttbar_sign}
 \end{figure}
 
-The largest contribution to irreducible backgrounds comes from \ttW and \ttZ processes for which the number of ($b-$)jets (($b-$)jet multiplicity) is higher than that of the signal events, while for other contributing background events,  \WZ, $ZZ$, and rare SM processes like $W^\pm W^\pm qq$, $\ttbar\ttbar$, $tZq$, $tZW$, $WWW$, $WWZ$, $WZZ$, $ZZZ$, the ($b-$)jet multiplicity is lower compared to that of the signal events. None of the irreducible backgrounds present activity in the forward region of the detector.
+The largest contribution to irreducible backgrounds comes from \ttW and \ttZ\ processes for which the number of ($b-$)jets (($b-$)jet multiplicity) is higher than that of the signal events, while for other contributing background events,  \WZ, $ZZ$, and rare SM processes like $W^\pm W^\pm qq$, $\ttbar\ttbar$, $tZq$, $tZW$, $WWW$, $WWZ$, $WZZ$, $ZZZ$, the ($b-$)jet multiplicity is lower compared to that of the signal events. None of the irreducible backgrounds present activity in the forward region of the detector.
 
 On the side of the reducible backgrounds, the largest contribution comes from the \ttbar events which have a very similar signature to the signal events but does no present activity in the forward region of the detector either; A particular feature of the \ttbar events is their charge-symmetry, which is different from the characteristics of signal events.
 %______________________ Samples  ______________________
@@ -90,7 +91,7 @@ On the side of the reducible backgrounds, the largest contribution comes from th
 
 \subsection{ Full 2016 data set}
 
-The data set used in this analysis was collected by the CMS experiment during 2016 at while running at $\sqrt{s}=13$TeV and corresponds to a total integrated luminosity of 35.9\fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples; that corresponds to the \verb|23Sep2016 (Run B to G)| and \verb|PromptReco (Run H)| versions of the datasets.
+The data set used in this analysis was collected by the CMS experiment during 2016, while running at $\sqrt{s}=13$ TeV, and corresponds to a total integrated luminosity of 35.9 \fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples; that corresponds to the \verb|23Sep2016 (Run B to G)| and \verb|PromptReco (Run H)| versions of the datasets.
 
 Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The certified luminosity sections are selected using the golden JSON file defined by the CMS experiment \cite{json}.
 
@@ -205,7 +206,7 @@ In this section, the specific definitions of the physical objects in terms of th
 
 Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particles; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. 
 
-The process of reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, hence, the identification variables used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed and described in the following sections \footnote{the studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}.
+The process of reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, hence, the identification variables used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed and described in the following sections \footnote{The studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}.
 
 The identification variables include not only observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction (jet-related variables); an initial loose preselection of leptons candidates is performed and then an MVA discriminator, referred to as \ti{lepton MVA} discriminator, is used to distinguish signal leptons from background leptons.
 
@@ -221,7 +222,7 @@ The muon candidates are reconstructed by combining information from the tracker 
 \item \ti{POG Tight Muon ID} is a global muon with additional muon-quality requirements Tight Muon ID selects a subset of the PF muons.  
 \end{itemize}
 
-Only muons within the muon system acceptance $|\eta| < 2.4$ and minimum \pt  of 5 GeV are considered. %The requirements for each working point are listed in table \ref{tab:muonid}. 
+Only muons within the muon system acceptance $|\eta| < 2.4$ and minimum \pt  of 5 GeV are considered. %The requirements for each working point are listed in Table \ref{tab:muonid}. 
 
 \subsubsection*{Electrons}
 
@@ -229,15 +230,15 @@ Electrons are reconstructed using information from the tracker and from the elec
 
 A loose selection based on \etac-dependent cuts on this discriminant is used to preselect electron candidates, the full shape of the discriminant is used in the lepton MVA selection to separate signal leptons from background leptons (described in Section \ref{sssec:leptonmva}).
 
-In order to reject electrons from photon conversions, electron candidates with missing hits in the pixel tracker layers or matched to a conversion secondary vertex are discarded. Electrons are selected for the analysis if they have \pt > 7 GeV and are located within the tracker system acceptance region ($|\eta|$ < 2.5). %All the electron selection criteria are listed in table\ref{tab:eleid}.
+In order to reject electrons from photon conversions, electron candidates with missing hits in the pixel tracker layers or matched to a conversion secondary vertex are discarded. Electrons are selected for the analysis if they have \pt > 7 GeV and are located within the tracker system acceptance region ($|\eta|$ < 2.5). %All the electron selection criteria are listed in Table\ref{tab:eleid}.
 
 \subsubsection*{Lepton vertexing and pile-up rejection}
 
-The impact parameter in the transverse plane $d_0$ , impact parameter along the $z$-axis $d_z$ , and the impact parameter significance in the detector space $SIP_{3D}$, are considered to perform the identification and rejection of pile-up, misreconstructed tracks, and background leptons from b-hadron decays; pile-up and misreconstructed track mitigation is achieved by imposing loose cuts on the impact parameter variables. The full shape of the those variables is used in a lepton MVA classifier to achieve the best separation between the signal and the background leptons.
+The impact parameter in the transverse plane $d_0$, impact parameter along the $z$-axis $d_z$, and the impact parameter significance in the detector space $SIP_{3D}$, are considered to perform the identification and rejection of pile-up, misreconstructed tracks, and background leptons from b-hadron decays; pile-up and misreconstructed track mitigation is achieved by imposing loose cuts on the impact parameter variables. The full shape of those variables is used in a lepton MVA classifier to achieve the best separation between the signal and the background leptons.
 
 \subsubsection*{Lepton isolation}
 
-PF is able to recognize leptons from two different sources: on one side, leptons from the decays of heavy particles, such as W and Z bosons, which are normally isolated in space from the hadronic activity in the event; on the other side, leptons from the decays of hadrons and jets misidentified as leptons, which are not isolated as the former. For highly boosted systems, like the lepton and the $b$-jet generated in the semileptonic decay of a boosted top, the decay products tend to be more closer and sometimes they even overlap; thus, the PF standard definition of isolation in terms of the separation between the lepton candidates (l) and other PF objects (i) in the \etac-\phic plane,
+PF is able to recognize leptons from two different sources: on one side, leptons from the decays of heavy particles, such as W and Z bosons, which are normally isolated in space from the hadronic activity in the event; on the other side, leptons from decays of hadrons and jets misidentified as leptons, which are not isolated as the former. For highly boosted systems, like the lepton and the $b$-jet generated in the semileptonic decay of a boosted top, the decay products tend to be more closer and sometimes they even overlap; thus, the PF standard definition of isolation in terms of the separation $\Delta R$ between lepton candidates (l) and other PF objects (i) in the \etac-\phic plane,
 
 \beqn
 \Delta R =\sqrt{( \eta^l - \eta^i)^2 + (\phi^l - \phi^i)^2} < 0.3
@@ -253,13 +254,13 @@ I_{mini} =\frac{\displaystyle\sum_{R} p_T(h^\pm) - \textrm{max}\left(0,\displays
 R = \frac{10 \textrm{GeV}}{\textrm{min}(\textrm{max}(p_T(l), 50 \textrm{GeV}), 200 \textrm{GeV})},
 \eeqn
 
-The \pt dependence of the cone size allows for greater signal efficiency. Setting a cut on $I_{mini}$ below a given threshold ensures that the lepton is locally isolated, even in boosted systems. The effect of pileup is mitigated using the so-called effective area correction $\mathcal{A}$ listed in Table\ref{tab:pileup_area}. 
+The \pt dependence of the cone size allows for greater signal efficiency. Setting a cut on $I_{mini}$ below a given threshold ensures that the lepton is locally isolated, even in boosted systems. The effect of pileup is mitigated using the so-called effective area correction $\mathcal{A}$ listed in Table ~\ref{tab:pileup_area}. 
 
 \begin{table}[!htbp]
 \centering
 \small
 \begin{tabular}{ccc}\hline
-$|\eta|$ range & $\mathcal{A}$(e) neutral/charged & A ($\mu$) neutral/charged \\\hline
+$|\eta|$ range & $\mathcal{A}$(e) neutral/charged & $\mathcal{A}$ ($\mu$) neutral/charged \\\hline
 0.0 - 0.8      & 0.1607 / 0.0188                  & 0.1322 / 0.0191 \\
 0.8 - 1.3      & 0.1579 / 0.0188                  & 0.1137 / 0.0170 \\
 1.3 - 2.0      & 0.1120 / 0.0135                  & 0.0883 / 0.0146 \\
@@ -274,7 +275,7 @@ A loose cut on $I_{mini}$ is applied to pre-select the muon and electron candida
 
 \subsubsection*{Jet-related variables}
 
-In order to reject misidentified leptons from $b-$jets, mostly coming from tt+jets, Drell-Yan+jets, and W+jets events, the vertexing and isolation described in previous sections are complemented with additional variables related to the closest reconstructed jet to the lepton, \ie, the PF jets reconstructed\footnote{charged hadrons from PU vertices are not removed prior to the jet clustering.} around the leptons with $\Delta R=\sqrt{( \eta^l - \eta^{jet})^2 + (\phi^l - \phi^{jet})^2} < 0.5$. The identification variables used in the lepton MVA discriminator are the ratio $\pt^l/\pt^{jet}$, the CSV b-tagging discriminator value of the jet, the number of charged tracks of the jet, and the relative \pt given by
+In order to reject misidentified leptons from $b-$jets, mostly coming from tt+jets, Drell-Yan+jets, and W+jets events, the vertexing and isolation described in previous sections are complemented with additional variables related to the closest reconstructed jet to the lepton, \ie, the PF jets reconstructed\footnote{Charged hadrons from PU vertices are not removed prior to the jet clustering.} around the leptons with $\Delta R=\sqrt{( \eta^l - \eta^{jet})^2 + (\phi^l - \phi^{jet})^2} < 0.5$. The identification variables used in the lepton MVA discriminator are the ratio $\pt^l/\pt^{jet}$, the CSV b-tagging discriminator value of the jet, the number of charged tracks of the jet, and the relative \pt given by
 
 \beqn
 p_T^{rel}=\frac{(\vec{p}_{jet}-\vec{p}_l)\cdot\vec{p}_l}{||\vec{p}_{jet} - \vec{p}_l||}.
@@ -383,11 +384,11 @@ Efficiencies of reconstruction and selecting loose leptons are measured both for
 
 The scale factor for each event is used to correct the weight of the event in the full sample; therefore, the full simulation correction is given by the product of all the individual scale factors. The scale factors used in this thesis are inherited from Reference \cite{CMS_AN_2017-029} which in turns inherited them from leptonic SUSY analyses using equivalent lepton selections.
 
-The efficiency of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons are determined by using a tag and probe method on a sample of Drell-Yan enriched events. Figures \ref{fig:2lss_eff} and \ref{fig:3l_eff} show the efficiencies for the $2lss$ channel and $3l$ channel respectively. Efficiencies in the $2lss$ channel have been produced including the tight-charge requirement, while for the $3l$ channel it is not included. Number of passed and failed probes are determined from a fit to the invariant mass of the dilepton system. Simulation is corrected using these scale factors; note that they depends on \etac and \pt.   
+The efficiency of applying the tight selection as defined in Tables~\ref{tab:muonIDs} and~\ref{tab:eleIDs}, on the loose leptons is determined by using a tag and probe method on a sample of Drell-Yan enriched events. Figures \ref{fig:2lss_eff} and \ref{fig:3l_eff} show the efficiencies for the $2lss$ channel and $3l$ channel respectively. Efficiencies in the $2lss$ channel have been produced including the tight-charge requirement, while for the $3l$ channel it is not included. Number of passed and failed probes are determined from a fit to the invariant mass of the dilepton system. Simulation is corrected using these scale factors; note that they depend on \etac and \pt.   
 
 \subsection{Jets and \bjet tagging}
 
-In this analysis, jets are reconstructed by clustering PF candidates using the anti-$k_t$ algorithm with parameter distance $\Delta R=0.4$; those charged hadrons that are not consistent with the selected primary vertex are discarded from the clustering. The jet energy is then corrected for the varying response of the detector as a function of transverse momentum \pt and pseudorapidity \etac. Jets are selected for use in the analysis only if they have $\pt > 25$ GeV and are separated from any selected leptons by $\Delta R > 0.4$.
+In this analysis, jets are reconstructed by clustering PF candidates using the anti-$k_t$ algorithm with parameter distance $\Delta R=0.4$; those charged hadrons that are not consistent with the selected primary vertex are discarded from the clustering. The jet energy is then corrected for the varying response of the detector as a function of transverse momentum \pt and pseudorapidity \etac. Jets are selected for beingused in the analysis only if they have $\pt > 25$ GeV and are separated from any selected leptons by $\Delta R > 0.4$.
 
 Jets coming from the primary vertex and jets coming from pile-up vertices are distinguished using a MVA discriminator based on the differences in the jet shapes, in the relative multiplicity of charged and neutral components, and in the different fraction of transverse momentum which is carried by the most energetic components. Jet tracks are also required to be compatible with the primary
 vertex.
@@ -479,7 +480,7 @@ Most of the diboson events passing the signal selection contain jets from light 
 
 The non-prompt lepton background contribution to the final selection is estimated using the fake factor method. The main idea of the method is to define a control region of events enriched in the background to estimate and determine a factor that relates (extrapolates) these events to those in the signal region. The method is data-driven in the sense that the control sample is selected from data, and the extrapolation factor is measured from data.
 
-In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution, from Drell-Yan production; therefore, the control region also know as \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased. The application regions for electrons and muons are defined by the fakeable object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates the fakeable definition becomes the loose selection. 
+In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution, from Drell-Yan production; therefore, the control region also know as \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased. The application regions for electrons and muons are defined by the \ti{fakeable} object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates, the fakeable definition becomes the loose selection. 
 
 The ratio between the number of events that pass both, the loose and tight selections, and the number of events that pass the loose selection but fail the tight one, corresponds to the \ti{loose-to-tight ratio or fake factor/rate (f)}. The measurement of the fake factor is made using two background dominated data samples, collected with dedicated triggers, %(subtracting the residual prompt lepton contribution using MC)
 as a function of \pt and |\etac| and separately for muons and electrons:
@@ -542,11 +543,11 @@ electrons it ranges from about 0.02\% in the barrel section (|\etac| < 1.48) up 
 \label{fig:chmisid_prob}
 \end{figure}                            
 
-The contribution from charge mis-ID electrons in signal selection of this analysis comes mainly from \ttbar\ and Drell-Yan events. The systematic uncertainty of the normalization of the charge mis-id.\ estimate is evaluated at about 30\%, arising from a slight disagreement of the mis-ID.\ probability between data and simulation. Given that it only affects the $e\mu$ channel, it impact on the final sensitivity is very limited.
+The contribution from charge mis-ID electrons in signal selection of this analysis comes mainly from \ttbar\ and Drell-Yan events. The systematic uncertainty of the normalization of the charge mis-ID estimate is evaluated at about 30\%, arising from a slight disagreement of the mis-ID probability between data and simulation. Given that it only affects the $e\mu$ channel, its impact on the final sensitivity is very limited.
 
 \section{Pre-selection yields}
 
-The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}; Figure ~\ref{fig:input_vars_presel} shows the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity. The remaining variables distributions are shown in Appendix \ref{app:presel_plots}. 
+The expected and observed event yields of the pre-selection are shown in Table \ref{tab:yields-sel}; Figure~\ref{fig:input_vars_presel} shows the distributions of some relevant kinematic variables, normalized to the cross section of the respective processes and to the integrated luminosity. The remaining variables distributions are shown in Appendix \ref{app:presel_plots}. 
 
 %% \begin{table}[thb]
 %% \centering
@@ -643,7 +644,7 @@ $\tHW (H\to bb)$              & $<0.01$ & $<0.1$\% & $<0.01$ &$<0.1$\% \\ \hline
 \label{tab:yield_hbr}
 \end{table}
 
-A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between this both analyses are presented in Appendix \ref{app:overlap}.   
+A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between these two analyses are presented in Appendix \ref{app:overlap}.   
 
 %______________________ Signal discrimination ______________________
 \section{Signal discrimination }
@@ -653,7 +654,7 @@ The production cross section for the signal processes \tHq, \tHW, and \ttH is on
 
 \subsection{MVA classifiers evaluation}
 
-Several MVA classifier algorithms were evaluated in order to determine the most appropriate method for this analysis\footnote{The choice of the tested algorithms was based on the recommendations provided by the official TMVA user guide, the experience from previous analyses and considering the expertise of the members of the \tHq and \ttH analyses groups. Only the BDT classifier is described in this thesis and a detailed description of all available methods can be found in Reference \cite{tmva}}. The comparison is based on the performance of the classifiers, encoded in the plot of the background rejection as a function of the signal efficiency (ROC curve). The top row of Figure ~\ref{roc} shows the ROC curves for the several methods evaluated; two separated training were performed in the $3l$ channel: against \ttbar\ (right) and \ttV\ (left) processes.
+Several MVA classifier algorithms were evaluated in order to determine the most appropriate method for this analysis\footnote{The choice of the tested algorithms was based on the recommendations provided by the official TMVA user guide, the experience from previous analyses and considering the expertise of the members of the \tHq and \ttH analyses groups. Only the BDT classifier is described in this thesis and a detailed description of all available methods can be found in Reference \cite{tmva}}. The comparison is based on the performance of the classifiers, encoded in the plot of the background rejection as a function of the signal efficiency (ROC curve). The top row of Figure~\ref{roc} shows the ROC curves for evaluated methods; two separated training were performed in the $3l$ channel: against \ttbar\ (right) and \ttV\ (left) processes.
 
 \begin{figure} [!h]
   \centering
@@ -666,11 +667,11 @@ Several MVA classifier algorithms were evaluated in order to determine the most 
 \label{roc}
 \end{figure} 
 
-In both cases, the gradient boosted decision tree \ti{BDTG} (BDTA\_GRAD in the plot) classifier offers the best results, followed by the adaptive BDT classifier (\ti{BDTA}); the several Fisher classifiers tested, which differ in their parameters and/or boosting method, they offer similar performance among them, while the k-Nearest Neighbour (kNN) classifier performance is below the rest of the classifiers. The corresponding ROC curves and in the $2lss$ channel for trainings against \ttV (left) and \ttbar (right) processes are shown in the bottom row of Figure ~\ref{roc}; the BDTG performance is similar to that in the $3l$ channel.
+In both cases, the gradient boosted decision tree \ti{BDTG} (BDTA\_GRAD in the plot) classifier offers the best results, followed by the adaptive BDT classifier (\ti{BDTA}); the several Fisher classifiers tested, which differ in their parameters and/or boosting method, they offer similar performance among them, while the k-Nearest Neighbour (kNN) classifier performance is below the rest of the classifiers. The corresponding ROC curves and in the $2lss$ channel for trainings against \ttV (left) and \ttbar (right) processes are shown in the bottom row of Figure~\ref{roc}; the BDTG performance is similar to that in the $3l$ channel.
 
 \subsection{Discriminating variables}
 
-The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of table \ref{tab:bgsamples} and the samples marked with an * in the same table.
+The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of Table \ref{tab:bgsamples} and the samples marked with an * in the same table.
 
 As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a discriminator with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis. The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
 
@@ -693,7 +694,7 @@ dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hli
 \label{tab:bdtinputs}
 \end{table}
 
-Plots in Figure ~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples, in the $3l$ channels.
+Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples, in the $3l$ channels.
 
 \begin{figure} [!h]
  \centering
@@ -711,7 +712,7 @@ Plots in Figure ~\ref{fig:input_vars_3l} shows the BDTG input variables distribu
 \label{fig:input_vars_3l}
 \end{figure}    
 
-All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure ~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while \tHq peak around 18 GeV; although the discrimination power does not cover all the backgrounds, it counts for the final discriminator. A similar situation can be seen in the plot for the number of jets (row three, column two); \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process. The discrimination power is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event (row two, column three). The same or equivalent input variables are found to be performing well for both $3l$ and $2lss$ channels. Figure ~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
+All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while \tHq peak around 18 GeV; although the discrimination power does not cover all the backgrounds, it counts for the final discriminator. A similar situation can be seen in the plot for the number of jets (row three, column two); \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process. The discrimination power is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event (row two, column three). The same or equivalent input variables are found to be performing well for both $3l$ and $2lss$ channels. Figure~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
 
 \subsubsection*{Discrimination power from BDTG classifier}
 
@@ -732,7 +733,7 @@ The Discrimination power of the input variables can also be evaluated from the B
 \label{fig:mva_input_comp}
 \end{figure}
 
-Figure \ref{fig:mva_input_comp} shows the comparison between input variables for the two trainings in the $3l$ channel; it reveals that some variables show opposite behavior for the two background sources, which results in potentially screening the discrimination power if they were to be used in a single discriminant, \ie, if the training would join \ttbar and \ttV. For some other variables the distributions are similar in both background cases. In contrast to the distributions in Figure ~\ref{fig:input_vars_3l} only the dominant backgrounds are included; however, the discrimination power agrees among plots.
+Figure~\ref{fig:mva_input_comp} shows the comparison between input variables for the two trainings in the $3l$ channel; it reveals that some variables show opposite behavior for the two background sources, which results in potentially screening the discrimination power if they were to be used in a single discriminant, \ie, if the training would join \ttbar and \ttV. For some other variables the distributions are similar in both background cases. In contrast to the distributions in Figure~\ref{fig:input_vars_3l} only the dominant backgrounds are included; however, the discrimination power agrees among plots.
 
 Figures in the Appendix ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\ref{mva_input_tt}, and ~\ref{mva_input_ttv} show the input variables distributions for the $2lss$ and $3l$ channel as seen by the BDTG classifier. 
 
@@ -750,11 +751,11 @@ Figures in the Appendix ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\r
 \label{mva_corr}
 \end{figure}
 
-From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extent. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure ~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity.
+From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extent. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity.
 
 \subsection{BDTG classifiers response}
 
-After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure ~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining is also visible.
+After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining is also visible.
 
 \begin{figure} [!h]
   \centering
@@ -764,7 +765,7 @@ After the training stage, the BDTG classifier is tested to ensure its ability to
 \label{fig:bdtg_output_default}
 \end{figure}
 
-In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} list the set of parameters found to be most discriminant with minimal overtraining as shown in Figure \ref{fig:output_2lss}.  
+In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} list the set of parameters found to be most discriminant with minimal overtraining as shown in Figure~\ref{fig:output_2lss}.  
 
 \begin{table} [!h]
 \centering
@@ -886,7 +887,7 @@ Rank  & Variable                & Variable             \\ \hline
 \label{fwd_add_var_3l}
 \end{figure}
 
-Given that the forward jet in background processes could be originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification(fwdJetPUID); their distributions in the $3l$ channel are shown in Figure ~\ref{fwd_add_var_3l}. The forward jet identification distribution show that for both, signal and background, jets are mostly originated in the primary vertex. 
+Given that the forward jet in background processes could be originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification (fwdJetPUID); their distributions in the $3l$ channel are shown in Figure~\ref{fwd_add_var_3l}. The forward jet identification distribution shows that for both, signal and background, jets are mostly originated in the primary vertex. 
 
 The testing was performed by including in the BDTG input one variable at a time, so the discrimination power of each variable can be evaluated individually, and then both simultaneously. fwdJetPUID was ranked the last place in importance (11) in both training (\ttV and \ttbar) while fwdJetPt25 was ranked 3 in the \ttV training and 7 in the \ttbar training. When training using 12 variables, fwdJetPt25 was ranked 5 and 7 in the \ttV and \ttbar trainings respectively, while fwdJetPUID was ranked 12 in both cases.
 
@@ -903,7 +904,7 @@ base 10 var    & 0.848 & 0.777\\
 \caption[ROC-integral for all the testing cases.]{ROC-integral for all the testing cases performed in the evaluation of the additional variables discriminating power. The improvement in the discrimination performance provided by the additional variables is about 1\% .}\label{tab:add_var_improvement}
 \end{table}
 
-The improvement in the discrimination performance provided by the additional variables is about 1\%, so it was decided not to include them in the procedure. Table ~\ref{tab:add_var_improvement} show the ROC-integral for all the testing cases performed.
+The improvement in the discrimination performance provided by the additional variables is about 1\%, so it was decided not to include them in the procedure. Table ~\ref{tab:add_var_improvement} shows the ROC-integral for all the testing cases performed.
 
 \subsection{Signal extraction procedure}
 
@@ -917,9 +918,9 @@ The improvement in the discrimination performance provided by the additional var
 \label{fig:mva12}
 \end{figure}
 
-Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure ~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is showed in the bottom right plot of Figure ~\ref{fig:mva12}.      
+Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is showed in the bottom right plot of Figure~\ref{fig:mva12}.      
 
-Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure ~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Sec.~\ref{sec:binopt}).
+Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Sec.~\ref{sec:binopt}).
 
 \begin{figure} [!h]
  \centering
@@ -934,7 +935,7 @@ From this event categorization, a 1D histogram of expected distribution is produ
 
 The effect of the choice of pre-selection cuts and the number of bins of the 1D histogram on the cross section limit is evaluated by varying the most important cuts and re-calculating the limit in each case. In this analysis, the optimization was performed in the $3l$ channel, by evaluating the upper limits on the \tHq+\ \tHW\ expected signal strength only (without \ttH component), always evaluated at $\Ct=-1.0$, $\CV=1.0$.
 
-Table~\ref{cut_limit} shows the several variations explored, compared with a baseline; the baseline is similar to the selection reported in Table~\ref{tab:cuts} but only a loose CSV jet and a Z veto of $\pm10$ GeV are required. 
+Table~\ref{cut_limit} shows several explored variations, compared with a baseline; the baseline is similar to the selection reported in Table~\ref{tab:cuts} but only a loose CSV jet and a Z veto of $\pm10$ GeV are required. 
 
 \begin{table}[h!]
 \centering
@@ -955,7 +956,7 @@ One medium CSV + 15 GeV\ Z veto   & combined                 & $<2.62$\\\hline
 
 The optimal limit is found when requiring a slightly tighter selection with respect to the baseline. The optimal selection is reported in Table~\ref{tab:cuts}.
 
-The signal strength limit also depends on the chosen binning in the 2D plane as the S/B ratio varies across the plane, hence, several sizes and binning combinations were tested in order to improve the limit. Figure ~\ref{bins} shows some of the binning combinations tested; in the default combination all the bins have the same size, while the best limit was found for a set of 10 bins. The bin borders and the resulting limits are shown in Table ~\ref{bin_limits}.
+The signal strength limit also depends on the chosen binning in the 2D plane as the S/B ratio varies across the plane, hence, several sizes and binning combinations were tested in order to improve the limit. Figure~\ref{bins} shows some of the binning combinations tested; in the default combination all the bins have the same size, while the best limit was found for a set of 10 bins. The bin borders and the resulting limits are shown in Table ~\ref{bin_limits}.
 
 \begin{figure} [!h]
  \centering
@@ -983,7 +984,7 @@ Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\%\hline
 
 Combining the optimization of binning and using the tighter pre-selection cuts, the expected limit in the $3l$ channel alone reaches \textbf{r<2.59}.
 
-A similar binning optimization was made for $2lss$ channel, including other binning combinations. First, the $3l$ channel binning was used to estimate the expected limit, then, bin borders were varied to obtain the best possible expected limit. The bin borders and the resulting signal strength limits for the same-sign dimuon channel are shown in Table~\ref{bin_limits_2lss}:
+A similar binning optimization was made for $2lss$ channel, including other binning combinations. First, the $3l$ channel binning was used to estimate the expected limit, then, bin borders were varied to obtain the best possible expected limit. The bin borders and the resulting signal strength limits for the same-sign dimuon channel are shown in Table~\ref{bin_limits_2lss}.
 
 \begin{table}[h!]
 \centering
@@ -1015,10 +1016,9 @@ Two additional binning strategies were tested, however, the obtained limits are 
 
 \label{sec:forward_jet_model}
 
-As said in previous section, among the features of the \tHq signature with that serves as a powerful discriminating variable is the presence of a forward jet; unfortunately, its \etac distribution is poorly mod\
-eled in simulation. To estimate the effect of a mismodeled forward jet distribution, a reweighting of the events in simulation based on the normalized data/MC ratio in a control region is performed; as a result, an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement is derived.
+As said in previous section, among the features of the \tHq signature that serves as a powerful discriminating variable is the presence of a forward jet; unfortunately, its \etac distribution is poorly modeled in simulation. To estimate the effect of a mismodeled forward jet distribution, a reweighting of the events in simulation based on the normalized data/MC ratio in a control region is performed; as a result, an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement is derived.
 
-Using a sample of dileptonic \ttbar\ events, the control region is defined by requiring two opposite-sign tight leptons in the $e\mu$ channel, with at least two jets and at least one medium CSV tagged jet. (Otherwise the selection is identical to the same-sign \emu\ channel selection). Some distributions related to the forward jet for MC and data are shown in Figure ~\ref{fig:osemu-ttbar}.
+Using a sample of dileptonic \ttbar\ events, the control region is defined by requiring two opposite-sign tight leptons in the $e\mu$ channel, with at least two jets and at least one medium CSV tagged jet. (Otherwise the selection is identical to the same-sign \emu\ channel selection). Some distributions related to the forward jet for MC and data are shown in Figure~\ref{fig:osemu-ttbar}.
 
 \begin{figure} [!h]
   \centering
@@ -1037,7 +1037,7 @@ Using a sample of dileptonic \ttbar\ events, the control region is defined by re
 
 The disagreement of the \etac distribution of forward jets for a \pt\ cut of 25 GeV is well visible especially at higher values of $|\eta|$. The multiplicity for central jets is poorly described by the MadgraphMLM sample used here; consistent with other observations of the same sample. The \ttbar\ background in this analysis is modeled with a data-driven method and these disagreements do not directly affect the \ttbar\ contribution in the analysis. They do however reflect the expected agreement in these distributions for the irreducible backgrounds and the signal.
 
-The effect of higher \pt cuts on the forward jet has been studied for three values: $25$, $30$ and $40$ GeV. In order to take into account the data/MC disagreement in the high \etac regions, the events are weighted accordingly to the data/MC ratio of the unity normalized control plots shown in Figure ~\ref{fig:ptCutVar}. The data/MC agreement in the forward jet \etac distribution improves significantly at higher jet $\pt$s.
+The effect of higher \pt cuts on the forward jet has been studied for three values: $25$, $30$ and $40$ GeV. In order to take into account the data/MC disagreement in the high \etac regions, the events are weighted accordingly to the data/MC ratio of the unity normalized control plots shown in Figure~\ref{fig:ptCutVar}. The data/MC agreement in the forward jet \etac distribution improves significantly at higher jet $\pt$s.
 
 \begin{figure} [!h]
   \centering
@@ -1073,7 +1073,7 @@ $4.444-4.722$ & $0.6497$ & $0.6485$ & $0.6367$ \\
 $4.722-5.000$ & $1.0000$ & $1.0000$ & $1.0000$ \\ \hline
 Exp.\ limit (\threel) & $r<1.54$ & $r<1.51$ & $r<1.50$ \\ \hline
 \end{tabular}
-\caption[Forward jet Data/MC scale factors.]{Data/MC scale factors for $\eta$ distribution of most forward, non-tagged jet with three different $\pt$ cuts, see Figure ~\ref{fig:ptCutVar}.}
+\caption[Forward jet Data/MC scale factors.]{Data/MC scale factors for $\eta$ distribution of most forward, non-tagged jet with three different $\pt$ cuts, see Figure~\ref{fig:ptCutVar}.}
 \label{tab:ratioFwdJet}
 \end{table}
 
@@ -1085,7 +1085,7 @@ The impact of the data/MC disagreement for forward jet \etac is observed to redu
 
 \section{Signal model}
 
-It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table.~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is showed in Appendix ~\ref{sec:bdtvscvct}.
+It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is showed in Appendix ~\ref{sec:bdtvscvct}.
 
 In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{kcouplings}:
 
@@ -1103,7 +1103,7 @@ In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross 
 \label{fig:xsbrscalings}
 \end{figure}
 
-The Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top-quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ also changes with changing \CV.
+The Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ also changes with changing \CV.
 
 If the Higgs-to-tau coupling modifier ($\kappa_\tau$) is assumed to be equal to \Ct, the relative fractions of \WW, \ZZ, and \tautau in the event selection will only depend on the ratio of $\Ct/\CV$; thus, any limit set at any given value of $\Ct/\CV$ is valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier. Figure \ref{fig:xsbrscalings} shows the \tHq, \tHW and \ttH cross sections(left) and the Higgs boson branching ratios $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ (right) as a function of the \Ct/\CV ratio. 
 
@@ -1116,7 +1116,7 @@ Similar interpretation can be made if instead of reporting the limits as a funct
 \label{eq:ft}
 \eeqn
 
-\noindent this parameter covers the full space between $-1.0$ and $1.0$, with the SM expectation at $0.5$. Absolute values of $1.0$ or $0.0$ would correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
+\noindent this parameter covers the full space between $-1.0$ and $1.0$, with the SM at $0.5$. Absolute values of $1.0$ or $0.0$ would correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
 
 Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
 
@@ -1192,9 +1192,9 @@ Rate uncertainties associated to the application of scaling factors for the affe
 
 \textbf{Theory uncertainties}
 
-The uncertainties from unknown higher orders of \tHq and \tHW production are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/− 9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
+The uncertainties from unknown higher orders of \tHq and \tHW production are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/-9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
 
-The theoretical uncertainties from unknown higher orders for \ttW and \ttZ are 12\% and 10\% respectively; additional uncertainties from the knowledge of PDFs and $\alpha_s $ of about 4\% each for \ttW and \ttZ are estimated.
+The theoretical uncertainties from unknown higher orders for \ttW and \ttZ\ are 12\% and 10\% respectively; additional uncertainties from the knowledge of PDFs and $\alpha_s $ of about 4\% each for \ttW and \ttZ\ are estimated.
 
 \textbf{Backgrounds}
 
@@ -1331,14 +1331,14 @@ As a result of applying the event pre-selection on the dataset, $127$ events are
 \label{fig:finalbins_prefit}
 \end{figure}
 
-The pre-fit distributions of BDTG outputs are shown in Figure ~\ref{fig:bdt_outputs_prefit}, while the pre-fit distributions in the final binning used in the signal extraction are shown in Figure ~\ref{fig:finalbins_prefit}.
+The pre-fit distributions of BDTG outputs are shown in Figure~\ref{fig:bdt_outputs_prefit}, while the pre-fit distributions in the final binning used in the signal extraction are shown in Figure~\ref{fig:finalbins_prefit}.
 
-The expected signal and background shapes for the distribution in the one-dimensional histogram (with ten bins) are fit to the observed data in a maximum likelihood fit, for all three channels simultaneously and separately for the signal shapes for each of the 33 $\Ct/\CV$ coupling configuration points.
+The expected signal and background shapes for the distribution in the 1D histogram (with ten bins) are fit to the observed data in a maximum likelihood fit, for all three channels simultaneously and separately for the signal shapes for each of the 33 $\Ct/\CV$ coupling configuration points.
 
 The \tH\ and \ttH\ production cross sections and the Higgs decay branching ratios are modified in each point with the Higgs-top (\Ct) and Higgs-vector boson (\CV) coupling strength and the Higgs-tau coupling strength modifier ($\kappa_\tau$) is assumed to be equal to \Ct; % This includes modified branching ratios of $\PH\to\gamma\gamma$, $\PH\to\Z\gamma$, and $\PH\to\Pg\Pg$ with varying \Ct, and an accordingly adjusted overall Higgs decay width. % FIXME?
 the rest of the parameters are assumed to be at the SM predicted values. The combined signal shape is then uniquely defined by the ratio of $\Ct/\CV$. In the fit, the signal components, \tH\ and \ttH, are floated with a common signal strength modifier (defined as the ratio to the expected cross section) to produce a 95\% confidence level (C.L) upper limit on the observed $\tH+\ttH$ cross section times the combined branching ratio of $H\to WW^* + ZZ^* + \tautau$.
 
-The post-fit categorized BDTG output distributions obtained in the maximum likelihood fit to extract the limits, are shown in Figure ~\ref{fig:postfit}.
+The post-fit categorized BDTG output distributions obtained in the maximum likelihood fit to extract the limits, are shown in Figure~\ref{fig:postfit}.
 
 \begin{figure} [!h]
  \centering
@@ -1437,7 +1437,7 @@ As expected, the signal contribution is very small compared to the to the backgr
 
 Table \ref{tab:xslimits} lists the expected background only, the expected SM-like Higgs signal, and the observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H \to WW^*+ZZ^*+\tautau$ branching ratio (in pb); the corresponding plots are shown in Figure \ref{fig:xs_limits} for \CV=1. The expected background-only limit is calculated on an Asimov dataset, while the expected SM-like limit is calculated on an Asimov dataset that includes the SM-like \tH\ and \ttH signals.
 
-An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV=1) for the background-only expected limit; however, the inclusion of the SM-like \tH\ and \ttH signals reveals that the excess is actually about $1\sigma$; furthermore, looking at $\Ct/\CV=0$, \ie the \ttH component in the signal is zero, it is evident that the origin of the excess is mostly due to the presence of the \ttH component in the signal, given that the deviation of the observed limit from the expected one is much smaller that $1\sigma$; this is consistent with the results presented in Reference \cite{CMS_AN_2017-029}. It is also evident that, given the dependence of the \ttH cross section on $\Ct^2$, the source of the asymmetry in both, background-only and SM-like, limits is induced by the \tH\ component of the signal.     
+An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV=1) for the background-only expected limit; however, the inclusion of the SM-like \tH\ and \ttH signals reveals that the excess is actually about $1\sigma$; furthermore, looking at $\Ct/\CV=0$, \ie, the \ttH component in the signal is zero, it is evident that the origin of the excess is mostly due to the presence of the \ttH component in the signal, given that the deviation of the observed limit from the expected one is much smaller that $1\sigma$; this is consistent with the results presented in Reference \cite{CMS_AN_2017-029}. It is also evident that, given the dependence of the \ttH cross section on $\Ct^2$, the source of the asymmetry in both, background-only and SM-like, limits is induced by the \tH\ component of the signal.     
 
 \begin{figure} [!h]
  \centering
@@ -1527,7 +1527,7 @@ Expected  & $r=1.00 {}_{-0.65} {}^{+0.70}$ \\\hline
 \label{tab:sigstrengths}
 \end{table}
 
-In the SM scenario, a signal strength of $1.82$ is obtained which corresponds to a cross section of $0.33 \mathrm{pb}$. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. For the ITC scenario, the best fit signal strength is $0.68$ , corresponding to a significance of $1.7\sigma (2.5 \sigma$ expected); a scan of the observed and expected significances over the \Ct/\CV configurations is shown in Fig.~\ref{fig:significances}. Note that the fit favors a signal strength compatible with zero for a scenario with \Ct = 0 (where the \ttH component vanishes).
+In the SM scenario, a signal strength of $1.82$ is obtained which corresponds to a cross section of $0.33$ pb. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. For the ITC scenario, the best fit signal strength is $0.68$, corresponding to a significance of $1.7\sigma (2.5 \sigma$ expected); a scan of the observed and expected significances over the \Ct/\CV configurations is shown in Fig.~\ref{fig:significances}. Note that the fit favors a signal strength compatible with zero for a scenario with \Ct = 0 (where the \ttH component vanishes).
 
 \begin{figure} [!h]
  \centering
@@ -1568,7 +1568,7 @@ A scan over the best fit values of the combined cross section times modified BR 
 
 The post-fit behavior of the most important nuisance parameters is presented in the pulls and impacts plots in Figures ~\ref{fig:impacts}, ~\ref{fig:impacts} and ~\ref{fig:impacts}; additional pulls and impacts can be fund in Appendix \ref{pulls_impacts_add} 
 
-Most of the nuisance parameters stay close to their initial values. The biggest impact on the signal strength limits is associated to the fake rates for muons, followed by the lepton efficiencies and nuisances associated to the QCD scales. The lower impact in the ITC scenario is associated to the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated to the forward jet in \tHq and p.d.f.s have the lower impact in the signal strength limit .
+Most of the nuisance parameters stay close to their initial values. The biggest impact on the signal strength limits is associated to the fake rates for muons, followed by the lepton efficiencies and nuisances associated to the QCD scales. The lower impact in the ITC scenario is associated to the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated to the forward jet in \tHq and P.D.F.s have the lower impact in the signal strength limit .
 
 \begin{figure} [!th]
  \centering
