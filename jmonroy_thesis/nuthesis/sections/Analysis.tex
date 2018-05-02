@@ -1601,9 +1601,87 @@ The sensitivity of the analysis is limited by systematic uncertainties, predomin
 
 The sensitivity of the \tH production process to the CP-mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
 
-The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The cross section is scaled to its NLO prediction.
+The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_xsec}. The shape variations of the \ttH process with $cos \alpha$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
 
-The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized.
+The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. After performing the simultaneous fit  to the observed data for all channels, the asymptotic $CL_S$ limits at 95\% C.L are calculated for each of the CP-mixing angles.  
+
+\begin{table}[h!]
+  \centering
+  \footnotesize
+  \begin{tabular}{lccc}\hline
+                     & \multicolumn{3}{c}{Cross section (pb)}                 \\ 
+  $\cos(\alpha_{CP})$& \tHq                  & \tHW                  & \ttH   \\ \hline
+    -1.0             & $0.794^{+2.8}_{-4.0}$ & $0.146^{+0.2}_{-0.2}$ & 0.503  \\
+    -0.9             & $0.728^{+2.7}_{-4.1}$ & $0.135^{+0.2}_{-0.2}$ & 0.426  \\
+    -0.8             & $0.664^{+2.7}_{-4.2}$ & $0.123^{+0.2}_{-0.2}$ & 0.356  \\
+    -0.7             & $0.601^{+2.8}_{-4.0}$ & $0.112^{+0.2}_{-0.2}$ & 0.296  \\
+    -0.6             & $0.546^{+2.9}_{-4.3}$ & $0.102^{+0.2}_{-0.2}$ & 0.242  \\
+    -0.5             & $0.497^{+3.1}_{-4.2}$ & $0.092^{+0.2}_{-0.2}$ & 0.198  \\
+    -0.4             & $0.446^{+3.1}_{-4.5}$ & $0.083^{+0.2}_{-0.2}$ & 0.160  \\
+    -0.3             & $0.398^{+3.2}_{-4.6}$ & $0.074^{+0.2}_{-0.2}$ & 0.132  \\
+    -0.2             & $0.353^{+3.5}_{-4.8}$ & $0.066^{+0.2}_{-0.2}$ & 0.112  \\
+    -0.1             & $0.314^{+3.7}_{-4.9}$ & $0.059^{+0.2}_{-0.2}$ & 0.100  \\
+    0.0              & $0.275^{+3.6}_{-5.2}$ & $0.052^{+0.2}_{-0.2}$ & 0.095  \\
+    0.1              & $0.242^{+4.0}_{-5.5}$ & $0.045^{+0.2}_{-0.2}$ & 0.100  \\
+    0.2              & $0.211^{+4.1}_{-5.8}$ & $0.040^{+0.2}_{-0.2}$ & 0.112  \\
+    0.3              & $0.182^{+4.1}_{-6.1}$ & $0.035^{+0.2}_{-0.2}$ & 0.132  \\
+    0.4              & $0.156^{+4.4}_{-6.5}$ & $0.030^{+0.2}_{-0.2}$ & 0.160  \\
+    0.5              & $0.134^{+4.5}_{-6.6}$ & $0.026^{+0.2}_{-0.2}$ & 0.198  \\
+    0.6              & $0.116^{+4.7}_{-6.9}$ & $0.023^{+0.2}_{-0.2}$ & 0.242  \\
+    0.7              & $0.100^{+5.0}_{-7.1}$ & $0.020^{+0.2}_{-0.2}$ & 0.296  \\
+    0.8              & $0.087^{+4.8}_{-7.1}$ & $0.018^{+0.2}_{-0.2}$ & 0.357  \\
+    0.9              & $0.077^{+4.7}_{-7.0}$ & $0.017^{+0.2}_{-0.2}$ & 0.426  \\
+    1.0              & $0.071^{+4.2}_{-6.7}$ & $0.016^{+0.2}_{-0.2}$ & 0.503  \\\hline
+\end{tabular}
+  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). The quoted uncertainties on the cross section correspond to scale variations in \%. The used \ttH NLO cross sections are obtained from \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available. Also listed are the expected and observed asymptotic limits at 95\% C.L. for all studied CP-mixing angles. The uncertainties on the expected limit correspond to $\pm 1\sigma$.}\label{tab:cp_xsec}
+\end{table}
+
+Figure \ref{fig:cp_limits_bgonly} shows the expected background-only and observed asymptotic limits on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels. 
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.8\textwidth]{limits/impacts//impacts1.pdf}\\
+% \includegraphics[width=0.8\textwidth]{limits/impacts/asimov/impacts2.pdf}\\
+\caption[Post-fit pulls an impacts for a fit to the Asimov dataset.]{Post-fit pulls and impacts of the 20 nuisance parameters with largest impacts for a fit to the Asimov dataset with fixed signal strength, for the $\Ct/\CV=-1.0$ hypothesis.}
+\label{fig:impacts_asimov}
+\end{figure}
+
+\begin{table}[h!]
+  \centering
+  \footnotesize
+  \begin{tabular}{l| ccc | ccc}\hline
+                     & \multicolumn{3}{c|}{95\% C.L. Limits}                        & \multicolumn{3}{c}{Cross section limits (pb)} \\ 
+  $\cos(\alpha_{CP})$& Exp.                     & SM exp.                  & Obs.  & Exp.                     & SM exp.                  & Obs.   \\ \hline
+    -1.0             & $0.683^{0.298}_{-0.202}$ & $0.683^{0.298}_{-0.202}$ & 1.359 & $0.299^{0.130}_{-0.088}$ & $0.299^{0.130}_{-0.088}$ & 0.594  \\
+    -0.9             & $0.759^{0.333}_{-0.225}$ & $0.759^{0.333}_{-0.225}$ & 1.481 & $0.297^{0.130}_{-0.088}$ & $0.297^{0.130}_{-0.088}$ & 0.578  \\
+    -0.8             & $0.850^{0.373}_{-0.253}$ & $0.850^{0.373}_{-0.253}$ & 1.622 & $0.294^{0.129}_{-0.088}$ & $0.294^{0.129}_{-0.088}$ & 0.562  \\
+    -0.7             & $0.955^{0.421}_{-0.285}$ & $0.955^{0.421}_{-0.285}$ & 1.782 & $0.292^{0.129}_{-0.087}$ & $0.292^{0.129}_{-0.087}$ & 0.545  \\
+    -0.6             & $1.069^{0.474}_{-0.320}$ & $1.069^{0.474}_{-0.320}$ & 1.940 & $0.288^{0.128}_{-0.086}$ & $0.288^{0.128}_{-0.086}$ & 0.523  \\
+    -0.5             & $1.195^{0.533}_{-0.359}$ & $1.195^{0.533}_{-0.359}$ & 2.098 & $0.285^{0.127}_{-0.086}$ & $0.285^{0.127}_{-0.086}$ & 0.500  \\
+    -0.4             & $1.348^{0.603}_{-0.406}$ & $1.348^{0.603}_{-0.406}$ & 2.293 & $0.281^{0.126}_{-0.085}$ & $0.281^{0.126}_{-0.085}$ & 0.479  \\
+    -0.3             & $1.521^{0.683}_{-0.459}$ & $1.521^{0.683}_{-0.459}$ & 2.530 & $0.279^{0.125}_{-0.084}$ & $0.279^{0.125}_{-0.084}$ & 0.463  \\
+    -0.2             & $1.721^{0.774}_{-0.520}$ & $1.721^{0.774}_{-0.520}$ & 2.820 & $0.277^{0.124}_{-0.084}$ & $0.277^{0.124}_{-0.084}$ & 0.453  \\
+    -0.1             & $1.932^{0.869}_{-0.584}$ & $1.932^{0.869}_{-0.584}$ & 3.168 & $0.277^{0.124}_{-0.084}$ & $0.277^{0.124}_{-0.084}$ & 0.454  \\
+    0.0              & $2.185^{0.981}_{-0.659}$ & $2.185^{0.981}_{-0.659}$ & 3.669 & $0.279^{0.125}_{-0.084}$ & $0.279^{0.125}_{-0.084}$ & 0.469  \\
+    0.1              & $2.433^{1.085}_{-0.732}$ & $2.433^{1.085}_{-0.732}$ & 4.303 & $0.285^{0.127}_{-0.086}$ & $0.285^{0.127}_{-0.086}$ & 0.504  \\
+    0.2              & $2.662^{1.174}_{-0.796}$ & $2.662^{1.174}_{-0.796}$ & 5.056 & $0.293^{0.129}_{-0.087}$ & $0.293^{0.129}_{-0.087}$ & 0.556  \\
+    0.3              & $2.830^{1.230}_{-0.836}$ & $2.830^{1.230}_{-0.836}$ & 5.764 & $0.300^{0.130}_{-0.089}$ & $0.300^{0.130}_{-0.089}$ & 0.610  \\
+    0.4              & $2.878^{1.232}_{-0.840}$ & $2.878^{1.232}_{-0.840}$ & 6.150 & $0.302^{0.129}_{-0.088}$ & $0.302^{0.129}_{-0.088}$ & 0.644  \\
+    0.5              & $2.730^{1.157}_{-0.791}$ & $2.730^{1.157}_{-0.791}$ & 6.012 & $0.296^{0.125}_{-0.086}$ & $0.296^{0.125}_{-0.086}$ & 0.651  \\
+    0.6              & $2.460^{1.039}_{-0.710}$ & $2.460^{1.039}_{-0.710}$ & 5.528 & $0.284^{0.120}_{-0.082}$ & $0.284^{0.120}_{-0.082}$ & 0.639  \\
+    0.7              & $2.146^{0.908}_{-0.619}$ & $2.146^{0.908}_{-0.619}$ & 4.892 & $0.270^{0.114}_{-0.078}$ & $0.270^{0.114}_{-0.078}$ & 0.616  \\
+    0.8              & $1.840^{0.780}_{-0.531}$ & $1.840^{0.780}_{-0.531}$ & 4.240 & $0.258^{0.109}_{-0.074}$ & $0.258^{0.109}_{-0.074}$ & 0.594  \\
+    0.9              & $1.561^{0.663}_{-0.451}$ & $1.561^{0.663}_{-0.451}$ & 3.619 & $0.246^{0.104}_{-0.071}$ & $0.246^{0.104}_{-0.071}$ & 0.570  \\
+    1.0              & $1.333^{0.566}_{-0.385}$ & $1.333^{0.566}_{-0.385}$ & 3.103 & $0.238^{0.101}_{-0.069}$ & $0.238^{0.101}_{-0.069}$ & 0.555  \\\hline
+\end{tabular}
+  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). The quoted uncertainties on the cross section correspond to scale variations in \%. The used \ttH NLO cross sections are obtained from \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available. Also listed are the expected and observed asymptotic limits at 95\% C.L. for all studied CP-mixing angles. The uncertainties on the expected limit correspond to $\pm 1\sigma$.}\label{tab:cp_xsec}
+\end{table}
+
+
+
+
+
+
 
 
 %% The CP-mixing analysis strategy is analog to the one used in the study of the ITC;
