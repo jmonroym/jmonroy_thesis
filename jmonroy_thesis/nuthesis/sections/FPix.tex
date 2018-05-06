@@ -35,7 +35,7 @@ Figure \ref{fig:new_pix} shows the layout of the upgraded pixel detector. The ol
 \centering
 \includegraphics[width=0.6\textwidth]{fpix1.pdf}
 \includegraphics[width=0.39\textwidth]{bpix1.pdf}
-\caption[Layout of the upgraded and old pixel detectors.]{Layout comparing the different layers and disks in the current and old pixel detectors.}\label{fig:new_pix}
+\caption[Layout of the upgraded and old pixel detectors.]{Layout and comparison of the layers and disks in the current and old pixel detectors.}\label{fig:new_pix}
 \end{figure}
 
 \section{Phase 1 FPix upgrade}
@@ -88,16 +88,43 @@ The BBM was prepared by a commercial vendor, while the HDI was populated at Ferm
 \end{figure}
 
 
-The module production procedure was designed following a production line structure. Figure \ref{fig:unlworkflow} shows the work flow followed at the UNL assembly site. Once the BBM and HDI arrive, they are
-submitted to visual inspection looking for defects, scratches, dents or short circuits. The modules passing the visual inspection are tested for electrical acceptance and performance. BBM and HDI are then glued employing robotic pick-and-place machines that integrate optic tools, pattern recognition algorithms, and glue dispensing; the semi-automated gluing process improves the uniformity of the technique. After 10 hours of curing, modules are moved to the wirebonding station where ROCs and HDI are electrically connected employing semi-automated ultrasonic wirebongding machines; occasionally, some of the wires are pull tested for quality control. In the next stage, the wirebonds are encapsulated with an elastomeric compound in order to protect them against mechanical damage and electrical shorts; the encapsulation process is performed employing the robotic pick-and-place machine which also integrates the encapsulant dispensing system.
+The module production procedure was designed following a production line structure. Figure \ref{fig:unlworkflow} shows the work flow followed at the UNL assembly site. Once the BBM and HDI arrive, they are submitted to visual inspection looking for defects, scratches, dents or short circuits. Modules passing the visual inspection are tested for electrical acceptance and performance. BBM and HDI are then glued employing robotic pick-and-place machines that integrate optic tools, pattern recognition algorithms, and glue dispensing; the semi-automated gluing process improves the uniformity of the technique. After 10 hours of curing, glued modules are moved to the wirebonding station where ROCs and HDI are electrically connected employing semi-automated ultrasonic wirebongding machines; occasionally, some of the wires are pull tested for quality control. After this step, modules are fully functional, hence, a basic functionallity test is done at a subset of modules to control the manufacturing process.    
 
-The module assembly sites were also responsible for the testing and characterization of the assembled pixel modules. That testing included, visual inspection, electrical acceptance and performance testing; in case of any necessary reworking, the modules were returned to the appropriate stage. In the final stage, the assembled and tested modules were shipped to University of Kansas for further characterization.  
+In the next stage, the wirebonds are encapsulated with an elastomeric compound (\ti{Sylguard}) in order to protect them against mechanical damage and electrical shorts; the encapsulation process is performed employing the robotic pick-and-place machine which also integrates the encapsulant dispensing system. Once the encapsulation ends, modules are mounted on module holders and submitted to a head cycle to cure the sylguard.    
+
+The module assembly sites were also responsible for the testing and characterization of the assembled pixel modules. That testing included, visual inspection, electrical acceptance, performance testing under controlled temperature conditions that simulate the expected operational conditions; in case of any necessary reworking, the modules were returned to the appropriate stage.
+
+In the final stage, the assembled and tested modules were shipped to University of Kansas for further characterization.  
 
 Each stage in the assembly procedure is documented with an ~\ti{Standard Operating Procedure} (SOP) document that describes the procedures to be followed by the operator. The full set of SOPs can be found in Reference \cite{unl_sop}.     
 
-
 In the following sections a detailed description of the gluing and encapsulation stages will be presented. 
 
+\subsection{Gluing stage}
+
+Figure \ref{fig:setup} shows the full setup used to perform the gluing and encapsulation steps.  
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{pixel/gantryFull16labeled}
+  \caption[Full gluing and encapsulation setup]{Full gluing and encapsulation setup. }\label{fig:setup}
+\end{figure}
+
+The gantry used in the setup is a custom made \ti{AGS15000 Series Gantry}, fabricated by Aerotech \cite{aerotech}, which offers translational motion in 3D ensuring coverage of any position in the work field; in addition, rotational motion is provided in the \ti{gantry head} in the usual x-y plane (gantry table plane). 
+
+A set of eight chucks, each composed of a \ti{base chuck} and a \ti{plate chuck}, henceforth chuck and plate respectively, were designed to house the parts and tools needed along the gluing process; Figure \ref{fig:chucks} shows the details of a chuck and the chuck being used in conjunction with the stamp plate; it can be also used with either the glue reservoir plate, weight plate, or BBM plates. Each chuck is connected to an independent vacuum line such that the plate is hold fixed. The three screws serves as references for aligning the plates with the chucks.       
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.48\textwidth]{pixel/chuck}
+  \includegraphics[width=0.48\textwidth]{pixel/chuck_stamps}
+  \caption[Full gluing and encapsulation setup]{Full gluing and encapsulation setup. }\label{fig:setup}
+\end{figure}
+
+
+
+
+with a    
 
 
 
@@ -106,62 +133,7 @@ In the following sections a detailed description of the gluing and encapsulation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%% \begin{figure}[!h]
-%%   \centering
-%%   \includegraphics[scale=0.25]{cms}
-%%   \caption {ref:  }\label{cms}
-%% \end{figure}
-
-
-
-\subsection{The Gluing stage}
-
-
-The module assembly sequence begins by manually placing pre-tested, known good 2 x 8 BBMs and HDI
-on vacuum chucks on the baseplate of the pick-and-place machine.
+The module gluing sequence begins by manually placing pre-tested, BBMs and HDI on vacuum chucks on the baseplate of the pick-and-place machine.
 
 
 The machine program successively moves the camera (fixed to the machine motion head) to view the fiducial on the BBM sensors and HDI components and acquires the fiducial location using pattern recognition,
@@ -178,13 +150,6 @@ The module assembly and testing schedule will depend on the throughput of the pi
 assembly sites.
 
 
-
-
-%% \begin{figure}[!h]
-%%   \centering
-%%   \includegraphics[scale=0.25]{cms}
-%%   \caption {ref:  }\label{cms}
-%% \end{figure}
 
 \subsection{The Encapsulation stage}
 

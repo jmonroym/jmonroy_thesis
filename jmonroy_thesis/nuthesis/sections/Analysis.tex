@@ -1601,9 +1601,9 @@ The sensitivity of the analysis is limited by systematic uncertainties, predomin
 
 The sensitivity of the \tH production process to the CP-mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
 
-The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_xsec}. The shape variations of the \ttH process with $cos \alpha$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
+The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_signal_xsec}. The shape variations of the \ttH process with $cos \alpha$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
 
-The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. After performing the simultaneous fit  to the observed data for all channels, the asymptotic $CL_S$ limits at 95\% C.L are calculated for each of the CP-mixing angles.  
+The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. After performing the simultaneous fit to the observed data for all channels, the asymptotic $CL_S$ limits at 95\% C.L are calculated for each of the CP-mixing angles.  
 
 \begin{table}[h!]
   \centering
@@ -1633,17 +1633,16 @@ The set of BDTG input variables and training parameters are the same as for the 
     0.9              & $0.077^{+4.7}_{-7.0}$ & $0.017^{+0.2}_{-0.2}$ & 0.426  \\
     1.0              & $0.071^{+4.2}_{-6.7}$ & $0.016^{+0.2}_{-0.2}$ & 0.503  \\\hline
 \end{tabular}
-  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). The quoted uncertainties on the cross section correspond to scale variations in \%. The used \ttH NLO cross sections are obtained from \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available. Also listed are the expected and observed asymptotic limits at 95\% C.L. for all studied CP-mixing angles. The uncertainties on the expected limit correspond to $\pm 1\sigma$.}\label{tab:cp_xsec}
+  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). Uncertainties on the cross section are based on scale variations and given in \%. The used \ttH NLO cross sections are provided by the authors of Reference \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available.}\label{tab:cp_signal_xsec}
 \end{table}
 
-Figure \ref{fig:cp_limits_bgonly} shows the expected background-only and observed asymptotic limits on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels. 
+Figure \ref{fig:cp_limits} shows the expected background-only, SM-like, and observed asymptotic limits at 95\% C.L. on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels for all studied CP-mixing angles; the corresponding values are listed in Table \ref{cp_xsec}. The SM-like limits have been calculated on an Asimov dataset that includes SM-like \tH and \ttH signals. 
 
 \begin{figure} [!h]
- \centering
- \includegraphics[width=0.8\textwidth]{limits/impacts//impacts1.pdf}\\
-% \includegraphics[width=0.8\textwidth]{limits/impacts/asimov/impacts2.pdf}\\
-\caption[Post-fit pulls an impacts for a fit to the Asimov dataset.]{Post-fit pulls and impacts of the 20 nuisance parameters with largest impacts for a fit to the Asimov dataset with fixed signal strength, for the $\Ct/\CV=-1.0$ hypothesis.}
-\label{fig:impacts_asimov}
+      \centering
+      \includegraphics[width=0.8\textwidth]{limits/limits_comb3_cards_cp_Jul21_cv_1p0}
+      \caption[Asymptotic limits on the combined $\tH+\ttH$ $\sigma\times$BR for CP mixing angle.]{Left (Right): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times BR as a function of $\cos (\alpha_{CP})$ for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
+\label{fig:cp_limits}
 \end{figure}
 
 \begin{table}[h!]
