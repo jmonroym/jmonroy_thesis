@@ -69,7 +69,8 @@ Blades on the outer assembly are rotated by 20$^o$ forming a turbine-like geomet
   \centering
   \includegraphics[width=0.33\textwidth]{pixel/fpix_structure1}
   \includegraphics[width=0.63\textwidth]{pixel/fpix_structure2}
-  \caption[FPix module structure.]{FPix module structure; The bare silicon sensor is bump-bonded to the ROCs to form the BBM; then the HDI is glued on top of the BBM and wirebonded to the ROCs.}\label{fig:fpix_struc}
+  \includegraphics[width=0.63\textwidth]{pixel/bbm_hdi}
+  \caption[FPix module structure.]{Top: FPix module structure; The bare silicon sensor is bump-bonded to the ROCs to form the BBM; then the HDI is glued on top of the BBM and wirebonded to the ROCs. Bottom: pictures of actual BBM and HDI.}\label{fig:fpix_struc}
 \end{figure}
 
 The current CMS pixel detector is composed of 1184 pixel modules in the BPIX sector with a total 79 million of pixels; the FPix sector contains 672 with approximately 45 million of pixels. Figure \ref{fig:fpix_struc} shows an schematic view of the FPix modules structure. The n$^{+}$-in-n \ti{Silicon sensor} is Bump-Bonded to the 16 ROC to form the detector unit known as \ti{Bump-Bonded Module} (BBM) with 66560 pixels. The \ti{High Density Interconnect} (HDI) is glued on top of the BBM and wirebonded to the ROCs to provide them the required signals and power. The modules are attached to the support structure using the end holders glued to the HDI.
@@ -100,9 +101,9 @@ Each stage in the assembly procedure is documented with an ~\ti{Standard Operati
 
 In the following sections a detailed description of the gluing and encapsulation stages will be presented. 
 
-\subsection{Gluing stage}
+\subsection{Pick and place machine setup}
 
-Figure \ref{fig:setup} shows the full setup used to perform the gluing and encapsulation steps.  
+Figure \ref{fig:setup} shows the full setup used to perform the gluing and encapsulation steps. The gantry used in the setup is a custom made \ti{AGS15000 Series Gantry}, fabricated by Aerotech \cite{aerotech}, which offers translational motion in 3D ensuring coverage of any position in the work field; in addition, rotational motion is provided in the \ti{gantry head} in the usual x-y plane (gantry table plane).
 
 \begin{figure}[!h]
   \centering
@@ -110,21 +111,68 @@ Figure \ref{fig:setup} shows the full setup used to perform the gluing and encap
   \caption[Full gluing and encapsulation setup]{Full gluing and encapsulation setup. }\label{fig:setup}
 \end{figure}
 
-The gantry used in the setup is a custom made \ti{AGS15000 Series Gantry}, fabricated by Aerotech \cite{aerotech}, which offers translational motion in 3D ensuring coverage of any position in the work field; in addition, rotational motion is provided in the \ti{gantry head} in the usual x-y plane (gantry table plane). 
-
-A set of eight chucks, each composed of a \ti{base chuck} and a \ti{plate chuck}, henceforth chuck and plate respectively, were designed to house the parts and tools needed along the gluing process; Figure \ref{fig:chucks} shows the details of a chuck and the chuck being used in conjunction with the stamp plate; it can be also used with either the glue reservoir plate, weight plate, or BBM plates. Each chuck is connected to an independent vacuum line such that the plate is hold fixed. The three screws serves as references for aligning the plates with the chucks.       
+A set of eight hard-anodized aluminum chucks, composed of a \ti{base chuck} and a \ti{plate chuck} each, henceforth chuck and plate respectively, were designed to house the parts and tools needed along the gluing process; Figure \ref{fig:chuck} shows the details of a chuck.      
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.48\textwidth]{pixel/chuck}
-  \includegraphics[width=0.48\textwidth]{pixel/chuck_stamps}
-  \caption[Full gluing and encapsulation setup]{Full gluing and encapsulation setup. }\label{fig:setup}
+  \includegraphics[width=0.48\textwidth]{pixel/chucksAnodized}
+  \caption[Bare and full chucks]{Left: Chuck detailed internal view. Right: full chuck housing glass slides. The vacuum connection is visible on the left.}\label{fig:chuck}
+\end{figure}
+
+Each chuck is connected to an independent vacuum line such that the plate is hold fixed; both pieces are polished to seal the vacuum with no use of O-rings. The three screws serves as references for aligning the plates with the chucks. There are four types of plates; HDI/BBM plate, the glue reservoir plate, stamp plate, weight plate.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/bbm_chuck}
+  \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/hdi_plate}
+  \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/hdi_stencil}
+  \caption[BBM/HDI plate]{Left: BBM/HDI plate with a mock module that reproduce the BBM features. Center: the pockets in the top and bottom sides accommodate the module holders. Right: bare HDIs showing the alignment provided by the stencil.}\label{fig:bbm_hdi_plates}
+\end{figure}
+
+Four chucks are used to accommodate sixteen BBMs (four per plate); the holes in the BBM/HDI plate (see Figure \ref{fig:bbm_hdi_plates}) are intended to hold the BBM/HDI safely fixed to the plate by the action of the vacuum, while the stencil (100 $\mu$m in thickness) allows for a very accurate positioning of the BBM/HDI.     
+
+One chuck is dedicated to accommodate four HDIs. Although BBM/HDI plates can be used indistinctly, the HDI chuck have four independent pockets instead of only a big one, in order to enable the liberation of one HDI at a time; hence, it is connected to 4 vacuum lines. That is not required for the BBMs because they are no moved from their original location.      
+
+One chucks holds the \ti{glue reservoir} plate, as shown in Figure \ref{fig:glue_reservoir}. Each of the four reservoirs is a pocket just 100 $\mu$m deep, suitable for retaining sufficient glue to be applied to the BBM.  
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.48\textwidth]{pixel/glue_reservoir}
+  \caption[Glue reservoir plate]{Glue reservoir plate. The four pockets are 100 $\mu$m deep. }\label{fig:glue_reservoir}
+\end{figure}
+
+The remaining two chucks house the \ti{stamp plate} and the \ti{weight plate}.   These tools are a set of custom made tools, all produced in house by the UNL Physics department machine shop; 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.48\textwidth]{pixel/tools}
+  \caption[Bare chuck and Stamp chuck]{Left: Chuck detailed internal view. Right: Stamp chuck housing the stamp tools. }\label{fig:tools}
 \end{figure}
 
 
 
 
-with a    
+Weights: brass for weight and stainless steel for blades (have polished edges to protect bond pads from scratching) and springs
+Stamps: brass for weight, rubber stamp
+
+
+
+
+
+
+
+
+
+
+
+
+
+A vision system, attached to the gantry head, is used to locate the module components and tools employed in the assembly process. It is composed of a HD industrial digital camera and a lens system,       
+ 
+
+
+
 
 
 
