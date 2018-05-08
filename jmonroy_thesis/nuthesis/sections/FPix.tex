@@ -122,39 +122,71 @@ A set of eight hard-anodized aluminum chucks, composed of a \ti{base chuck} and 
 
 Each chuck is connected to an independent vacuum line such that the plate is hold fixed; both pieces are polished to seal the vacuum with no use of O-rings. The three screws serves as references for aligning the plates with the chucks. There are four types of plates; HDI/BBM plate, the glue reservoir plate, stamp plate, weight plate.
 
+\subsubsection*{Chucks}
+
+Four chucks are used to accommodate sixteen BBMs (four per plate); the holes in the BBM/HDI plate (see Figure \ref{fig:bbm_hdi_plates}) are intended to hold the BBM/HDI safely fixed to the plate by the action of the vacuum, while the stencil (100 $\mu$m in thickness) allows for a very accurate positioning of the BBM/HDI; it is thin enough so that the alignment is controlled by the edges of the ROC and no force is applied to the sensor.     
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/bbm_chuck}
-  \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/hdi_plate}
+  \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/hdi_plate_adj}
   \includegraphics[width=0.32\textwidth, height= 0.32\textwidth]{pixel/hdi_stencil}
-  \caption[BBM/HDI plate]{Left: BBM/HDI plate with a mock module that reproduce the BBM features. Center: the pockets in the top and bottom sides accommodate the module holders. Right: bare HDIs showing the alignment provided by the stencil.}\label{fig:bbm_hdi_plates}
+  \caption[BBM/HDI plate]{Left: BBM/HDI plate with a mock module that reproduce the BBM features. Center: the pockets in the top and bottom sides accommodate the module holders. Right: bare HDI and BBM showing the alignment provided by the stencil.}\label{fig:bbm_hdi_plates}
 \end{figure}
 
-Four chucks are used to accommodate sixteen BBMs (four per plate); the holes in the BBM/HDI plate (see Figure \ref{fig:bbm_hdi_plates}) are intended to hold the BBM/HDI safely fixed to the plate by the action of the vacuum, while the stencil (100 $\mu$m in thickness) allows for a very accurate positioning of the BBM/HDI.     
-
-One chuck is dedicated to accommodate four HDIs. Although BBM/HDI plates can be used indistinctly, the HDI chuck have four independent pockets instead of only a big one, in order to enable the liberation of one HDI at a time; hence, it is connected to 4 vacuum lines. That is not required for the BBMs because they are no moved from their original location.      
+One chuck is dedicated to accommodate four HDIs. Although BBM/HDI plates have the same design, the HDI chuck have four independent pockets instead of only a big one, in order to enable the release of one HDI at a time; hence, it is connected to 4 vacuum lines. That is not required for the BBMs because they are no moved from their original location. An additional adjustment was made to the HDI plate in response to the HDI back surface which is not totally flat but has irregularities; these irregularities caused vacuum leaks that were addressed by adding a kapton tape layer to the HDI plate, as shown in the center of Figure~\ref{fig:bbm_hdi_plates}. The tracks ensure the vacuum action and the tape flexibility ensures the sealing.    
 
 One chucks holds the \ti{glue reservoir} plate, as shown in Figure \ref{fig:glue_reservoir}. Each of the four reservoirs is a pocket just 100 $\mu$m deep, suitable for retaining sufficient glue to be applied to the BBM.  
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.48\textwidth]{pixel/glue_reservoir}
+  %\includegraphics[width=0.4\textwidth, height= 0.4\textwidth]{pixel/glue_plate_adj}
+  \includegraphics[width=0.5\textwidth]{pixel/glue_reservoir}
   \caption[Glue reservoir plate]{Glue reservoir plate. The four pockets are 100 $\mu$m deep. }\label{fig:glue_reservoir}
 \end{figure}
 
-The remaining two chucks house the \ti{stamp plate} and the \ti{weight plate}.   These tools are a set of custom made tools, all produced in house by the UNL Physics department machine shop; 
+The remaining two chucks house the \ti{stamp plate} and the \ti{weight plate} which in turn house the \ti{stamp tools} and the \ti{weight tools} as shown in Figure~\ref{fig:st_wt_plates}. 
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.48\textwidth]{pixel/tools}
-  \caption[Bare chuck and Stamp chuck]{Left: Chuck detailed internal view. Right: Stamp chuck housing the stamp tools. }\label{fig:tools}
+  \includegraphics[width=0.45\textwidth]{pixel/chuck_stamps}
+  \includegraphics[width=0.45\textwidth]{pixel/chuck_weights}
+  \caption[Stamp and Weight tools in chucks]{Chucks housing stamp tools(left) and weight tools(right).}\label{fig:st_wt_plates}
+\end{figure}
+
+\subsubsection*{Stamp and weight tools}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\textwidth, height=0.35\textwidth]{pixel/tools}
+  \includegraphics[width=0.45\textwidth, height=0.35\textwidth]{pixel/tools2}
+  \caption[Stamp and Weight tools]{Stamp and weight tools. Both tools are made of brass; the stamp tool includes a rubber stamp while the weight tool includes four stainless steel blades to apply force while curing. The final weight tool design eliminates the blades (right).}\label{fig:st_wt}
+\end{figure}
+
+Stamp and weight tools are a set of custom made tools, all produced by the UNL Physics department machine shop (see Figure~\ref{fig:st_wt}). The very first design of the weight tool included four stainless steel blades and two springs; the blades matched the rows of 8 ROC bond pads on the HDI to apply force while curing. The springs apply force to the module end holders on the HDI. The final design of the tool eliminates the issues associated to the alignment of the blades, by integrating them into the design in the form of narrow blade-like brass edges. The weight tools are made with 260 g of brass.      
+
+The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece attached to the bottom side of the brass piece; it is used to pick the glue from the glue reservoir and then stamp it over the BBM. An extensive testing process was performed in order to determine the most appropriate features of the gluing strategy. Figure~\ref{fig:stamp_pattern} shows the four stamp patterns tested and a picture of the first two attached to the stamp tools; the variations in the pattern design were based on the results from testing for:
+
+\begin{figure}[!h]
+  \centering  
+  \includegraphics[width=0.8\textwidth]{pixel/stamps} 
+  \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left show the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
+\end{figure}
+
+\bit
+\item the size of contact area, and in particular the support given to the edges of the HDI where the bond pads and the high-voltage (HV) pad are located. This is a critical aspect, given that the wirebonding relies on the steadiness of the pads to be connected.   
+\item the amount of glue dispensed, and in particular the glue spreading out of the HDI area. An excess of glue, scattered beyond the HDI edge would go between the ROC and the sensor, affecting the functionality of the bump bonds connecting them; in the case of the HV pad, it was observed that excess of glue covered the pad on the sensor, making impossible to wire it. Figure~\ref{fig:glue_test} shows pictures of a glue test using the final stamp pattern. Note The support that it provides to the HDI bond pads and the HV pad and the almost null glue spreading out, which justify why it was chosen. 
+
+\begin{figure}[!h]
+  \centering  
+  \includegraphics[width=0.6\textwidth]{pixel/glue_test_contact1}
+  \includegraphics[width=0.8\textwidth]{pixel/hd_pad1}
+  \caption[Glue contact area test.]{Results from a glue test using the final stamp pattern, which proves the support provided to the HDI bond pads and the HV pad and the almost null glue spreading out.}\label{fig:glue_test}
 \end{figure}
 
 
 
 
-Weights: brass for weight and stainless steel for blades (have polished edges to protect bond pads from scratching) and springs
-Stamps: brass for weight, rubber stamp
 
 
 
@@ -166,15 +198,54 @@ Stamps: brass for weight, rubber stamp
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+\item the dipping time of the stamp tool in the glue reservoir. 
+\item depth of the glue reservoir
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pixel/reservoir_depth_test}
+  \includegraphics[width=0.8\textwidth]{pixel/glue_test_depth1}
+  \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left show the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
+\end{figure}
+
+
+
+  
+\eit
+
+\begin{figure}[!h]
+  \centering  
+  \includegraphics[width=0.8\textwidth]{pixel/stamps} 
+  \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left show the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
+\end{figure}
+
+
+
+
+
+
+\subsubsection*{Vision system}
 
 
 A vision system, attached to the gantry head, is used to locate the module components and tools employed in the assembly process. It is composed of a HD industrial digital camera and a lens system,       
- 
+   mitutoyo Wide-field Video Microscope Unit WIDE VMU
 
 
 
 
-
+\subsubsection*{Tool rack}
 
 
 
