@@ -1601,10 +1601,6 @@ The sensitivity of the analysis is limited by systematic uncertainties, predomin
 
 The sensitivity of the \tH production process to the CP-mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
 
-The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha$) ranging from values of $cos \alpha = 1$ to $cos \alpha = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_signal_xsec}. The shape variations of the \ttH process with $cos \alpha$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
-
-The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. After performing the simultaneous fit to the observed data for all channels, the asymptotic $CL_S$ limits at 95\% C.L are calculated for each of the CP-mixing angles.  
-
 \begin{table}[h!]
   \centering
   \footnotesize
@@ -1636,81 +1632,81 @@ The set of BDTG input variables and training parameters are the same as for the 
   \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). Uncertainties on the cross section are based on scale variations and given in \%. The used \ttH NLO cross sections are provided by the authors of Reference \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available.}\label{tab:cp_signal_xsec}
 \end{table}
 
-Figure \ref{fig:cp_limits} shows the expected background-only, SM-like, and observed asymptotic limits at 95\% C.L. on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels for all studied CP-mixing angles; the corresponding values are listed in Table \ref{cp_xsec}. The SM-like limits have been calculated on an Asimov dataset that includes SM-like \tH and \ttH signals. 
+The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha_{CP}$) ranging from values of $\cos (\alpha_{CP}) = 1$ to $\cos (\alpha_{CP}) = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_signal_xsec}. The shape variations of the \ttH process with $\cos (\alpha_{CP})$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
 
 \begin{figure} [!h]
       \centering
-      \includegraphics[width=0.8\textwidth]{limits/limits_comb3_cards_cp_Jul21_cv_1p0}
+      \includegraphics[width=0.45\textwidth]{cp_mixing/thqMVA_tt_3l_40}
+      \includegraphics[width=0.45\textwidth]{cp_mixing/thqMVA_ttv_3l_40}
+      \caption[BDT shape variations for five CP-mixing angles.]{BDT shape variations for five CP-mixing angles. The trainings use the same set of input variables and samples as for the \Ct/-\CV study. Since there are no big variations between BDT output, only on taining was performed.}
+\label{fig:bdtg_output_5cp}
+\end{figure}
+
+The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. Figure~\ref{fig:bdtg_output_5cp} shows that the shape variations for five values of $\cos (\alpha_{CP})$; since there are no significant variations, it is not necessary to perform BDT trainings for each CP-mixing angle.    
+
+After performing the simultaneous fit to the observed data for all channels, the asymptotic limits are calculated for each of the CP-mixing angles. Figure \ref{fig:cp_limits} shows the expected background-only, SM-like, and observed asymptotic $Cl_S$ limits at 95\% C.L. on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels for all studied CP-mixing angles; the corresponding values are listed in Table \ref{tab:cp_xsec}. The SM-like limits and cross section limits have been calculated on an Asimov dataset that includes SM-like \tH and \ttH signals. 
+
+%% \begin{table}[h!]
+%%   \centering
+%%   \footnotesize
+%%   \begin{tabular}{l| ccc | cc}\hline
+%%   $\cos(\alpha_{CP})$& Exp.                     & SM exp.                  & Obs.  & Best fit $\sigma [pb]$.  & Best fit r               \\ \hline
+%%     -1.0             & $0.299^{0.130}_{-0.088}$ & $0.396^{0.190}_{-0.135}$ & 0.594 & $0.284^{0.183}_{-0.171}$ & $0.650^{0.418}_{-0.391}$ \\
+%%     -0.9             & $0.297^{0.130}_{-0.088}$ & $0.388^{0.184}_{-0.132}$ & 0.578 & $0.268^{0.182}_{-0.171}$ & $0.686^{0.466}_{-0.438}$ \\
+%%     -0.8             & $0.294^{0.129}_{-0.088}$ & $0.377^{0.179}_{-0.127}$ & 0.562 & $0.251^{0.181}_{-0.171}$ & $0.725^{0.522}_{-0.493}$ \\
+%%     -0.7             & $0.292^{0.129}_{-0.087}$ & $0.377^{0.165}_{-0.132}$ & 0.545 & $0.235^{0.179}_{-0.170}$ & $0.768^{0.587}_{-0.556}$ \\
+%%     -0.6             & $0.288^{0.128}_{-0.086}$ & $0.368^{0.155}_{-0.128}$ & 0.523 & $0.215^{0.177}_{-0.169}$ & $0.798^{0.658}_{-0.627}$ \\
+%%     -0.5             & $0.285^{0.127}_{-0.086}$ & $0.365^{0.166}_{-0.132}$ & 0.500 & $0.194^{0.176}_{-0.167}$ & $0.813^{0.739}_{-0.701}$ \\
+%%     -0.4             & $0.281^{0.126}_{-0.085}$ & $0.357^{0.150}_{-0.128}$ & 0.479 & $0.175^{0.174}_{-0.165}$ & $0.840^{0.833}_{-0.792}$ \\
+%%     -0.3             & $0.279^{0.125}_{-0.084}$ & $0.350^{0.150}_{-0.125}$ & 0.463 & $0.162^{0.173}_{-0.162}$ & $0.884^{0.943}_{-0.884}$ \\
+%%     -0.2             & $0.277^{0.124}_{-0.084}$ & $0.346^{0.153}_{-0.117}$ & 0.453 & $0.153^{0.172}_{-0.153}$ & $0.954^{1.068}_{-0.954}$ \\
+%%     -0.1             & $0.277^{0.124}_{-0.084}$ & $0.345^{0.155}_{-0.123}$ & 0.454 & $0.154^{0.171}_{-0.154}$ & $1.075^{1.197}_{-1.075}$ \\
+%%     0.0              & $0.279^{0.125}_{-0.084}$ & $0.353^{0.161}_{-0.130}$ & 0.469 & $0.167^{0.173}_{-0.164}$ & $1.304^{1.356}_{-1.282}$ \\
+%%     0.1              & $0.285^{0.127}_{-0.086}$ & $0.371^{0.160}_{-0.137}$ & 0.504 & $0.197^{0.177}_{-0.167}$ & $1.683^{1.508}_{-1.427}$ \\
+%%     0.2              & $0.293^{0.129}_{-0.087}$ & $0.390^{0.159}_{-0.143}$ & 0.556 & $0.246^{0.180}_{-0.171}$ & $2.234^{1.639}_{-1.552}$ \\
+%%     0.3              & $0.300^{0.130}_{-0.089}$ & $0.416^{0.178}_{-0.152}$ & 0.610 & $0.303^{0.182}_{-0.171}$ & $2.860^{1.723}_{-1.612}$ \\
+%%     0.4              & $0.302^{0.129}_{-0.088}$ & $0.422^{0.193}_{-0.143}$ & 0.644 & $0.349^{0.177}_{-0.166}$ & $3.331^{1.693}_{-1.587}$ \\
+%%     0.5              & $0.296^{0.125}_{-0.086}$ & $0.434^{0.157}_{-0.145}$ & 0.651 & $0.374^{0.165}_{-0.159}$ & $3.452^{1.527}_{-1.467}$ \\
+%%     0.6              & $0.284^{0.120}_{-0.082}$ & $0.425^{0.136}_{-0.141}$ & 0.639 & $0.377^{0.155}_{-0.150}$ & $3.261^{1.339}_{-1.298}$ \\
+%%     0.7              & $0.270^{0.114}_{-0.078}$ & $0.408^{0.118}_{-0.133}$ & 0.616 & $0.366^{0.147}_{-0.140}$ & $2.910^{1.167}_{-1.111}$ \\
+%%     0.8              & $0.258^{0.109}_{-0.074}$ & $0.386^{0.120}_{-0.120}$ & 0.594 & $0.354^{0.141}_{-0.132}$ & $2.530^{1.006}_{-0.945}$ \\
+%%     0.9              & $0.246^{0.104}_{-0.071}$ & $0.358^{0.128}_{-0.105}$ & 0.570 & $0.341^{0.135}_{-0.126}$ & $2.161^{0.857}_{-0.798}$ \\
+%%     1.0              & $0.238^{0.101}_{-0.069}$ & $0.351^{0.125}_{-0.101}$ & 0.555 & $0.331^{0.132}_{-0.121}$ & $1.851^{0.736}_{-0.679}$ \\\hline
+%% \end{tabular}
+%%   \caption[Expected and observed upper limits for CP-mixing angles.]{Expected (for background only, and for a SM-like Higgs signal) and observed 95\% C.L. upper limits (in pb), and best fit signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times branching ratio for the combination of all three channels, for different values of $\cos(\alpha_{CP})$.}\label{tab:cp_xsec}
+%% \end{table}
+
+\begin{figure} [!h]
+      \centering
+      \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cp_Jul21_cv_1p0}\\
+      \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cv_1p0_SMexp}
       \caption[Asymptotic limits on the combined $\tH+\ttH$ $\sigma\times$BR for CP mixing angle.]{Left (Right): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times BR as a function of $\cos (\alpha_{CP})$ for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
 \label{fig:cp_limits}
 \end{figure}
 
+The interpolation between estimated values was made using a cubic spline fit. Table~\ref{tab:cp_xsec_summary} summarizes the upper limits for the ITC ($\cos (\alpha_{CP})=-1$), SM ($\cos (\alpha_{CP})=1$), and fully pseudo-scalar ($\cos (\alpha_{CP})=0$) CP-mixing configurations.
+
 \begin{table}[h!]
-  \centering
-  \footnotesize
-  \begin{tabular}{l| ccc | ccc}\hline
-                     & \multicolumn{3}{c|}{95\% C.L. Limits}                        & \multicolumn{3}{c}{Cross section limits (pb)} \\ 
-  $\cos(\alpha_{CP})$& Exp.                     & SM exp.                  & Obs.  & Exp.                     & SM exp.                  & Obs.   \\ \hline
-    -1.0             & $0.683^{0.298}_{-0.202}$ & $0.683^{0.298}_{-0.202}$ & 1.359 & $0.299^{0.130}_{-0.088}$ & $0.299^{0.130}_{-0.088}$ & 0.594  \\
-    -0.9             & $0.759^{0.333}_{-0.225}$ & $0.759^{0.333}_{-0.225}$ & 1.481 & $0.297^{0.130}_{-0.088}$ & $0.297^{0.130}_{-0.088}$ & 0.578  \\
-    -0.8             & $0.850^{0.373}_{-0.253}$ & $0.850^{0.373}_{-0.253}$ & 1.622 & $0.294^{0.129}_{-0.088}$ & $0.294^{0.129}_{-0.088}$ & 0.562  \\
-    -0.7             & $0.955^{0.421}_{-0.285}$ & $0.955^{0.421}_{-0.285}$ & 1.782 & $0.292^{0.129}_{-0.087}$ & $0.292^{0.129}_{-0.087}$ & 0.545  \\
-    -0.6             & $1.069^{0.474}_{-0.320}$ & $1.069^{0.474}_{-0.320}$ & 1.940 & $0.288^{0.128}_{-0.086}$ & $0.288^{0.128}_{-0.086}$ & 0.523  \\
-    -0.5             & $1.195^{0.533}_{-0.359}$ & $1.195^{0.533}_{-0.359}$ & 2.098 & $0.285^{0.127}_{-0.086}$ & $0.285^{0.127}_{-0.086}$ & 0.500  \\
-    -0.4             & $1.348^{0.603}_{-0.406}$ & $1.348^{0.603}_{-0.406}$ & 2.293 & $0.281^{0.126}_{-0.085}$ & $0.281^{0.126}_{-0.085}$ & 0.479  \\
-    -0.3             & $1.521^{0.683}_{-0.459}$ & $1.521^{0.683}_{-0.459}$ & 2.530 & $0.279^{0.125}_{-0.084}$ & $0.279^{0.125}_{-0.084}$ & 0.463  \\
-    -0.2             & $1.721^{0.774}_{-0.520}$ & $1.721^{0.774}_{-0.520}$ & 2.820 & $0.277^{0.124}_{-0.084}$ & $0.277^{0.124}_{-0.084}$ & 0.453  \\
-    -0.1             & $1.932^{0.869}_{-0.584}$ & $1.932^{0.869}_{-0.584}$ & 3.168 & $0.277^{0.124}_{-0.084}$ & $0.277^{0.124}_{-0.084}$ & 0.454  \\
-    0.0              & $2.185^{0.981}_{-0.659}$ & $2.185^{0.981}_{-0.659}$ & 3.669 & $0.279^{0.125}_{-0.084}$ & $0.279^{0.125}_{-0.084}$ & 0.469  \\
-    0.1              & $2.433^{1.085}_{-0.732}$ & $2.433^{1.085}_{-0.732}$ & 4.303 & $0.285^{0.127}_{-0.086}$ & $0.285^{0.127}_{-0.086}$ & 0.504  \\
-    0.2              & $2.662^{1.174}_{-0.796}$ & $2.662^{1.174}_{-0.796}$ & 5.056 & $0.293^{0.129}_{-0.087}$ & $0.293^{0.129}_{-0.087}$ & 0.556  \\
-    0.3              & $2.830^{1.230}_{-0.836}$ & $2.830^{1.230}_{-0.836}$ & 5.764 & $0.300^{0.130}_{-0.089}$ & $0.300^{0.130}_{-0.089}$ & 0.610  \\
-    0.4              & $2.878^{1.232}_{-0.840}$ & $2.878^{1.232}_{-0.840}$ & 6.150 & $0.302^{0.129}_{-0.088}$ & $0.302^{0.129}_{-0.088}$ & 0.644  \\
-    0.5              & $2.730^{1.157}_{-0.791}$ & $2.730^{1.157}_{-0.791}$ & 6.012 & $0.296^{0.125}_{-0.086}$ & $0.296^{0.125}_{-0.086}$ & 0.651  \\
-    0.6              & $2.460^{1.039}_{-0.710}$ & $2.460^{1.039}_{-0.710}$ & 5.528 & $0.284^{0.120}_{-0.082}$ & $0.284^{0.120}_{-0.082}$ & 0.639  \\
-    0.7              & $2.146^{0.908}_{-0.619}$ & $2.146^{0.908}_{-0.619}$ & 4.892 & $0.270^{0.114}_{-0.078}$ & $0.270^{0.114}_{-0.078}$ & 0.616  \\
-    0.8              & $1.840^{0.780}_{-0.531}$ & $1.840^{0.780}_{-0.531}$ & 4.240 & $0.258^{0.109}_{-0.074}$ & $0.258^{0.109}_{-0.074}$ & 0.594  \\
-    0.9              & $1.561^{0.663}_{-0.451}$ & $1.561^{0.663}_{-0.451}$ & 3.619 & $0.246^{0.104}_{-0.071}$ & $0.246^{0.104}_{-0.071}$ & 0.570  \\
-    1.0              & $1.333^{0.566}_{-0.385}$ & $1.333^{0.566}_{-0.385}$ & 3.103 & $0.238^{0.101}_{-0.069}$ & $0.238^{0.101}_{-0.069}$ & 0.555  \\\hline
+\centering
+\small
+\begin{tabular}{lcccc}\hline
+Scenario               &  Obs. Limit & \multicolumn{3}{c}{Exp. Limit}           \\
+                       &             & Median  & $\pm 1\sigma$ & $\pm 2\sigma$  \\ \hline
+$\cos (\alpha_{CP})=-1$& 0.594       & 0.299   & [0.210,0.423] & [0.155,0.592]  \\
+$\cos (\alpha_{CP})=1$ & 0.555       & 0.238   & [0.170,0.340] & [0.126,0.470]  \\  
+$\cos (\alpha_{CP})=0$ & 0.469       & 0.279   & [0.195,0.404] & [0.143,0.563]  \\\hline   
 \end{tabular}
-  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). The quoted uncertainties on the cross section correspond to scale variations in \%. The used \ttH NLO cross sections are obtained from \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available. Also listed are the expected and observed asymptotic limits at 95\% C.L. for all studied CP-mixing angles. The uncertainties on the expected limit correspond to $\pm 1\sigma$.}\label{tab:cp_xsec}
+ \caption[Summary of expected and observed upper limits for CP-mixing angles.]{Expected (for background only) and observed 95\% C.L. upper limits (in pb), for the combined $\tH+\ttH$ cross section times branching ratio for the combination of all three channels, for different ITC, SM, and fully pseudo-scalar CP-mixing scenarios.}\label{tab:cp_xsec_summary}
+\label{tab:limits}
 \end{table}
 
+The CP-mixing limits are consistent with the limits obtained in the \Ct-\CV analysis as expected; however, in the CP-mixing case it is not possible to exclude any region/value in the $\alpha_{CP}$ phase space. The excess of more than 2$\sigma$ observed in the SM scenario for the background-only expected limit, and that was also observed in the \Ct-\CV analysis, is again reduced to about $1\sigma$ when the SM-like \tH and \ttH signals are included in the calculation of the expectations; however, as said above, the fact that the \ttH sample does not include the CP-mixing weights implies that no conclusive sentence can be stated.
 
+Finally, the best fit values of the combined \tH + \ttH cros sections times the BR as a function of the CP-mixing angle, are showed in Figure~\ref{fig:bf_r}. 
 
-
-
-Title: The inverted Higgs-top coupling and a bit on how the CMS pixel detector was built.
-
-The exciting work in HEP includes not only the analysis of the data taken by the experiment, but also the development of detection systems. In this talk, I will present the results of the search for the production of a Higgs boson in association with a single top quark (tH), focusing on leptonic signatures provided by the H → WW, H → ττ, and H → ZZ decay modes. This process is of particular interest due to its sensitivity to the relative sign of the top-Higgs coupling and the vector bosons-Higgs boson coupling. The analysis exploits signatures with two same-sign leptons or three leptons in the final state, and uses the 2016 data sample collected with the CMS detector at the LHC at a center of mass energy of 13 TeV. Multivariate techniques are used to discriminate the signal from the dominant backgrounds. The analysis yields a 95\% confidence level (C.L.) upper limit on the combined tH + ttH production cross section times branching ratio of 0.64 pb, with an expected limit of 0.32 pb, for a scenario with κt = −1.0 and κV = 1.0. Values of κt outside the range of −1.25 to +1.60 are excluded at 95\% C.L., assuming κV = 1.0. 
-
-After the results from the data analysis, I will also present my contributions to the construction of the CMS forward pixel detector (FPix), part of the innermost detection system, responsible to track with extreme accuracy the paths of particles emerging from the proton-proton collisions at CMS. FPix is a modular detector composed of   A robotic system was used to put together the constituent pieces of the      
-
-
-
-
-
-
-%% The CP-mixing analysis strategy is analog to the one used in the study of the ITC;
-
-%% training of the \tXq reconstruction and subsequently the training of the classification. These trainings
-%% are repeated for each of the 21 new signal inputs.
-
-%% The effect of different CP-mixing angles on the shape of several of the BDT
-
-
-%% The BDTs for the classification are trained with only 100 trees as the privately produced \tXq
-%% samples contains fewer events than the officially produced sample and hence shows symptoms
-%% of overtraining if 800 trees are used in the training.
-
-
-%% Asymptotic $CL_S$ limits at 95\% C.L. are calculated after performing the fit. A peculiarity is the treatment of the \ttX background, as the cross section and the kinematics change for different CP-mixing angles. The cross section and the kinematics of the \ttX process are degenerate for $\alpha$ and $\pi- \alpha$ as shown in Figure . The \ttX background is scaled to its NLO cross section for each of the studied angles but shape variations are neglected, as the variations only become more pronounced for the studied angles, where the impact of \ttX in comparison to \tXq becomes negligible, as they correspond to the lowest \ttX cross sections. The cross sections for the \tXq and \ttX processes for each of the studied mixing angles can be found in Appendix \ref{}.
-
-
-%% The final classifier for the case of α = 90 ◦ shows a very similar behavior as the classifier of the main analysis for simulation and data, as is expected.
-
-%% An illustration of the expected and observed limits for all investigated CP-mixing angles can be found in Figure \ref{}
-
-%% Again a cubic spline fit was used to interpolate between the estimated values. For the case of a up fully pseudoscalar $X_0$ boson an upper limit of μ obs,α =90 ◦ = 25.7 has been observed, whereas a
-%% up limit of μ exp,α =90 ◦ = 22.7 is expected. The complete set of limit values for a CP-mixing angle of α = 90 ◦ can be found in Table 6.11. The determined upper limits are anti-proportional to the cross section of the corresponding value of α. The lowest observed upper limit is therefore found for a value of α = 180 ◦ , which can up exclude an enhancement of the cross section of μ obs,α =180 ◦ = 11.7. The limits for a CP-mixing angle of α = 0 ◦ and α = 180 ◦ are worse than the limits of their corresponding C t = +1 and C t = −1 points due to the training with fewer trees for reconstruction and classification. . For the pure CP-odd case the analysis is able up to exclude an enhanced production cross for \tXq section of μ obs ·σ α =90 ◦ = 25.7·0.275 pb = 7.1 pb.
-
+\begin{figure} [!h]
+      \centering
+      \includegraphics[width=0.7\textwidth]{limits/bf_r}\\
+      \caption[Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle.]{Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle, for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
+\label{fig:bf_r}
+\end{figure}
