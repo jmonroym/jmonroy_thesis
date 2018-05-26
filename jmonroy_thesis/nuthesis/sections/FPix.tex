@@ -165,7 +165,7 @@ The remaining two chucks house the \ti{stamp plate} and the \ti{weight plate} wh
 
 Stamp and weight tools are a set of custom made tools, all produced by the UNL Physics department machine shop (see Figure~\ref{fig:st_wt}). The very first design of the weight tool included four stainless steel blades and two springs; the blades matched the rows of 8 ROC bond pads on the HDI to apply force while curing. The springs apply force to the module end holders on the HDI. The final design of the tool eliminates the issues associated to the alignment of the blades, by integrating them into the design in the form of narrow blade-like brass edges. The weight tools are made with 260 g of brass.      
 
-The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece attached to the bottom side of the brass piece; it is used to pick the glue from the glue reservoir and then stamp it over the BBM. An extensive testing process was performed in order to determine the most appropriate features of the gluing strategy. Figure~\ref{fig:stamp_pattern} shows the four stamp patterns tested and a picture of the first two attached to the stamp tools; the variations in the pattern design were based on the results from testing for:
+The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece attached to the bottom side of the brass piece; it is used to pick the glue from the glue reservoir and then stamp it over the BBM. An extensive testing process was performed in order to determine the most appropriate features of the gluing strategy. Figure~\ref{fig:stamp_pattern} shows the four stamp patterns tested and a picture of the first two attached to the stamp tools; the variations of the stamp pattern design were based on the results from testing for:
 
 \begin{figure}[!h]
   \centering  
@@ -174,78 +174,72 @@ The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece at
 \end{figure}
 
 \bit
-\item the size of contact area, and in particular the support given to the edges of the HDI where the bond pads and the high-voltage (HV) pad are located. This is a critical aspect, given that the wirebonding relies on the steadiness of the pads to be connected.   
-\item the amount of glue dispensed, and in particular the glue spreading out of the HDI area. An excess of glue, scattered beyond the HDI edge would go between the ROC and the sensor, affecting the functionality of the bump bonds connecting them; in the case of the HV pad, it was observed that excess of glue covered the pad on the sensor, making impossible to wire it. Figure~\ref{fig:glue_test} shows pictures of a glue test using the final stamp pattern. Note The support that it provides to the HDI bond pads and the HV pad and the almost null glue spreading out, which justify why it was chosen. 
+  \begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/reservoir_depth_test}
+  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/glue_test_depth2}\\
+  \includegraphics[width=0.6\textwidth]{pixel/glue_test_depth1}
+  \caption[Test of amount of glue deposited.]{Pictures of a test of the amount of glue dispensed as a function of the glue reservoir depth. The glue reservoir depth was varied by adding kapton tape (left), and the test were conducted by gluing plain HDI on top of glass slides (middle and right.)}\label{fig:glue_test_depth}
+\end{figure}
+
+\item \ti{the amount of glue dispensed}, and in particular the glue spreading out of the HDI area. An excess of glue, scattered beyond the HDI edge would go between the ROC and the sensor, affecting the functionality of the bump bonds connecting them; in the case of the high voltage (HV) pad, it was observed that excess of glue covered the pad on the sensor, making impossible to wire it. The amount of glue deposited on  top of BBM depends on several variables: the dipping time of the stamp tool in the glue reservoir, the time that the stamp tool is in contact with the BBM, and the depth of the glue reservoir. In the case of the dipping and stamping times, it was found that there is not a strong dependence and those times were set to 10 seconds; in the case of the glue reservoir depth, the dependence is stronger. Several glue tests where conducted by gluing plain HDIs to glass slides; Figure~\ref{fig:glue_test_depth} shows pictures from a glue test with three different glue reservoir depths (100 $\mu$m, 255 $\mu$m and 410 $\mu$m). The results show not only that the deeper is the glue reservoir the bigger is the amount of glue deposited, as expected, but also that the spreading out is critical for the depths greater than 200 $\mu$m. A redesign of the rubber stamp pattern was made in order to reduce the amount of glue deposited in the HDI pads regions; that adjustment led to the final rubber stamp pattern.
 
 \begin{figure}[!h]
   \centering  
-  \includegraphics[width=0.6\textwidth]{pixel/glue_test_contact1}
+  \includegraphics[width=0.6\textwidth]{pixel/glue_test_contact1}\\
   \includegraphics[width=0.8\textwidth]{pixel/hd_pad1}
   \caption[Glue contact area test.]{Results from a glue test using the final stamp pattern, which proves the support provided to the HDI bond pads and the HV pad and the almost null glue spreading out.}\label{fig:glue_test}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\item the dipping time of the stamp tool in the glue reservoir. 
-\item depth of the glue reservoir
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=0.8\textwidth]{pixel/reservoir_depth_test}
-  \includegraphics[width=0.8\textwidth]{pixel/glue_test_depth1}
-  \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left show the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
-\end{figure}
-
-
-
-  
+\item \ti{the size of contact area}, and in particular the support given to the edges of the HDI where the bond pads and the HV pad are located. This is a critical aspect, given that the wirebonding relies on the steadiness of the pads to be connected. Figure~\ref{fig:glue_test} shows the outcomes of a glue test using the final stamp pattern. Note the support that it provides to the HDI bond pads and the HV pad and the almost null glue spreading out, which justify why it was chosen.   
 \eit
+
+The final tools designs used during the module production are indicated in Figures \ref{fig:st_wt} and \ref{fig:stamp_pattern}, while the optimal glue reservoir depth was found to be 100 $\mu$m. 
+
+\subsubsection*{Grabber and picker tools}
 
 \begin{figure}[!h]
   \centering  
-  \includegraphics[width=0.8\textwidth]{pixel/stamps} 
-  \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left show the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
+  \includegraphics[width=0.60\textwidth,height=0.33\textwidth]{pixel/grabber}\\
+  \includegraphics[width=0.45\textwidth,height=0.33\textwidth]{pixel/GrabberToolHoldingStamp}
+  \includegraphics[width=0.45\textwidth,height=0.33\textwidth]{pixel/GrabberToolHoldingWeight}
+  \caption[Grabber tool.]{Top: Grabber tool used to grab the stamp and weight tools from their houses to the BBM location. Bottom: grabber tool holding the stamp (left) and weight (right) tools.}\label{fig:grabber_tool}
 \end{figure}
 
+In order to move the stamp and weight tools from their houses to the glue reservoir and to the BBM location, a \ti{grabber tool} was designed. The grabber tool is hold on a tool rack located in the back of the gantry table and it gets attached to the gantry head by using an adapter and the vacuum system as shown in Figure\ref{fig:grabber_tool}. The gantry head adapter is attached to the rotary motor that provides the angular motion, therefore, the grabber tool is able grab the stamp and weight tools and adjust their alignment in agreement with the BBM orientation. The force with which the glue is applied on the BBM is controlled by the weight of the brass piece; in a similar way, the force applied to the HDI-BBM sandwich is controlled by the weight of the tool and the springs.                  
 
-
-
-
+The pick of the HDI and place on top of the BBM is performed using the \ti{Picker tool} showed in Figure \ref{fig:pandp_tool}. Same as the grabber tool, the p\&p tool is hold at the tool rack until the gantry head goes to its location and catch it using the vacuum; an independent vacuum line is use to capture the HDI from its chuck slot. The alignment is performed while the HDI is being moved to the BBM location.      
+\begin{figure}[!h]
+  \centering  
+  \includegraphics[width=0.80\textwidth]{pixel/PickAndPlaceTool}\\
+  \caption[Pick and place tool.]{The pick and place tool, picks the HDI from its chuck and place it on top of the BBM.}\label{fig:pandp_tool}
+\end{figure}
 
 \subsubsection*{Vision system}
 
+A vision hardware system, attached to the gantry head, is used to locate the module components and tools employed in the assembly process. It is composed of a IDS HD digital camera and a Mitutoyo wide-field video microscope unit (WIDE VMU) as shown in Figure \ref{fig:setup}. The vision hardware is complemented with auto-focus and pattern recognition algorithms. 
 
-A vision system, attached to the gantry head, is used to locate the module components and tools employed in the assembly process. It is composed of a HD industrial digital camera and a lens system,       
-   mitutoyo Wide-field Video Microscope Unit WIDE VMU
+\begin{figure}[!h]
+  \centering  
+  \includegraphics[width=\textwidth]{pixel/fiducial_tools}\\
+  \caption[Fiducial marks on tools.]{Fiducial marks attached to the stamp and weight tools. Initially, non-functional ROCs were glued on top of the tools (left) to provide the marks, located in the places indicated by red circles and showed overlaping the tool; later they were replaced by plane HDIs (right).}\label{fig:fiducial_tools}
+\end{figure}
+
+Given that the coarse location of the HDIs, BBMs, stamp and weight tools are well defined by the location of the stencils and plates on the gantry table, the vision system is designed to search and find fiducial marks present on the materials and tools; these fiducial marks are placed on the HDI and BBM during their fabrication process. In the case of the tools, two methods were used to attach a fiducial mark to them: non-functional ROCs, which have on themselves fiducial marks, were glued on top of the tools as shown in Figure \ref{fig:fiducial_tools}, however, during the gluing and cleaning processes the fiducial marks used to be covered or broken making necessary their replacement very often; the second method consisted of gluing plane HDIs on top of the tools, which not only solved the issues with the destruction of the fiducial marks but also simplified the pattern recognition.
+
+The procedure to find the fiducial marks starts moving the camera to an initial default calibrated position above the element, HDI, BBM or tool, such that the image in the field of view of the camera contains the fiducial mark; then, the auto-focus algorithm finds the best focus by measuring the contrast of pictures taken by the camera at ten different positions in $z$ direction around a default position where it is assumed the best focus is; these ten contrasts are then fitted to a Gaussian distribution where the maximum of the fitting corresponds to the best focus.     
+
+Once the best focus is found, the gantry head moves the camera to that position, takes a new picture and send it to feed the pattern recognition algorithm.
 
 
 
 
-\subsubsection*{Tool rack}
+
+
+
+
+
+
 
 
 
