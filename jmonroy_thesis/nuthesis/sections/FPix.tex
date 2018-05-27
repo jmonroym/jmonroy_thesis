@@ -99,7 +99,7 @@ In the final stage, the assembled and tested modules were shipped to University 
 
 Each stage in the assembly procedure is documented with an ~\ti{Standard Operating Procedure} (SOP) document that describes the procedures to be followed by the operator. The full set of SOPs can be found in Reference \cite{unl_sop}.     
 
-In the following sections a detailed description of the gluing and encapsulation stages will be presented. 
+In the following sections a detailed description of the gluing and encapsulation stages will be presented. The full set of tools was designed by Dr. Frank Meier Aeschbacher. 
 
 \subsection{Pick and place machine setup}
 
@@ -227,13 +227,148 @@ A vision hardware system, attached to the gantry head, is used to locate the mod
 
 Given that the coarse location of the HDIs, BBMs, stamp and weight tools are well defined by the location of the stencils and plates on the gantry table, the vision system is designed to search and find fiducial marks present on the materials and tools; these fiducial marks are placed on the HDI and BBM during their fabrication process. In the case of the tools, two methods were used to attach a fiducial mark to them: non-functional ROCs, which have on themselves fiducial marks, were glued on top of the tools as shown in Figure \ref{fig:fiducial_tools}, however, during the gluing and cleaning processes the fiducial marks used to be covered or broken making necessary their replacement very often; the second method consisted of gluing plane HDIs on top of the tools, which not only solved the issues with the destruction of the fiducial marks but also simplified the pattern recognition.
 
-The procedure to find the fiducial marks starts moving the camera to an initial default calibrated position above the element, HDI, BBM or tool, such that the image in the field of view of the camera contains the fiducial mark; then, the auto-focus algorithm finds the best focus by measuring the contrast of pictures taken by the camera at ten different positions in $z$ direction around a default position where it is assumed the best focus is; these ten contrasts are then fitted to a Gaussian distribution where the maximum of the fitting corresponds to the best focus.     
+The procedure to find the fiducial marks starts by moving the camera to an initial default calibrated position above the element, HDI, BBM or tool, such that the image in the field of view of the camera contains the fiducial mark; then, the auto-focus algorithm finds the best focus by measuring the contrast of pictures taken by the camera at ten different positions in $z$ direction around a default position where it is assumed the best focus is; these ten contrasts are then fitted to a Gaussian distribution where the maximum of the fitting corresponds to the best focus.     
 
-Once the best focus is found, the gantry head moves the camera to that position, takes a new picture and send it to feed the pattern recognition algorithm.
+Once the best focus is found, the gantry head moves the camera to that position, takes a new picture and send it to feed the pattern recognition algorithm which use k-means clustering to separate the foreground from the background; then, the foreground (Fiducial + noise) is dilated to close any small holes in image and to extract contours from image.
 
+\begin{figure}[!ht]
+  \centering  
+  \includegraphics[width=0.8\textwidth]{pixel/BBM_fid1.png}
+  \includegraphics[width=0.8\textwidth]{pixel/HDI_fid1.png}
+  \caption[Fiducial mark recognition.]{Fiducial mark recognition: BBM (two top rows) and HDI (two bottom rows). The input image is processed to define contours; after filtering, the centroid of the recognized fiducial mark is returned by the algorithm and indicated in the input image by the green dot.}\label{fig:BBM_fid1}
+\end{figure}
 
+The fiducial mark features are parametrized in terms of its size and aspect ratio with respect to the field of view of the camera, therefore, by filtering the contours on size and aspect ratio it is assured that one and only one contour passes filters. Later, the algorithm calculates the minimum bounding box and centroid of the fiducial mark to finally return the centroid as fiducial mark center and distance between centroid and box center as a measure of goodness. In order to reduce the processing time, the input image resolution is reduced by a factor of 8. The algorithm was written by Caleb Fangmeier and is documented in Reference \cite{pr_algorithm} from where Figure \ref{fig:BBM_fid1} was taken.
 
+\subsubsection*{Gantry head center-camera offset (GHCO)}
 
+The \ti{global coordinate system} of the setup is centered in the so-called \ti{home position} located in the back-left side of the gantry table; thus, the coordinate system origin is defined by the position of the gantry head center when it is placed in the home position. Any distance is then measured by comparing the gantry head center position at a given location and the home position. While the tool adapter is concentric to the gantry head (and then its coordinates are the same as the gantry), the camera has an offset with respect to the origin of the global coordinate system because the vision system is not located at the gantry head center, therefore, any location provided by the vision system has to be corrected by this offset, known as \ti{Gantry head center-camera offset} (GHCO).
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.45\textwidth,angle=-90]{pixel/offset_setup}
+\includegraphics[width=0.45\textwidth,angle=-90]{pixel/scratch_tool}
+\caption{Setup used to measure the GHCO}\label{fig:offset_setup}
+\end{center}
+\end{figure}
+
+To determine the GHCO, a set of 40 marks (scratches) were made on a glass slide using a needle shaped tool with the tip made of carbide (see Figure \ref{fig:offset_setup}); the locations of the scratches were predefined and known as commanded positions. Later, the camera was moved to find the scratches and their locations were tagged as observed positions. In principle, the difference between the commanded and the observed positions provide a measurement of the GHCO, but it cannot be assumed that the needle tool is straight, i.e., if the tip of the tool coincides with the gantry head center; in order to take into account this fact when calculating the offset, an scratching schema was designed; it is showed in Figure \ref{tool_bend}. In the ideal case the scratch is made right in the commanded position (red circle), but if the needle is not straight, the scratch will be shifted (black cross). A rotation of the tool can be used to determine how bend is the needle tip.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{pixel/tool_bend}
+\caption{Scratches scheme if the tool is not straight }\label{tool_bend}
+\end{center}
+\end{figure}
+
+The precise procedure is:
+
+\begin{itemize}
+\item pick the needle tool from the tool rack,
+\item move the gantry to the first scratch position (the commanded position),
+\item make the scratch moving the tool down.
+\item move the tool back up
+\item move the gantry to the next scratch commanded position.
+\item Repeat the process to make nine more scratches.
+\item Rotate the tool by $90^o$ and make ten scratches.
+\item Rotate the tool by additional $90^o$ (now the total rotation is $180^o$) and make ten more scratches.
+\item Rotate the tool by additional $90^o$ (now the total rotation is $270^o$) and make ten more scratches.
+\item Move the camera to the first scratch position and locate the center of the scratch, capture the position.
+\item Repeat the process to locate the rest of the scratches.   
+\end{itemize}
+
+The procedure is performed by a labVIEW program which follows the steps mentioned above automatically so that the user only interacts with the program by capturing the position. The output of the program is a text file which contains all the commanded and observed positions.
+      
+The set of measurements are statistically treated, using the linear least squares fitting technic, in order to keep the precision at the level of 10 $\mu$m. The model describing the location of the scratches system is parametrized by a linear combination of a set of functions weighted by a set of parameters;
+
+\begin{equation}
+y(x)= f(y,\textbf{a})=a_1f_1(x)+a_2f_2(x)+.....+a_pf_p(x)
+\end{equation}
+
+The residuals, which correspond to the difference between the predicted value from model ($f(x_i, \textbf{a})$) and the measured value $y_i$, are calculated using 
+
+\begin{equation}
+r_i= y_i - f(x_i\textbf{a})
+\end{equation}
+
+One want to minimize these residuals and more specifically their squares (S). The fit will provide the values of the parameters $\textbf{a}$ so that the model is totally defined. In matrix form (for a set of measurements $(x,y)$ :
+
+\begin{equation}
+\textbf{Y}= A \textbf{a}
+\end{equation}
+\begin{equation}
+S=\textbf{r}^T\textbf{r}
+\end{equation}
+
+The matrix A enclose the features of the system/model, the vector \textbf{a} enclose the parameters under evaluation and the vector \textbf{Y} enclose the measurements taken and the predictions made by the model. After the minimization, the vector of parameters can be written as:
+
+\begin{equation}\label{solution}
+\textbf{a}=(A^TV^{-1}A)^{-1}A^TV^{-1}\textbf{Y}
+\end{equation}
+
+\noindent where V is the covariance matrix; it contains the information about the correlation among measurements and also the uncertainty of the measurements.
+
+\begin{center}
+V=
+\begin{pmatrix}
+ \sigma_1^2 & \sigma_{12} & \cdots & \sigma_{1n} \\
+ \sigma_{21} & \sigma_2^2 & \cdots & \sigma_{2n} \\
+ \vdots  & \vdots  & \ddots & \vdots  \\
+ \sigma_{n1} & \sigma_{n2} & \cdots & \sigma_n^2
+ \end{pmatrix}  
+\end{center}
+
+We model our system by:
+
+%\begin{center}
+%\begin{pmatrix}
+%x\\ 
+%y
+%\end{pmatrix}-
+%\begin{pmatrix}
+%x_g\\ 
+%y_g
+%\end{pmatrix}=
+%\begin{pmatrix}
+%\Delta x_{cam}\\ 
+%\Delta y_{cam}
+%\end{pmatrix}
+%+
+%\begin{pmatrix}
+%c & s\\ 
+%-s & c
+%\end{pmatrix}
+%\begin{pmatrix}
+% c'&s' \\ 
+% -s'&c' 
+%\end{pmatrix}
+%\begin{pmatrix}
+%1\\ 
+%0
+%\end{pmatrix}
+%\end{center}
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[height=10cm,width=16cm,angle=0]{the_model}
+%\caption{Scratches scheme if the tool is not straight }\label{tool_bend}
+\end{center}
+\end{figure}
+
+note that here the A matrix includes only one measurement, i.e. only one scratch. The complete A matrix is an extension to the complete set of measurements. For the 40 scratches, A is a 4x80 matrix. Also note that r is the radius of the red circle which describe the bending of the tool. 
+
+To solve the matrix equation \ref{solution} we wrote a Matlab program (offset\_fitting.m) which we fed with the data, both commanded and real positions, the matrix A, the uncertainties which we assume are the same for all measurements (additionally we assume the measurements are not correlated), so the covariance matrix is the uncertainty times the 80x80 identity matrix.    
+
+\section{The results}
+
+The fitting resuls are:
+
+\begin{figure}[h]
+\begin{center}
+%\includegraphics[height=10cm,width=16cm,angle=0]{result}
+%\caption{Scratches scheme if the tool is not straight }\label{tool_bend}
+\end{center}
+\end{figure}
 
 
 
