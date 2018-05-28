@@ -242,7 +242,7 @@ The fiducial mark features are parametrized in terms of its size and aspect rati
 
 \subsubsection*{Gantry head center-camera offset (GHCO)}
 
-The \ti{global coordinate system} of the setup is centered in the so-called \ti{home position} located in the back-left side of the gantry table; thus, the coordinate system origin is defined by the position of the gantry head center when it is placed in the home position. Any distance is then measured by comparing the gantry head center position at a given location and the home position. While the tool adapter is concentric to the gantry head (and then its coordinates are the same as the gantry), the camera has an offset with respect to the origin of the global coordinate system because the vision system is not located at the gantry head center, therefore, any location provided by the vision system has to be corrected by this offset, known as \ti{Gantry head center-camera offset} (GHCO).
+The \ti{global coordinate system} of the setup is centered in the so-called \ti{home position} located in the back-left side of the gantry table; thus, the origin of the coordinate system is defined by the position of the gantry head center when it is placed in the home position. Any distance is then measured by comparing the gantry head center position at a given location and the home position. While the tool adapter is concentric to the gantry head (and then its coordinates are the same as the gantry), the camera has an offset with respect to the origin of the global coordinate system because the vision system is not located at the gantry head center, therefore, any location provided by the vision system has to be corrected by this offset, known as \ti{Gantry head center-camera offset} (GHCO).
 
 \begin{figure}[h]
 \begin{center}
@@ -256,7 +256,7 @@ To determine the GHCO, a set of 40 marks (scratches) were made on a glass slide 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{pixel/tool_bend}
+\includegraphics[width=0.7\textwidth]{pixel/tool_bend}
 \caption{Scratches scheme if the tool is not straight }\label{tool_bend}
 \end{center}
 \end{figure}
@@ -270,16 +270,16 @@ The precise procedure is:
 \item move the tool back up
 \item move the gantry to the next scratch commanded position.
 \item Repeat the process to make nine more scratches.
-\item Rotate the tool by $90^o$ and make ten scratches.
-\item Rotate the tool by additional $90^o$ (now the total rotation is $180^o$) and make ten more scratches.
-\item Rotate the tool by additional $90^o$ (now the total rotation is $270^o$) and make ten more scratches.
+\item Rotate the tool by $\theta=90^o$ and make ten scratches.
+\item Rotate the tool by additional $90^o$ (now the total rotation is $\theta=180^o$) and make ten more scratches.
+\item Rotate the tool by additional $90^o$ (now the total rotation is $\theta=270^o$) and make ten more scratches.
 \item Move the camera to the first scratch position and locate the center of the scratch, capture the position.
 \item Repeat the process to locate the rest of the scratches.   
 \end{itemize}
 
-The procedure is performed by a labVIEW program which follows the steps mentioned above automatically so that the user only interacts with the program by capturing the position. The output of the program is a text file which contains all the commanded and observed positions.
+The procedure is performed by a labVIEW program (\ti{offset\_fitting.vi}) which follows the steps mentioned above automatically so that the user only interacts with the program by capturing the positions. The output of the program is a text file which contains all the commanded and observed positions.
       
-The set of measurements are statistically treated, using the linear least squares fitting technic, in order to keep the precision at the level of 10 $\mu$m. The model describing the location of the scratches system is parametrized by a linear combination of a set of functions weighted by a set of parameters;
+The set of measurements are statistically treated, using the linear least squares fitting technique. The model describing the location of the scratches system is parametrized by a linear combination of a set of functions weighted by a set of parameters;
 
 \begin{equation}
 y(x)= f(y,\textbf{a})=a_1f_1(x)+a_2f_2(x)+.....+a_pf_p(x)
@@ -288,10 +288,10 @@ y(x)= f(y,\textbf{a})=a_1f_1(x)+a_2f_2(x)+.....+a_pf_p(x)
 The residuals, which correspond to the difference between the predicted value from model ($f(x_i, \textbf{a})$) and the measured value $y_i$, are calculated using 
 
 \begin{equation}
-r_i= y_i - f(x_i\textbf{a})
+r_i= y_i - f(x_i\textbf{a}),
 \end{equation}
 
-One want to minimize these residuals and more specifically their squares (S). The fit will provide the values of the parameters $\textbf{a}$ so that the model is totally defined. In matrix form (for a set of measurements $(x,y)$ :
+\noindent one want to minimize these residuals and more specifically their squares (S). The fit will provide the values of the parameters $\textbf{a}$ so that the model is totally defined. In matrix form, for a set of measurements $(x,y)$ :
 
 \begin{equation}
 \textbf{Y}= A \textbf{a}
@@ -308,67 +308,93 @@ The matrix A enclose the features of the system/model, the vector \textbf{a} enc
 
 \noindent where V is the covariance matrix; it contains the information about the correlation among measurements and also the uncertainty of the measurements.
 
-\begin{center}
-V=
+\begin{equation}
+  V=
+  \begin{pmatrix}
+    \sigma_1^2  & \sigma_{12}  & \cdots & \sigma_{1n} \\
+    \sigma_{21} & \sigma_2^2   & \cdots & \sigma_{2n} \\
+    \vdots      & \vdots       & \ddots & \vdots      \\
+    \sigma_{n1} & \sigma_{n2}  & \cdots & \sigma_n^2
+  \end{pmatrix}
+\end{equation}
+
+The model for one measurement $(x,y)$, \ie only one scratch, can be written as:
+
+\begin{equation}
 \begin{pmatrix}
- \sigma_1^2 & \sigma_{12} & \cdots & \sigma_{1n} \\
- \sigma_{21} & \sigma_2^2 & \cdots & \sigma_{2n} \\
- \vdots  & \vdots  & \ddots & \vdots  \\
- \sigma_{n1} & \sigma_{n2} & \cdots & \sigma_n^2
- \end{pmatrix}  
-\end{center}
+x\\ 
+y
+\end{pmatrix}-
+\begin{pmatrix}
+x_g\\ 
+y_g
+\end{pmatrix}=
+\begin{pmatrix}
+\Delta x_{GHCO}\\ 
+\Delta y_{GHCO}
+\end{pmatrix}
++
+\begin{pmatrix}
+c  & s\\ 
+-s & c
+\end{pmatrix}
+\begin{pmatrix}
+c' & s' \\ 
+-s'& c' 
+\end{pmatrix}
+\begin{pmatrix}
+1\\ 
+0
+\end{pmatrix}
+\end{equation}
 
-We model our system by:
 
-%\begin{center}
-%\begin{pmatrix}
-%x\\ 
-%y
-%\end{pmatrix}-
-%\begin{pmatrix}
-%x_g\\ 
-%y_g
-%\end{pmatrix}=
-%\begin{pmatrix}
-%\Delta x_{cam}\\ 
-%\Delta y_{cam}
-%\end{pmatrix}
-%+
-%\begin{pmatrix}
-%c & s\\ 
-%-s & c
-%\end{pmatrix}
-%\begin{pmatrix}
-% c'&s' \\ 
-% -s'&c' 
-%\end{pmatrix}
-%\begin{pmatrix}
-%1\\ 
-%0
-%\end{pmatrix}
-%\end{center}
+\noindent where, ($x_g,y_g$) are the commanded positions, $(\Delta x_{GHCO},\Delta y_{GHCO})$ are the offset components in $x,y$ directions respectively, $c=r\cos\phi$ and  $s=r\sin\phi$, describe the bending of the needle tool in terms of the radius $r$ of the circle and the angle $\phi$ (see Figure \ref{tool_bend}) and $c'=\cos\theta$ and  $s=\sin\theta$ describes the rotations of the tool ($\theta=0^o, 90^o, 180^o, 270^o$) with respect to the $x$ direction.
 
+The matrix A and the vector of parameter \textbf{a} can be be written as:
+
+\begin{equation}
+  A=
+  \begin{pmatrix}
+    1  & 0  & c' & -s' \\
+    0  & 1  & -s' & -c' 
+  \end{pmatrix}, \quad
+  \textbf{a}=
+  \begin{pmatrix}
+    \Delta x_{GHCO}\\ 
+    \Delta y_{GHCO}\\
+    c \\
+    s 
+  \end{pmatrix}
+\end{equation}
+
+
+The A matrix including the full set of forty pairs of measurements ($x,y$) is a $4\times80$ matrix where in the first ten rows $c'=\cos(\theta=0)=1, s'=\sin(\theta=0)=0$, while in the second ten rows $c'=\cos(\theta=90)=0, s'=\sin(\theta=90)=1$ and so on.   
+
+The offset\_fitting.vi program integrates a Matlab script that solves the matrix equation \ref{solution}, using the commanded and observed positions measured by the vision system; the uncertainties were assumed to be the same for all measurements and additionally it was assumed that the measurements are not correlated, so the covariance matrix is the uncertainty ($\sigma=0.01 \mu$m) times the $80\times80$ identity matrix.    
+
+The results for the GHCO and the radius are:
+
+\begin{align}
+  \Delta x_{GHCO}=& 0.482 \pm 0.008 mm\nonumber\\
+  \Delta y_{GHCO}=& -102.362 \pm 0.008 mm\\
+  r=&0.042 \pm 0.007 mm\nonumber.
+\end{align}
+
+\subsection{The gluing routine}
+
+The gluing routine workflow is shown in Figure\ref{fig:glue_workflow}; it was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that perform the different steps. The Front panel of the gluing routine is shown in Figure \ref{fig:gluing_front_main}. The module gluing sequence begins by manually placing pre-tested, BBMs, HDIs and tools on their chucks. Once the parts in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{An batch numbering strategy was designed in order to identify the modules intrernally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
+\begin{landscape}
+\hspace{-3cm}
 \begin{figure}[h]
 \begin{center}
-%\includegraphics[height=10cm,width=16cm,angle=0]{the_model}
-%\caption{Scratches scheme if the tool is not straight }\label{tool_bend}
+\includegraphics[width=25cm,height=20cm]{pixel/gluing_front_main.png}
+\caption[Gluing routine front panel]{Gluing routine front panel.}\label{fig:gluing_front_main}
 \end{center}
 \end{figure}
+\end{landscape}
 
-note that here the A matrix includes only one measurement, i.e. only one scratch. The complete A matrix is an extension to the complete set of measurements. For the 40 scratches, A is a 4x80 matrix. Also note that r is the radius of the red circle which describe the bending of the tool. 
-
-To solve the matrix equation \ref{solution} we wrote a Matlab program (offset\_fitting.m) which we fed with the data, both commanded and real positions, the matrix A, the uncertainties which we assume are the same for all measurements (additionally we assume the measurements are not correlated), so the covariance matrix is the uncertainty times the 80x80 identity matrix.    
-
-\section{The results}
-
-The fitting resuls are:
-
-\begin{figure}[h]
-\begin{center}
-%\includegraphics[height=10cm,width=16cm,angle=0]{result}
-%\caption{Scratches scheme if the tool is not straight }\label{tool_bend}
-\end{center}
-\end{figure}
+The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the front panel so that the operator can identify abnormal values from extreme misalignments; that usually occurs when the plates are not properly placed on the chucks. When the fiducial does not appears in the camera field of view, the pattern recognition fails. In those cases, a manual fiducial finding option is available. 
 
 
 
@@ -378,13 +404,6 @@ The fitting resuls are:
 
 
 
-
-
-
-The module gluing sequence begins by manually placing pre-tested, BBMs and HDI on vacuum chucks on the baseplate of the pick-and-place machine.
-
-
-The machine program successively moves the camera (fixed to the machine motion head) to view the fiducial on the BBM sensors and HDI components and acquires the fiducial location using pattern recognition,
 picks up a dispensing tool from a the tool rack and dispenses epoxy on the sensors, returns the dispensing tool to the tool rack, picks up a vacuum tool from the tool rack to pick-and-place individual HDI onto sensors (making adjustments based on the actual part locations in the machine to accurately align and join the components), and returns the vacuum tool to the tool rack. Module end holders are also aligned and glued to the modules using custom tooling and the pick-and-place machine. Following mechanical assembly, HDI are wirebonded to the ROCs using semi-automated ul-
 trasonic wirebonding machines. Routine pull tests of sample wirebonds will be performed
 for quality control. The wirebonds will be encapsulated with an elastomeric compound using
@@ -397,7 +416,7 @@ the half-disk blades.
 The module assembly and testing schedule will depend on the throughput of the pixel modules delivered from the bump-bonding vendors to the module
 assembly sites.
 
-
+In a typical gluing session 4 modules were glued  
 
 \subsection{The Encapsulation stage}
 
