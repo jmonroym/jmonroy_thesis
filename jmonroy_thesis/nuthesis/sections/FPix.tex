@@ -368,12 +368,9 @@ The matrix A and the vector of parameter \textbf{a} can be be written as:
   \end{pmatrix}
 \end{equation}
 
-
 The A matrix including the full set of forty pairs of measurements ($x,y$) is a $4\times80$ matrix where in the first ten rows $c'=\cos(\theta=0)=1, s'=\sin(\theta=0)=0$, while in the second ten rows $c'=\cos(\theta=90)=0, s'=\sin(\theta=90)=1$ and so on.   
 
-The offset\_fitting.vi program integrates a Matlab script that solves the matrix equation \ref{solution}, using the commanded and observed positions measured by the vision system; the uncertainties were assumed to be the same for all measurements and additionally it was assumed that the measurements are not correlated, so the covariance matrix is the uncertainty ($\sigma=0.01 \mu$m) times the $80\times80$ identity matrix.    
-
-The results for the GHCO and the radius are:
+The offset\_fitting.vi program integrates a Matlab script that solves the matrix equation \ref{solution}, using the commanded and observed positions measured by the vision system; the uncertainties were assumed to be the same for all measurements and additionally it was assumed that the measurements are not correlated, so the covariance matrix is the uncertainty ($\sigma=0.01 \mu$m) times the $80\times80$ identity matrix. The results for the GHCO and the radius are:
 
 \begin{align}
   \Delta x_{GHCO}=& 0.482 \pm 0.008 mm\nonumber\\
@@ -383,18 +380,54 @@ The results for the GHCO and the radius are:
 
 \subsection{The gluing routine}
 
-The gluing routine workflow is shown in Figure\ref{fig:glue_workflow}; it was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that perform the different steps. The Front panel of the gluing routine is shown in Figure \ref{fig:gluing_front_main}. The module gluing sequence begins by manually placing pre-tested, BBMs, HDIs and tools on their chucks. Once the parts in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{An batch numbering strategy was designed in order to identify the modules intrernally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{pixel/glue_workflow2}
+    \caption[Gluing routine workflow.]{Gluing routine workflow.}\label{fig:glue_workflow}
+  \end{center}
+\end{figure}
+
 \begin{landscape}
-\hspace{-3cm}
+\begin{figure}[h]
+  \begin{center}
+    \vspace{-2.5cm}
+    \hspace{-1cm}
+    \includegraphics[width=24cm,height=16cm]{pixel/gluing_front_main1.png}
+    \caption[Gluing routine LabVIEW front panel]{Gluing routine LabVIEW front panel.}\label{fig:gluing_front_main}
+    \vspace{-2cm}
+    \hspace{-2cm}
+  \end{center}
+\end{figure}
+\end{landscape}
+
+The gluing routine workflow is shown in Figure\ref{fig:glue_workflow}. The green font represent the steps that are performed more than once in the same session, while the red font represent the steps performed by the operator. It was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that controls the sequence. The \ti{Main front panel} of the gluing routine, shown in Figure \ref{fig:gluing_front_main}, gathers the most relevant information about the gluing session, while each step in the routine have its dedicated front panel. The module gluing sequence begins by manually placing pre-tested, BBMs, HDIs and tools on their chucks. Once the parts are in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{An batch numbering strategy was designed in order to identify the modules intrernally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
+
+The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the Main and \ti{Find fiducials} front panels, so that the operator can identify abnormal values from extreme misalignments and pattern recognition fails; that usually occurs when the plates are not properly placed on the chucks and/or when the fiducials do not appear in the camera field of view. In those cases, a manual fiducial finding option is available. The find fiducial front pannel is shown in Figure \ref{fig:find_fid_front} and a sample of the found fiducials on a HDI and a BBM is shown in Figure \ref{fig:fid_reco} indicating the located center of the fiducial with a green dot.  
+
+\begin{landscape}
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=25cm,height=20cm]{pixel/gluing_front_main.png}
-\caption[Gluing routine front panel]{Gluing routine front panel.}\label{fig:gluing_front_main}
+    \vspace{-2.9cm}
+    \hspace{-1cm}
+    \includegraphics[width=24cm,height=16.5cm]{pixel/find_fid_front}
+    \caption[Fiducial finder LabVIEW front panel]{Fiducial finder LabVIEW front panel.}\label{fig:find_fid_front}
+    \vspace{-2cm}
+    \hspace{-2cm}
 \end{center}
 \end{figure}
 \end{landscape}
 
-The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the front panel so that the operator can identify abnormal values from extreme misalignments; that usually occurs when the plates are not properly placed on the chucks. When the fiducial does not appears in the camera field of view, the pattern recognition fails. In those cases, a manual fiducial finding option is available. 
+
+\begin{figure}[h]
+\begin{center}
+ \includegraphics[width=\textwidth]{pixel/fid_reco}
+ \caption[Fiducial finder step LabVIEW front panel]{Fiducial finder step LabVIEW front panel.}\label{fig:fid_reco}
+\end{center}
+\end{figure}
+
+After all the fiducials are identified, the operator has to check them and perform the necessary adjustments. Usually, the glue was prepared in parallel to the fiducial identification, reducing the session time.
+
+The glue application step starts by picking up the grabber tool from the tool rack, and grabbing the stamp tools from their chuck; after dipping the stamp tool in the glue reservoir, the epoxy is dispensed on the BBMs. The procedure is repeated as many times as the number of modules involved in the session, each time using a different stamp tool and a different glue reservoir slot. The step finish by returning the grabber tool to the tool rack. The routine provides full freedom to choose any available combination of stamp tool, glue reservoir slot and BBM; this feature is particularly useful for glue testing and commissioning.
 
 
 
@@ -404,14 +437,22 @@ The camera is moved to view, recognize and find the fiducials locations on the B
 
 
 
-picks up a dispensing tool from a the tool rack and dispenses epoxy on the sensors, returns the dispensing tool to the tool rack, picks up a vacuum tool from the tool rack to pick-and-place individual HDI onto sensors (making adjustments based on the actual part locations in the machine to accurately align and join the components), and returns the vacuum tool to the tool rack. Module end holders are also aligned and glued to the modules using custom tooling and the pick-and-place machine. Following mechanical assembly, HDI are wirebonded to the ROCs using semi-automated ul-
-trasonic wirebonding machines. Routine pull tests of sample wirebonds will be performed
-for quality control. The wirebonds will be encapsulated with an elastomeric compound using
-semi-automated dispensing equipment. The module assembly sites will also be responsible for
-the testing and characterization of the assembled pixel modules. Modules will be thermally
-cycled within the operating temperature range (-20 ◦ C to 20 ◦ C) while monitoring ROC digital
-and analog currents. Modules which pass the acceptance criteria will then be assembled onto
-the half-disk blades.
+picks up a
+vacuum tool from the tool rack to pick-and-place individual HDI onto
+sensors (making adjustments based on the actual part locations in the
+machine to accurately align and join the components), and returns the
+vacuum tool to the tool rack. Module end holders are also aligned and
+glued to the modules using custom tooling and the pick-and-place
+machine. Following mechanical assembly, HDI are wirebonded to the ROCs
+using semi-automated ul- trasonic wirebonding machines. Routine pull
+tests of sample wirebonds will be performed for quality control. The
+wirebonds will be encapsulated with an elastomeric compound using
+semi-automated dispensing equipment. The module assembly sites will
+also be responsible for the testing and characterization of the
+assembled pixel modules. Modules will be thermally cycled within the
+operating temperature range (-20 ◦ C to 20 ◦ C) while monitoring ROC
+digital and analog currents. Modules which pass the acceptance
+criteria will then be assembled onto the half-disk blades.
 
 The module assembly and testing schedule will depend on the throughput of the pixel modules delivered from the bump-bonding vendors to the module
 assembly sites.
