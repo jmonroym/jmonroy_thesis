@@ -378,6 +378,32 @@ The offset\_fitting.vi program integrates a Matlab script that solves the matrix
   r=&0.042 \pm 0.007 mm\nonumber.
 \end{align}
 
+\subsubsection*{The dispensing system}
+
+The dispensing system components are shown in Figure \ref{fig:potting_comp}. The dispenser and syringe holder are attached to the gantry head as shown in Figure \ref{fig:setup}. The sylgard was mixed in a proportion 1:10 (curing agent:base elastomer) measured using common syringes on a plastic sheet. Several needle tip sizes were tested in order to optimize the amount of sylgard dispensed in agreement with the pressure provided by the dispenser; the needle chosen has an internal diameter of 150 $\mu$m.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth,height=0.55\textwidth]{pixel/materials_potting}
+    \includegraphics[width=0.45\textwidth,height=0.55\textwidth]{pixel/syringe.png}\\
+    \includegraphics[width=0.45\textwidth,height=0.45\textwidth]{pixel/dispenser.png}
+    \includegraphics[width=0.45\textwidth,height=0.45\textwidth]{pixel/curing_oven.png}
+    \caption[Dispensing system components.]{Dispensing system components.}\label{fig:potting_comp}
+  \end{center}
+\end{figure}
+
+The encapsulation process is highly dependent not only on the ability to measure the location of the regions to be encapsulated, which is well managed by the vision system, but also on the ability to know with high precision the position of the needle tip, which added to the fact that for each encapsulation session a new set syringe-needle has to be used, demands a robust method to locate the needle tip.
+
+The needle-tip calibration procedure was implemented using an additional vision system composed of two regular web cameras disposed one perpendicular to each other as shown in Figure \ref{webcam_setup} known as \ti{webcam setup}. The main idea of the webcam setup is to provide a three dimensional position of the needle tip     
+
+                  
+
+
+
+\subsubsection*{The vacuum system}
+
+
+
 \subsection{The gluing routine}
 
 \begin{figure}[h]
@@ -385,6 +411,16 @@ The offset\_fitting.vi program integrates a Matlab script that solves the matrix
     \includegraphics[width=0.9\textwidth]{pixel/glue_workflow2}
     \caption[Gluing routine workflow.]{Gluing routine workflow.}\label{fig:glue_workflow}
   \end{center}
+\end{figure}
+
+A gluing session was defined as the process where four modules are assembled. The gluing routine workflow is shown in Figure\ref{fig:glue_workflow}; the green font represent the steps that are performed more than once in the same session, while the red font represent the steps performed by the operator. The routine was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that controls the sequence. The \ti{Main front panel} of the gluing routine, shown in Figure \ref{fig:gluing_front_main}, gathers the most relevant information about the gluing session, while each step in the routine have its dedicated front panel. The module gluing sequence begins by manually placing pre-tested, BBMs, HDIs and tools on their chucks. Figure \ref{fig:gluing_materials} show the materials used during the gluing session; the aluminum squared tool is used to hold the gel-pack containing the BBMs while the vacuum pen is used to manipulate the BBMs.
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=0.58\textwidth, height=0.5\textwidth]{pixel/gluing_materials}
+  \includegraphics[width=0.4\textwidth, height=0.5\textwidth]{pixel/gel_pack}
+ \caption[Materials used during gluing stage]{Materials used during gluing stage (left). BBMs on a Gel-pack.}\label{fig:gluing_materials}
+\end{center}
 \end{figure}
 
 \begin{landscape}
@@ -400,9 +436,10 @@ The offset\_fitting.vi program integrates a Matlab script that solves the matrix
 \end{figure}
 \end{landscape}
 
-The gluing routine workflow is shown in Figure\ref{fig:glue_workflow}. The green font represent the steps that are performed more than once in the same session, while the red font represent the steps performed by the operator. It was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that controls the sequence. The \ti{Main front panel} of the gluing routine, shown in Figure \ref{fig:gluing_front_main}, gathers the most relevant information about the gluing session, while each step in the routine have its dedicated front panel. The module gluing sequence begins by manually placing pre-tested, BBMs, HDIs and tools on their chucks. Once the parts are in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{An batch numbering strategy was designed in order to identify the modules intrernally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
 
-The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the Main and \ti{Find fiducials} front panels, so that the operator can identify abnormal values from extreme misalignments and pattern recognition fails; that usually occurs when the plates are not properly placed on the chucks and/or when the fiducials do not appear in the camera field of view. In those cases, a manual fiducial finding option is available. The find fiducial front pannel is shown in Figure \ref{fig:find_fid_front} and a sample of the found fiducials on a HDI and a BBM is shown in Figure \ref{fig:fid_reco} indicating the located center of the fiducial with a green dot.  
+Once the parts are in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{A batch numbering strategy was designed in order to identify the modules intrernally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
+
+The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the Main and \ti{Find fiducials} front panels, so that the operator can identify abnormal values from extreme misalignments and pattern recognition fails; that usually occurs when the plates are not properly placed on the chucks and/or when the fiducials do not appear in the camera field of view. In those cases, a manual fiducial finding option is available. The find fiducial front pannel is shown in Figure \ref{fig:find_fid_front} and a sample of the found fiducials on a HDI and a BBM is shown in Figure \ref{fig:fid_reco} indicating the located center of the fiducial with a green dot. After all the fiducials are identified, the operator has to check them and perform the necessary adjustments. Usually, the glue was prepared in parallel to the fiducial identification, reducing the session time.  
 
 \begin{landscape}
 \begin{figure}[h]
@@ -425,27 +462,45 @@ The camera is moved to view, recognize and find the fiducials locations on the B
 \end{center}
 \end{figure}
 
-After all the fiducials are identified, the operator has to check them and perform the necessary adjustments. Usually, the glue was prepared in parallel to the fiducial identification, reducing the session time.
+The glue application step starts by picking up the grabber tool from the tool rack, and grabbing the stamp tools from their chuck; after dipping the stamp tool in the glue reservoir, the epoxy is dispensed on the BBMs. The procedure is repeated as many times as the number of modules involved in the session, each time using a different stamp tool and a different glue reservoir slot. The step finish by returning the grabber tool to the tool rack. The routine provides full freedom to choose any available combination of stamp tool, glue reservoir slot and BBM; this feature is particularly useful for glue testing and commissioning. The grabber tool is then returned to the tool rack and the picker tool is picked, so that the HDIs are picked from their plate slots and placed on top of the BBMs (making the alignment with respect to BBMs); again, the routine allows for different combinations of BBM-HDI. The front panels for both, gluing and pick-and-place steps, are shown in Figure \ref{fig:stamp_place_front}. Later, the picker tool is returned to the tool rack.
 
-The glue application step starts by picking up the grabber tool from the tool rack, and grabbing the stamp tools from their chuck; after dipping the stamp tool in the glue reservoir, the epoxy is dispensed on the BBMs. The procedure is repeated as many times as the number of modules involved in the session, each time using a different stamp tool and a different glue reservoir slot. The step finish by returning the grabber tool to the tool rack. The routine provides full freedom to choose any available combination of stamp tool, glue reservoir slot and BBM; this feature is particularly useful for glue testing and commissioning.
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=\textwidth]{pixel/stamp_front.png}
+  \includegraphics[width=\textwidth]{pixel/place_front.png}
+ \caption[Gluing and pick-and-place LabVIEW front panels]{Gluing (top) and pick-and-place (bottom) LabVIEW front panels.}\label{fig:stamp_place_front}
+\end{center}
+\end{figure}
+
+In the weight step of the routine, the grabber tool is picked again from the tool rack in order to move the weight tools from their plate slots to the BBM locations. The front panel for this step is similar to the gluing front panel. Later, the grabber tool is returned to the tool rack and the gantry head is moved back to the home position. Figure \ref{fig:gluing_steps} shows pictures of the glue reservoir plate loaded with glue, BBMs after the glue deposition, BBM-HDI after pick-and-place, and weight tools over the assembled modules. 
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/glue_reservoir_full.png}
+  \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/glue_on_bbm.png}\\
+  \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/bbm_hdi2.png}
+  \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/weight_on_bbm.png}
+  \caption[Gluing steps pictures.]{Gluing steps pictures. Top: glue reservoir loaded (left), glue dispensed on BBMs (right). Bottom: BBM-HDI after pick-and-place(left), weight tools over assembled modules(right).}\label{fig:gluing_steps}
+\end{center}
+\end{figure}
+
+The last step of the routine consist of creating and publishing the gluing session report (see Figure\ref{fig:gluing_report}) in the UNL silicon lab. electronic logbook (ELOG) and updating the database created to keep track of the assembly progress.  
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=\textwidth]{pixel/gluing_report}
+ \caption[Gluing session report.]{Gluing session report.}\label{fig:gluing_report}
+\end{center}
+\end{figure}
+
+At the end of the full cycle, the stamp plate with stamp tools is moved to be cleaned thoroughly using water and 2-propanol at sink outside the cleanroom. Let them dry and bring them back to gantry table. The assembled modules are left to cure eight hours, typically overnight. The fully detailed SOP (SOP-103) for the gluing stage can be found in Reference \cite{sop_103}, while several videos showing the gluing routine in action can be found in References \cite{gluing_frank, jmonroy_channel}. 
 
 
+\subsection{The Encapsulation stage}
 
+Following the assembly, HDIs are wirebonded to the ROCs using semi-automated ultrasonic a wirebonding machine. Pull tests of wirebonds are performed on a sample of modules for quality control.
 
-
-
-
-
-
-picks up a
-vacuum tool from the tool rack to pick-and-place individual HDI onto
-sensors (making adjustments based on the actual part locations in the
-machine to accurately align and join the components), and returns the
-vacuum tool to the tool rack. Module end holders are also aligned and
-glued to the modules using custom tooling and the pick-and-place
-machine. Following mechanical assembly, HDI are wirebonded to the ROCs
-using semi-automated ul- trasonic wirebonding machines. Routine pull
-tests of sample wirebonds will be performed for quality control. The
+The
 wirebonds will be encapsulated with an elastomeric compound using
 semi-automated dispensing equipment. The module assembly sites will
 also be responsible for the testing and characterization of the
@@ -459,7 +514,12 @@ assembly sites.
 
 In a typical gluing session 4 modules were glued  
 
-\subsection{The Encapsulation stage}
+
+
+
+
+
+
 
 %% \begin{figure}[!h]
 %%   \centering
