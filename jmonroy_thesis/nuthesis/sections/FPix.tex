@@ -101,7 +101,7 @@ Each stage in the assembly procedure is documented with an ~\ti{Standard Operati
 
 In the following sections a detailed description of the gluing and encapsulation stages will be presented. The full set of tools was designed by Dr. Frank Meier Aeschbacher. 
 
-\subsection{Pick and place machine setup}
+\subsection{Pick and place machine setup}\label{sec:setup}
 
 Figure \ref{fig:setup} shows the full setup used to perform the gluing and encapsulation steps. The gantry used in the setup is a custom made \ti{AGS15000 Series Gantry}, fabricated by Aerotech \cite{aerotech}, which offers translational motion in 3D ensuring coverage of any position in the work field; in addition, rotational motion is provided in the \ti{gantry head} in the usual x-y plane (gantry table plane).
 
@@ -432,7 +432,7 @@ The requirement imposed to the sylgard deposition over the modules, HDI and BBM,
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.9\textwidth]{pixel/bondpad_region}
+    \includegraphics[width=0.7\textwidth]{pixel/bondpad_region}
     \caption[Wire bond region.]{Wire bond region.}\label{fig:bondpad_region}
   \end{center}
 \end{figure}
@@ -475,56 +475,37 @@ To find these time delays, the strategy sketched in the bottom side of Figure \r
   \Delta t_1&=\frac{\Delta S_1}{v}=\frac{x_5-x_4}{v}
 \end{align}
 
+Figure \ref{fig:delays_measure} shows the results from two attempts to measure the time delays. In the first attempt, the samples were taken in intervals of five minutes at 1 mm/s; the sylgard traces started to break up after seven samples. The reason of the breaking up is that the sylgard gets ticker with time, so that the speed of the gantry needs to be decreased. In the second attempt, the speed was decreased when the breaking up showed up; in total, forty samples spaced by five minutes were taken at six speed values (0.6,0.5,0.4,0.3,0.25) mm/s.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{pixel/time_delays1.png} 
-    \includegraphics[width=0.48\textwidth]{pixel/time_delays2.png}
+    \includegraphics[width=0.48\textwidth,height=0.3\textwidth]{pixel/time_delays1.png} 
+    \includegraphics[width=0.48\textwidth,height=0.3\textwidth]{pixel/time_delays2.png}
     \caption[Time delay measurements.]{Time delay measurement. Left: ten samples spaced by 5 minutes at 1mm/s. Right: forty samples spaced by 5 minutes, adjusting the speed to eliminate the breaking up..}\label{fig:delays_measure}
   \end{center}
 \end{figure}
 
-Figure \ref{fig:delays_measure} shows the results from two attempts to measure the time delays. In the first attempt, the samples were taken in intervals of five minutes at 1 mm/s; the sylgard traces started to break up after seven samples. The reason of the breaking up is that the sylgard gets ticker with time, so that the speed of the gantry needs to be decreased. In the second attempt, the speed was decreased when the breaking up showed up; in total, forty samples spaced by five minutes were taken at six speed values (0.6,0.5,0.4,0.3,0.25) mm/s.             
- 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth,height=0.4\textwidth]{pixel/speed_function1.png}\\ 
+    \includegraphics[width=0.8\textwidth]{pixel/time_delays3.png}
+    \caption[Speed function for sylgard deposition.]{Top: speed evolution in time for the time delays determination. Bottom: time delays determination experiment after the implementation of the speed function. After 3.5 hours of data taking, there is no sign of sylgard breaking up.}\label{fig:speed_function}
+  \end{center}
+\end{figure}
 
+Figure \ref{fig:speed_function} (top) shows the evolution of the speed as a function of time for the forty samples; the quadratic fit (modified) corresponds to a function that models a consistent reduction of the gantry speed in time such that the breaking up of the sylgard traces is avoided. This fitting function was implemented in the labVIEW program used to take the samples for the time delay calculation; the results are shown in the bottom side of Figure \ref{fig:speed_function} where it is clear that the implementation of the speed function meets the requirements. This speed function is called \ti{deposition speed}.
 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{pixel/dt0.png} 
+    \includegraphics[width=0.45\textwidth]{pixel/dt1.png}
+    \caption[Time delay functions.]{Time delay functions $\Delta t_0$ and $\Delta t_1$. In the time range of the typical encapsulation process, time delays are approximated by a constant; conservative values were adopted:  $\Delta t_0 =0.1$ s,  $\Delta t_1 = 1$ s.}\label{fig:time_delay_functions}
+  \end{center}
+\end{figure}
 
+From this test it is also possible to extract the time delay functions (given that the deposition speed is a function of the time it is expected that the time delays also depends on time); they are shown in Figure \ref{fig:time_delay_functions}.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-It was observed that even choosing as reference to deposit the sylgard the edge of the bond, the whole bondpad is covered which also increase the safe distance.
-
-Note that it will define the size of the sylgard drop and then the time delays because we will need to have the correct drop size before to start to move the gantry.
-
-
-
-
-
-
-will take a basic routine: depositing a sylgard line between two defined positions and repeat it
-as many times as needed. If these positions are:
-
-
-
-
-
-\subsubsection*{The vacuum system}
-
-
-
-
-
+The typical encapsulation time per module is about five minutes, therefore, a full encapsulation session would last about one and a half hours in total, counting the time used to find the fiducial marks on the HDIs/BBMs and the regions where the sylgard will be deposited. In that time range, $\Delta t_0$ and $\Delta t_1$ could be approximates by a constant; a conservative choice was adopted: $\Delta t_0 =0.1$ s,  $\Delta t_1 = 1$ s.            
 
 \subsection{The gluing routine}
 
@@ -620,7 +601,18 @@ At the end of the full cycle, the stamp plate with stamp tools is moved to be cl
 
 \subsection{The Encapsulation routine}
 
-Following the assembly, HDIs are wirebonded to the ROCs using semi-automated ultrasonic a wirebonding machine. Pull tests of wirebonds are performed on a sample of modules for quality control.
+Following the assembly, HDIs are wirebonded to the ROCs using semi-automated ultrasonic a wirebonding machine. Pull tests of wirebonds are performed on a sample of modules for quality control. The wirebonds were encapsulated with an elastomeric compound in order to protect them from mechanical damage and to avoid possible shortcut circuits.
+
+The encapsulation was performed using the robotic gantry and the dispensing system described in Section \ref{sec:setup}. After the wirebonding, the plates with the modules were taken back to the gantry table and located in the BBM chucks. The encapsulation strategy is based on a simple routine: by stating the initial conditions, \ie, the initial ($R_i$) and final ($R_f$) reference positions, the time elapsed after sylgard preparation, time delays, and needle tip location, move the gantry head to $R_i$ and deposit the encapsulant following the structure sketched in Figure \ref{fig:sylgard_synch} (top). The sylgard trace is required to fully cover the HDI/BBM bond pads without spreading out in between the sensor and the ROC.
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=\textwidth]{pixel/hdi_bondpads}
+ \caption[Encapsulation region.]{Encapsulation region. The sylgard trace, defined by the reference positions $R_i$ and $R_f$, is required spread out to fully cover the bond pads. }\label{fig:hdi_bondpads}
+\end{center}
+\end{figure}
+
+The reference positions $R_i$ and $R_f$ define the length of the sylgard trace (see Figure \ref{fig:hdi_bondpads}); in general, the sylgard trace lives in 3D because the module is not perfectly aligned with respect to the gantry coordinate system (neither the HDI neither) and even thought the ROCs are flat the HDI could be bent, therefore, the gantry motion during the sylgard deposition is carried in 3D. The displacements in each direction are determined from the reference positions and the motions are done in the same time interval, thus, the speed for each direction is different; however, the displacement in $y$-direction, \ie, the length of the set of bond pads which is about 8 mm, is much larger than the displacement in $x$ and $z$ directions, which are expected to be about 10-50 $\mu$m, so essentially the speed in y-direction is essentially the same as the deposition speed.
 
 
 
@@ -631,11 +623,27 @@ Following the assembly, HDIs are wirebonded to the ROCs using semi-automated ult
 
 
 
+and are obtained from the location of the HDI/BBM fiducial marks.   
+
+This basic routine is repeated  
 
 
-The
-wirebonds will be encapsulated with an elastomeric compound using
-semi-automated dispensing equipment. The module assembly sites will
+consists of depositing linear sylgard traces that covers 
+
+
+
+
+
+
+the fiducials on the HDI and BBM for each module, then, using the technical specifications of the HDI and BBM,      
+
+
+
+An encapsulation sessions was defined as the process where 8 modules are encapsulated following the encapsulation routine workflow shown in Figure \ref{fig:potting_workflow}.
+
+
+
+The module assembly sites will
 also be responsible for the testing and characterization of the
 assembled pixel modules. Modules will be thermally cycled within the
 operating temperature range (-20 ◦ C to 20 ◦ C) while monitoring ROC
@@ -646,6 +654,21 @@ The module assembly and testing schedule will depend on the throughput of the pi
 assembly sites.
 
 In a typical gluing session 4 modules were glued  
+
+
+
+It was observed that even choosing as reference to deposit the sylgard the edge of the bond, the whole bondpad is covered which also increase the safe distance.
+
+Note that it will define the size of the sylgard drop and then the time delays because we will need to have the correct drop size before to start to move the gantry.
+
+
+
+
+
+
+will take a basic routine: depositing a sylgard line between two defined positions and repeat it
+as many times as needed. If these positions are:
+
 
 
 
