@@ -91,7 +91,7 @@ The BBM was prepared by a commercial vendor, while the HDI was populated at Ferm
 
 The module production procedure was designed following a production line structure. Figure \ref{fig:unlworkflow} shows the work flow followed at the UNL assembly site. Once the BBM and HDI arrive, they are submitted to visual inspection looking for defects, scratches, dents or short circuits. Modules passing the visual inspection are tested for electrical acceptance and performance. BBM and HDI are then glued employing robotic pick-and-place machines that integrate optic tools, pattern recognition algorithms, and glue dispensing; the semi-automated gluing process improves the uniformity of the technique. After 10 hours of curing, glued modules are moved to the wirebonding station where ROCs and HDI are electrically connected employing semi-automated ultrasonic wirebongding machines; occasionally, some of the wires are pull tested for quality control. After this step, modules are fully functional, hence, a basic functionallity test is done at a subset of modules to control the manufacturing process.    
 
-In the next stage, the wirebonds are encapsulated with an elastomeric compound (\ti{Sylguard}) in order to protect them against mechanical damage and electrical shorts; the encapsulation process is performed employing the robotic pick-and-place machine which also integrates the encapsulant dispensing system. Once the encapsulation ends, modules are mounted on module holders and submitted to a head cycle to cure the sylguard.    
+In the next stage, the wirebonds are encapsulated with an elastomeric compound (\ti{Sylgard}) in order to protect them against mechanical damage and electrical shorts; the encapsulation process is performed employing the robotic pick-and-place machine which also integrates the encapsulant dispensing system. Once the encapsulation ends, modules are mounted on module holders and submitted to a head cycle to cure the sylgard.    
 
 The module assembly sites were also responsible for the testing and characterization of the assembled pixel modules. That testing included, visual inspection, electrical acceptance, performance testing under controlled temperature conditions that simulate the expected operational conditions; in case of any necessary reworking, the modules were returned to the appropriate stage.
 
@@ -380,27 +380,149 @@ The offset\_fitting.vi program integrates a Matlab script that solves the matrix
 
 \subsubsection*{The dispensing system}
 
-The dispensing system components are shown in Figure \ref{fig:potting_comp}. The dispenser and syringe holder are attached to the gantry head as shown in Figure \ref{fig:setup}. The sylgard was mixed in a proportion 1:10 (curing agent:base elastomer) measured using common syringes on a plastic sheet. Several needle tip sizes were tested in order to optimize the amount of sylgard dispensed in agreement with the pressure provided by the dispenser; the needle chosen has an internal diameter of 150 $\mu$m.
+The dispensing system components are shown in Figure \ref{fig:potting_comp}. The dispenser and syringe holder are attached to the gantry head as shown in Figure \ref{fig:setup}. The encapsulant is a mixture of sylgard curing agent and sylgard base elastomer in a proportion 1:10; the volumes are measured using common syringes, and the mixing is performed on a plastic sheet. Several needle tip sizes were tested in order to optimize the amount of sylgard dispensed in agreement with the pressure provided by the dispenser; the needle chosen has an internal diameter of 150 $\mu$m.
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.45\textwidth,height=0.55\textwidth]{pixel/materials_potting}
     \includegraphics[width=0.45\textwidth,height=0.55\textwidth]{pixel/syringe.png}\\
-    \includegraphics[width=0.45\textwidth,height=0.45\textwidth]{pixel/dispenser.png}
-    \includegraphics[width=0.45\textwidth,height=0.45\textwidth]{pixel/curing_oven.png}
+    \includegraphics[width=0.45\textwidth,height=0.35\textwidth]{pixel/dispenser.png}
+    \includegraphics[width=0.45\textwidth,height=0.35\textwidth]{pixel/curing_oven.png}
     \caption[Dispensing system components.]{Dispensing system components.}\label{fig:potting_comp}
   \end{center}
 \end{figure}
 
-The encapsulation process is highly dependent not only on the ability to measure the location of the regions to be encapsulated, which is well managed by the vision system, but also on the ability to know with high precision the position of the needle tip, which added to the fact that for each encapsulation session a new set syringe-needle has to be used, demands a robust method to locate the needle tip.
+The encapsulation process consist of depositing a sylgard trace over the wires connecting the HDI and ths ROC; it is highly dependent not only on the ability to measure the location of the regions to be encapsulated, which is well managed by the vision system, but also on the ability to know with high precision the position of the needle tip, which added to the fact that for each encapsulation session a new set syringe-needle has to be used, demands a robust method to locate the needle tip.
 
-The needle-tip calibration procedure was implemented using an additional vision system composed of two regular web cameras disposed one perpendicular to each other as shown in Figure \ref{webcam_setup} known as \ti{webcam setup}. The main idea of the webcam setup is to provide a three dimensional position of the needle tip     
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.55\textwidth,height=0.4\textwidth]{pixel/webcam_setup.png}
+    \includegraphics[width=0.4\textwidth,height=0.5\textwidth]{pixel/webcam_setup2}
+    %\includegraphics[width=0.45\textwidth,height=0.35\textwidth]{pixel/.png}
+    %\includegraphics[width=0.45\textwidth,height=0.35\textwidth]{pixel/curing_oven.png}
+    \caption[Webcam setup.]{Webcam setup used to locate the needle tip in 3D.}\label{fig:webcam_setup}
+  \end{center}
+\end{figure}
 
-                  
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.40\textwidth,height=0.45\textwidth]{pixel/webcam_setup_cal2.pdf}
+    \includegraphics[width=0.45\textwidth,height=0.45\textwidth]{pixel/webcam_setup_cal3.pdf}\\
+    \caption[Webcam setup calibration.]{Webcam setup calibration. The 3D needle tip coordinates define the reference coordinates (origin) of the webcam setup.}\label{fig:webcam_cal}
+  \end{center}
+\end{figure}
+
+The needle-tip calibration procedure was implemented using an additional vision system composed of two regular web cameras disposed one perpendicular to each other as shown in Figure \ref{fig:webcam_setup} known as \ti{webcam setup}. The reference position acting as the origin of the webcam setup coordinate system (RC) was defined by looking at a ROC placed over a pedestal so that the horizontal plane of the webcams is adjusted; then, using the gantry camera, a fiducial mark on the ROC was located and focused so that the $z$ coordinate if the fiducial is known ($RC_z$). Later, with a dispenser syringe and a needle tip mounted on the syringe holder, the needle tip was moved to the position of the fiducial mark on the ROC previously focused; the focuses of webcams were adjusted such that the needle is well visible in the screens (see Figure \ref{fig:webcam_cal}) and simultaneously in focus for both webcams, while the needle tip is centered in the screen, thus, ($x,y$) gantry head coordinates at that position correspond to the $(RC_x, RC_y)$ coordinates; after the calibration the RC is
+\beqn 
+  RC= (17.337,80.144, 88.486) mm
+\eeqn
+
+For any new needle to be used, it is necessary to correct for the needle tip coordinates deviation from the RC; the correction is obtained by moving the new needle tip to the RC position and adjusting the position of the needle tip to get it focused and centered in the webcam setup screens; these adjusted coordinates (MC) are compared with RC, and the difference is called \ti{Needle Tip Offset} (NTO); this calibration is connected to the calibration made for the GHCO so that the coordinates provided by the vision system for the regions to be encapsulated are also corrected for the NTO.              
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=0.7\textwidth,height=0.3\textwidth]{pixel/nto}
+  \caption[Needle tip offset measurement.]{Needle tip offset measurement.}\label{fig:webcam_adjust}
+  \end{center}
+\end{figure}
+
+\subsubsection*{Space-time synchronization of the sylgard deposition}
+
+The requirement imposed to the sylgard deposition over the modules, HDI and BBM, is to cover all the bond pads including the wire bonds; to do that, several parameters were optimized. First, when the sylgard starts to flow out of the needle, it is necessary that the sylgard drop gets in touch with a surface/object before it gets to heavy to fall down and prevent a continuous flow. Also, it is desired that the sylgard drop touch the HDI/BBM bondpads/surface first, rather than the wires themselves; in the former case, the sylgard spreads along the surface while in the latter case the sylgard sticks to the wires and it does not spreads. Thus, the distance between the needle tip and the surface is a critical parameter.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{pixel/bondpad_region}
+    \caption[Wire bond region.]{Wire bond region.}\label{fig:bondpad_region}
+  \end{center}
+\end{figure}
+
+Figure \ref{fig:bondpad_region} shows an schematic of the wire bond region and some typical dimensions involved. The slope of the wire is about $34^o$ but can vary according to the wirebonding conditions. Going too close to the surface would make the needle tip to touch and break the wires. If the reference to deposit the sylgard is chosen to be the center of the bond, \ie, the center of the needle will be right above the center of the bond, then a simple calculation of the height (h) necessary to have the wire at a safe distance from the needle tip is given by 
+
+\beqn
+h=\left(d+r_N-\frac{b}{2}\right )\tan(\theta)
+\eeqn
+
+\noindent where $d$ is the distance from the needle tip edge to the wire (safe distance), $r_N$ is the external needle radius ($310 \mu$m), $b$ is the size of the bond ($100 \mu$m) and $\theta$ describe the slope of the wire. Table \ref{tab:needle_tip_heights} shows the values of $h$ for several combinations of the parameters $d$ and $\theta$ ($r_N$ and $b$ fixed).
+\begin{table}
+  \centering
+  \begin{tabular}{ c  c  c  c  c } \hline
+               &\multicolumn{4}{c}{d($\mu$m)}\\\hline
+  $\theta(^o)$ & 100   & 150   & 200   & 250 \\\hline
+    30         & 207.8 & \textcolor{red}{236.7} & 265.6 & 294.4 \\
+    45         & 360.0 & 410.0 & 460.0 & 510.0 \\
+    60         & 623.5 & 710.1 & 796.7 & 883.3 \\\hline
+  \end{tabular}
+  \caption{Values of the needle tip height $h$ ($\mu$m) for several combinations of parameters $d$ and $\theta$. }\label{tab:needle_tip_heights}
+\end{table}
+
+Given the typical slope of the wires, it was chosen $h=236.7$ $\mu$m as the needle tip height.   
+
+The next optimization was performed on the parameters defining the sylgard deposition kinematics. The basic sylgard deposition process consist of depositing a sylgard trace along a path defined by an initial and final positions $(x_i, y_i, z_i), (x_f, y_f, z_f)$. To ensure that all the wirebonds are covered, it is necessary to synchronize the dispenser action and the gantry motion. The top side of Figure \ref{fig:sylgard_synch} shows an sketch of the gantry velocity and dispenser action as a function of the time. When the dispenser is open the sylgard starts to flow out of the needle, however, the sylgard needs some time to flow out and get touch the surface of the HDI/BBM, thus, there should be a time delay between the dispenser valve opening and that the gantry starts to move, it is called $\Delta t_0$. Accordingly, after the valve is closed, there is a remaining sylgard flowing, so the valve should be  closed before the gantry reach the final of the way; this time delay is called $\Delta t_1$.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{pixel/time_delay}\\\ 
+    \includegraphics[width=\textwidth]{pixel/space_delay}
+    \caption[Sylgard deposition synchronization.]{Sylgard deposition synchronization. Top: sketch of the gantry velocity and dispenser action as a function of the time. Bottom: sketch of the strategy designed to determine the time delays.}\label{fig:sylgard_synch}
+  \end{center}
+\end{figure}
+
+To find these time delays, the strategy sketched in the bottom side of Figure \ref{fig:sylgard_synch} was implemented in a LabVIEW program; it proceeds as follows: with the dispenser needle loaded and mounted on the syringe holder, and the needle tip calibrated, a set of sylgard marks are deposited over a glass slide. The first is a control mark at $x_0$, then, at $x_1$ the gantry starts to move at constant speed $v$; at $x_2$ the dispenser valve is opened; at $x_3$ the sylgard gets in touch with the glass slide and it starts to spread. At $x_4$, the dispenser valve is closed, but some sylgard is still flowing out until $x_5$. At $x_6$, the gantry stops and finally, at $x_7$ another sylgard control mark is deposited. The time delays are given by 
+
+\begin{align}
+  \Delta t_0&=\frac{\Delta S_0}{v}=\frac{x_3-x_2}{v},\\
+  \Delta t_1&=\frac{\Delta S_1}{v}=\frac{x_5-x_4}{v}
+\end{align}
+
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{pixel/time_delays1.png} 
+    \includegraphics[width=0.48\textwidth]{pixel/time_delays2.png}
+    \caption[Time delay measurements.]{Time delay measurement. Left: ten samples spaced by 5 minutes at 1mm/s. Right: forty samples spaced by 5 minutes, adjusting the speed to eliminate the breaking up..}\label{fig:delays_measure}
+  \end{center}
+\end{figure}
+
+Figure \ref{fig:delays_measure} shows the results from two attempts to measure the time delays. In the first attempt, the samples were taken in intervals of five minutes at 1 mm/s; the sylgard traces started to break up after seven samples. The reason of the breaking up is that the sylgard gets ticker with time, so that the speed of the gantry needs to be decreased. In the second attempt, the speed was decreased when the breaking up showed up; in total, forty samples spaced by five minutes were taken at six speed values (0.6,0.5,0.4,0.3,0.25) mm/s.             
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+It was observed that even choosing as reference to deposit the sylgard the edge of the bond, the whole bondpad is covered which also increase the safe distance.
+
+Note that it will define the size of the sylgard drop and then the time delays because we will need to have the correct drop size before to start to move the gantry.
+
+
+
+
+
+
+will take a basic routine: depositing a sylgard line between two defined positions and repeat it
+as many times as needed. If these positions are:
+
+
 
 
 
 \subsubsection*{The vacuum system}
+
+
+
 
 
 
@@ -496,9 +618,20 @@ The last step of the routine consist of creating and publishing the gluing sessi
 At the end of the full cycle, the stamp plate with stamp tools is moved to be cleaned thoroughly using water and 2-propanol at sink outside the cleanroom. Let them dry and bring them back to gantry table. The assembled modules are left to cure eight hours, typically overnight. The fully detailed SOP (SOP-103) for the gluing stage can be found in Reference \cite{sop_103}, while several videos showing the gluing routine in action can be found in References \cite{gluing_frank, jmonroy_channel}. 
 
 
-\subsection{The Encapsulation stage}
+\subsection{The Encapsulation routine}
 
 Following the assembly, HDIs are wirebonded to the ROCs using semi-automated ultrasonic a wirebonding machine. Pull tests of wirebonds are performed on a sample of modules for quality control.
+
+
+
+
+
+
+
+
+
+
+
 
 The
 wirebonds will be encapsulated with an elastomeric compound using
