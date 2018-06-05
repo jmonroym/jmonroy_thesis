@@ -601,7 +601,7 @@ The last step of the routine consist of creating and publishing the gluing sessi
 \end{center}
 \end{figure}
 
-At the end of the full cycle, the stamp plate with stamp tools is moved to be cleaned thoroughly using water and 2-propanol at sink outside the cleanroom. Let them dry and bring them back to gantry table. The assembled modules are left to cure eight hours, typically overnight. The fully detailed SOP (SOP-103) for the gluing stage can be found in Reference \cite{sop_103}, while several videos showing the gluing routine in action can be found in References \cite{gluing_frank, jmonroy_channel}. 
+At the end of the full cycle, the stamp plate with stamp tools is moved to be cleaned thoroughly using water and 2-propanol at sink outside the cleanroom; let them dry and bring them back to gantry table. The assembled modules are left to cure eight hours, typically overnight. The fully detailed SOP (SOP-103) for the gluing stage can be found in Reference \cite{sop_103}, while several videos showing the gluing routine in action can be found in References \cite{gluing_frank, jmonroy_channel}. 
 
 \subsection{The encapsulation routine}
 
@@ -678,13 +678,25 @@ The next step is the sylgard preparation; 1 cc of sylgard elastomer are mixed wi
 
 The needle tip is installed once the dispenser syringe is mounted in the holder, then, the needle tip calibration is performed using the webcam setup; before to start dispensing the sylgard, the syringe is purged to eliminate the air trapped between the syringe mouth and the needle tip.
 
-In total, the encapsulation of one module is composed by 32 sylgard traces covering the bonds connecting the HDI and each of the 16 ROCs per module, 8 sylgard traces covering the bonds connection the TBM and the HDI, 2 sylgard traces covering the bonds of the address pads, and two sylgard drops covering the HV pads; each module is encapsulated in about five minutes. 
+In total, the encapsulation of one module is composed by 32 sylgard traces covering the bonds connecting the HDI and each of the 16 ROCs per module, 8 sylgard traces covering the bonds connection the TBM and the HDI, 2 sylgard traces covering the bonds of the address pads, and two sylgard drops covering the HV pads; each module is encapsulated in about five minutes. Figure \ref{fig:sylgard_dep} shows the sylgard deposition front panel. 
 
-After the sylgard deposition step, the syringe is removed from the holder and the gantry head goes back to the home position. The work at the gantry table ends with the generation and publication of the encapsulation session report.   
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=\textwidth]{pixel/sylgard_dep.png}
+  \caption{Sylgard deposition LabVIEW front panel.}\label{fig:sylgard_dep}
+\end{center}
+\end{figure}
 
-At the end of the full cycle, a visual inspection of the sylgard traces is performed in order to ensure the quality of the encapsulation; in case of defects, the encapsulation procedure is repeated taking the reference positions in agreement with the regions that are not fully sylgard-covered. 
+After the sylgard deposition step, the syringe is removed from the holder and the gantry head goes back to the home position. The work at the gantry table ends with the generation and publication of the encapsulation session report (see Figure \ref{fig:potting_report}).   
 
-Later, the plates with the encapsulated modules are transferred into the curing oven where they are submitted to a thermal cycle keeping them at 50 $^o$C degrees for one hour. The curing procedure is not included in the encapsulation routine and no details are provided about it in this document. Figure \ref{fig:potted_module} shows a picture of an encapsulation test using a plain HDI glued on a glass slide; also, pictures of an encapsulated module confirming the quality of the encapsulation.  
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=\textwidth]{pixel/potting_report}
+ \caption[Encapsulation session report.]{Encapsulation session report.}\label{fig:potting_report}
+\end{center}
+\end{figure}
+
+At the end of the full cycle, a visual inspection of the sylgard traces is performed in order to ensure the quality of the encapsulation; in case of defects, the encapsulation procedure is repeated taking the reference positions in agreement with the regions that are not fully sylgard-covered. Several videos showing the encapsulation routine in action can be found in Reference\cite{jmonroy_channel}.
 
 \begin{figure}[h]
 \begin{center}
@@ -697,13 +709,27 @@ Later, the plates with the encapsulated modules are transferred into the curing 
 \end{center}
 \end{figure}
 
+Later, the plates with the encapsulated modules are transferred into the curing oven where they are submitted to a thermal cycle keeping them at 50 $^o$C degrees for one hour. The curing procedure is not included in the encapsulation routine and no details are provided about it in this document. Figure \ref{fig:potted_module} shows a picture of an encapsulation test using a plain HDI glued on a glass slide; also, pictures of an encapsulated module confirming the quality of the encapsulation.  
+
 The module assembly sites were also responsible for the testing and characterization of the assembled pixel modules; therefore, modules were tested at room temperature ($\sim$ 17 $^o$C) while monitoring ROC
-digital and analog currents. The very last step in the production line was the shipment to the $x-rays$ characterization site located at University of Kansas.  
+digital and analog currents. The very last step in the production line was the shipment to the $X-rays$ characterization site located at University of Kansas. Figure \ref{fig:module_in_carrier} shows a module in the carrier ready to be shipped; a plastic lid, not showed, was used to fully cover the module.       
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{pixel/module_in_carrier}
+ \caption[Module in carrier.]{Module in carrier. A plastic lid was used to fully cover the module.}\label{fig:module_in_carrier}
+\end{center}
+\end{figure}
 
 \subsection{The FPix module production yields}
 
-%% \begin{figure}[!h]
-%%   \centering
-%%   \includegraphics[scale=0.25]{cms}
-%%   \caption {ref:  }\label{cms}
-%% \end{figure}
+Fugure \ref{fig:mod_ass_time} shows the module assembly over time for both assembly sites and for UNL; in total 1224 were assembled while the UNL production was 555 modules.     
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{pixel/mod_ass_time}
+  \includegraphics[width=0.8\textwidth]{pixel/mod_ass_unl}
+ \caption[Module assembly over time.]{Module assembly over time for both assembly sites(top) and for UNL (bottom).}\label{fig:module_in_carrier}
+\end{center}
+\end{figure}
