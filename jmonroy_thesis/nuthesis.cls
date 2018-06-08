@@ -129,6 +129,7 @@
 \ProcessOptions
 \LoadClass[12pt,oneside]{memoir}
 \RequirePackage[letterpaper,margin=1in,includehead,nofoot]{geometry}
+%\RequirePackage[letterpaper,left=1in,right=1in,top=1in,bottom=1in,includehead,nofoot]{geometry}
 \makepagestyle{nu@pagestyle}
 \makeoddhead{nu@pagestyle}%
   {}{}{\normalfont\thepage}
@@ -153,6 +154,7 @@
 \renewcommand{\maketitle}{%
 \begin{center}%
 \MakeUppercase{\thetitle}\\[1\baselineskip]
+%\thetitle\\[1\baselineskip]
 \singlespacing
 by\\[2\baselineskip]
 \theauthor\\[4\baselineskip]

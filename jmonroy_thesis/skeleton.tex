@@ -10,14 +10,13 @@
 
 
 \documentclass[print]{nuthesis}
-\usepackage{mathptmx}
+%\usepackage{mathptmx} % times new roman
 \usepackage{graphicx}
 \graphicspath{ {nuthesis/images/} }
 \usepackage{times}
 \usepackage{epstopdf}
 \usepackage{amsmath}
 %\usepackage{program}
-%\usepackage{amssymb}
 %\usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -35,7 +34,6 @@
 \usepackage{hyperref}
 \usepackage{amssymb}
 %\usepackage[pdftex]{color,graphicx}
-%\usepackage{epstopdf}
 \usepackage{color} %Paquete para escribir letras en color
 %\usepackage[pdftex]{hyperref}
 %\usepackage[dvips]{graphicx}
@@ -48,11 +46,8 @@
 %\usepackage{cite}
 %\usepackage[noadjust]{cite}
 \usepackage{pifont}
-%\usepackage{amssymb}
 \usepackage{multirow}
 
-
-%\usepackage{titlesec}
 \usepackage{xspace}
 
 \usepackage{lmodern}
@@ -123,13 +118,14 @@
 
 
 \setcounter{secnumdepth}{4}
-%% \titleformat{\chapter}[display]
-%%             {\normalfont%
-%%               \LARGE % %change this size to your needs for the first line
-%%               \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
-%%               \LARGE %change this size to your needs for the second line
-%%             }
 
+%\renewcommand*{\chapnumfont}{\normalfont\Large\bfseries\rmfamily}
+%\renewcommand*{\chaptitlefont}{\normalfont\Large\scshape\bfseries\rmfamily}
+
+\chapterstyle{bianchi}
+\renewcommand*{\chapnamefont}{\normalfont\large\rmfamily\scshape}
+\renewcommand*{\chapnumfont}{\normalfont\Large}
+\renewcommand*{\chaptitlefont}{\normalfont\Large\rmfamily}
 
 \addto\captionsenglish{% Replace "english" with the language you use
   \renewcommand{\contentsname}%
@@ -147,7 +143,7 @@
 
 \title{Search for production of a Higgs boson and a single top quark in multilepton final states in \MakeLowercase{pp} collisions at $\sqrt{\MakeLowercase{s}}=13$ T\MakeLowercase{e}V.}
 \author{Jose Andres Monroy Monta{\~n}ez}
-\adviser{Kenneth Bloom and Aaron Dominguez}
+\adviser{Professors Kenneth Bloom and Aaron Dominguez}
 \adviserAbstract{Kenneth Bloom and Aaron Dominguez}
 \major{Physics and Astronomy}
 \degreemonth{July}
@@ -182,11 +178,11 @@
 %% \end{copyrightpage}
 
 %% Optional
-%% \begin{dedication}
-%% \end{dedication}
+\begin{dedication}
+\end{dedication}
 
 %% Optional
-%\begin{acknowledgments}
+\begin{acknowledgments}
 %colleauges: Jianping Zeng, Lina Yu, Shruti Daggumati, Yanfu Zhou. In addition, I
 %would also thank Professors Gordon Scholz and Rodrigo Cantarero to encourage me
 %finishing this project.
@@ -207,7 +203,7 @@
 %policies of the Environmental Protection Agency, no does mention of trade names
 %or commercial products constitute endorsement or recommendation for use.
 
-%\end{acknowledgments}
+\end{acknowledgments}
 
 %% Optional
 %% \begin{grantinfo}
@@ -234,12 +230,12 @@
 %%\3. 3D reconstruction
 %%\4. Hyperspectra data cube mining
 
-%\input{nuthesis/sections/Intro.tex}
-%\input{nuthesis/sections/Theory.tex}
-%\input{nuthesis/sections/CMS.tex}
-%\input{nuthesis/sections/gensimreco.tex}
-%\input{nuthesis/sections/stat.tex}
-%\input{nuthesis/sections/Analysis.tex}
+\input{nuthesis/sections/Introduction.tex}
+\input{nuthesis/sections/Theory.tex}
+\input{nuthesis/sections/CMS.tex}
+\input{nuthesis/sections/gensimreco.tex}
+\input{nuthesis/sections/stat.tex}
+\input{nuthesis/sections/Analysis.tex}
 \input{nuthesis/sections/FPix.tex}
 \input{nuthesis/sections/Conclusions.tex}
 %%\input{nuthesis/sections/Future.tex}
@@ -248,13 +244,13 @@
 
 %% Start the correct formatting for the appendices
 \appendix
-%\input{nuthesis/sections/datasets.tex}
-%\input{nuthesis/sections/bdt_plots_apendix.tex}
-%\input{nuthesis/sections/ad_binning.tex}
-%\input{nuthesis/sections/bdtctcv_apendix.tex}
-%\input{nuthesis/sections/overlap.tex}
-%\input{nuthesis/sections/forward_jet_model.tex}
-%\input{nuthesis/sections/xsbrscalings.tex}
+\input{nuthesis/sections/datasets.tex}
+\input{nuthesis/sections/bdt_plots_apendix.tex}
+\input{nuthesis/sections/ad_binning.tex}
+\input{nuthesis/sections/bdtctcv_apendix.tex}
+\input{nuthesis/sections/overlap.tex}
+\input{nuthesis/sections/forward_jet_model.tex}
+\input{nuthesis/sections/xsbrscalings.tex}
 
 %% Appendices go here (if you have them)
 
