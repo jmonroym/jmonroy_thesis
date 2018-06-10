@@ -153,13 +153,13 @@ In addition, variables correlations play an important role for some MVA methods 
   \caption[BDT output example.]{Left: Output distributions for the gradient boosted decision tree (BDTG) classifier using a sample of signal (\pp $\to$ \tHq) and background (\pp $\to$ \ttbar) events. Right: Background rejection vs signal efficiency (ROC curves) for various MVA classifiers running over the same sample used to produce the plot on the left.}\label{fig:bdt_output}
 \end{figure}
 
-The left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal (\pp $\to$ \tHq) and background (\pp $\to$ \ttbar) events; this plot is the equivalent to the one showed in Figure \ref{fig:scalar_test}. A forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. The BDTG classifier offers a good separation power. There is a small overtraining in the signal distribution, while the background distribution is very well predicted which might indicate that the sample is composed of more background than signal events.
+The left side of figure \ref{fig:bdt_output} shows the BDT output distributions for signal (\pp $\to$ \tHq) and background (\pp $\to$ \ttbar) events; this plot is the equivalent to the one shown in Figure \ref{fig:scalar_test}. A forest with 800 trees, maximum depth per tree = 3, and gradient boosting have been used as training parameters. The BDTG classifier offers a good separation power. There is a small overtraining in the signal distribution, while the background distribution is very well predicted which might indicate that the sample is composed of more background than signal events.
 
-The right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms running over the same MC sample; these curves are known as ROC curves and give an indication of the performance of the classifier. In this particular example, the best performance is achieved with the BDTG classifier (BDTA\_GRAD), which motivate its use in this thesis.         
+The right side of figure \ref{fig:bdt_output} shows the background rejection vs signal efficiency curves for several combinations of MVA classifiers-boosting algorithms running over the same MC sample; these curves are known as ROC curves and give an indication of the performance of the classifier. In this particular example, the best performance is achieved with the BDTG classifier (BDTA\_GRAD), which motivated its use in this thesis and thus no other method is described; for other analyses, the performance might be better for a different method, and then a careful choice and optimization of the method is necessary.           
 
 \section{Statistical inference}
 
-Once events are classified, the next step consists of finding the parameters that define the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events respectively. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these \ti{unknown parameters} and their uncertainties from the experimental data is called \ti{inference}.     
+Once events are classified, the likelihood functions $f(\textbf{x}|s), f(\textbf{x}|b)$ for signal and background events are parametrized but the parameters that characterize them are still unknown, therefore, the next step consists of finding those parameters. In general, likelihood functions depend not only on the measurements but also on parameters ($\theta_m$) that define their shapes; the process of estimating these \ti{unknown parameters} and their uncertainties from the experimental data is called \ti{inference}.     
 
 The statistical inference tools used in this analysis are implemented in the RooFit toolkit \cite {roofit} and COMBINE package \cite{combine} included in the CMSSW software framework. 
 
@@ -236,7 +236,9 @@ The expected probability density function (p.d.f) $f({t_r|r,\bm{\theta}})$ of th
 p_r=\int_{t_{r,obs}}^\infty f(t'_r|r, \bm{\theta}) dt'_r,
 \eeqn
 
-\noindent thus, $p_r < 0.05$ means that, for that particular value of $r$, $H_1$ could be excluded at 95\% Confidence Level (CL). The corresponding background-only p-value is given by
+\noindent thus, $p_r < 0.05$ means that, for that particular value of $r$, $H_1$ could be excluded at 95\% Confidence Level (CL), \ie, if more measurements are taken, 95\% of them will be in agreement with the $H_0$ hypothesis; therefore, the CL is a measure of the reliability of a result. Other way to express the CL meaning is by saying that 95\% confidence level means that if the measurements is repeated, the chance to get the same result is 95\%.   
+
+The corresponding background-only p-value is given by
 
 \begin{figure}[!h]
   \centering
@@ -248,7 +250,7 @@ p_r=\int_{t_{r,obs}}^\infty f(t'_r|r, \bm{\theta}) dt'_r,
 1-p_b=\int_{t_{r,obs}}^\infty f(t'_r|0,\bm{\theta}) dt'_r,
 \eeqn
 
-If the $t_r$ p.d.f.s for both hypotheses are well separated, as shown in the top side of Figure \ref{fig:t_r2}, the experiment is sensitive to the presence of signal in the sample. If the signal presence is small, both p.d.f.s will be largely overlapped (bottom of Figure \ref{fig: t_r2}) and either the signal hypothesis could be rejected with not enough justification because the experiment is not sensitive to the signal or a fluctuation of the background could be misinterpreted as presence of signal with the corresponding rejection of the background-only hypothesis. These issues are corrected by using the modified p-value \cite{read}
+If the $t_r$ p.d.f.s for both hypotheses are well separated, as shown in the top side of Figure \ref{fig:t_r2}, the experiment is sensitive to the presence of signal in the sample. If the signal presence is small, both p.d.f.s will be largely overlapped (bottom of Figure \ref{fig:t_r2}) and either the signal hypothesis could be rejected with not enough justification because the experiment is not sensitive to the signal or a fluctuation of the background could be misinterpreted as presence of signal with the corresponding rejection of the background-only hypothesis. These issues are corrected by using the modified p-value \cite{read}
 
 \beqn
 p'_r= \frac{p_r}{1-p_b} \equiv CL_s.\label{eqn:cls}
@@ -256,7 +258,7 @@ p'_r= \frac{p_r}{1-p_b} \equiv CL_s.\label{eqn:cls}
 
 If $H_1$ is true, then $p_b$ is small, $CL_s\simeq p_r$ and $H_0$ is rejected; if there is large overlap and a statistical fluctuation causes that $p_b$ is large, then both numerator and denominator in Eqn. \ref{eqn:cls} become small but $CL_s$ would allow the rejection of $H_1$ even if there is poor sensitivity to signal.     
 
-The upper limit of the parameter of interest $r^{up}$ is determined by excluding the range of values of $r$ for which $CL_s(r,\bm{\theta})$ is lower than the confidence level desired, normally 90\% or 95\%, e.g, scanning over $r$ and finding the value for which $p_r^{'up}=0.05$. The expected upper limit can be calculated using pseudo-experiments based on the background-only hypothesis and obtaining a distribution for $r^{up}_{ps}$; the median of that distribution corresponds to the expected upper limit, while the $\pm 1\sigma$ and $\pm2\sigma$ deviations correspond to the values of the distribution that defines the 68\% and 95\% of the area under the distribution centered in the median. It is usual to present all the information about the expected and observed limits in the so-called \ti{Brazilian-flag plot} as the one showed in Figure \ref{fig:hgg}. The solid line represent the observed $CL_s$  
+The upper limit of the parameter of interest $r^{up}$ is determined by excluding the range of values of $r$ for which $CL_s(r,\bm{\theta})$ is lower than the confidence level desired, normally 90\% or 95\%, e.g, scanning over $r$ and finding the value for which $p_r^{'up}=0.05$. The expected upper limit can be calculated using pseudo-experiments based on the background-only hypothesis and obtaining a distribution for $r^{up}_{ps}$; the median of that distribution corresponds to the expected upper limit, while the $\pm 1\sigma$ and $\pm2\sigma$ deviations correspond to the values of the distribution that defines the 68\% and 95\% of the area under the distribution centered in the median. It is usual to present all the information about the expected and observed limits in the so-called \ti{Brazilian-flag plot} as the one shown in Figure \ref{fig:hgg}. The solid line represent the observed $CL_s$  
 
 \begin{figure}[!h]
   \centering
@@ -266,8 +268,8 @@ The upper limit of the parameter of interest $r^{up}$ is determined by excluding
 
 \section{Asymptotic limits}
 
-As said before, the complexity of the likelihood functions, the construction of test statistics, and the calculation of the limits and their uncertainties is not always manageable and requires extensive computational resources; in order to overcome those issues, asymptotic approximations for likelihood-based test statistics, like the ones described in previous sections, have been developed \cite{wald,asymptotic} using Wilks' theorem. Asymptotic approximations replace the construction of the test statistics p.d.f.s using MC pseudo-experiments, with the approximate calculation of the test statistics p.d.f.s by employing the so-called \ti{Asimov dataset}.
+As said before, the complexity of the likelihood functions, the construction of test statistics, and the calculation of the limits and their uncertainties is not always manageable and requires extensive computational resources; in order to overcome those issues, asymptotic approximations for likelihood-based test statistics, like the ones described in previous sections, have been developed \cite{wald,asymptotic} using Wilks's theorem. Asymptotic approximations replace the construction of the test statistic p.d.f.s using MC pseudo-experiments with the approximate calculation of the test statistic p.d.f.s by employing the so-called \ti{Asimov dataset}.
 
-The Asimov dataset is defined as the dataset that produce the true values of the nuisance parameters when it is used to evaluate the estimators for all the parameters; it is obtained by setting the values of the variables in the dataset to their expected values \cite{asymptotic}.
+The Asimov dataset is defined as the dataset that produces the true values of the nuisance parameters when it is used to evaluate the estimators for all the parameters; it is obtained by setting the values of the variables in the dataset to their expected values \cite{asymptotic}.
 
 Limits calculated by using the asymptotic approximation and the Asimov dataset are know as \ti{asymptotic limits}.

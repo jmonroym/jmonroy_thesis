@@ -2,22 +2,24 @@
 \hyphenation{Colli-sions}
 \hyphenation{Single}
 %______________________ Analysis ______________________
-\chapter[Search for production of a Higgs boson and a single top quark]{Search for production of a Higgs boson and a single top quark in multilepton final states in pp collisions at $\sqrt{s}=13$ TeV}\label{ch:analysis}
+\chapter[The inverted top-Higgs coupling]{The inverted top-Higgs coupling}\label{ch:analysis}
 
 %______________________ INTRODUCCION ______________________
 \section{Introduction}\label{sec:Intro_analysis}
 
-The Higgs boson discovery, supported on experimental observations and theoretical predictions made about the SM, gives the clue of the way in that elementary particles acquire mass through the Higgs mechanism; therefore, knowing the Higgs mass, the Higgs-vector boson and Higgs-fermion couplings can be tested. In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are limited in sensitivity to measure the square of the coupling. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also, to the CP phase of the Higgs couplings.
+Once the mass of the Higgs boson has been determined experimentally, the couplings to fermions and vector bosons are completely specified by the standard model. With the Higgs now observed and its mass measured \cite{h_mass}, the coupling strengths can now be measured and compared to the predictions of the model.
+
+In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are sensitive to the strength of the coupling. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also to the CP mixing phase of the Higgs couplings.
 
 This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, with an integrated luminosity of 35.9\fbinv, is used.
 
-As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is affected by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred to as \tH\ channel. A third contribution comes from \ttH process. The purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes in the SM under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1). The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
+As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is affected by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such a deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred to as the \tH\ channel. In order to provide the analysis with sensitivity to the strength of the coupling, the \ttH process is included as part of the signal; thus, the purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes in the SM under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1) also known as the \ti{Inverted Top Coupling} (ITC) scenario. The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
 
-Constraints on the sign of the Higgs-top coupling ($y_t$) have been derived from the decay rate of Higgs boson to photon pairs \cite{biswas} and from the cross section for associated production of Higgs and Z bosons via gluon fusion \cite{hespel}, with recent results disfavoring negative signs of the coupling \cite{cms_ht_couplings,comb_ht_couplings,diboson}, although the negative sign coupling have not been completely excluded.
+Constraints on the sign of the Higgs-top coupling ($y_t$) have been derived from the decay rate of Higgs boson to photon pairs \cite{biswas} and from the cross section for associated production of Higgs and Z bosons via gluon fusion \cite{hespel}, with recent results disfavoring negative signs of the coupling \cite{cms_ht_couplings,comb_ht_couplings,diboson}, although the negative sign coupling has not been completely excluded.
 
-The analysis presented here, expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}; it also complements searches in $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
+The analysis presented here expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}, by adding new analysis tools like MVA methods and yield interpretations; it also complements searches in $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
 
-The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then described; after, the background predictions, the signal extraction, the statistical treatment of the selected events and the discussion of the systematic uncertainties are described. The final section presents the results for the exclusion limits as a function of the ratio of \Ct and the dimensionless modifier of the Higgs-vector boson coupling \CV.  
+The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then described; after, the background predictions, the signal extraction, the statistical treatment of the selected events and the discussion of the systematic uncertainties are described. The final section presents the results for the exclusion limits as a function of the ratio of \Ct and the modifier of the Higgs-vector boson coupling \CV.  
 
 \begin{figure}[!h]
 \begin{center}
@@ -27,11 +29,11 @@ The first sections present the characteristic \tHq signature as well as the expe
 \label{fig:workflow}
 \end{figure}
 
-The analysis is designed to efficiently identify and select prompt leptons from on-shell W and Z boson decays and to reject non-prompt leptons from $b$ quark decays and spurious lepton signatures from hadronic jets. Events are then selected in the $2lss$ and $3l$ channels, and are required to contain hadronic jets, some of which must be consistent with $b$ quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated multivariate discriminants, trained to separate the \tHq signal from the two dominant backgrounds, in all categories. The fit result is then used to set an upper limit on the combined \ttH + \tH production cross section, as a function of the relative coupling strengths of Higgs-top quark and Higgs-Vector boson. Figure \ref{fig:workflow} shows an schematic overview of the analysis strategy workflow. 
+The analysis is designed to efficiently identify and select prompt leptons from on-shell W and Z boson decays and to reject non-prompt leptons from $b$ quark decays and spurious lepton signatures from hadronic jets. Events are then selected in the $2lss$ and $3l$ channels, and are required to contain hadronic jets, some of which must be consistent with $b$ quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated multivariate discriminants, trained to separate the \tHq signal from the two dominant backgrounds. The fit result is then used to set an upper limit on the combined \ttH + \tH\ production cross section as a function of the relative coupling strengths of Higgs-top quark and Higgs-Vector boson. Figure \ref{fig:workflow} shows an schematic overview of the analysis strategy workflow. 
 
 With respect to the 8 TeV analysis, the object selections have been adjusted for the updated LHC running conditions at 13 TeV, the lepton identification has been improved, and more powerful multivariate analysis techniques are used for the signal extraction.
 
-The analysis has been made public by CMS as a Physics Analysis Summary \cite{CMS_PAS_HIG_17-005} combining the result for the three lepton and two lepton same-sign channels; the content present in this chapter is based on that document and on References ~\cite{CMS_AN_2016-211, CMS_AN_2017-029} unless other Reference is stated. Currently, an effort to turn the analysis into a paper combining the multilepton and $H \to b\bar{b}$ is ongoing. 
+The analysis has been made public by CMS as a Physics Analysis Summary \cite{CMS_PAS_HIG_17-005} combining the result for the three lepton and two lepton same-sign channels; the content present in this chapter is based on that document and on References ~\cite{CMS_AN_2016-211, CMS_AN_2017-029} unless another reference is stated. Currently, an effort to turn the analysis into a paper combining the multilepton and $H \to b\bar{b}$ results is ongoing. 
 
 %% dont forget to describe explicitely the analysis strategy here or later but do it
 
@@ -46,20 +48,22 @@ The analysis has been made public by CMS as a Physics Analysis Summary \cite{CMS
 \label{fig:thq_sign}
 \end{figure}
 
-In order to select events of \tHq process, its features are translated into a set of selection rules; Figure \ref{fig:thq_sign} shows the Feynman diagram and a schematic view of the \tHq process from the \pp collision to the final state configuration. A single top quark is produced accompanied by a light quark, denoted as q; this light quark is produced predominantly in the forward region of the detector. The Higgs boson can be either emitted by the exchanged W boson or directly by the singly produced top quark.
+In order to select events of \tHq process, its features are translated into a set of selection rules; Figure \ref{fig:thq_sign} shows the Feynman diagram and a schematic view of the \tHq process from the \pp collision (at partonic level) to the final state configuration. A single top quark is produced accompanied by a light quark, denoted as q; this light quark is produced predominantly in the forward region of the detector. The Higgs boson can be either emitted by the exchanged W boson or directly by the singly produced top quark.
 
-Due to their high masses/short lifetimes, top quark and Higgs boson decay after their production within the detector. The Higgs boson is required to decay into a W boson pair\footnote{ZZ and $\tau\tau$ decays are also include in the analysis but they are not separately reconstructed}. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay leptonically either all the three in the $3l$ channel or the pair with equal electrical charge in the $2lss$ channel case; $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
+Due to their high masses/short lifetimes, the top quark and Higgs boson decay within the detector after their production. The Higgs boson is required to decay into a W boson pair. The top quark almost always decays into a bottom quark and a W boson, as encoded in the CMK matrix. The W bosons are required to decay leptonically either all the three in the $3l$ channel or the pair with equal electrical charge in the $2lss$ channel case; $\tau$ leptons are not reconstructed separately and only their leptonic decays into either electrons or muons are considered in this analysis.
 
-In summary, the signal process is characterized by a the final state with
+In summary, the signal process is characterized by the final state with
 
 \begin{itemize}
 \item one light-flavored forward jet,
 \item one central b-jet,
-\item $2lss$ channel $\to$ two leptons of the same sign, two neutrinos and two light (often soft) jets,
-\item $3l$ channel $\to$ three leptons, three neutrinos and no central light-flavored jets,
+\item $2lss$ channel $\to$ two leptons of the same sign, two neutrinos and two, often soft, jets,
+\item $3l$ channel $\to$ three leptons, three neutrinos and no central light-flavored jets.
 \end{itemize}
 
 The presence of neutrinos is inferred from the presence of MET.
+
+Note that, $H \to ZZ$ and $H\to \tau\tau$ decays can produce the same final state as for $H\to WW$ decay; therefore, they are also include in the analysis but they are not separately reconstructed.
 
 %---------------------------------bg processes
 
@@ -69,17 +73,17 @@ The background processes are those that can mimic the signal signature or at lea
 
 \begin{itemize}
 
-\item irreducible backgrounds: where genuine prompt leptons are produced in on-shell W and Z boson decays; they can be reliably estimated directly from MC simulated events, using higher-order cross sections or data control regions for the overall normalization.
+\item irreducible backgrounds: where genuine prompt leptons are produced in on-shell W and Z boson decays; they can be reliably estimated directly from MC simulated events, using higher-order cross sections (NLO or NNLO or higher as available) or data control regions for the overall normalization.
 
-\item reducible backgrounds: where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet; genuine leptons from heavy flavor decays and misreconstructed jets, also known as \ti{mis-ID leptons} are considered non-prompt leptons or or \ti{fake leptons} as well as electrons from photon conversions. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but evaluation the correlation of those hits with nearby jets could be a way of removing them. The misassignment of electron charge in processes like \ttbar or Drell-Yan, represents an additional source of background, but it is relevant only for the $2lss$ channel. Reducible backgrounds are not well predicted by simulation, hence, they are estimated using data-driven methods. 
+\item reducible backgrounds: where at least one of the leptons is \ti{non-prompt}, \ie, produced within a hadronic jet; genuine leptons from heavy flavor decays and misreconstructed jets, also known as \ti{mis-ID leptons} are considered non-prompt leptons or or \ti{fake leptons} as well as electrons from photon conversions. These non-prompt leptons leave tracks and hits in the detection systems as would a prompt lepton, but evaluation of the correlation of those hits with nearby jets is a way of removing them. The misassignment of electron charge in processes like \ttbar or Drell-Yan, represents an additional source of background, but it is relevant only for the $2lss$ channel. Reducible backgrounds are not well predicted by simulation, hence, they are estimated using data-driven methods. 
 \end{itemize}
 
-The main sources of background events for \tHq process are \ttbar process and \ttV $(V=W,Z,\gamma)$ processes. Figure \ref{fig:ttbar_sign} shows the signature for \ttbar and \ttW processes.     
+The main sources of background events for \tHq process are the \ttbar process and \ttV $(V=W,Z,\gamma)$ processes. Figure \ref{fig:ttbar_sign} shows the signature for \ttbar and \ttW processes.     
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{ttbar_signature}
-\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW (right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also showed. The \ttbar process signature is very similar to that of the signal process with one fake lepton and non forward activity. The \ttW\ process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
+\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW (right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also shown. The \ttbar process signature is very similar to that of the signal process with one fake lepton and no forward activity. The \ttW\ process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
 \label{fig:ttbar_sign}
 \end{figure}
 
@@ -93,11 +97,17 @@ On the side of the reducible backgrounds, the largest contribution comes from th
 
 The data set used in this analysis was collected by the CMS experiment during 2016, while running at $\sqrt{s}=13$ TeV, and corresponds to a total integrated luminosity of 35.9 \fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples; that corresponds to the \verb|23Sep2016 (Run B to G)| and \verb|PromptReco (Run H)| versions of the datasets.
 
-Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The certified luminosity sections are selected using the golden JSON file defined by the CMS experiment \cite{json}.
+Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The selected sample has contributions from $H\to WW (\sim 75\%), ZZ (\sim 25\%), \tau\tau (\sim 5\%)$.
+
+The quality of the data sets is evaluated by considering any observation reported from the CMS control room where the status of each detection system is monitored; thus, if ,for instance, an unusual behavior in the solenoid is reported, the data sets produced with the data taken at that are accordingly flagged. In fact, information about alignment, calibration, luminosity, detectors status, among others is used to qualify the data sets. Part of the qualification is make online (during the data taking) while further qualifications are preformed offline when the data are stored and processed at the Tier-0 and Tier-1 data processing centers.
+
+Usually, during the offline qualification, experts from the sub detection systems teams check the data quality based on the performance of their subsystems by looking at histograms specifically tailored to catch relevant problems; then, a single boolean flag is assigned to describe the final quality result. Data are defined as \ti{good for physics analysis} if all subdetectors, trigger and physics object (tracking, electron, muon, gamma, jet and MET) show the expected performance. A complete description of data certification strategy is documented in Reference \cite{dqm}. 
+
+Qualification results include the information about the luminosity delivered by LHC, the luminosity recorded by CMS and the luminosity certified as Good for physics analysis. In particular, the \ti{luminosity section} which is a sub-section of a run during which the instantaneous luminosity is unchanging; is used as the unit of accounting for integrated luminosity, hence, production data files contain one or many whole luminosity sections. The certified luminosity sections are listed in a JSON formatted file\footnote{JSON stands for JavaScript Object Notation} known as the \ti{golden JSON file} defined by the CMS experiment \cite{json}.
 
 \subsection{Triggers}
 
-The events considered are those online-reconstructed events triggered by one, two, or three leptons. Single-lepton triggers are included in order to boost the acceptance of events where the \pt of the sub-leading lepton falls below the threshold of the double-lepton triggers. The trigger efficiency is increased by including double-lepton triggers in the $3l$ category, and single-lepton triggers in all categories; it is possible given the logical ``or'' of the trigger decisions of all the individual triggers in a given category. Table ~\ref{tab:triggers} shows the lowest-threshold non-prescaled triggers present in the High-Level Trigger (HLT) menus for both Monte-Carlo and data in 2016.
+The events considered are those online-reconstructed events triggered by one, two, or three leptons. Single-lepton triggers are included in order to boost the acceptance of events where the \pt of the sub-leading lepton falls below the threshold of the double-lepton triggers. The trigger efficiency is increased by including double-lepton triggers in the $3l$ category, and single-lepton triggers in all categories; it is possible given the logical ``or'' of the trigger decisions of all the individual triggers in a given category. Table ~\ref{tab:triggers} shows the lowest-threshold non-prescaled triggers present in the HLT menus for both Monte Carlo and data in 2016.
 
 \subsubsection*{Trigger efficiency scale factors}
 
@@ -107,7 +117,7 @@ The events considered are those online-reconstructed events triggered by one, tw
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_uu_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_uu_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_uu_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the same-sign $\mu\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $\mu\mu$ category, as as a function of the \pt (top) and  \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\caption[Trigger efficiency for the same-sign $\mu\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $\mu\mu$ category, as a function of the \pt (top) and \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right). The lower panes show the data/MC ratio. \cite{CMS_AN_2017-029}.}
 \label{fig:trigeffsmumu}
 \end{figure}
 
@@ -117,7 +127,7 @@ The events considered are those online-reconstructed events triggered by one, tw
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_eu_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_eu_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category as as a function of the \pt (top) and \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\caption[Trigger efficiency for the $e\mu$ category]{Comparison between data an MC trigger efficiencies in the same-sign $e\mu$ category as a function of the \pt (top) and \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right). The lower panes show the data/MC ratio. \cite{CMS_AN_2017-029}.}
 \label{fig:trigeffsemu}
 \end{figure}
 
@@ -137,13 +147,13 @@ The events considered are those online-reconstructed events triggered by one, tw
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_pt_3l_ARCv2_change_3l_pt_ranges.pdf} \\
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep1_eta_3l_ARCv2_change_3l_pt_ranges.pdf}
 \includegraphics[width=0.49\textwidth]{plots_trigger/1D_eff_lep2_eta_3l_ARCv2_change_3l_pt_ranges.pdf}
-\caption[Trigger efficiency for the $3l$ category]{Comparison between data an MC trigger efficiencies in the $3l$ category, as as a function of the \pt (top) and \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right) \cite{CMS_AN_2017-029}.}
+\caption[Trigger efficiency for the $3l$ category]{Comparison between data an MC trigger efficiencies in the $3l$ category, as a function of the \pt (top) and \etac (bottom) of the leading lepton (left) and the sub-leading lepton (right). The lower panes show the data/MC ratio. \cite{CMS_AN_2017-029}.}
 \label{fig:trigeffs3l}
 \end{figure}
 
-Trigger efficiency describes the ability of events to pass the trigger requirements. It is measured in simulated events using generator information given that there is no trigger bias with the MC sample. Measuring the trigger efficiency in data requires a more elaborated procedure; first, select a set of events collected by a trigger that is uncorrelated with the lepton triggers such that the selected events form an unbiased sample. In this analysis, that uncorrelated trigger is a MET trigger. Second step is looking for candidate events with exactly two good leptons (exactly three good leptons for the $3l$ channel). Finally,  measure the efficiency for the candidate events to pass the logical ``or'' of triggers being considered in a given event category as defined in Table ~\ref{tab:triggers}.
+Trigger efficiency describes the probability of events to pass the trigger requirements. It is measured in simulated events using generator information given that there is no trigger bias with the MC sample. Measuring the trigger efficiency in data requires a more elaborate procedure; first, select a set of events collected by a trigger that is uncorrelated with the lepton triggers such that the selected events form an unbiased sample. In this analysis, that uncorrelated trigger is a MET trigger. Second step is looking for candidate events with exactly two leptons (exactly three leptons for the $3l$ channel). Finally,  measure the efficiency for the candidate events to pass the logical ``or'' of triggers being considered in a given event category as defined in Table ~\ref{tab:triggers}.
 
-Comparisons between the data and MC efficiencies for each category, showed in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
+Comparisons between the data and MC efficiencies for each category, shown in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
 
 Applied flat scale factors in each category are shown in Table ~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
 \begin{table}
@@ -161,7 +171,7 @@ $\mu\mu$ & $1.00 \pm 0.01$ \\
 
 \subsection{MC samples}
 
-Current event generators allow the adjustment of the kinematics of the generated events, based on an event-wise reweighting; in this way, several generation parameters phase spaces can be explored according to the experimental interests. The signal samples used in this analysis were generated in such a way that not only the case \Ct=-1, but an extended range of \Ct and \CV values may be investigated.
+Current event generators allow the adjustment of the kinematics of the generated events, based on an event-wise reweighting; in this way, several generation parameter phase spaces can be explored according to the experimental interests. The signal samples used in this analysis were generated in such a way that not only the ${\Ct=-1}$ case, but an extended range of \Ct and \CV values may be investigated.
 
 \begin{figure}[htp]
 \centering
@@ -171,12 +181,12 @@ Current event generators allow the adjustment of the kinematics of the generated
 \label{fig:ktkv_phase_space}
 \end{figure}
 
-\tHq and \tHW cross section in the \Ct-\CV phase space are shown in Figure \ref{fig:ktkv_phase_space}. As said in section \ref{sec:event_generation}, the \tHq sample was generated using the 4F scheme which provides a better description of the additional $b$ quark from the initial gluon splitting, while the \tHW sample was generated using the 5F scheme in order to remove its interference with \ttH at LO.
+The \tHq and \tHW cross sections in the \Ct-\CV phase space are shown in Figure \ref{fig:ktkv_phase_space}. As said in Section \ref{sec:event_generation}, the \tHq sample was generated using the 4F scheme which provides a better description of the additional $b$ quark from the initial gluon splitting, while the \tHW sample was generated using the 5F scheme in order to remove its interference with \ttH at LO.
 
 
 \subsubsection*{MC signal samples}\label{ssec:mc_signal}
 
-The two signal samples, \tHq\ and \tHW, correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X; they were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.2.2.3), in LO mode at $\sqrt{s}=13$ TeV, and are normalized to NLO cross sections (see Table~\ref{tab:sigsamples}). The Higgs boson is assumed to be SM-like except for the values of its couplings to the top quark and W boson. Each sample was generated with a set of event weights corresponding to 51 different values of (\Ct, \CV) couplings, accessible in terms of LHE event weights as shown in Table ~\ref{tab:reweight}; however, the main interest is the (\Ct=-1,\CV=1) case. 
+The two signal samples, \tHq\ and \tHW, correspond to the \verb|RunIISummer16MiniAODv2| campaign produced with CMSSW\_80X; they were produced with \textsc{MG5\_}a\textsc{MC@NLO} (version 5.2.2.3), in LO mode at $\sqrt{s}=13$ TeV, and are normalized to NLO cross sections (see Table~\ref{tab:sigsamples}). The Higgs boson is assumed to be SM-like except for the values of its couplings to the top quark and W boson. Each sample was generated with a set of event weights corresponding to 51 different values of (\Ct, \CV) couplings, accessible in terms of LHE event weights as shown in Table ~\ref{tab:reweight}; however, the main interest is the $(\Ct=-1,\CV=1)$ case. 
 
 \begin{table}[h]
 \centering \small
@@ -189,7 +199,7 @@ Sample & $\sigma$ [pb] & BF \\ \hline
 \caption[MC signal samples.]{MC signal samples used in this analysis; cross section and branching fraction are also listed ~\cite{THQProdTwiki}.}\label{tab:sigsamples}
 \end{table}
 
-The \ttH sample was produced using \textsc{AMC@NLO} interfaced to \textsc{PYTHIA} 8 for the parton shower, and is scaled to NLO cross sections. The \ttH cross section depends quadratically on \Ct; however, in contrast to the \tHq and tHW samples, the scaling is not performed during the sample generation process but in the analysis code since it was decided to include the \ttH process as a part of the signal in the course of the analysis.     
+The \ttH sample was produced using \textsc{AMC@NLO} interfaced to \textsc{PYTHIA} 8 for the parton shower, and is scaled to NLO cross sections.% The \ttH cross section depends quadratically on \Ct; however, in contrast to the \tHq and \tHW samples, the scaling is not performed during the sample generation process but in the analysis code since it was decided to include the \ttH process as a part of the signal in the course of the analysis.     
 
 % add something about why tth is included as signal and why? if it is not sensitive to kt sign , 
 
@@ -200,25 +210,25 @@ Several MC generators were used to generate the samples of the background proces
 \section{Object Identification}\label{sec:ob_id}
 
 
-In this section, the specific definitions of the physical objects in terms of the reconstruction parameters are presented; thus, the provided details summarize and complement the descriptions presented in previous chapters. The object reconstruction and selection strategy used in this thesis are inherited from the analyses in References \cite{CMS_AN_2016-211,CMS_AN_2017-029}.
+In this section, the specific definitions of the physical objects in terms of the reconstruction parameters are presented; thus, the details provided summarize and complement the descriptions presented in previous chapters. The object reconstruction and selection strategy used in this thesis are inherited from the analyses in References \cite{CMS_AN_2016-211,CMS_AN_2017-029}.
 
 \subsection{Lepton reconstruction and identification}
 
-Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particles; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions. 
+Two types of leptons are defined in this analysis: \ti{signal leptons} are those coming from $W, Z$ and $\tau$ decays which usually are isolated from other particles; \ti{background leptons} are defined as leptons produced in \bjet hadron decays, light-jets misidentification, and photon conversions; they are the same non-prompt leptons defined before. 
 
-The process of reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, hence, the identification variables used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed and described in the following sections \footnote{The studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided}.
+The process of reconstruction and identification of electron and muon candidates was described in chapter\ref{ch:gensimreco}, hence, the identification variables used in order to retain the highest possible efficiency for signal leptons while maximizing the rejection of background leptons are listed and described in the following sections \footnote{The studies performed to optimize the identification are far from the scope of this thesis, therefore, only general descriptions are provided.}.
 
 The identification variables include not only observables related directly to the reconstructed leptons themselves, but also to the clustered energy deposits and charged particles in a cone around the lepton direction (jet-related variables); an initial loose preselection of leptons candidates is performed and then an MVA discriminator, referred to as \ti{lepton MVA} discriminator, is used to distinguish signal leptons from background leptons.
 
 \subsubsection*{Muons}
 
-The Physics Objects Groups (POG) at CMS, are in charge of studying and defining the set of selection criteria applied on the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the strength of the requirements.
+The Physics Objects Groups (POG) at CMS are in charge of studying and defining the set of selection criteria applied in the course of reconstruction and identification of particles. These selection criteria are implemented in the CMS framework in the form of several object identification working points according to the stringency of the requirements.
 
 The muon candidates are reconstructed by combining information from the tracker system and the muon detection system of CMS detector and the POG defined three working points for muon identification \ti{MuonID}\cite{muid};
 
 \begin{itemize}
-\item \ti{POG Loose Muon ID} is a particle identified as a muon by the PF event reconstruction and also reconstructed either as a global-muon or as an arbitrated tracker-muon. This identification criteria is designed to be highly efficient for prompt muons and for muons from heavy and light quark decays; it can be complemented by applying impact parameter cuts in analyses with prompt muon signals.
-\item \ti{POG Medium Muon ID} is a Loose muon with additional track-quality and muon-quality (spatial matching between the individual measurements in the tracker and the muon system) requirements. This identification criteria is designed to be highly efficient in the separation of the muons coming from decay in flight of heavy quarks and muons coming from B meson decays as well as prompt muons. An additional category \ti{MVA Prompt ID} is defined in this identification criteria directed to discriminated muons from B mesons and prompt muons (from W,Z and $\tau$ decays). The Medium ID provides the same fake rate as the Tight Muon ID but a higher efficiency on prompt and B-decays muons.\cite{medium_muon}
+\item \ti{POG Loose Muon ID} is a particle identified as a muon by the PF event reconstruction and also reconstructed either as a global-muon or as an arbitrated tracker-muon. These identification criteria are designed to be highly efficient for prompt muons and for muons from heavy and light quark decays; they can be complemented by applying impact parameter cuts in analyses with prompt muon signals.
+\item \ti{POG Medium Muon ID} is a Loose muon with additional track-quality and muon-quality (spatial matching between the individual measurements in the tracker and the muon system) requirements. These identification criteria are designed to be highly efficient in the identification of the muons coming from decay in flight of heavy quarks so that they can be separated from muons coming from B meson decays as well as prompt muons. An additional category \ti{MVA Prompt ID} is defined in these identification criteria directed to discriminated muons from B mesons and prompt muons (from W,Z and $\tau$ decays). The Medium ID provides the same fake rate as the Tight Muon ID but a higher efficiency on prompt and B-decays muons.\cite{medium_muon}
 \item \ti{POG Tight Muon ID} is a global muon with additional muon-quality requirements Tight Muon ID selects a subset of the PF muons.  
 \end{itemize}
 
@@ -918,7 +928,7 @@ The improvement in the discrimination performance provided by the additional var
 \label{fig:mva12}
 \end{figure}
 
-Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is showed in the bottom right plot of Figure~\ref{fig:mva12}.      
+Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is shown in the bottom right plot of Figure~\ref{fig:mva12}.      
 
 Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Sec.~\ref{sec:binopt}).
 
@@ -1085,7 +1095,7 @@ The impact of the data/MC disagreement for forward jet \etac is observed to redu
 
 \section{Signal model}
 
-It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is showed in Appendix ~\ref{sec:bdtvscvct}.
+It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is shown in Appendix ~\ref{sec:bdtvscvct}.
 
 In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{kcouplings}:
 
@@ -1336,7 +1346,7 @@ The pre-fit distributions of BDTG outputs are shown in Figure~\ref{fig:bdt_outpu
 The expected signal and background shapes for the distribution in the 1D histogram (with ten bins) are fit to the observed data in a maximum likelihood fit, for all three channels simultaneously and separately for the signal shapes for each of the 33 $\Ct/\CV$ coupling configuration points.
 
 The \tH\ and \ttH\ production cross sections and the Higgs decay branching ratios are modified in each point with the Higgs-top (\Ct) and Higgs-vector boson (\CV) coupling strength and the Higgs-tau coupling strength modifier ($\kappa_\tau$) is assumed to be equal to \Ct; % This includes modified branching ratios of $\PH\to\gamma\gamma$, $\PH\to\Z\gamma$, and $\PH\to\Pg\Pg$ with varying \Ct, and an accordingly adjusted overall Higgs decay width. % FIXME?
-the rest of the parameters are assumed to be at the SM predicted values. The combined signal shape is then uniquely defined by the ratio of $\Ct/\CV$. In the fit, the signal components, \tH\ and \ttH, are floated with a common signal strength modifier (defined as the ratio to the expected cross section) to produce a 95\% confidence level (C.L) upper limit on the observed $\tH+\ttH$ cross section times the combined branching ratio of $H\to WW^* + ZZ^* + \tautau$.
+the rest of the parameters are assumed to be at the SM predicted values. The combined signal shape is then uniquely defined by the ratio of $\Ct/\CV$. In the fit, the signal components, \tH\ and \ttH, are floated with a common signal strength modifier (defined as the ratio to the expected cross section) to produce a 95\% C.L. upper limit on the observed $\tH+\ttH$ cross section times the combined branching ratio of $H\to WW^* + ZZ^* + \tautau$.
 
 The post-fit categorized BDTG output distributions obtained in the maximum likelihood fit to extract the limits, are shown in Figure~\ref{fig:postfit}.
 
@@ -1702,7 +1712,7 @@ $\cos (\alpha_{CP})=0$ & 0.469       & 0.279   & [0.195,0.404] & [0.143,0.563]  
 
 The CP-mixing limits are consistent with the limits obtained in the \Ct-\CV analysis as expected; however, in the CP-mixing case it is not possible to exclude any region/value in the $\alpha_{CP}$ phase space. The excess of more than 2$\sigma$ observed in the SM scenario for the background-only expected limit, and that was also observed in the \Ct-\CV analysis, is again reduced to about $1\sigma$ when the SM-like \tH and \ttH signals are included in the calculation of the expectations; however, as said above, the fact that the \ttH sample does not include the CP-mixing weights implies that no conclusive sentence can be stated.
 
-Finally, the best fit values of the combined \tH + \ttH cros sections times the BR as a function of the CP-mixing angle, are showed in Figure~\ref{fig:bf_r}. 
+Finally, the best fit values of the combined \tH + \ttH cros sections times the BR as a function of the CP-mixing angle, are shown in Figure~\ref{fig:bf_r}. 
 
 \begin{figure} [!h]
       \centering
