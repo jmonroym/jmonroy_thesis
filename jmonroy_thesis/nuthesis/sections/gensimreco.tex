@@ -87,7 +87,7 @@ After the full detector simulation, the output events can be directly compared t
 %In contrast to MC samples for which all the particles' information is available from its identity to its mass and energy, recorded events contain the electronic signals, provided by the CMS detection systems, encoding the interaction of physical particles with the detector matter; these electronic signals have to be combined in order to identify these particles and measure their features, \ie, particles have to be \ti{reconstructed} using the signals provided by the detection systems.
 The CMS experiment use the \ti{particle-flow event reconstruction algorithm (PF)} to do the reconstruction of particles produced in \pp collisions. Next sections will present a basic description of the \textit{Elements} used by PF (tracker tracks, energy clusters, and muon tracks), based in the References \cite{particle_flow, particle_flow2} where more detailed descriptions can be found.  
 
-\subsection{Particle-Flow Algorithm.}
+\subsection{Particle-Flow Algorithm.}\label{subsec:particle_flow}
 
 Each of the several sub detection systems of the CMS detector is dedicated to identify an specific type of particles, \ie, photons and electrons are absorbed by the ECAL and their reconstruction is based on ECAL information; hadrons are reconstructed from clusters in the HCAL while muons are reconstructed from hits in the muon chambers. PF is designed to correlate signals from all the detector layers (tracks and energy clusters) in order to reconstruct and identify each final state particle and its properties as sketched in Figure \ref{fig:pf}.
 
@@ -133,7 +133,7 @@ Clusters formed in this way are known as \textit{particle-flow clusters}. With t
 
 \subsubsection*{Electron track reconstruction.}
 
-Although the charged-particle track reconstruction described above works for electrons, they lose a significant fraction of their energy via bremsstrahlung photon radiation before reaching the ECAL; thus, the reconstruction performance depends on the ability to measure also the radiated energy. The reconstruction strategy, in this case, requires information from the tracking system and from the ECAL. Bremsstrahlung photons are emitted at similar \etac values to that of the electron but at different values of \phic; therefore, the radiated energy can be recovered by grouping ECAL clusters in a \etac window over a range of \phic around the electron direction. The group is called ECAL supercluster.
+Although the charged-particle track reconstruction described above works for electrons, they lose a significant fraction of their energy via bremsstrahlung photon radiation before reaching the ECAL; thus, the reconstruction performance depends on the ability to measure also the radiated energy. The reconstruction strategy, in this case, requires information from the tracking system and from the ECAL. Bremsstrahlung photons are emitted at similar \etac values to that of the electron but at different values of \phic; therefore, the radiated energy can be recovered by grouping ECAL clusters in a \etac window over a range of \phic around the electron direction. The group is called ECAL supercluster (SC) .
 
 Electron candidates from the track-seeding and ECAL super clustering are merged into a single collection which is submitted to a full electron tracking fit with a Gaussian-sum filter (GSF) \cite{gsf}. The electron track and its associated ECAL supercluster form a \textit{particle-flow electron}.
 
@@ -149,7 +149,7 @@ Given that the CMS detector is equipped with a muon spectrometer capable to iden
 
 Global muons sharing the same inner track with tracker muons are merged into a single candidate. PF muon identification uses the muon energy deposits in ECAL, HCAL, and HO associated with the muon track to improve the muon identification.
 
-\subsubsection*{Particle identification and reconstruction.}
+\subsubsection*{Particle identification and reconstruction.} \label{subsubsec:part_id_reco}
 
 PF elements are connected by a linker algorithm that tests the connection between any pair of elements; if they are found to be linked, a geometrical distance that quantifies the quality of the link is assigned. Two elements may be linked indirectly through common elements. Linked elements form \textit{PF blocks} and each PF block may contain elements originating in one or more particles. Links can be established between tracks, between calorimeter clusters, and between tracks and calorimeter clusters. The identification and reconstruction start with a PF block and proceed as follows     
 
@@ -159,7 +159,11 @@ PF elements are connected by a linker algorithm that tests the connection betwee
 
   \ti{Non-isolated global muons} are identified using additional selection requirements on the number of track segments in the muon system and energy deposits along the muon track. Muons inside jets are identified with more stringent criteria in isolation and momentum as described in Reference \cite{muon_req}. The PF elements associated with an identified muon are masked from the PF block.  
 
-\item Electrons are identified and reconstructed as described above plus some additional requirements on fourteen variables like the amount of energy radiated, the distance between the extrapolated track position at the ECAL and the position of the associated ECAL supercluster, among others, which are combined in an specialized multivariate analysis strategy that improves the electron identification. Tracks and clusters used to identify and reconstruct electrons are masked in the PF block.  
+\item Electrons are identified and reconstructed as described above plus some additional requirements on fourteen variables like the amount of energy radiated, the distance between the extrapolated track position at the ECAL and the position of the associated ECAL supercluster, among others, which are combined in an specialized multivariate analysis strategy that improves the electron identification.
+
+There are three methods for charge estimation; one is the sign of the curvature of the GSF track; a second method is based on matching a CTF track to a GSF track when at least one hit is shared in the innermost region. In the third method, the vector joining the beam spot and the SC position and the vector joining the beam spot and the first hit of the electron GSF track, are compared; the charge is estimated from the sign of the difference in \phic between these two vector. The electron charge is defined by the sign shared by at least two of the three estimates \cite{mva_eid1}.
+  
+Tracks and clusters used to identify and reconstruct electrons are masked in the PF block.  
   
 \item Isolated photons are identified from ECAL superclusters with \Et larger than 10 GeV, for which the energy deposited at a distance of 0.15, from the supercluster position on the (\etac,\phic) plane, does not exceed 10\% of the supercluster energy; note that this is an isolation requirement. In addition, there must not be links to tracks. Clusters involved in the identification and reconstruction are masked in the PF block.
 
@@ -194,7 +198,7 @@ The concept of collinear safety can also be explained considering a three hard p
 
 It has been determined that IC algorithms are IRC unsafe, and therefore, they have to be replaced by algorithms that not only provide the finite perturbative results from theoretical computations, but also that are not highly dependent on underlying event and pileup effects which leads to significant corrections\cite{coco}.
 
-The sequential recombination algorithms arise as the IRC safe alternative used by the CMS experiment; in particular the anti-$k_t$ algorithm which is a generalization of the previously existing $k_t$ \cite{kt} and Cambridge/Aachen \cite{ac} jet clustering algorithms.
+The sequential recombination algorithms arise as the IRC safe alternative used by the CMS experiment; in particular the anti-$k_t$ algorithm\cite{antikt} which is a generalization of the previously existing $k_t$ \cite{kt} and Cambridge/Aachen \cite{ac} jet clustering algorithms.
 
 The anti-$k_t$ algorithm is used to perform the jet reconstruction by clustering those PF particles within a cone (see Figure \ref{fig:jetcone}); previously, isolated electrons, isolated muons, and charged particles associated with other interaction vertices are excluded from the clustering.  
 
