@@ -690,8 +690,6 @@ As explained in Section \ref{subsec:dt}, a set of discriminating variables are g
 \centering
 \begin{tabular}{lp{10cm}}\hline
 Variable name        & Description\\ \hline
-nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
-nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
 MaxEtaJet25          & Max. $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
 detaFwdJetClosestLep & $\Delta \eta$ forward light jet and closest lepton\\
 detaFwdJetBJet       & $\Delta \eta$ forward light jet and hardest CSV loose jet\\
@@ -700,8 +698,10 @@ Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for 2lss)\\
 totCharge            & Sum of lepton charges \\
 minDRll              & Min $\Delta R$ any two leptons\\
 dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hline
+nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
+nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
 \end{tabular}
-\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to jet multiplicities; second section lists variables related to forward jet activity, and third section lists variables related to lepton kinematics.}
+\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to forward jet activity; second section lists variables related to lepton kinematics, and third section lists variables related to jet multiplicities.}
 \label{tab:bdtinputs}
 \end{table}
 
@@ -709,21 +709,31 @@ Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distribut
 
 \begin{figure} [!h]
  \centering
- \includegraphics[width=0.32\textwidth]{Lep3Pt.pdf} 
- \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet.pdf}
- \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet.pdf}\\
+ \includegraphics[width=0.32\textwidth]{maxEtaJet25.pdf}
  \includegraphics[width=0.32\textwidth]{dEtaFwdJetClosestLep.pdf}
- \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
- \includegraphics[width=0.32\textwidth]{maxEtaJet25.pdf}\\
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJetBJet.pdf}\\
+ \includegraphics[width=0.32\textwidth]{dEtaFwdJet2BJet.pdf}
+ \includegraphics[width=0.32\textwidth]{Lep3Pt.pdf}
+ \includegraphics[width=0.32\textwidth]{totCharge.pdf}\\
  \includegraphics[width=0.32\textwidth]{minDRll.pdf}
- \includegraphics[width=0.32\textwidth]{nJet25.pdf} 
- \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}\\
- \includegraphics[width=0.32\textwidth]{totCharge.pdf}
-\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables (not normalized) for signal discrimination in the $3l$ channel.} 
+ \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
+ \includegraphics[width=0.32\textwidth]{nJet25.pdf}\\      
+ \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}
+\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables for signal discrimination in the $3l$ channel.} 
 \label{fig:input_vars_3l}
 \end{figure}    
 
-All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while the \tHq peak around 18 GeV; although this variable is powerful in the discrimination against only two backgrounds, the final discriminator will profit from it. A similar situation can be seen in the plot for the number of jets (row three, column two); \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process. The discrimination power is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event (row two, column three). The same or equivalent input variables are found to be performing well for both $3l$ and $2lss$ channels. Figure~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
+Given that the forward activity is a feature of the \tHq process, the location of the leptons and jets with respect to the forward jet would provide a good way to differentiate signal and background events. Looking at the separation in \etac between the forward jet and the hardest \bjet, for signal events the latter will be located more centrally the more harder it is  is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event, while the former will be in the forward region, thus, their separation will increase; for background events, jets tend to be more central and their separation is smaller compared to signal events. Similar argument works for the \etac separation between the forward jet and the second hardest \bjet and for the separation between the forward jet and the closest lepton.  
+
+The discrimination power  (row two, column three) given the presence of the forward jet in the signal events; for background events, jets tend to be in the central region of the detector.
+
+Variables related to the lepton kinematics encode the distinctive behavior of leptons in signal events and background events. All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while the \tHq peak around 18 GeV, \ie, the third lepton in those background processes tends to emerge with a higher momentum than the one from the \tHq process; although this variable is powerful in the discrimination against only two backgrounds, the final discriminator will profit from it.
+
+In the case of the total lepton charge, it is symmetrically distributed for \ttbar (fakes) events while for signal events it is expected to have more positive charge in the final state in the final state because the proton have more $u$ quarks that $d$ quarks, therefore, more W$^+$ bosons and then more positive leptons. Again, this variable is very powerful for discriminating against \ttbar but not that powerful against other backgrounds.    
+
+A similar situation can be seen in the plot for the number of jets; \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process (see Figure \ref{fig:ttbar_sign} for instance) due to initial state radiation or other radiative processes. 
+
+The same or equivalent input variables are found to perform well for both $3l$ and $2lss$ channels. Figure~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
 
 \subsubsection*{Discrimination power from BDTG classifier}
 
@@ -735,12 +745,12 @@ All the input variables have some discrimination power, however, that power is b
 %% \label{mva_input_tt}
 %% \end{figure}
 
-The Discrimination power of the input variables can also be evaluated from the BDTG training, exclusively for the training samples, \ie, dominant backgrounds (\ttbar and \ttV); the training samples are submitted to the selection cuts on Table ~\ref{tab:cuts}.
+The discrimination power of the input variables can also be evaluated from the BDTG training, exclusively for the training samples, \ie, dominant backgrounds (\ttbar and \ttV); the training samples are submitted to the selection cuts on Table ~\ref{tab:cuts}.
 
 \begin{figure} [!ht]
   \centering
   \includegraphics[width=\textwidth]{mva_input1.pdf}
-  \caption[BDT input variables. Discrimination against \ttbar and \ttV\ in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq signal(blue) discriminated against \ttV\ background (red).}
+  \caption[BDT input variables. Discrimination against \ttbar and \ttV\ in $3l$ channel.]{BDT input variables as seen by BDTG classifier for the $3l$ channel, \tHq (blue) discriminated against background (red), \ttbar (top) and \ttV (bottom).}
 \label{fig:mva_input_comp}
 \end{figure}
 
@@ -766,7 +776,7 @@ From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correla
 
 \subsection{BDTG classifiers response}
 
-After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining is also visible.
+After the training stage, the BDTG classifier is tested to ensure its ability to discriminate between simulated signal and background events. The BDTG classifier output distributions for signal and backgrounds in the $3l$ channel are shown in Figure~\ref{fig:bdtg_output_default}. As expected, a good discrimination power is obtained using default discriminator parameter values; some overtraining, represented in the differences between the test (histogram) and the training (dots), is also visible.
 
 \begin{figure} [!h]
   \centering
@@ -776,7 +786,7 @@ After the training stage, the BDTG classifier is tested to ensure its ability to
 \label{fig:bdtg_output_default}
 \end{figure}
 
-In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} list the set of parameters found to be most discriminant with minimal overtraining as shown in Figure~\ref{fig:output_2lss}.  
+In order to explore further optimization in the BDTG performance, several changes from the default BDTG parameters were tested; Table \ref{tab:bdtsettings} lists the set of parameters found to be most discriminant with minimal overtraining as shown in Figure~\ref{fig:output_2lss}.  
 
 \begin{table} [!h]
 \centering
@@ -798,7 +808,7 @@ In order to explore further optimization in the BDTG performance, several change
    \includegraphics[width=0.49\textwidth]{bdt_output_tt_2lss.pdf}\\
    \includegraphics[width=0.49\textwidth]{bdt_response_ttv_3l.pdf}
    \includegraphics[width=0.49\textwidth]{bdt_response_tt_3l.pdf}
-\caption[BDTG classifier output.]{BDTG classifiers output for training against \ttV (left) and \ttbar(right) for $2lss$ channel(top) and $3l$ channel (bottom) .}
+\caption[BDTG classifier output.]{BDTG classifiers output for training against \ttV\ (left) and \ttbar\ (right) for $2lss$ channel\ (top) and $3l$ channel\ (bottom) .}
 \label{fig:output_2lss}
 \end{figure}
 
@@ -826,67 +836,67 @@ In order to explore further optimization in the BDTG performance, several change
 
 The ranking of the input variables by their importance in the classification process is shown in Table~\ref{ranking}; for both trainings the rankings show almost the same five variables in the first places.
 
-%% \begin{table}[h!]
-%% \centering
-%% \footnotesize
-%% \begin{tabular}{lllll}\hline
-%%       &\multicolumn{2}{c}{\ttbar training}  & \multicolumn{2}{c}{\ttV training}\\\hline
-%% Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
-%%     1 & minDRll              & 1.329e-01   & dEtaFwdJetBJet       & 1.264e-01\\
-%%     2 & dEtaFwdJetClosestLep & 1.294e-01   & Lep3Pt               & 1.224e-01\\
-%%     3 & dEtaFwdJetBJet       & 1.209e-01   & maxEtaJet25          & 1.221e-01\\
-%%     4 & dPhiHighestPtSSPair  & 1.192e-01   & dEtaFwdJet2BJet      & 1.204e-01\\
-%%     5 & Lep3Pt               & 1.158e-01   & dEtaFwdJetClosestLep & 1.177e-01\\
-%%     6 & maxEtaJet25          & 1.121e-01   & minDRll              & 1.143e-01\\
-%%     7 & dEtaFwdJet2BJet      & 9.363e-02   & dPhiHighestPtSSPair  & 9.777e-02\\
-%%     8 & nJetEta1             & 6.730e-02   & nJet25\_Recl         & 9.034e-02\\
-%%     9 & nJet25\_Recl         & 6.178e-02   & nJetEta1             & 4.749e-02\\
-%%    10 & lepCharge            & 4.701e-02   & lepCharge            & 4.116e-02\\\hline
-%%     1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
-%%     2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
-%%     3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
-%%     4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
-%%     5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
-%%     6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
-%%     7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
-%%     8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
-%%     9 & nJet25               & 6.254e-02   & nJetEta1             & 5.948e-02\\
-%%    10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
-%% \end{tabular}
-%% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
-%% \label{ranking}
-%% \end{table}
-
 \begin{table}[h!]
 \centering
 \footnotesize
-\begin{tabular}{llr}\hline
-      &\ttbar training          & \ttV\ training\\\hline
-Rank  & Variable                & Variable             \\ \hline
-    1 & minDRll                 & dEtaFwdJetBJet       \\
-    2 & dEtaFwdJetClosestLep    & Lep3Pt               \\
-    3 & dEtaFwdJetBJet          & maxEtaJet25          \\
-    4 & dPhiHighestPtSSPair     & dEtaFwdJet2BJet      \\
-    5 & Lep3Pt                  & dEtaFwdJetClosestLep \\
-    6 & maxEtaJet25             & minDRll              \\
-    7 & dEtaFwdJet2BJet         & dPhiHighestPtSSPair  \\
-    8 & nJetEta1                & nJet25\_Recl         \\
-    9 & nJet25\_Recl            & nJetEta1             \\
-   10 & lepCharge               & lepCharge            \\\hline
-    1 & dEtaFwdJetClosestLep    & maxEtaJet25          \\ 
-    2 & minDRll                 & dEtaFwdJet2BJet      \\
-    3 & maxEtaJet25             & dEtaFwdJetBJet       \\
-    4 & dPhiHighestPtSSPair     & Lep2Pt               \\
-    5 & Lep2Pt                  & dEtaFwdJetClosestLep \\
-    6 & dEtaFwdJetBJet          & minDRll              \\
-    7 & dEtaFwdJet2BJet         & nJet25\_Recl         \\
-    8 & nJetEta1                & dPhiHighestPtSSPair  \\
-    9 & nJet25                  & nJetEta1             \\
-   10 & lepCharge               & lepCharge            \\ \hline
+\begin{tabular}{lllll}\hline
+      &\multicolumn{2}{c}{\ttbar training}  & \multicolumn{2}{c}{\ttV training}\\\hline
+Rank  & Variable             & Importance  & Variable             & Importance \\ \hline
+    1 & minDRll              & 1.329e-01   & dEtaFwdJetBJet       & 1.264e-01\\
+    2 & dEtaFwdJetClosestLep & 1.294e-01   & Lep3Pt               & 1.224e-01\\
+    3 & dEtaFwdJetBJet       & 1.209e-01   & maxEtaJet25          & 1.221e-01\\
+    4 & dPhiHighestPtSSPair  & 1.192e-01   & dEtaFwdJet2BJet      & 1.204e-01\\
+    5 & Lep3Pt               & 1.158e-01   & dEtaFwdJetClosestLep & 1.177e-01\\
+    6 & maxEtaJet25          & 1.121e-01   & minDRll              & 1.143e-01\\
+    7 & dEtaFwdJet2BJet      & 9.363e-02   & dPhiHighestPtSSPair  & 9.777e-02\\
+    8 & nJetEta1             & 6.730e-02   & nJet25\_Recl         & 9.034e-02\\
+    9 & nJet25\_Recl         & 6.178e-02   & nJetEta1             & 4.749e-02\\
+   10 & lepCharge            & 4.701e-02   & lepCharge            & 4.116e-02\\\hline
+    1 & dEtaFwdJetClosestLep & 1.394e-01   & maxEtaJet25          & 1.357e-01\\ 
+    2 & minDRll              & 1.359e-01   & dEtaFwdJet2BJet      & 1.267e-01\\
+    3 & maxEtaJet25          & 1.308e-01   & dEtaFwdJetBJet       & 1.200e-01\\
+    4 & dPhiHighestPtSSPair  & 1.116e-01   & Lep2Pt               & 1.196e-01\\
+    5 & Lep2Pt               & 1.111e-01   & dEtaFwdJetClosestLep & 1.145e-01\\
+    6 & dEtaFwdJetBJet       & 1.067e-01   & minDRll              & 1.077e-01\\
+    7 & dEtaFwdJet2BJet      & 8.906e-02   & nJet25\_Recl         & 1.020e-01\\
+    8 & nJetEta1             & 6.445e-02   & dPhiHighestPtSSPair  & 8.232e-02\\
+    9 & nJet25               & 6.254e-02   & nJetEta1             & 5.948e-02\\
+   10 & lepCharge            & 4.848e-02   & lepCharge            & 3.198e-02\\ \hline
 \end{tabular}
-\caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same five variables in the first places.}
+\caption[Input variables ranking for BDTG classifiers]{Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same 5 variables in the first places.}
 \label{ranking}
 \end{table}
+
+%% \begin{table}[h!]
+%% \centering
+%% \footnotesize
+%% \begin{tabular}{llr}\hline
+%%       &\ttbar training          & \ttV\ training\\\hline
+%% Rank  & Variable                & Variable             \\ \hline
+%%     1 & minDRll                 & dEtaFwdJetBJet       \\
+%%     2 & dEtaFwdJetClosestLep    & Lep3Pt               \\
+%%     3 & dEtaFwdJetBJet          & maxEtaJet25          \\
+%%     4 & dPhiHighestPtSSPair     & dEtaFwdJet2BJet      \\
+%%     5 & Lep3Pt                  & dEtaFwdJetClosestLep \\
+%%     6 & maxEtaJet25             & minDRll              \\
+%%     7 & dEtaFwdJet2BJet         & dPhiHighestPtSSPair  \\
+%%     8 & nJetEta1                & nJet25\_Recl         \\
+%%     9 & nJet25\_Recl            & nJetEta1             \\
+%%    10 & lepCharge               & lepCharge            \\\hline
+%%     1 & dEtaFwdJetClosestLep    & maxEtaJet25          \\ 
+%%     2 & minDRll                 & dEtaFwdJet2BJet      \\
+%%     3 & maxEtaJet25             & dEtaFwdJetBJet       \\
+%%     4 & dPhiHighestPtSSPair     & Lep2Pt               \\
+%%     5 & Lep2Pt                  & dEtaFwdJetClosestLep \\
+%%     6 & dEtaFwdJetBJet          & minDRll              \\
+%%     7 & dEtaFwdJet2BJet         & nJet25\_Recl         \\
+%%     8 & nJetEta1                & dPhiHighestPtSSPair  \\
+%%     9 & nJet25                  & nJetEta1             \\
+%%    10 & lepCharge               & lepCharge            \\ \hline
+%% \end{tabular}
+%% \caption[Input variables ranking for BDTG classifiers]{ Input variables ranking for BDTG classifiers for the trainings in the $2lss$ channel (first section) and $3l$ channel (second section). For both trainings the rankings show almost the same five variables in the first places.}
+%% \label{ranking}
+%% \end{table}
 
 \subsection{Additional discriminating variables}
 
@@ -894,13 +904,13 @@ Rank  & Variable                & Variable             \\ \hline
   \centering
    \includegraphics[width=0.9\textwidth]{fwd_add_var_ttv_3l.pdf}\\
    \includegraphics[width=0.9\textwidth]{fwd_add_var_tt_3l.pdf}
-\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for \ttV training (top row) and \ttbar training (bottom row) in the $3l$ channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for \ti{pileup jets} while \ti{primary vertex jets} are tagged as 1.}
+\caption[Additional discriminating variables distributions.]{Additional discriminating variables distributions for \ttV\ training (top row) and \ttbar\ training (bottom row) in the $3l$ channel. The origin of the jets in the forward jet identification distribution is tagged as 0 for \ti{pileup jets} while \ti{primary vertex jets} are tagged as 1.}
 \label{fwd_add_var_3l}
 \end{figure}
 
-Given that the forward jet in background processes could be originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification (fwdJetPUID); their distributions in the $3l$ channel are shown in Figure~\ref{fwd_add_var_3l}. The forward jet identification distribution shows that for both, signal and background, jets are mostly originated in the primary vertex. 
+Given that the forward jet in background processes could have been originated from pileup, two additional discriminating variables accounting for that were tested. These additional variables describe the forward jet momentum (fwdJetPt25) and the forward jet identification (fwdJetPUID); their distributions in the $3l$ channel are shown in Figure~\ref{fwd_add_var_3l}. The forward jet identification distribution shows that for both signal and background, jets are mostly originated from the primary vertex. 
 
-The testing was performed by including in the BDTG input one variable at a time, so the discrimination power of each variable can be evaluated individually, and then both simultaneously. fwdJetPUID was ranked the last place in importance (11) in both training (\ttV and \ttbar) while fwdJetPt25 was ranked 3 in the \ttV training and 7 in the \ttbar training. When training using 12 variables, fwdJetPt25 was ranked 5 and 7 in the \ttV and \ttbar trainings respectively, while fwdJetPUID was ranked 12 in both cases.
+The testing was performed by including in the BDTG input one variable at a time, so the discrimination power of each variable can be evaluated individually, and then both simultaneously. fwdJetPUID was ranked the last place in importance (11) in both trainings (\ttV and \ttbar) while fwdJetPt25 was ranked 3 in the \ttV\ training and 7 in the \ttbar training. When training using 12 variables, fwdJetPt25 was ranked 5 and 7 in the \ttV and \ttbar trainings respectively, while fwdJetPUID was ranked 12 in both cases.
 
 \begin{table}[!hb]
 \centering
@@ -925,13 +935,13 @@ The improvement in the discrimination performance provided by the additional var
  \includegraphics[width=0.49\textwidth]{hthw.pdf}\\
  \includegraphics[width=0.49\textwidth]{hbg.pdf}
  \includegraphics[width=0.49\textwidth]{hratio.pdf}
-\caption[2D BDT classifier output planes]{BDT classifier output planes (training vs \ttbar\ on x-axis and vs \ttV\ on y-axis) for the \tHq\ and \tHW\ signals (top row), and for the combined backgrounds (bottom left). Bottom right: S/B ratio (combining \tHq\ and \tHW) in the same plane. Plots are for $3l$ channel.}
+\caption[2D BDT classifier output planes]{BDT classifier output planes (training vs. \ttbar\ on x-axis and vs. \ttV\ on y-axis) for the \tHq\ and \tHW\ signals (top row), and for the combined backgrounds (bottom left). Bottom right: S/B ratio (combining \tHq\ and \tHW) in the same plane. Plots are for $3l$ channel.}
 \label{fig:mva12}
 \end{figure}
 
-Once the two BDTG classifiers, introduced in the previous section, are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. Top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is shown in the bottom right plot of Figure~\ref{fig:mva12}.      
+Once the two BDTG classifiers introduced in the previous section are trained against the dominant backgrounds in each channel, they are used to classify the events in the samples; their outputs are then used to evaluate the signal cross section limits in a fit to the classifier shape. Figure~\ref{fig:mva12} shows the expected output distributions in a 2D plane of one training vs.\ the other, \ie, \ttV\ vs.\ \ttbar. The top row shows the 2D planes for \tHq and \tHW signals, while the bottom left plot shows the corresponding 2D plane for the combined backgrounds, which are evaluated as in the final background prediction, \ie,\ these are not the samples used in the BDTG training and this includes data-driven backgrounds. The signal (combining of \tHq and \tHW) to background ratio (S/B) is shown in the bottom right plot of Figure~\ref{fig:mva12}.      
 
-Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Sec.~\ref{sec:binopt}).
+Each event is now classified into one of ten 2D-bins according to its position in the plane, as shown in Figure~\ref{fig:binning}. The number of bins is chosen such that no bins are entirely empty for any process. The bin boundary positions and number of bins have been studied and optimized with respect to the expected limit on the signal strength (see Appendix ~\ref{app:binopt}).
 
 \begin{figure} [!h]
  \centering
@@ -942,94 +952,13 @@ Each event is now classified into one of ten 2D-bins according to its position i
 
 From this event categorization, a 1D histogram of expected distribution is produced for each signal and background process, and fit to the observed data (or the Asimov dataset for expected limits).
 
-\subsection{Binning and selection optimization}\label{sec:binopt}
+\section{Forward jet mismodeling}\label{sec:forward_jet_model}
 
-The effect of the choice of pre-selection cuts and the number of bins of the 1D histogram on the cross section limit is evaluated by varying the most important cuts and re-calculating the limit in each case. In this analysis, the optimization was performed in the $3l$ channel, by evaluating the upper limits on the \tHq+\ \tHW\ expected signal strength only (without \ttH component), always evaluated at $\Ct=-1.0$, $\CV=1.0$.
+As said in previous section, among the features of the \tHq signature is the presence of a forward jet that serves as a powerful discriminating variable; unfortunately, its \etac distribution is poorly modeled in simulation as shown in the distributions of some variables related to the forward jet for MC and data in Figure~\ref{fig:osemu-ttbar}. The disagreement of the \etac distribution of forward jets for a \pt\ cut of 25 GeV (row two, columns two and three) is clearly visible, especially at higher values of $|\eta|$; the multiplicity for central jets (row three column three) is also poorly described. The \ttbar\ background in this analysis is modeled with a data-driven method and these disagreements do not directly affect the \ttbar\ contribution in the analysis; they do however, reflect the expected agreement in these distributions for the irreducible backgrounds and the signal.
 
-Table~\ref{cut_limit} shows several explored variations, compared with a baseline; the baseline is similar to the selection reported in Table~\ref{tab:cuts} but only a loose CSV jet and a Z veto of $\pm10$ GeV are required. 
+To estimate the effect of a mismodeled forward jet distribution, a reweighting of the events in simulation based on the normalized data/MC ratio in a control region is performed; as a result, an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement is derived.
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{lll}
-Selection                         & Variation                & Expected limit \\ \hline
-Baseline                          &                          & $<2.93$\\
-Loose CSV tags                    & $\geq 1 \to \geq 2$      & $<3.81$\\
-Medium CSV tags                   & $\geq 0 \to \geq 1$      & $<2.76$\\
-Light forward jet $\eta$          & $\geq 0 \to \geq 1$      & $<2.94$\\
-Light forward jet $\eta$          & $\geq 0 \to \geq 1.5$    & $<3.00$\\
-MET>30 GeV                        &                          & $<2.91$\\
-Z veto ($|m_{\ell\ell}-m_Z|$)     & $>10$GeV $\to >15$ GeV   & $<2.79$\\
-One medium CSV + 15 GeV\ Z veto   & combined                 & $<2.62$\\\hline
-\end{tabular}
-\caption[Selection cuts optimization.]{Signal strength limit variation as a function of tighter cuts. The baseline selection corresponds to a looser selection compared to the one reported in Table ~\ref{tab:cuts} where only a CSV-loose \bjet is required, and the Z veto is loosened to $\pm10$ GeV. The optimal selection determined here corresponds to the baseline plus the two variations in the last row.}
-\label{cut_limit}
-\end{table}
-
-The optimal limit is found when requiring a slightly tighter selection with respect to the baseline. The optimal selection is reported in Table~\ref{tab:cuts}.
-
-The signal strength limit also depends on the chosen binning in the 2D plane as the S/B ratio varies across the plane, hence, several sizes and binning combinations were tested in order to improve the limit. Figure~\ref{bins} shows some of the binning combinations tested; in the default combination all the bins have the same size, while the best limit was found for a set of 10 bins. The bin borders and the resulting limits are shown in Table ~\ref{bin_limits}.
-
-\begin{figure} [!h]
- \centering
- \includegraphics[width=\textwidth]{bin_scheme.pdf} 
-\caption{Binning combination scheme.}
-\label{bins}
-\end{figure}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{llllllll}\hline
-Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\%\hline 
-                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline           
-16 (default)    &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.91$\\
-16              &-0.5 & 0.3 & 0.7 &-0.5 & 0.3 & 0.7 & $<2.83$\\
-10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.5 & $<2.93$\\
-10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.7 & $<2.86$\\
-10              &-0.5 & 0.0 & 0.7 &-0.5 & 0.0 & 0.5 & $<2.84$\\
-10              &-0.5 & 0.0 & 0.5 &-0.5 & 0.0 & 0.7 & $<2.87$\\
-\textbf{10}     &\textbf{-0.5} &\textbf{0.4} &\textbf{0.7} &\textbf{-0.5} &\textbf{0.4} &\textbf{0.7} &$\mathbf{<2.81}$\\\hline
-\end{tabular}
-\caption[Limit variation as a function of bin size, $3l$ channel.]{Limit variation as a function of bin size. The final bin borders used in the $3l$ channel are indicated in bold.}
-\label{bin_limits}
-\end{table}
-
-Combining the optimization of binning and using the tighter pre-selection cuts, the expected limit in the $3l$ channel alone reaches \textbf{r<2.59}.
-
-A similar binning optimization was made for $2lss$ channel, including other binning combinations. First, the $3l$ channel binning was used to estimate the expected limit, then, bin borders were varied to obtain the best possible expected limit. The bin borders and the resulting signal strength limits for the same-sign dimuon channel are shown in Table~\ref{bin_limits_2lss}.
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{llllllll}\hline
-Number of bins  & \multicolumn{6}{c}{Bin borders}  & Expected limit \\
-                &$x_1$&$x_2$&$x_3$&$y_1$&$y_2$&$y_3$&\\\hline
-16              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
-12              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.72$\\
-12              &-0.3 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
-12              &-0.3 & 0.3 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.71$\\
-12              &-0.3 & 0.3 & 0.7 &-0.4 & 0.4 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.4 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.7 & $<1.68$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.1 & 0.7 & $<1.70$\\
-12              &-0.3 & 0.3 & 0.7 &-0.3 & 0.2 & 0.6 & $<1.70$\\
-10              &-0.5 & 0.4 & 0.7 &-0.5 & 0.4 & 0.7 & $<1.75$\\
-\textbf{10}     &\textbf{-0.3} &\textbf{ 0.3} &\textbf{ 0.7} &\textbf{-0.3} &\textbf{ 0.2} &\textbf{ 0.6} &$\mathbf{<1.69}$\\\hline
-\end{tabular}
-\caption[Limit variation as a function of bin size, $2lss$ channel.]{Limit variation as a function of bin size in the same-sign dimuon channel. (In bold: the final bin borders used in the $2lss$ channel.)}
-\label{bin_limits_2lss}
-\end{table}
-
-The expected limit was found to be \textbf{r<1.69} for optimized bin borders in 10 bins and optimized pre-selection cuts.
-
-Two additional binning strategies were tested, however, the obtained limits are degraded; they are documented in Appendix \ref{app:ad_binning}.   
-
-
-\section{Forward jet mismodeling}
-
-\label{sec:forward_jet_model}
-
-As said in previous section, among the features of the \tHq signature that serves as a powerful discriminating variable is the presence of a forward jet; unfortunately, its \etac distribution is poorly modeled in simulation. To estimate the effect of a mismodeled forward jet distribution, a reweighting of the events in simulation based on the normalized data/MC ratio in a control region is performed; as a result, an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement is derived.
-
-Using a sample of dileptonic \ttbar\ events, the control region is defined by requiring two opposite-sign tight leptons in the $e\mu$ channel, with at least two jets and at least one medium CSV tagged jet. (Otherwise the selection is identical to the same-sign \emu\ channel selection). Some distributions related to the forward jet for MC and data are shown in Figure~\ref{fig:osemu-ttbar}.
+Using a sample of dileptonic \ttbar\ events, the control region is defined by requiring two opposite-sign tight leptons in the $e\mu$ channel, with at least two jets and at least one medium CSV tagged jet. (Otherwise the selection is identical to the same-sign \emu\ channel selection). 
 
 \begin{figure} [!h]
   \centering
@@ -1042,11 +971,9 @@ Using a sample of dileptonic \ttbar\ events, the control region is defined by re
   \includegraphics[width=0.32\textwidth]{controlplots/emu-ttbar/dEtaFwdJetBJet.pdf}
   \includegraphics[width=0.32\textwidth]{controlplots/emu-ttbar/dEtaFwdJetClosestLep.pdf}
   \includegraphics[width=0.32\textwidth]{controlplots/emu-ttbar/nJet25.pdf} \\
-\caption[Kinematic distributions for forward jet mismodeling study.]{Kinematic distributions in the \ttbar-enriched opposite-sign $e\mu$ selection. Top row, left to right: leading central ($\eta<2.4$) jet \pt, leading forward ($\eta>2.4$) jet \pt, \pt\ of non-CSV-loose jet with highest $\eta$ (``light forward jet''). Middle row: $\eta$ distribution of those same jets. Bottom row: $\Delta\eta$ between light forward jet and leading CSV-loose tagged jet; $\Delta\eta$ between light forward jet and closest lepton; number of central jets.}
+\caption[Kinematic distributions for forward jet mismodeling study.]{Kinematic distributions in the \ttbar-enriched opposite-sign $e\mu$ selection. Top row: leading central ($\eta<2.4$) jet \pt (left), leading forward ($\eta>2.4$) jet \pt (middle), \pt\ of non-CSV-loose jet with highest $\eta$ (``light forward jet'') (Right). Middle row: $\eta$ distribution of the jets in the top row. Bottom row: $\Delta\eta$ between light forward jet and leading CSV-loose tagged jet; $\Delta\eta$ between light forward jet and closest lepton; number of central jets.}
 \label{fig:osemu-ttbar}
 \end{figure}
-
-The disagreement of the \etac distribution of forward jets for a \pt\ cut of 25 GeV is well visible especially at higher values of $|\eta|$. The multiplicity for central jets is poorly described by the MadgraphMLM sample used here; consistent with other observations of the same sample. The \ttbar\ background in this analysis is modeled with a data-driven method and these disagreements do not directly affect the \ttbar\ contribution in the analysis. They do however reflect the expected agreement in these distributions for the irreducible backgrounds and the signal.
 
 The effect of higher \pt cuts on the forward jet has been studied for three values: $25$, $30$ and $40$ GeV. In order to take into account the data/MC disagreement in the high \etac regions, the events are weighted accordingly to the data/MC ratio of the unity normalized control plots shown in Figure~\ref{fig:ptCutVar}. The data/MC agreement in the forward jet \etac distribution improves significantly at higher jet $\pt$s.
 
@@ -1088,7 +1015,7 @@ Exp.\ limit (\threel) & $r<1.54$ & $r<1.51$ & $r<1.50$ \\ \hline
 \label{tab:ratioFwdJet}
 \end{table}
 
-Table~\ref{tab:ratioFwdJet} shows the scale factors obtained for the three $\pt$ values. The expected limit on cross section in the $3l$ was used to determine the most appropriate forward jet \pt cut; higher \pt cut improves from $1.54$ at $25$ GeV to $1.51$ at $30$ GeV and $1.50$ at $40$ GeV.
+Table~\ref{tab:ratioFwdJet} shows the scale factors obtained for the three $\pt$ values. The expected limit on cross section in the $3l$ was used to determine the most appropriate forward jet \pt cut; higher \pt cut improves the limit from $1.54$ at $25$ GeV to $1.51$ at $30$ GeV and $1.50$ at $40$ GeV.
 %Adjusting the data/MC ratios by hand to half the obtained value in case of forward jet $\eta$ cut at $25$ GeV, improves the limit from $1.54$ to $1.51$ in the three lepton channel.
 The impact of the data/MC disagreement for forward jet \etac is observed to reduce with higher $\pt$ cuts. Figures ~\ref{fig:impact25},~\ref{fig:impact30} and ~\ref{fig:impact40} show this reduction in the impact of the forward jet \etac nuisance in the fit.
 
@@ -1096,9 +1023,9 @@ The impact of the data/MC disagreement for forward jet \etac is observed to redu
 
 \section{Signal model}
 
-It is worth to remind that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of the couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape-dependence of the BDTG classifier outputs as a function of the couplings is shown in Appendix ~\ref{sec:bdtvscvct}.
+It is worth remembering that the main goal of this analysis is to test the compatibility of points in the parameter space of Higgs-to-vector boson and Higgs-to-top quark couplings. This is achieved by using simulated \tHq, \tHW, and \ttH\ signal events which are weighted to reflect the impact of different couplings on kinematic distributions, and together with different predictions of the respective production cross sections and branching ratios, to produce limits on the cross section for different values of \CV\ and \Ct. See Section \ref{ssec:mc_signal} and Table~\ref{tab:reweight} for the set of \Ct\ and \CV\ values generated. The slight shape dependence of the BDTG classifier outputs as a function of the couplings is shown in Appendix ~\ref{sec:bdtvscvct}.
 
-In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interferences, the cross section of \ttH\ depends quadratically on \Ct according to \cite{kcouplings}:
+In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross sections, due to interference, the cross section of \ttH\ depends quadratically on \Ct according to \cite{kcouplings}:
 
 \begin{align}
 \sigma(\tHq) =& (2.633 \Ct^2 + 3.578 \CV^2 - 5.211 \Ct\CV) * \sigma_{SM}(\tHq),\\
@@ -1114,20 +1041,20 @@ In addition to the (\Ct,\CV) dependence of the \tHq\ and \tHW\ production cross 
 \label{fig:xsbrscalings}
 \end{figure}
 
-The Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ also changes with changing \CV.
+The Higgs branching fractions to vector bosons depend on \CV, and the overall Higgs decay width depend both on \Ct\ and \CV\ when considering resolved top quark loops in the $H\to\gamma\gamma$, $H\to Z\gamma$, and $H\to gg$ decays. The relative contributions from $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ also change with changing \CV.
 
-If the Higgs-to-tau coupling modifier ($\kappa_\tau$) is assumed to be equal to \Ct, the relative fractions of \WW, \ZZ, and \tautau in the event selection will only depend on the ratio of $\Ct/\CV$; thus, any limit set at any given value of $\Ct/\CV$ is valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier. Figure \ref{fig:xsbrscalings} shows the \tHq, \tHW and \ttH cross sections(left) and the Higgs boson branching ratios $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ (right) as a function of the \Ct/\CV ratio. 
+If the Higgs-to-tau coupling modifier ($\kappa_\tau$) is assumed to be equal to \Ct, the relative fractions of \WW, \ZZ, and \tautau in the event selection will only depend on the ratio of $\Ct/\CV$; thus, any limit set at any given value of $\Ct/\CV$ is valid for all values of $\Ct$ and $\CV$ with that ratio, and could then be compared with theoretical predictions of cross sections at different values of either modifier. Figure \ref{fig:xsbrscalings} shows the \tHq, \tHW and \ttH cross sections (left) and the Higgs boson branching ratios $ H\to\WW$, $H\to\ZZ$, and $H\to\tautau$ (right) as a function of the \Ct/\CV ratio. 
 
-Thus, this analysis sets an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH as a function of the ratio \Ct/\CV.
+Thus, this analysis sets an upper limit on the combined cross section times branching ratio of \tHq, \tHW, and \ttH as a function of the ratio \Ct/\CV, under the assumption of \Ct=$\kappa_\tau$.
 
-Similar interpretation can be made if instead of reporting the limits as a function of the $\Ct/\CV$ ratio, they are reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign
+A Similar interpretation can be made if instead of reporting the limits as a function of the $\Ct/\CV$ ratio, they are reported as a function of the relative strength of Higgs-top and Higgs-vector-boson couplings, multiplied by the relative sign
 
 \beqn
 \ft = \mathrm{sign}\left(\frac{\Ct}{\CV}\right) \times \frac{\Ct^2}{\Ct^2+\CV^2}.
 \label{eq:ft}
 \eeqn
 
-\noindent this parameter covers the full space between $-1.0$ and $1.0$, with the SM at $0.5$. Absolute values of $1.0$ or $0.0$ would correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
+This parameter covers the full space between $-1.0$ and $1.0$, with the SM at $0.5$. Absolute values of $1.0$ or $0.0$ would correspond to purely Higgs-top and purely Higgs-V couplings, respectively.
 
 Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
 
@@ -1187,38 +1114,38 @@ Tables~\ref{tab:brscalingK6_0p5}--\ref{tab:brscalingK6_1p5} and~\ref{tab:xsbrsca
 
 \section{Systematic uncertainties}
 
-The uncertainties present in this analysis can be either of statistical nature given the size of the samples and the probabilistic nature of the processes, or of systematic nature. The systematic uncertainties are associated to theoretical uncertainties originating in the limited knowledge of the processes, and also to experimental uncertainties originating for instance from the limited resolution of the detectors. In this section, the contributions to the systematic uncertainties from all the sources in this analysis are considered.
+The uncertainties present in this analysis can be either of a statistical nature given the size of the samples and the probabilistic nature of the processes, or of a systematic nature. The systematic uncertainties are associated with theoretical uncertainties originating in the limited knowledge of the processes, and also with experimental uncertainties originating for instance from the limited resolution of the detectors. In this section, the contributions to the systematic uncertainties from all the sources in this analysis are considered.
 
 Rate uncertainties associated to the application of scaling factors for the affected processes, and shape uncertainties which affect not only the normalization but also the shape of certain distributions, compose the systematic uncertainties. The latter can affect the analysis during the event selection; therefore, these systematic shape uncertainties are applied to the simulation samples.
 
-\textbf{Experimental uncertainties}.
+\textbf{Experimental uncertainties}:
 
 \bit
-\item \ti{Luminosity}. The measurement of the luminosity delivered by the LHC is affected by experimental conditions like pileup and the number of protons per bunch. Due to variations in the LHC running parameters an uncertainty of 2.6\% is applied.
+\item \ti{Luminosity}. The measurement of the integrated luminosity delivered to the CMS Experiment during the 2016 LHC proton-proton run at a center-of-mass energy of 13 TeV was performed using the Pixel Cluster Counting method, while the absolute luminosity scale calibration was derived from an analysis of Van der Meer Scans. The overall uncertainty of the luminosity measurement is estimated to be 2.5\% \cite{lumi}.
 
-\item \ti{Lepton efficiencies}. Systematic uncertainties in the signal selection efficiency arise from correction factors applied to the simulated events in order to better match the measured detector performance; also from theoretical uncertainties in the modeling of the signal process. Data/MC differences in the trigger efficiency accounted with scale factors applied to correct for them, lepton reconstruction and identification performance, and lepton selection efficiency carry a combined uncertainty of about 5\% per lepton.
+\item \ti{Lepton efficiencies}. Systematic uncertainties in the signal selection efficiency arise from correction factors applied to the simulated events in order to better match the measured detector performance, and also from theoretical uncertainties in the modeling of the signal process. Data/MC differences in the trigger efficiency accounted with scale factors applied to correct for them, lepton reconstruction and identification performance, and lepton selection efficiency carry a combined uncertainty of about 5\% per lepton.
 
-\item \ti{Jets related uncertainties}. Jet energy corrections affect the uncertainty in the signal selection efficiency it is evaluated by varying the correction factors within their uncertainties and propagating the effects to the final results by recalculating the kinematic quantities. The effects of the jet energy scale uncertainties, $b$-tagging efficiency and forward jet mismodeling are evaluated using dedicated shape templates derived from a variation of the jet energy scale within its uncertainty and from varying the $b$-tagging forward jet data/MC scale factors within their uncertainty.
+\item \ti{Jet-related uncertainties}. Jet energy corrections affect the uncertainty in the signal selection efficiency; they are evaluated by varying the correction factors within their uncertainties and propagating the effects to the final results by recalculating the kinematic quantities. The effects of the jet energy scale uncertainties and $b$-tagging efficiency are evaluated using dedicated shape templates derived from a variation of the jet energy scale within its uncertainty and from varying the $b$-tagging jet data/MC scale factors within their uncertainty. For the forward jet mismodeling an alternative shape of the BDT output distributions that reflects a hypothetical perfect data/MC agreement was derived as described in section \ref{sec:forward_jet_model}.
+
 \eit
 
 \textbf{Theory uncertainties}
 
-The uncertainties from unknown higher orders of \tHq and \tHW production are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/-9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
+The uncertainties from unknown higher orders of \tHq and \tHW production cross sections are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/-9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
 
 The theoretical uncertainties from unknown higher orders for \ttW and \ttZ\ are 12\% and 10\% respectively; additional uncertainties from the knowledge of PDFs and $\alpha_s $ of about 4\% each for \ttW and \ttZ\ are estimated.
 
 \textbf{Backgrounds}
 
-Besides the theory uncertainties on \ttW and \ttZ, uncertainties of the smaller irreducible backgrounds and the charge mis-identification estimate are covered with flat normalization uncertainties. The \WZ\ contribution due to the scale factor is derived during the background estimation using the control region.
-
-The dominant uncertainty is associated to the estimate of the non-prompt lepton contribution using a fake rate method; the main normalization uncertainty comes from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution as stated in section \ref{ssec:fake_rate}. Shape variations resembling data/MC differences and deviations in closure test are evaluated as shape uncertainties.
+Besides the theory uncertainties on \ttW and \ttZ, uncertainties of the smaller irreducible backgrounds and the charge mis-identification estimate are covered with flat normalization uncertainties. The \WZ\ uncertainty due to the scale factor is derived during the background estimation using the control region.
 
 \textbf{Fake rate closure uncertainties}
 
-In order to determine the systematic uncertainties associated to the fake rates, the BDTG classifier output shapes from a pure MC estimation of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
+The dominant uncertainty is associated with the estimate of the non-prompt lepton contribution using a fake rate method; the main normalization uncertainty comes from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution as stated in Section \ref{ssec:fake_rate}. Shape variations describing data/MC differences and deviations in closure test are evaluated as shape uncertainties.
+
+In order to determine the systematic uncertainties associated with the fake rates, the BDTG classifier output shapes from a pure MC estimation of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
 
 Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently considered in the analysis.
-\clearpage
 \begin{figure}[htb]
  \centering
  %% \includegraphics[width=0.240\textwidth]{FR_closures/thqMVA_tt_2lss_ee_norm.pdf} 
