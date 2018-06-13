@@ -86,8 +86,8 @@ In this method, the 2D plane is clustered into a given number of bins correspond
 
 \begin{figure} [!h]
   \centering
-  \includegraphics[width=0.45\textwidth]{binning/hTargetBinning_2lss.pdf}
-  \includegraphics[width=0.45\textwidth]{binning/hTargetBinning_3l.pdf}
+  \includegraphics[width=0.45\textwidth]{binning/hTargetBinning_2lss.png}
+  \includegraphics[width=0.45\textwidth]{binning/hTargetBinning_3l.png}
   \caption{Binning by S/B regions for $2lss$ (left) and $3l$ (right).}
   \label{fig:sbbinning}
 \end{figure}
@@ -103,7 +103,7 @@ In this method, the 2D plane is clustered into a given number of bins correspond
 Using this method, the resulting limits (for the $\Ct=-1, \CV=1$ scenario) are about 20\% worse than with the binning in Section \ref{sec:binopt}: \mumu\ changed from 1.82 to 2.15, $3l$ changed from 1.52 to 1.75.
 
 \textbf{$k$-Means geometric clustering}\\
-This method employs a recursive application of the $k$-means algorithm (see Appendix D in Reference~\cite{CMS_AN_2017-029}) to separate the 2D plane into geometric regions. The resulting clustering (using the \ttH\ multilepton code on \tHq\ signal and \ttbar\ and \ttV\ background events) are shown in Figure ~\ref{fig:kmeansbinning}. The expected distribution of events for the signal and dominant backgrounds in these bins is shown in Fig.~\ref{fig:kmeansfinalbins}.
+This method employs a recursive application of the $k$-means algorithm (see Appendix D in Reference~\cite{CMS_AN_2017-029}) to separate the 2D plane into geometric regions. The resulting clustering (using the \ttH\ multilepton code on \tHq\ signal and \ttbar\ and \ttV\ background events) is shown in Figure ~\ref{fig:kmeansbinning}. The expected distribution of events for the signal and dominant backgrounds in these bins is shown in Fig.~\ref{fig:kmeansfinalbins}.
 \begin{figure} [!h]
   \centering
   \includegraphics[width=0.45\textwidth]{binning/voronoi_2l_trial0.png}

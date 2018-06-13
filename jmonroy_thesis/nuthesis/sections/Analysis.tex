@@ -11,7 +11,7 @@ Once the mass of the Higgs boson has been determined experimentally, the couplin
 
 In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are sensitive to the strength of the coupling. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also to the CP mixing phase of the Higgs couplings.
 
-This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, with an integrated luminosity of 35.9\fbinv, is used.
+This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, with an integrated luminosity of 35.9 \fbinv, is used.
 
 As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is affected by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such a deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred to as the \tH\ channel. In order to provide the analysis with sensitivity to the strength of the coupling, the \ttH process is included as part of the signal; thus, the purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes in the SM under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1) also known as the \ti{Inverted Top Coupling} (ITC) scenario. The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
 
@@ -408,17 +408,6 @@ Jets originated from the hadronization of a $b$ quark are selected using a MVA l
 
 Two working points are defined, based on the CSV algorithm output: \ti{loose} working point with a $b$ signal tagging efficiency of about 83\%, and \ti{medium} working point with $b-$tagging efficiency of about 69\% \cite{btag_points}. Tagging of jets from charm quarks have efficiencies of about 40\% and 18\% for loose and medium working points respectively, while for jets with only light quarks the efficiencies are 10\% and 1.5\% respectively. Separate scale factors are applied to jets originating from bottom/charm quarks and from light quarks in simulated events to match the tagging efficiencies measured in the data.
 
-
-\subsection{Missing Energy MET}
-
-As stated in Section \ref{sssec:met}, the MET vector is calculated as the negative of the vector sum of transverse momenta of all PF candidates in the event and its magnitude is referred to as $E_T^{miss}$. Due to pile-up interactions, the performance in determining MET is degraded; in order to correct for that, the energy from the selected jets and leptons that compose the event is assigned to the variable $H_T^{miss}$. It is calculated in the same way as  $E_T^{miss}$ and although it has worse resolution than $E_T^{miss}$, it is more robust in the sense that it does not rely on the soft part of the event. The event selection uses a linear discriminator based on the two variables given by 
-
-\beqn
-E^{miss}_{T\quad LD} = 0.00397*E_T^{miss} + 0.00265*H_T^{miss}
-\eeqn
-
-\noindent taking advantage of the fact that the correlation between $E_T^{miss}$ and  $H_T^{miss}$ is less for events with instrumental missing energy than for events with real missing energy. The working point $E^{miss}_{T\quad LD} > 0.2$ was chosen to ensure a good signal efficiency while keeping an efficient background rejection.
-
 \section{Event selection}
 
 Events are selected considering the features of the signal process and the decay signature as described in Section \ref{sec:thq_sign}. At the trigger level, events are selected to contain either one, two, or three leptons with minimal \pt thresholds:
@@ -611,7 +600,7 @@ $\ttH$                        & $  18.29 \pm 0.41$ & $ 24.18 \pm 0.48 $ & $ 35.2
 Signal + Backgrounds          & $ 139.20 \pm 3.49$ & $261.12 \pm 3.65 $ & $517.15 \pm 8.03 $  \\ \hline
 Data (35.9 fb$^{-1}$)         & \multicolumn{1}{l}{127}&\multicolumn{1}{l}{280} & \multicolumn{1}{l}{525} \\\hline
 \end{tabular}
-\caption[Expected and observed yields for $35.9\fbinv$ after the pre-selection.]{Expected and observed yields for $35.9\fbinv$ after the pre-selection in all final states. Uncertainties are statistical only.}
+\caption[Expected and observed yields for 35.9 \fbinv after the pre-selection.]{Expected and observed yields for 35.9 \fbinv after the pre-selection in all final states. Uncertainties are statistical only.}
 \label{tab:yields-sel}
 \end{table}
 
@@ -719,7 +708,7 @@ Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distribut
  \includegraphics[width=0.32\textwidth]{dPhiHighestPtSSPair.pdf}
  \includegraphics[width=0.32\textwidth]{nJet25.pdf}\\      
  \includegraphics[width=0.32\textwidth]{nJetEta1.pdf}
-\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables for signal discrimination in the $3l$ channel.} 
+\caption[BDTG classifier Input variables distributions.]{Distributions of the BDTG classifier input variables for signal discrimination, normalized to equal area, in the $3l$ channel.} 
 \label{fig:input_vars_3l}
 \end{figure}    
 
@@ -1059,6 +1048,7 @@ This parameter covers the full space between $-1.0$ and $1.0$, with the SM at $0
 Table~\ref{tab:ctcvvalues} shows the points in the $\Ct/\CV$ and \ft\ parameter space that are mapped by the 51 individual \Ct\ and \CV\ points.
 
 \begin{table}[h!]
+\small
 \centering
 \begin{tabular}{rrrrr}
  $\ft$ & \Ct/\CV & $\CV=0.5$ & $\CV=1.0$ & $\CV=1.5$ \\ \hline
@@ -1143,9 +1133,7 @@ Besides the theory uncertainties on \ttW and \ttZ, uncertainties of the smaller 
 
 The dominant uncertainty is associated with the estimate of the non-prompt lepton contribution using a fake rate method; the main normalization uncertainty comes from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution as stated in Section \ref{ssec:fake_rate}. Shape variations describing data/MC differences and deviations in closure test are evaluated as shape uncertainties.
 
-In order to determine the systematic uncertainties associated with the fake rates, the BDTG classifier output shapes from a pure MC estimation of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
-
-Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently considered in the analysis.
+In order to determine the systematic uncertainties associated with the fake rates, the method is evaluated using MC samples; the fake rate is measured in a QCD MC sample and then compared to the yields from a MC \ttbar sample so that the differences sets the scale for the uncertainty on the fake rate method. Explicitely, the BDTG classifier output shapes from a pure MC estimation of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
 \begin{figure}[htb]
  \centering
  %% \includegraphics[width=0.240\textwidth]{FR_closures/thqMVA_tt_2lss_ee_norm.pdf} 
@@ -1167,9 +1155,10 @@ Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently c
 \caption[Fake rates closure test.]{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the plots in the two left columns, shape disagreement is estimated from the  (normalized) plots in the two right columns. From top to bottom rows: same-sign \emu\ selection with electron fakes, same-sign \emu\ selection with muon fakes, same-sign \mumu\ selection.} 
 \label{fig:frclosure_2lss_ee}
 \end{figure} 
-\clearpage
+
 \begin{figure}[htb]
- \centering
+\small
+\centering
  \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_norm.pdf} 
  \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_elfake_norm.pdf} 
  \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_shape.pdf} 
@@ -1180,8 +1169,10 @@ Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently c
  \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_mufake_shape.pdf} 
 \caption[Fake rates closure test in the $3l$ selection.]{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the plots in the two left columns, shape disagreement is estimated from the (normalized) plots in the two right columns. From top to bottom rows: three lepton selection with electron fakes, three lepton selection with muon fakes.} 
 \label{fig:frclosure_3l_elfake}
-\end{figure} 
-\clearpage
+\end{figure}
+
+Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently considered in the analysis.
+
 \begin{table}[!htp]
 \small
   \centering
@@ -1197,7 +1188,7 @@ Trigger efficiency              & \mumu\      & 1.01 \\
                                 & \threel\    & 1.03 \\
 Jet energy scale                & all         & templates \\
 Forward jet modeling            & all         & templates, see Table ~\ref{tab:ratioFwdJet} \\
-\b\ tagging efficiency          & all         & templates \\ \hline
+\bjet\ tagging efficiency          & all         & templates \\ \hline
 
 \multicolumn{3}{l}{\textbf{ Theory uncertainties}} \\
 $Q^2$ scale (\tHq)              & all         & 0.92--1.06 (depending on \Ct, \CV)\\
@@ -1236,7 +1227,7 @@ Muon closure                    & \mumu\      & 1.07 norm., (0.97 (\ttbar)/0.91 
    \end{tabular} 
    \caption{Pre-fit size of systematic uncertainties.}\label{tab:uncertainties}
  \end{table}
-\clearpage
+
 %______________________ Results ______________________
 \section{Results}\label{sec:results}
 
@@ -1245,13 +1236,13 @@ As a result of applying the event pre-selection on the dataset, $127$ events are
 \begin{center}
  \centering
  \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_3l_40_3l.pdf}
- \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_em.pdf}
- \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_mm.pdf} \\
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_mm.pdf}
+ \includegraphics[width=0.32\textwidth]{polished/thqMVA_ttv_2lss_40_em.pdf}\\
  \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_3l_40_3l.pdf}
- \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_em.pdf}
  \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_mm.pdf}
+  \includegraphics[width=0.32\textwidth]{polished/thqMVA_tt_2lss_40_em.pdf}
 \end{center}
-\caption[Pre-fit BDT classifier outputs.]{Pre-fit BDT classifier outputs, for the three-lepton channel (left), \emu\ (center), and \mumu\ (right), for 35.9~\fbinv, for training against \ttV\ (top row) and against \ttbar\ (bottom row). In the box below each distribution, the ratio of the observed and predicted event yields is shown. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$. The grey band represents the unconstrained (pre-fit) statistical and systematical uncertainties.\label{fig:bdt_outputs_prefit}}
+\caption[Pre-fit BDT classifier outputs.]{Pre-fit BDT classifier outputs, for the three-lepton channel (left), \mumu\ (center), and \emu\ (right), for 35.9~ \fbinv, for training against \ttV\ (top row) and against \ttbar\ (bottom row). In the box below each distribution, the ratio of the observed and predicted event yields is shown. The shape of the two \tH\ signals for $\Ct=-1.0$ is shown, normalized to their respective cross sections for $\Ct=-1.0, \CV=1.0$. The grey band represents the unconstrained (pre-fit) statistical and systematical uncertainties \label{fig:bdt_outputs_prefit}}.
 \end{figure}
 
 \begin{figure} [!h]
@@ -1292,13 +1283,13 @@ The post-fit categorized BDTG output distributions obtained in the maximum likel
 
 \begin{figure} [!h]
  \centering
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_3l_13TeV_prefit.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_mm_13TeV_prefit.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_prefit.pdf} \\
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_3l_13TeV_fit_s.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_mm_13TeV_fit_s.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_fit_s.pdf}
-\caption[Background-subtracted distributions in the final binning (ITC).]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the inverted couplings scenario (\CV=1,\Ct=-1).}
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_fit_s.pdf}\\
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_3l_13TeV_prefit.pdf}
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_mm_13TeV_prefit.pdf}
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_prefit.pdf} 
+\caption[Background-subtracted distributions in the final binning (ITC).]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the inverted couplings scenario (${\CV=1,\Ct=-1}$).}
 \label{fig:postfit_bgsub_ITC}
 \end{figure}
 
@@ -1306,16 +1297,15 @@ As expected, the signal contribution is very small compared to the to the backgr
 
 \begin{figure} [!h]
  \centering
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_3l_13TeV_fit_s.pdf}       
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_mm_13TeV_fit_s.pdf}
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_fit_s.pdf}\\
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_3l_13TeV_prefit.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_mm_13TeV_prefit.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_prefit.pdf} \\
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_3l_13TeV_fit_s.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_mm_13TeV_fit_s.pdf}
- \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_fit_s.pdf}
-\caption[Background-subtracted distributions in the final binning (SM)]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for the three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the SM-like scenario ($\Ct=\CV=1$).}
+ \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_prefit.pdf} 
+\caption[Background-subtracted distributions in the final binning (SM)]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for the three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the SM-like scenario (${\Ct=\CV=1}$).}
 \label{fig:postfit_bgsub_SM}
 \end{figure}
-
 
 \subsection{$CL_S$ and cross section limits}
 
@@ -1323,40 +1313,40 @@ As expected, the signal contribution is very small compared to the to the backgr
   \centering
   \footnotesize
   \begin{tabular}{rr|ccc|cc}
-        $f_t$  & \Ct/\CV\ & Exp.\ lim. & SM exp. & Obs.\ lim. & Best fit $\sigma$ [pb] & Best fit $r$ \\ \hline
-        -0.973 & -6.000 & $0.328~_{-0.090}^{+0.136}$ & $0.507~_{-0.158}^{+0.206}$ & 0.603 & $0.305~_{-0.169}^{+0.155}$ & $0.013~_{-0.007}^{+0.007}$ \\
-        -0.941 & -4.000 & $0.335~_{-0.098}^{+0.137}$ & $0.509~_{-0.166}^{+0.215}$ & 0.627 & $0.322~_{-0.174}^{+0.157}$ & $0.036~_{-0.020}^{+0.018}$ \\
-        -0.900 & -3.000 & $0.335~_{-0.096}^{+0.138}$ & $0.510~_{-0.172}^{+0.215}$ & 0.639 & $0.334~_{-0.173}^{+0.160}$ & $0.075~_{-0.039}^{+0.036}$ \\
-        -0.862 & -2.500 & $0.334~_{-0.097}^{+0.139}$ & $0.505~_{-0.173}^{+0.217}$ & 0.649 & $0.341~_{-0.174}^{+0.160}$ & $0.119~_{-0.061}^{+0.056}$ \\
-        -0.800 & -2.000 & $0.330~_{-0.095}^{+0.141}$ & $0.500~_{-0.176}^{+0.212}$ & 0.656 & $0.345~_{-0.176}^{+0.165}$ & $0.202~_{-0.103}^{+0.097}$ \\
-        -0.692 & -1.500 & $0.325~_{-0.095}^{+0.139}$ & $0.485~_{-0.172}^{+0.209}$ & 0.660 & $0.340~_{-0.176}^{+0.164}$ & $0.369~_{-0.191}^{+0.178}$ \\
-        -0.640 & -1.333 & $0.325~_{-0.097}^{+0.139}$ & $0.482~_{-0.173}^{+0.210}$ & 0.659 & $0.334~_{-0.174}^{+0.169}$ & $0.456~_{-0.238}^{+0.231}$ \\
-        -0.610 & -1.250 & $0.321~_{-0.095}^{+0.140}$ & $0.474~_{-0.169}^{+0.210}$ & 0.653 & $0.328~_{-0.177}^{+0.164}$ & $0.505~_{-0.272}^{+0.252}$ \\
-   \tbf{-0.500} & \tbf{-1.000} & $\mathbf{0.315~_{-0.093}^{+0.142}}$ & $\mathbf{0.450~_{-0.160}^{+0.213}}$ & \tbf{0.638} & $\mathbf{0.304~_{-0.176}^{+0.175}}$ & $\mathbf{0.685~_{-0.396}^{+0.395}}$ \\ 
-        -0.410 & -0.833 & $0.312~_{-0.095}^{+0.138}$ & $0.424~_{-0.147}^{+0.210}$ & 0.615 & $0.276~_{-0.177}^{+0.168}$ & $0.819~_{-0.526}^{+0.498}$ \\
-        -0.360 & -0.750 & $0.307~_{-0.093}^{+0.138}$ & $0.409~_{-0.136}^{+0.200}$ & 0.593 & $0.256~_{-0.176}^{+0.170}$ & $0.874~_{-0.601}^{+0.581}$ \\
-        -0.308 & -0.667 & $0.301~_{-0.092}^{+0.138}$ & $0.384~_{-0.124}^{+0.198}$ & 0.566 & $0.231~_{-0.174}^{+0.165}$ & $0.915~_{-0.689}^{+0.655}$ \\
-        -0.200 & -0.500 & $0.292~_{-0.090}^{+0.136}$ & $0.345~_{-0.109}^{+0.181}$ & 0.497 & $0.166~_{-0.162}^{+0.163}$ & $0.895~_{-0.871}^{+0.879}$ \\
-        -0.100 & -0.333 & $0.278~_{-0.086}^{+0.132}$ & $0.303~_{-0.092}^{+0.156}$ & 0.409 & $0.092~_{-0.092}^{+0.157}$ & $0.679~_{-0.679}^{+1.159}$ \\
-        -0.059 & -0.250 & $0.268~_{-0.083}^{+0.129}$ & $0.283~_{-0.085}^{+0.152}$ & 0.365 & $0.059~_{-0.059}^{+0.148}$ & $0.515~_{-0.515}^{+1.285}$ \\
-        -0.027 & -0.167 & $0.260~_{-0.081}^{+0.125}$ & $0.266~_{-0.077}^{+0.135}$ & 0.328 & $0.029~_{-0.029}^{+0.142}$ & $0.297~_{-0.297}^{+1.434}$ \\
-         0.000 &  0.000 & $0.254~_{-0.079}^{+0.123}$ & $0.252~_{-0.073}^{+0.123}$ & 0.294 & $0.000~_{-0.000}^{+0.132}$ & $0.002~_{-0.002}^{+1.776}$ \\
-         0.027 &  0.167 & $0.275~_{-0.086}^{+0.132}$ & $0.284~_{-0.084}^{+0.148}$ & 0.357 & $0.040~_{-0.040}^{+0.154}$ & $0.650~_{-0.650}^{+2.514}$ \\
-         0.059 &  0.250 & $0.297~_{-0.093}^{+0.141}$ & $0.329~_{-0.099}^{+0.171}$ & 0.458 & $0.119~_{-0.119}^{+0.183}$ & $2.015~_{-2.015}^{+3.098}$ \\
-         0.100 &  0.333 & $0.322~_{-0.099}^{+0.148}$ & $0.405~_{-0.135}^{+0.220}$ & 0.611 & $0.246~_{-0.184}^{+0.166}$ & $4.147~_{-3.103}^{+2.802}$ \\
-         0.200 &  0.500 & $0.324~_{-0.096}^{+0.141}$ & $0.505~_{-0.181}^{+0.212}$ & 0.730 & $0.413~_{-0.177}^{+0.150}$ & $5.982~_{-2.559}^{+2.174}$ \\
-         0.308 &  0.667 & $0.281~_{-0.082}^{+0.122}$ & $0.462~_{-0.159}^{+0.172}$ & 0.651 & $0.382~_{-0.144}^{+0.136}$ & $4.186~_{-1.574}^{+1.492}$ \\
-         0.360 &  0.750 & $0.268~_{-0.079}^{+0.116}$ & $0.442~_{-0.154}^{+0.160}$ & 0.620 & $0.364~_{-0.135}^{+0.130}$ & $3.392~_{-1.253}^{+1.214}$ \\
-         0.410 &  0.833 & $0.258~_{-0.075}^{+0.112}$ & $0.427~_{-0.147}^{+0.162}$ & 0.599 & $0.351~_{-0.130}^{+0.127}$ & $2.754~_{-1.022}^{+0.999}$ \\
-    \tbf{0.500} & \tbf{ 1.000} & $\mathbf{0.244~_{-0.072}^{+0.105}}$ & $\mathbf{0.401~_{-0.137}^{+0.154}}$ & \tbf{0.562} & $\mathbf{0.328~_{-0.121}^{+0.118}}$ & $\mathbf{1.821~_{-0.671}^{+0.657}}$ \\
-         0.610 &  1.250 & $0.240~_{-0.070}^{+0.104}$ & $0.394~_{-0.133}^{+0.154}$ & 0.545 & $0.315~_{-0.119}^{+0.118}$ & $1.072~_{-0.403}^{+0.399}$ \\
-         0.640 &  1.333 & $0.242~_{-0.071}^{+0.105}$ & $0.398~_{-0.136}^{+0.156}$ & 0.547 & $0.316~_{-0.121}^{+0.122}$ & $0.921~_{-0.352}^{+0.354}$ \\
-         0.692 &  1.500 & $0.244~_{-0.071}^{+0.106}$ & $0.401~_{-0.136}^{+0.159}$ & 0.543 & $0.312~_{-0.120}^{+0.120}$ & $0.678~_{-0.261}^{+0.262}$ \\
-         0.800 &  2.000 & $0.256~_{-0.075}^{+0.109}$ & $0.416~_{-0.138}^{+0.169}$ & 0.552 & $0.311~_{-0.127}^{+0.121}$ & $0.317~_{-0.129}^{+0.123}$ \\
-         0.862 &  2.500 & $0.268~_{-0.078}^{+0.114}$ & $0.433~_{-0.142}^{+0.169}$ & 0.558 & $0.310~_{-0.130}^{+0.127}$ & $0.170~_{-0.072}^{+0.070}$ \\
-         0.900 &  3.000 & $0.276~_{-0.080}^{+0.118}$ & $0.442~_{-0.144}^{+0.177}$ & 0.563 & $0.308~_{-0.134}^{+0.128}$ & $0.102~_{-0.044}^{+0.042}$ \\
-         0.941 &  4.000 & $0.290~_{-0.084}^{+0.122}$ & $0.459~_{-0.149}^{+0.184}$ & 0.566 & $0.304~_{-0.140}^{+0.134}$ & $0.046~_{-0.021}^{+0.020}$ \\
-         0.973 &  6.000 & $0.306~_{-0.081}^{+0.122}$ & $0.474~_{-0.150}^{+0.192}$ & 0.571 & $0.300~_{-0.150}^{+0.131}$ & $0.016~_{-0.008}^{+0.007}$ \\
+        $f_t$  & \Ct/\CV\ & Exp.\ lim. & SM exp. & Obs.\ lim. & Best fit $r$ [pb] & Best fit $\sigma$ \\ \hline
+        -0.973 & -6.000 & $0.328~_{-0.090}^{+0.136}$ & $0.507~_{-0.158}^{+0.206}$ & 0.603 & $0.013~_{-0.007}^{+0.007}$ & $0.305~_{-0.169}^{+0.155}$  \\
+        -0.941 & -4.000 & $0.335~_{-0.098}^{+0.137}$ & $0.509~_{-0.166}^{+0.215}$ & 0.627 & $0.036~_{-0.020}^{+0.018}$ & $0.322~_{-0.174}^{+0.157}$  \\
+        -0.900 & -3.000 & $0.335~_{-0.096}^{+0.138}$ & $0.510~_{-0.172}^{+0.215}$ & 0.639 & $0.075~_{-0.039}^{+0.036}$ & $0.334~_{-0.173}^{+0.160}$  \\
+        -0.862 & -2.500 & $0.334~_{-0.097}^{+0.139}$ & $0.505~_{-0.173}^{+0.217}$ & 0.649 & $0.119~_{-0.061}^{+0.056}$ & $0.341~_{-0.174}^{+0.160}$  \\
+        -0.800 & -2.000 & $0.330~_{-0.095}^{+0.141}$ & $0.500~_{-0.176}^{+0.212}$ & 0.656 & $0.202~_{-0.103}^{+0.097}$ & $0.345~_{-0.176}^{+0.165}$  \\
+        -0.692 & -1.500 & $0.325~_{-0.095}^{+0.139}$ & $0.485~_{-0.172}^{+0.209}$ & 0.660 & $0.369~_{-0.191}^{+0.178}$ & $0.340~_{-0.176}^{+0.164}$  \\
+        -0.640 & -1.333 & $0.325~_{-0.097}^{+0.139}$ & $0.482~_{-0.173}^{+0.210}$ & 0.659 & $0.456~_{-0.238}^{+0.231}$ & $0.334~_{-0.174}^{+0.169}$  \\
+        -0.610 & -1.250 & $0.321~_{-0.095}^{+0.140}$ & $0.474~_{-0.169}^{+0.210}$ & 0.653 & $0.505~_{-0.272}^{+0.252}$ & $0.328~_{-0.177}^{+0.164}$  \\
+   \tbf{-0.500} & \tbf{-1.000} & $\mathbf{0.315~_{-0.093}^{+0.142}}$ & $\mathbf{0.450~_{-0.160}^{+0.213}}$ & \tbf{0.638} & $\mathbf{0.685~_{-0.396}^{+0.395}}$ & $\mathbf{0.304~_{-0.176}^{+0.175}}$  \\ 
+        -0.410 & -0.833 & $0.312~_{-0.095}^{+0.138}$ & $0.424~_{-0.147}^{+0.210}$ & 0.615 & $0.819~_{-0.526}^{+0.498}$ & $0.276~_{-0.177}^{+0.168}$ \\
+        -0.360 & -0.750 & $0.307~_{-0.093}^{+0.138}$ & $0.409~_{-0.136}^{+0.200}$ & 0.593 & $0.874~_{-0.601}^{+0.581}$ & $0.256~_{-0.176}^{+0.170}$ \\
+        -0.308 & -0.667 & $0.301~_{-0.092}^{+0.138}$ & $0.384~_{-0.124}^{+0.198}$ & 0.566 & $0.915~_{-0.689}^{+0.655}$ & $0.231~_{-0.174}^{+0.165}$ \\
+        -0.200 & -0.500 & $0.292~_{-0.090}^{+0.136}$ & $0.345~_{-0.109}^{+0.181}$ & 0.497 & $0.895~_{-0.871}^{+0.879}$ & $0.166~_{-0.162}^{+0.163}$ \\
+        -0.100 & -0.333 & $0.278~_{-0.086}^{+0.132}$ & $0.303~_{-0.092}^{+0.156}$ & 0.409 & $0.679~_{-0.679}^{+1.159}$ & $0.092~_{-0.092}^{+0.157}$ \\
+        -0.059 & -0.250 & $0.268~_{-0.083}^{+0.129}$ & $0.283~_{-0.085}^{+0.152}$ & 0.365 & $0.515~_{-0.515}^{+1.285}$ & $0.059~_{-0.059}^{+0.148}$ \\
+        -0.027 & -0.167 & $0.260~_{-0.081}^{+0.125}$ & $0.266~_{-0.077}^{+0.135}$ & 0.328 & $0.297~_{-0.297}^{+1.434}$ & $0.029~_{-0.029}^{+0.142}$ \\
+         0.000 &  0.000 & $0.254~_{-0.079}^{+0.123}$ & $0.252~_{-0.073}^{+0.123}$ & 0.294 & $0.002~_{-0.002}^{+1.776}$ & $0.000~_{-0.000}^{+0.132}$ \\
+         0.027 &  0.167 & $0.275~_{-0.086}^{+0.132}$ & $0.284~_{-0.084}^{+0.148}$ & 0.357 & $0.650~_{-0.650}^{+2.514}$ & $0.040~_{-0.040}^{+0.154}$ \\
+         0.059 &  0.250 & $0.297~_{-0.093}^{+0.141}$ & $0.329~_{-0.099}^{+0.171}$ & 0.458 & $2.015~_{-2.015}^{+3.098}$ & $0.119~_{-0.119}^{+0.183}$ \\
+         0.100 &  0.333 & $0.322~_{-0.099}^{+0.148}$ & $0.405~_{-0.135}^{+0.220}$ & 0.611 & $4.147~_{-3.103}^{+2.802}$ & $0.246~_{-0.184}^{+0.166}$ \\
+         0.200 &  0.500 & $0.324~_{-0.096}^{+0.141}$ & $0.505~_{-0.181}^{+0.212}$ & 0.730 & $5.982~_{-2.559}^{+2.174}$ & $0.413~_{-0.177}^{+0.150}$ \\
+         0.308 &  0.667 & $0.281~_{-0.082}^{+0.122}$ & $0.462~_{-0.159}^{+0.172}$ & 0.651 & $4.186~_{-1.574}^{+1.492}$ & $0.382~_{-0.144}^{+0.136}$ \\
+         0.360 &  0.750 & $0.268~_{-0.079}^{+0.116}$ & $0.442~_{-0.154}^{+0.160}$ & 0.620 & $3.392~_{-1.253}^{+1.214}$ & $0.364~_{-0.135}^{+0.130}$ \\
+         0.410 &  0.833 & $0.258~_{-0.075}^{+0.112}$ & $0.427~_{-0.147}^{+0.162}$ & 0.599 & $2.754~_{-1.022}^{+0.999}$ & $0.351~_{-0.130}^{+0.127}$ \\
+    \tbf{0.500} & \tbf{ 1.000} & $\mathbf{0.244~_{-0.072}^{+0.105}}$ & $\mathbf{0.401~_{-0.137}^{+0.154}}$ & \tbf{0.562} & $\mathbf{1.821~_{-0.671}^{+0.657}}$ & $\mathbf{0.328~_{-0.121}^{+0.118}}$\\
+         0.610 &  1.250 & $0.240~_{-0.070}^{+0.104}$ & $0.394~_{-0.133}^{+0.154}$ & 0.545 & $1.072~_{-0.403}^{+0.399}$ & $0.315~_{-0.119}^{+0.118}$ \\
+         0.640 &  1.333 & $0.242~_{-0.071}^{+0.105}$ & $0.398~_{-0.136}^{+0.156}$ & 0.547 & $0.921~_{-0.352}^{+0.354}$ & $0.316~_{-0.121}^{+0.122}$ \\
+         0.692 &  1.500 & $0.244~_{-0.071}^{+0.106}$ & $0.401~_{-0.136}^{+0.159}$ & 0.543 & $0.678~_{-0.261}^{+0.262}$ & $0.312~_{-0.120}^{+0.120}$ \\
+         0.800 &  2.000 & $0.256~_{-0.075}^{+0.109}$ & $0.416~_{-0.138}^{+0.169}$ & 0.552 & $0.317~_{-0.129}^{+0.123}$ & $0.311~_{-0.127}^{+0.121}$ \\
+         0.862 &  2.500 & $0.268~_{-0.078}^{+0.114}$ & $0.433~_{-0.142}^{+0.169}$ & 0.558 & $0.170~_{-0.072}^{+0.070}$ & $0.310~_{-0.130}^{+0.127}$ \\
+         0.900 &  3.000 & $0.276~_{-0.080}^{+0.118}$ & $0.442~_{-0.144}^{+0.177}$ & 0.563 & $0.102~_{-0.044}^{+0.042}$ & $0.308~_{-0.134}^{+0.128}$ \\
+         0.941 &  4.000 & $0.290~_{-0.084}^{+0.122}$ & $0.459~_{-0.149}^{+0.184}$ & 0.566 & $0.046~_{-0.021}^{+0.020}$ & $0.304~_{-0.140}^{+0.134}$ \\
+         0.973 &  6.000 & $0.306~_{-0.081}^{+0.122}$ & $0.474~_{-0.150}^{+0.192}$ & 0.571 & $0.016~_{-0.008}^{+0.007}$ & $0.300~_{-0.150}^{+0.131}$ \\
     \hline
   \end{tabular}
   \caption[Expected and observed upper limits.]{Expected (for background only, and for a SM-like Higgs signal) and observed 95\% C.L. upper limits (in pb), and best fit signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times modified branching ratio for the combination of all three channels, for different values of $\Ct/\CV$ or the equivalent $\ft$ numbers.}
@@ -1373,9 +1363,9 @@ As expected, the signal contribution is very small compared to the to the backgr
 \label{fig:xs_limits}
 \end{figure}
 
-Table \ref{tab:xslimits} lists the expected background only, the expected SM-like Higgs signal, and the observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H \to WW^*+ZZ^*+\tautau$ branching ratio (in pb); the corresponding plots are shown in Figure \ref{fig:xs_limits} for \CV=1. The expected background-only limit is calculated on an Asimov dataset, while the expected SM-like limit is calculated on an Asimov dataset that includes the SM-like \tH\ and \ttH signals.
+Table \ref{tab:xslimits} lists the expected background only, the expected SM-like Higgs signal, and the observed 95\% C.L. upper limits on the $\tH+\ttH$ production cross section times $H \to WW^*+ZZ^*+\tautau$ branching ratio (in pb); the corresponding plots are shown in Figure \ref{fig:xs_limits} for \CV= 1 . The expected background-only limit is calculated on an Asimov dataset, while the expected SM-like limit is calculated on an Asimov dataset that includes the SM-like \tH\ and \ttH signals.
 
-An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV=1) for the background-only expected limit; however, the inclusion of the SM-like \tH\ and \ttH signals reveals that the excess is actually about $1\sigma$; furthermore, looking at $\Ct/\CV=0$, \ie, the \ttH component in the signal is zero, it is evident that the origin of the excess is mostly due to the presence of the \ttH component in the signal, given that the deviation of the observed limit from the expected one is much smaller that $1\sigma$; this is consistent with the results presented in Reference \cite{CMS_AN_2017-029}. It is also evident that, given the dependence of the \ttH cross section on $\Ct^2$, the source of the asymmetry in both, background-only and SM-like, limits is induced by the \tH\ component of the signal.     
+An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV= 1) for the background-only expected limit; however, the inclusion of the SM-like \tH\ and \ttH signals reveals that the excess is actually about $1\sigma$; furthermore, looking at $\Ct/\CV=0$, \ie, the \ttH component in the signal is zero, it is evident that the origin of the excess is mostly due to the presence of the \ttH component in the signal, given that the deviation of the observed limit from the expected one is much smaller that $1\sigma$; this is consistent with the results presented in Reference \cite{CMS_AN_2017-029}. It is also evident that, given the dependence of the \ttH cross section on $\Ct^2$ the source of the asymmetry (the peak in the right side) in both background-only and SM-like limits is induced by the \tH\ component of the signal.     
 
 \begin{figure} [!h]
  \centering
@@ -1431,11 +1421,11 @@ $\Ct=1.0$  & \threel\                         & 3.0          & 0.91 & 1.22 &    
            & Combined ($\mu\mu,e\mu,3\ell$)   & \textbf{3.1} & 0.71 & 0.96 & \textbf{1.36} & 1.94 & 2.70 \\ \hline
            % & Combined (all channels)          & \textbf{3.1} & 0.71 & 0.95 & \textbf{1.34} & 1.92 & 2.65 \\ \hline
 \end{tabular}
-\caption[Expected and observed CL$_\text{S}$ limits on the signal strength.]{Expected and observed CL$_\text{S}$ limits (at 95\% C.L.) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations of them, for a scenario with inverted couplings ($\CV=1.0$, $\Ct=-1.0$, top section), and for the standard model ($\CV=\Ct=1.0$, bottom section). Numbers are for 35.9\fbinv.}
+\caption[Expected and observed CL$_\text{S}$ limits on the signal strength.]{Expected and observed CL$_\text{S}$ limits (at 95\% C.L.) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations of them, for a scenario with inverted couplings ($\CV=1.0$, $\Ct=-1.0$, top section), and for the standard model (${\CV=\Ct=1.0}$, bottom section). Numbers are for 35.9\ \fbinv.}
 \label{tab:limits}
 \end{table}
 
-The observed limit of about 0.64 pb on a signal shape expected for \Ct/\CV = -1.0 and for the combination of all three channels, corresponds to 1.4 times the expected \tH + \ttH cross section with \Ct = -1.0, \CV = 1.0. In the SM scenario (\Ct/\CV = 1.0), the observed upper limit on the cross section times branching ratio is 0.56 pb, corresponding to 3.1 times the expected SM cross section of \tH + \ttH. The summary of the results for the ITC and SM-like scenarios split by channel are presented in Table \ref{tab:xslimits_chan}, whereas, the summary of the expected and observed CL$_\text{S}$ limits (at 95\% C.L.) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations thereof, for the ITC  and SM-like scenarios are presented in Table \ref{tab:limits}.
+The observed limit of about 0.64 pb on a signal shape expected for \Ct/\CV = -1.0 and for the combination of all three channels corresponds to 1.4 times the expected \tH + \ttH cross section with \Ct = -1.0, \CV = 1.0. In the SM scenario ${(\Ct/\CV = 1.0)}$, the observed upper limit on the cross section times branching ratio is 0.56 pb, corresponding to 3.1 times the expected SM cross section of \tH + \ttH. The summary of the results for the ITC and SM-like scenarios split by channel are presented in Table \ref{tab:xslimits_chan}, whereas the summary of the expected and observed CL$_\text{S}$ limits (at ${95\% \textrm{C.L.}}$) on the signal strength of combined $\tH+\ttH$ production in each channel, and for different combinations thereof, for the ITC  and SM-like scenarios are presented in Table \ref{tab:limits}.
 
 \subsection{Best fit}
 
@@ -1446,7 +1436,7 @@ The best-fit results for the signal strength in all the 33 $\Ct/\CV$ configurati
 \begin{tabular}{lccc}\hline
 Scenario        & Best fit signal strength  & Best fit $\sigma\times BR$ & Significance Obs.(exp.)          \\\hline
 $\Ct/\CV=-1.0$  & $0.68\pm0.40$             & $0.30 \pm 0.18$ pb         & $1.70 \sigma (2.51 \sigma) $     \\
-$\Ct/\CV=1.0$   & $1.82^{0.66}_{-0.67}$     & $0.33 \pm 0.12$ pb         & $2.73 \sigma (1.50 \sigma) $     \\\hline
+$\Ct/\CV=1.0$   & $1.82^{+0.66}_{-0.67}$     & $0.33 \pm 0.12$ pb         & $2.73 \sigma (1.50 \sigma) $     \\\hline
 \end{tabular}
 \caption[Fit results for the ITC and SM scenarios]{Best fit for signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times modified branching ratio for the combination of all three channels, for the ITC and the SM-like scenarios.}
 \label{tab:fit_results_itc_sm}
@@ -1455,17 +1445,17 @@ $\Ct/\CV=1.0$   & $1.82^{0.66}_{-0.67}$     & $0.33 \pm 0.12$ pb         & $2.73
 \begin{table}[h!]
 \centering
 \begin{tabular}{lr} \hline
-\threel\  & $r=1.44 {}_{-0.84} {}^{+0.91}$ \\
-\emu\     & $r=1.42 {}_{-1.03} {}^{+1.06}$ \\
-\mumu\    & $r=2.75 {}_{-1.11} {}^{+1.22}$ \\
-Combined  & $r=1.82 {}_{-0.69} {}^{+0.76}$ \\
-Expected  & $r=1.00 {}_{-0.65} {}^{+0.70}$ \\\hline
+\threel\  & $r=1.44 {}_{-0.84}^{+0.91}$ \\
+\emu\     & $r=1.42 {}_{-1.03}^{+1.06}$ \\
+\mumu\    & $r=2.75 {}_{-1.11}^{+1.22}$ \\
+Combined  & $r=1.82 {}_{-0.69}^{+0.76}$ \\
+Expected  & $r=1.00 {}_{-0.65}^{+0.70}$ \\\hline
 \end{tabular}
 \caption[Best-fit signal strengths for a SM-like Higgs signal.]{Best-fit signal strengths for a SM-like Higgs signal for the individual channels.}
 \label{tab:sigstrengths}
 \end{table}
 
-In the SM scenario, a signal strength of $1.82$ is obtained which corresponds to a cross section of $0.33$ pb. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. For the ITC scenario, the best fit signal strength is $0.68$, corresponding to a significance of $1.7\sigma (2.5 \sigma$ expected); a scan of the observed and expected significances over the \Ct/\CV configurations is shown in Fig.~\ref{fig:significances}. Note that the fit favors a signal strength compatible with zero for a scenario with \Ct = 0 (where the \ttH component vanishes).
+In the SM scenario, a signal strength of $1.82$ is obtained which corresponds to a cross section of $0.33$ pb. The observed significance of the signal, in a background-only hypothesis, is $2.7\,\sigma$, with an a-priori expected significance of $1.5\,\sigma$. For the ITC scenario, the best fit signal strength is $0.68$, corresponding to a significance of $1.7\sigma$ ($2.5 \sigma$ expected); a scan of the observed and expected significances over the \Ct/\CV configurations is shown in Fig.~\ref{fig:significances}. Note that the fit favors a signal strength compatible with zero for a scenario with \Ct = 0 (where the \ttH component vanishes).
 
 \begin{figure} [!h]
  \centering
@@ -1483,7 +1473,7 @@ A scan over the best fit values of the combined cross section times modified BR 
  \includegraphics[width=0.48\textwidth]{limits/xs_fits_K6_split_cv.pdf}\\
  \includegraphics[width=0.48\textwidth]{limits/xs_fits_K6_alpha.pdf}
  \includegraphics[width=0.48\textwidth]{limits/xs_fits_K6_alpha_split_cv.pdf}
-\caption[Best fit values of the combined $\tH+\ttH$ $\sigma\times$BR]{Best fit values of the combined $\tH+\ttH$ cross section times modified BR as a function of $\Ct/\CV$ (top) and $\mathrm{sign}(\Ct/\CV)\times\frac{\Ct^2}{(\Ct^2+\CV^2)}$ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel.}
+\caption[Best fit values of the combined $\tH+\ttH$ $\sigma\times$BR]{Best fit values of the combined $\tH+\ttH$ cross section times modified BR as a function of $\Ct/\CV$ (top) and $\mathrm{sign}(\Ct/\CV)\times\frac{\Ct^2}{(\Ct^2+\CV^2)}$ (bottom) for the combination of three lepton channel, \mumu, and \emu\ channel. In the left column plots, parabolas correspond to the theoretical cross section for \tH, \ttH and \th+\ttH with \CV= 1; in the right column plot the parabolas correspond to \tH+\ttH for \CV= 0.5, 1.0, 1.5.}
 \label{fig:xs_fits_cv}
 \end{figure}
 
@@ -1504,9 +1494,9 @@ A scan over the best fit values of the combined cross section times modified BR 
 
 \subsection{Effect of the nuisance parameters}
 
-The post-fit behavior of the most important nuisance parameters is presented in the pulls and impacts plots in Figures ~\ref{fig:impacts}, ~\ref{fig:impacts} and ~\ref{fig:impacts}; additional pulls and impacts can be fund in Appendix \ref{pulls_impacts_add} 
+The post-fit behavior of the most important nuisance parameters is presented in the pulls and impacts plots in Figures ~\ref{fig:impacts} and ~\ref{fig:impacts_asimov}; additional pulls and impacts can be found in Appendix \ref{pulls_impacts_add} 
 
-Most of the nuisance parameters stay close to their initial values. The biggest impact on the signal strength limits is associated to the fake rates for muons, followed by the lepton efficiencies and nuisances associated to the QCD scales. The lower impact in the ITC scenario is associated to the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated to the forward jet in \tHq and P.D.F.s have the lower impact in the signal strength limit .
+Most of the nuisance parameters stay close to their initial values, \ie, the estimations of all the nuisances are consistent with the observations in this dataset, up to the limited statistical power available. The biggest impact on the signal strength limits is associated with the fake rates for muons, followed by the lepton efficiencies and nuisances associated with the QCD scales. The lower impact in the ITC scenario is associated with the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated with the forward jet in \tHq and PDFs have the lower impact in the signal strength limit.
 
 \begin{figure} [!th]
  \centering
