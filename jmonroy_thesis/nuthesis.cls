@@ -175,6 +175,7 @@ Under the Supervision of \nu@adviser\\[3\baselineskip]
   \pagestyle{empty}%
   \begin{doublespacing}%
     \begin{center}%
+      \footnotesize
       \MakeUppercase{\thetitle}\\[.5\baselineskip]
       \theauthor, \nu@degreeabbreviation\\
       \nu@university, \nu@year%

@@ -9,15 +9,15 @@
 
 Once the mass of the Higgs boson has been determined experimentally, the couplings to fermions and vector bosons are completely specified by the standard model. With the Higgs now observed and its mass measured \cite{h_mass}, the coupling strengths can now be measured and compared to the predictions of the model.
 
-In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are sensitive to the strength of the coupling. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also to the CP mixing phase of the Higgs couplings.
+In order to test the Higgs-top coupling, several measurements have been performed, as stated in the chapter \ref{ch:theory}, but they are sensitive to the strength of the coupling only. The production of a Higgs boson in association with a single top quark (\tH) not only offers access to the sign of the coupling, but also to the CP-mixing phase of the Higgs couplings.
 
-This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, with an integrated luminosity of 35.9 \fbinv, is used.
+This chapter presents the search for the associated production of a Higgs boson and a single top quark (\tHq) events, focusing on leptonic signatures provided by the Higgs decay modes to $\WW$, $\ZZ$, and $\tautau$; the 13 TeV dataset produced in 2016, with an integrated luminosity of 35.9 \fbinv, is used. The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
 
-As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is affected by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such a deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred to as the \tH\ channel. In order to provide the analysis with sensitivity to the strength of the coupling, the \ttH process is included as part of the signal; thus, the purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes in the SM under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1) also known as the \ti{Inverted Top Coupling} (ITC) scenario. The analysis exploits signatures with two leptons of the same sign (\ti{2lss}) channel and three leptons (\ti{3l}) channel in the final state.
+As shown in Section \ref{sec:thq}, the SM cross section of \tHq process is affected by a destructive interference between two contributions (see Figure \ref{fig:th_prod}), where the Higgs couples to either the W boson or the top quark; however, if the sign of the Higgs-top coupling is flipped with respect to the SM prediction, a large enhancement of the cross section occurs, making this analysis sensitive to such a deviation. A second process, where the Higgs boson and top quark are accompanied by a W boson (\tHW) has similar behavior, albeit with a weaker interference pattern and lower contribution to the cross section, therefore, a combination of both processes would increase the sensitivity to the sign of the coupling; in this analysis both contributions are combined and referred to as the \tH\ channel. In order to provide the analysis with sensitivity to the strength of the coupling, the \ttH process is included as part of the signal; thus, the purpose of this analysis is to investigate the exclusion of the presence of the \tH + \ttH processes in the SM under the assumption of the anomalous Higgs-top coupling modifier (\Ct=-1) also known as the \ti{Inverted Top Coupling} (ITC) scenario. 
 
 Constraints on the sign of the Higgs-top coupling ($y_t$) have been derived from the decay rate of Higgs boson to photon pairs \cite{biswas} and from the cross section for associated production of Higgs and Z bosons via gluon fusion \cite{hespel}, with recent results disfavoring negative signs of the coupling \cite{cms_ht_couplings,comb_ht_couplings,diboson}, although the negative sign coupling has not been completely excluded.
 
-The analysis presented here expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}, by adding new analysis tools like MVA methods and yield interpretations; it also complements searches in $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
+The analysis presented here expands previous analyses performed at 8 TeV ~\cite{Khachatryan_2015,CMS_AN_2014-140} and searches for associated production of \ttbar pair and a Higgs boson in the multilepton final state channel ~\cite{CMS_AN_2016-211}, by adjusting the object selections to the updated LHC running conditions at 13 TeV, improving the lepton identification, using more powerful multivariate analysis techniques for the signal extraction and a new yield interpretation; it also complements searches in $H\to b\bar{b}$~\cite{CMS_PAS_HIG_16-019}.
 
 The first sections present the characteristic \tHq signature as well as the expected backgrounds. The MC samples, data sets, and the physics object definitions are then described; after, the background predictions, the signal extraction, the statistical treatment of the selected events and the discussion of the systematic uncertainties are described. The final section presents the results for the exclusion limits as a function of the ratio of \Ct and the modifier of the Higgs-vector boson coupling \CV.  
 
@@ -29,9 +29,7 @@ The first sections present the characteristic \tHq signature as well as the expe
 \label{fig:workflow}
 \end{figure}
 
-The analysis is designed to efficiently identify and select prompt leptons from on-shell W and Z boson decays and to reject non-prompt leptons from $b$ quark decays and spurious lepton signatures from hadronic jets. Events are then selected in the $2lss$ and $3l$ channels, and are required to contain hadronic jets, some of which must be consistent with $b$ quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated multivariate discriminants, trained to separate the \tHq signal from the two dominant backgrounds. The fit result is then used to set an upper limit on the combined \ttH + \tH\ production cross section as a function of the relative coupling strengths of Higgs-top quark and Higgs-Vector boson. Figure \ref{fig:workflow} shows an schematic overview of the analysis strategy workflow. 
-
-With respect to the 8 TeV analysis, the object selections have been adjusted for the updated LHC running conditions at 13 TeV, the lepton identification has been improved, and more powerful multivariate analysis techniques are used for the signal extraction.
+The analysis is designed to efficiently identify and select prompt leptons from on-shell W and Z boson decays and to reject non-prompt leptons from $b$ quark decays and spurious lepton signatures from hadronic jets. Events are then selected in the $2lss$ and $3l$ channels, and are required to contain hadronic jets, some of which must be consistent with $b$ quark hadronization. Finally, the signal yield is extracted by simultaneously fitting the output of two dedicated multivariate discriminants, trained to separate the \tHq signal from the two dominant backgrounds which, as will be shown in Section \ref{sec:bg},  are \ttbar, \ttW and \ttZ processes. The fit result is then used to set an upper limit on the combined \ttH + \tH\ production cross section as a function of the relative coupling strengths of Higgs-top quark and Higgs-Vector boson. Figure \ref{fig:workflow} shows an schematic overview of the analysis strategy workflow. 
 
 The analysis has been made public by CMS as a Physics Analysis Summary \cite{CMS_PAS_HIG_17-005} combining the result for the three lepton and two lepton same-sign channels; the content present in this chapter is based on that document and on References ~\cite{CMS_AN_2016-211, CMS_AN_2017-029} unless another reference is stated. Currently, an effort to turn the analysis into a paper combining the multilepton and $H \to b\bar{b}$ results is ongoing. 
 
@@ -83,7 +81,7 @@ The main sources of background events for \tHq process are the \ttbar process an
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\textwidth]{ttbar_signature}
-\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW (right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also shown. The \ttbar process signature is very similar to that of the signal process with one fake lepton and no forward activity. The \ttW\ process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
+\caption[\ttbar and \ttW events signature]{\ttbar(left) and \ttW (right) events signature as they would be seen in the detector; the Feynman diagrams including the whole evolution up to the final state are also shown. The \ttbar process signature is very similar to that of the signal process with one \bjet misidentified as a lepton (fake lepton indicated with the \bjet tag struck through) and no forward activity. The \ttW\ process presents a higher b-jet multiplicity compared to the signal process, a prompt lepton and no forward activity.}
 \label{fig:ttbar_sign}
 \end{figure}
 
@@ -428,8 +426,7 @@ The offline event selection level targets the specific topology of the \tHq sign
 \multicolumn{2}{l}{\hspace{3cm}No loose leptons with $m_{\ell\ell} < 12$GeV}                                       \\
 \multicolumn{2}{l}{\hspace{3cm}One or more $b$ tagged jets (CSV medium) |\etac|<2.4}                               \\
 \multicolumn{2}{l}{\hspace{3cm}One or more non-tagged jets: central $\to$ \pt>25 GeV, \etac<2.4}                   \\
-\multicolumn{2}{l}{\hspace{3cm}\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4}\\
-\multicolumn{2}{l}{\hspace{3cm}$E^{miss}_{T\quad LD} > 0.2$}                                                       \\\hline
+\multicolumn{2}{l}{\hspace{3cm}\textcolor{white}{One or more non-tagged jets:} forward $\to$ \pt>40 GeV, \etac>2.4}\\\hline
 Exactly two tight same-sign leptons              & Exactly three tight leptons                                     \\
 Lepton $\pt>25/15$GeV                            & Lepton $\pt>25/15/15$GeV                                        \\
 Electrons are triple-charge consistent.          & No OSSF lepton pair with $|m_{\ell\ell}-m_Z|<15$GeV             \\
@@ -444,7 +441,7 @@ In the $2lss$ channel, events with additional tight leptons are vetoed as well a
 In the $3l$ lepton channel, leptons are required to have respectively $\pt > 25$ GeV, > 15 GeV, and > 15  GeV. Events with an opposite-sign same-flavor lepton combination (OSSF) with invariant mass within 15 GeV of the Z boson mass are discarded in order to reject events from \WZ + jets production.
 
 %______________________ Background predictions ______________________
-\section{Background modeling and predictions}\label{sec:bg}
+\section{Background modeling and predictions}\label{sec:bg_pred}
 
 The dominant background contribution is expected to arise from top quark production processes, either \ttbar pair production or in \ttbar associated production with a W/Z. Processes with production of single top quarks also contribute, mainly in the associated production with a Z boson (\tZq) or when produced with both a W and a Z boson (\tZW). Background contamination from diboson processes is strongly suppressed by imposing the Z-veto, vetoing additional leptons and requiring $b$-jets in the event.
 
@@ -598,7 +595,7 @@ $\tHq$ ($\Ct=-1.0$)           & $   7.48 \pm 0.14$ & $ 18.48 \pm 0.22 $ & $ 27.4
 $\tHW$ ($\CV=-1.0$)           & $   7.38 \pm 0.16$ & $  7.72 \pm 0.17 $ & $ 11.23 \pm 0.20 $  \\
 $\ttH$                        & $  18.29 \pm 0.41$ & $ 24.18 \pm 0.48 $ & $ 35.21 \pm 0.58 $  \\ \hline
 Signal + Backgrounds          & $ 139.20 \pm 3.49$ & $261.12 \pm 3.65 $ & $517.15 \pm 8.03 $  \\ \hline
-Data (35.9 fb$^{-1}$)         & \multicolumn{1}{l}{127}&\multicolumn{1}{l}{280} & \multicolumn{1}{l}{525} \\\hline
+Data (35.9 fb$^{-1}$)         & \multicolumn{1}{c}{127}&\multicolumn{1}{c}{280} & \multicolumn{1}{c}{525} \\\hline
 \end{tabular}
 \caption[Expected and observed yields for 35.9 \fbinv after the pre-selection.]{Expected and observed yields for 35.9 \fbinv after the pre-selection in all final states. Uncertainties are statistical only.}
 \label{tab:yields-sel}
@@ -1131,9 +1128,27 @@ Besides the theory uncertainties on \ttW and \ttZ, uncertainties of the smaller 
 
 \textbf{Fake rate closure uncertainties}
 
-The dominant uncertainty is associated with the estimate of the non-prompt lepton contribution using a fake rate method; the main normalization uncertainty comes from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution as stated in Section \ref{ssec:fake_rate}. Shape variations describing data/MC differences and deviations in closure test are evaluated as shape uncertainties.
+The dominant uncertainty on the background rates is associated with the estimate of the non-prompt lepton contribution using a fake rate method; the main normalization uncertainty comes from limited statistics in the data control region, and the subtraction of residual prompt lepton contribution as stated in Section \ref{ssec:fake_rate}. Shape variations describing data/MC differences and deviations in closure test are evaluated as shape uncertainties.
 
-In order to determine the systematic uncertainties associated with the fake rates, the method is evaluated using MC samples; the fake rate is measured in a QCD MC sample and then compared to the yields from a MC \ttbar sample so that the differences sets the scale for the uncertainty on the fake rate method. Explicitely, the BDTG classifier output shapes from a pure MC estimation of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
+In order to determine the systematic uncertainties associated with the fake rates, the method is evaluated using MC samples; the fake rate is measured in a QCD MC sample and then compared to the yields from a MC \ttbar sample so that the differences sets the scale for the uncertainty on the fake rate method. Explicitely, the BDTG classifier output shapes from a pure MC count of fake leptons (in \ttbar) and from the application of fake-rates as measured in QCD MC, applied in \ttbar\ MC events, are compared. The difference in the resulting normalization and output shapes, for both trainings vs. \ttbar\ and vs. \ttV, are estimated and propagated to the fit as normalization and shape variations; Figures ~\ref{fig:frclosure_2lss_ee} and ~\ref{fig:frclosure_3l_elfake} show the results of these closure tests.
+
+
+\begin{figure}[htb]
+\small
+\centering
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_elfake_norm.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_shape.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_elfake_shape.pdf} \\
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_mufake_norm.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_mufake_shape.pdf} 
+ \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_mufake_shape.pdf} 
+\caption[Fake rates closure test in the $3l$ selection.]{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the plots in the two left columns, shape disagreement is estimated from the (normalized) plots in the two right columns. From top to bottom rows: three lepton selection with electron fakes, three lepton selection with muon fakes.} 
+\label{fig:frclosure_3l_elfake}
+\end{figure}
+
+
 \begin{figure}[htb]
  \centering
  %% \includegraphics[width=0.240\textwidth]{FR_closures/thqMVA_tt_2lss_ee_norm.pdf} 
@@ -1155,21 +1170,6 @@ In order to determine the systematic uncertainties associated with the fake rate
 \caption[Fake rates closure test.]{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the plots in the two left columns, shape disagreement is estimated from the  (normalized) plots in the two right columns. From top to bottom rows: same-sign \emu\ selection with electron fakes, same-sign \emu\ selection with muon fakes, same-sign \mumu\ selection.} 
 \label{fig:frclosure_2lss_ee}
 \end{figure} 
-
-\begin{figure}[htb]
-\small
-\centering
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_norm.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_elfake_norm.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_elfake_shape.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_elfake_shape.pdf} \\
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_mufake_norm.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_mufake_norm.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_tt_3l_mufake_shape.pdf} 
- \includegraphics[width=0.225\textwidth]{FR_closures/thqMVA_ttv_3l_mufake_shape.pdf} 
-\caption[Fake rates closure test in the $3l$ selection.]{BDT outputs comparing \ttbar\ MC to a fake-rate prediction using fake rates measured in QCD MC.\@ Agreement in normalization is estimated from the plots in the two left columns, shape disagreement is estimated from the (normalized) plots in the two right columns. From top to bottom rows: three lepton selection with electron fakes, three lepton selection with muon fakes.} 
-\label{fig:frclosure_3l_elfake}
-\end{figure}
 
 Table ~\ref{tab:uncertainties} list all the systematic uncertainties currently considered in the analysis.
 
@@ -1289,7 +1289,7 @@ The post-fit categorized BDTG output distributions obtained in the maximum likel
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_3l_13TeV_prefit.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_mm_13TeV_prefit.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/ITC/tHq_2lss_em_13TeV_prefit.pdf} 
-\caption[Background-subtracted distributions in the final binning (ITC).]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the inverted couplings scenario (${\CV=1,\Ct=-1}$).}
+\caption[Background-subtracted distributions in the final binning (ITC).]{Background-subtracted pre-fit (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the inverted couplings scenario (${\CV=1,\Ct=-1}$).}
 \label{fig:postfit_bgsub_ITC}
 \end{figure}
 
@@ -1303,7 +1303,7 @@ As expected, the signal contribution is very small compared to the to the backgr
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_3l_13TeV_prefit.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_mm_13TeV_prefit.pdf}
  \includegraphics[width=0.32\textwidth]{postfit/bgsub/SM/tHq_2lss_em_13TeV_prefit.pdf} 
-\caption[Background-subtracted distributions in the final binning (SM)]{Background-subtracted pre- (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for the three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the SM-like scenario (${\Ct=\CV=1}$).}
+\caption[Background-subtracted distributions in the final binning (SM)]{Background-subtracted pre-fit (top) and post-fit (bottom) distributions in the final binning used for the signal extraction, for the three lepton channel (left), the \mumu\ channel (center), and the \emu\ channel (right). For a fit in the SM-like scenario (${\Ct=\CV=1}$).}
 \label{fig:postfit_bgsub_SM}
 \end{figure}
 
@@ -1313,7 +1313,7 @@ As expected, the signal contribution is very small compared to the to the backgr
   \centering
   \footnotesize
   \begin{tabular}{rr|ccc|cc}
-        $f_t$  & \Ct/\CV\ & Exp.\ lim. & SM exp. & Obs.\ lim. & Best fit $r$ [pb] & Best fit $\sigma$ \\ \hline
+        $f_t$  & \Ct/\CV\ & Bg-only exp. & SM exp. & Obs.\ lim. & Best fit $r$ [pb] & Best fit $\sigma$ \\ \hline
         -0.973 & -6.000 & $0.328~_{-0.090}^{+0.136}$ & $0.507~_{-0.158}^{+0.206}$ & 0.603 & $0.013~_{-0.007}^{+0.007}$ & $0.305~_{-0.169}^{+0.155}$  \\
         -0.941 & -4.000 & $0.335~_{-0.098}^{+0.137}$ & $0.509~_{-0.166}^{+0.215}$ & 0.627 & $0.036~_{-0.020}^{+0.018}$ & $0.322~_{-0.174}^{+0.157}$  \\
         -0.900 & -3.000 & $0.335~_{-0.096}^{+0.138}$ & $0.510~_{-0.172}^{+0.215}$ & 0.639 & $0.075~_{-0.039}^{+0.036}$ & $0.334~_{-0.173}^{+0.160}$  \\
@@ -1377,7 +1377,7 @@ An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV= 
 \label{fig:xs_limits_cv}
 \end{figure}
 
-Comparing the observed upper limit with the theoretical prediction of the \tH + \ttH cross section times BR for \CV = 1.0 constrains the allowed range of coupling configurations \Ct/\CV to between about -1.25
+Comparing the observed upper limit with the theoretical prediction of the ${\tH + \ttH}$ cross section times BR for \CV = 1.0 constrains the allowed range of coupling configurations \Ct/\CV to between about -1.25
 and +1.60. as shown in the top right plot in Figure \ref{fig:xs_limits_cv}.
 
 \begin{table}[h!]
@@ -1527,14 +1527,14 @@ The sensitivity of the analysis is limited by systematic uncertainties, predomin
 
 \section{CP-mixing in \tH process}
 
-The sensitivity of the \tH production process to the CP-mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
+The sensitivity of the \tH production process to CP mixing in the Higgs boson sector was explored in Section \ref{sec:cp}; the theoretical model postulates the existence of a generic spin-0 particle $X_0$ with a CP-symmetry violating interaction with the top quark but SM-like interaction with the W boson.
 
 \begin{table}[h!]
   \centering
   \footnotesize
   \begin{tabular}{lccc}\hline
                      & \multicolumn{3}{c}{Cross section (pb)}                 \\ 
-  $\cos(\alpha_{CP})$& \tHq                  & \tHW                  & \ttH   \\ \hline
+  $\cos(\alpha_{CP})$& \tHq                  & \tHW                  & \ttH (Extrap. NLO)   \\ \hline
     -1.0             & $0.794^{+2.8}_{-4.0}$ & $0.146^{+0.2}_{-0.2}$ & 0.503  \\
     -0.9             & $0.728^{+2.7}_{-4.1}$ & $0.135^{+0.2}_{-0.2}$ & 0.426  \\
     -0.8             & $0.664^{+2.7}_{-4.2}$ & $0.123^{+0.2}_{-0.2}$ & 0.356  \\
@@ -1557,22 +1557,22 @@ The sensitivity of the \tH production process to the CP-mixing in the Higgs boso
     0.9              & $0.077^{+4.7}_{-7.0}$ & $0.017^{+0.2}_{-0.2}$ & 0.426  \\
     1.0              & $0.071^{+4.2}_{-6.7}$ & $0.016^{+0.2}_{-0.2}$ & 0.503  \\\hline
 \end{tabular}
-  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). Uncertainties on the cross section are based on scale variations and given in \%. The used \ttH NLO cross sections are provided by the authors of Reference \cite{maltoni2} and are interpolated to the angles for which the LHE weights in the signal MC samples are available.}\label{tab:cp_signal_xsec}
+  \caption[Cross sections for \tHq, \tHW and \ttH as a function of $\cos(\alpha_{CP})$ ]{Production cross sections for \tHq, \tHW and \ttH at $\sqrt{s}=13$ TeV, as a function of $\cos(\alpha_{CP}$). Uncertainties on the cross section are based on scale variations and given in \%. The \ttH NLO cross sections are interpolated to the angles for which the LHE weights in the signal MC samples are available \cite{fink}.}\label{tab:cp_signal_xsec}
 \end{table}
 
-The LHE reweighting procedure used in the ITC analysis is used in this CP-mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha_{CP}$) ranging from values of $\cos (\alpha_{CP}) = 1$ to $\cos (\alpha_{CP}) = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO prediction and are listed in Table~\ref{tab:cp_signal_xsec}. The shape variations of the \ttH process with $\cos (\alpha_{CP})$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
+The LHE reweighting procedure used in the couplings analysis is used in this CP mixing analysis; thus, a \tXq simulation sample was produced, containing 21 event weights for different CP-mixing angles ($\alpha_{CP}$) ranging from values of $\cos (\alpha_{CP}) = 1$ to $\cos (\alpha_{CP}) = -1$ in steps of 0.1. The extremes of that range correspond to the previously studied points SM (\Ct=1) and the ITC (\Ct=-1). The sample was produced at LO with MadGraph5\_aMCatNLO, requiring the leptonic decay of the top quark. The \tHq, \tHW, and \ttH cross sections are scaled to their NLO predictions and are listed in Table~\ref{tab:cp_signal_xsec}. The shape variations of the \ttH process with $\cos (\alpha_{CP})$ are expected to be negligible in the range of values studied here where the cross section contribution is dominated by \tH processes; however, the production of a private \ttH sample including the CP-mixing weights is ongoing so that they can be included in a future refinement of the analysis.  
 
 \begin{figure} [!h]
       \centering
       \includegraphics[width=0.45\textwidth]{cp_mixing/thqMVA_tt_3l_40}
       \includegraphics[width=0.45\textwidth]{cp_mixing/thqMVA_ttv_3l_40}
-      \caption[BDT shape variations for five CP-mixing angles.]{BDT shape variations for five CP-mixing angles. The trainings use the same set of input variables and samples as for the \Ct/-\CV study. Since there are no big variations between BDT output, only on taining was performed.}
+      \caption[BDT shape variations for five CP-mixing angles.]{BDT shape variations for five CP-mixing angles. The trainings use the same set of input variables and samples as for the \Ct/-\CV study. Since there are no big variations between BDT output, only on training was performed.}
 \label{fig:bdtg_output_5cp}
 \end{figure}
 
 The set of BDTG input variables and training parameters are the same as for the \Ct-\CV analysis, as they already were optimized. Figure~\ref{fig:bdtg_output_5cp} shows that the shape variations for five values of $\cos (\alpha_{CP})$; since there are no significant variations, it is not necessary to perform BDT trainings for each CP-mixing angle.    
 
-After performing the simultaneous fit to the observed data for all channels, the asymptotic limits are calculated for each of the CP-mixing angles. Figure \ref{fig:cp_limits} shows the expected background-only, SM-like, and observed asymptotic $Cl_S$ limits at 95\% C.L. on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels for all studied CP-mixing angles; the corresponding values are listed in Table \ref{tab:cp_xsec}. The SM-like limits and cross section limits have been calculated on an Asimov dataset that includes SM-like \tH and \ttH signals. 
+After performing the simultaneous fit to the observed data for all channels, the asymptotic limits are calculated for each of the CP-mixing angles. Figure \ref{fig:cp_limits} shows the expected background-only, SM-like, and observed asymptotic $CL_s$ limits at 95\% C.L. on the combined \tH + \ttH cross section times BR as a function of $\cos(\alpha_{CP})$ for the combination of the $3l$, $\mumu$, and $\emu$ channels for all studied CP-mixing angles; the corresponding values are listed in Table \ref{tab:cp_xsec}. The SM-like limits and cross section limits have been calculated on an Asimov dataset that includes SM-like \tH and \ttH signals. 
 
 %% \begin{table}[h!]
 %%   \centering
@@ -1608,7 +1608,7 @@ After performing the simultaneous fit to the observed data for all channels, the
       \centering
       \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cp_Jul21_cv_1p0}\\
       \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cv_1p0_SMexp}
-      \caption[Asymptotic limits on the combined $\tH+\ttH$ $\sigma\times$BR for CP mixing angle.]{Left (Right): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times BR as a function of $\cos (\alpha_{CP})$ for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
+      \caption[Asymptotic limits on the combined $\tH+\ttH$ $\sigma\times$BR for CP-mixing angle.]{Top (bottom): Expected background-only (SM-like including  \ttH\ and \tH\ signals) and observed asymptotic limits on the combined $\tH+\ttH$ cross section times BR as a function of $\cos (\alpha_{CP})$ for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
 \label{fig:cp_limits}
 \end{figure}
 
@@ -1628,13 +1628,13 @@ $\cos (\alpha_{CP})=0$ & 0.469       & 0.279   & [0.195,0.404] & [0.143,0.563]  
 \label{tab:limits}
 \end{table}
 
-The CP-mixing limits are consistent with the limits obtained in the \Ct-\CV analysis as expected; however, in the CP-mixing case it is not possible to exclude any region/value in the $\alpha_{CP}$ phase space. The excess of more than 2$\sigma$ observed in the SM scenario for the background-only expected limit, and that was also observed in the \Ct-\CV analysis, is again reduced to about $1\sigma$ when the SM-like \tH and \ttH signals are included in the calculation of the expectations; however, as said above, the fact that the \ttH sample does not include the CP-mixing weights implies that no conclusive sentence can be stated.
+The CP-mixing limits are consistent with the limits obtained in the \Ct-\CV analysis as expected; however, in the CP-mixing case it is not possible to exclude any region/value in the $\alpha_{CP}$ phase space. The excess of more than 2$\sigma$ observed in the SM scenario for the background-only expected limit, and that was also observed in the \Ct-\CV analysis, is again reduced to about $1\sigma$ when the SM-like \tH and \ttH signals are included in the calculation of the expectations; however, as said above, the fact that the \ttH sample does not include the CP-mixing weights implies that no conclusive statement can be made.
 
-Finally, the best fit values of the combined \tH + \ttH cros sections times the BR as a function of the CP-mixing angle, are shown in Figure~\ref{fig:bf_r}. 
+%% Finally, the best fit values of the combined \tH + \ttH cross sections times the BR as a function of the CP-mixing angle, are shown in Figure~\ref{fig:bf_r}. 
 
-\begin{figure} [!h]
-      \centering
-      \includegraphics[width=0.7\textwidth]{limits/bf_r}\\
-      \caption[Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle.]{Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle, for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
-\label{fig:bf_r}
-\end{figure}
+%% \begin{figure} [!h]
+%%       \centering
+%%       \includegraphics[width=0.7\textwidth]{limits/bf_r}\\
+%%       \caption[Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle.]{Best fit combined \tH + \ttH $\sigma\times$BR as a function of the CP-mixing angle, for the combination of three lepton channel, \mumu, and \emu\ channel. Theoretical \tH + \ttH cross section curves have been included.}
+%% \label{fig:bf_r}
+%% \end{figure}
