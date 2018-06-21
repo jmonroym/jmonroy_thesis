@@ -477,7 +477,7 @@ Most of the diboson events passing the signal selection contain jets from light 
 
 The non-prompt lepton background contribution to the final selection is estimated using the fake factor method. The main idea of the method is to define a control region of events enriched in the background to estimate and determine a factor that relates (extrapolates) these events to those in the signal region. The method is data-driven in the sense that the control sample is selected from data, and the extrapolation factor is measured from data.
 
-In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution from Drell-Yan production; therefore, the control region, also know as the \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased. The application regions for electrons and muons are defined by the \ti{fakeable} object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates, the fakeable definition becomes the loose selection. 
+In the signal region of this analysis, non-prompt leptons are predominantly produced in \ttbar events, with a much smaller contribution from Drell-Yan production; therefore, the control region, also know as the \ti{application region}, is defined by modifying the event selection criteria in such a way that most of the events after selection are \ttbar events and thus the misidentification rate is increased; hence, in the application regions, the tight definition for electrons and muons are replaced by the the \ti{fakeable} object definitions in Tables ~\ref{tab:muonIDs} and~\ref{tab:eleIDs}. Since the fakeable definition is a loosened version of the tight definition, in the context of fake rates, the fakeable definition becomes the loose selection. 
 
 The ratio between the number of events that pass both the loose and tight selections, and the number of events that pass the loose selection but fail the tight one, corresponds to the \ti{loose-to-tight ratio or fake factor/rate (f)}. The measurement of the fake factor is made using two background dominated data samples, collected with dedicated triggers, %(subtracting the residual prompt lepton contribution using MC)
 as a function of \pt and |$\eta$| and separately for muons and electrons:
@@ -616,9 +616,9 @@ Data (35.9 fb$^{-1}$)         & \multicolumn{1}{c}{127}&\multicolumn{1}{c}{280} 
 \label{fig:input_vars_presel}
 \end{figure}
 
-For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}.
+For the \tH\ and \ttH processes, the largest contribution comes from Higgs decays to WW (about 75\%), followed by \tautau (about 20\%) and ZZ (about 5\%). Other Higgs production modes contribute negligible event yields (< 5\% of the \tH +\ttH yield) as shown in Table ~\ref{tab:yield_hbr}. Table~\ref{tab:presel_eff} shows the acceptance$\times$efficiency for the pre-selection criteria in Table~\ref{tab:cuts}.   
 
-\begin{table}[hbt]
+\begin{table}[!hbt]
 \centering
 \begin{tabular}{lrrrr}\hline
 \multicolumn{1}{c@{\qquad}}{} & \multicolumn{2}{c@{\qquad}}{$3\ell$} & \multicolumn{2}{c}{$\mumu$} \\ \hline
@@ -641,7 +641,21 @@ $\tHW (H\to bb)$              & $<0.01$ & $<0.1$\% & $<0.01$ &$<0.1$\% \\ \hline
 \label{tab:yield_hbr}
 \end{table}
 
-A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between these two analyses are presented in Appendix \ref{app:overlap}.   
+\begin{table}[!thb]
+\centering
+\begin{tabular}{lrrr}\hline
+\multicolumn{1}{c@{\qquad}}{} & \multicolumn{1}{c@{\qquad}}{$3\ell$} & \multicolumn{1}{c}{$\mumu$} & \multicolumn{1}{c@{\qquad}}{$\emu$} \\ \hline
+$\ttW$                        & $ 0.25 $ & $ 0.75 $ & $ 1.07$  \\
+$\ttZ\!/\!\gamma^*$           & $ 0.36 $ & $ 0.29 $ & $ 0.71$  \\
+$\tHq$ ($\Ct=-1.0$)           & $ 0.03 $ & $ 0.06 $ & $ 0.10$  \\
+$\tHW$ ($\CV=-1.0$)           & $ 0.14 $ & $ 0.15 $ & $ 0.21$  \\
+$\ttH$                        & $ 0.24 $ & $ 0.32 $ & $ 0.46$  \\ \hline
+\end{tabular}
+\caption[Acceptance$\times$efficiency for pre-selection cut.]{Acceptance$\times$efficiency (\%) for signal and main background events pre-selection.}
+\label{tab:presel_eff}
+\end{table}
+
+A significant fraction of selected data events (about 50\% in the dilepton channels, and about 80\% in the trilepton channel) also passes the selection used in the dedicated search for \ttH in multilepton channels \cite{CMS_AN_2017-029}. This is particularly important when considering a possible combination of the measurements from both studies. More details about the overlap between these two analyses are presented in Appendix \ref{app:overlap}.   
 
 %______________________ Signal discrimination ______________________
 \section{Signal discrimination }
@@ -668,14 +682,16 @@ In both cases, the gradient boosted decision tree \ti{BDTG} (BDTA\_GRAD in the p
 
 \subsection{Discriminating variables}
 
-The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples in the third section of Table \ref{tab:bgsamples} and the samples marked with an * in the same table.
+The classifier chosen to separate the \tHq signal from the main backgrounds is the BDTG classifier, trained on simulated signal and background events. The samples used in the training are the \tHq sample in Table \ref{tab:sigsamples}, the samples marked with an * in Table \ref{tab:bgsamples} and the samples in the third section in Table \ref{tab:bgsamples}.
 
-As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a discriminator with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis. The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
+As explained in Section \ref{subsec:dt}, a set of discriminating variables are given as input to the BDTG which combines the individual discrimination power of each input variable to produce a quantity with the maximum discrimination power. Table~\ref{tab:bdtinputs} lists the input variables used in the BDTG trainings for this analysis. The same set of input variables was used to produce the plots for MVA classifiers evaluation. 
 
 \begin{table}[h!]
 \centering
 \begin{tabular}{lp{10cm}}\hline
 Variable name        & Description\\ \hline
+nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
+nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
 MaxEtaJet25          & Max. $|\eta|$ of any (non-CSV-loose) jet with $\pt>25$ GeV\\
 detaFwdJetClosestLep & $\Delta \eta$ forward light jet and closest lepton\\
 detaFwdJetBJet       & $\Delta \eta$ forward light jet and hardest CSV loose jet\\
@@ -684,14 +700,33 @@ Lep3Pt/Lep2Pt        & \pt\ of the $3^{rd}$ lepton ($2^{nd}$ for 2lss)\\
 totCharge            & Sum of lepton charges \\
 minDRll              & Min $\Delta R$ any two leptons\\
 dphiHighestPtSSPair  & $\Delta \phi$ of highest \pt\ same-sign lepton pair\\\hline
-nJet25               & Number of jets with $\pt>25$ GeV, $|\eta|<2.4$\\
-nJetEta1             & Number of jets with $|\eta|>1.0$, non-CSV-loose\\\hline
 \end{tabular}
-\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to forward jet activity; second section lists variables related to lepton kinematics, and third section lists variables related to jet multiplicities.}
+\caption[BDTG input variables.]{BDTG input variables. First section lists variables related to jet multiplicity, second section lists variables related to forward jet activity and variables related to lepton kinematics are listed in third section.}
 \label{tab:bdtinputs}
 \end{table}
 
-Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples in the $3l$ channels.
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=\textwidth]{input_var_diag}
+\caption[Diagrams for \tHq, \ttbar, and \ttW  processes.]{BDT input variables are defined based on the features of the signal and background processes. Diagrams for signal and the two dominant backgrounds: \tHq (left), \ttbar (middle) and \ttW (right) processes. The second \bjet in \tHq process, indicated in the diagram as an opaque jet, originates from the spectator $\bar{b}$ quark remaining from the gluon splitting into a $b\bar{b}$ pair.} 
+\label{fig:input_vars_diag}
+\end{figure}    
+
+BDTG input variables reflect those features that differentiate the signal process from the background processes.
+
+The first two input variables in Table~\ref{tab:bdtinputs} are related to the jet multiplicity in the events. As shown in the diagrams of the Figure~\ref{fig:input_vars_diag}, signal events are expected to have one forward jet, one \bjet, and two (zero) light jets in the $2lss(3l)$ channel. Note that in the $2lss$ channel light jets originate from a W boson which could be off-shell; if one of these jets is too soft ($\pt<25$ GeV) it does not get reconstructed and the event is not identified as a signal event. In the case of \ttbar events, one \bjet and two light jets (zero for $3l$ channel) are expected, one fewer that for signal events. For \ttW events, the number of jets is the same as for signal events but usually there are more final state radiation jets than in signal. Thus, nJet25 accounts for the number of jets in the event while nJetEta1 accounts for the number of forward jets.  
+            
+The second section of variables in Table~\ref{tab:bdtinputs} is related to the forward jet activity and the location of the leptons and other jets with respect to the forward jet; leptons and \bjets are expected to be central in both signal and background events. MaxEtaJet25 evaluates how forward are jets in the event. detaFwdJetClosestLep evaluates how separated in \etac the forward jet is from the leptons and \bjets in the event; in background events leptons and jets are central and then closer to each other than in signal events where this separation is large. The same reasoning applies for detaFwdJetBjet.
+
+detaFwdJet2Bjet evaluates the separation in \etac between the light forward jet and the second \bjet. As described in Chapter \ref{ch:theory}, in the four flavor scheme, b quarks are not allowed inside the proton, therefore, the incoming $b$ quark involved in \tHq process is originated from a gluon splitting into a $b\bar{b}$ pair, hence, the second \bjet in \tHq process comes from the remaining $\bar{b}$ quark acting as a spectator and appearing in the final state as a forward \bjet. This second \bjet tends to be very forward and then it is not always reconstructed. For signal events with two forward jets, one forward and the other backward, detaFwdJet2Bjet would be larger than for background events with two \bjets for which \bjets are central and then less separated from the light forward jet. 
+
+The third section of variables in Table~\ref{tab:bdtinputs} is related to the lepton kinematics encoding the distinctive behavior of leptons in signal events and background events. In \tHq and \ttbar events, same-sign leptons are back to back; for three lepton events, the two opposite sign leptons are closer together. In \ttW events, leptons tends to be distributed throughout the space; thus minDRll and dphiHighestPtSSPair account for these features.       
+
+Lep2Pt and Lep3Pt represent the \pt of the second and third lepton in $2lss$ and $(3l)$ events respectively. In \ttbar the fake lepton is expected to have lower \pt than the corresponding lepton in signal events; in \ttW events, all leptons are expected to be high \pt leptons, therefore their correspondent leptons in signal events are expected to have lower \pt.
+
+Finally, totCharge is the sum of the lepton charges in the final state; for \tHq events, it is expected to be asymmetrically distributed with an excess of positive charge because the proton have more $u$ quarks that $d$ quarks, therefore, more W$^+$ bosons are expected and then more positive leptons in the final state. The total charge in \ttbar events is expected to be symmetrically distributed since the final state is neutral while for \tHW events the distribution is expected to be asymmetric due to the presence of the W boson. 
+
+Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distributions for the signal and background samples in the $3l$ channels; these plots exhibit the features described above. 
 
 \begin{figure} [!h]
  \centering
@@ -709,15 +744,7 @@ Plots in Figure~\ref{fig:input_vars_3l} shows the BDTG input variables distribut
 \label{fig:input_vars_3l}
 \end{figure}    
 
-Given that the forward activity is a feature of the \tHq process, the location of the leptons and jets with respect to the forward jet would provide a good way to differentiate signal and background events. Looking at the separation in \etac between the forward jet and the hardest \bjet, for signal events the latter will be located more centrally the more harder it is  is more evident in other plots like in the plot of the maximum $|\eta|$ of the jets in the event, while the former will be in the forward region, thus, their separation will increase; for background events, jets tend to be more central and their separation is smaller compared to signal events. Similar argument works for the \etac separation between the forward jet and the second hardest \bjet and for the separation between the forward jet and the closest lepton.  
-
-The discrimination power  (row two, column three) given the presence of the forward jet in the signal events; for background events, jets tend to be in the central region of the detector.
-
-Variables related to the lepton kinematics encode the distinctive behavior of leptons in signal events and background events. All the input variables have some discrimination power, however, that power is bigger for some of them; for instance, the third lepton \pt plot (top left in Figure~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds for which there is a peak around 30 GeV while the \tHq peak around 18 GeV, \ie, the third lepton in those background processes tends to emerge with a higher momentum than the one from the \tHq process; although this variable is powerful in the discrimination against only two backgrounds, the final discriminator will profit from it.
-
-In the case of the total lepton charge, it is symmetrically distributed for \ttbar (fakes) events while for signal events it is expected to have more positive charge in the final state in the final state because the proton have more $u$ quarks that $d$ quarks, therefore, more W$^+$ bosons and then more positive leptons. Again, this variable is very powerful for discriminating against \ttbar but not that powerful against other backgrounds.    
-
-A similar situation can be seen in the plot for the number of jets; \ttW, \ttZ and \ttH processes tend to have more jets compared to the \tHq process (see Figure \ref{fig:ttbar_sign} for instance) due to initial state radiation or other radiative processes. 
+All the input variables have some discrimination power, however, that power is bigger for some of them. For instance, the third lepton \pt plot (top left in Figure~\ref{fig:input_vars_3l}) shows some discrimination power against WZ and VVV backgrounds; although this variable discriminates only against these two backgrounds, it is useful for the overall background discrimination.
 
 The same or equivalent input variables are found to perform well for both $3l$ and $2lss$ channels. Figure~\ref{fig:input_vars_2lss} shows the corresponding input variables distribution plots for the $2lss$ channel.
 
@@ -742,7 +769,7 @@ The discrimination power of the input variables can also be evaluated from the B
 
 Figure~\ref{fig:mva_input_comp} shows the comparison between input variables for the two trainings in the $3l$ channel; it reveals that some variables show opposite behavior for the two background sources, which results in potentially screening the discrimination power if they were to be used in a single discriminant, \ie, if the training would join \ttbar and \ttV. For some other variables the distributions are similar in both background cases. In contrast to the distributions in Figure~\ref{fig:input_vars_3l} only the dominant backgrounds are included; however, the discrimination power agrees among plots.
 
-Figures in the Appendix ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\ref{mva_input_tt}, and ~\ref{mva_input_ttv} show the input variables distributions for the $2lss$ and $3l$ channel as seen by the BDTG classifier. 
+Figures~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\ref{mva_input_tt}, and ~\ref{mva_input_ttv} show the input variables distributions for the $2lss$ and $3l$ channels as seen by the BDTG classifier. 
 
 \subsubsection*{Input variables correlations}
 
@@ -758,7 +785,7 @@ Figures in the Appendix ~\ref{mva_input_2lss_tt}, ~\ref{mva_input_2lss_ttv}, ~\r
 \label{mva_corr}
 \end{figure}
 
-From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extent. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appears for variables related to the forward jet activity.
+From Table~\ref{tab:bdtinputs}, it is clear that the input variables are correlated to some extent. These correlations play an important role for some MVA methods like the Fisher discriminant method in which the first step consist of performing a linear transformation to an phase space where the correlations between variables are removed. In the case of BDT, correlations do not affect the performance. Figure~\ref{mva_corr} shows the linear correlation coefficients for signal and background for the two training cases (the signal values are identical by construction). As expected, strong correlations appear for variables related to the forward jet activity.
 
 \subsection{BDTG classifiers response}
 
@@ -1118,9 +1145,9 @@ Rate uncertainties associated to the application of scaling factors for the affe
 
 \textbf{Theory uncertainties}
 
-The uncertainties from unknown higher orders of \tHq and \tHW production cross sections are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/-9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set and its scale are estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
+The uncertainties from unknown higher orders of \tHq and \tHW production cross sections are estimated from a change in the $Q^2$ scale of double and half the initial value, evaluated for each point of \Ct and \CV. The \ttH signal component has an uncertainty of about +5.8/-9.2\% from $Q^2$ scale variations and a further 3.6\% from the knowledge of PDFs and $\alpha_s $ \cite{yellow}. Uncertainties related to the choice of PDF set is estimated to be about 3.7\% for \tHq and about 4.0\% for \tHW.
 
-The theoretical uncertainties from unknown higher orders for \ttW and \ttZ\ are 12\% and 10\% respectively; additional uncertainties from the knowledge of PDFs and $\alpha_s $ of about 4\% each for \ttW and \ttZ\ are estimated.
+The theoretical uncertainties from unknown higher orders for \ttW and \ttZ\ are 12\% and 10\% respectively; additional uncertainties from the knowledge of PDFs and $\alpha_s $ of about 4\% each for \ttW and \ttZ\ are estimated. The uncertainties for the Higgs branching fractions are of order 1-2\%.
 
 \textbf{Backgrounds}
 
@@ -1309,50 +1336,6 @@ As expected, the signal contribution is very small compared to the to the backgr
 
 \subsection{$CL_S$ and cross section limits}
 
-\begin{table}[h!]
-  \centering
-  \footnotesize
-  \begin{tabular}{rr|ccc|cc}
-        $f_t$  & \Ct/\CV\ & Bg-only exp. & SM exp. & Obs.\ lim. & Best fit $r$ [pb] & Best fit $\sigma$ \\ \hline
-        -0.973 & -6.000 & $0.328~_{-0.090}^{+0.136}$ & $0.507~_{-0.158}^{+0.206}$ & 0.603 & $0.013~_{-0.007}^{+0.007}$ & $0.305~_{-0.169}^{+0.155}$  \\
-        -0.941 & -4.000 & $0.335~_{-0.098}^{+0.137}$ & $0.509~_{-0.166}^{+0.215}$ & 0.627 & $0.036~_{-0.020}^{+0.018}$ & $0.322~_{-0.174}^{+0.157}$  \\
-        -0.900 & -3.000 & $0.335~_{-0.096}^{+0.138}$ & $0.510~_{-0.172}^{+0.215}$ & 0.639 & $0.075~_{-0.039}^{+0.036}$ & $0.334~_{-0.173}^{+0.160}$  \\
-        -0.862 & -2.500 & $0.334~_{-0.097}^{+0.139}$ & $0.505~_{-0.173}^{+0.217}$ & 0.649 & $0.119~_{-0.061}^{+0.056}$ & $0.341~_{-0.174}^{+0.160}$  \\
-        -0.800 & -2.000 & $0.330~_{-0.095}^{+0.141}$ & $0.500~_{-0.176}^{+0.212}$ & 0.656 & $0.202~_{-0.103}^{+0.097}$ & $0.345~_{-0.176}^{+0.165}$  \\
-        -0.692 & -1.500 & $0.325~_{-0.095}^{+0.139}$ & $0.485~_{-0.172}^{+0.209}$ & 0.660 & $0.369~_{-0.191}^{+0.178}$ & $0.340~_{-0.176}^{+0.164}$  \\
-        -0.640 & -1.333 & $0.325~_{-0.097}^{+0.139}$ & $0.482~_{-0.173}^{+0.210}$ & 0.659 & $0.456~_{-0.238}^{+0.231}$ & $0.334~_{-0.174}^{+0.169}$  \\
-        -0.610 & -1.250 & $0.321~_{-0.095}^{+0.140}$ & $0.474~_{-0.169}^{+0.210}$ & 0.653 & $0.505~_{-0.272}^{+0.252}$ & $0.328~_{-0.177}^{+0.164}$  \\
-   \tbf{-0.500} & \tbf{-1.000} & $\mathbf{0.315~_{-0.093}^{+0.142}}$ & $\mathbf{0.450~_{-0.160}^{+0.213}}$ & \tbf{0.638} & $\mathbf{0.685~_{-0.396}^{+0.395}}$ & $\mathbf{0.304~_{-0.176}^{+0.175}}$  \\ 
-        -0.410 & -0.833 & $0.312~_{-0.095}^{+0.138}$ & $0.424~_{-0.147}^{+0.210}$ & 0.615 & $0.819~_{-0.526}^{+0.498}$ & $0.276~_{-0.177}^{+0.168}$ \\
-        -0.360 & -0.750 & $0.307~_{-0.093}^{+0.138}$ & $0.409~_{-0.136}^{+0.200}$ & 0.593 & $0.874~_{-0.601}^{+0.581}$ & $0.256~_{-0.176}^{+0.170}$ \\
-        -0.308 & -0.667 & $0.301~_{-0.092}^{+0.138}$ & $0.384~_{-0.124}^{+0.198}$ & 0.566 & $0.915~_{-0.689}^{+0.655}$ & $0.231~_{-0.174}^{+0.165}$ \\
-        -0.200 & -0.500 & $0.292~_{-0.090}^{+0.136}$ & $0.345~_{-0.109}^{+0.181}$ & 0.497 & $0.895~_{-0.871}^{+0.879}$ & $0.166~_{-0.162}^{+0.163}$ \\
-        -0.100 & -0.333 & $0.278~_{-0.086}^{+0.132}$ & $0.303~_{-0.092}^{+0.156}$ & 0.409 & $0.679~_{-0.679}^{+1.159}$ & $0.092~_{-0.092}^{+0.157}$ \\
-        -0.059 & -0.250 & $0.268~_{-0.083}^{+0.129}$ & $0.283~_{-0.085}^{+0.152}$ & 0.365 & $0.515~_{-0.515}^{+1.285}$ & $0.059~_{-0.059}^{+0.148}$ \\
-        -0.027 & -0.167 & $0.260~_{-0.081}^{+0.125}$ & $0.266~_{-0.077}^{+0.135}$ & 0.328 & $0.297~_{-0.297}^{+1.434}$ & $0.029~_{-0.029}^{+0.142}$ \\
-         0.000 &  0.000 & $0.254~_{-0.079}^{+0.123}$ & $0.252~_{-0.073}^{+0.123}$ & 0.294 & $0.002~_{-0.002}^{+1.776}$ & $0.000~_{-0.000}^{+0.132}$ \\
-         0.027 &  0.167 & $0.275~_{-0.086}^{+0.132}$ & $0.284~_{-0.084}^{+0.148}$ & 0.357 & $0.650~_{-0.650}^{+2.514}$ & $0.040~_{-0.040}^{+0.154}$ \\
-         0.059 &  0.250 & $0.297~_{-0.093}^{+0.141}$ & $0.329~_{-0.099}^{+0.171}$ & 0.458 & $2.015~_{-2.015}^{+3.098}$ & $0.119~_{-0.119}^{+0.183}$ \\
-         0.100 &  0.333 & $0.322~_{-0.099}^{+0.148}$ & $0.405~_{-0.135}^{+0.220}$ & 0.611 & $4.147~_{-3.103}^{+2.802}$ & $0.246~_{-0.184}^{+0.166}$ \\
-         0.200 &  0.500 & $0.324~_{-0.096}^{+0.141}$ & $0.505~_{-0.181}^{+0.212}$ & 0.730 & $5.982~_{-2.559}^{+2.174}$ & $0.413~_{-0.177}^{+0.150}$ \\
-         0.308 &  0.667 & $0.281~_{-0.082}^{+0.122}$ & $0.462~_{-0.159}^{+0.172}$ & 0.651 & $4.186~_{-1.574}^{+1.492}$ & $0.382~_{-0.144}^{+0.136}$ \\
-         0.360 &  0.750 & $0.268~_{-0.079}^{+0.116}$ & $0.442~_{-0.154}^{+0.160}$ & 0.620 & $3.392~_{-1.253}^{+1.214}$ & $0.364~_{-0.135}^{+0.130}$ \\
-         0.410 &  0.833 & $0.258~_{-0.075}^{+0.112}$ & $0.427~_{-0.147}^{+0.162}$ & 0.599 & $2.754~_{-1.022}^{+0.999}$ & $0.351~_{-0.130}^{+0.127}$ \\
-    \tbf{0.500} & \tbf{ 1.000} & $\mathbf{0.244~_{-0.072}^{+0.105}}$ & $\mathbf{0.401~_{-0.137}^{+0.154}}$ & \tbf{0.562} & $\mathbf{1.821~_{-0.671}^{+0.657}}$ & $\mathbf{0.328~_{-0.121}^{+0.118}}$\\
-         0.610 &  1.250 & $0.240~_{-0.070}^{+0.104}$ & $0.394~_{-0.133}^{+0.154}$ & 0.545 & $1.072~_{-0.403}^{+0.399}$ & $0.315~_{-0.119}^{+0.118}$ \\
-         0.640 &  1.333 & $0.242~_{-0.071}^{+0.105}$ & $0.398~_{-0.136}^{+0.156}$ & 0.547 & $0.921~_{-0.352}^{+0.354}$ & $0.316~_{-0.121}^{+0.122}$ \\
-         0.692 &  1.500 & $0.244~_{-0.071}^{+0.106}$ & $0.401~_{-0.136}^{+0.159}$ & 0.543 & $0.678~_{-0.261}^{+0.262}$ & $0.312~_{-0.120}^{+0.120}$ \\
-         0.800 &  2.000 & $0.256~_{-0.075}^{+0.109}$ & $0.416~_{-0.138}^{+0.169}$ & 0.552 & $0.317~_{-0.129}^{+0.123}$ & $0.311~_{-0.127}^{+0.121}$ \\
-         0.862 &  2.500 & $0.268~_{-0.078}^{+0.114}$ & $0.433~_{-0.142}^{+0.169}$ & 0.558 & $0.170~_{-0.072}^{+0.070}$ & $0.310~_{-0.130}^{+0.127}$ \\
-         0.900 &  3.000 & $0.276~_{-0.080}^{+0.118}$ & $0.442~_{-0.144}^{+0.177}$ & 0.563 & $0.102~_{-0.044}^{+0.042}$ & $0.308~_{-0.134}^{+0.128}$ \\
-         0.941 &  4.000 & $0.290~_{-0.084}^{+0.122}$ & $0.459~_{-0.149}^{+0.184}$ & 0.566 & $0.046~_{-0.021}^{+0.020}$ & $0.304~_{-0.140}^{+0.134}$ \\
-         0.973 &  6.000 & $0.306~_{-0.081}^{+0.122}$ & $0.474~_{-0.150}^{+0.192}$ & 0.571 & $0.016~_{-0.008}^{+0.007}$ & $0.300~_{-0.150}^{+0.131}$ \\
-    \hline
-  \end{tabular}
-  \caption[Expected and observed upper limits.]{Expected (for background only, and for a SM-like Higgs signal) and observed 95\% C.L. upper limits (in pb), and best fit signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times modified branching ratio for the combination of all three channels, for different values of $\Ct/\CV$ or the equivalent $\ft$ numbers.}
-  \label{tab:xslimits}
-\end{table}
-
 \begin{figure} [!h]
  \centering
  \includegraphics[width=0.48\textwidth]{limits/xs_limits_K6.pdf}
@@ -1377,8 +1360,20 @@ An excess of more than $2\sigma$ is observed for the SM configuration (\Ct/\CV= 
 \label{fig:xs_limits_cv}
 \end{figure}
 
-Comparing the observed upper limit with the theoretical prediction of the ${\tH + \ttH}$ cross section times BR for \CV = 1.0 constrains the allowed range of coupling configurations \Ct/\CV to between about -1.25
-and +1.60. as shown in the top right plot in Figure \ref{fig:xs_limits_cv}.
+Comparing the observed upper limit with the theoretical prediction of the ${\tH + \ttH}$ cross section times BR for \CV = 1.0 constrains the allowed range of coupling configurations \Ct/\CV to between about -1.25 and +1.60. as shown in the top right plot in Figure \ref{fig:xs_limits_cv}.
+
+\begin{figure} [!h]
+ \centering
+ \includegraphics[width=0.8\textwidth]{limits/nll_scan_K6.pdf}    
+ \caption[Scan of $-2\Delta log (\mathcal{L})$ for the combined fit of the \tH + \ttH signal strength.]{Scan of $-2\Delta log (\mathcal{L})$ for the combined fit of the \tH + \ttH signal strength on the data (solid line), and on an Asimov dataset corresponding to the SM expectations (dashed line).}
+\label{fig:nll_scan}
+\end{figure}
+
+The scan of $-2\Delta log (\mathcal{L})$ shown in Figure~\ref{fig:nll_scan} reveals additional details. In each point, the hypothesis of signal strength equal to one, \ie, where the signal processes are kept fixed at their theoretical expectations, is tested against a fit with floating signal strength. The \tH and \ttH components are varied with a common signal strength and each curve was normalized to have a minimum value of zero.
+
+By looking at the minima of the fits, positive values of \Ct are favored over negative values; in the SM case by about $1.5\sigma$ and in the data case by more than $2\sigma$; in particular, the fit for the SM expectation favors \Ct=1 over \Ct=-1 by $2\sigma$. From the fit for data, the most probable value is $\Ct=1.25^{+0.15}_{-0.25}$, thus, \Ct is compatible with the SM.
+
+The scan also shows that values outside the range of about [0.65, 1.60] are excluded at 95\% C.L. which means that negative values of \Ct are completely excluded at 95\% C.L.; although this seems not consistent with the exclusion based on the cross section limits, is not unexpected because only an upper limit on the cross section was set; thus, by looking at a lower limit on the cross section, it would be possible to exclude the region around \Ct/\CV = 0 where the prediction is lower that what is actually observed. The difference of observed and expected fits around \Ct=0 is led by the fact that the predicted \ttH cross section vanishes at \Ct = 0 while the data shows an excess of \ttH-like events.
 
 \begin{table}[h!]
 \begin{center}
@@ -1604,7 +1599,7 @@ After performing the simultaneous fit to the observed data for all channels, the
 %%   \caption[Expected and observed upper limits for CP-mixing angles.]{Expected (for background only, and for a SM-like Higgs signal) and observed 95\% C.L. upper limits (in pb), and best fit signal strength $r$ and corresponding best fit cross section for the combined $\tH+\ttH$ cross section times branching ratio for the combination of all three channels, for different values of $\cos(\alpha_{CP})$.}\label{tab:cp_xsec}
 %% \end{table}
 
-\begin{figure} [!h]
+\begin{figure} [!b]
       \centering
       \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cp_Jul21_cv_1p0}\\
       \includegraphics[width=0.7\textwidth]{limits/limits_comb3_cards_cv_1p0_SMexp}
