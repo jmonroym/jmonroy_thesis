@@ -1,5 +1,7 @@
+
 \setcounter{chapter}{4}
 \hyphenation{a-na-ly-ze}
+\hyphenation{framework}
 \chapter{Statistical methods}\label{ch:stat}
 
 \section{Introduction}
@@ -10,7 +12,7 @@ In the course of analyzing the data sets provided by the CMS experiment and used
 
 Multivariate data analysis (MVA) makes use of the statistical techniques developed to analyze more than one variable at once, taking into account all the correlations among variables. MVA is employed in a variety of fields like consumer and market research, quality control and process optimization. Using MVA it is possible to identify the dominant patterns in a data sample, like groups, outliers and trends, and determine to which group a set of values belong; in the particle physics context, MVA methods are used to perform the selection of certain type of events from a large data set.
 
-Processes with small cross section, such as the \tHq process ($\sigma_{SM}(\sqrt{s}=13 \textrm{TeV})=70.96$ fb), are hard to detect in the presence of the processes with larger cross sections, $\sigma_{SM}^{\ttbar}(\sqrt{s}=13 \textrm{TeV})=823.44$ fb for instance; therefore, only a small fraction of the data contains events of interest (signal), the major part is signal-like events, which mimic signal characteristics but belong to different processes, so they are a background to the process of interest. This implies that it is not possible to say with certainty that a given event is a signal or a background and statistical methods should be involved. In that sense, the challenge can be formulated as one where a set of events have to be classified according to certain special features; these features correspond to the measurements of several parameters like energy or momentum, organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
+Processes with small cross section, such as the \tHq process ($\sigma_{SM}^{\tHq}(13 \textrm{ TeV})=70.96$ fb), are hard to detect in the presence of the processes with larger cross sections, $\sigma_{SM}^{\ttbar}(13 \textrm{ TeV})=823.44$ fb for instance; therefore, only a small fraction of the data contains events of interest (signal), the major part is signal-like events, which mimic signal characteristics but belong to different processes, so they are a background to the process of interest. This implies that it is not possible to say with certainty that a given event is a signal or a background and statistical methods should be involved. In that sense, the challenge can be formulated as one where a set of events have to be classified according to certain special features; these features correspond to the measurements of several parameters like energy or momentum, organized in a set of \textit{input variables}. The measurements for each event can be written in a vector $\textbf{x}=(x_1,.....,x_n)$ for which
 
 \begin{itemize}
 \item $f(\textbf{x}|s)$ is the probability density (\ti{likelihood function}) that $\textbf{x}$ is the set of measured values given that the event is a signal event (signal hypothesis). 
@@ -21,9 +23,9 @@ Figure \ref{fig:scatter_plot} shows three ways to perform a classification of ev
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=4.5cm,height=4.5cm]{Cuts}
-  \includegraphics[width=4.5cm,height=4.5cm]{Fisher}
-  \includegraphics[width=4.5cm,height=4.5cm]{SVM05}
+  \includegraphics[width=0.32\textwidth,height=4.5cm]{Cuts}
+  \includegraphics[width=0.32\textwidth,height=4.5cm]{Fisher}
+  \includegraphics[width=0.32\textwidth,height=4.5cm]{SVM05}
   \caption[Scatter plots-MVA event classification.]{Scatter plots-MVA event classification. Distribution of two input variables $x_1$ and $x_2$ measured for a set of events; blue circles represent signal events and red triangles represent background events. The classification is based on cuts (left), linear boundary (center), and nonlinear boundary (right)\cite{mva}}\label{fig:scatter_plot}.
 \end{figure}
 
@@ -44,7 +46,7 @@ Note that the tails of the distributions indicate that some signal events fall i
 \varepsilon_{\textrm{b}}  = & P( \mbox{accept event} | \mbox{b} ) = \int_{\textrm{A}} f(\textbf{x} | \mbox{b} ) \, d \textbf{x} = \int_{-\infty}^{y_{\textrm{cut}}} p(y | \mbox{b}) \, dy \;,
 \end{align}
 
-\noindent where A is the acceptance region. If the background hypothesis is the \textit{null hypothesis ($H_0$)}, the signal hypothesis would be \textit{alternative hypothesis ($H_1$)}; in this context, the background efficiency corresponds to the significance level of the test ($\alpha$) and describes the misidentification probability, while the signal efficiency corresponds to the power of the test (1-$\beta$)\footnote{$\beta$ is the fraction of signal events that fall out of the acceptance region} and describes the probability of rejecting the background hypothesis if the signal hypothesis is true. What is sought in an analysis is to maximize the power of the test relative to the significance level, \ie, set a selection with the largest possible selection efficiency and the smallest possible misidentification probability.
+\noindent where A is the acceptance region. If the background hypothesis is the \textit{null hypothesis ($H_0$)}, the signal hypothesis would be \textit{alternative hypothesis ($H_1$)}; in this context, the background efficiency corresponds to the significance level of the test ($\alpha$) and describes the misidentification probability, while the signal efficiency corresponds to the power of the test (1-$\beta$)\footnote{$\beta$ is the fraction of signal events that fall out of the acceptance region.} and describes the probability of rejecting the background hypothesis if the signal hypothesis is true. What is sought in an analysis is to maximize the power of the test relative to the significance level, \ie, set a selection with the largest possible selection efficiency and the smallest possible misidentification probability.
 
 \subsection{Decision trees}\label{subsec:dt}
 

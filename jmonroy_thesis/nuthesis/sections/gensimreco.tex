@@ -1,3 +1,6 @@
+\hyphenation{ra-dia-tion}
+\hyphenation{thres-hold}
+\hyphenation{ge-ne-ra-li-za-tion}
 \chapter{Event generation, simulation and reconstruction}\label{ch:gensimreco}
 
 \section{Introduction}
@@ -144,7 +147,7 @@ Given that the CMS detector is equipped with a muon spectrometer capable to iden
 \begin{itemize}
 \item \textit{Standalone muon}. A clustering on the DTs or CSCs hits is performed to form track segments; those segments are used as seeds for the reconstruction in the muon spectrometer. All DTs, CSCs, and RPCs hits along the muon trajectory are combined and fitted to form the full track. The fitting output is called a \textit{standalone-muon track}.
 \item \textit{Tracker muon}. Each track in the inner tracker with \pt larger than 0.5 GeV and a total momentum $p$ larger than 2.5 GeV is extrapolated to the muon system. A \textit{tracker muon track} corresponds to a extrapolated track that matches at least one muon segment.
-\item \textit{Global muon}. When tracks in the inner tracker (inner tracks) and standalone-muon tracks are matched and turn out being compatibles, their hits are combined and fitted to form a \textit{global-muon track}. 
+\item \textit{Global muon}. When tracks in the inner tracker (inner tracks) and ${\textrm{standalone-muon}}$ tracks are matched and turn out being compatibles, their hits are combined and fitted to form a \textit{global-muon track}. 
 \end{itemize}
 
 Global muons sharing the same inner track with tracker muons are merged into a single candidate. PF muon identification uses the muon energy deposits in ECAL, HCAL, and HO associated with the muon track to improve the muon identification.

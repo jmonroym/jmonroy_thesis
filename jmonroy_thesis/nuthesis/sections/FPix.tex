@@ -162,16 +162,14 @@ The remaining two chucks housed the \ti{stamp plate} and the \ti{weight plate} w
 
 \subsubsection*{Stamp and weight tools}
 
+Stamp and weight tools are a set of custom made tools, all produced by the UNL Physics department machine shop (see Figure~\ref{fig:st_wt}). The very first design of the weight tool included four stainless steel blades and two springs; the blades matched the rows of eight ROC bond pads on the HDI to apply force while curing. The springs apply force to the module end holders on the HDI. The final design of the tool eliminates the issues associated with the alignment of the blades, by integrating them into the design in the form of narrow blade-like brass edges. The weight tools were made with 260 g of brass.      
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.45\textwidth, height=0.35\textwidth]{pixel/tools}
   \includegraphics[width=0.45\textwidth, height=0.35\textwidth]{pixel/tools2}
   \caption[Stamp and Weight tools]{Stamp and weight tools. Both tools are made of brass; the stamp tool includes a rubber stamp while the weight tool includes four stainless steel blades to apply force while curing. The final weight tool design eliminates the blades (right).}\label{fig:st_wt}
 \end{figure}
-
-Stamp and weight tools are a set of custom made tools, all produced by the UNL Physics department machine shop (see Figure~\ref{fig:st_wt}). The very first design of the weight tool included four stainless steel blades and two springs; the blades matched the rows of eight ROC bond pads on the HDI to apply force while curing. The springs apply force to the module end holders on the HDI. The final design of the tool eliminates the issues associated with the alignment of the blades, by integrating them into the design in the form of narrow blade-like brass edges. The weight tools were made with 260 g of brass.      
-
-The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece attached to the bottom side of the brass piece; it is used to pick the glue from the glue reservoir and then stamp it over the BBM. An extensive testing process was performed in order to determine the most appropriate features of the gluing strategy. Figure~\ref{fig:stamp_pattern} shows the four stamp patterns tested and a picture of the first two attached to the stamp tools; the variations of the stamp pattern design were based on the results of testing for:
 
 \begin{figure}[!h]
   \centering  
@@ -183,24 +181,25 @@ The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece at
   \caption[Stamp patterns]{Stamp patterns evaluated along the glue testing process; the picture on the left shows the first two versions mounted on the stamp tool while the final version is on the right.}\label{fig:stamp_pattern}
 \end{figure}
 
+The stamp tool is composed of a brass piece of 200 g and a rubber stamp piece attached to the bottom side of the brass piece; it is used to pick the glue from the glue reservoir and then stamp it over the BBM. An extensive testing process was performed in order to determine the most appropriate features of the gluing strategy. Figure~\ref{fig:stamp_pattern} shows the four stamp patterns tested and a picture of the first two attached to the stamp tools; the variations of the stamp pattern design were based on the results of testing for:
+
 \bit
-  \begin{figure}[!h]
+\item \ti{the amount of glue dispensed}, and in particular the glue spreading out of the HDI area. An excess of glue, scattered beyond the HDI edge would go between the ROC and the sensor, affecting the functionality of the bump bonds connecting them; in the case of the high voltage (HV) pad, it was observed that the excess of glue covers the pad on the sensor, making impossible to wire it. The amount of glue deposited on  top of BBM depends on several variables: the dipping time of the stamp tool in the glue reservoir, the time that the stamp tool is in contact with the BBM, and the depth of the glue reservoir.
+\begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/reservoir_depth_test}
-  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/glue_test_depth2}\\
+  \includegraphics[width=0.36\textwidth, height=0.36\textwidth]{pixel/reservoir_depth_test}
+  \includegraphics[width=0.36\textwidth, height=0.36\textwidth]{pixel/glue_test_depth2}\\
   \includegraphics[width=0.6\textwidth]{pixel/glue_test_depth1}
   \caption[Test of amount of glue deposited.]{Pictures of a test of the amount of glue dispensed as a function of the glue reservoir depth. The glue reservoir depth was varied by adding kapton tape (left), and the test were conducted by gluing plain HDI on top of glass slides (middle and right.)}\label{fig:glue_test_depth}
-\end{figure}
+\end{figure}  
+  In the case of the dipping and stamping times, it was found that there is not a strong dependence and those times were set to 10 seconds; in the case of the glue reservoir depth, the dependence is stronger. Several glue tests where conducted by gluing plain HDIs to glass slides; Figure~\ref{fig:glue_test_depth} shows pictures from a glue test with three different glue reservoir depths (100 $\mu$m, 255 $\mu$m and 410 $\mu$m). The results show not only that the deeper the glue reservoir, the bigger is the amount of glue deposited, as expected, but also that the spreading out is critical for depths greater than 200 $\mu$m. A redesign of the rubber stamp pattern was made in order to reduce the amount of glue deposited in the HDI pads regions; that adjustment led to the final rubber stamp pattern.
 
-\item \ti{the amount of glue dispensed}, and in particular the glue spreading out of the HDI area. An excess of glue, scattered beyond the HDI edge would go between the ROC and the sensor, affecting the functionality of the bump bonds connecting them; in the case of the high voltage (HV) pad, it was observed that the excess of glue covers the pad on the sensor, making impossible to wire it. The amount of glue deposited on  top of BBM depends on several variables: the dipping time of the stamp tool in the glue reservoir, the time that the stamp tool is in contact with the BBM, and the depth of the glue reservoir. In the case of the dipping and stamping times, it was found that there is not a strong dependence and those times were set to 10 seconds; in the case of the glue reservoir depth, the dependence is stronger. Several glue tests where conducted by gluing plain HDIs to glass slides; Figure~\ref{fig:glue_test_depth} shows pictures from a glue test with three different glue reservoir depths (100 $\mu$m, 255 $\mu$m and 410 $\mu$m). The results show not only that the deeper the glue reservoir, the bigger is the amount of glue deposited, as expected, but also that the spreading out is critical for depths greater than 200 $\mu$m. A redesign of the rubber stamp pattern was made in order to reduce the amount of glue deposited in the HDI pads regions; that adjustment led to the final rubber stamp pattern.
-
-\begin{figure}[!h]
+\begin{figure}[!ht]
   \centering  
   \includegraphics[width=0.6\textwidth]{pixel/glue_test_contact1}\\
   \includegraphics[width=0.8\textwidth]{pixel/hd_pad1}
   \caption[Glue contact area test.]{Results from a glue test using the final stamp pattern, which proves the support provided to the HDI bond pads and the HV pad and the almost null glue spreading out.}\label{fig:glue_test}
 \end{figure}
-
 \item \ti{the size of contact area}, and in particular the support given to the edges of the HDI where the bond pads and the HV pad are located. This is a critical aspect, given that the wirebonding relies on the steadiness of the pads to be connected. Figure~\ref{fig:glue_test} shows the outcomes of a glue test using the final stamp pattern; note the support provided to the HDI bond pads and the HV pad and the almost null glue spreading out; it justifies why this stamp pattern was chosen.   
 \eit
 
@@ -216,15 +215,18 @@ The final tool designs used during the module production are indicated in Figure
   \caption[Grabber tool.]{Top: Grabber tool used to grab the stamp and weight tools from their houses to the BBM location. Bottom: grabber tool holding the stamp (left) and weight (right) tools.}\label{fig:grabber_tool}
 \end{figure}
 
-In order to move the stamp and weight tools from their houses to the glue reservoir and to the BBM location, a \ti{grabber tool} was designed. The grabber tool was held on a tool rack located in the back of the gantry table and it gets attached to the gantry head by using an adapter and the vacuum system as shown in Figure\ref{fig:grabber_tool}. The gantry head adapter is attached to the rotary motor that provides the angular motion, therefore, the grabber tool is able to grab the stamp and weight tools and adjust their alignment in agreement with the BBM orientation. The force with which the glue was applied on the BBM was controlled by the weight of the brass piece; in a similar way, the force applied to the HDI-BBM sandwich was controlled by the weight of the tool and the springs.                  
+In order to move the stamp and weight tools from their houses to the glue reservoir and to the BBM location, a \ti{grabber tool} was designed. The grabber tool was held on a tool rack located in the back of the gantry table and it gets attached to the gantry head by using an adapter and the vacuum system as shown in Figure\ref{fig:grabber_tool}. 
 
-The pick of the HDI and place on top of the BBM was performed using the \ti{Picker tool} shown in Figure \ref{fig:pandp_tool}. As with the grabber tool, the picker tool was held at the tool rack until the gantry head went to its location and catches it using vacuum; an independent vacuum line is used to capture the HDI from its chuck slot. The alignment was performed while the HDI was being moved to the BBM location.      
+The gantry head adapter is attached to the rotary motor that provides the angular motion, therefore, the grabber tool is able to grab the stamp and weight tools and adjust their alignment in agreement with the BBM orientation. The force with which the glue was applied on the BBM was controlled by the weight of the brass piece; in a similar way, the force applied to the HDI-BBM sandwich was controlled by the weight of the tool and the springs.                  
+
 \begin{figure}[!h]
   \centering  
   \includegraphics[width=0.45\textwidth,height=0.3\textwidth]{pixel/pickNplace}
   \includegraphics[width=0.45\textwidth,height=0.3\textwidth]{pixel/PickAndPlaceTool}
   \caption[Pick and place tool.]{The pick and place tool picks the HDI from its chuck and place it on top of the BBM.}\label{fig:pandp_tool}
 \end{figure}
+
+The pick of the HDI and place on top of the BBM was performed using the \ti{Picker tool} shown in Figure \ref{fig:pandp_tool}. As with the grabber tool, the picker tool was held at the tool rack until the gantry head went to its location and catches it using vacuum; an independent vacuum line is used to capture the HDI from its chuck slot. The alignment was performed while the HDI was being moved to the BBM location.
 
 \subsubsection*{Vision system}
 
@@ -263,14 +265,14 @@ The \ti{global coordinate system} of the setup is centered in the so-called \ti{
 \end{center}
 \end{figure}
 
-To determine the GHCO, a set of 40 marks (scratches) were made on a glass slide using a needle shaped tool with the tip made of carbide (see Figure \ref{fig:offset_setup}); the locations of the scratches were predefined and known as commanded positions. Later, the camera was moved to find the scratches and their locations were tagged as observed positions. In principle, the difference between the commanded and the observed positions provide a measurement of the GHCO, but it cannot be assumed that the needle tool is straight, i.e., if the tip of the tool coincides with the gantry head center; in order to take into account this fact when calculating the offset, a scratching scheme was designed; it is showed in Figure \ref{tool_bend}. In the ideal case, the scratch is made right in the commanded position (red circle), but if the needle is not straight, the scratch will be shifted (black cross). A rotation of the tool can be used to determine how bend is the needle tip.
-
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{pixel/tool_bend}
 \caption{Scratches scheme if the tool is not straight }\label{tool_bend}
 \end{center}
 \end{figure}
+
+To determine the GHCO, a set of 40 marks (scratches) were made on a glass slide using a needle shaped tool with the tip made of carbide (see Figure \ref{fig:offset_setup}); the locations of the scratches were predefined and known as commanded positions. Later, the camera was moved to find the scratches and their locations were tagged as observed positions. In principle, the difference between the commanded and the observed positions provide a measurement of the GHCO, but it cannot be assumed that the needle tool is straight, i.e., if the tip of the tool coincides with the gantry head center; in order to take into account this fact when calculating the offset, a scratching scheme was designed; it is showed in Figure \ref{tool_bend}. In the ideal case, the scratch is made right in the commanded position (red circle), but if the needle is not straight, the scratch will be shifted (black cross). A rotation of the tool can be used to determine how bend is the needle tip.
 
 A precise procedure for measuring the GHCO is performed by a labVIEW program (\ti{offset\_fitting.vi}) which implements the following steps 
 
@@ -426,13 +428,11 @@ The needle tip calibration procedure was implemented using an additional vision 
   RC= (17.337,80.144, 88.486)\ mm
 \eeqn
 
-For any new needle to be used, it is necessary to correct for the needle tip coordinates' deviation from the RC; the correction is obtained by moving the new needle tip to the RC position and adjusting the position of the needle tip to get it focused and centered in the webcam setup screens; these modified coordinates (MC) are compared with RC, and the difference is called \ti{Needle Tip Offset} (NTO); this calibration is connected to the calibration made for the GHCO so that the coordinates provided by the vision system for the regions to be encapsulated are also corrected for the NTO.              
-
+For any new needle to be used, it is necessary to correct for the needle tip coordinates' deviation from the RC; the correction is obtained by moving the new needle tip to the RC position and adjusting the position of the needle tip to get it focused and centered in the webcam setup screens; these modified coordinates (MC) are compared with RC, and the difference is called \ti{Needle Tip Offset} (NTO) (see Figure~\ref{fig:webcam_adjust}); this calibration is connected to the calibration made for the GHCO so that the coordinates provided by the vision system for the regions to be encapsulated are also corrected for the NTO.              
 \begin{figure}[h]
-  \begin{center}
+  \centering
   \includegraphics[width=0.7\textwidth,height=0.3\textwidth]{pixel/nto}
   \caption[Needle tip offset measurement.]{Needle tip offset measurement.}\label{fig:webcam_adjust}
-  \end{center}
 \end{figure}
 
 \subsubsection*{Space-time synchronization of the sylgard deposition}
@@ -452,7 +452,7 @@ Figure \ref{fig:bondpad_region} shows a schematic of the wire bond region and so
 h=\left(d+r_N-\frac{b}{2}\right )\tan(\theta)
 \eeqn
 
-\noindent where $d$ is the distance from the needle tip edge to the wire (safe distance), $r_N$ is the external needle radius ($310 \mu$m), $b$ is the size of the bond ($100 \mu$m) and $\theta$ describe the slope of the wire. Table \ref{tab:needle_tip_heights} shows the values of $h$ for several combinations of $d$ and $\theta$ ($r_N$ and $b$ fixed).
+\noindent where $d$ is the distance from the needle tip edge to the wire (safe distance), $r_N$ is the external needle radius ($310 \mu$m), $b$ is the size of the bond ($100 \mu$m) and $\theta$ describe the slope of the wire. Table \ref{tab:needle_tip_heights} shows the values of $h$ for several combinations of $d$ and $\theta$ ($r_N$ and $b$ fixed). Given the typical slope of the wires, $h=236.7$ $\mu$m was chosen as the needle tip height.   
 \begin{table}
   \centering
   \begin{tabular}{ c  c  c  c  c } \hline
@@ -465,16 +465,13 @@ h=\left(d+r_N-\frac{b}{2}\right )\tan(\theta)
   \caption[Values of the needle tip height $h$]{Values of the needle tip height $h$ ($\mu$m) for several combinations of parameters $d$ and $\theta$. }\label{tab:needle_tip_heights}
 \end{table}
 
-Given the typical slope of the wires, $h=236.7$ $\mu$m was chosen as the needle tip height.   
-
 The next optimization was performed on the parameters defining the sylgard deposition kinematics. The basic sylgard deposition process consists of depositing a sylgard trace along a path defined by the initial and final positions $(x_i, y_i, z_i), (x_f, y_f, z_f)$. To make sure that all the wirebonds are covered, it is necessary to synchronize the dispenser action and the gantry motion. The top side of Figure \ref{fig:sylgard_synch} shows an sketch of the gantry speed and dispenser action as a function of the time. When the dispenser is open the sylgard starts to flow out of the needle, however, the sylgard needs some time to flow out and get touch the surface of the HDI/BBM, thus, there should be a time delay between the dispenser valve opening and the movement of the gantry; it is called $\Delta t_0$. Accordingly, after the valve is closed, there is a remaining sylgard flowing, so the valve should be closed before the gantry reaches the end of the way; this time delay is called $\Delta t_1$.
 
 \begin{figure}[h]
-  \begin{center}
+  \centering
     \includegraphics[width=0.75\textwidth]{pixel/time_delay}\\\ 
     \includegraphics[width=\textwidth]{pixel/space_delay}
     \caption[Sylgard deposition synchronization.]{Sylgard deposition synchronization. Top: sketch of the gantry velocity and dispenser action as a function of the time. Bottom: sketch of the strategy designed to determine the time delays.}\label{fig:sylgard_synch}
-  \end{center}
 \end{figure}
 
 To find these time delays, the strategy sketched in the bottom side of Figure \ref{fig:sylgard_synch} was implemented in a LabVIEW program; it proceeds as follows: with the dispenser needle loaded and mounted on the syringe holder and the needle tip calibrated, a set of sylgard marks are deposited over a glass slide. The first is a control mark at $x_0$, then, at $x_1$ the gantry starts to move at constant speed $v$; at $x_2$ the dispenser valve is opened; at $x_3$ the sylgard gets in contact with the glass slide and it starts to spread. At $x_4$, the dispenser valve is closed, but some sylgard is still flowing out until $x_5$. At $x_6$, the gantry stops and finally, at $x_7$ another sylgard control mark is deposited. The time delays are given by 
@@ -487,29 +484,26 @@ To find these time delays, the strategy sketched in the bottom side of Figure \r
 Figure \ref{fig:delays_measure} shows the results from two attempts to measure the time delays. In the first attempt, the samples were taken at intervals of five minutes at 1 mm/s; the sylgard traces started to break up after seven samples. The reason of the breaking up is that the sylgard gets thicker with time so that the speed of the gantry needs to be decreased. In the second attempt, the speed was decreased when the breaking up showed up; in total, forty samples spaced by five minutes were taken at six values of the speed (0.6,0.5,0.4,0.3,0.25) mm/s.
 
 \begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.48\textwidth,height=0.3\textwidth]{pixel/time_delays1.png} 
-    \includegraphics[width=0.48\textwidth,height=0.3\textwidth]{pixel/time_delays2.png}
-    \caption[Time delay measurements.]{Time delay measurement. Left: ten samples spaced by 5 minutes at 1mm/s. Right: forty samples spaced by 5 minutes, adjusting the speed to eliminate the breaking up..}\label{fig:delays_measure}
-  \end{center}
+  \centering
+    \includegraphics[width=0.48\textwidth,height=0.35\textwidth]{pixel/time_delays1.png} 
+    \includegraphics[width=0.48\textwidth,height=0.35\textwidth]{pixel/time_delays2.png}
+    \caption[Time delay measurements.]{Time delay measurement. Left: ten samples spaced by 5 minutes at 1mm/s. Right: forty samples spaced by 5 minutes, adjusting the speed to eliminate the breaking up.}\label{fig:delays_measure}
 \end{figure}
 
 \begin{figure}[h]
-  \begin{center}
+  \centering
     \includegraphics[width=0.7\textwidth,height=0.4\textwidth]{pixel/speed_function1.png}\\ 
     \includegraphics[width=0.8\textwidth]{pixel/time_delays3.png}
     \caption[Speed function for sylgard deposition.]{Top: speed evolution in time for the time delays determination. Bottom: time delays determination experiment after the implementation of the speed function. After 3.5 hours of data taking, there is no sign of sylgard breaking up.}\label{fig:speed_function}
-  \end{center}
 \end{figure}
 
 Figure \ref{fig:speed_function} (top) shows the speed evolution as a function of time for the forty samples; the quadratic fit (modified) corresponds to a function that models a consistent reduction of the gantry speed in time such that the breaking up of the sylgard traces is avoided. This fitting function was implemented in the LabVIEW program used to take the samples for the time delay calculation; the results are shown in the bottom side of Figure \ref{fig:speed_function} where it is clear that the implementation of the speed function meets the requirements. This speed function is called the \ti{deposition speed}.
 
 \begin{figure}[h]
-  \begin{center}
+  \centering
     \includegraphics[width=0.45\textwidth]{pixel/dt0.png} 
     \includegraphics[width=0.45\textwidth]{pixel/dt1.png}
     \caption[Time delay functions.]{Time delay functions $\Delta t_0$ and $\Delta t_1$. In the time range of the typical encapsulation process, time delays are approximated by a constant; conservative values were adopted:  $\Delta t_0 =0.1$ s,  $\Delta t_1 = 1$ s.}\label{fig:time_delay_functions}
-  \end{center}
 \end{figure}
 
 From this test it is also possible to extract the time delay functions (given that the deposition speed is a function of the time it is expected that the time delays also depends on time); they are shown in Figure \ref{fig:time_delay_functions}.
@@ -519,90 +513,84 @@ The typical encapsulation time per module is about five minutes, therefore, a fu
 \subsection{The gluing routine}
 
 \begin{figure}[h]
-  \begin{center}
+ \centering
     \includegraphics[width=0.9\textwidth]{pixel/glue_workflow2}
     \caption[Gluing routine workflow.]{Gluing routine workflow.}\label{fig:glue_workflow}
-  \end{center}
 \end{figure}
 
-A gluing session was defined as the process where four modules are assembled. The gluing routine workflow is shown in Figure~\ref{fig:glue_workflow}; steps in blue are those performed by the gantry automatically; the green steps represent the steps that are performed repeatedly by the gantry in the same session, and the red steps represent those performed by the operator. The routine was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that controls the sequence. The \ti{Main front panel} of the gluing routine, shown in Figure \ref{fig:gluing_front_main}, gathers the most relevant information about the gluing session, while each step in the routine has its dedicated front panel. The module gluing sequence begins by manually placing pre-tested BBMs, HDIs and tools on their chucks. Figure \ref{fig:gluing_materials} shows the materials used during the gluing session; the square aluminum tool is used to hold the BBM's container while the vacuum pen is used to manipulate the BBMs.
-
-\begin{figure}[h]
-\begin{center}
-  \includegraphics[width=0.58\textwidth, height=0.4\textwidth]{pixel/gluing_materials}
-  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/gel_pack1}
- \caption[Materials used during gluing stage]{Materials used during gluing stage (left). BBMs on container(right).}\label{fig:gluing_materials}
-\end{center}
-\end{figure}
+A gluing session was defined as the process where four modules are assembled. The gluing routine workflow is shown in Figure~\ref{fig:glue_workflow}; steps in blue are those performed by the gantry automatically; the green steps represent the steps that are performed repeatedly by the gantry in the same session, and the red steps represent those performed by the operator. The routine was implemented in a LabVIEW program (\ti{Gluing\_main.vi}) that controls the sequence. The \ti{Main front panel} of the gluing routine, shown in Figure \ref{fig:gluing_front_main}, gathers the most relevant information about the gluing session, while each step in the routine has its dedicated front panel. The module gluing sequence begins by manually placing pre-tested BBMs, HDIs and tools on their chucks.
 
 \begin{landscape}
 \begin{figure}[h]
-  \begin{center}
+  \centering
     \vspace{-2.5cm}
     \hspace{-1cm}
     \includegraphics[width=24cm,height=16cm]{pixel/gluing_front_main1.png}
     \caption[Gluing routine LabVIEW front panel]{Gluing routine LabVIEW front panel.}\label{fig:gluing_front_main}
     \vspace{-2cm}
     \hspace{-2cm}
-  \end{center}
 \end{figure}
 \end{landscape}
 
+Figure \ref{fig:gluing_materials} shows the materials used during the gluing session; the square aluminum tool is used to hold the BBM's container while the vacuum pen is used to manipulate the BBMs.
+
+\begin{figure}[h]
+\centering
+  \includegraphics[width=0.58\textwidth, height=0.4\textwidth]{pixel/gluing_materials}
+  \includegraphics[width=0.4\textwidth, height=0.4\textwidth]{pixel/gel_pack1}
+ \caption[Materials used during gluing stage]{Materials used during gluing stage (left). BBMs on container(right).}\label{fig:gluing_materials}
+\end{figure}
 
 Once the parts are in place, and the program is run, the BBM and HDI identification information (serial numbers) is collected\footnote{A batch numbering strategy was designed to identify the modules internally at UNL.} in the first step as well as the configuration of the gantry table, \ie, the BBM/HDI slots and tools to be used so that the vacuum system is properly activated. 
 
-The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the Main and \ti{Find fiducials} front panels so that the operator can identify abnormal values from extreme misalignment and pattern recognition fails; that usually occurs when the plates are not properly placed on the chucks and/or when the fiducials do not appear in the camera field of view. In those cases, a manual fiducial finding option is available. The find fiducial front pannel is shown in Figure \ref{fig:find_fid_front} and a sample of the found fiducials on a HDI and a BBM is shown in Figure \ref{fig:fid_reco} indicating the located center of the fiducial with a green dot. After all the fiducials are identified, the operator has to check them and perform the necessary adjustments. Usually, the glue was prepared in parallel to the fiducial identification, reducing the session time.  
+The camera is moved to view, recognize and find the fiducials locations on the BBMs, HDIs and tools. These locations are stored and shown in the Main and \ti{Find fiducials} front panels so that the operator can identify abnormal values from extreme misalignment and pattern recognition fails; that usually occurs when the plates are not properly placed on the chucks and/or when the fiducials do not appear in the camera field of view. In those cases, a manual fiducial finding option is available. The find fiducial front pannel is shown in Figure \ref{fig:find_fid_front} and a sample of the found fiducials on a HDI and a BBM is shown in Figure \ref{fig:fid_reco} indicating the located center of the fiducial with a green dot. 
 
 \begin{landscape}
 \begin{figure}[h]
-\begin{center}
+\centering
     \vspace{-2.9cm}
     \hspace{-1cm}
     \includegraphics[width=24cm,height=16.5cm]{pixel/find_fid_front}
     \caption[Fiducial finder LabVIEW front panel]{Fiducial finder LabVIEW front panel.}\label{fig:find_fid_front}
     \vspace{-2cm}
     \hspace{-2cm}
-\end{center}
 \end{figure}
 \end{landscape}
 
+After all the fiducials are identified, the operator has to check them and perform the necessary adjustments. Usually, the glue was prepared in parallel to the fiducial identification, reducing the session time.
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=\textwidth]{pixel/fid_reco1}
  \caption[Fiducial finder step LabVIEW front panel]{Fiducial finder step LabVIEW front panel.}\label{fig:fid_reco}
-\end{center}
 \end{figure}
 
 The glue application step starts by picking up the grabber tool from the tool rack, and grabbing the stamp tools from their chuck; after dipping the stamp tool in the glue reservoir, the epoxy is dispensed on the BBMs. The procedure is repeated as many times as the number of modules involved in the session, each time using a different stamp tool and a different glue reservoir slot. The step finishes by returning the grabber tool to the tool rack. The routine provides full freedom to choose any available combination of stamp tool, glue reservoir slot and BBM; this feature is particularly useful for glue testing and commissioning. The grabber tool is then returned to the tool rack and the picker tool is picked, so that the HDIs are picked from their plate slots and placed on top of the BBMs (making the alignment with respect to BBMs); again, the routine allows for different combinations of BBM-HDI. The front panels for both, gluing and pick-and-place steps, are shown in Figure \ref{fig:stamp_place_front}. Later, the picker tool is returned to the tool rack.
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=\textwidth]{pixel/stamp_front.png}
   \includegraphics[width=\textwidth]{pixel/place_front.png}
  \caption[Gluing and pick-and-place LabVIEW front panels]{Gluing (top) and pick-and-place (bottom) LabVIEW front panels.}\label{fig:stamp_place_front}
-\end{center}
 \end{figure}
 
 In the weight step of the routine, the grabber tool is picked again from the tool rack in order to move the weight tools from their plate slots to the BBM locations. The front panel for this step is similar to the gluing front panel. Later, the grabber tool is returned to the tool rack and the gantry head is moved back to the home position. Figure \ref{fig:gluing_steps} shows pictures of the glue reservoir plate loaded with glue, BBMs after the glue deposition, BBM-HDI after pick-and-place, and weight tools over the assembled modules. 
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/glue_reservoir_full.png}
   \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/glue_on_bbm.png}\\
   \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/bbm_hdi2.png}
   \includegraphics[width=0.4\textwidth,height=0.25\textwidth]{pixel/weight_on_bbm.png}
   \caption[Gluing steps pictures.]{Gluing steps pictures. Top: glue reservoir loaded (left), glue dispensed on BBMs (right). Bottom: BBM-HDI after pick-and-place(left), weight tools over assembled modules(right).}\label{fig:gluing_steps}
-\end{center}
 \end{figure}
 
 The last step of the routine consists of creating and publishing the gluing session report (see Figure\ref{fig:gluing_report}) in the UNL silicon lab electronic logbook (ELOG) and updating the database created to keep track of the assembly progress.  
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=\textwidth]{pixel/gluing_report}
  \caption[Gluing session report.]{Gluing session report.}\label{fig:gluing_report}
-\end{center}
 \end{figure}
 
 At the end of the full cycle, the stamp plate with stamp tools is moved to be cleaned thoroughly using water and 2-propanol at a sink outside the clean room; They are allowed to dry and then brought back to gantry table. The assembled modules are left to cure eight hours, typically overnight. The fully detailed SOP (SOP-103) for the gluing stage can be found in Reference \cite{sop_103}, while several videos showing the gluing routine in action can be found in References \cite{gluing_frank, jmonroy_channel}. 
@@ -618,6 +606,10 @@ Following the assembly, HDIs were wirebonded to the ROCs using a semi-automated 
 \end{center}
 \end{figure}
 
+The encapsulation was performed using the robotic gantry and the dispensing system described in Section \ref{sec:setup}; the step by step instructions are documented in SOP-105 \cite{sop_105}. After the wirebonding, the plates with the modules were taken back to the gantry table and placed in the BBM chucks. The encapsulation strategy is based on a simple routine: by stating the initial conditions, \ie, the initial ($R_i$) and final ($R_f$) reference positions, the time elapsed after sylgard preparation, time delays, and needle tip location, the gantry head is moved to $R_i$ and the encapsulant is deposited following the structure sketched in Figure \ref{fig:sylgard_synch} (top). The sylgard trace is required to fully cover the HDI/BBM bond pads without spreading out in between the sensor and the ROC.
+
+An encapsulation session was defined as the process where eight modules are encapsulated following the encapsulation routine workflow shown in Figure \ref{fig:potting_workflow}; steps in red correspond to actions performed by the user; steps in blue are those performed by the gantry automatically while the step in green is performed by the gantry repeatedly during the same encapsulation session. The routine was implemented in a LabVIEW program controlling the sequence, taking advantage of the routines created during the implementation of the gluing stage.   
+
 \begin{figure}[h]
 \begin{center}
   \includegraphics[width=\textwidth]{pixel/potting_workflow}
@@ -625,11 +617,13 @@ Following the assembly, HDIs were wirebonded to the ROCs using a semi-automated 
 \end{center}
 \end{figure}
 
-The encapsulation was performed using the robotic gantry and the dispensing system described in Section \ref{sec:setup}; the step by step instructions are documented in SOP-105 \cite{sop_105}. After the wirebonding, the plates with the modules were taken back to the gantry table and placed in the BBM chucks. The encapsulation strategy is based on a simple routine: by stating the initial conditions, \ie, the initial ($R_i$) and final ($R_f$) reference positions, the time elapsed after sylgard preparation, time delays, and needle tip location, the gantry head is moved to $R_i$ and the encapsulant is deposited following the structure sketched in Figure \ref{fig:sylgard_synch} (top). The sylgard trace is required to fully cover the HDI/BBM bond pads without spreading out in between the sensor and the ROC.
-
-An encapsulation session was defined as the process where eight modules are encapsulated following the encapsulation routine workflow shown in Figure \ref{fig:potting_workflow}; steps in red correspond to actions performed by the user; steps in blue are those performed by the gantry automatically while the step in green is performed by the gantry repeatedly during the same encapsulation session. The routine was implemented in a LabVIEW program controlling the sequence, taking advantage of the routines created during the implementation of the gluing stage.   
-
 The main routine is composed of two steps, although each step involves more than one substep. Again, the most important information about the session is gathered in the main front panel as shown in Figure \ref{fig:potting_main_front}. The encapsulation routine involves much less vacuum manipulation given that there are no movable elements.
+
+The module encapsulation sequence begins by moving the wirebonded modules from the storage cabinet to the chucks; since the session involves eight modules, only two chucks are made available in the routine. Once the module identification information and gantry table configuration are provided by the operator, the vacuum is activated accordingly.
+
+In the first step, the vision system is used to locate the fiducial marks on the BBMs and HDIs, the same used in the gluing stage, and the reference positions that define the sylgard traces to be deposited. 
+
+These reference positions $R_i$ and $R_f$ define the length of the sylgard trace as shown in Figure \ref{fig:hdi_bondpads}; they are determined from the bond pad locations which in turn are found using the information from the BBM/HDI design technical specifications, 
 
 \begin{landscape}
 \begin{figure}[h]
@@ -644,18 +638,13 @@ The main routine is composed of two steps, although each step involves more than
 \end{figure}
 \end{landscape}
 
-The module encapsulation sequence begins by moving the wirebonded modules from the storage cabinet to the chucks; since the session involves eight modules, only two chucks are made available in the routine. Once the module identification information and gantry table configuration are provided by the operator, the vacuum is activated accordingly.
-
-In the first step, the vision system is used to locate the fiducial marks on the BBMs and HDIs, the same used in the gluing stage, and the reference positions that define the sylgard traces to be deposited. 
+\noindent \ie, knowing the location of the fiducial marks on the BBM/HDI, it is possible to locate with precision the location of the bond pads. Originally, $R_i$ was identified with the center of the first bond pad, while $R_f$ was identified with the center of the last bond pad; however, the initial testing showed that this identification resulted in some of the pads not being fully covered. At first, the proposed solution was to extend $\Delta t_0$ and eliminate $\Delta t_i$ which would increase the amount of sylgard in the trace ends, but further testing showed that the additional amount of sylgard, resulting from an extended $\Delta t_0$, did not provide a full solution. A simple solution was to move the reference positions a bit away from the bond pad center as showed in Figure \ref{fig:hdi_bondpads}; this adjustment was implemented in the routine. 
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=\textwidth]{pixel/hdi_bondpads}
  \caption[Encapsulation region.]{Encapsulation region. The sylgard trace, defined by the reference positions $R_i$ and $R_f$, is required spread out to fully cover the bond pads. }\label{fig:hdi_bondpads}
-\end{center}
 \end{figure}
-
-These reference positions $R_i$ and $R_f$ define the length of the sylgard trace as shown in Figure \ref{fig:hdi_bondpads}; they are determined from the bond pad locations which in turn are found using the information from the BBM/HDI design technical specifications, \ie, knowing the location of the fiducial marks on the BBM/HDI, it is possible to locate with precision the location of the bond pads. Originally, $R_i$ was identified with the center of the first bond pad, while $R_f$ was identified with the center of the last bond pad; however, the initial testing showed that this identification resulted in some of the pads not being fully covered. At first, the proposed solution was to extend $\Delta t_0$ and eliminate $\Delta t_i$ which would increase the amount of sylgard in the trace ends, but further testing showed that the additional amount of sylgard, resulting from an extended $\Delta t_0$, did not provide a full solution. A simple solution was to move the reference positions a bit away from the bond pad center as showed in Figure \ref{fig:hdi_bondpads}; this adjustment was implemented in the routine. 
 
 In general, the sylgard trace lives in 3D because the module is not perfectly aligned with respect to the gantry coordinate system (and neither is the HDI) and even though the ROCs are flat the HDI could be bent; therefore, the gantry motion during the sylgard deposition is carried out in 3D. The displacements in each direction are determined from the reference positions and the motions are done in the same time interval, thus, the speed for each direction is different; however, the displacement in $y$-direction, \ie, the length of the set of bond pads which is about 8 mm, is much larger than the displacement in $x$ and $z$ directions, which are expected to be about 10-50 $\mu$m, so essentially the speed in y-direction is essentially the same as the deposition speed.
 
@@ -664,7 +653,7 @@ The fact that the HDI is not perfectly flat implies that even though the technic
 After the reference positions have been determined, they are approved by the operator or adjusted according to the parameters described above; in case of failure, a manual mode is available. Figure \ref{fig:potting_references} shows pictures with the reference positions chosen for a module.        
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=0.32\textwidth,height=0.32\textwidth]{pixel/pot_ref_hdi1.png}
   \includegraphics[width=0.32\textwidth,height=0.32\textwidth]{pixel/pot_ref_bbm2.png}
   \includegraphics[width=0.32\textwidth,height=0.32\textwidth]{pixel/pot_tbm1.png}
@@ -675,7 +664,6 @@ After the reference positions have been determined, they are approved by the ope
   \includegraphics[width=0.32\textwidth,height=0.32\textwidth]{pixel/pot_ref_hv_hdi.png}
   \includegraphics[width=0.32\textwidth,height=0.32\textwidth]{pixel/pot_ref_hv_bbm.png}
  \caption[Encapsulation reference positions.]{Encapsulation reference positions for one module. 1 and 4 show the reference positions for one of the HDI bond pads sets, while 2 and 5 show the corresponding reference positions for the bond pads on the BBM side. 3 and 6 show the reference points for the TBM; 7, 8 and 9 show the reference positions for the address pads, the HV pad on HDI and the HV pad on BBM respectively.}\label{fig:potting_references}
-\end{center}
 \end{figure}
 
 The next step is the sylgard preparation; 1 cc of sylgard elastomer are mixed with 0.1 cc of curing agent over a plastic sheet and then transferred to the dispenser syringe using the spatula. Later, the dispenser syringe is placed in a clinical centrifuge in order to eliminate the air bubbles; finally the dispenser syringe is installed in the syringe holder attached to the gantry head. This process takes about ten minutes and is required to be done in the shortest time possible given that sylgard gets thicker with time; the mixing time has to be noted and input into the program in order to control the deposition speed.
@@ -685,32 +673,29 @@ The needle tip is installed once the dispenser syringe is mounted in the holder,
 In total, the encapsulation of one module is composed by 32 sylgard traces covering the bonds connecting the HDI and each of the 16 ROCs per module, eight sylgard traces covering the bonds connection the TBM and the HDI, two sylgard traces covering the bonds of the address pads, and two sylgard drops covering the HV pads; each module is encapsulated in about five minutes. Figure \ref{fig:sylgard_dep} shows the sylgard deposition front panel. 
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=\textwidth]{pixel/sylgard_dep.png}
   \caption{Sylgard deposition LabVIEW front panel.}\label{fig:sylgard_dep}
-\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+  \includegraphics[width=0.92\textwidth]{pixel/potting_report}
+ \caption[Encapsulation session report.]{Encapsulation session report.}\label{fig:potting_report}
 \end{figure}
 
 After the sylgard deposition step, the syringe is removed from the holder and the gantry head goes back to home position. The work at the gantry table ends with the generation and publication of the encapsulation session report (see Figure \ref{fig:potting_report}).   
 
-\begin{figure}[h]
-\begin{center}
-  \includegraphics[width=\textwidth]{pixel/potting_report}
- \caption[Encapsulation session report.]{Encapsulation session report.}\label{fig:potting_report}
-\end{center}
-\end{figure}
-
 At the end of the full cycle, a visual inspection of the sylgard traces is performed in order to ensure the quality of the encapsulation; in case of defects, the encapsulation procedure is repeated taking the reference positions in agreement with the regions that are not fully sylgard-covered. Several videos showing the encapsulation routine in action can be found in Reference\cite{jmonroy_channel}.
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=0.32\textwidth,height=0.42\textwidth]{pixel/potting_test.png}
   \includegraphics[width=0.32\textwidth,height=0.42\textwidth]{pixel/ROC_HDI_bonds1.png}
   \includegraphics[width=0.32\textwidth,height=0.42\textwidth]{pixel/pot_res_tbm.png}
   \includegraphics[width=0.45\textwidth,height=0.32\textwidth]{pixel/pot_res_add.png}
   \includegraphics[width=0.45\textwidth,height=0.32\textwidth]{pixel/pot_res_hv.png}
   \caption[Encapsulation results.]{Encapsulation results. 1 shows an encapsulation test. 2-5 show the results from a module encapsulation for two sets of ROC-HDI traces, TBM, address pads and HV pads respectively.}\label{fig:potted_module}
-\end{center}
 \end{figure}
 
 Later, the plates with the encapsulated modules were transferred into the curing oven where they are submitted to a thermal cycle keeping them at 50 C for one hour. The curing procedure is not included in the encapsulation routine and no details are provided about it in this document. Figure \ref{fig:potted_module} shows a picture of an encapsulation test using a plain HDI glued on a glass slide; also, pictures of an encapsulated module confirming the quality of the encapsulation.  
@@ -718,25 +703,23 @@ Later, the plates with the encapsulated modules were transferred into the curing
 The module assembly sites were also responsible for the testing and characterization of the assembled pixel modules; therefore, modules were tested at room temperature ($\sim$ 17 C) while monitoring ROC digital and analog currents. The very last step in the production line was the shipment to the X-ray characterization site located at the University of Kansas. Figure \ref{fig:module_in_carrier} shows a module in the carrier ready to be shipped; a plastic lid, not shown, was used to fully cover the module.       
 
 \begin{figure}[h]
-\begin{center}
+\centering
   \includegraphics[width=0.8\textwidth]{pixel/module_in_carrier}
  \caption[Module in carrier.]{Module in carrier. A plastic lid was used to fully cover the module.}\label{fig:module_in_carrier}
-\end{center}
 \end{figure}
 
 \subsection{FPix module production yields}
 
-Figure \ref{fig:mod_ass_time} shows the module assembly over time for both assembly sites, Purdue University and UNL, and for UNL only; in total 1224 were assembled and shipped to the integration site (SiDet-Fermilab), 555 of them at UNL. The module production lasted thirteen months with an interruption at the seventh month due to technical issues faced by the BBM provider. During that time, assembly sites worked in the fixing defective modules and in the assembly of the stocked parts. Although by the sixth month, there were enough modules to build the FPix, not all of them were of optimal quality; the module qualification will be described in the next paragraphs. Spare modules were assembled after the tenth month of production.     
-
-At SiDet, all modules were submitted to extensive testing in order to ensure they were fully functional and fulfill the performance requirements; a detailed description of the complete set of tests is documented in Reference \cite{fpix_module_testing_guide}.
-
-\begin{figure}[h]
-\begin{center}
+\begin{figure}[ht]
+\centering
   \includegraphics[width=0.8\textwidth]{pixel/mod_ass_time}
   \includegraphics[width=0.8\textwidth]{pixel/mod_ass_unl}
  \caption[Module assembly over time.]{Module assembly over time for both assembly sites (top) and for UNL (bottom).}\label{fig:mod_ass_time}
-\end{center}
 \end{figure}
+
+Figure \ref{fig:mod_ass_time} shows the module assembly over time for both assembly sites, Purdue University and UNL, and for UNL only; in total 1224 were assembled and shipped to the integration site (SiDet-Fermilab), 555 of them at UNL. The module production lasted thirteen months with an interruption at the seventh month due to technical issues faced by the BBM provider. During that time, assembly sites worked in the fixing defective modules and in the assembly of the stocked parts. Although by the sixth month, there were enough modules to build the FPix, not all of them were of optimal quality; the module qualification will be described in the next paragraphs. Spare modules were assembled after the tenth month of production.     
+
+At SiDet, all modules were submitted to extensive testing in order to ensure they were fully functional and fulfill the performance requirements; a detailed description of the complete set of tests is documented in Reference \cite{fpix_module_testing_guide}.
 
 After testing, each module was given a grade based on its IV performance and its single pixel defects as stated in Table \ref{tab:grad_scheme}. The IV performance refers to two aspects; on one side, the amount of leakage current at the expected operating bias voltage ($I_{-150\textrm{V}}$), and on other side, to the breakdown voltage which should be higher than -150 V. If the breakdown voltage is lower than -150 V, the ratio $I_{-150V}/I_{-100V}$ should be small, otherwise it should be large.      
 

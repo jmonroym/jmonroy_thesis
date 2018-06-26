@@ -1,6 +1,9 @@
 \setcounter{chapter}{5}
 \hyphenation{Colli-sions}
 \hyphenation{Single}
+\hyphenation{mi-ti-ga-tion}
+\hyphenation{asso-cia-ted}
+\hyphenation{ac-ti-vi-ty}
 %______________________ Analysis ______________________
 \chapter[The inverted top-Higgs coupling]{The inverted top-Higgs coupling}\label{ch:analysis}
 
@@ -95,7 +98,7 @@ On the side of the reducible backgrounds, the largest contribution comes from th
 
 The data set used in this analysis was collected by the CMS experiment during 2016, while running at $\sqrt{s}=13$ TeV, and corresponds to a total integrated luminosity of 35.9 \fbinv. Only periods when the CMS magnet was on were considered when selecting the data samples; that corresponds to the \verb|23Sep2016 (Run B to G)| and \verb|PromptReco (Run H)| versions of the datasets.
 
-Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The selected sample has contributions from $H\to WW (\sim 75\%), ZZ (\sim 25\%), \tau\tau (\sim 5\%)$.
+Multilepton final states with either two same-sign leptons or three leptons target the case where the Higgs boson decays to a pair of W bosons, $\tau$ leptons, or Z bosons, and where the top quark decays leptonically, hence, the \verb|SingleElectron|, \verb|SingleMuon|, \verb|DoubleEG|, \verb|MuonEG|, \verb|DoubleMuon| dataset (see Table \ref{tab:dataset}) compose the full dataset. The selected sample has contributions from $H\to WW (\sim 75\%)$, $ZZ (\sim 25\%)$, $\tau\tau (\sim 5\%)$.
 
 The quality of the data sets is evaluated by considering any observation reported from the CMS control room where the status of each detection system is monitored; thus, if ,for instance, an unusual behavior in the solenoid is reported, the data sets produced with the data taken at that are accordingly flagged. In fact, information about alignment, calibration, luminosity, detectors status, among others is used to qualify the data sets. Part of the qualification is make online (during the data taking) while further qualifications are preformed offline when the data are stored and processed at the Tier-0 and Tier-1 data processing centers.
 
@@ -154,6 +157,7 @@ Trigger efficiency describes the probability of events to pass the trigger requi
 Comparisons between the data and MC efficiencies for each category, shown in Figures~\ref{fig:trigeffsmumu}, \ref{fig:trigeffsemu}, and \ref{fig:trigeffs3l}, reveal that they are in good agreement; the difference is corrected by applying scale factors derived from the ratio between both efficiencies.
 
 Applied flat scale factors in each category are shown in Table ~\ref{tab:trigSFs}; they have been inherited from Reference \cite{CMS_AN_2017-029}. 
+
 \begin{table}
 \centering
 \begin{tabular}{ll}
@@ -366,8 +370,7 @@ In addition to the previously defined requirements for jets, they are required t
 
 \subsection{Lepton selection efficiency}
 
-
-\begin{figure}[!ht]
+\begin{figure}[!hb]
 \centering
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_2lss_pt.pdf}
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_2lss_pt.pdf}\\
@@ -377,7 +380,7 @@ In addition to the previously defined requirements for jets, they are required t
 \label{fig:2lss_eff}
 \end{figure}
 
-\begin{figure}[!hb]
+\begin{figure}[!ht]
 \centering
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_eb_3l_pt.pdf}
   \includegraphics[width=0.4\linewidth]{lepmva_efficiency/tnp_eff_ee_3l_pt.pdf}\\
@@ -455,7 +458,7 @@ Backgrounds from \ttW and \ttZ\ processes are estimated using simulated events, 
 
 The diboson contribution is also estimated from simulated events; however, the overall normalization of this process is obtained from a dedicated control region. The motivation behind that strategy is that even thought the measured inclusive cross section for diboson processes (\WZ,\ZZ) is in good agreement with the NLO calculations \cite{CMS_AN_2017-029}, that agreement is perturbed when leptonic Z decays and hadronic jets in the final state are required; those requirements are precisely the ones that make the diboson production a background for the \tHq signal. Thus, by using a dedicated control region dominated by \WZ production\footnote{\ZZ background is strongly reduced by the cut on MET.}, the overall normalization is constrained.
 
-The control region is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, invert the Z-veto which makes the control region orthogonal to signal region; the \bjet tagging requirements is also inverted with respect to the signal region, \ie, require two not $b$-jets. A scale factor is extracted from the predicted distribution of \WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. More details about the procedure used can be found in Reference \cite{CMS_AN_2017-029} from where the scale factor is taken.
+The control region is defined by the presence of at least three leptons, of which one opposite-sign pair must be compatible with a Z boson decay, \ie, invert the ${\textrm{Z-veto}}$ which makes the control region orthogonal to signal region; the \bjet tagging requirements is also inverted with respect to the signal region, \ie, require two not $b$-jets. A scale factor is extracted from the predicted distribution of \WZ events in the control region, and the observed data, while keeping other processes fixed; this factor is used to scale the diboson prediction in the signal selection region. More details about the procedure used can be found in Reference \cite{CMS_AN_2017-029} from where the scale factor is taken.
 
 \begin{figure} [!h]
 \centering
@@ -1491,8 +1494,6 @@ A scan over the best fit values of the combined cross section times modified BR 
 
 The post-fit behavior of the most important nuisance parameters is presented in the pulls and impacts plots in Figures ~\ref{fig:impacts} and ~\ref{fig:impacts_asimov}; additional pulls and impacts can be found in Appendix \ref{pulls_impacts_add} 
 
-Most of the nuisance parameters stay close to their initial values, \ie, the estimations of all the nuisances are consistent with the observations in this dataset, up to the limited statistical power available. The biggest impact on the signal strength limits is associated with the fake rates for muons, followed by the lepton efficiencies and nuisances associated with the QCD scales. The lower impact in the ITC scenario is associated with the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated with the forward jet in \tHq and PDFs have the lower impact in the signal strength limit.
-
 \begin{figure} [!th]
  \centering
  \includegraphics[width=0.75\textwidth]{limits/impacts/impacts1.pdf}\\
@@ -1509,6 +1510,8 @@ Most of the nuisance parameters stay close to their initial values, \ie, the est
 %% \caption[Post-fit pulls an impacts for the $\Ct/\CV=1.0$ hypothesis.]{Post-fit pulls and impacts of the 40 nuisance parameters with largest impacts for the fit on the observed data, for the standard model ($\Ct/\CV=1.0$) hypothesis.}
 %% \label{fig:impacts_sm}
 %% \end{figure}
+
+Most of the nuisance parameters stay close to their initial values, \ie, the estimations of all the nuisances are consistent with the observations in this dataset, up to the limited statistical power available. The biggest impact on the signal strength limits is associated with the fake rates for muons, followed by the lepton efficiencies and nuisances associated with the QCD scales. The lower impact in the ITC scenario is associated with the b-tag and \tHq closure normalization and shape nuisances, while in the SM scenario, nuisances associated with the forward jet in \tHq and PDFs have the lower impact in the signal strength limit.
 
 \begin{figure} [!h]
  \centering
