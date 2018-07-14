@@ -1,0 +1,83 @@
+
+
+Introduction.
+Perhaps you should add some explanatory notes about units:
+ for equations you use natural system where c=\hbar=1
+ special units for cross sections, and maybe some other quantities. For example,
+       explain what is fb, pb, etc.  =====DONE=======
+
+
+line 391, "three aspects of elementary particle physics."
+It is not clear if these three aspects reflect the state of the matter or they are aspects
+of the thesis research. This paragraph should be reworded. ===========DONE================
+
+line 402: "gauge invariance, which states that the function describing the energy of a system is 
+invariant under certain transformations"
+This statement is not accurate, the gauge invariance deals with invariance of fields under transformation
+of potentials. ====DONE=========
+
+p. 8, Table 2.1, 2nd generation: "muon" (typo)  ======= DONE =========
+
+line 623: "Baryon number is conserved in SI and EI". Isn't baryon number conserved in WI as well? =====yes my bad. DONE ==========
+
+line 690: it is not clear what you mean by "relative strength" =========DONE==========
+
+Eq. (2.6). The second term should be +del(\nabla)f, not -\Delta f ======DONE========
+
+eq. (2.10): Some explanation of notations (what is \psi, \bar{\psi}, \gamma), is required.
+I also don't understand why the mass term -m\bar{\psi}\psi is missing. It is included in Eq. (2.11), but it is stated
+that it is not gauge invariant (?)(OK for terms associated with bosons)
+================ it is missing from eq 2.10 because it is not EW G invariant, therefore, initially all particles in EWI are massless until the get their masses from the SSB and Higgs mechanism. DONE =====
+
+Fig. 2.6, left bottom part: I don't understand how this potential surface is related to the problem,
+since the ground state there is not degenerate (in contrast to the right bottom surface).
+
+ ========= it is just to show that before the critical Force is reached the potential is simple with only one minimum, in contrast to the the situation where the critical force is reached and the potential is still symmetric but it has infinite number of minima which makes it suitable for introducing the SSB mechanism.  DONE =============== 
+
+lines 1016-1018: this sentence is obscure and should be reworded. =====DONE=======
+
+
+Lines 1092-1096: if one of the decay products is a virtual particle, then it is not a final product.
+What IS the final product in this case?
+
+=========== In WZ production, let's say the Z boson is virtual, then the final product is composed of the particles from the Z decay (e+e-, mu+mu-, etc.). We call "final state" the set of particles/jets that can be reconstructed from the data. for intance in tHq process, one final state is 3 leptons plus (1-2) jets. DONE================     
+
+
+p. 50: the footnote is unfinished (or perhaps has gotten to p. 51). =========DONE=================
+
+Caption to Fig. 2.16: it is not clear what the parameter c_V represents. The legend says c_V=1 (SM)
+(solid line), but this contradict to the statement "for the SM (\kappa_V = \kappa_t = 1), the destructive
+effect of the interference is maximal" (dashed line, not solid!)
+
+=== SM scenario corresponds to \kappa_V = \kappa_t = 1, only one point in the phase space. DONE ================ 
+
+
+
+
+Fig. 2.11: why is PDF so large at low x for g(especially large!), \bar{d}, \bar{u}, and s, especially at 
+the right diagram?  ========== there is not any fundamental reason for why the gluons carry most of the momentum. It's just something you go and measure, and that's what we observe. DONE ================ 
+
+
+
+lines 1277-1278. How are molecules in the hydrogen gas broken into atoms? 
+
+
+Eq. (3.1) is nonrelativistic, you cannot use it when v is close to c. ========== corrected by writing the equation in terms of the momentum as shown in Jackson.  DONE ===================
+
+
+Lines 1753-1759
+Strong interaction generally cannot be treated perturbatively. How do you justify the perturbative
+(Feynman diagram) approach here? ========== but at high energy regime it is and at that regime is where we work. DONE=============
+
+lines 1763-1764: I am curious about DGLAP. Can you give a reference? ======DONE=============
+
+line 2529: "two leptons of the same sign (2lss) channel and three leptons (3l) channel" 
+are ss in the first channel strange quarks? Why there are no quarks in the second channel? ====== ss-> same-sign  DONE ========
+
+line 3430: remove one "to the" ====== DONE ==========
+
+Section 8.1: Could you say that your obtained limits are within the prediction of SM, or this is something
+beyond SM? ===== they are compatible with SM as shown in plots 6.35, 6.36.  DONE===============
+
+Finally: have your results been published and/or reported at professional meetings? In our field the author is usually supposed to say in the Introduction something like "the results reported in this thesis
+were published in Refs. [] and reported at conferences..."  ==== said in conclusions. DONE ================== 

@@ -175,13 +175,12 @@ Under the Supervision of \nu@adviser\\[3\baselineskip]
   \pagestyle{empty}%
   \begin{doublespacing}%
     \begin{center}%
-      \footnotesize
       \MakeUppercase{\thetitle}\\[.5\baselineskip]
       \theauthor, \nu@degreeabbreviation\\
       \nu@university, \nu@year%
     \end{center}%
     \begin{flushleft}%
-      Adviser: \nu@adviserAbstract%
+      Advisers: \nu@adviserAbstract%
     \end{flushleft}%
   }{\par\end{doublespacing}\cleardoublepage}
 
@@ -219,7 +218,7 @@ Under the Supervision of \nu@adviser\\[3\baselineskip]
   \end{center}
   \ifthenelse{\boolean{nu@single}}{\begin{singlespacing}}{\begin{doublespacing}}%
     }{\par%
-      \ifthenelse{\boolean{nu@single}}{\end{singlespacing}}{\end{doublespacing}}%
+      \ifthenelse{\boolean{nu@Ssingle}}{\end{singlespacing}}{\end{doublespacing}}%
   \cleardoublepage}
 
 \let\nu@ToC\tableofcontents

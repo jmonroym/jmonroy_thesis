@@ -3,6 +3,7 @@
 \hyphenation{handed-ness}
 \hyphenation{fo-llo-wing}
 \hyphenation{ac-cor-ding}
+
 %______________________ Theory ______________________
 \chapter{Theoretical approach}
 \label{ch:theory}
@@ -65,7 +66,7 @@ The basic constituents of the ordinary matter at the lowest level, which form th
 \begin{tabular}{ccccc} \hline
                          &         & \multicolumn{3}{c}{Generation}                                                           \\ \hline
                          &Type     & 1st                          & 2nd                        & 3rd                          \\ \hline
-\multirow{2}{*}{Leptons} &Charged  & Electron (e)                 & Moun($\mu$)                & Tau ($\tau$)                 \\%\hline
+\multirow{2}{*}{Leptons} &Charged  & Electron (e)                 & Muon($\mu$)                & Tau ($\tau$)                 \\%\hline
                          &Neutral  & Electron neutrino ($\nu_e$)  & Muon neutrino ($\nu_{\mu}$) & Tau neutrino ($\nu_{\tau}$) \\\hline
 \multirow{2}{*}{Quarks}  &Up-type  & Up (u)                       & Charm (c)                & Top (t)                        \\%\hline
                          &Down-type& Down (d)                     & Strange (s)              & Bottom (b)                     \\\hline
@@ -179,7 +180,7 @@ Color charge is responsible for the SI between quarks and is the symmetry ($SU(3
 
 In practice, when a quark is left alone isolated a process called \ti{hadronization} occurs where the quark emits gluons (see Section \ref{sec:gb}) which eventually will generate new quark-antiquark pairs and so on; those quarks will recombine to form hadrons that will decay into leptons. This proliferation of particles looks like a \ti{jet} coming from the isolated quark. More details about the hadronization process and jet structure will be given in chapter\ref{ch:gensimreco}.         
 
-In the first version of the quark model (1964), M. Gell-Mann\cite{gellman} and G. Zweig\cite{zweig,zweig2} developed a consistent way to classify hadrons according to their properties. Only three quarks (u, d, s) were involved in a scheme in which all baryons have baryon number B=1 and therefore quarks have B=1/3; non-baryons have B=0. Baryon number is conserved in SI and EI which means that single quarks cannot be created but in pairs $q-\bar{q}$.
+In the first version of the quark model (1964), M. Gell-Mann\cite{gellman} and G. Zweig\cite{zweig,zweig2} developed a consistent way to classify hadrons according to their properties. Only three quarks (u, d, s) were involved in a scheme in which all baryons have baryon number B=1 and therefore quarks have B=1/3; non-baryons have B=0. Baryon number is conserved in SI, WI and EI which means that single quarks cannot be created but in pairs $q-\bar{q}$.
 
 The scheme organizes baryons in a two-dimensional space ($I_3$ - Y); Y (hypercharge) and $I_3$ (isospin) are quantum numbers related by the Gell-Mann-Nishijima formula\cite{gell_ni,gell_ni2}:
 \begin{equation}
@@ -298,7 +299,7 @@ Gravitational   (GI)   & Massive particles               & $10^{-39}$        & I
 \caption[Fundamental interactions features.]{Fundamental interactions features\cite{hyperphys}. }\label{fund_inter_feat}
 \end{table}
 
-Table \ref{fund_inter_feat} summarizes the main features of the fundamental interactions. The strength of the interactions is represented by the coupling constants which depend on the energy scale at which the interaction is evaluated, therefore, it is the relative strength of the fundamental forces that reveals the meaning of strong and weak; in a context where the relative strength of the SI is 1, the EI is about hundred times weaker and WI is about million times weaker than the SI. A good description on how the relative strength and range of the fundamental interactions are calculated can be found in References \cite{hyperphys,matt}. In the everyday life, only EI and GI are explicitly experienced due to the range of these interactions; \ie, at the human scale distances only EI and GI have appreciable effects, in contrast to SI which at distances greater than $10^{-15}$m become negligible. Is it important to clarify that the weakness of the WI is attributed to the fact that its mediators are highly massive which affects the propagators of the interaction, as a result, the effect of the coupling constant is reduced.                        
+Table \ref{fund_inter_feat} summarizes the main features of the fundamental interactions. The strength of the interactions is represented by the coupling constants which depend on the energy scale at which the interaction is evaluated, therefore, if the SI is used as reference to compare the strength of the fundamental forces ,\ie, the relative strength of the SI is 1, the EI is about hundred times weaker and WI is about million times weaker than the SI, thus, it is the relative strength of the fundamental forces what reveals the meaning of strong and weak; A good description on how the relative strength and range of the fundamental interactions are calculated can be found in References \cite{hyperphys,matt}. In the everyday life, only EI and GI are explicitly experienced due to the range of these interactions; \ie, at the human scale distances only EI and GI have appreciable effects, in contrast to SI which at distances greater than $10^{-15}$m become negligible. Is it important to clarify that the weakness of the WI is attributed to the fact that its mediators are highly massive which affects the propagators of the interaction, as a result, the effect of the coupling constant is reduced.                        
 
 \subsection{Gauge invariance.}
 QED was built successfully on the basis of the classical electrodynamics theory (CED) of Maxwell and Lorentz, following theoretical and experimental requirements imposed by
@@ -316,7 +317,7 @@ The gauge invariance requirement reflects the fact that the fundamental fields c
 When the gauge transformation:  
 
 \begin{align}\label{cov_der}
-\textbf{A} \to &\textbf{A} -\Delta f\nonumber\\
+\textbf{A} \to &\textbf{A} + \nabla f\nonumber\\
 V \to & V - \frac{\partial f}{\partial t}
 \end{align}
 
@@ -382,7 +383,7 @@ G\equiv SU(2)_L\otimes U(1)_Y
 
 The following treatment applies to any of the fermion generations, but for simplicity the first generation of leptons will be considered\cite{peskin,mandl,halzen,pich}.
 
-Given the first generation of leptons 
+Given the first generation of leptons, represented by the spinors  
 
 \begin{equation}\label{first_gen}
 \psi_1 = \binom{\nu_e}{e^-}_L , \qquad \psi_2= \nu_{eR}, \qquad \psi_3= e^-_R
@@ -397,15 +398,15 @@ J_\mu \equiv  J_\mu^+ = \bar{\nu}_{eL} \gamma_\mu e_L, \qquad J_\mu^\dagger \equ
 \noindent and the free Lagrangian is given by
 
 \begin{equation}\label{lo}
-\Lagr_0 = \sum_{j=1}^3 i\overline{\psi}_j(x)\gamma^\mu \partial_\mu \psi_j(x).
+\Lagr_0 = \sum_{j=1}^3 i\overline{\psi}_j(x)\gamma^\mu \partial_\mu \psi_j(x),
 \end{equation}
 
-Mass terms are included directly in the QED free Lagrangians since they preserve the invariance under the symmetry transformations involved which treat left and right handed particles similarly, however mass terms of the form
+\noindent with $\gamma^\mu$ the Dirac matrices, $\overline{\psi}$ are the adjoint spinors. Mass terms are included directly in the QED free Lagrangians since they preserve the invariance under the symmetry transformations involved which treat left and right handed particles similarly, however mass terms of the form
 
 \beqn 
-m_W^2W_\mu^\dagger(x)W^\mu(x) + \frac{1}{2}m_Z^2Z_\mu(x)Z^\mu(x) -m_e\bar{\psi_e}(x)\psi_e(x)
+m_W^2W_\mu^\dagger(x)W^\mu(x) + \frac{1}{2}m_Z^2Z_\mu(x)Z^\mu(x) -m_e\bar{\psi_e}(x)\psi_e(x).
 \eeqn
-\noindent which represent the mass of \wpm, Z and electrons, are not invariant under G transformations, therefore the gauge fields described by the EWI are in principle massless.
+\noindent which represent the mass of \wpm, Z bosons and electrons are not invariant under G transformations, therefore the gauge fields described by the EWI are in principle massless.
 
 Experiments have shown that the EWI gauge fields are not massless\cite{wmass1,wmass2,zmass1,zmass2}; however, they have to acquire mass through a mechanism compatible with the gauge invariance; that mechanism is known as the \ti{Higgs mechanism} and will be considered later in this Section. The global transformations in the combined symmetry group G can be written as
 
@@ -507,6 +508,7 @@ Z_\mu = & -B_\mu \sin\theta_W + W^3_\mu \cos\theta_W \nonumber
 \end{align}
 
 \noindent where $\theta_W$ is known as the \ti{Weinberg angle.} The interaction Lagrangian is now given by
+
 \begin{align}
 \Lagr_I =-\frac{g}{\sqrt{2}}(J^\mu W_\mu^+ + J^{\mu\dagger}W_\mu^-) -\left(g\sin\theta_W J_\mu^3 + g'\cos\theta_W \frac{J_\mu^Y}{2} \right)A^\mu \\ \nonumber
 - \left(g\cos\theta_W J_\mu^3 - g'\sin\theta_W \frac{J_\mu^Y}{2} \right)Z^\mu 
@@ -540,7 +542,7 @@ Figure \ref{ssb} left shows a steel nail (top) which is subject to an external f
 \label{ssb}
 \end{figure}
 
-Before reaching the critical force value, the system has rotational symmetry with respect to the nail axis; however, after the critical force value is reached the nail buckles (top right). The form of the potential energy (bottom right) changes appearing a set of infinity minima  but preserving its rotational symmetry. Right before the nail buckles there is no indication of the direction the nail will bend because any of the directions are equivalent, but once the nail bends, choosing a direction, an arbitrary minimal energy state (ground state) is selected and it does not share the system's rotational symmetry. This mechanism for reaching an asymmetric ground state is known as \textit{spontaneous symmetry breaking}.       
+Before reaching the critical force value, the system has rotational symmetry with respect to the nail axis; however, after the critical force value is reached the nail buckles (top right). The form of the potential energy changes from a potential with only one minimum (bottom left) to a potential with an infinite set of minima (bottom right) but preserving its rotational symmetry. Right before the nail buckles there is no indication of the direction the nail will bend because any of the directions are equivalent, but once the nail bends, choosing a direction, an arbitrary minimal energy state (ground state) is selected and it does not share the system's rotational symmetry. This mechanism for reaching an asymmetric ground state is known as \textit{spontaneous symmetry breaking}.       
 
 The lesson from this analysis is that the way to introduce the SSB mechanism into a system is by adding the appropriate potential to it.
 
@@ -609,7 +611,9 @@ Thus, \textit {the SSB mechanism serves as a method to generate mass but as a si
 
 \subsection{Higgs mechanism}
 
-\noindent When the SSB mechanism is introduced in the formulation of the EWI in an attempt to generate the mass of the so far massless gauge bosons and fermions, an interesting effect is revealed. In order to keep the G symmetry group invariance and generate the mass of the EW gauge bosons, a G invariant Lagrangian density ($\Lagr_S$) has to be added to the non massive EWI Lagrangian (Eqn. \ref{nmewi_lagr})
+When the SSB mechanism is introduced in the formulation of the EWI in an attempt to generate the mass of the so far massless gauge bosons and fermions, an interesting effect is revealed.
+
+In order to keep the G symmetry group invariance and generate the mass of the EW gauge bosons, a G invariant Lagrangian density ($\Lagr_S$) has to be added to the non massive EWI Lagrangian (Eqn. \ref{nmewi_lagr})
 
 \begin{align}
 \Lagr_S    = &(D_\mu\phi)^\dagger(D^\mu\phi) - \mu^2\phi^\dagger\phi - \lambda(\phi^\dagger\phi)^2 , \qquad \lambda>0, \mu^2<0 \label{ls}\\
@@ -754,12 +758,12 @@ At the LHC, Higgs bosons are produced as a result of the collision of two counte
 
 Protons are composed of quarks and these quarks are bound by gluons; however, what is commonly called the quark content of the proton makes reference to the valence quarks. In fact, a proton is not just a rigid entity with three balls in it all tied up with springs, but the gluons exchanged by the valence quarks tend to split spontaneously into quark-antiquark pairs or more gluons, creating \ti{sea of quarks and gluons} as represented in Figure \ref{pp_collision}.
 
-In a proton-proton (\pp) collision, the proton's constituents, quarks and gluons, are those that collide. The \pp cross section depends on the momentum of the colliding particles, reason for which it is needed to know how the momentum is distributed inside the proton. Quarks and gluons are known as partons, hence, the functions that describe how the proton momentum is distributed among partons inside it are called \ti{parton distribution functions (PDFs)}; PDFs are determined from experimental data obtained in experiments where the internal structure of hadrons is tested, and depend on the momentum transfer $Q$ and the fraction of momentum $x$ carried by an specific parton. Figure \ref{fig:pdfs} shows the proton PDFs ($xf(x,Q^2)$) for two values of $Q$.     
+In a proton-proton (\pp) collision, the proton's constituents, quarks and gluons, are whose collide and given that the \pp cross section depends on the momentum of the colliding particles, it is necessary to know how the proton's momentum is distributed among its constituents; the functions that describe how the momentum of the proton is distributed among its quarks and gluons, known as partons, are called \ti{parton distribution functions (PDFs)}; PDFs are determined from experimental data obtained in experiments where the internal structure of hadrons is tested, and depend on the momentum transfer $Q$ and the fraction of momentum $x$ carried by an specific parton. Figure \ref{fig:pdfs} shows the proton PDFs ($xf(x,Q^2)$) for two values of $Q$.     
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{pdfs}
-\caption[Proton PDFs]{Proton PDFs for two values of $Q^2$: left.$\mu^2=Q^2=10$ GeV$^2$ , right. $\mu^2=Q^2=10$ GeV$^2$. $u_v$ and $d_v$ correspond to the $u$ and $d$ valence quarks, $s, c, b, \bar{u}, \bar{d}$ correspond to sea quarks, and $g$ corresponds to gluons. Note that glouns carry a high fraction of the proton's momentum. \cite{pdg}}
+\caption[Proton PDFs]{Proton PDFs for two values of $Q^2$: left.$\mu^2=Q^2=10$ GeV$^2$ , right. $\mu^2=Q^2=10$ GeV$^2$. $u_v$ and $d_v$ correspond to the $u$ and $d$ valence quarks, $s, c, b, \bar{u}, \bar{d}$ correspond to sea quarks, and $g$ corresponds to gluons. Note that glouns carry a high fraction of the proton's momentum \cite{pdg}.}
 \label{fig:pdfs}
 \end{figure}
 
@@ -831,12 +835,11 @@ $H\to\mu^+\mu^-$    & $2.18\times10^{-4}$ & $+6.0\%-5.9\%$\\\hline
 }\label{hdbr}
 \end{table}
 
-Decays to other lepton and quark pairs, like electron, strange, up, and down quark pairs not listed in the table, are also possible but their likelihood is too small to measure since they are very lightweight, h
-ence, their interaction with the Higgs boson is very weak. On other hand, the decay to top quark pairs is heavily suppressed due to the top quark mass ($\approx 173$ GeV/c$^2$).
+Decays to other lepton and quark pairs, like electron, strange, up, and down quark pairs not listed in the table, are also possible but their likelihood is too small to measure since they are very lightweight, hence, their interaction with the Higgs boson is very weak. On other hand, the decay to top quark pairs is heavily suppressed due to the top quark mass ($\approx 173$ GeV/c$^2$).
 
 Decays to gluons proceed indirectly through a virtual top quark loop while the decays to photons proceed through a virtual W boson loop, therefore, their branching ratio is smaller compared to direct interaction decays. Same is true for the decay to a photon and a Z boson.
 
-In the case of decays to pairs of W and Z bosons, the decay proceed with one of the bosons being on-shell and the other being off-shell. The likelihood of the process diminish depending on how far off-shell are the virtual particles involved, hence, the branching ratio for W boson pairs is bigger that for Z boson pairs since Z boson mass is bigger that W boson mass.
+In the case of decays to pairs of W and Z bosons, the decay proceed with one of the bosons being on-shell and the other being off-shell. The likelihood of the process diminish depending on how far off-shell are the virtual particles involved, hence, the branching ratio for W boson pairs is bigger than for Z boson pairs since Z boson mass is bigger than W boson mass.
 
 Note that the decay to a pair of virtual top quarks is possible, but the probability is way too small. 
 
@@ -901,14 +904,16 @@ The s-channel contribution can be neglected. It will be shown that a deviation f
 \end{split}
 \end{equation}
 
-\noindent where $\kappa_V\equiv g_{HVV}/g_{HVV}^{SM}$ and $\kappa_t\equiv g_{Ht}/g_{Ht}^{SM}=y_t/y_t^{SM}$ are scaling factors that quantify possible deviations of the couplings from the SM values, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; ${s=(p_{W}+p_{b})^{2}}$, ${t=(p_{W}-p_{H})^{2}}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are functions describing the weak interaction in terms of the chiral states ($\xi_{t},\xi_{b}$) of the quarks $b$ and $t$. Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be found in Reference \cite{farina}}.
+\noindent where $\kappa_V\equiv g_{HVV}/g_{HVV}^{SM}$ and $\kappa_t\equiv g_{Ht}/g_{Ht}^{SM}=y_t/y_t^{SM}$ are scaling factors that quantify possible deviations of the couplings from the SM values, Higgs-Vector boson (H-W) and Higgs-top (H-t) respectively, from the SM couplings; ${s=(p_{W}+p_{b})^{2}}$, ${t=(p_{W}-p_{H})^{2}}$, $\varphi$ is the Higgs azimuthal angle around the $z$ axis taken parallel to the direction of motion of the incoming W; A and B are functions describing the weak interaction in terms of the chiral states ($\xi_{t},\xi_{b}$) of the quarks $b$ and $t$.
+
+Terms that vanish in the high energy limit have been neglected as well as the Higgs and \textit{b} quark masses\footnote{A detailed explanation of the structure and approximations used to derive $\mathcal{A}$ can be found in Reference \cite{farina}}.
 
 The scattering amplitude grows with energy like $\sqrt{s}$ for $\kappa_V \neq \kappa_t$ , in contrast to the SM ($\kappa_t=\kappa_V=1$), where the first term in \ref{s_amp} cancels out and the amplitude is constant for large s; therefore, a deviation from the SM predictions represents an enhancement in the \tHq cross section. In particular, for a SM H-W coupling and a H-t coupling of inverted sign with respect to the SM ($\kappa_V =-\kappa_t=1$) the \tHq cross section is enhanced by a factor greater 10 as seen in the Figure \ref{thq_en} taken from Reference \cite{farina}; Reference \cite{biswas2} has reported similar enhancement results.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.9]{thq_en}
-\caption[Cross section for \tHq process as a function of $\kappa_t$]{Cross section for \tHq process as a function of $\kappa_t$, normalized to the SM, for three values of $\kappa_V$. In the plot $c_f$ refers to the Higgs-fermion coupling which is dominated by the H-t coupling and represented here by $\kappa_t$. Solid, dashed and dotted lines correspond to $c_V \to \kappa_V= 1, 0.5, 1.5$ respectively. Note that for the SM ($\kappa_V=\kappa_t=1$), the destructive effect of the interference is maximal.} 
+\caption[Cross section for \tHq process as a function of $\kappa_t$]{Cross section for \tHq process as a function of $\kappa_t$, normalized to the SM, for three values of $\kappa_V$. In the plot $c_f$ refers to the Higgs-fermion coupling which is dominated by the H-t coupling and represented in this analysis by \Ct; $c_{V}$ refers to the Higgs-vector boson (W/Z) coupling represented in this analysis by \CV. Solid, dashed and dotted lines correspond to $c_V \to \kappa_V= 1, 0.5, 1.5$ respectively. Note that for the SM scenario (${\CV=\Ct=1}$), the destructive effect of the interference is maximal.} 
 \label{thq_en}
 \end{figure}
 
