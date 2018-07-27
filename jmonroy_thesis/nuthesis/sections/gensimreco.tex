@@ -1,4 +1,5 @@
 \hyphenation{ra-dia-tion}
+\hyphenation{re-gu-la-ri-ty}
 \hyphenation{thres-hold}
 \hyphenation{ge-ne-ra-li-za-tion}
 \chapter{Event generation, simulation and reconstruction}\label{ch:gensimreco}
@@ -270,21 +271,26 @@ JEC are propagated to the calculation of the $\vec{\slashed{E}}_T$ as described 
 
 \subsection{Event reconstruction examples}
 
-Figures \ref{fig:reco1}-\ref{fig:reco3} show the results of the reconstruction performed on 3 recorded events. Descriptions are taken directly from the source.
+Figure \ref{fig:reco1} shows the results of the reconstruction performed on a recorded event. The cmsShow-10.0 tool \cite{cmsshow} have been used to produce these images.  The event recorded was with the CMS detector in 2016 at a proton-proton center-of-mass energy of 13 TeV; it shows the characteristics expected from the decay of the SM Higgs boson to a pair of $W$ bosons with the subsequent production of two muons. A third lepton is observed in the central region of the detector and identified as the decay product of a third W boson. The expected forward jet and \bjet are also clearly visible, while the violet arrow represent the presence of MET.
+
+Figure \ref{fig:reco3} shows the $\rho$-z projection of the event in Figure \ref{fig:reco1}; The displaced reconstructed vertex (the secondary vertex) where the $b$ quark is produced is marked by a black dot; it iis tagged by CSVv2T algorithm. The number of reconstructed primary vertices is 13 (shown in orange color dots). Beam spot position correction is applied.
 
 \begin{figure}[!h]
+\vspace{-1cm}
   \centering
-  \includegraphics[width=10.5cm,height=8cm]{HIG13004_Event01_0}
-  \caption[HIG-13-004 Event 1 reconstruction.]{HIG-13-004 Event 1 reconstruction results; ``HIG-13-004 Event 1: Event recorded with the CMS detector in 2012 at a proton-proton center-of-mass energy of 8 TeV. The event shows characteristics expected from the decay of the SM Higgs boson to a pair of $\tau$ leptons. Such an event is characterized by the production of two forward-going jets, seen here in opposite endcaps. One of the $\tau$ decays to a muon (red lines on the right) and neutrinos, while the other $\tau$ decays into a charged hadron and a neutrino.'' \cite{hig13}.}\label{fig:reco1}
-\end{figure}
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=14.5cm,height=10cm]{TOP12035_Event01}
-  \caption[$e\mu$ event reconstruction.]{$e\mu$ event reconstruction results;``An $e\mu$ event candidate selected in 8 TeV data, as seen from the direction of the proton beams. The kinematics of the main objects used in the event selection are highlighted: two isolated leptons and two particle-flow jets. The reconstructed missing transverse energy is also displayed for reference'' \cite{top12035}.}\label{fig:reco2}
-\end{figure}
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=14.5cm,height=10cm]{reco2}
-  \caption[Recorded event reconstruction.]{Recorded event reconstruction results;``Recorded event ($\rho$-z projection) with three jets with $\pt>30$ GeV with one displaced muon track in 2016 data collected at 13 TeV. Each of the three jets has a displaced reconstructed vertex. The jet with $\pt(j)=43.8$ GeV, $\etac(j)=-1.34$, $\phic(j)=-0.79$ contains muon with $\pt(\mu)=5.5$ GeV, $\etac(\mu)=-1.25$, $\phic(\mu)=-0.84$. Event contains reconstructed isolated muon with $\pt(\mu)=41.2$ GeV, $\etac(\mu)=0.34$, $\phic(\mu)=2.05$ and MET with $\pt=72.5$ GeV, $\phic=-0.32$. Jet candidates for a $b$-jet from top quark leptonic and hadronic decays are tagged by CSVv2T algorithm. One of the other two jets is tagged by CharmT algorithm. Tracks with $\pt>0.5$ GeV are shown. The number of reconstructed primary vertices is 18. Reconstructed $m_T$(W) is 101.8 GeV. Beam spot position correction is applied. Reconstructed primary vertices are shown in yellow color, while reconstructed displaced vertices and associated tracks are presented in black color. Dimensions are given in cm'' \cite{reco1}.}\label{fig:reco3}
+  \includegraphics[width=0.8\textwidth]{3d_thq_event1.png}
+  \includegraphics[width=0.9\textwidth]{rho_phi_thq_event1.png}        
+  \caption[\tHq Event reconstruction.]{\tHq Event reconstruction results}\label{fig:reco1}
 \end{figure}
 
+\begin{landscape}
+\begin{figure}[h]
+  \centering
+  \vspace{-2cm}
+  \hspace{-1cm}
+  \includegraphics[width=23cm,height=15.2cm]{rho_z_thq_event1.png}
+  \caption[Event close-up view with the multiple interactions.]{Event close-up view with the multiple interactions. }\label{fig:reco3}  
+  \vspace{-1cm}
+  \hspace{-2cm}
+  \end{figure}
+\end{landscape}

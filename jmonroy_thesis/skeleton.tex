@@ -70,6 +70,7 @@
 \newcommand{\ttW}{\ensuremath{t\bar{t}W}\xspace}
 \newcommand{\ttV}{\ensuremath{t\bar{t}\mathrm{V}}}
 \newcommand{\WW}{\ensuremath{WW}\xspace}
+\newcommand{\HWW}{\ensuremath{HWW}\xspace}
 \newcommand{\WZ}{\ensuremath{WZ}\xspace}
 \newcommand{\ZZ}{\ensuremath{ZZ}\xspace}
 \newcommand{\tZW}{\ensuremath{tZW}}
@@ -173,7 +174,7 @@
 
 \begin{document}
 
-\linenumbers
+%\linenumbers
 
 \renewcommand\bibname{References}
 %% Start formatting the first few special pages
@@ -182,8 +183,8 @@
 
 \title{Search for production of a Higgs boson and a single top quark in multilepton final states in \MakeLowercase{pp} collisions at ${\sqrt{\MakeLowercase{s}}=\textrm{13 T\MakeLowercase{e}V}}$}
 \author{Jose Andres Monroy Monta{\~n}ez}
-\adviser{Professors Kenneth Bloom, Aaron Dominguez}
-\adviserAbstract{Kenneth Bloom, Aaron Dominguez}
+\adviser{Professors Kenneth Bloom and Aaron Dominguez}
+\adviserAbstract{Kenneth Bloom and Aaron Dominguez}
 \major{Physics and Astronomy}
 \degreemonth{July}
 \degreeyear{2018}
@@ -214,29 +215,19 @@
 
 %% Optional
 \begin{dedication}
+%  \vspace{0.3\textheight}
+  % \centering
+  {\huge \textit{``... no more counting dollars, we'll be counting stars.''}}\\{\footnotesize Ryan Tedder, One Republic, 2012.}\\ \ \\
+  {\huge \textit{``...we only get what we give.''}}\\ {\footnotesize Gregg Alexander, Rick Nowels, New Radicals,  1998.}\\ \ \\
+  {\huge \textit{``...we will be victorious.''}}\\ {\footnotesize Matt Bellamy, Muse, 2009.}\\
+  \vspace{4cm}
+  {\Huge $ \mathfrak{ to \ M \ and \  L}$}
 \end{dedication}
 
 %% Optional
 \begin{acknowledgments}
-%colleauges: Jianping Zeng, Lina Yu, Shruti Daggumati, Yanfu Zhou. In addition, I
-%would also thank Professors Gordon Scholz and Rodrigo Cantarero to encourage me
-%finishing this project.
 
-%\vspace{20pt}
-%I would also like to thank Professor Yunwoo Nam and Professor Hongfeng Yu for
-%their time, guidance, patience and insights on both my professional and personal
-%development.
-
-%\vspace{20pt}
-%At the last, I would also like to thank all my friends and my family for their
-%encouragement and support whenever I faced challenges.
-
-%This thesis was supported by United States Environmental Protection Agency’s
-%Urban Water Grant (UW-97735101). This project has been funded wholly or
-%partially by the United States Environmental Protection Agency under an
-%assistance agreement. The contents do not necessarily reflect the views and
-%policies of the Environmental Protection Agency, no does mention of trade names
-%or commercial products constitute endorsement or recommendation for use.
+%\input{nuthesis/sections/Introduction.tex}
 
 \end{acknowledgments}
 
@@ -273,8 +264,6 @@
 \input{nuthesis/sections/Analysis.tex}
 \input{nuthesis/sections/FPix.tex}
 \input{nuthesis/sections/Conclusions.tex}
-
-
 
 %%\input{nuthesis/sections/Future.tex}
 
@@ -421,7 +410,7 @@ c/s10052-015-3475-9, arXiv:1504.00611.
 \bibitem{cmssim} CMS Collaboration ``Full Simulation Offline Guide'', \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideSimulation}, last accessed 04.02.2018
 \bibitem{fastsim} A. Giammanco. ``The Fast Simulation of the CMS Experiment'' J. Phys.: Conf. Ser. 513 022012 (2014) 
 \bibitem{particle_flow} A.M. Sirunyan et. al. ``Particle-flow reconstruction and global event description with the CMS detector'', JINST 12 P10003 (2017) \url{https://doi.org/10.1088/1748-0221/12/10/P10003}.
-\bibitem{particle_flow2} The CMS Collaboration. `` Description and performance of track and primary vertex reconstruction with the CMS tracker''. JINST 9 P10009 (2014). doi:10.1088/1748-0221/9/10/P10009
+\bibitem{particle_flow2} CMS Collaboration. `` Description and performance of track and primary vertex reconstruction with the CMS tracker''. JINST 9 P10009 (2014). doi:10.1088/1748-0221/9/10/P10009
 \bibitem{pfdiag} J. Incandela. ``Status of the CMS SM Higgs Search'' July 4, 2012. Pdf slides. Retrieved from \url{https://indico.cern.ch/event/197461/contributions/1478917/attachments/290954/406673/CMS_4July2012_Final.pdf}
 \bibitem{ctf} P. Billoir and S. Qian, ``Simultaneous pattern recognition and track fitting by the Kalman filtering method'', Nucl. Instrum. Meth. A 294 219. (1990).
 \bibitem{gsf} W. Adam, R. Fruhwirth, A. Strandlie and T. Todorov, ``Reconstruction of electrons with the Gaussian sum filter in the CMS tracker at LHC'', eConf C 0303241 (2003) TULT009 [physics/0306087].
@@ -433,14 +422,14 @@ c/s10052-015-3475-9, arXiv:1504.00611.
 \bibitem{kt} S. Catani, Y. L. Dokshitzer, M. H. Seymour, and B. R. Webber, ``Longitudinally invariant $K_t$ clustering algorithms for hadron hadron collisions'', Nuclear Physics B, vol. 406, pp. 187–224, (1993).
 \bibitem{ac} Y.L. Dokshitzer, G.D. Leder, S.Moretti, and B.R. Webber, ``Better jet clustering algorithms,'' Journal of High Energy Physics, vol. 08, p. 001, (1997).
 \bibitem{jetconeview} B. Dorney. ``Anatomy of a Jet in CMS''. Quantum Diaries. June 1st, 2011.  Retrieved from \url{https://www.quantumdiaries.org/2011/06/01/anatomy-of-a-jet-in-cms/}
-\bibitem{jetreco} The CMS Collaboration.``Event Displays from the high-energy collisions at 7 TeV'', May 2010, CMS-PHO-EVENTS-2010-007, Retrieved from \url{https://cds.cern.ch/record/1429614}.
-\bibitem{jec} The CMS collaboration. ``Determination of jet energy calibration and transverse momentum resolution in CMS''. JINST 6 P11002 (2011). \url{http://dx.doi.org/10.1088/1748-0221/6/11/P11002}
-\bibitem{jec2} The CMS Collaboration, ``Introduction to Jet Energy Corrections at CMS.''. \url{https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC}, last accessed 10.02.2018. 
+\bibitem{jetreco} CMS Collaboration.``Event Displays from the high-energy collisions at 7 TeV'', May 2010, CMS-PHO-EVENTS-2010-007, Retrieved from \url{https://cds.cern.ch/record/1429614}.
+\bibitem{jec} CMS collaboration. ``Determination of jet energy calibration and transverse momentum resolution in CMS''. JINST 6 P11002 (2011). \url{http://dx.doi.org/10.1088/1748-0221/6/11/P11002}
+\bibitem{jec2} CMS Collaboration, ``Introduction to Jet Energy Corrections at CMS.''. \url{https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC}, last accessed 10.02.2018. 
 \bibitem{btag}CMS Collaboration Collaboration. ``Identification of b quark jets at the CMS Experiment in the LHC Run 2''. Tech. rep. CMS-PAS-BTV-15-001. Geneva: CERN, (2016). \url{https://cds.cern.ch/record/2138504}.
 \bibitem{metcorr}CMS Collaboration Collaboration. ``Performance of missing energy reconstruction in 13 TeV pp collision data using the CMS detector''. Tech. rep. CMS-PAS-JME16-004. Geneva: CERN, 2016. \url{https://cds.cern.ch/record/2205284}.
 \bibitem{hig13}CMS Collaboration, ``New CMS results at Moriond (Electroweak) 2013'', Retrieved from \url{http://cms.web.cern.ch/sites/cms.web.cern.ch/files/styles/large/public/field/image/HIG13004\_Event01\_0.png?itok=LAwZzPHR}
 \bibitem{top12035} CMS Collaboration, ``New CMS results at Moriond (Electroweak) 2013'', Retrieved from \url{http://cms.web.cern.ch/sites/cms.web.cern.ch/files/styles/large/public/field/image/TOP12035\_Event01.png?itok=uMdnSqzC}
-\bibitem{reco1} K. Skovpen. ``Event displays highlighting the main properties of heavy flavour jets in the CMS Experiment'', Aug 2017, CMS-PHO-EVENTS-2017-006. Retrieved from \url{https://cds.cern.ch/record/2280025}.
+\bibitem{cmsshow} CMS Collaboration. ``Physics Analysis Oriented Event Display ( Fireworks / cmsShow )'', \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookFireworks}, last accessed 10.02.2018.
 
 %% %%%%%%%%%%%%%%%%%%%%references for statistics chapter %%%%%%%%%%%%%%%%%%%%%%  
 

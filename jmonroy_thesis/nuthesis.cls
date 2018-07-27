@@ -194,19 +194,32 @@ Under the Supervision of \nu@adviser\\[3\baselineskip]
       \ifthenelse{\boolean{nu@single}}{\end{singlespacing}}{\end{doublespacing}}%
   \cleardoublepage}
 
-\newenvironment{dedication}[1][Dedication]{%
-  \begin{center}%
-    \MakeUppercase{#1}%
-  \end{center}%
-  \ifthenelse{\boolean{nu@single}}{\begin{singlespacing}}{\begin{doublespacing}}%
-    }{\par%
-      \ifthenelse{\boolean{nu@single}}{\end{singlespacing}}{\end{doublespacing}}%
-  \cleardoublepage}
+\newenvironment{dedication}{%
+  %\thispagestyle{empty}% no header and footer
+  \vspace*{\stretch{1}}% some space at the top
+  \itshape             % the text is in italics
+  \raggedleft          % flush to the right margin
+}{\par % end the paragraph
+  \vspace{\stretch{3}} % space at bottom is three times that at the top
+  \clearpage           % finish off the page
+}
+               
+
+
+%% \newenvironment{dedication}[1][]{%
+%%   \begin{center}%
+%%     \MakeUppercase{#1}%
+%%   \end{center}%
+%%   \ifthenelse{\boolean{nu@single}}{\begin{singlespacing}}{\begin{doublespacing}}%
+%%     }{\par%
+%%       \ifthenelse{\boolean{nu@single}}{\end{singlespacing}}{\end{doublespacing}}%
+%%   \cleardoublepage}
 
 \newenvironment{acknowledgments}[1][Acknowledgments]{%
   \begin{center}
     \MakeUppercase{#1}
   \end{center}
+  \input{nuthesis/sections/acknowledgments.tex}
   \ifthenelse{\boolean{nu@single}}{\begin{singlespacing}}{\begin{doublespacing}}%
     }{\par%
       \ifthenelse{\boolean{nu@single}}{\end{singlespacing}}{\end{doublespacing}}%
